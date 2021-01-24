@@ -13,13 +13,36 @@ Source: https://ia.net/writer/support/general/markdown-guide
 
 ## Inline
 - uses single \$
-- syntax: `$ \theta $`
-- output: $ \theta $
+- syntax: `$\theta$`
+- output: $\theta$
 
-\theta
+
+Syntax
+
+```
+$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\).
+```
+
+Output
+
+$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\).
 
 
 ## Block
-- Dollar
+- Double Dollar
+
+Syntax
+
+```
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
+```
+
+Output
+
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
 
 
