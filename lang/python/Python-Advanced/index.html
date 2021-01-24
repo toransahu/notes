@@ -2738,24 +2738,24 @@
 <li>Greedy vs Non-Greedy</li>
 <li>Substitution</li>
 </ul>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-str = &quot;This#is#$% a&amp;%name%$ #&quot;
-r = re.sub(r'(?&lt;=[\w])([\W]+)(?=[\w])', ' ', str)
-print(r)
-r = re.sub(r'(?&lt;=[A-Za-z0-9])([^A-Za-z0-9]+)(?=[A-Za-z0-9])', ' ', str)
-print(r)
-r = re.sub(r'q(?=u)', ' ', 'quit')
-print(r)
-</code></pre>
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;This#is#$</span><span class="si">% a</span><span class="s2">&amp;%name%$ #&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[\w])([\W]+)(?=[\w])&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[A-Za-z0-9])([^A-Za-z0-9]+)(?=[A-Za-z0-9])&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;q(?=u)&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>remove white spaces from starting of the line but line break</li>
 </ul>
-<pre><code class="language-python">regex = r'^[^\S\n]+'
+<div class="highlight"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[^\S\n]+&#39;</span>
 
-#or if regex supports PCRE
-regex = r'^[\h]+'
-</code></pre>
+<span class="c1">#or if regex supports PCRE</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[\h]+&#39;</span>
+</code></pre></div>
 <p>Credits:</p>
 <ul>
 <li>https://www.rexegg.com/regex-disambiguation.html#lookarounds</li>
@@ -2854,39 +2854,38 @@ regex = r'^[\h]+'
 <ul>
 <li>is a duplex(two way) communication channel</li>
 </ul>
-<pre><code class="language-python">from multiprocessing import Process
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
 
-def f(name):
-    print('hello', name)
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-if __name__ == '__main__':
-    p = Process(target=f, args=('bob',))
-    p.start()
-    p.join()
-</code></pre>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">,))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
 <p>Out: hello bob</p>
-<pre><code class="language-python">
-from multiprocessing import Process
-import os
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
-def info(title):
-    print(title)
-    print('module name:', __name__)
-    print('parent process:', os.getppid())
-    print('process id:', os.getpid())
+<span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;module name:&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;parent process:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;process id:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
 
-def f(name):
-    info('function f')
-    print('hello', name)
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">info</span><span class="p">(</span><span class="s1">&#39;function f&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-if __name__ == '__main__':
-    info('main line')
-    p = Process(target=f, args=('bob',))
-    p.start()
-    p.join()  
-</code></pre>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">info</span><span class="p">(</span><span class="s1">&#39;main line&#39;</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">,))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  
+</code></pre></div>
 <p>Out: </p>
-<pre><code>main line
+<div class="highlight"><pre><span></span><code>main line
 module name: __main__
 parent process: 65
 process id: 66
@@ -2895,7 +2894,7 @@ module name: __main__
 parent process: 66
 process id: 80
 hello bob
-</code></pre>
+</code></pre></div>
 <h4 id="what-is-join">What is .join()?<a class="headerlink" href="#what-is-join" title="Permanent link">#</a></h4>
 <ul>
 <li>The join() method, when used with threading or multiprocessing, is not related to str.join()</li>
@@ -2910,19 +2909,19 @@ hello bob
 * This isn't as clearly stated in the multiprocessing docs as it should be, but it is mentioned in the Programming Guidelines section.
 * non-daemonic processes will be automatically be joined.
 * can override this behavior by setting the daemon flag on the Process to True prior to starting the process:</p>
-<pre><code class="language-python">from multiprocessing import Process
-import os
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
-def say_hello():
-    print(&quot;Hello&quot;)
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 
-p = Process(target=say_hello)
-p.daemon = True
-p.start()
+<span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">say_hello</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-# Both parent and child will exit here, since the main process has completed.
-# the child process will be terminated as soon as the main process completes:
-</code></pre>
+<span class="c1"># Both parent and child will exit here, since the main process has completed.</span>
+<span class="c1"># the child process will be terminated as soon as the main process completes:</span>
+</code></pre></div>
 <p>Out:
 Hello</p>
 <h4 id="daemon">daemon<a class="headerlink" href="#daemon" title="Permanent link">#</a></h4>
@@ -2958,22 +2957,22 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li><code>finally</code> is important because we need <code>f.close()</code> here to close the file descriptor with 100% guarantee</li>
 <li>file descriptors (fd) are limited at OS level, so we can save fd by closing after use</li>
 <li>code:
-    <code>python
-    try:
-        f = open('csv.txt', 'r', encoding='utf-8')
-        f.write('abc')
-    except:
-        pass
-    finally:
-        f.close()</code>    </li>
+    <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></li>
 </ul>
 <h3 id="using-with">Using <code>with</code><a class="headerlink" href="#using-with" title="Permanent link">#</a></h3>
 <ul>
 <li>Read <a href="https://notes-toransahu.notebooks.azure.com/nb//notebooks/python/Python-Basics.ipynb#with">here</a></li>
 <li>code:
-    <code>python
-    with open('csv.txt', 'r', encoding='utf-8') as f:
-        f.readline()</code></li>
+    <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</code></pre></div></li>
 </ul>
 <h2 id="json-operations">JSON Operations<a class="headerlink" href="#json-operations" title="Permanent link">#</a></h2>
 <h3 id="import-json"><code>import json</code><a class="headerlink" href="#import-json" title="Permanent link">#</a></h3>
@@ -3029,9 +3028,8 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li>Uses the OS support to load the dynamic libraries, thus ensures full compatibility</li>
 <li>available for windows, linux, macOS etc.</li>
 </ul>
-<pre><code class="language-bash">pyinstaller -i &lt;icon.ico&gt; --windowed --onefile &lt;python_file.py&gt;
-
-</code></pre>
+<div class="highlight"><pre><span></span><code>pyinstaller -i &lt;icon.ico&gt; --windowed --onefile &lt;python_file.py&gt;
+</code></pre></div>
 <h4 id="py2exe">py2exe<a class="headerlink" href="#py2exe" title="Permanent link">#</a></h4>
 <h2 id="python-version-management">Python Version Management<a class="headerlink" href="#python-version-management" title="Permanent link">#</a></h2>
 <h3 id="setting-default-python-version">Setting default Python Version<a class="headerlink" href="#setting-default-python-version" title="Permanent link">#</a></h3>
@@ -3041,10 +3039,10 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li>will affect other applications using another version of python</li>
 <li>can be done like:</li>
 </ul>
-<pre><code class="language-bash">ln -l /usr/bin/python /usr/bin/python3.6
+<div class="highlight"><pre><span></span><code>ln -l /usr/bin/python /usr/bin/python3.6
 
 ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
-</code></pre>
+</code></pre></div>
 <h4 id="by-aliasing-python">By aliasing python<a class="headerlink" href="#by-aliasing-python" title="Permanent link">#</a></h4>
 <ul>
 <li>not recommanded</li>
@@ -3055,8 +3053,8 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 </li>
 <li>can be done like:</li>
 </ul>
-<pre><code class="language-bash">alias python='/home/toran/anaconda/bin/python3.6`
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">python</span><span class="o">=</span><span class="err">&#39;</span>/home/toran/anaconda/bin/python3.6<span class="sb">`</span>
+</code></pre></div>
 <h4 id="by-setting-path-env-variable">By setting PATH env variable<a class="headerlink" href="#by-setting-path-env-variable" title="Permanent link">#</a></h4>
 <ul>
 <li>recommanded with anaconda</li>
@@ -3064,8 +3062,8 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 <li>for persistency; include the command in .bashrc or .zshrc file</li>
 <li>can be done like:</li>
 </ul>
-<pre><code class="language-bash">export PATH=&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+</code></pre></div>
 <h3 id="anaconda">Anaconda<a class="headerlink" href="#anaconda" title="Permanent link">#</a></h3>
 <ul>
 <li>install it from official site</li>
@@ -3078,19 +3076,19 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 <ul>
 <li>
 <p>set anaconda python as default</p>
-<p><code>bash
-export PATH="/home/toran/anaconda3/bin:&lt;dollar&gt;PATH"</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+</code></pre></div>
 </li>
 </ul>
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h4>
 <ul>
 <li>set anaconda python as default</li>
 </ul>
-<pre><code class="language-bash">C:\ProgramData\Miniconda3\Scripts\activate
+<div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 
-#if using git bash
+<span class="c1">#if using git bash</span>
 . /c/ProgramData/Miniconda3/Scripts/activate
-</code></pre>
+</code></pre></div>
 <h3 id="virtualenv">virtualenv<a class="headerlink" href="#virtualenv" title="Permanent link">#</a></h3>
 <h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">#</a></h3>
 <ul>
@@ -3109,41 +3107,39 @@ export PATH="/home/toran/anaconda3/bin:&lt;dollar&gt;PATH"</code></p>
 </li>
 </ul>
 <h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">pip install pipenv
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install pipenv
+</code></pre></div>
 <h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h4>
 <h5 id="create-venv">create venv<a class="headerlink" href="#create-venv" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv install 
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv install 
+</code></pre></div>
 <h5 id="create-venv-with-specific-python-version">create venv with specific python version<a class="headerlink" href="#create-venv-with-specific-python-version" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv --two install 
+<div class="highlight"><pre><span></span><code>pipenv --two install 
 
 pipenv --three install 
-</code></pre>
+</code></pre></div>
 <ul>
 <li>will initialize the venv with that python version</li>
 </ul>
 <h5 id="installuninstall-dependencies">install/uninstall dependencies<a class="headerlink" href="#installuninstall-dependencies" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv install nose2
+<div class="highlight"><pre><span></span><code>pipenv install nose2
 
 pipenv uninstall nose2
-</code></pre>
+</code></pre></div>
 <h5 id="lock-dependencies-for-production">lock dependencies for production<a class="headerlink" href="#lock-dependencies-for-production" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv lock
-</code></pre>
-<ul>
-<li>will keep record of all the deps in Pipfile.lock file with their specific versions</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code>pipenv lock
+</code></pre></div>
+- will keep record of all the deps in Pipfile.lock file with their specific versions</p>
 <h5 id="install-dependencies-only-for-development">install dependencies only for development<a class="headerlink" href="#install-dependencies-only-for-development" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv install --dev  nose2
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv install --dev  nose2
+</code></pre></div>
 <ul>
 <li>will keep this record in [dev-packages] section</li>
 <li>and will do not install it by default</li>
 <li>to install dev packages; need to do:</li>
 </ul>
-<pre><code class="language-bash">pipenv install --dev
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv install --dev
+</code></pre></div>
 <h5 id="install-dependencies-with-other-options">install dependencies with other options<a class="headerlink" href="#install-dependencies-with-other-options" title="Permanent link">#</a></h5>
 <ul>
 <li><code>--dev</code>: Install both develop and default packages from Pipfile.lock.</li>
@@ -3152,38 +3148,38 @@ pipenv uninstall nose2
 <li><code>--skip-lock</code>: Ignore the Pipfile.lock and install from the Pipfile. In addition, do not write out a Pipfile.lock reflecting changes to the Pipfile. </li>
 </ul>
 <h5 id="run-command-within-venv">run command within venv<a class="headerlink" href="#run-command-within-venv" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv run which python
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv run which python
+</code></pre></div>
 <h5 id="remove-venv">remove venv<a class="headerlink" href="#remove-venv" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv --rm
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv --rm
+</code></pre></div>
 <h5 id="see-venv-detailspath">see venv details/path<a class="headerlink" href="#see-venv-detailspath" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv --venv
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv --venv
+</code></pre></div>
 <h5 id="enter-venv-shell">enter venv shell<a class="headerlink" href="#enter-venv-shell" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">pipenv shell
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv shell
+</code></pre></div>
 <h5 id="clean-venv">clean venv<a class="headerlink" href="#clean-venv" title="Permanent link">#</a></h5>
 <ul>
 <li>uninstall all the packages not recorded in Pipfile</li>
 </ul>
-<pre><code class="language-bash">pipenv clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv clean
+</code></pre></div>
 <h5 id="update-venv">update venv<a class="headerlink" href="#update-venv" title="Permanent link">#</a></h5>
 <ul>
 <li>locks &amp; then update all the packages</li>
 </ul>
-<pre><code class="language-bash">pipenv update
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv update
+</code></pre></div>
 <h5 id="security-check">security check<a class="headerlink" href="#security-check" title="Permanent link">#</a></h5>
 <ul>
 <li>checks for compliance with PEP 508 <a href="https://www.python.org/dev/peps/pep-0508/">Dependency specification for Python Software Packages</a> as well as package safety</li>
 </ul>
-<pre><code class="language-bash">pipenv check
-</code></pre>
+<div class="highlight"><pre><span></span><code>pipenv check
+</code></pre></div>
 <h2 id="python-package-distribution-pypi">Python Package Distribution (PyPi)<a class="headerlink" href="#python-package-distribution-pypi" title="Permanent link">#</a></h2>
 <h3 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">#</a></h3>
-<pre><code>/example_pkg
+<div class="highlight"><pre><span></span><code>/example_pkg
   /pkg1
     __init__.py
   /pkg2
@@ -3191,8 +3187,7 @@ pipenv uninstall nose2
   setup.py
   LICENSE
   README.md
-
-</code></pre>
+</code></pre></div>
 <p>where 
 - <s><code>__init__.py</code> should contain a variable <code>name='example_pkg'</code></s>
 - <code>setup.py</code> should look like <a href="https://gist.github.com/toransahu/669efbb90a5019bb4a766d3c385de90c">this gist</a>
@@ -3206,45 +3201,45 @@ pipenv uninstall nose2
         - <code>packages=['pkg1', 'pkg2', 'pkg2.pkg2_1']</code></p>
 <p>Note: After installing the package, you able to import packages with names listed in <code>packages</code> var.</p>
 <h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">#setuptools &amp; wheel - to create build in .whl as well as .tar.gz. format
+<div class="highlight"><pre><span></span><code><span class="c1">#setuptools &amp; wheel - to create build in .whl as well as .tar.gz. format</span>
 python3 -m pip install --user --upgrade setuptools wheel
 
 
-#twine - to upload build in pypi server
+<span class="c1">#twine - to upload build in pypi server</span>
 python3 -m pip install --user --upgrade twine
-</code></pre>
+</code></pre></div>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h3>
 <ul>
 <li>change directory where <code>setup.py</code> is  &amp; run</li>
 </ul>
-<pre><code class="language-bash">python3 setup.py sdist bdist_wheel
-</code></pre>
+<div class="highlight"><pre><span></span><code>python3 setup.py sdist bdist_wheel
+</code></pre></div>
 <p>output will be like</p>
-<pre><code>dist/
+<div class="highlight"><pre><span></span><code>dist/
   example_pkg-0.0.1-py3-none-any.whl
   example_pkg-0.0.1.tar.gz
-</code></pre>
+</code></pre></div>
 <h3 id="test-distribution">Test Distribution<a class="headerlink" href="#test-distribution" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-</code></pre>
+<div class="highlight"><pre><span></span><code>twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+</code></pre></div>
 <h3 id="final-distribution">Final Distribution<a class="headerlink" href="#final-distribution" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">twine upload --repository-url https://upload.test.pypi.org/legacy/ dist/*
+<div class="highlight"><pre><span></span><code>twine upload --repository-url https://upload.test.pypi.org/legacy/ dist/*
 
-#OR
+<span class="c1">#OR</span>
 
 twine upload dist/*
-</code></pre>
+</code></pre></div>
 <h3 id="rebuild">Rebuild<a class="headerlink" href="#rebuild" title="Permanent link">#</a></h3>
 <ul>
 <li>delete <code>build</code>, <code>dist</code>, &amp; <code>*.egg-info</code> files then build again</li>
 </ul>
 <h3 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h3>
 <h4 id="test-package">(Test) Package<a class="headerlink" href="#test-package" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">python3 -m pip install --index-url https://test.pypi.org/simple/ example_pkg
-</code></pre>
+<div class="highlight"><pre><span></span><code>python3 -m pip install --index-url https://test.pypi.org/simple/ example_pkg
+</code></pre></div>
 <h4 id="final-package">(Final)  Package<a class="headerlink" href="#final-package" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">python3 -m pip install example_pkg
-</code></pre>
+<div class="highlight"><pre><span></span><code>python3 -m pip install example_pkg
+</code></pre></div>
 <h3 id="advanced-run-package-in-command-line">Advanced - Run Package in Command Line<a class="headerlink" href="#advanced-run-package-in-command-line" title="Permanent link">#</a></h3>
 <p>Source: http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html</p>
 <h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h3>

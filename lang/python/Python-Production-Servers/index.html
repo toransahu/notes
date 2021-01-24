@@ -1073,29 +1073,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-in-wsl-do-this" class="md-nav__link">
-    - in WSL do this
-  </a>
-  
-    <nav class="md-nav" aria-label="- in WSL do this">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#supervisor" class="md-nav__link">
     supervisor
@@ -1107,6 +1084,16 @@
   <a href="#nginx" class="md-nav__link">
     nginx
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1742,29 +1729,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-in-wsl-do-this" class="md-nav__link">
-    - in WSL do this
-  </a>
-  
-    <nav class="md-nav" aria-label="- in WSL do this">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#supervisor" class="md-nav__link">
     supervisor
@@ -1776,6 +1740,16 @@
   <a href="#nginx" class="md-nav__link">
     nginx
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2081,15 +2055,12 @@
 <li><a href="#server-stuff">Server Stuff</a><ul>
 <li><a href="#gunicorn_1">Gunicorn</a></li>
 <li><a href="#celery">celery</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#-in-wsl-do-this">- in WSL do this</a><ul>
 <li><a href="#supervisor">supervisor</a></li>
 <li><a href="#nginx">nginx</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#setup-database">Setup Database</a><ul>
 <li><a href="#aws-rds-mysql-free-tier">AWS RDS MySQL (Free Tier)</a><ul>
 <li><a href="#rds-config">RDS Config</a></li>
@@ -2163,15 +2134,17 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 <h3 id="install-heroku-cli">Install heroku CLI<a class="headerlink" href="#install-heroku-cli" title="Permanent link">#</a></h3>
 <h3 id="create-app">Create app<a class="headerlink" href="#create-app" title="Permanent link">#</a></h3>
 <ul>
-<li>create heroku app from existing code (it will only create empty git repo in heroku's private git)</li>
+<li>
+<p>create heroku app from existing code (it will only create empty git repo in heroku's private git)
+<div class="highlight"><pre><span></span><code>heroku create appname
+</code></pre></div></p>
+</li>
+<li>
+<p>add heroku remote to your local git repo
+<div class="highlight"><pre><span></span><code>git remote add heroku https://git.heroku.&lt;app_name&gt;.git
+</code></pre></div></p>
+</li>
 </ul>
-<pre><code>heroku create appname
-</code></pre>
-<ul>
-<li>add heroku remote to your local git repo</li>
-</ul>
-<pre><code>git remote add heroku https://git.heroku.&lt;app_name&gt;.git
-</code></pre>
 <h3 id="add-procfile">Add Procfile<a class="headerlink" href="#add-procfile" title="Permanent link">#</a></h3>
 <ul>
 <li>its starter script which heroku follows</li>
@@ -2185,12 +2158,14 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 </ul>
 <h3 id="push-code">Push code<a class="headerlink" href="#push-code" title="Permanent link">#</a></h3>
 <ul>
-<li>push code to heroku's git repo named <app_name></li>
-</ul>
-<pre><code>git push heroku dev:master
-</code></pre>
+<li>
+<p>push code to heroku's git repo named <app_name>
+<div class="highlight"><pre><span></span><code>git push heroku dev:master
+</code></pre></div></p>
+</li>
+<li>
+<p>here</p>
 <ul>
-<li>here<ul>
 <li>heroku is remote name (same as origin by deafult)</li>
 <li>dev is local repo's brach name from which we want to push code</li>
 <li>master is heroku's master branch (in master branch only build happens)</li>
@@ -2209,10 +2184,10 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 <li>heroku logs</li>
 </ul>
 </li>
-<li>disable static files</li>
+<li>disable static files
+<div class="highlight"><pre><span></span><code>heroku config:set DISABLE_COLLECTSTATIC=1 
+</code></pre></div></li>
 </ul>
-<pre><code>heroku config:set DISABLE_COLLECTSTATIC=1 
-</code></pre>
 <h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">#</a></h2>
 <ul>
 <li>https://pipelines.puppet.com/docs/tutorials/how-to-set-up-aws-ec2/</li>
@@ -2253,78 +2228,76 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 <code>ssh -i ~/.ssh/ethereal-site-backend.pem ubuntu@18.136.106.117</code> </p>
 </li>
 <li>
-<p>if <code>.pem</code> file is downloaded from some storage, then give proper permission</p>
+<p>if <code>.pem</code> file is downloaded from some storage, then give proper permission
+<div class="highlight"><pre><span></span><code>chmod <span class="m">600</span> ~/.ssh/ethereal-site-backend.pem
+</code></pre></div></p>
 </li>
 </ul>
-<pre><code class="language-bash">chmod 600 ~/.ssh/ethereal-site-backend.pem
-</code></pre>
 <h3 id="update">Update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">   sudo apt-get update
+<div class="highlight"><pre><span></span><code>   sudo apt-get update
    sudo apt-get upgrade
-</code></pre>
+</code></pre></div>
 <h3 id="set-password">Set Password<a class="headerlink" href="#set-password" title="Permanent link">#</a></h3>
-<p>Source: https://comtechies.com/password-authentication-aws-ec2.html</p>
-<pre><code class="language-bash">#1.open
+<p>Source: https://comtechies.com/password-authentication-aws-ec2.html
+<div class="highlight"><pre><span></span><code><span class="c1">#1.open</span>
 sudo vi /etc/ssh/sshd_config
 
-#2.edit no to yes
+<span class="c1">#2.edit no to yes</span>
 PasswordAuthentication yes
 
-#3.save and close
+<span class="c1">#3.save and close</span>
 
-#4.change/set password
+<span class="c1">#4.change/set password</span>
 sudo passwd ubuntu
 
-#5.restart service
+<span class="c1">#5.restart service</span>
 sudo service sshd restart
-</code></pre>
+</code></pre></div></p>
 <h3 id="install-prerequisites">Install Prerequisites<a class="headerlink" href="#install-prerequisites" title="Permanent link">#</a></h3>
 <h4 id="python-stuff">Python Stuff<a class="headerlink" href="#python-stuff" title="Permanent link">#</a></h4>
 <h5 id="recommanded-way">Recommanded Way<a class="headerlink" href="#recommanded-way" title="Permanent link">#</a></h5>
 <ul>
 <li>Using miniconda</li>
 </ul>
-<pre><code class="language-bash">
-#download miniconda - for deployment, testing, build
+<div class="highlight"><pre><span></span><code><span class="c1">#download miniconda - for deployment, testing, build</span>
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-#install
+<span class="c1">#install</span>
 sudo sh Miniconda3-latest-Linux-x86_64.sh 
 
 
-#alias &amp; activate miniconda
-echo &quot;alias anaconda='. ~/miniconda3/bin/activate'&quot; &gt;&gt; ~/.bashrc
+<span class="c1">#alias &amp; activate miniconda</span>
+<span class="nb">echo</span> <span class="s2">&quot;alias anaconda=&#39;. ~/miniconda3/bin/activate&#39;&quot;</span> &gt;&gt; ~/.bashrc
 
 anaconda
 
-(base) sudo /home/ubuntu/miniconda3/bin/python3.6 -m pip install -U pipenv
+<span class="o">(</span>base<span class="o">)</span> sudo /home/ubuntu/miniconda3/bin/python3.6 -m pip install -U pipenv
 
-#clone repo
-(base) git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
+<span class="c1">#clone repo</span>
+<span class="o">(</span>base<span class="o">)</span> git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
 
-#cd to repo &amp; create venv using pipenv &amp; install dependencies
-(base) pipenv --python 3 install
-</code></pre>
+<span class="c1">#cd to repo &amp; create venv using pipenv &amp; install dependencies</span>
+<span class="o">(</span>base<span class="o">)</span> pipenv --python <span class="m">3</span> install
+</code></pre></div>
 <h5 id="original-way">Original Way<a class="headerlink" href="#original-way" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">
-sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
+<div class="highlight"><pre><span></span><code>sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
 sudo tar xJf Python-3.6.4.tar.xz 
-cd Python-3.6.4/
+<span class="nb">cd</span> Python-3.6.4/
 ./configure
 
 sudo make
 sudo make install
 
-cd ..
+<span class="nb">cd</span> ..
 sudo rm Python-3.6.4.tar.xz
 sudo rm -rf Python-3.6.4
 
 
 sudo apt install python3-pip
 
-#link pip, python
+<span class="c1">#link pip, python</span>
 
-cd /usr/bin
+<span class="nb">cd</span> /usr/bin
 unlink python
 unlink pip
 unlink virtualenv
@@ -2333,10 +2306,10 @@ ln -s python35 python
 ln -s pip-3.5 pip
 ln -s virtualenv-3.5 virtualenv
 
-#clone repo
+<span class="c1">#clone repo</span>
 
 git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
-</code></pre>
+</code></pre></div>
 <ul>
 <li>if sudo ./configure gives error<ul>
 <li>Error: <code>no acceptable C compiler found in PATH when installing python</code></li>
@@ -2409,12 +2382,12 @@ git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.gi
 <ul>
 <li>starts automatically on boot</li>
 </ul>
-<p>```bash
-sudo systemctl enable rabbitmq-server
-sudo systemctl start rabbitmq-server</p>
-<h2 id="-in-wsl-do-this">- in WSL do this<a class="headerlink" href="#-in-wsl-do-this" title="Permanent link">#</a></h2>
-<p>sudo service rabbitmq-server start
-```</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
+sudo systemctl start rabbitmq-server
+
+<span class="c1">#- in WSL do this</span>
+sudo service rabbitmq-server start
+</code></pre></div>
 </li>
 <li>
 <p>start celery worker</p>
@@ -2422,8 +2395,8 @@ sudo systemctl start rabbitmq-server</p>
 <li>need to run inside src folder</li>
 <li>need to be in virtual env</li>
 </ul>
-<p><code>bash
-celery -A project_name worker -l info</code></p>
+<div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
+</code></pre></div>
 </li>
 <li>
 <p>or create script to start celery</p>
@@ -2663,14 +2636,14 @@ src: https://gist.github.com/toransahu/31874def1bd661db676d0dfe02e1c651</li>
 </ul>
 <h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
 <h4 id="confirm-before-run">Confirm before run<a class="headerlink" href="#confirm-before-run" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">python manage.py makemigrations &lt;apps&gt;
+<div class="highlight"><pre><span></span><code>python manage.py makemigrations &lt;apps&gt;
 
 python manage.py migrate
 
 python manage.py createsuperuser
 
 python manage.py collectstatic
-</code></pre>
+</code></pre></div>
 <ul>
 <li><code>cd /home/ubuntu/ethereal-machines/ethereal-machines-backend/</code></li>
 <li><code>./start_gunicorn.sh</code></li>
@@ -2755,16 +2728,16 @@ python manage.py collectstatic
 <ul>
 <li>Install <code>ssl-cert-check</code></li>
 </ul>
-<pre><code class="language-bash">sudo apt install ssl-cert-check
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo apt install ssl-cert-check
+</code></pre></div>
 <ul>
 <li>Run</li>
 </ul>
-<pre><code class="language-bash">sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem
+</code></pre></div>
 <p>or awk the final result</p>
-<pre><code class="language-bash">sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem | awk 'END { print &lt;dollar_sign&gt;NF }'
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem <span class="p">|</span> awk <span class="s1">&#39;END { print &lt;dollar_sign&gt;NF }&#39;</span>
+</code></pre></div>
 <h4 id="renew-certificate">Renew Certificate<a class="headerlink" href="#renew-certificate" title="Permanent link">#</a></h4>
 <ul>
 <li>
@@ -2782,17 +2755,18 @@ python manage.py collectstatic
 </li>
 <li>
 <p>to check/dry run renewal do:
-    <code>bash
-    sudo certbot renew --dry-run</code></p>
+    <div class="highlight"><pre><span></span><code>sudo certbot renew --dry-run
+</code></pre></div></p>
 </li>
 <li>
 <p>automate autonewal using cron job: 
-    <code>0 6 * * * /path/to/certbot/certbot-auto renew --text &gt;&gt; /path/to/certbot/certbot-cron.log &amp;&amp; sudo service nginx reload</code></p>
+    <div class="highlight"><pre><span></span><code>0 6 * * * /path/to/certbot/certbot-auto renew --text &gt;&gt; /path/to/certbot/certbot-cron.log &amp;&amp; sudo service nginx reload
+</code></pre></div></p>
 </li>
 </ul>
 <h4 id="delete-the-certificate">delete the certificate<a class="headerlink" href="#delete-the-certificate" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">sudo certbot delete --cert-name  api.etherealmachines.com
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo certbot delete --cert-name  api.etherealmachines.com
+</code></pre></div>
 <h4 id="troubleshoots">Troubleshoots<a class="headerlink" href="#troubleshoots" title="Permanent link">#</a></h4>
 <ul>
 <li>while certificate renew/new if it fails with TLS handshake/auth issue:<ul>
@@ -2828,12 +2802,12 @@ python manage.py collectstatic
 <ul>
 <li>
 <p>By API</p>
-<p><code>bash
-curl -X DELETE "https://api.cloudflare.com/client/v4/zones/&lt;site-id&gt;/purge_cache" \
-     -H "X-Auth-Email: &lt;email&gt;" \
-     -H "X-Auth-Key: &lt;apikey&gt;" \
-     -H "Content-Type: application/json" \
-     --data '{"purge_everything":true}')"</code>    </p>
+<div class="highlight"><pre><span></span><code>curl -X DELETE <span class="s2">&quot;https://api.cloudflare.com/client/v4/zones/&lt;site-id&gt;/purge_cache&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;X-Auth-Email: &lt;email&gt;&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;X-Auth-Key: &lt;apikey&gt;&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+     --data <span class="s1">&#39;{&quot;purge_everything&quot;:true}&#39;</span><span class="o">)</span><span class="s2">&quot;</span>
+</code></pre></div>
 <ul>
 <li>source: https://www.supertechcrew.com/clear-cloudflare-cache-when-pushing-from-git-github-pages/</li>
 </ul>

@@ -846,19 +846,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#printp__gender-attributeerror-no-attribute-__gender" class="md-nav__link">
-    print(p.__gender) # AttributeError - no attribute '__gender'
-  </a>
-  
-    <nav class="md-nav" aria-label="print(p.__gender) # AttributeError - no attribute '__gender'">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#polymorphism" class="md-nav__link">
     Polymorphism
@@ -1801,19 +1788,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#printp__gender-attributeerror-no-attribute-__gender" class="md-nav__link">
-    print(p.__gender) # AttributeError - no attribute '__gender'
-  </a>
-  
-    <nav class="md-nav" aria-label="print(p.__gender) # AttributeError - no attribute '__gender'">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#polymorphism" class="md-nav__link">
     Polymorphism
@@ -2594,9 +2568,6 @@
 <li><a href="#implementation-in-class-using-access-modifiers">Implementation in Class using Access Modifiers</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#printp__gender-attributeerror-no-attribute-__gender">print(p.__gender) # AttributeError - no attribute '__gender'</a><ul>
 <li><a href="#polymorphism">Polymorphism</a><ul>
 <li><a href="#static-polymorphism-method-overloading">Static Polymorphism (Method-Overloading)</a></li>
 <li><a href="#runtime-polymorphism-method-overriding">Runtime Polymorphism (Method-Overriding)</a></li>
@@ -2771,12 +2742,10 @@
 * e.g : Any Verb</p>
 <h4 id="ex">Ex<a class="headerlink" href="#ex" title="Permanent link">#</a></h4>
 <ol>
-<li>Imagine a graphics library "nicepic" that contains pre-defined functions for: rectangles, squares, triangles, house, village.</li>
-</ol>
-<pre><code class="language-python">import nicepic 
-draw_house()
-</code></pre>
-<ol>
+<li>Imagine a graphics library "nicepic" that contains pre-defined functions for: rectangles, squares, triangles, house, village.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">nicepic</span> 
+<span class="n">draw_house</span><span class="p">()</span>
+</code></pre></div></li>
 <li>Suppose an ATM. You simply insert your card and click some buttons and get the money. You dont know what is happening internally on press of these buttons.</li>
 </ol>
 <h3 id="encapsulation">Encapsulation<a class="headerlink" href="#encapsulation" title="Permanent link">#</a></h3>
@@ -2811,23 +2780,23 @@ draw_house()
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">    class Person:
-      def __init__(self): 
-        self.name = 'Toran'
-        self._lastname = 'Sahu' # protected
-        self.__gender = 'Male'
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+      <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Toran&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lastname</span> <span class="o">=</span> <span class="s1">&#39;Sahu&#39;</span> <span class="c1"># protected</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__gender</span> <span class="o">=</span> <span class="s1">&#39;Male&#39;</span>
 
 
-      def PrintName(self):
-        return self.name +' ' + self._lastname
+      <span class="k">def</span> <span class="nf">PrintName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span><span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lastname</span>
 
-    #Outside of class
-    p = Person()
+    <span class="c1">#Outside of class</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
 
-    print(p.name) # Out - Toran
-    print(p.PrintName()) # Out - Toran Sahu
-    # print(p._lastname) # Out - Sahu
-</code></pre>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="c1"># Out - Toran</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">PrintName</span><span class="p">())</span> <span class="c1"># Out - Toran Sahu</span>
+    <span class="c1"># print(p._lastname) # Out - Sahu</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Private members:</p>
@@ -2835,10 +2804,9 @@ draw_house()
 <li>Add ____ (double underscore ) in front of the variable and function name</li>
 <li>Accessing private member : Using name mangling : obj._classname__private_mem</li>
 </ul>
-<p>```python</p>
-<h2 id="printp__gender-attributeerror-no-attribute-__gender">print(p.__gender) # AttributeError - no attribute '__gender'<a class="headerlink" href="#printp__gender-attributeerror-no-attribute-__gender" title="Permanent link">#</a></h2>
-<p>print(p._Person__gender) # name-mangling : Out - Male
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># print(p.__gender) # AttributeError - no attribute &#39;__gender&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">_Person__gender</span><span class="p">)</span> <span class="c1"># name-mangling : Out - Male</span>
+</code></pre></div>
 </li>
 </ul>
 <h3 id="polymorphism">Polymorphism<a class="headerlink" href="#polymorphism" title="Permanent link">#</a></h3>
@@ -2875,26 +2843,26 @@ Specifically: The ability to redefine methods for derived classes.</p>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">class A:
-    def m(self):
-        print(&quot;m of A called&quot;)
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
-class B(A):
-    pass
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-class C(A):
-    def m(self):
-        print(&quot;m of C called&quot;)
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of C called&quot;</span><span class="p">)</span>
 
-class D(B,C):
-    pass
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-d = D()
-d.m()
-</code></pre>
-<p>Out:</p>
-<pre><code>m of C called
-</code></pre>
+<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>m of C called
+</code></pre></div></p>
 <h4 id="need-of-super">Need of super()<a class="headerlink" href="#need-of-super" title="Permanent link">#</a></h4>
 <ul>
 <li>lets avoid referring to the base class explicitly (i.e. just one class above)</li>
@@ -2951,38 +2919,38 @@ d.m()
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">class A:
-    def m(self):
-        print(&quot;m of A called&quot;)
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
-class B(A):
-    def m(self):
-        print(&quot;m of B called&quot;)
-        # A.m(self) 
-        super().m()
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of B called&quot;</span><span class="p">)</span>
+        <span class="c1"># A.m(self) </span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
 
-class C(A):
-    def m(self):
-        print(&quot;m of C called&quot;)
-        # A.m(self) 
-        super().m()
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of C called&quot;</span><span class="p">)</span>
+        <span class="c1"># A.m(self) </span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
 
-class D(B,C):
-    def m(self):
-        print(&quot;m of D called&quot;)
-        # B.m(self) 
-        # C.m(self) 
-        super().m()
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of D called&quot;</span><span class="p">)</span>
+        <span class="c1"># B.m(self) </span>
+        <span class="c1"># C.m(self) </span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
 
-d = D()
-d.m()
-</code></pre>
-<p>Out:</p>
-<pre><code>m of D called
+<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>m of D called
 m of B called
 m of C called
 m of A called
-</code></pre>
+</code></pre></div></p>
 <h4 id="other-relationships">Other relationships<a class="headerlink" href="#other-relationships" title="Permanent link">#</a></h4>
 <ul>
 <li>src: https://javapapers.com/oops/association-aggregation-composition-abstraction-generalization-realization-dependency/</li>
@@ -3221,8 +3189,8 @@ m of A called
 </ul>
 </li>
 </ul>
-<p><code>python
-cls_a = type('A', (object,), dict({'foo':2, 'bar':3})) # type(class_name_str, base_classes_tuple, body_dict)</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">cls_a</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,),</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}))</span> <span class="c1"># type(class_name_str, base_classes_tuple, body_dict)</span>
+</code></pre></div>
 <ul>
 <li>this way we can create a class at runtime</li>
 </ul>
@@ -3232,13 +3200,13 @@ cls_a = type('A', (object,), dict({'foo':2, 'bar':3})) # type(class_name_str, ba
 <ul>
 <li><code>type</code> is the class of python classes</li>
 </ul>
-<pre><code class="language-python">class Example:
-    pass
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">pass</span>
 
-e = Example()
-e.__class__  # prints: &lt;class __main__.Example&gt;
-Example.__class__  # prints: &lt;type 'type'&gt;
-</code></pre>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<span class="n">e</span><span class="o">.</span><span class="vm">__class__</span>  <span class="c1"># prints: &lt;class __main__.Example&gt;</span>
+<span class="n">Example</span><span class="o">.</span><span class="vm">__class__</span>  <span class="c1"># prints: &lt;type &#39;type&#39;&gt;</span>
+</code></pre></div>
 <ul>
 <li>so in above code, e is object of class Example and Example is object of class <code>type</code></li>
 <li>in python3 we can use <code>type</code> and <code>class</code> interchangabely<ul>
@@ -3261,11 +3229,11 @@ Example.__class__  # prints: &lt;type 'type'&gt;
 <ul>
 <li>we can define a <code>metaclass</code> for a <code>class</code></li>
 </ul>
-<p><code>python
-class Example(metaclass=SomeMetaclass):
-    # in python2 define metaclass here like
-    # __metaclass__ = SomeMetaclass
-    pass</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">SomeMetaclass</span><span class="p">):</span>
+    <span class="c1"># in python2 define metaclass here like</span>
+    <span class="c1"># __metaclass__ = SomeMetaclass</span>
+    <span class="k">pass</span>
+</code></pre></div>
 </li>
 <li>
 <p>Since a metaclass is the class of a class</p>
@@ -3366,9 +3334,9 @@ a = A()
 </li>
 <li>syntax are like </li>
 </ul>
-<p><code>python
-class A(object):
-    pass</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
 </li>
 <li>
 <p>New-Style</p>
@@ -3379,9 +3347,9 @@ class A(object):
 <ul>
 <li>hence no need to inherit <code>object</code> in class</li>
 </ul>
-<p><code>python
-class Example :
-    pass</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span> <span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
 </li>
 <li>
 <p>introduced in python2.2 to unify the concepts of <code>class</code> and <code>type</code></p>
@@ -3414,56 +3382,56 @@ class Example :
     - https://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path
 - <code>class.__mro__</code> is only available in New-Style class</p>
 <p>Script: 1 </p>
-<pre><code class="language-python">class A:
-    def m(self):
-        print(&quot;m of A called&quot;)
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
-class B(A):
-    def m(self):
-        print(&quot;m of B called&quot;)
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of B called&quot;</span><span class="p">)</span>
 
 
-class C(A):
-    #def m(self):
-    #   print(&quot;m of C called&quot;)
-     pass
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="c1">#def m(self):</span>
+    <span class="c1">#   print(&quot;m of C called&quot;)</span>
+     <span class="k">pass</span>
 
-class D(B,C):
-    #def m(self):
-    #    print(&quot;m of D called&quot;)
-    pass
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+    <span class="c1">#def m(self):</span>
+    <span class="c1">#    print(&quot;m of D called&quot;)</span>
+    <span class="k">pass</span>
 
-d = D()
-d.m()        
-</code></pre>
+<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>        
+</code></pre></div>
 <p>Script: 2</p>
-<pre><code class="language-python">class A1():
-#      def who_am_i(self):
-#          print(&quot;I am a A1&quot;)
-    pass
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A1</span><span class="p">():</span>
+<span class="c1">#      def who_am_i(self):</span>
+<span class="c1">#          print(&quot;I am a A1&quot;)</span>
+    <span class="k">pass</span>
 
-class A2():
-     def who_am_i(self):
-         print(&quot;I am a A2&quot;)
+<span class="k">class</span> <span class="nc">A2</span><span class="p">():</span>
+     <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a A2&quot;</span><span class="p">)</span>
 
 
-class B(A1, A2):
-#     def who_am_i(self):
-#         print(&quot;I am a B&quot;)
-    pass
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">):</span>
+<span class="c1">#     def who_am_i(self):</span>
+<span class="c1">#         print(&quot;I am a B&quot;)</span>
+    <span class="k">pass</span>
 
-class C(A2):
-    def who_am_i(self):
-        print(&quot;I am a C&quot;)
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A2</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a C&quot;</span><span class="p">)</span>
 
-class D(B,C):
-#     def who_am_i(self):
-#         print(&quot;I am a D&quot;)
-    pass
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+<span class="c1">#     def who_am_i(self):</span>
+<span class="c1">#         print(&quot;I am a D&quot;)</span>
+    <span class="k">pass</span>
 
-d1 = D()
-d1.who_am_i()
-</code></pre>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">d1</span><span class="o">.</span><span class="n">who_am_i</span><span class="p">()</span>
+</code></pre></div>
 <h5 id="old-mro-algorithm-based-on-old-style-class">Old MRO Algorithm (Based on Old-Style Class)<a class="headerlink" href="#old-mro-algorithm-based-on-old-style-class" title="Permanent link">#</a></h5>
 <ul>
 <li>uses <code>depth-first</code> serach followed by <code>linear</code> search (left to right)<ul>
@@ -3526,26 +3494,26 @@ d1.who_am_i()
 <h5 id="impossible-method-resolution">Impossible Method Resolution<a class="headerlink" href="#impossible-method-resolution" title="Permanent link">#</a></h5>
 <p><img src="https://makina-corpus.com/blog/metier/2014/python-mro-conflict" ></p>
 <p>Script:</p>
-<pre><code class="language-python">class X():
-    def who_am_i(self):
-        print(&quot;I am a X&quot;)
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">X</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a X&quot;</span><span class="p">)</span>
 
-class Y():
-    def who_am_i(self):
-        print(&quot;I am a Y&quot;)
+<span class="k">class</span> <span class="nc">Y</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a Y&quot;</span><span class="p">)</span>
 
-class A(X, Y):
-    def who_am_i(self):
-        print(&quot;I am a A&quot;)
+<span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a A&quot;</span><span class="p">)</span>
 
-class B(Y, X):
-     def who_am_i(self):
-         print(&quot;I am a B&quot;)
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+     <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a B&quot;</span><span class="p">)</span>
 
-class F (A, B):
-    def who_am_i(self):
-        print(&quot;I am a F&quot;)
-</code></pre>
+<span class="k">class</span> <span class="nc">F</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a F&quot;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>In Old MRO algo, search path is F, A, X, Y, B, Y, X</li>
 <li>
@@ -3553,7 +3521,8 @@ class F (A, B):
 <ul>
 <li>and throws following exception</li>
 </ul>
-<p><code>TypeError: Cannot create a consistent method resolution</code></p>
+<div class="highlight"><pre><span></span><code>TypeError: Cannot create a consistent method resolution
+</code></pre></div>
 </li>
 </ul>
 <h4 id="abstract-base-class-abstract-class">Abstract Base Class (Abstract Class)<a class="headerlink" href="#abstract-base-class-abstract-class" title="Permanent link">#</a></h4>
@@ -3562,31 +3531,30 @@ class F (A, B):
 <li>Cannot instantiate an abstract class that has abstract methods</li>
 <li>Subclass which implements all the abstract method can be instantiated</li>
 </ul>
-<p>Python Implementation:</p>
-<pre><code class="language-python">    # Python 3.4+
-    from abc import ABC, abstractmethod
-    class Abstract(ABC):
-        @abstractmethod
-        def foo(self):
-            pass
+<p>Python Implementation:
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Python 3.4+</span>
+    <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+    <span class="k">class</span> <span class="nc">Abstract</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+        <span class="nd">@abstractmethod</span>
+        <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">pass</span>
 
-    # Python 3.0+
-    from abc import ABCMeta, abstractmethod
-    class Abstract(metaclass=ABCMeta):
-        @abstractmethod
-        def foo(self):
-            pass
+    <span class="c1"># Python 3.0+</span>
+    <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+    <span class="k">class</span> <span class="nc">Abstract</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+        <span class="nd">@abstractmethod</span>
+        <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">pass</span>
 
-    # Python 2
-    from abc import ABCMeta, abstractmethod
-    class Abstract:
-        __metaclass__ = ABCMeta
+    <span class="c1"># Python 2</span>
+    <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+    <span class="k">class</span> <span class="nc">Abstract</span><span class="p">:</span>
+        <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
 
-        @abstractmethod
-        def foo(self):
-            pass    
-
-</code></pre>
+        <span class="nd">@abstractmethod</span>
+        <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">pass</span>    
+</code></pre></div></p>
 <h4 id="bottom-line">Bottom Line<a class="headerlink" href="#bottom-line" title="Permanent link">#</a></h4>
 <ul>
 <li>in python3:<ul>
@@ -3627,16 +3595,15 @@ TODO:</li>
 * <strong>Cannot instantiated</strong>
 * Behaviour/methods which <strong>must</strong> be implemented by classes
 * Class which implement interface should <strong>implement all the methods</strong> OR <strong>be an abstract class</strong></p>
-<p>Python Implementation:</p>
-<pre><code class="language-python">    class Engine():
-        &quot;&quot;&quot; Engine Interface&quot;&quot;&quot;
+<p>Python Implementation:
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Engine</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot; Engine Interface&quot;&quot;&quot;</span>
 
-        def ignition(self):
-            raise NotImplementedError( &quot;Ingnition should have implemented.&quot; )
-        def fuel(self):
-            raise NotImplementedError( &quot;Fuel should have implemented.&quot; )
-
-</code></pre>
+        <span class="k">def</span> <span class="nf">ignition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span> <span class="s2">&quot;Ingnition should have implemented.&quot;</span> <span class="p">)</span>
+        <span class="k">def</span> <span class="nf">fuel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span> <span class="s2">&quot;Fuel should have implemented.&quot;</span> <span class="p">)</span>
+</code></pre></div></p>
 <h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h3>
 <h4 id="instance-variable">Instance Variable<a class="headerlink" href="#instance-variable" title="Permanent link">#</a></h4>
 <ul>
@@ -3660,28 +3627,28 @@ TODO:</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">class A:
-    variable = 'Static/class Variable'  # static/class variable
-    var = 'Static/class Var'  # static/class variable
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable&#39;</span>  <span class="c1"># static/class variable</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Static/class Var&#39;</span>  <span class="c1"># static/class variable</span>
 
-    def __init__(self):
-        self.variable = 'Instance Variable'
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;Instance Variable&#39;</span>
 
-    def foo(self):
-        print(A.variable, self.variable, self.var)
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">variable</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
 
 
-print(A.variable)
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">variable</span><span class="p">)</span>
 
-a = A()
-a.foo()
-</code></pre>
-<p>Out:</p>
-<pre><code>Static/class Variable
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Static/class Variable
 Instance Variable
 Static/class Var
 Static/class Variable Instance Variable
-</code></pre>
+</code></pre></div></p>
 <h4 id="instance-vs-classstatic-attribute-lookup-order">Instance vs Class/Static attribute lookup order<a class="headerlink" href="#instance-vs-classstatic-attribute-lookup-order" title="Permanent link">#</a></h4>
 <blockquote>
 <p>instance/object &gt; static/class &gt; base class</p>
@@ -3702,13 +3669,13 @@ Static/class Variable Instance Variable
 <li>Method works exactly same as a simple function. </li>
 <li>But a method's first argument always receives the instance object:</li>
 </ul>
-<p>Code:</p>
-<pre><code class="language-python">def outside_foo():
-    pass
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outside_foo</span><span class="p">():</span>
+    <span class="k">pass</span>
 
-def outside_foo(self,):
-    pass
-</code></pre>
+<span class="k">def</span> <span class="nf">outside_foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
 <h4 id="static-method">Static Method<a class="headerlink" href="#static-method" title="Permanent link">#</a></h4>
 <h5 id="what">What<a class="headerlink" href="#what" title="Permanent link">#</a></h5>
 <ul>
@@ -3745,46 +3712,46 @@ def outside_foo(self,):
 </li>
 </ul>
 <h5 id="code">Code<a class="headerlink" href="#code" title="Permanent link">#</a></h5>
-<pre><code class="language-python">class A:
-    static_variable = 'Static/class Variable of class A'  # static/class variable
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class A&#39;</span>  <span class="c1"># static/class variable</span>
 
-    def __init__(self):
-        self.instance_variable = 'Instance Variable'
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="s1">&#39;Instance Variable&#39;</span>
 
-    @staticmethod
-    def static_method():
-        print('Inside static_method()', A.static_variable)  # works
-        # print('Inside static_method()', A.instance_variable)  # error, static method can't access instance attributes
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">static_method</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside static_method()&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">static_variable</span><span class="p">)</span>  <span class="c1"># works</span>
+        <span class="c1"># print(&#39;Inside static_method()&#39;, A.instance_variable)  # error, static method can&#39;t access instance attributes</span>
 
-    # static method
-    def way2():
-        pass
+    <span class="c1"># static method</span>
+    <span class="k">def</span> <span class="nf">way2</span><span class="p">():</span>
+        <span class="k">pass</span>
 
-    # making way2() a static method
-    way2 = staticmethod(way2)
-
-
-class B(A):
-    static_variable = 'Static/class Variable of class B'  # static/class variable
+    <span class="c1"># making way2() a static method</span>
+    <span class="n">way2</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">way2</span><span class="p">)</span>
 
 
-# but a module level func can access an instance attribute
-def module_level_func():
-    a1 = A()
-    print(a1.instance_variable)
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class B&#39;</span>  <span class="c1"># static/class variable</span>
 
 
-a2 = A()
+<span class="c1"># but a module level func can access an instance attribute</span>
+<span class="k">def</span> <span class="nf">module_level_func</span><span class="p">():</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
 
-a2.static_method()
-A.static_method()
-B.static_method()  # still accessing static_variable from class A
-</code></pre>
-<p>Out:</p>
-<pre><code>Inside static_method() Static/class Variable of class A
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
+<span class="n">A</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
+<span class="n">B</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>  <span class="c1"># still accessing static_variable from class A</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Inside static_method() Static/class Variable of class A
 Inside static_method() Static/class Variable of class A
 Inside static_method() Static/class Variable of class A
-</code></pre>
+</code></pre></div></p>
 <h4 id="class-method">Class Method<a class="headerlink" href="#class-method" title="Permanent link">#</a></h4>
 <h5 id="what_1">What<a class="headerlink" href="#what_1" title="Permanent link">#</a></h5>
 <ul>
@@ -3810,46 +3777,46 @@ Inside static_method() Static/class Variable of class A
 <li>to make code more maintanable than static methods</li>
 </ul>
 <h5 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">#</a></h5>
-<pre><code class="language-python">class A:
-    static_variable = 'Static/class Variable of class A'  # static/class variable
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class A&#39;</span>  <span class="c1"># static/class variable</span>
 
-    def __init__(self):
-        self.instance_variable = 'Instance Variable'
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="s1">&#39;Instance Variable&#39;</span>
 
-    @classmethod
-    def class_method(cls):
-        print('Inside class_method()', cls.static_variable)  # works
-        # print('Inside class_method()', cls.instance_variable)  # error, class method can't access instance attributes
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">class_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside class_method()&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">static_variable</span><span class="p">)</span>  <span class="c1"># works</span>
+        <span class="c1"># print(&#39;Inside class_method()&#39;, cls.instance_variable)  # error, class method can&#39;t access instance attributes</span>
 
-    # static method
-    def way2(cls):
-        pass
+    <span class="c1"># static method</span>
+    <span class="k">def</span> <span class="nf">way2</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">pass</span>
 
-    # making way2() a static method
-    way2 = classmethod(way2)
-
-
-class B(A):
-    static_variable = 'Static/class Variable of class B'  # static/class variable
+    <span class="c1"># making way2() a static method</span>
+    <span class="n">way2</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">way2</span><span class="p">)</span>
 
 
-# but a module level func can access an instance attribute
-def module_level_func():
-    a1 = A()
-    print(a1.instance_variable)
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class B&#39;</span>  <span class="c1"># static/class variable</span>
 
 
-a2 = A()
+<span class="c1"># but a module level func can access an instance attribute</span>
+<span class="k">def</span> <span class="nf">module_level_func</span><span class="p">():</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
 
-a2.class_method()
-A.class_method()
-B.class_method()  # now it will access static variable of class B
-</code></pre>
-<p>Out:</p>
-<pre><code>Inside class_method() Static/class Variable of class A
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
+<span class="n">A</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
+<span class="n">B</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>  <span class="c1"># now it will access static variable of class B</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Inside class_method() Static/class Variable of class A
 Inside class_method() Static/class Variable of class A
 Inside class_method() Static/class Variable of class B
-</code></pre>
+</code></pre></div></p>
 <h4 id="magic-method">Magic Method<a class="headerlink" href="#magic-method" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -3867,20 +3834,19 @@ Inside class_method() Static/class Variable of class B
 <p>Can be used for operator overloading, as</p>
 </li>
 </ul>
-<pre><code class="language-python">
-class Calc(int):
-    def __init__(self, x):
-        self.x = x
-    def __add__(self, other):
-        return self.x + other.x + 1
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Calc</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-a = Calc(1)    
-b = Calc(1)
-a + b
-</code></pre>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    
+<span class="n">b</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>
 <p>Out:</p>
-<pre><code>3
-</code></pre>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
 <h4 id="class-internal-methods">Class Internal Methods<a class="headerlink" href="#class-internal-methods" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -3923,9 +3889,9 @@ a + b
 <ul>
 <li>called when accessing any attribute via class instance </li>
 </ul>
-<pre><code class="language-python">c = C()
-c.name
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div>
 <h5 id="__getattr__"><code>__getattr__</code><a class="headerlink" href="#__getattr__" title="Permanent link">#</a></h5>
 <ul>
 <li>same as <code>__getattribute__</code> but gets called only when attribiute is not found via <code>__getattribute__</code> </li>
@@ -3978,25 +3944,25 @@ c.name
 <ul>
 <li>e.g.</li>
 </ul>
-<p>```python
-class Example:
-    def <strong>init</strong>(self,ap, bp):
-        self._a = ap
-        self._b = bp
-        self.c = self._a + self._b</p>
-<pre><code>def get_c(self):
-    return self.c
-</code></pre>
-<p>e = Example(1,2)      <br />
-print(e._a)
-print(e._b)
-print(e.c)
-print(e.get_c())
-e._a = 5
-print(e._a)
-print(e.c)
-print(e.get_c())
-```</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">,</span> <span class="n">bp</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">bp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span>
+
+    <span class="k">def</span> <span class="nf">get_c</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_c</span><span class="p">())</span>
+<span class="n">e</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_c</span><span class="p">())</span>
+</code></pre></div>
 <ul>
 <li>solution e.g.</li>
 </ul>
@@ -4004,25 +3970,24 @@ print(e.get_c())
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">
-        class Example:
-            def __init__(self,ap, bp):
-                self._a = ap
-                self._b = bp
+<div class="highlight"><pre><span></span><code>        <span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+            <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">,</span> <span class="n">bp</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">bp</span>
 
-            @property
-            def c(self):
-                return self._a + self._b
+            <span class="nd">@property</span>
+            <span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span>
 
 
-        e = Example(1,2)        
-        print(e._a)
-        print(e._b)
-        print(e.c)
-        e._a = 5
-        print(e._a)
-        print(e.c)
-</code></pre>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_a</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_b</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_a</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>
 <p>What</p>
@@ -4046,67 +4011,67 @@ print(e.get_c())
 <p>uses : pattern 1</p>
 </li>
 </ul>
-<pre><code class="language-python">class Example:
-    def __init__(self,ap):
-        self._a = ap
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
 
 
-    @property
-    def a(self):
-        return self._a
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
 
-    @a.setter
-    def a(self, value):
-        self._a = value
+    <span class="nd">@a</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">value</span>
 
-    @a.deleter
-    def a(self):
-        del self._a
+    <span class="nd">@a</span><span class="o">.</span><span class="n">deleter</span>
+    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
 
 
-e = Example(1)        
-print(e.a)
-e.a = 5
-print(e.a)
-del(e.a)
-print(e.a)  #AttributeError: 'Example' object has no attribute '_a'
-</code></pre>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="k">del</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>  <span class="c1">#AttributeError: &#39;Example&#39; object has no attribute &#39;_a&#39;</span>
+</code></pre></div>
 <ul>
 <li>uses : pattern 2</li>
 </ul>
-<pre><code class="language-python">class Example:
-    def __init__(self,ap):
-        self._a = ap
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
 
-    def get_a(self):
-        return self._a
+    <span class="k">def</span> <span class="nf">get_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
 
-    def set_a(self, value):
-        self._a = value
+    <span class="k">def</span> <span class="nf">set_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">value</span>
 
-    def del_a(self):
-        del self._a
+    <span class="k">def</span> <span class="nf">del_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
 
 
-    # will give only get access
-    a = property(fget=get_a)
+    <span class="c1"># will give only get access</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">fget</span><span class="o">=</span><span class="n">get_a</span><span class="p">)</span>
 
-    # will give only set access
-    a = property(fset=set_a)
+    <span class="c1"># will give only set access</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">fset</span><span class="o">=</span><span class="n">set_a</span><span class="p">)</span>
 
-    # will give only del access
-    a = property(fdel=del_a)
+    <span class="c1"># will give only del access</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">fdel</span><span class="o">=</span><span class="n">del_a</span><span class="p">)</span>
 
-    #will give all access of var `a`
-    a = property(get_a, set_a, del_a)  #property(fget=None, fset=None, fdel=None, doc=None)
+    <span class="c1">#will give all access of var `a`</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_a</span><span class="p">,</span> <span class="n">set_a</span><span class="p">,</span> <span class="n">del_a</span><span class="p">)</span>  <span class="c1">#property(fget=None, fset=None, fdel=None, doc=None)</span>
 
-e = Example(1)        
-print(e.a)
-e.a = 5
-print(e.a)
-del(e.a)
-print(e.a) # AttributeError: 'Example' object has no attribute '_a'
-</code></pre>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="k">del</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="c1"># AttributeError: &#39;Example&#39; object has no attribute &#39;_a&#39;</span>
+</code></pre></div>
 <h4 id="descriptors">Descriptors<a class="headerlink" href="#descriptors" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -4133,12 +4098,12 @@ print(e.a) # AttributeError: 'Example' object has no attribute '_a'
 </li>
 </ul>
 <h5 id="protocol">Protocol<a class="headerlink" href="#protocol" title="Permanent link">#</a></h5>
-<pre><code class="language-python">descr.__get__(self, obj, type=None) --&gt; value
+<div class="highlight"><pre><span></span><code><span class="n">descr</span><span class="o">.</span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="n">value</span>
 
-descr.__set__(self, obj, value) --&gt; None
+<span class="n">descr</span><span class="o">.</span><span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="kc">None</span>
 
-descr.__delete__(self, obj) --&gt; None
-</code></pre>
+<span class="n">descr</span><span class="o">.</span><span class="fm">__delete__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="kc">None</span>
+</code></pre></div>
 <ul>
 <li>define any of the above in any class, and object will considered as descriptor<ul>
 <li>and descriptor will override the default attribute lookup behavior (in class dictionary lookup)</li>
@@ -4156,79 +4121,79 @@ descr.__delete__(self, obj) --&gt; None
 <h5 id="simple-implemetation">Simple Implemetation<a class="headerlink" href="#simple-implemetation" title="Permanent link">#</a></h5>
 <p>TODO
     - Issue with <code>__del__</code>; not explained in python doc</p>
-<pre><code class="language-python">class ExampleDescriptor:
-    def __init__(self, val):
-        self.val = val
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleDescriptor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
 
-    def __get__(self, obj, objtype=None):
-        print(&quot;getting&quot;)
-        return self.val
+    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getting&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span>
 
-    def __set__(self, obj, val):
-        print(&quot;setting&quot;)
-        self.val = val
-
-
-class Example:
-    name = ExampleDescriptor(&quot;toran&quot;)
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setting&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
 
 
-if __name__ == &quot;__main__&quot;:
-    e = Example()
-    print(e.name)
-    e.name = &quot;sahu&quot;
-    print(e.name) 
-</code></pre>
+<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">ExampleDescriptor</span><span class="p">(</span><span class="s2">&quot;toran&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sahu&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> 
+</code></pre></div>
 <h5 id="property-implementation">Property implementation<a class="headerlink" href="#property-implementation" title="Permanent link">#</a></h5>
-<pre><code class="language-python">class Property(object):
-    &quot;Emulate PyProperty_Type() in Objects/descrobject.c&quot;
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Property</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s2">&quot;Emulate PyProperty_Type() in Objects/descrobject.c&quot;</span>
 
-    def __init__(self, fget=None, fset=None, fdel=None, doc=None):
-        self.fget = fget
-        self.fset = fset
-        self.fdel = fdel
-        if doc is None and fget is not None:
-            doc = fget.__doc__
-        self.__doc__ = doc
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fget</span> <span class="o">=</span> <span class="n">fget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fset</span> <span class="o">=</span> <span class="n">fset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span> <span class="o">=</span> <span class="n">fdel</span>
+        <span class="k">if</span> <span class="n">doc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">doc</span> <span class="o">=</span> <span class="n">fget</span><span class="o">.</span><span class="vm">__doc__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc</span>
 
-    def __get__(self, obj, objtype=None):
-        if obj is None:
-            return self
-        if self.fget is None:
-            raise AttributeError(&quot;unreadable attribute&quot;)
-        return self.fget(obj)
+    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">objtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fget</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;unreadable attribute&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-    def __set__(self, obj, value):
-        if self.fset is None:
-            raise AttributeError(&quot;can't set attribute&quot;)
-        self.fset(obj, value)
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;can&#39;t set attribute&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fset</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-    def __delete__(self, obj):
-        if self.fdel is None:
-            raise AttributeError(&quot;can't delete attribute&quot;)
-        self.fdel(obj)
+    <span class="k">def</span> <span class="fm">__delete__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;can&#39;t delete attribute&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-    def getter(self, fget):
-        return type(self)(fget, self.fset, self.fdel, self.__doc__)
+    <span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">fget</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 
-    def setter(self, fset):
-        return type(self)(self.fget, fset, self.fdel, self.__doc__)
+    <span class="k">def</span> <span class="nf">setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fset</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fdel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 
-    def deleter(self, fdel):
-        return type(self)(self.fget, self.fset, fdel, self.__doc__)
-</code></pre>
+    <span class="k">def</span> <span class="nf">deleter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fdel</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">fget</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fset</span><span class="p">,</span> <span class="n">fdel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
 <h3 id="ways-to-call-a-class-member-function">Ways to call a class member function<a class="headerlink" href="#ways-to-call-a-class-member-function" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<p><code>python
-a = A()
-a.foo(args)</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p><code>python
-a = A()
-A.foo(a,args)</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">A</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
 <h3 id="__slots__-reduce-ram-usage"><code>__slots__</code> : reduce RAM usage<a class="headerlink" href="#__slots__-reduce-ram-usage" title="Permanent link">#</a></h3>
@@ -4252,28 +4217,28 @@ A.foo(a,args)</code></p>
 <li>A combination of code and scope.</li>
 <li>It's about nested function and the scope of the function</li>
 </ul>
-<p>Code:</p>
-<pre><code class="language-python">def startAt(start):
-    def incrementBy(inc):
-        return start + inc
-    return incrementBy
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">startAt</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">inc</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="n">inc</span>
+    <span class="k">return</span> <span class="n">incrementBy</span>
 
-f = startAt(10)
-g = startAt(100)
-print(f(1), g(2))
+<span class="n">f</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 
-# Using lamba
-def startAt(start):
-    return lambda inc : start + inc
+<span class="c1"># Using lamba</span>
+<span class="k">def</span> <span class="nf">startAt</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">inc</span> <span class="p">:</span> <span class="n">start</span> <span class="o">+</span> <span class="n">inc</span>
 
-f = startAt(10)
-g = startAt(100)
-print(f(1), g(2))
-</code></pre>
-<p>Out:</p>
-<pre><code>11 102
+<span class="n">f</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></p>
+<p>Out:
+<div class="highlight"><pre><span></span><code>11 102
 11 102
-</code></pre>
+</code></pre></div></p>
                 
               
               

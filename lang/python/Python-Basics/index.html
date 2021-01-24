@@ -897,40 +897,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-references-1-from-the-foo-var-and-1-from-getrefcount" class="md-nav__link">
-    2 references, 1 from the foo var and 1 from getrefcount
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-references-the-function-scope-is-destroyed" class="md-nav__link">
-    2 references, the function scope is destroyed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get_count-returns-a-tuple-of-threshold-no-of-objects-allocated-no-of-objects-de-allocated" class="md-nav__link">
-    get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#with-no-arguments-run-a-full-collection" class="md-nav__link">
-    With no arguments, run a full collection
-  </a>
-  
-    <nav class="md-nav" aria-label="With no arguments, run a full collection">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#data-types-in-python" class="md-nav__link">
     Data types in python?
@@ -2186,40 +2152,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-references-1-from-the-foo-var-and-1-from-getrefcount" class="md-nav__link">
-    2 references, 1 from the foo var and 1 from getrefcount
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-references-the-function-scope-is-destroyed" class="md-nav__link">
-    2 references, the function scope is destroyed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get_count-returns-a-tuple-of-threshold-no-of-objects-allocated-no-of-objects-de-allocated" class="md-nav__link">
-    get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#with-no-arguments-run-a-full-collection" class="md-nav__link">
-    With no arguments, run a full collection
-  </a>
-  
-    <nav class="md-nav" aria-label="With no arguments, run a full collection">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#data-types-in-python" class="md-nav__link">
     Data types in python?
@@ -3227,12 +3159,6 @@
 <li><a href="#what-is-pyc-file">What is .pyc file?</a></li>
 <li><a href="#what-is-pyo-file">What is .pyo file?</a></li>
 <li><a href="#memory-management">Memory Management</a></li>
-</ul>
-</li>
-<li><a href="#2-references-1-from-the-foo-var-and-1-from-getrefcount">2 references, 1 from the foo var and 1 from getrefcount</a></li>
-<li><a href="#2-references-the-function-scope-is-destroyed">2 references, the function scope is destroyed</a></li>
-<li><a href="#get_count-returns-a-tuple-of-threshold-no-of-objects-allocated-no-of-objects-de-allocated">get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)</a></li>
-<li><a href="#with-no-arguments-run-a-full-collection">With no arguments, run a full collection</a><ul>
 <li><a href="#data-types-in-python">Data types in python?</a></li>
 <li><a href="#data-structure-in-python">Data structure in python?</a><ul>
 <li><a href="#4-built-in">4 Built in</a></li>
@@ -3433,8 +3359,8 @@
 <li>In computer software and media, an Easter egg is an intentional inside joke, hidden message or image, or secret feature of a work</li>
 </ul>
 <p>The Zen of python can be listed by importing <code>this</code></p>
-<pre><code class="language-python">&gt;&gt;&gt; import this
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">this</span>
+</code></pre></div>
 <h3 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">#</a></h3>
 <ul>
 <li>CPython (Default)</li>
@@ -3588,9 +3514,9 @@
 <li>Cannot handle <strong>reference cycle</strong></li>
 <li>Reference Cycle: When there is no way to reach an object but its reference count is still greater than zero</li>
 <li>e.g.
-    <code>python
-    list1 = []
-    list1.append(list1)</code></li>
+    <div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</code></pre></div></li>
 </ul>
 </li>
 <li>Examples, where the reference count increases:<ul>
@@ -3600,18 +3526,20 @@
 </ul>
 </li>
 </ul>
-<p>```python
-foo = []</p>
-<h2 id="2-references-1-from-the-foo-var-and-1-from-getrefcount">2 references, 1 from the foo var and 1 from getrefcount<a class="headerlink" href="#2-references-1-from-the-foo-var-and-1-from-getrefcount" title="Permanent link">#</a></h2>
-<p>print(sys.getrefcount(foo))</p>
-<p>def bar(a):
-    # 4 references
-    # from the foo var, function argument, getrefcount and Python's function stack
-    print(sys.getrefcount(a))</p>
-<p>bar(foo)</p>
-<h2 id="2-references-the-function-scope-is-destroyed">2 references, the function scope is destroyed<a class="headerlink" href="#2-references-the-function-scope-is-destroyed" title="Permanent link">#</a></h2>
-<p>print(sys.getrefcount(foo))
-```        </p>
+<div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 2 references, 1 from the foo var and 1 from getrefcount</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="c1"># 4 references</span>
+    <span class="c1"># from the foo var, function argument, getrefcount and Python&#39;s function stack</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="c1"># 2 references, the function scope is destroyed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
+</code></pre></div>
 </li>
 <li>
 <p>Garbage Collection</p>
@@ -3643,17 +3571,18 @@ foo = []</p>
 <ul>
 <li>e.g.</li>
 </ul>
-<p>```python
-import gc</p>
-<p>gc.disable()
-obj1 = {"val":1}
-obj2 = {"val":2}
-obj1["obj2"] = obj2
-obj2["obj1"] = obj1
-del obj1, obj2</p>
-<p><code>``
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">gc</span>
+
+<span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="n">obj1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">obj2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;val&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">obj1</span><span class="p">[</span><span class="s2">&quot;obj2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj2</span>
+<span class="n">obj2</span><span class="p">[</span><span class="s2">&quot;obj1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj1</span>
+<span class="k">del</span> <span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span>
+</code></pre></div>
                     - it is most important to identify a memory space whether it is a garbage or not
-- otherwise it will lead to</code>memory leak<code>-</code>memory leak` means, automatically data loss</p>
+- otherwise it will lead to <code>memory leak</code>
+    - <code>memory leak</code> means, automatically data loss</p>
 </li>
 </ul>
 </li>
@@ -3664,16 +3593,14 @@ del obj1, obj2</p>
 <li>
 <p>Note: Automatic garbage collection will not run if your Python device is running out of memory</p>
 </li>
-<li>
-<p>Manual / Explicitly 
-```python
-    import gc</p>
-<h2 id="get_count-returns-a-tuple-of-threshold-no-of-objects-allocated-no-of-objects-de-allocated">get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)<a class="headerlink" href="#get_count-returns-a-tuple-of-threshold-no-of-objects-allocated-no-of-objects-de-allocated" title="Permanent link">#</a></h2>
-<p>print(gc.get_count())</p>
-<h2 id="with-no-arguments-run-a-full-collection">With no arguments, run a full collection<a class="headerlink" href="#with-no-arguments-run-a-full-collection" title="Permanent link">#</a></h2>
-<p>gc.collect()
-        ```</p>
-</li>
+<li>Manual / Explicitly 
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">gc</span>
+
+    <span class="c1"># get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">get_count</span><span class="p">())</span>
+    <span class="c1"># With no arguments, run a full collection</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -3747,19 +3674,19 @@ del obj1, obj2</p>
 <h2 id="data-types">Data Types<a class="headerlink" href="#data-types" title="Permanent link">#</a></h2>
 <h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">#</a></h3>
 <h4 id="string-formatting">String formatting<a class="headerlink" href="#string-formatting" title="Permanent link">#</a></h4>
-<pre><code class="language-python">i = 1
-v = 'a'
-print(&quot;Value at index {0} is {1}&quot;.format(i,v))
-print(&quot;Value at index {} is {}&quot;.format(i,v))
-print(&quot;Value at index %d is %s&quot; % (i,v))
+<div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">v</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{0}</span><span class="s2"> is </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">%d</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
 
-# my favorite way before Python 3.6.4
-emp = {'name':'toran', 'age':26, 'mobile':'8602431733'}
-print(&quot;My name is {name} and I'm {age} years old. You can contact me at {mobile}&quot;.format(**emp))
+<span class="c1"># my favorite way before Python 3.6.4</span>
+<span class="n">emp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;toran&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;mobile&#39;</span><span class="p">:</span><span class="s1">&#39;8602431733&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{name}</span><span class="s2"> and I&#39;m </span><span class="si">{age}</span><span class="s2"> years old. You can contact me at </span><span class="si">{mobile}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">emp</span><span class="p">))</span>
 
-# in Python 3.6.4
-print(f'The value of i is {i} and value of v is {v}')
-</code></pre>
+<span class="c1"># in Python 3.6.4</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of i is </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> and value of v is </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h4 id="what-is-doc-string">What is doc string?<a class="headerlink" href="#what-is-doc-string" title="Permanent link">#</a></h4>
 <ul>
 <li>way of associating document with modules, functions, class, methods</li>
@@ -3825,80 +3752,78 @@ print(f'The value of i is {i} and value of v is {v}')
 </li>
 <li>e.g.</li>
 </ul>
-<pre><code class="language-python">def first_n(n):
-    num = 0
-    while(num &lt; n):
-        yield num
-        num += 1
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">first_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">num</span>
+        <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
 
-for i in first_n(5):
-    print(i)
-
-</code></pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">first_n</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
 <h5 id="list-comprehension">List comprehension<a class="headerlink" href="#list-comprehension" title="Permanent link">#</a></h5>
-<pre><code class="language-python">l = [i for i in range(0,10)]
-print(l)
-</code></pre>
-<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre></div></p>
 <h5 id="list-flattening">List Flattening<a class="headerlink" href="#list-flattening" title="Permanent link">#</a></h5>
-<pre><code class="language-python">l = [[1,2,3], [4,5,6], [7,8,9] ]
-flat_list = [item for sublist in l for item in sublist]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">]</span>
+<span class="n">flat_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+</code></pre></div>
 <p>which is equivalent to </p>
-<pre><code class="language-python">flat_list = []
+<div class="highlight"><pre><span></span><code><span class="n">flat_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-for sublist in l:
-    for item in sublist:
-        flat_list.append(item)
-</code></pre>
+<span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">:</span>
+        <span class="n">flat_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
 <h5 id="randomize-items-of-list-in-place">Randomize items of list in place<a class="headerlink" href="#randomize-items-of-list-in-place" title="Permanent link">#</a></h5>
-<p>Code:</p>
-<pre><code class="language-python">from random import shuffle
-l = [1,2,3,4]
-shuffle(l)
-print(l)
-shuffle(l)
-print(l)
-</code></pre>
-<p>Out:</p>
-<pre><code>[3, 2, 1, 4]
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">shuffle</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">shuffle</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>[3, 2, 1, 4]
 [4, 1, 2, 3]
-</code></pre>
+</code></pre></div></p>
 <h5 id="how-to-insert-an-element-in-between-a-list">How to insert an element in between a list?<a class="headerlink" href="#how-to-insert-an-element-in-between-a-list" title="Permanent link">#</a></h5>
-<p>Code:</p>
-<pre><code class="language-python">l = [1,2,3,5,6,7]
-l.insert(3,4)
-l
-</code></pre>
-<p>Out:</p>
-<pre><code>[1, 2, 3, 4, 5, 6, 7]
-</code></pre>
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">l</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>[1, 2, 3, 4, 5, 6, 7]
+</code></pre></div></p>
 <h5 id="diif-between-append-and-extend-method-in-list">Diif  between append and extend method in list?<a class="headerlink" href="#diif-between-append-and-extend-method-in-list" title="Permanent link">#</a></h5>
 <ul>
 <li>append - appends object at the end</li>
 <li>extend - extends list by appending elements from iterables</li>
 </ul>
-<p>Code:</p>
-<pre><code class="language-python">l = [1,2,3]
-a = [4,5]
-e = [6,7,8]
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 
-l.append(a)
-l.extend(e)
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-print(l)
-</code></pre>
-<p>Out:</p>
-<pre><code>[1, 2, 3, [4, 5], 6, 7, 8]
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>[1, 2, 3, [4, 5], 6, 7, 8]
+</code></pre></div></p>
 <h5 id="enumerate">enumerate()<a class="headerlink" href="#enumerate" title="Permanent link">#</a></h5>
-<pre><code class="language-python">
-for i,v in enumerate(['f','s','t']):
-    print(&quot;Value at index %d is %s&quot; % (i,v))
-    print(&quot;Value at index {0} is {1}&quot; % (i,v))
-    print(&quot;Value at index {} is {}&quot;.format(i,v))
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">%d</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{0}</span><span class="s2"> is </span><span class="si">{1}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+</code></pre></div>
 <h3 id="tuple">Tuple<a class="headerlink" href="#tuple" title="Permanent link">#</a></h3>
 <ul>
 <li>A fixed data structure/type to store objects/data/items</li>
@@ -3915,36 +3840,36 @@ for i,v in enumerate(['f','s','t']):
 <li>use when need to store a db table data and want to maintain column structure</li>
 </ul>
 <h4 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">#</a></h4>
-<pre><code class="language-python">l = [1,2, (3,'a'), 'b', [4,5]]
-t =(1,2,[3,'a'], 'b', (4,5) )
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
+<span class="n">t</span> <span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
 
-#Lets try to make changes in l &amp; t
+<span class="c1">#Lets try to make changes in l &amp; t</span>
 
-# l[2][0] = 1 #does not work
-# l[2] = 3 #works
+<span class="c1"># l[2][0] = 1 #does not work</span>
+<span class="c1"># l[2] = 3 #works</span>
 
-# t[2] = 3 #does not work
-# t[2][0] = 1 #works
-</code></pre>
+<span class="c1"># t[2] = 3 #does not work</span>
+<span class="c1"># t[2][0] = 1 #works</span>
+</code></pre></div>
 <h4 id="expanding-tuple">Expanding Tuple<a class="headerlink" href="#expanding-tuple" title="Permanent link">#</a></h4>
 <ul>
 <li>used to pass tuple elements as function parameter</li>
 </ul>
-<pre><code class="language-python">t = (1,2,3,4,5)
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
-# simple
-def bar(a,b,c,d,e):
-    print(a,b,c,d,e)
+<span class="c1"># simple</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
 
-bar(*t)    
+<span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>    
 
-# in general
-def foo(*args):
-    for arg in args:
-        print(arg)
+<span class="c1"># in general</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
-foo(*t)
-</code></pre>
+<span class="n">foo</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="dictionary">Dictionary<a class="headerlink" href="#dictionary" title="Permanent link">#</a></h3>
 <ul>
 <li>Is map type of data structure which holds a key value pair.</li>
@@ -3963,21 +3888,21 @@ foo(*t)
 </ul>
 <h4 id="dict-comprehension">dict comprehension<a class="headerlink" href="#dict-comprehension" title="Permanent link">#</a></h4>
 <p>Code:</p>
-<pre><code class="language-python">d = {i:i*i for i in range(0,10)}
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
 
-print(d)
-</code></pre>
-<p>Out:</p>
-<pre><code>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+</code></pre></div></p>
 <h4 id="dict-with-order">dict with order<a class="headerlink" href="#dict-with-order" title="Permanent link">#</a></h4>
 <ul>
 <li>maintains the order of elements in which they were inserted</li>
 </ul>
-<pre><code class="language-python">from collections import OrderedDict
-d = OrderedDict({ 2:'second', 1:'first'})
-d.items()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;first&#39;</span><span class="p">})</span>
+<span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
 <h3 id="global-vs-local-vs-non-local-variable">Global vs Local vs Non-Local Variable<a class="headerlink" href="#global-vs-local-vs-non-local-variable" title="Permanent link">#</a></h3>
 <ul>
@@ -3985,59 +3910,59 @@ d.items()
 <li>not same as other languages (by default global)</li>
 <li>by default all are local (if you need, declare global)</li>
 </ul>
-<pre><code class="language-python">def f():
-    s = &quot;I'm local&quot;
-    print(s)
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m local&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-s = &quot;I'm global&quot;
-f()
-print(s)
-</code></pre>
-<p>Out:</p>
-<pre><code>I'm local
-I'm global
-</code></pre>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m global&quot;</span>
+<span class="n">f</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>I&#39;m local
+I&#39;m global
+</code></pre></div></p>
 <h3 id="global-variable">Global Variable<a class="headerlink" href="#global-variable" title="Permanent link">#</a></h3>
 <p>How to access global variable inside a function:</p>
-<pre><code class="language-python">def f():
-    # print(s) #error : cannot access a global variable directly
-    global s # keyword global will give access to outer s
-    s = &quot;I'm local&quot; # value of global s has been changed
-    print(s)
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="c1"># print(s) #error : cannot access a global variable directly</span>
+    <span class="k">global</span> <span class="n">s</span> <span class="c1"># keyword global will give access to outer s</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m local&quot;</span> <span class="c1"># value of global s has been changed</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-s = &quot;I'm global&quot;
-f()
-print(s)
-</code></pre>
-<p>Out:</p>
-<pre><code>I'm local
-I'm local
-</code></pre>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m global&quot;</span>
+<span class="n">f</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>I&#39;m local
+I&#39;m local
+</code></pre></div></p>
 <h4 id="global-variables-in-nested-functions">Global Variables in Nested Functions<a class="headerlink" href="#global-variables-in-nested-functions" title="Permanent link">#</a></h4>
 <ul>
 <li>keyword global inside inner function will not access the upper function level variable</li>
 <li>instead, it will create a variable in <strong>main </strong> scope</li>
 <li>to make it possible there is one more keyword : nonlocal</li>
 </ul>
-<pre><code class="language-python">def f():
-    x = 42
-    def g():
-        global x
-        x = 43
-    print(&quot;Before calling g: &quot; + str(x))
-    print(&quot;Calling g now:&quot;)
-    g()
-    print(&quot;After calling g: &quot; + str(x))
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">43</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before calling g: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling g now:&quot;</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After calling g: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-f()
-print(&quot;x in main: &quot; + str(x))
-</code></pre>
-<p>Out:</p>
-<pre><code>Before calling g: 42
+<span class="n">f</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x in main: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>Before calling g: 42
 Calling g now:
 After calling g: 42
 x in main: 43
-</code></pre>
+</code></pre></div></p>
 <h3 id="local-variable">Local Variable<a class="headerlink" href="#local-variable" title="Permanent link">#</a></h3>
 <ul>
 <li>variable defined inside a function are local to that function</li>
@@ -4049,25 +3974,25 @@ x in main: 43
 <li>can only be used inside of nested functions</li>
 <li>has to be defined in the enclosing/upper function scope</li>
 </ul>
-<pre><code class="language-python">def f():
-    y = 42
-    def g():
-        nonlocal y
-        y = 43
-    print(&quot;Before calling g: &quot; + str(y))
-    print(&quot;Calling g now:&quot;)
-    g()
-    print(&quot;After calling g: &quot; + str(y))
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">y</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">43</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before calling g: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling g now:&quot;</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After calling g: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 
-f()
-print(&quot;y in main: &quot; + str(y)) # this will create error
-</code></pre>
+<span class="n">f</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y in main: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># this will create error</span>
+</code></pre></div>
 <p>Out:</p>
-<pre><code class="language-bash">Before calling g: 42
+<div class="highlight"><pre><span></span><code>Before calling g: <span class="m">42</span>
 Calling g now:
-After calling g: 43
-NameError: name 'y' is not defined
-</code></pre>
+After calling g: <span class="m">43</span>
+NameError: name <span class="s1">&#39;y&#39;</span> is not defined
+</code></pre></div>
 <h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">#</a></h2>
 <h3 id="in"><code>in</code><a class="headerlink" href="#in" title="Permanent link">#</a></h3>
 <ul>
@@ -4139,15 +4064,14 @@ NameError: name 'y' is not defined
 <li><a href="https://www.python.org/dev/peps/pep-0343/">read more</a></li>
 </ul>
 <h5 id="example-1-file-handling">Example #1 : file handling<a class="headerlink" href="#example-1-file-handling" title="Permanent link">#</a></h5>
-<pre><code class="language-python">
-    # automatically acquring `csv.txt` file and does not allows others to acquire it
-    with open('csv.txt', 'r', encoding='utf-8') as f:
-        # do some operations on f
-        # do some operations more on f
-        # if any exception occur, closes the file before exception is caught and shown by interpreter
+<div class="highlight"><pre><span></span><code>    <span class="c1"># automatically acquring `csv.txt` file and does not allows others to acquire it</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="c1"># do some operations on f</span>
+        <span class="c1"># do some operations more on f</span>
+        <span class="c1"># if any exception occur, closes the file before exception is caught and shown by interpreter</span>
 
-    # automatically closed/released `csv.txt` file for others
-</code></pre>
+    <span class="c1"># automatically closed/released `csv.txt` file for others</span>
+</code></pre></div>
 <ul>
 <li><code>with</code> statement opens a file or acquires a resource then do some block of codes </li>
 <li>then closes the file or releases the resource</li>
@@ -4156,31 +4080,28 @@ NameError: name 'y' is not defined
 <li>I/O operation : GIL free</li>
 </ul>
 <h5 id="example-2">Example #2:<a class="headerlink" href="#example-2" title="Permanent link">#</a></h5>
-<pre><code class="language-python">with A() as a, B() as b:
-    suite
-</code></pre>
-<p>is equivalent to</p>
-<pre><code class="language-python">with A() as a:
-    with B() as b:
-        suite
-
-</code></pre>
-<ul>
-<li>thats how, it does not need help of GIL</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span><span class="p">()</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">suite</span>
+</code></pre></div>
+is equivalent to
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">B</span><span class="p">()</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">suite</span>
+</code></pre></div>
+- thats how, it does not need help of GIL</p>
 <h2 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">#</a></h2>
 <h3 id="lambda"><a href="#Lambda">lambda</a><a class="headerlink" href="#lambda" title="Permanent link">#</a></h3>
 <h2 id="operators_1">Operators<a class="headerlink" href="#operators_1" title="Permanent link">#</a></h2>
 <h3 id="ternary-operator">Ternary Operator<a class="headerlink" href="#ternary-operator" title="Permanent link">#</a></h3>
 <p>[on-true] if [expression] else [on-flase]</p>
-<p>Code:</p>
-<pre><code class="language-python">x,y = 23,50
-big = x if x&gt;y else y
-print(big)
-</code></pre>
-<p>Out:</p>
-<pre><code>50
-</code></pre>
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span><span class="mi">50</span>
+<span class="n">big</span> <span class="o">=</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">big</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>50
+</code></pre></div></p>
 <h3 id="operator-overloading-using-magic-methods">[Operator Overloading Using Magic Methods]<a class="headerlink" href="#operator-overloading-using-magic-methods" title="Permanent link">#</a></h3>
 <ul>
 <li>Read in Python-OOPs notebook</li>
@@ -4200,24 +4121,20 @@ print(big)
 </li>
 <li>a built-in function to evaluate the python expression writter in string form</li>
 </ul>
-<pre><code class="language-python">str = &quot;lambda x: x**2&quot;
-square = eval(str)
-square(2)  # returns 4
+<p><div class="highlight"><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;lambda x: x**2&quot;</span>
+<span class="n">square</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># returns 4</span>
 
-str_list = &quot;[1,2,3]&quot;
-eval(str_list)  # returns a list
+<span class="n">str_list</span> <span class="o">=</span> <span class="s2">&quot;[1,2,3]&quot;</span>
+<span class="nb">eval</span><span class="p">(</span><span class="n">str_list</span><span class="p">)</span>  <span class="c1"># returns a list</span>
 
-str_dict = &quot;{'a':1, 'b':[2,3]}&quot;
-eval(str_dict)  # returns a dict
-</code></pre>
-<ul>
-<li>eval takes 3 parameters<ul>
-<li>expression: string</li>
-<li>globals: dict (used for namespace)</li>
-<li>locals: any mapping object</li>
-</ul>
-</li>
-</ul>
+<span class="n">str_dict</span> <span class="o">=</span> <span class="s2">&quot;{&#39;a&#39;:1, &#39;b&#39;:[2,3]}&quot;</span>
+<span class="nb">eval</span><span class="p">(</span><span class="n">str_dict</span><span class="p">)</span>  <span class="c1"># returns a dict</span>
+</code></pre></div>
+- eval takes 3 parameters
+    - expression: string
+    - globals: dict (used for namespace)
+    - locals: any mapping object</p>
 <h3 id="partial"><code>partial()</code><a class="headerlink" href="#partial" title="Permanent link">#</a></h3>
 <ul>
 <li>a closure or a nested function</li>
@@ -4229,15 +4146,15 @@ eval(str_dict)  # returns a dict
 <li><code>partial</code> always takes functions as first parameter</li>
 <li>e.g.</li>
 </ul>
-<pre><code class="language-python">from functools import partial
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 
-def foo(a,b,c=10):
-    print(f&quot;I'm foo with {a}, {b}, and {c}&quot;)
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m foo with </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, and </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-foo_partial = partial(foo, 1, 2)
+<span class="n">foo_partial</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-foo_partial()
-</code></pre>
+<span class="n">foo_partial</span><span class="p">()</span>
+</code></pre></div>
 <h3 id="lambda_1"><code>lambda</code><a class="headerlink" href="#lambda_1" title="Permanent link">#</a></h3>
 <ul>
 <li>format: lambda arg1, arg2, ...argN : expression using arguments</li>
@@ -4245,42 +4162,44 @@ foo_partial()
 <li>single-line <s>statement</s> expression</li>
 <li>in-place function definition</li>
 <li>can be stored in a variable</li>
-<li>syntax: </li>
+<li>syntax: 
+<div class="highlight"><pre><span></span><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+</code></pre></div>
+Scopes:<ul>
+<li>to make Jump Tables</li>
+<li>nested lambda</li>
+<li>loop in lambda using map()</li>
 </ul>
-<pre><code class="language-python">lambda x: return x*x
-</code></pre>
-<p>Scopes:
-    * to make Jump Tables
-    * nested lambda
-    * loop in lambda using map()</p>
+</li>
+</ul>
 <h3 id="map">map()<a class="headerlink" href="#map" title="Permanent link">#</a></h3>
 <ul>
 <li>signature: map(aFunction, aSequence)</li>
 <li>applies a passed-in function to each item in an iterable object</li>
 <li><strong>python2</strong>:returns a list containing all the function call results</li>
 <li><strong>python3</strong>:returns an iterator of type map object</li>
-<li>Syntax</li>
+<li>Syntax
+<div class="highlight"><pre><span></span><code><span class="n">sqrs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrs</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre></div></li>
 </ul>
-<pre><code class="language-python">sqrs = list(map(lambda x: x*x, range(0,10)))
-print(sqrs)
-</code></pre>
-<p>Out:</p>
-<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-</code></pre>
 <h3 id="filter">filter()<a class="headerlink" href="#filter" title="Permanent link">#</a></h3>
 <ul>
 <li>signature: filter(aFunction, aSequence)</li>
 <li>applies a passed-in function to each item in an iterable object</li>
 <li><strong>python2</strong>:returns a list of items for whose <strong> function call returns True</strong></li>
 <li><strong>python3</strong>:returns an iterator of type map object for the items whose <strong> function call returns True</strong></li>
-<li>Syntax</li>
+<li>Syntax
+<div class="highlight"><pre><span></span><code><span class="n">evens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">evens</span><span class="p">)</span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>[0, 2, 4, 6, 8]
+</code></pre></div></li>
 </ul>
-<pre><code class="language-python">evens = list(filter(lambda x: x%2 == 0, range(0,10)))
-print(evens)
-</code></pre>
-<p>Out:</p>
-<pre><code>[0, 2, 4, 6, 8]
-</code></pre>
 <h3 id="reduce">reduce()<a class="headerlink" href="#reduce" title="Permanent link">#</a></h3>
 <p>(Dropped out in Python 3.x)
 * signature: filter(aFunction, aSequence)
@@ -4289,18 +4208,18 @@ print(evens)
 * <strong>python3</strong>: dropped out</p>
 <p><img src="https://www.python-course.eu/images/reduce.png"></p>
 <h3 id="zip">zip()<a class="headerlink" href="#zip" title="Permanent link">#</a></h3>
-<pre><code class="language-python">list1 = ['A',
-'B','C'] and list2 = [10,20,30].
-zip(list1, list2) # results in a list of tuples say [('A',10),('B',20),('C',30)]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span><span class="o">.</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span> <span class="c1"># results in a list of tuples say [(&#39;A&#39;,10),(&#39;B&#39;,20),(&#39;C&#39;,30)]</span>
+</code></pre></div>
 <h4 id="inverse-a-matrix-listtuple">Inverse a Matrix (list/tuple)<a class="headerlink" href="#inverse-a-matrix-listtuple" title="Permanent link">#</a></h4>
-<pre><code class="language-python">m = [[1,2,3,4],
-     [5,6,7,8],
-     [9,10,11,12]
-    ]
+<div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+    <span class="p">]</span>
 
-m_inverse = list(zip(*m))   # here *m is expanding of list/tuple, mostly used in passing tuple as func parameters
-</code></pre>
+<span class="n">m_inverse</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">m</span><span class="p">))</span>   <span class="c1"># here *m is expanding of list/tuple, mostly used in passing tuple as func parameters</span>
+</code></pre></div>
 <h3 id="decorators">Decorators<a class="headerlink" href="#decorators" title="Permanent link">#</a></h3>
 <ul>
 <li>are a thin wrapper arround any function or any class<ul>
@@ -4332,10 +4251,10 @@ m_inverse = list(zip(*m))   # here *m is expanding of list/tuple, mostly used in
 <ul>
 <li>The way we have defined decorators so far hasn't taken into account that the attributes</li>
 </ul>
-<p><code>python
-    __name__ (name of the function),
-    __doc__ (the docstring) and
-    __module__ (The module in which the function is defined)</code> </p>
+<div class="highlight"><pre><span></span><code>    <span class="vm">__name__</span> <span class="p">(</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span><span class="p">),</span>
+    <span class="vm">__doc__</span> <span class="p">(</span><span class="n">the</span> <span class="n">docstring</span><span class="p">)</span> <span class="ow">and</span>
+    <span class="vm">__module__</span> <span class="p">(</span><span class="n">The</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">the</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">defined</span><span class="p">)</span> 
+</code></pre></div>
 <p>of the original functions will be lost after the decoration. </p>
 </li>
 </ul>
@@ -4344,29 +4263,27 @@ m_inverse = list(zip(*m))   # here *m is expanding of list/tuple, mostly used in
 <p>simplest form of e.g. to create a custom decorator is:</p>
 </li>
 </ul>
-<pre><code class="language-python">def exec_time(some_func):
-    print('this is start time')
-    some_func()
-    print('this is end time')
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">exec_time</span><span class="p">(</span><span class="n">some_func</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is start time&#39;</span><span class="p">)</span>
+    <span class="n">some_func</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is end time&#39;</span><span class="p">)</span>
 
 
-@exec_time
-def foo():
-    print('running foo')    
-</code></pre>
-<ul>
-<li>gist: https://gist.github.com/toransahu/7ac4c7f139e78d15b74ca0ce6e17cf85</li>
-</ul>
+<span class="nd">@exec_time</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;running foo&#39;</span><span class="p">)</span>    
+</code></pre></div>
+- gist: https://gist.github.com/toransahu/7ac4c7f139e78d15b74ca0ce6e17cf85</p>
 <h3 id="nested-function">Nested function<a class="headerlink" href="#nested-function" title="Permanent link">#</a></h3>
-<pre><code class="language-python">def outer_func():
-  x = 5
-  def inner_func(y = 3):
-    return (x + y)
-  return inner_func
-a = outer_func()
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+  <span class="k">def</span> <span class="nf">inner_func</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">inner_func</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">outer_func</span><span class="p">()</span>
 
-print(a())  # 8
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">())</span>  <span class="c1"># 8</span>
+</code></pre></div>
 <h4 id="closures">Closures<a class="headerlink" href="#closures" title="Permanent link">#</a></h4>
 <ul>
 <li>is a concept - not a function<ul>
@@ -4385,19 +4302,19 @@ print(a())  # 8
 <li>Function Factory takes in argument(s), creates local function that creates its own argument(s) and also uses the argument(s) passed to the function factory</li>
 <li>this is possible with closures</li>
 </ul>
-<pre><code class="language-python">def multiply_by(num):
-  def multiply_by_num(k):
-    return num * k
-  return multiply_by_num
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">multiply_by</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">multiply_by_num</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">k</span>
+  <span class="k">return</span> <span class="n">multiply_by_num</span>
 
-five = multiply_by(5)
-print(five(2))  # 10
-print(five(4))  # 20
+<span class="n">five</span> <span class="o">=</span> <span class="n">multiply_by</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">five</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">five</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 20</span>
 
-decimal = multiply_by(10)
-print(decimal(20))  # 200
-print(decimal(3))   # 30
-</code></pre>
+<span class="n">decimal</span> <span class="o">=</span> <span class="n">multiply_by</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>  <span class="c1"># 200</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>   <span class="c1"># 30</span>
+</code></pre></div>
 <h3 id="parameter-passing-in-python">Parameter passing in python<a class="headerlink" href="#parameter-passing-in-python" title="Permanent link">#</a></h3>
 <h4 id="passed-as">Passed As<a class="headerlink" href="#passed-as" title="Permanent link">#</a></h4>
 <ul>
@@ -4407,13 +4324,13 @@ print(decimal(3))   # 30
 <h4 id="default-parameters">Default Parameters<a class="headerlink" href="#default-parameters" title="Permanent link">#</a></h4>
 <ul>
 <li>Non-default parameters comes before default parameters</li>
-<li>following will give <code>SyntaxError</code></li>
+<li>following will give <code>SyntaxError</code>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>SyntaxError: non-default argument follows default argument
+</code></pre></div></li>
 </ul>
-<pre><code class="language-python">def add(a, b=3, c):
-    return a+b+c
-</code></pre>
-<pre><code>SyntaxError: non-default argument follows default argument
-</code></pre>
 <h4 id="variable-number-of-parameters">Variable Number of Parameters<a class="headerlink" href="#variable-number-of-parameters" title="Permanent link">#</a></h4>
 <ul>
 <li><code>*args</code></li>
@@ -4421,20 +4338,18 @@ print(decimal(3))   # 30
 </ul>
 <h2 id="exception-handling">Exception Handling<a class="headerlink" href="#exception-handling" title="Permanent link">#</a></h2>
 <ul>
-<li>Syntax:</li>
-</ul>
-<pre><code class="language-python">try:
-    # do something 
-except IOError as e:
-    # handle
-except ValueError:
-    # handle
-except:
-    # handle
-finally:
-    # do final work
-</code></pre>
-<ul>
+<li>Syntax:
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># do something </span>
+<span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># handle</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="c1"># handle</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># handle</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># do final work</span>
+</code></pre></div></li>
 <li>can also put an else block after all the except block (will be executed if no exception occurs)</li>
 </ul>
 <h4 id="inbuilt-exceptions">Inbuilt Exceptions<a class="headerlink" href="#inbuilt-exceptions" title="Permanent link">#</a></h4>
@@ -4485,9 +4400,10 @@ finally:
 <h5 id="syntaxerror">SyntaxError<a class="headerlink" href="#syntaxerror" title="Permanent link">#</a></h5>
 <ul>
 <li>when parser encounters some syntax error
-    <code>python
-    print 1</code>
-    <code>SyntaxError: Missing parentheses in call to 'print'</code></li>
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="mi">1</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code>SyntaxError: Missing parentheses in call to &#39;print&#39;
+</code></pre></div></li>
 </ul>
 <h5 id="typeerror">TypeError<a class="headerlink" href="#typeerror" title="Permanent link">#</a></h5>
 <ul>
@@ -4495,9 +4411,10 @@ finally:
 <li>e.g.<ul>
 <li>when index is not an int</li>
 <li>addition of int + str
-<code>python
-a = 1 + 'abc'</code>
-<code>TypeError: unsupported operand type(s) for +: 'int' and 'str'</code></li>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;abc&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -4508,9 +4425,10 @@ a = 1 + 'abc'</code>
 <h5 id="valueerror">ValueError<a class="headerlink" href="#valueerror" title="Permanent link">#</a></h5>
 <ul>
 <li>when a built-in operations or function receives an argument that has the right type but an inappropriate value.
-    <code>python
-    int('abc')</code>
-    <code>ValueError: invalid literal for int() with base 10: 'abc'</code></li>
+    <div class="highlight"><pre><span></span><code><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code>ValueError: invalid literal for int() with base 10: &#39;abc&#39;
+</code></pre></div></li>
 </ul>
 <h5 id="zerodivisionerror">ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permanent link">#</a></h5>
 <ul>
@@ -4522,19 +4440,19 @@ a = 1 + 'abc'</code>
 <li>inherit the <code>Exception</code> class</li>
 <li>syntax:</li>
 </ul>
-<pre><code class="language-python"># define Python user-defined exceptions
-class Error(Exception):
-   &quot;&quot;&quot;Base class for other exceptions&quot;&quot;&quot;
-   pass
+<div class="highlight"><pre><span></span><code><span class="c1"># define Python user-defined exceptions</span>
+<span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Base class for other exceptions&quot;&quot;&quot;</span>
+   <span class="k">pass</span>
 
-class ValueTooSmallError(Error):
-   &quot;&quot;&quot;Raised when the input value is too small&quot;&quot;&quot;
-   pass
+<span class="k">class</span> <span class="nc">ValueTooSmallError</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Raised when the input value is too small&quot;&quot;&quot;</span>
+   <span class="k">pass</span>
 
-class ValueTooLargeError(Error):
-   &quot;&quot;&quot;Raised when the input value is too large&quot;&quot;&quot;
-   pass
-</code></pre>
+<span class="k">class</span> <span class="nc">ValueTooLargeError</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Raised when the input value is too large&quot;&quot;&quot;</span>
+   <span class="k">pass</span>
+</code></pre></div>
 <h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">#</a></h2>
 <ul>
 <li>https://wiki.python.org/moin/TimeComplexity</li>
@@ -4545,26 +4463,26 @@ class ValueTooLargeError(Error):
 <li><code>==</code> compares for values</li>
 <li>i.e. checks that 2 arguments have the same value</li>
 </ul>
-<pre><code class="language-python">l1 = [1,2,3]
-l2 = l1
-l3 = [1,2,3]
+<div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 
-l1 == l2  # returns True
-l1 == l3  # returns True
-l3 == l2  # returns True
-</code></pre>
+<span class="n">l1</span> <span class="o">==</span> <span class="n">l2</span>  <span class="c1"># returns True</span>
+<span class="n">l1</span> <span class="o">==</span> <span class="n">l3</span>  <span class="c1"># returns True</span>
+<span class="n">l3</span> <span class="o">==</span> <span class="n">l2</span>  <span class="c1"># returns True</span>
+</code></pre></div>
 <ul>
 <li><code>is</code> checks if <code>operand1</code> is exact copy of <code>operand2</code></li>
 <li>i.e. checks that 2 arguments refer to the same object</li>
 </ul>
-<pre><code class="language-python">l1 = [1,2,3]
-l2 = l1
-l3 = [1,2,3]
+<div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 
-l1 is l2  # returns True
-l1 is l3  # returns False
-l3 is l2  # returns False
-</code></pre>
+<span class="n">l1</span> <span class="ow">is</span> <span class="n">l2</span>  <span class="c1"># returns True</span>
+<span class="n">l1</span> <span class="ow">is</span> <span class="n">l3</span>  <span class="c1"># returns False</span>
+<span class="n">l3</span> <span class="ow">is</span> <span class="n">l2</span>  <span class="c1"># returns False</span>
+</code></pre></div>
 <h3 id="pickling-unpickling">Pickling Unpickling<a class="headerlink" href="#pickling-unpickling" title="Permanent link">#</a></h3>
 <h4 id="pickling">Pickling<a class="headerlink" href="#pickling" title="Permanent link">#</a></h4>
 <ul>
@@ -4596,22 +4514,22 @@ l3 is l2  # returns False
 <ul>
 <li>for testing purpose, replace a function which calls a heavy API with a dummy one</li>
 </ul>
-<p>Code:</p>
-<pre><code class="language-python">class MyClass:
-    def f(self):
-        print(&quot;f()&quot;)
+<p>Code:
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f()&quot;</span><span class="p">)</span>
 
-def monkey_f(self):
-    print(&quot;monkey_f()&quot;)
+<span class="k">def</span> <span class="nf">monkey_f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;monkey_f()&quot;</span><span class="p">)</span>
 
-MyClass.f = monkey_f
-obj = MyClass()
-obj.f() # here, definition of f has been replace with def of monkey_f
-#obj.monkey_f()        
-</code></pre>
-<p>Out:</p>
-<pre><code>monkey_f()
-</code></pre>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">monkey_f</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">f</span><span class="p">()</span> <span class="c1"># here, definition of f has been replace with def of monkey_f</span>
+<span class="c1">#obj.monkey_f()        </span>
+</code></pre></div>
+Out:
+<div class="highlight"><pre><span></span><code>monkey_f()
+</code></pre></div></p>
 <h3 id="duck-typing">Duck Typing<a class="headerlink" href="#duck-typing" title="Permanent link">#</a></h3>
 <ul>
 <li>EAFP: Easier to Ask Forgiveness than Permission</li>
@@ -4646,32 +4564,32 @@ The difference between shallow and deep copying is only relevant for compound ob
 <li>A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the deforiginal.</li>
 <li>slow downs programs</li>
 </ul>
-<pre><code class="language-python">print(&quot;Regular reference Example\n&quot;)
-print(&quot;Ops on mutable&quot;)
-l1 = [1,2,3]
-l2 = l1 # l2 have reference of l1
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular reference Example</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ops on mutable&quot;</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span> <span class="c1"># l2 have reference of l1</span>
 
-# changes in regular reference affects original data
-l2.append(4)
-print(&quot;l1 =&quot;, l1)
-print(&quot;l2 =&quot;, l2)
-print(&quot;id(l1) =&quot;, id(l1))
-print(&quot;id(l2) =&quot;, id(l2))
+<span class="c1"># changes in regular reference affects original data</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l1 =&quot;</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l2 =&quot;</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l1) =&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l2) =&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l2</span><span class="p">))</span>
 
-print(&quot;Ops on Immutable&quot;)
-s1 = &quot;abcd&quot;
-s2 = s1
-print(id(s1))
-print(id(s2))
-print(s1)
-print(s2)
-s1 = &quot;efgh&quot;
-print(id(s1))
-print(id(s2))
-print(s1,s2)
-</code></pre>
-<p>Out:</p>
-<pre><code>Regular reference Example
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ops on Immutable&quot;</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;abcd&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;efgh&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">)</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Regular reference Example
 
 Ops on mutable
 l1 = [1, 2, 3, 4]
@@ -4686,36 +4604,35 @@ abcd
 140486838172784
 140486838172392
 efgh abcd
-</code></pre>
-<pre><code class="language-python">print(&quot;\nShallow Copy Example - Manual\n&quot;)
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - Manual</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-l0= [1,2,3]
-l3 = [1,l0]
-l4 = list(l3)
+<span class="n">l0</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">l0</span><span class="p">]</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
 
-print(&quot;l3 = &quot;,l3)
-print(&quot;l4 = &quot;, l4)
-print(&quot;id(l3) =&quot;,id(l3))
-print(&quot;id(l4) = &quot;, id(l4))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 = &quot;</span><span class="p">,</span><span class="n">l3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l4 = &quot;</span><span class="p">,</span> <span class="n">l4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l3) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l4) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l4</span><span class="p">))</span>
 
-print(&quot;l3 == l4&quot;,l3 == l4) #checks value-wise
-print(&quot;l3 is l4&quot;,l3 is l4) #checks object identity-wise
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 == l4&quot;</span><span class="p">,</span><span class="n">l3</span> <span class="o">==</span> <span class="n">l4</span><span class="p">)</span> <span class="c1">#checks value-wise</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 is l4&quot;</span><span class="p">,</span><span class="n">l3</span> <span class="ow">is</span> <span class="n">l4</span><span class="p">)</span> <span class="c1">#checks object identity-wise</span>
 
-print(&quot;id(l3[1]) =&quot;,id(l3[1]))
-print(&quot;id(l4[1]) = &quot;,id(l4[1]))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l3[1]) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l4[1]) = &quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-print(&quot;l3[1] == l4[1]&quot;, l3[1] == l4[1])
-print(&quot;l3[1] is l4[1]&quot;, l3[1] is l4[1])
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3[1] == l4[1]&quot;</span><span class="p">,</span> <span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3[1] is l4[1]&quot;</span><span class="p">,</span> <span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-print(&quot;Size of l3 = &quot;,sys.getsizeof(l3))
-print(&quot;Size of l4 = &quot;,sys.getsizeof(l4))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">))</span>
 
-print(&quot;Size of l3[1] = &quot;,sys.getsizeof(l3[1]))
-print(&quot;Size of l4[1] = &quot;,sys.getsizeof(l4[1]))
-</code></pre>
-<p>Out:</p>
-<pre><code>
-Shallow Copy Example - Manual
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Shallow Copy Example - Manual
 
 l3 =  [1, [1, 2, 3]]
 l4 =  [1, [1, 2, 3]]
@@ -4737,9 +4654,8 @@ NameError                                 Traceback (most recent call last)
      22 print(&quot;Size of l4 = &quot;,sys.getsizeof(l4))
      23 
 
-NameError: name 'sys' is not defined
-
-</code></pre>
+NameError: name &#39;sys&#39; is not defined
+</code></pre></div></p>
 <p>Here,
 * values of l3 and l4 are same
 * but ids of l3 and l4 are different
@@ -4747,38 +4663,36 @@ NameError: name 'sys' is not defined
 * the id of l3[1] &amp; l4[1] are same, means changes in l4[0] will affect l3[0].
 * sizes of l3 &amp; l4 are different
 * sizes of l3[1] &amp; l4[1] are different</p>
-<pre><code class="language-python">print(&quot;\nShallow Copy Example - copy.copy()&quot;)
-import copy
-import sys
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - copy.copy()&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-l3 = [1,l0]
-l4 = copy.copy(l3) 
-# some value of l3 are copied to l4 and reference of some are passed to l4
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">l0</span><span class="p">]</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span> 
+<span class="c1"># some value of l3 are copied to l4 and reference of some are passed to l4</span>
 
-print(&quot;l3 = &quot;,l3)
-print(&quot;l4 = &quot;, l4)
-print(&quot;id(l3) =&quot;,id(l3))
-print(&quot;id(l4) = &quot;, id(l4))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 = &quot;</span><span class="p">,</span><span class="n">l3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l4 = &quot;</span><span class="p">,</span> <span class="n">l4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l3) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l4) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l4</span><span class="p">))</span>
 
-print(&quot;l3 == l4&quot;,l3 == l4) #checks value-wise
-print(&quot;l3 is l4&quot;,l3 is l4) #checks object identity-wise
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 == l4&quot;</span><span class="p">,</span><span class="n">l3</span> <span class="o">==</span> <span class="n">l4</span><span class="p">)</span> <span class="c1">#checks value-wise</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3 is l4&quot;</span><span class="p">,</span><span class="n">l3</span> <span class="ow">is</span> <span class="n">l4</span><span class="p">)</span> <span class="c1">#checks object identity-wise</span>
 
-print(&quot;id(l3[1]) =&quot;,id(l3[1]))
-print(&quot;id(l4[1]) = &quot;,id(l4[1]))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l3[1]) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l4[1]) = &quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-print(&quot;l3[1] == l4[1]&quot;, l3[1] == l4[1])
-print(&quot;l3[1] is l4[1]&quot;, l3[1] is l4[1])
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3[1] == l4[1]&quot;</span><span class="p">,</span> <span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3[1] is l4[1]&quot;</span><span class="p">,</span> <span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-print(&quot;Size of l3 = &quot;,sys.getsizeof(l3))
-print(&quot;Size of l4 = &quot;,sys.getsizeof(l4))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">))</span>
 
-print(&quot;Size of l3[1] = &quot;,sys.getsizeof(l3[1]))
-print(&quot;Size of l4[1] = &quot;,sys.getsizeof(l4[1]))
-
-</code></pre>
-<p>Out:</p>
-<pre><code>
-Shallow Copy Example - copy.copy()
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Shallow Copy Example - copy.copy()
 l3 =  [1, [1, 2, 3]]
 l4 =  [1, [1, 2, 3]]
 id(l3) = 140486838153032
@@ -4793,43 +4707,42 @@ Size of l3 =  80
 Size of l4 =  104
 Size of l3[1] =  88
 Size of l4[1] =  88
-</code></pre>
-<p>Here,
+</code></pre></div>
+Here,
 * Results are same as Manual shallow copy.</p>
 <p>Except,
 * sizes of l3 &amp; l4 are different
 * sizes of l3[1] &amp; l4[1] are same</p>
-<pre><code class="language-python">print(&quot;\nDeep Copy Example - Manual&quot;)
-import copy
-import sys
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - Manual&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-l5 = [1,l0]
-l6 = [1, list(l0)]
-# all value of l5 are copied to l6
+<span class="n">l5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">l0</span><span class="p">]</span>
+<span class="n">l6</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">l0</span><span class="p">)]</span>
+<span class="c1"># all value of l5 are copied to l6</span>
 
-print(&quot;l5 = &quot;,l5)
-print(&quot;l6 = &quot;, l6)
-print(&quot;id(l5) =&quot;,id(l5))
-print(&quot;id(l6) = &quot;, id(l6))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 = &quot;</span><span class="p">,</span><span class="n">l5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l6 = &quot;</span><span class="p">,</span> <span class="n">l6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l5) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l6) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l6</span><span class="p">))</span>
 
-print(&quot;l5 == l6&quot;,l5 == l6) #checks value-wise
-print(&quot;l5 is l6&quot;,l5 is l6) #checks object identity-wise
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 == l6&quot;</span><span class="p">,</span><span class="n">l5</span> <span class="o">==</span> <span class="n">l6</span><span class="p">)</span> <span class="c1">#checks value-wise</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 is l6&quot;</span><span class="p">,</span><span class="n">l5</span> <span class="ow">is</span> <span class="n">l6</span><span class="p">)</span> <span class="c1">#checks object identity-wise</span>
 
-print(&quot;id(l5[1]) =&quot;,id(l5[1]))
-print(&quot;id(l6[1]) = &quot;,id(l6[1]))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l5[1]) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l6[1]) = &quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-print(&quot;l5[1] == l6[1]&quot;, l5[1] == l6[1])
-print(&quot;l5[1] is l6[1]&quot;, l5[1] is l6[1])
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5[1] == l6[1]&quot;</span><span class="p">,</span> <span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5[1] is l6[1]&quot;</span><span class="p">,</span> <span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-print(&quot;Size of l5 = &quot;,sys.getsizeof(l5))
-print(&quot;Size of l6 = &quot;,sys.getsizeof(l6))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">))</span>
 
-print(&quot;Size of l5[1] = &quot;,sys.getsizeof(l5[1]))
-print(&quot;Size of l6[1] = &quot;,sys.getsizeof(l6[1]))
-
-</code></pre>
-<p>Out:</p>
-<pre><code>Deep Copy Example - Manual
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+<p>Out:
+<div class="highlight"><pre><span></span><code>Deep Copy Example - Manual
 l5 =  [1, [1, 2, 3]]
 l6 =  [1, [1, 2, 3]]
 id(l5) = 140486838605384
@@ -4844,7 +4757,7 @@ Size of l5 =  80
 Size of l6 =  80
 Size of l5[1] =  88
 Size of l6[1] =  112
-</code></pre>
+</code></pre></div></p>
 <p>Here,
 * values of l5 and l6 are same
 * but ids of l5 and l6 are different
@@ -4852,37 +4765,36 @@ Size of l6[1] =  112
 * the id of l5[1] &amp; l6[1] are different, means changes in l6[0] will not affect l5[0]
 * sizes of l5 &amp; l6 are same
 * sizes of l5[1] &amp; l6[1] are different</p>
-<pre><code class="language-python">print(&quot;\nDeep Copy Example - copy.deepcopy()&quot;)
-import copy
-import sys
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - copy.deepcopy()&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-l5 = [1,l0]
-l6 = copy.deepcopy(l5)
-# all value of l5 are copied to l6
+<span class="n">l5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">l0</span><span class="p">]</span>
+<span class="n">l6</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">l5</span><span class="p">)</span>
+<span class="c1"># all value of l5 are copied to l6</span>
 
-print(&quot;l5 = &quot;,l5)
-print(&quot;l6 = &quot;, l6)
-print(&quot;id(l5) =&quot;,id(l5))
-print(&quot;id(l6) = &quot;, id(l6))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 = &quot;</span><span class="p">,</span><span class="n">l5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l6 = &quot;</span><span class="p">,</span> <span class="n">l6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l5) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l6) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l6</span><span class="p">))</span>
 
-print(&quot;l5 == l6&quot;,l5 == l6) #checks value-wise
-print(&quot;l5 is l6&quot;,l5 is l6) #checks object identity-wise
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 == l6&quot;</span><span class="p">,</span><span class="n">l5</span> <span class="o">==</span> <span class="n">l6</span><span class="p">)</span> <span class="c1">#checks value-wise</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5 is l6&quot;</span><span class="p">,</span><span class="n">l5</span> <span class="ow">is</span> <span class="n">l6</span><span class="p">)</span> <span class="c1">#checks object identity-wise</span>
 
-print(&quot;id(l5[1]) =&quot;,id(l5[1]))
-print(&quot;id(l6[1]) = &quot;,id(l6[1]))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l5[1]) =&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(l6[1]) = &quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-print(&quot;l5[1] == l6[1]&quot;, l5[1] == l6[1])
-print(&quot;l5[1] is l6[1]&quot;, l5[1] is l6[1])
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5[1] == l6[1]&quot;</span><span class="p">,</span> <span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l5[1] is l6[1]&quot;</span><span class="p">,</span> <span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-print(&quot;Size of l5 = &quot;,sys.getsizeof(l5))
-print(&quot;Size of l6 = &quot;,sys.getsizeof(l6))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6 = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">))</span>
 
-print(&quot;Size of l5[1] = &quot;,sys.getsizeof(l5[1]))
-print(&quot;Size of l6[1] = &quot;,sys.getsizeof(l6[1]))
-
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
 <p>Out:</p>
-<pre><code>Deep Copy Example - copy.deepcopy()
+<div class="highlight"><pre><span></span><code>Deep Copy Example - copy.deepcopy()
 l5 =  [1, [1, 2, 3]]
 l6 =  [1, [1, 2, 3]]
 id(l5) = 140486838138056
@@ -4897,7 +4809,7 @@ Size of l5 =  80
 Size of l6 =  96
 Size of l5[1] =  88
 Size of l6[1] =  96
-</code></pre>
+</code></pre></div>
 <p>Here, 
 * Results are same as Manual Deep copy. </p>
 <p>Except,

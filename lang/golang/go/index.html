@@ -3164,15 +3164,13 @@
 </ul>
 </li>
 <li>string literal that uses \xNN notation to define a string constant holding some peculiar byte values    <ul>
-<li>Of course, bytes range from hexadecimal values 00 through FF, inclusive</li>
+<li>Of course, bytes range from hexadecimal values 00 through FF, inclusive
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sample</span> <span class="p">=</span> <span class="s">&quot;\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98&quot;</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sample</span><span class="p">)</span> <span class="c1">// out: ��=� ⌘</span>
+<span class="c1">//  in our sample string are not valid ASCII, not even valid UTF-8, printing the string directly will produce ugly output</span>
+</code></pre></div></li>
 </ul>
 </li>
-</ul>
-<pre><code class="language-go">const sample = &quot;\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98&quot;
-fmt.Println(sample) // out: ��=� ⌘
-//  in our sample string are not valid ASCII, not even valid UTF-8, printing the string directly will produce ugly output
-</code></pre>
-<ul>
 <li><em>NOTE</em>: indexing/iterating over string gives bytes and not characters in Go</li>
 </ul>
 <h4 id="utf-8-and-string-literals">UTF-8 and string literals<a class="headerlink" href="#utf-8-and-string-literals" title="Permanent link">#</a></h4>
@@ -3182,17 +3180,16 @@ fmt.Println(sample) // out: ��=� ⌘
 </ul>
 </li>
 </ul>
-<pre><code class="language-go">const placeOfInterest = `⌘`
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">placeOfInterest</span> <span class="p">=</span> <span class="s">`⌘`</span>
 
-fmt.Printf(&quot;%s&quot;, placeOfInterest) // plain string: ⌘
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="nx">placeOfInterest</span><span class="p">)</span> <span class="c1">// plain string: ⌘</span>
 
-fmt.Printf(&quot;%+q&quot;, placeOfInterest) // quoted string: &quot;\u2318&quot;
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%+q&quot;</span><span class="p">,</span> <span class="nx">placeOfInterest</span><span class="p">)</span> <span class="c1">// quoted string: &quot;\u2318&quot;</span>
 
-for i := 0; i &lt; len(placeOfInterest); i++ {
-    fmt.Printf(&quot;%x &quot;, placeOfInterest[i])  // hex bytes: e2 8c 98
-}
-
-</code></pre>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">placeOfInterest</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%x &quot;</span><span class="p">,</span> <span class="nx">placeOfInterest</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>  <span class="c1">// hex bytes: e2 8c 98</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><em>NOTE</em>:<ul>
 <li>Source code in Go is defined to be UTF-8 text; no other representation is allowed</li>
@@ -3239,53 +3236,53 @@ or à == B</p>
 </ul>
 <h2 id="data-structure">Data Structure<a class="headerlink" href="#data-structure" title="Permanent link">#</a></h2>
 <h3 id="array">Array<a class="headerlink" href="#array" title="Permanent link">#</a></h3>
-<pre><code class="language-go">var a [5]int
-fmt.Println(&quot;emp:&quot;, a)
-a[4] = 100
-fmt.Println(&quot;set:&quot;, a)
-fmt.Println(&quot;get:&quot;, a[4])
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;emp:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">=</span> <span class="mi">100</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;set:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;get:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
 <h3 id="slice">Slice<a class="headerlink" href="#slice" title="Permanent link">#</a></h3>
-<pre><code class="language-go">s := make([]string, 3)
-fmt.Println(&quot;emp:&quot;, s)
+<div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;emp:&quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
 
-s[0] = &quot;a&quot;
-s[1] = &quot;b&quot;
-s[2] = &quot;c&quot;
-fmt.Println(&quot;set:&quot;, s)
+<span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;a&quot;</span>
+<span class="nx">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;b&quot;</span>
+<span class="nx">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;c&quot;</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;set:&quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
 
-fmt.Println(&quot;get:&quot;, s[2])
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;get:&quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-fmt.Println(&quot;len:&quot;, len(s))
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;len:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span>
 
-s = append(s, &quot;d&quot;)
-s = append(s, &quot;e&quot;, &quot;f&quot;)
+<span class="nx">s</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">)</span>
+<span class="nx">s</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">)</span>
 
-c := make([]string, len(s))
-copy(c, s)
+<span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span>
+<span class="nb">copy</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
 
-l := s[2:5]
+<span class="nx">l</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 
-t := []string{&quot;g&quot;, &quot;h&quot;, &quot;i&quot;}
+<span class="nx">t</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;g&quot;</span><span class="p">,</span> <span class="s">&quot;h&quot;</span><span class="p">,</span> <span class="s">&quot;i&quot;</span><span class="p">}</span>
 
-// TODO: len vs size??
-</code></pre>
+<span class="c1">// TODO: len vs size??</span>
+</code></pre></div>
 <h3 id="map">Map<a class="headerlink" href="#map" title="Permanent link">#</a></h3>
-<pre><code class="language-go">m := make(map[string]int)
+<div class="highlight"><pre><span></span><code><span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
 
-m[&quot;k1&quot;] = 7
-v1 := m[&quot;k1&quot;]
+<span class="nx">m</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">7</span>
+<span class="nx">v1</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span>
 
-fmt.Println(&quot;len:&quot;, len(m))
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;len:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">m</span><span class="p">))</span>
 
-delete(m, &quot;k2&quot;)  // no error
+<span class="nb">delete</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="s">&quot;k2&quot;</span><span class="p">)</span>  <span class="c1">// no error</span>
 
-isThere, value := m[&quot;k2&quot;] // out: false, 0
-isThere, value := m[&quot;k1&quot;] // out: true, 7
+<span class="nx">isThere</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&quot;k2&quot;</span><span class="p">]</span> <span class="c1">// out: false, 0</span>
+<span class="nx">isThere</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span> <span class="c1">// out: true, 7</span>
 
-n := map[string]int{&quot;foo&quot;: 1, &quot;bar&quot;: 2}
-n := map[string]interface{}{&quot;foo&quot;: 1, &quot;bar&quot;: &quot;some string&quot;}
-</code></pre>
+<span class="nx">n</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="nx">n</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">:</span> <span class="s">&quot;some string&quot;</span><span class="p">}</span>
+</code></pre></div>
 <h3 id="interface"><code>interface{}</code><a class="headerlink" href="#interface" title="Permanent link">#</a></h3>
 <p>A.K.A. Empty Interface</p>
 <ul>
@@ -3296,27 +3293,27 @@ n := map[string]interface{}{&quot;foo&quot;: 1, &quot;bar&quot;: &quot;some stri
 </li>
 <li>so we can receive any go data type in an empty interface (similar to object/var in other langs.)    </li>
 </ul>
-<pre><code>var i interface{}
+<div class="highlight"><pre><span></span><code>var i interface{}
 i = &quot;a string&quot;
 i = 2011
 i = 2.777
 
 fmt.Println()
-</code></pre>
+</code></pre></div>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/interfac/main.go</li>
 </ul>
 <h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">#</a></h2>
 <h3 id="control-flows">Control Flows<a class="headerlink" href="#control-flows" title="Permanent link">#</a></h3>
 <h4 id="if-else"><code>if</code>, <code>else</code><a class="headerlink" href="#if-else" title="Permanent link">#</a></h4>
-<pre><code class="language-go">if num := 9; num &lt; 0 {
-    fmt.Println(num, &quot;is negative&quot;)
-} else if num &lt; 10 {
-    fmt.Println(num, &quot;has 1 digit&quot;)
-} else {
-    fmt.Println(num, &quot;has multiple digits&quot;)
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;is negative&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has 1 digit&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has multiple digits&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><em>NOTE</em>: there is no ternary <code>?</code> if else condition</li>
 </ul>
@@ -3325,117 +3322,115 @@ fmt.Println()
 <li><code>for</code> is the only looping construct in Go</li>
 <li><code>for</code> have 3-4 pattern </li>
 </ul>
-<pre><code class="language-go">
-// like while loop
-i := 1
-for i &lt;= 3 {
-    fmt.Println(i)
-    i = i + 1
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// like while loop</span>
+<span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="nx">i</span> <span class="p">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
 
-// regular for loop
-for j := 7; j &lt;= 9; j++ {
-    fmt.Println(j)
-}
+<span class="c1">// regular for loop</span>
+<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">7</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
 
-for n := 0; n &lt;= 5; n++ {
-        if n%2 == 0 {
-            continue
-        }
-        fmt.Println(n)
-    }
+<span class="k">for</span> <span class="nx">n</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">continue</span>
+        <span class="p">}</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+    <span class="p">}</span>
 
-// infinite loop (or with break
-for {
-    fmt.Println(&quot;loop&quot;)
-    break
-}
-</code></pre>
+<span class="c1">// infinite loop (or with break</span>
+<span class="k">for</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;loop&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="switch"><code>switch</code><a class="headerlink" href="#switch" title="Permanent link">#</a></h4>
-<pre><code class="language-go">
-// regular switch case
-i := 2
-fmt.Print(&quot;Write &quot;, i, &quot; as &quot;)
-switch i {
-case 1:
-    fmt.Println(&quot;one&quot;)
-case 2:
-    fmt.Println(&quot;two&quot;)
-case 3:
-    fmt.Println(&quot;three&quot;)
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// regular switch case</span>
+<span class="nx">i</span> <span class="o">:=</span> <span class="mi">2</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Write &quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="s">&quot; as &quot;</span><span class="p">)</span>
+<span class="k">switch</span> <span class="nx">i</span> <span class="p">{</span>
+<span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 
-// TODO:
-switch time.Now().Weekday() {
-case time.Saturday, time.Sunday:
-    fmt.Println(&quot;It's the weekend&quot;)
-default:
-    fmt.Println(&quot;It's a weekday&quot;)
-}
+<span class="c1">// TODO:</span>
+<span class="k">switch</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Weekday</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">case</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Saturday</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Sunday</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;It&#39;s the weekend&quot;</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;It&#39;s a weekday&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 
-// regular if else
-t := time.Now()
-switch {
-case t.Hour() &lt; 12:
-    fmt.Println(&quot;It's before noon&quot;)
-default:
-    fmt.Println(&quot;It's after noon&quot;)
-}
+<span class="c1">// regular if else</span>
+<span class="nx">t</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span>
+<span class="k">switch</span> <span class="p">{</span>
+<span class="k">case</span> <span class="nx">t</span><span class="p">.</span><span class="nx">Hour</span><span class="p">()</span> <span class="p">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;It&#39;s before noon&quot;</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;It&#39;s after noon&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 
-// interface type assertion
-whatAmI := func(i interface{}) {
-    switch t := i.(type) {
-    case bool:
-        fmt.Println(&quot;I'm a bool&quot;)
-    case int:
-        fmt.Println(&quot;I'm an int&quot;)
-    default:
-        fmt.Printf(&quot;Don't know type %T\n&quot;, t)
-    }
-}
-whatAmI(true)
-whatAmI(1)
-whatAmI(&quot;hey&quot;)
-</code></pre>
+<span class="c1">// interface type assertion</span>
+<span class="nx">whatAmI</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="nx">t</span> <span class="o">:=</span> <span class="nx">i</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">bool</span><span class="p">:</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;I&#39;m a bool&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kt">int</span><span class="p">:</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;I&#39;m an int&quot;</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Don&#39;t know type %T\n&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">whatAmI</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="nx">whatAmI</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">whatAmI</span><span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h4 id="goto"><code>goto</code><a class="headerlink" href="#goto" title="Permanent link">#</a></h4>
 <ul>
 <li>why its still valid in a new-gen prog. lang. ??</li>
 </ul>
 <h3 id="range"><code>range</code><a class="headerlink" href="#range" title="Permanent link">#</a></h3>
-<pre><code class="language-go">nums := []int{2, 3, 4}
-sum := 0
+<div class="highlight"><pre><span></span><code><span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
 
-// range on arrays and slices provides both the index and value for each entry
-for _, num := range nums {
-    sum += num
-}
+<span class="c1">// range on arrays and slices provides both the index and value for each entry</span>
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">num</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">nums</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">num</span>
+<span class="p">}</span>
 
-for i, num := range nums {
-    if num == 3 {
-        fmt.Println(&quot;index:&quot;, i)
-    }
-}
+<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">num</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">nums</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">num</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;index:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// range on map iterates over key/value pairs
-kvs := map[string]string{&quot;a&quot;: &quot;apple&quot;, &quot;b&quot;: &quot;banana&quot;}
-for k, v := range kvs {
-    fmt.Printf(&quot;%s -&gt; %s\n&quot;, k, v)
-}
+<span class="c1">// range on map iterates over key/value pairs</span>
+<span class="nx">kvs</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">:</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">:</span> <span class="s">&quot;banana&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">kvs</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s -&gt; %s\n&quot;</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
 
-// range can also iterate over just the keys of a map
-for k := range kvs {
-    fmt.Println(&quot;key:&quot;, k)
-}
+<span class="c1">// range can also iterate over just the keys of a map</span>
+<span class="k">for</span> <span class="nx">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">kvs</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;key:&quot;</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span>
+<span class="p">}</span>
 
-// range on strings iterates over Unicode code points
-// The first value is the starting byte index of the rune and the second the rune itself.
-for i, c := range &quot;go&quot; {
-    fmt.Println(i, c)
-}
-// out: 
-0 103
-1 111
-</code></pre>
+<span class="c1">// range on strings iterates over Unicode code points</span>
+<span class="c1">// The first value is the starting byte index of the rune and the second the rune itself.</span>
+<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">c</span> <span class="o">:=</span> <span class="k">range</span> <span class="s">&quot;go&quot;</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// out: </span>
+<span class="mi">0</span> <span class="mi">103</span>
+<span class="mi">1</span> <span class="mi">111</span>
+</code></pre></div>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
 <ul>
 <li>src:<ul>
@@ -3459,8 +3454,8 @@ for i, c := range &quot;go&quot; {
 <ul>
 <li>similar to pl/sql procedures</li>
 </ul>
-<pre><code class="language-go">func() string, int { return &quot;Yes&quot;, 1}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">()</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Yes&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
 <h3 id="variadic">Variadic<a class="headerlink" href="#variadic" title="Permanent link">#</a></h3>
 <ul>
 <li>variable/arbitrary numbers of arguments</li>
@@ -3472,30 +3467,30 @@ for i, c := range &quot;go&quot; {
 </ul>
 </li>
 </ul>
-<pre><code class="language-go">func sum(nums ...int) int {
-    total := 0
-    for _, number := range nums {
-        total += number
-    }
-    return total
-}
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">nums</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="nx">total</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">number</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">nums</span> <span class="p">{</span>
+        <span class="nx">total</span> <span class="o">+=</span> <span class="nx">number</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">total</span>
+<span class="p">}</span>
 
-func main() {
-    sum(1,2)
-    sum(1,2,3)
-}
-</code></pre>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>can directly pass a <code>slice</code> like </li>
 </ul>
-<pre><code class="language-go">num_slice := []int{1,2,3}
-sum(num_slice ...) 
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">num_slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="nx">sum</span><span class="p">(</span><span class="nx">num_slice</span> <span class="o">...</span><span class="p">)</span> 
+</code></pre></div>
 <h3 id="anonymouslambda">Anonymous/Lambda<a class="headerlink" href="#anonymouslambda" title="Permanent link">#</a></h3>
-<pre><code class="language-go">func(msg string) {
-    fmt.Println(msg)
-}(&quot;Some message&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="p">}(</span><span class="s">&quot;Some message&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="access-modifier">Access Modifier<a class="headerlink" href="#access-modifier" title="Permanent link">#</a></h3>
 <ul>
 <li>depends on CASE of the func<ul>
@@ -3512,27 +3507,27 @@ sum(num_slice ...)
 <li>regular struct</li>
 <li>in go, struct are alternative to classes </li>
 </ul>
-<pre><code class="language-go">type Vehicle struct {
-    Make string  `json:make`  // additional json tag for de/serialization
-    Fuel string
-    Engine Engine 
-    owner string // not an exportable/exposed/public key/object
-}
+<div class="highlight"><pre><span></span><code><span class="kd">type</span> <span class="nx">Vehicle</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Make</span> <span class="kt">string</span>  <span class="s">`json:make`</span>  <span class="c1">// additional json tag for de/serialization</span>
+    <span class="nx">Fuel</span> <span class="kt">string</span>
+    <span class="nx">Engine</span> <span class="nx">Engine</span> 
+    <span class="nx">owner</span> <span class="kt">string</span> <span class="c1">// not an exportable/exposed/public key/object</span>
+<span class="p">}</span>
 
-type Engine struct {
-    Stroke string
-    HorsePower string
-}
-</code></pre>
+<span class="kd">type</span> <span class="nx">Engine</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Stroke</span> <span class="kt">string</span>
+    <span class="nx">HorsePower</span> <span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">#</a></h3>
-<pre><code class="language-go">func (v *Vehicle) Start() (string, error) {
-    return &quot;Vrooom&quot;, nil
-}
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="p">(</span><span class="nx">v</span> <span class="o">*</span><span class="nx">Vehicle</span><span class="p">)</span> <span class="nx">Start</span><span class="p">()</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;Vrooom&quot;</span><span class="p">,</span> <span class="kc">nil</span>
+<span class="p">}</span>
 
-engine := Engine{&quot;Four&quot;, &quot;1000&quot;}
-car := Vehicle{&quot;Tesla&quot;, &quot;Li&quot;, engine, &quot;Toran&quot;}
-res, err := car.Start()
-</code></pre>
+<span class="nx">engine</span> <span class="o">:=</span> <span class="nx">Engine</span><span class="p">{</span><span class="s">&quot;Four&quot;</span><span class="p">,</span> <span class="s">&quot;1000&quot;</span><span class="p">}</span>
+<span class="nx">car</span> <span class="o">:=</span> <span class="nx">Vehicle</span><span class="p">{</span><span class="s">&quot;Tesla&quot;</span><span class="p">,</span> <span class="s">&quot;Li&quot;</span><span class="p">,</span> <span class="nx">engine</span><span class="p">,</span> <span class="s">&quot;Toran&quot;</span><span class="p">}</span>
+<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">car</span><span class="p">.</span><span class="nx">Start</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="interface_1">Interface<a class="headerlink" href="#interface_1" title="Permanent link">#</a></h2>
 <ul>
 <li>Interfaces are named collections of method signatures</li>
@@ -3544,37 +3539,37 @@ res, err := car.Start()
 <li>A goroutine is a lightweight thread of execution</li>
 </ul>
 <h3 id="go"><code>go</code><a class="headerlink" href="#go" title="Permanent link">#</a></h3>
-<pre><code class="language-go">func f(from string) {
-    for i := 0; i &lt; 3; i++ {
-        fmt.Println(from, &quot;:&quot;, i)
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">f</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-func main() {
-    f(&quot;direct&quot;)  // direct call
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">f</span><span class="p">(</span><span class="s">&quot;direct&quot;</span><span class="p">)</span>  <span class="c1">// direct call</span>
 
-    go f(&quot;goroutine&quot;)  // goroutine call
+    <span class="k">go</span> <span class="nx">f</span><span class="p">(</span><span class="s">&quot;goroutine&quot;</span><span class="p">)</span>  <span class="c1">// goroutine call</span>
 
-    go func(msg string){
-        fmt.Println(msg)
-    }(&quot;goroutine from anonymous func&quot;)
+    <span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">){</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+    <span class="p">}(</span><span class="s">&quot;goroutine from anonymous func&quot;</span><span class="p">)</span>
 
-    fmt.Scanln() // input from stdio
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">()</span> <span class="c1">// input from stdio</span>
 
-    fmt.Println(&quot;done&quot;)
-}
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 
-// out:
-direct : 0
-direct : 1
-direct : 2
-goroutine : 0
-goroutine from anonymous func
-goroutine : 1
-goroutine : 2
-&lt;enter&gt;
-done
-</code></pre>
+<span class="c1">// out:</span>
+<span class="nx">direct</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="nx">direct</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="nx">direct</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="nx">goroutine</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="nx">goroutine</span> <span class="nx">from</span> <span class="nx">anonymous</span> <span class="kd">func</span>
+<span class="nx">goroutine</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="nx">goroutine</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="p">&lt;</span><span class="nx">enter</span><span class="p">&gt;</span>
+<span class="nx">done</span>
+</code></pre></div>
 <p>by going through above mentioned example:
 - if we want to invoke the function <code>f</code> as a goroutine we call it using <code>go</code> statement
     - func <code>f</code> will execute concurrently with the calling/main one
@@ -3596,12 +3591,12 @@ done
 </ul>
 </li>
 </ul>
-<pre><code class="language-go">messages := make(chan string) // create a channel named message
-go func() { messages &lt;- &quot;ping&quot; }() // from go routine `send` a string value/msg &quot;ping&quot; to the channel
-msg := &lt;-messages // `receive` value/msg from the channel
-fmt.Println(msg)
-fmt.Println(msg.(string) // assert type
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">messages</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span> <span class="c1">// create a channel named message</span>
+<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;ping&quot;</span> <span class="p">}()</span> <span class="c1">// from go routine `send` a string value/msg &quot;ping&quot; to the channel</span>
+<span class="nx">msg</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">messages</span> <span class="c1">// `receive` value/msg from the channel</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span> <span class="c1">// assert type</span>
+</code></pre></div>
 <ul>
 <li><em>NOTE</em>: By default sends and receives block until both the sender and receiver are ready. This property allowed us to wait at the end of our program for the "ping" message without having to use any other synchronization.<ul>
 <li>meaning that, whenever there will be receiver (and is ready to receive the value) then only sender can send the value/msg to the channel</li>
@@ -3618,12 +3613,12 @@ fmt.Println(msg.(string) // assert type
 </li>
 <li>Buffered channels accept a limited number of values without a corresponding receiver for those values</li>
 </ul>
-<pre><code class="language-go">message := make(chan string, 2) // here 2 is capacity of the buffer
-message &lt;- &quot;value 1&quot;
-message &lt;- &quot;value 2&quot;
-fmt.Println(&lt;-message)
-fmt.Println(&lt;-message)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">message</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// here 2 is capacity of the buffer</span>
+<span class="nx">message</span> <span class="o">&lt;-</span> <span class="s">&quot;value 1&quot;</span>
+<span class="nx">message</span> <span class="o">&lt;-</span> <span class="s">&quot;value 2&quot;</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">message</span><span class="p">)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">message</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/goroutines/channels/buffered/buffered_channels.go</li>
 </ul>
@@ -3744,22 +3739,22 @@ fmt.Println(&lt;-message)
 </ul>
 </li>
 </ul>
-<pre><code class="language-go">// data structure, Message
-type Message struct {
-    Name string    `json:&quot;name&quot;`
-    Body string    `json:&quot;body&quot;`
-    Time int64     `json:&quot;time&quot;`
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// data structure, Message</span>
+<span class="kd">type</span> <span class="nx">Message</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Name</span> <span class="kt">string</span>    <span class="s">`json:&quot;name&quot;`</span>
+    <span class="nx">Body</span> <span class="kt">string</span>    <span class="s">`json:&quot;body&quot;`</span>
+    <span class="nx">Time</span> <span class="kt">int64</span>     <span class="s">`json:&quot;time&quot;`</span>
+<span class="p">}</span>
 
-// an instance of Message
-m := Message{&quot;Alice&quot;, &quot;Hello&quot;, 1294706395881547000}
+<span class="c1">// an instance of Message</span>
+<span class="nx">m</span> <span class="o">:=</span> <span class="nx">Message</span><span class="p">{</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1294706395881547000</span><span class="p">}</span>
 
-// encoding m
-b, err := json.Marshal(m)
+<span class="c1">// encoding m</span>
+<span class="nx">b</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">m</span><span class="p">)</span>
 
-// If all is well, err will be nil and b will be a []byte containing this JSON data
-b == []byte(`{&quot;Name&quot;:&quot;Alice&quot;,&quot;Body&quot;:&quot;Hello&quot;,&quot;Time&quot;:1294706395881547000}`)
-</code></pre>
+<span class="c1">// If all is well, err will be nil and b will be a []byte containing this JSON data</span>
+<span class="nx">b</span> <span class="o">==</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;Name&quot;:&quot;Alice&quot;,&quot;Body&quot;:&quot;Hello&quot;,&quot;Time&quot;:1294706395881547000}`</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/json/encoding.go</li>
 </ul>
@@ -3783,20 +3778,20 @@ b == []byte(`{&quot;Name&quot;:&quot;Alice&quot;,&quot;Body&quot;:&quot;Hello&qu
 </li>
 </ul>
 <h4 id="creating-arbitrary-data">Creating arbitrary data<a class="headerlink" href="#creating-arbitrary-data" title="Permanent link">#</a></h4>
-<pre><code class="language-go">i := map[string]interface{}{&quot;id&quot;: 1111, &quot;name&quot;: &quot;Toran&quot;}
-    fmt.Println(i)
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">i</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1111</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Toran&quot;</span><span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="encoding-arbitrary-data">Encoding arbitrary data<a class="headerlink" href="#encoding-arbitrary-data" title="Permanent link">#</a></h4>
-<pre><code class="language-go">bytes := json.Marshal(i)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">bytes</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</code></pre></div>
 <h4 id="decoding-arbitrary-data">Decoding arbitrary data<a class="headerlink" href="#decoding-arbitrary-data" title="Permanent link">#</a></h4>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/json/json_test.go#L33</li>
 </ul>
-<pre><code class="language-go">var i interface{}
-json.Unmarshal(bytes, &amp;i)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">i</span> <span class="kd">interface</span><span class="p">{}</span>
+<span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i</span><span class="p">)</span>
+</code></pre></div>
 <h4 id="json-reference-type-pointers-slices-maps">Json &amp; Reference Type (pointers, slices, maps)<a class="headerlink" href="#json-reference-type-pointers-slices-maps" title="Permanent link">#</a></h4>
 <ul>
 <li>https://blog.golang.org/json-and-go</li>
@@ -3953,17 +3948,17 @@ ok    github.com/toransahu/go-misc/json   0.002s  </p>
 </ul>
 </li>
 </ul>
-<pre><code class="language-go">// Package sort provides primitives for sorting slices and user-defined
-// collections.
-package sort
+<div class="highlight"><pre><span></span><code><span class="c1">// Package sort provides primitives for sorting slices and user-defined</span>
+<span class="c1">// collections.</span>
+<span class="kn">package</span> <span class="nx">sort</span>
 
-... 
+<span class="o">...</span> 
 
-// Fprint formats using the default formats for its operands and writes to w.
-// Spaces are added between operands when neither is a string.
-// It returns the number of bytes written and any write error encountered.
-func Fprint(w io.Writer, a ...interface{}) (n int, err error) {
-</code></pre>
+<span class="c1">// Fprint formats using the default formats for its operands and writes to w.</span>
+<span class="c1">// Spaces are added between operands when neither is a string.</span>
+<span class="c1">// It returns the number of bytes written and any write error encountered.</span>
+<span class="kd">func</span> <span class="nx">Fprint</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">a</span> <span class="o">...</span><span class="kd">interface</span><span class="p">{})</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div>
 <ul>
 <li>
 <p>extra:</p>

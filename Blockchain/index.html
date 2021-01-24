@@ -375,29 +375,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-node" class="md-nav__link">
-    aws node
-  </a>
-  
-    <nav class="md-nav" aria-label="aws node">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#back-on-server-1" class="md-nav__link">
     Back on Server 1
@@ -416,6 +393,11 @@
   <a href="#delete-a-chain" class="md-nav__link">
     Delete  a Chain
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -438,6 +420,11 @@
   <a href="#node-2-connection-with-node-1" class="md-nav__link">
     Node 2 Connection with Node 1
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1207,29 +1194,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-node" class="md-nav__link">
-    aws node
-  </a>
-  
-    <nav class="md-nav" aria-label="aws node">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#back-on-server-1" class="md-nav__link">
     Back on Server 1
@@ -1248,6 +1212,11 @@
   <a href="#delete-a-chain" class="md-nav__link">
     Delete  a Chain
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1270,6 +1239,11 @@
   <a href="#node-2-connection-with-node-1" class="md-nav__link">
     Node 2 Connection with Node 1
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1325,19 +1299,16 @@
 <li><a href="#nodes-on-different-servers">Nodes On Different Servers</a><ul>
 <li><a href="#node-1-initial-setup-on-server-1">Node 1 Initial Setup on Server 1</a></li>
 <li><a href="#node-2-connection-with-node-1-on-server-2">Node 2 Connection with Node 1 on Server 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#aws-node">aws node</a><ul>
 <li><a href="#back-on-server-1">Back on Server 1</a></li>
 <li><a href="#back-on-server-2">Back on Server 2</a></li>
 <li><a href="#delete-a-chain">Delete  a Chain</a></li>
+</ul>
+</li>
 <li><a href="#nodes-on-same-server">Nodes On Same Server</a><ul>
 <li><a href="#node-1-initial-setup">Node 1 Initial Setup</a></li>
 <li><a href="#node-2-connection-with-node-1">Node 2 Connection with Node 1</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1534,132 +1505,143 @@ Source2: https://www.blockchain-council.org/blockchain/list-of-best-open-source-
 <hr />
 <h2 id="multichain">Multichain<a class="headerlink" href="#multichain" title="Permanent link">#</a></h2>
 <h3 id="installation"><a href="https://www.multichain.com/download-install/">Installation</a><a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">su (enter root password)
+<div class="highlight"><pre><span></span><code>su <span class="o">(</span>enter root password<span class="o">)</span>
 
-cd /tmp
+<span class="nb">cd</span> /tmp
 wget https://www.multichain.com/download/multichain-1.0.5.tar.gz
 tar -xvzf multichain-1.0.5.tar.gz
-cd multichain-1.0.5
-mv multichaind multichain-cli multichain-util /usr/local/bin (to make easily accessible on the command line)
+<span class="nb">cd</span> multichain-1.0.5
+mv multichaind multichain-cli multichain-util /usr/local/bin <span class="o">(</span>to make easily accessible on the <span class="nb">command</span> line<span class="o">)</span>
 
-exit (to return to your regular user)
-</code></pre>
+<span class="nb">exit</span> <span class="o">(</span>to <span class="k">return</span> to your regular user<span class="o">)</span>
+</code></pre></div>
 <h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h3>
 <h4 id="nodes-on-different-servers"><a href="https://www.multichain.com/getting-started/">Nodes On Different Servers</a><a class="headerlink" href="#nodes-on-different-servers" title="Permanent link">#</a></h4>
 <h5 id="node-1-initial-setup-on-server-1">Node 1 Initial Setup on Server 1<a class="headerlink" href="#node-1-initial-setup-on-server-1" title="Permanent link">#</a></h5>
 <ul>
 <li>
 <p>Run 
-    <code>bash
-    #Create chain1
-    multichain-util create chain1</code></p>
+    <div class="highlight"><pre><span></span><code><span class="c1">#Create chain1</span>
+multichain-util create chain1
+</code></pre></div></p>
 </li>
 <li>
 <p>Output
-    ```bash
-    MultiChain 1.0.5 Utilities (latest protocol 10011)</p>
-<p>Blockchain parameter set was successfully generated.
-You can edit it in /home/toran/node1/chain1/params.dat before running multichaind for the first time.</p>
-<p>To generate blockchain please run "multichaind chain1 -daemon".
-```</p>
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Utilities <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Blockchain parameter <span class="nb">set</span> was successfully generated.
+You can edit it <span class="k">in</span> /home/toran/node1/chain1/params.dat before running multichaind <span class="k">for</span> the first time.
+
+To generate blockchain please run <span class="s2">&quot;multichaind chain1 -daemon&quot;</span>.
+</code></pre></div></p>
 </li>
 <li>
 <p>Run
-    <code>bash
-    #Initialize Blockchain with genesis block
-    multichaind chain1 -daemon</code>    </p>
+    <div class="highlight"><pre><span></span><code><span class="c1">#Initialize Blockchain with genesis block</span>
+multichaind chain1 -daemon
+</code></pre></div></p>
 </li>
 <li>
 <p>Output
-    ```bash
-    MultiChain 1.0.5 Daemon (latest protocol 10011)</p>
-<p>Starting up node...</p>
-<p>Looking for genesis block...
-Genesis block found</p>
-<p>Other nodes can connect to this node using:
-multichaind chain1@192.168.1.100:6725</p>
-<p>Listening for API requests on port 6724 (local only - see rpcallowip setting)</p>
-<p>Node ready.
-```    </p>
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Starting up node...
+
+Looking <span class="k">for</span> genesis block...
+Genesis block found
+
+Other nodes can connect to this node using:
+multichaind chain1@192.168.1.100:6725
+
+Listening <span class="k">for</span> API requests on port <span class="m">6724</span> <span class="o">(</span><span class="nb">local</span> only - see rpcallowip setting<span class="o">)</span>
+
+Node ready.
+</code></pre></div></p>
 </li>
 </ul>
 <h5 id="node-2-connection-with-node-1-on-server-2">Node 2 Connection with Node 1 on Server 2<a class="headerlink" href="#node-2-connection-with-node-1-on-server-2" title="Permanent link">#</a></h5>
 <ul>
 <li>
 <p>Run
-    ```bash
-    multichaind chain1@192.168.1.100:6725</p>
-<h2 id="aws-node">aws node<a class="headerlink" href="#aws-node" title="Permanent link">#</a></h2>
-<p>multichaind -datadir=/home/toran/node2 -port=10255 -rpcport=10254 mychain@34.254.186.152:6821 -daemon
-```</p>
+    <div class="highlight"><pre><span></span><code>multichaind chain1@192.168.1.100:6725
+
+<span class="c1"># aws node</span>
+multichaind -datadir<span class="o">=</span>/home/toran/node2 -port<span class="o">=</span><span class="m">10255</span> -rpcport<span class="o">=</span><span class="m">10254</span> mychain@34.254.186.152:6821 -daemon
+</code></pre></div></p>
 </li>
 <li>
 <p>Output<br />
-    ```bash
-    MultiChain 1.0.5 Daemon (latest protocol 10011)</p>
-<p>Retrieving blockchain parameters from the seed node 192.168.1.100:6725 ...
-Blockchain successfully initialized.</p>
-<p>Please ask blockchain admin or user having activate permission to let you connect and/or transact:
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Retrieving blockchain parameters from the seed node <span class="m">192</span>.168.1.100:6725 ...
+Blockchain successfully initialized.
+
+Please ask blockchain admin or user having activate permission to <span class="nb">let</span> you connect and/or transact:
 multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
 multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect,send,receive
-```</p>
+</code></pre></div></p>
 </li>
 </ul>
 <h5 id="back-on-server-1">Back on Server 1<a class="headerlink" href="#back-on-server-1" title="Permanent link">#</a></h5>
 <ul>
 <li>Run<br />
-<code>bash
-    multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect</code>    </li>
+    <div class="highlight"><pre><span></span><code>multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+</code></pre></div></li>
 </ul>
 <h5 id="back-on-server-2">Back on Server 2<a class="headerlink" href="#back-on-server-2" title="Permanent link">#</a></h5>
 <ul>
 <li>Run<br />
-<code>bash
-    #Now try reconnecting again
-    multichaind chain1 -daemon</code>    </li>
+    <div class="highlight"><pre><span></span><code><span class="c1">#Now try reconnecting again</span>
+multichaind chain1 -daemon
+</code></pre></div></li>
 </ul>
 <h5 id="delete-a-chain">Delete  a Chain<a class="headerlink" href="#delete-a-chain" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">#Stop it running
+<div class="highlight"><pre><span></span><code><span class="c1">#Stop it running</span>
 multichain-cli chain1 stop
 
-#Delete its directory
+<span class="c1">#Delete its directory</span>
 sudo rm -r ~/.multichain/chain1
-</code></pre>
+</code></pre></div>
 <h4 id="nodes-on-same-server"><a href="https://www.multichain.com/qa/563/multiple-nodes-server-connecting-chain-using-different-users">Nodes On Same Server</a><a class="headerlink" href="#nodes-on-same-server" title="Permanent link">#</a></h4>
 <h5 id="node-1-initial-setup">Node 1 Initial Setup<a class="headerlink" href="#node-1-initial-setup" title="Permanent link">#</a></h5>
 <ul>
 <li>
 <p>Run
-    <code>bash
-    mkdir /home/toran/node1
-    multichain-util create chain1 -datadir=/home/toran/node1</code></p>
+    <div class="highlight"><pre><span></span><code>mkdir /home/toran/node1
+multichain-util create chain1 -datadir<span class="o">=</span>/home/toran/node1
+</code></pre></div></p>
 </li>
 <li>
 <p>Output
-    ```bash
-    MultiChain 1.0.5 Utilities (latest protocol 10011)</p>
-<p>Blockchain parameter set was successfully generated.
-You can edit it in /home/toran/node1/chain1/params.dat before running multichaind for the first time.</p>
-<p>To generate blockchain please run "multichaind chain1 -daemon".
-```</p>
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Utilities <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Blockchain parameter <span class="nb">set</span> was successfully generated.
+You can edit it <span class="k">in</span> /home/toran/node1/chain1/params.dat before running multichaind <span class="k">for</span> the first time.
+
+To generate blockchain please run <span class="s2">&quot;multichaind chain1 -daemon&quot;</span>.
+</code></pre></div></p>
 </li>
 <li>
 <p>Run<br />
-<code>bash
-    multichaind chain1 -daemon -datadir=/home/toran/node1</code></p>
+    <div class="highlight"><pre><span></span><code>multichaind chain1 -daemon -datadir<span class="o">=</span>/home/toran/node1
+</code></pre></div></p>
 </li>
 <li>
 <p>Output
-    ```bash
-    MultiChain 1.0.5 Daemon (latest protocol 10011)</p>
-<p>Starting up node...</p>
-<p>Looking for genesis block...
-Genesis block found</p>
-<p>Other nodes can connect to this node using:
-multichaind chain1@192.168.1.100:6725</p>
-<p>Listening for API requests on port 6724 (local only - see rpcallowip setting)</p>
-<p>Node ready.
-```</p>
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Starting up node...
+
+Looking <span class="k">for</span> genesis block...
+Genesis block found
+
+Other nodes can connect to this node using:
+multichaind chain1@192.168.1.100:6725
+
+Listening <span class="k">for</span> API requests on port <span class="m">6724</span> <span class="o">(</span><span class="nb">local</span> only - see rpcallowip setting<span class="o">)</span>
+
+Node ready.
+</code></pre></div></p>
 </li>
 </ul>
 <h5 id="node-2-connection-with-node-1">Node 2 Connection with Node 1<a class="headerlink" href="#node-2-connection-with-node-1" title="Permanent link">#</a></h5>
@@ -1667,25 +1649,26 @@ multichaind chain1@192.168.1.100:6725</p>
 <ul>
 <li>
 <p>Run<br />
-<code>bash
-    mkdir /home/toran/node2
-    multichaind chain1@&lt;chain1-ip&gt;:&lt;chain1-port&gt; -datadir=/home/toran/node2</code></p>
+    <div class="highlight"><pre><span></span><code>mkdir /home/toran/node2
+multichaind chain1@&lt;chain1-ip&gt;:&lt;chain1-port&gt; -datadir<span class="o">=</span>/home/toran/node2
+</code></pre></div></p>
 </li>
 <li>
 <p>Output<br />
-    ```bash
-    MultiChain 1.0.5 Daemon (latest protocol 10011)</p>
-<p>Retrieving blockchain parameters from the seed node 192.168.1.100:6725 ...
-Blockchain successfully initialized.</p>
-<p>Please ask blockchain admin or user having activate permission to let you connect and/or transact:
+    <div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Retrieving blockchain parameters from the seed node <span class="m">192</span>.168.1.100:6725 ...
+Blockchain successfully initialized.
+
+Please ask blockchain admin or user having activate permission to <span class="nb">let</span> you connect and/or transact:
 multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
 multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect,send,receive
-```</p>
+</code></pre></div></p>
 </li>
 <li>
 <p>Run<br />
-<code>bash
-    multichain-cli chain1 -datadir=/home/toran/node1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect</code></p>
+    <div class="highlight"><pre><span></span><code>multichain-cli chain1 -datadir<span class="o">=</span>/home/toran/node1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+</code></pre></div></p>
 </li>
 </ul>
 <p>Commands in Interactive Mode</p>

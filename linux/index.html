@@ -3167,10 +3167,10 @@
 </ul>
 <p>https://gist.github.com/toransahu/4fd3abc369bb5c8a1ee424af07cb1563</p>
 <h4 id="sub-string-comparison">Sub-String Comparison<a class="headerlink" href="#sub-string-comparison" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">string=&quot;$(hostname)&quot;
-substr=&quot;mint&quot;
-if [ -z &quot;${string##*$substr*}&quot; ]; then
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nv">string</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">substr</span><span class="o">=</span><span class="s2">&quot;mint&quot;</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="si">${</span><span class="nv">string</span><span class="p">##*</span><span class="nv">$substr</span><span class="p">*</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</code></pre></div>
 <p>https://gist.github.com/toransahu/f812260a37947a299c5c26adddfa4cfa</p>
 <h3 id="if-elif-else-fi">If, elif, else, fi<a class="headerlink" href="#if-elif-else-fi" title="Permanent link">#</a></h3>
 <ul>
@@ -3185,54 +3185,52 @@ if [ -z &quot;${string##*$substr*}&quot; ]; then
 <ul>
 <li>https://askubuntu.com/questions/91740/how-to-move-all-files-in-current-folder-to-subfolder</li>
 </ul>
-<pre><code>
-</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p>TODO: zsh</p>
-<pre><code>setopt extended_glob
+<div class="highlight"><pre><span></span><code>setopt extended_glob
 mv 
-</code></pre>
+</code></pre></div>
 <h3 id="get-system-informations"><a href="https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/">Get System Informations</a><a class="headerlink" href="#get-system-informations" title="Permanent link">#</a></h3>
 <h3 id="set-deafult-shell">Set deafult shell<a class="headerlink" href="#set-deafult-shell" title="Permanent link">#</a></h3>
-<pre><code>sudo chsh -s /bin/zsh
-</code></pre>
-<p>then logout</p>
+<p><div class="highlight"><pre><span></span><code>sudo chsh -s /bin/zsh
+</code></pre></div>
+then logout</p>
 <p><a href="https://github.com/toransahu/linux-tweaks/tree/master/guides">In Github:linux-tweaks/guides</a></p>
 <h3 id="xclip">xclip<a class="headerlink" href="#xclip" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">xclip -sel clip &lt;file&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>xclip -sel clip &lt;file&gt;
+</code></pre></div>
 <h3 id="ls-prefixed-commands">ls prefixed commands<a class="headerlink" href="#ls-prefixed-commands" title="Permanent link">#</a></h3>
 <p>ls           lsA          lsblk        lscpu        lshw         lsipc        lslogins     lsof         lspcmcia     lss16toppm   lsusb      <br />
 lsa          lsattr       lsb_release  lsdiff       lsinitramfs  lslocks      lsmod        lspci        lspgpot      lss3   </p>
 <h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">find &lt;dir&gt; &lt;type&gt; &lt;test&gt; &lt;expression&gt; &lt;action&gt;
+<div class="highlight"><pre><span></span><code>find &lt;dir&gt; &lt;type&gt; &lt;test&gt; &lt;expression&gt; &lt;action&gt;
 
-find /Ray/ -type f -name &quot;*.pyc&quot; -delete
-</code></pre>
+find /Ray/ -type f -name <span class="s2">&quot;*.pyc&quot;</span> -delete
+</code></pre></div>
 <h3 id="set-hostname">Set hostname<a class="headerlink" href="#set-hostname" title="Permanent link">#</a></h3>
 <h4 id="1-at-etchosts">1. at /etc/hosts<a class="headerlink" href="#1-at-etchosts" title="Permanent link">#</a></h4>
 <p><code>127.0.1.1    mint-ThinkPad-L440</code></p>
 <h4 id="2-at-etchostname">2. at /etc/hostname<a class="headerlink" href="#2-at-etchostname" title="Permanent link">#</a></h4>
 <p>write <code>mint-ThinkPad-L440</code></p>
 <h4 id="3-then-tell-the-machine">3. then tell the machine<a class="headerlink" href="#3-then-tell-the-machine" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">sudo hostname mint-ThinkPad-L440
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo hostname mint-ThinkPad-L440
+</code></pre></div>
 <h3 id="cpu-info">CPU Info<a class="headerlink" href="#cpu-info" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">
-cat flags /proc/cpuinfo
-
-</code></pre>
+<div class="highlight"><pre><span></span><code>cat flags /proc/cpuinfo
+</code></pre></div>
 <h3 id="cpu-temperature">CPU Temperature<a class="headerlink" href="#cpu-temperature" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">sudo apt-get install lm-sensors 
-</code></pre>
-<p>After installation type the following in terminal  </p>
-<pre><code class="language-bash">sudo sensors-detect
-</code></pre>
-<p>You may also need to run</p>
-<pre><code class="language-bash">sudo service kmod start
-</code></pre>
-<p>It will ask you few questions. Answer Yes for all of them. Finally to get your CPU temperature type sensors in your terminal.  </p>
-<pre><code class="language-bash">sensors
-</code></pre>
+<p><div class="highlight"><pre><span></span><code>sudo apt-get install lm-sensors 
+</code></pre></div>
+After installation type the following in terminal<br />
+<div class="highlight"><pre><span></span><code>sudo sensors-detect
+</code></pre></div>
+You may also need to run
+<div class="highlight"><pre><span></span><code>sudo service kmod start
+</code></pre></div>
+It will ask you few questions. Answer Yes for all of them. Finally to get your CPU temperature type sensors in your terminal.<br />
+<div class="highlight"><pre><span></span><code>sensors
+</code></pre></div></p>
 <h3 id="ip-related">IP Related<a class="headerlink" href="#ip-related" title="Permanent link">#</a></h3>
 <ul>
 <li>ifconfig</li>
@@ -3240,8 +3238,8 @@ cat flags /proc/cpuinfo
 <li>hostname -I</li>
 </ul>
 <h3 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">ssh pi@192.168.1.108
-</code></pre>
+<div class="highlight"><pre><span></span><code>ssh pi@192.168.1.108
+</code></pre></div>
 <h4 id="in-case-of-aws-ec2-ssh">In case of AWS EC2 SSH<a class="headerlink" href="#in-case-of-aws-ec2-ssh" title="Permanent link">#</a></h4>
 <p>Connection freezes frequently on inactivity
 - source https://www.quora.com/Why-does-ssh-to-amazon-ec2-instance-gets-frozen-after-sometime
@@ -3251,7 +3249,7 @@ cat flags /proc/cpuinfo
         - add ServerAliveInterval 5  where 5 is minute
     - sudo service sshd restart</p>
 <h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">sftp pi@192.168.1.108
+<p><div class="highlight"><pre><span></span><code>sftp pi@192.168.1.108
 
 
 put local_file
@@ -3259,19 +3257,17 @@ put local_file
 
 
 get remote_file
-
-</code></pre>
-<p>files will upload/download @ home</p>
+</code></pre></div>
+files will upload/download @ home</p>
 <h3 id="sshfs">sshfs<a class="headerlink" href="#sshfs" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">
-sudo mkdir /mnt/pi
+<div class="highlight"><pre><span></span><code>sudo mkdir /mnt/pi
 
 
 sudo sshfs -o allow_other  pi@192.168.1.108:/ /mnt/pi/
-</code></pre>
+</code></pre></div>
 <h3 id="device-connected-to-the-network">Device connected to the Network<a class="headerlink" href="#device-connected-to-the-network" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">nmap -sP 192.168.1.0/24
-</code></pre>
+<div class="highlight"><pre><span></span><code>nmap -sP <span class="m">192</span>.168.1.0/24
+</code></pre></div>
 <h3 id="dd-disk-dump-commands">dd (Disk Dump) commands<a class="headerlink" href="#dd-disk-dump-commands" title="Permanent link">#</a></h3>
 <h4 id="create-a-backup">Create a backup<a class="headerlink" href="#create-a-backup" title="Permanent link">#</a></h4>
 <p><code>dd if=/dev/sda of=/opt/backup_sda.img</code></p>
@@ -3296,15 +3292,15 @@ sudo sshfs -o allow_other  pi@192.168.1.108:/ /mnt/pi/
 <h4 id="mount-dd-image-of-and-entire-disk">Mount dd image of and entire disk<a class="headerlink" href="#mount-dd-image-of-and-entire-disk" title="Permanent link">#</a></h4>
 <p><strong>You must use the start number of the partition.</strong>
 <code>fdisk -u -l disk_image</code></p>
-<pre><code class="language-bash">Disk /mnt/storage/disk_image: 0 MB, 0 bytes255 heads, 63 sectors/track, 0 cylinders, total 0 sectors
-Units = sectors of 1 * 512 = 512 bytesDisk identifier: 0x41172ba5
+<div class="highlight"><pre><span></span><code>Disk /mnt/storage/disk_image: <span class="m">0</span> MB, <span class="m">0</span> bytes255 heads, <span class="m">63</span> sectors/track, <span class="m">0</span> cylinders, total <span class="m">0</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytesDisk identifier: 0x41172ba5
 
 Device                      Boot    Start    End       Blocks   Id  System
-/mnt/storage/disk_image1            63       64259     32098+   de  Dell Utility
-/mnt/storage/disk_image2    *       64260    78108029  39021885 7   HPFS/NTFS
+/mnt/storage/disk_image1            <span class="m">63</span>       <span class="m">64259</span>     <span class="m">32098</span>+   de  Dell Utility
+/mnt/storage/disk_image2    *       <span class="m">64260</span>    <span class="m">78108029</span>  <span class="m">39021885</span> <span class="m">7</span>   HPFS/NTFS
 
-Partition 2 has different physical/logical endings:phys=(1023, 254, 63) logical=(4861, 254, 63)
-</code></pre>
+Partition <span class="m">2</span> has different physical/logical endings:phys<span class="o">=(</span><span class="m">1023</span>, <span class="m">254</span>, <span class="m">63</span><span class="o">)</span> <span class="nv">logical</span><span class="o">=(</span><span class="m">4861</span>, <span class="m">254</span>, <span class="m">63</span><span class="o">)</span>
+</code></pre></div>
 <p>Then take the start of the partition that you want to edit, <code>64260</code> (disk_image2) in this case, and multiply it by <code>512</code></p>
 <p>Ex: <code>512 * 64260 = 32901120</code></p>
 <p><code>mount -o loop,offset=32901120 -t auto /mnt/storage/disk_image /mnt/image_partition_2</code></p>
@@ -3360,13 +3356,13 @@ Partition 2 has different physical/logical endings:phys=(1023, 254, 63) logical=
 </li>
 </ul>
 <h5 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">#</a></h5>
-<pre><code class="language-bash">SHELL=/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO=&quot;&quot;
-1 2 3 4 5 /path/to/command arg1 arg2
-# or  
-1 2 3 4 5 /root/backup.sh`  
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nv">SHELL</span><span class="o">=</span>/bin/bash
+<span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+<span class="nv">MAILTO</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> /path/to/command arg1 arg2
+<span class="c1"># or  </span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> /root/backup.sh<span class="sb">`</span>  
+</code></pre></div>
 <ul>
 <li>
 <p>to automate tasks based on time like</p>
@@ -3461,16 +3457,16 @@ MAILTO=&quot;&quot;
 <li>Works on boot</li>
 <li>put <name>.desktop file with some script in <code>~/.config/autostart/</code></li>
 <li>write script like
-    <code>bash
-    [Desktop Entry]
-    Type=Application
-    Exec=sh /home/toran/Applications/linux_tweaks/LowBatterySound/LowBattery.sh
-    X-GNOME-Autostart-enabled=false
-    NoDisplay=false
-    Hidden=false
-    Name[en_IN]=Low Battery Warning
-    Comment[en_IN]=Warning sound on battery less than 15%
-    X-GNOME-Autostart-Delay=20</code></li>
+    <div class="highlight"><pre><span></span><code><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Exec</span><span class="o">=</span>sh /home/toran/Applications/linux_tweaks/LowBatterySound/LowBattery.sh
+X-GNOME-Autostart-enabled<span class="o">=</span><span class="nb">false</span>
+<span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">Hidden</span><span class="o">=</span><span class="nb">false</span>
+Name<span class="o">[</span>en_IN<span class="o">]=</span>Low Battery Warning
+Comment<span class="o">[</span>en_IN<span class="o">]=</span>Warning sound on battery less than <span class="m">15</span>%
+X-GNOME-Autostart-Delay<span class="o">=</span><span class="m">20</span>
+</code></pre></div></li>
 </ul>
 <h4 id="using-etcrclocal">using /etc/rc.local<a class="headerlink" href="#using-etcrclocal" title="Permanent link">#</a></h4>
 <h4 id="using-etcinitd">using /etc/init.d<a class="headerlink" href="#using-etcinitd" title="Permanent link">#</a></h4>
@@ -3501,23 +3497,23 @@ MAILTO=&quot;&quot;
 </ul>
 <h3 id="grub">GRUB<a class="headerlink" href="#grub" title="Permanent link">#</a></h3>
 <h4 id="edit-grub-configs">Edit <code>grub</code> configs<a class="headerlink" href="#edit-grub-configs" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">vim /etc/default/grub
-</code></pre>
+<div class="highlight"><pre><span></span><code>vim /etc/default/grub
+</code></pre></div>
 <h4 id="grub-update"><code>grub</code> update<a class="headerlink" href="#grub-update" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">sudo update-grub
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo update-grub
+</code></pre></div>
 <h4 id="reboot-into-other-os">Reboot into other OS<a class="headerlink" href="#reboot-into-other-os" title="Permanent link">#</a></h4>
-<pre><code>sudo grub-reboot 2
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo grub-reboot 2
+</code></pre></div>
 <hr />
 <h2 id="problems-solutions">Problems &amp; Solutions<a class="headerlink" href="#problems-solutions" title="Permanent link">#</a></h2>
 <h3 id="make-anaconda-python-default">Make Anaconda Python Default<a class="headerlink" href="#make-anaconda-python-default" title="Permanent link">#</a></h3>
 <ul>
-<li>put following in <code>.bashrc</code> or <code>.zshrc</code></li>
-</ul>
-<pre><code># added by Anaconda3 installer
+<li>put following in <code>.bashrc</code> or <code>.zshrc</code>
+<div class="highlight"><pre><span></span><code># added by Anaconda3 installer
 export PATH=&quot;/home/toran/anaconda3/bin:$PATH&quot;
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="if-cinnamon-freezes">If cinnamon freezes<a class="headerlink" href="#if-cinnamon-freezes" title="Permanent link">#</a></h3>
 <ul>
 <li>go to <code>tty0</code> or <code>tty1</code> using <code>Alt</code> + <code>Ctrl</code> + <code>F1</code> or <code>F2</code></li>
@@ -3533,28 +3529,26 @@ export PATH=&quot;/home/toran/anaconda3/bin:$PATH&quot;
 <li>That the /etc/hostname file contains just the name of the machine.</li>
 <li>That /etc/hosts has an entry for localhost. It should have something like:</li>
 </ul>
-<pre><code class="language-bash"> 127.0.0.1    localhost.localdomain localhost
- 127.0.1.1    my-machine
-</code></pre>
-<ul>
-<li>If either of these files aren't correct (since you can't sudo), you may have to reboot the machine into recovery mode and make the modifications, then reboot to your usual environment.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code> <span class="m">127</span>.0.0.1    localhost.localdomain localhost
+ <span class="m">127</span>.0.1.1    my-machine
+</code></pre></div>
+- If either of these files aren't correct (since you can't sudo), you may have to reboot the machine into recovery mode and make the modifications, then reboot to your usual environment.</p>
 <h3 id="nemo-context-menu-open-in-terminal-not-working">nemo context menu "open in terminal" not working<a class="headerlink" href="#nemo-context-menu-open-in-terminal-not-working" title="Permanent link">#</a></h3>
 <p>source: https://forums.linuxmint.com/viewtopic.php?t=204933</p>
-<pre><code class="language-bash">gsettings set org.cinnamon.desktop.default-applications.terminal exec mate-terminal
-</code></pre>
+<div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> org.cinnamon.desktop.default-applications.terminal <span class="nb">exec</span> mate-terminal
+</code></pre></div>
 <h3 id="speedup-mouse-scroll">Speedup mouse scroll<a class="headerlink" href="#speedup-mouse-scroll" title="Permanent link">#</a></h3>
-<p>Source: https://forums.linuxmint.com/viewtopic.php?t=221526</p>
-<pre><code class="language-bash">sudo apt install imwheel
-</code></pre>
-<p>then use <code>mousewheel.sh</code> to adjust the speed.</p>
+<p>Source: https://forums.linuxmint.com/viewtopic.php?t=221526
+<div class="highlight"><pre><span></span><code>sudo apt install imwheel
+</code></pre></div>
+then use <code>mousewheel.sh</code> to adjust the speed.</p>
 <hr />
 <h2 id="utilities">Utilities<a class="headerlink" href="#utilities" title="Permanent link">#</a></h2>
 <h2 id="multitouch-gesture">Multitouch Gesture<a class="headerlink" href="#multitouch-gesture" title="Permanent link">#</a></h2>
 <ul>
 <li>src: https://github.com/toransahu/libinput-gestures - by bulletmark</li>
 </ul>
-<pre><code>sudo gpasswd -a toran input
+<div class="highlight"><pre><span></span><code>sudo gpasswd -a toran input
 sudo apt-get install xdotool wmctrl libinput-tools
 git clone http://github.com/toransahu/libinput-gestures
 cd libinput-gestures
@@ -3577,7 +3571,7 @@ sudo make install (or sudo ./libinput-gestures-setup install)
 
 libinput-gestures-setup autostart
 libinput-gestures-setup start
-</code></pre>
+</code></pre></div>
 <h3 id="battery-monitor">Battery Monitor<a class="headerlink" href="#battery-monitor" title="Permanent link">#</a></h3>
 <ul>
 <li>Source: http://battery-monitor.maateen.me/</li>
@@ -3597,37 +3591,37 @@ libinput-gestures-setup start
 <li>
 <p>put the disk into standby mode</p>
 <ul>
-<li>whenever you access the disk, it should automatically wake up and work back again</li>
+<li>whenever you access the disk, it should automatically wake up and work back again
+<div class="highlight"><pre><span></span><code>hdparm -y /dev/sdX
+</code></pre></div></li>
 </ul>
 </li>
-</ul>
-<pre><code>hdparm -y /dev/sdX
-</code></pre>
+<li>
+<p>deeper resting mode</p>
 <ul>
-<li>deeper resting mode<ul>
-<li>may need to restart your computer in order to make the HDD work again</li>
+<li>may need to restart your computer in order to make the HDD work again
+<div class="highlight"><pre><span></span><code>hdparm -Y /dev/sdX
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
-<pre><code>hdparm -Y /dev/sdX
-</code></pre>
 <h4 id="powertop-by-intel-recommanded">PowerTop by Intel (Recommanded)<a class="headerlink" href="#powertop-by-intel-recommanded" title="Permanent link">#</a></h4>
-<pre><code>sudo apt-get update
+<div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get install powertop
 sudo powertop --auto-tune
 sudo powertop --calibrate
-</code></pre>
+</code></pre></div>
 <h4 id="tlp-emergency">TLP (Emergency)<a class="headerlink" href="#tlp-emergency" title="Permanent link">#</a></h4>
 <ul>
 <li>Source: https://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</li>
 </ul>
-<pre><code>sudo apt install tlp
+<div class="highlight"><pre><span></span><code>sudo apt install tlp
 
 #restart
 
 #or
 sudo tlp start 
-</code></pre>
+</code></pre></div>
 <h3 id="mono">Mono<a class="headerlink" href="#mono" title="Permanent link">#</a></h3>
 <h4 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h4>
 <p>https://www.mono-project.com/download/stable/#download-lin</p>
@@ -3636,8 +3630,8 @@ sudo tlp start
 Scripts: </p>
 <h3 id="thinkpad-touchpad-middle-button">Thinkpad Touchpad Middle Button<a class="headerlink" href="#thinkpad-touchpad-middle-button" title="Permanent link">#</a></h3>
 <h4 id="install_1">Install<a class="headerlink" href="#install_1" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">sudo apt install xserver-xorg-input-libinput
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo apt install xserver-xorg-input-libinput
+</code></pre></div>
 <h4 id="config">Config<a class="headerlink" href="#config" title="Permanent link">#</a></h4>
 <ul>
 <li>restart</li>
@@ -3653,34 +3647,34 @@ Scripts: </p>
 <p>First of all, if you have installed Fingerprint GUI manually before, get rid of it completely. Remove all binaries, shared libraries, any other files and undo all the changes you have made to your system config files (especially to files under /etc/pam.d/).</p>
 </li>
 <li>
-<p>Add this PPA to your sources:</p>
+<p>Add this PPA to your sources:
+<div class="highlight"><pre><span></span><code>    sudo add-apt-repository ppa:fingerprint/fingerprint-gui
+    sudo apt-get update
+</code></pre></div></p>
+</li>
+<li>
+<p>Install the packages:
+<div class="highlight"><pre><span></span><code>    sudo apt-get install libbsapi policykit-1-fingerprint-gui fingerprint-gui
+</code></pre></div></p>
+</li>
+<li>
+<p>Log out of your session and log back in (we need the new session defaults to be picked up).</p>
 </li>
 </ol>
-<pre><code class="language-bash">    sudo add-apt-repository ppa:fingerprint/fingerprint-gui
-    sudo apt-get update
-</code></pre>
-<ol>
-<li>Install the packages:</li>
-</ol>
-<pre><code class="language-bash">    sudo apt-get install libbsapi policykit-1-fingerprint-gui fingerprint-gui
-</code></pre>
-<ol>
-<li>Log out of your session and log back in (we need the new session defaults to be picked up).</li>
-</ol>
 <h4 id="uninstallation">Uninstallation<a class="headerlink" href="#uninstallation" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">    sudo apt-get install policykit-1-gnome
+<div class="highlight"><pre><span></span><code>    sudo apt-get install policykit-1-gnome
     sudo apt-get remove fingerprint-gui
-</code></pre>
+</code></pre></div>
 <h3 id="zsh">ZSH<a class="headerlink" href="#zsh" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">sudo apt install zsh
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo apt install zsh
+</code></pre></div>
 <h4 id="oh-my-zsh">oh-my-zsh<a class="headerlink" href="#oh-my-zsh" title="Permanent link">#</a></h4>
-<pre><code class="language-bash">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+<div class="highlight"><pre><span></span><code>sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 
-#OR
+<span class="c1">#OR</span>
 
-sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;
-</code></pre>
+sh -c <span class="s2">&quot;</span><span class="k">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
 <h3 id="vim">VIM<a class="headerlink" href="#vim" title="Permanent link">#</a></h3>
 <h4 id="vundle">Vundle<a class="headerlink" href="#vundle" title="Permanent link">#</a></h4>
 <ul>
@@ -3692,21 +3686,21 @@ sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mast
 <ul>
 <li>Mention bundle names (as a github repo) in .vimrc file</li>
 </ul>
-<pre><code class="language-bash">Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'itchyny/lightline.vim'
-Plugin 'itchyny/vim-gitbranch'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'aperezdc/vim-template'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-abolish'
-</code></pre>
+<div class="highlight"><pre><span></span><code>Plugin <span class="s1">&#39;VundleVim/Vundle.vim&#39;</span>
+Plugin <span class="s1">&#39;morhetz/gruvbox&#39;</span>
+Plugin <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
+Plugin <span class="s1">&#39;itchyny/vim-gitbranch&#39;</span>
+Plugin <span class="s1">&#39;scrooloose/nerdtree.git&#39;</span>
+Plugin <span class="s1">&#39;aperezdc/vim-template&#39;</span>
+Plugin <span class="s1">&#39;davidhalter/jedi-vim&#39;</span>
+Plugin <span class="s1">&#39;editorconfig/editorconfig-vim&#39;</span>
+Plugin <span class="s1">&#39;tpope/vim-abolish&#39;</span>
+</code></pre></div>
 <ul>
 <li>Install using command</li>
 </ul>
-<pre><code class="language-bash">:PluginInstall
-</code></pre>
+<div class="highlight"><pre><span></span><code>:PluginInstall
+</code></pre></div>
 <h4 id="vim-as-python-ide">VIM as Python IDE<a class="headerlink" href="#vim-as-python-ide" title="Permanent link">#</a></h4>
 <p>Source: http://chrisstrelioff.ws/sandbox/2016/09/21/vim_and_vundle_on_ubuntu_16_04.html</p>
 <ul>
@@ -3771,26 +3765,28 @@ Plugin 'tpope/vim-abolish'
 <h3 id="keyboard-custom-shortcuts-bindings">KeyBoard Custom Shortcuts Bindings<a class="headerlink" href="#keyboard-custom-shortcuts-bindings" title="Permanent link">#</a></h3>
 <h4 id="emulate-right-click-from-keyboard">Emulate right click from keyboard<a class="headerlink" href="#emulate-right-click-from-keyboard" title="Permanent link">#</a></h4>
 <ul>
-<li>install xdotool</li>
-</ul>
-<pre><code class="language-bash">sudo apt install xdotool
-</code></pre>
-<ul>
-<li>bind keyboard shortcut with command: <code>xdotool click 3</code></li>
+<li>
+<p>install xdotool
+<div class="highlight"><pre><span></span><code>sudo apt install xdotool
+</code></pre></div></p>
+</li>
+<li>
+<p>bind keyboard shortcut with command: <code>xdotool click 3</code></p>
+</li>
 </ul>
 <h3 id="backup-restore-cinnamon-settings">Backup &amp; Restore Cinnamon settings<a class="headerlink" href="#backup-restore-cinnamon-settings" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">sudo apt install dconf-cli
+<div class="highlight"><pre><span></span><code>sudo apt install dconf-cli
 
-#backup
+<span class="c1">#backup</span>
 dconf dump /org/cinnamon/ &gt; cinnamon_backup
 
-#restore
+<span class="c1">#restore</span>
 dconf load /org/cinnamon/ &lt; cinnamon_backup
 
 
-#reset to default
+<span class="c1">#reset to default</span>
 dconf reset -f /org/cinnamon/
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="raspberry-pi">Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permanent link">#</a></h2>
 <h3 id="os">OS<a class="headerlink" href="#os" title="Permanent link">#</a></h3>
@@ -3811,56 +3807,55 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=135316</li>
 <ul>
 <li>5 inch capacitive 800*480</li>
 </ul>
-<p><code>/boot/config.txt</code></p>
-<pre><code class="language-bash">framebuffer_width=800
-framebuffer_height=480
-hdmi_force_hotplug=1
-hdmi_group=2
-hdmi_mode=87
-hdmi_cvt 800 480 60 6 0 0 0
-</code></pre>
+<p><code>/boot/config.txt</code>
+<div class="highlight"><pre><span></span><code><span class="nv">framebuffer_width</span><span class="o">=</span><span class="m">800</span>
+<span class="nv">framebuffer_height</span><span class="o">=</span><span class="m">480</span>
+<span class="nv">hdmi_force_hotplug</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">hdmi_group</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">hdmi_mode</span><span class="o">=</span><span class="m">87</span>
+hdmi_cvt <span class="m">800</span> <span class="m">480</span> <span class="m">60</span> <span class="m">6</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
+</code></pre></div></p>
 <h3 id="backup-image-from-burnt-image">Backup Image from Burnt Image<a class="headerlink" href="#backup-image-from-burnt-image" title="Permanent link">#</a></h3>
 <h4 id="on-a-different-linux-pc-using-usb">On a different linux PC using USB.<a class="headerlink" href="#on-a-different-linux-pc-using-usb" title="Permanent link">#</a></h4>
 <ul>
 <li>It won't work on the raspi!, it will get trapped in infinit loop</li>
 </ul>
-<pre><code class="language-bash">#list disk
+<div class="highlight"><pre><span></span><code><span class="c1">#list disk</span>
 sudo fdisk -l
 
-#backup SD card
-sudo dd bs=4M if=/dev/sdb | gzip &gt; /home/your_username/image`date +%d%m%y`.gz
+<span class="c1">#backup SD card</span>
+sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>/dev/sdb <span class="p">|</span> gzip &gt; /home/your_username/image<span class="sb">`</span>date +%d%m%y<span class="sb">`</span>.gz
 
-#restore the backup on SD card
-sudo gzip -dc /home/your_username/image.gz | dd bs=4M of=/dev/sdb
-</code></pre>
+<span class="c1">#restore the backup on SD card</span>
+sudo gzip -dc /home/your_username/image.gz <span class="p">|</span> dd <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">of</span><span class="o">=</span>/dev/sdb
+</code></pre></div>
 <h4 id="in-raspberry-itself-using-rsync">In Raspberry Itself using <code>rsync</code><a class="headerlink" href="#in-raspberry-itself-using-rsync" title="Permanent link">#</a></h4>
 <h3 id="network-drive-mount-sshfs">Network Drive Mount (sshfs)<a class="headerlink" href="#network-drive-mount-sshfs" title="Permanent link">#</a></h3>
-<pre><code class="language-bash">#Install SSHFS
+<div class="highlight"><pre><span></span><code><span class="c1">#Install SSHFS</span>
 
 sudo apt-get install sshfs
 
-#First, create a directory on your host computer:
+<span class="c1">#First, create a directory on your host computer:</span>
 
 mkdir pi
 
-#Then mount the Raspberry Pi's filesystem to this location:
+<span class="c1">#Then mount the Raspberry Pi&#39;s filesystem to this location:</span>
 
 sudo sshfs -o allow_other pi@192.168.1.124:/ pi
 
-#Now enter this directory as if it is a regular folder; you should be able to see and access the contents of the Raspberry Pi:
+<span class="c1">#Now enter this directory as if it is a regular folder; you should be able to see and access the contents of the Raspberry Pi:</span>
 
-cd pi/
+<span class="nb">cd</span> pi/
 ls
-
-</code></pre>
+</code></pre></div>
 <h3 id="remote-audio">Remote Audio<a class="headerlink" href="#remote-audio" title="Permanent link">#</a></h3>
 <h4 id="bluetooth">bluetooth<a class="headerlink" href="#bluetooth" title="Permanent link">#</a></h4>
 <h5 id="way-1">Way 1<a class="headerlink" href="#way-1" title="Permanent link">#</a></h5>
-<pre><code>sudo apt-get install bluetooth  blueman bluez python-gobject python-gobject-2 pulseaudio-module-bluetooth
+<div class="highlight"><pre><span></span><code>sudo apt-get install bluetooth  blueman bluez python-gobject python-gobject-2 pulseaudio-module-bluetooth
 
 sudo systemctl status bluetooth
 pulseaudio --start
-</code></pre>
+</code></pre></div>
 <ul>
 <li>https://gist.github.com/mill1000/74c7473ee3b4a5b13f6325e9994ff84c</li>
 <li>https://raspberrypi.stackexchange.com/questions/48140/raspberry-pi-3-connecting-to-bluetooth-audio-device-on-raspbian-jessie</li>
@@ -3868,10 +3863,10 @@ pulseaudio --start
 </ul>
 <h5 id="way-2">Way 2<a class="headerlink" href="#way-2" title="Permanent link">#</a></h5>
 <ul>
-<li>https://www.instructables.com/id/Turn-your-Raspberry-Pi-into-a-Portable-Bluetooth-A/</li>
+<li>https://www.instructables.com/id/Turn-your-Raspberry-Pi-into-a-Portable-Bluetooth-A/
+<div class="highlight"><pre><span></span><code>$ sudo vim /var/lib/bluetooth/00:1A:7D:DA:71:11/config
+</code></pre></div></li>
 </ul>
-<pre><code class="language-bash">$ sudo vim /var/lib/bluetooth/00:1A:7D:DA:71:11/config
-</code></pre>
 <h4 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">#</a></h4>
 <ul>
 <li>shareport</li>
@@ -3885,7 +3880,7 @@ pulseaudio --start
 <ul>
 <li>change inside /etc/network/interface</li>
 </ul>
-<pre><code class="language-bash">    auto lo
+<div class="highlight"><pre><span></span><code>    auto lo
 
     iface lo inet loopback
     iface eth0 inet dhcp
@@ -3895,18 +3890,18 @@ pulseaudio --start
 
 
     iface wlan0 inet dhcp
-            wpa-ssid &quot;Connecting...&quot;
-            wpa-psk &quot;PrideValencia_A704&quot;
-</code></pre>
+            wpa-ssid <span class="s2">&quot;Connecting...&quot;</span>
+            wpa-psk <span class="s2">&quot;PrideValencia_A704&quot;</span>
+</code></pre></div>
 <h3 id="wifi-to-ethernet">wifi to ethernet<a class="headerlink" href="#wifi-to-ethernet" title="Permanent link">#</a></h3>
 <p>src: https://www.instructables.com/id/Share-WiFi-With-Ethernet-Port-on-a-Raspberry-Pi/</p>
-<pre><code>sudo apt install dnsmasq -y
+<div class="highlight"><pre><span></span><code>sudo apt install dnsmasq -y
 cd
 wget https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh
 chmod +x ~/wifi-to-eth-route.sh
 sudo crontab -e
 @reboot bash /home/pi/wifi-to-eth-route.sh &amp;  # add it to crontab file
-</code></pre>
+</code></pre></div>
                 
               
               
