@@ -1,6 +1,5 @@
 site_name: Toran's Notes
 repo_url: https://github.com/toransahu/notes/
-edit_uri: '#docs/'
 site_author: Toran Sahu <toran.sahu@yahoo.com>
 # nav:
 #     - Home: index.md
