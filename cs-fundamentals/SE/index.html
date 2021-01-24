@@ -1,0 +1,2088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>SE - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programming-languages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              SE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Maths/" class="md-nav__link">
+        Maths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/" class="md-nav__link">
+        Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Api" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/REST/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      
+      <label class="md-nav__link" for="nav-9">
+        Cs fundamentals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Cs fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Algo/" class="md-nav__link">
+        Algo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS-Dictionary/" class="md-nav__link">
+        CS Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DBMS/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DS/" class="md-nav__link">
+        DS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SE
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programming-languages" class="md-nav__link">
+    Programming Languages
+  </a>
+  
+    <nav class="md-nav" aria-label="Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-overview-of-programs-and-programming-languages" class="md-nav__link">
+    An Overview of Programs and Programming Languages
+  </a>
+  
+    <nav class="md-nav" aria-label="An Overview of Programs and Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compiled-interpreted-or-jit-compiled" class="md-nav__link">
+    Compiled, interpreted, or JIT-compiled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-or-low-level-level" class="md-nav__link">
+    High or Low Level Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-system" class="md-nav__link">
+    Type System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigms" class="md-nav__link">
+    Paradigms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardization" class="md-nav__link">
+    Standardization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    Repository Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+    <nav class="md-nav" aria-label="History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-guide" class="md-nav__link">
+    Open Source Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-licensing" class="md-nav__link">
+    Software Licensing
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Licensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-20" class="md-nav__link">
+    Apache-2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mit" class="md-nav__link">
+    MIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bsd-2-clause" class="md-nav__link">
+    BSD-2-Clause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bsd-3-clause" class="md-nav__link">
+    BSD-3-Clause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpl-20" class="md-nav__link">
+    GPL-2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpl-30" class="md-nav__link">
+    GPL-3.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agpl-30" class="md-nav__link">
+    AGPL-3.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-security" class="md-nav__link">
+    Software Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obfuscation" class="md-nav__link">
+    Obfuscation
+  </a>
+  
+    <nav class="md-nav" aria-label="Obfuscation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obfuscation-tools" class="md-nav__link">
+    Obfuscation Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect-code" class="md-nav__link">
+    Protect Code
+  </a>
+  
+    <nav class="md-nav" aria-label="Protect Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protect-net-code" class="md-nav__link">
+    Protect .Net Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompile-tools" class="md-nav__link">
+    Decompile Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Decompile Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlls" class="md-nav__link">
+    DLLs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plsql" class="md-nav__link">
+    PL/SQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-key-encryption" class="md-nav__link">
+    Symmetric Key Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="Symmetric Key Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#des-data-encryption-standard" class="md-nav__link">
+    DES (Data Encryption Standard)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes-advanced-encryption-standard" class="md-nav__link">
+    AES (Advanced Encryption Standard)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-encryption-privatepublic-key" class="md-nav__link">
+    Asymmetric Encryption (Private/Public Key)
+  </a>
+  
+    <nav class="md-nav" aria-label="Asymmetric Encryption (Private/Public Key)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deffie-hellman-key-exchange" class="md-nav__link">
+    Deffie-Hellman Key Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-rivestshamiradleman" class="md-nav__link">
+    RSA (Rivest–Shamir–Adleman)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#net-dll-vs-c-dll" class="md-nav__link">
+    .Net DLL vs C++ DLL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bit-vs-64-bit-dll" class="md-nav__link">
+    32 bit vs 64 bit DLL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToC/" class="md-nav__link">
+        ToC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Data science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data science" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Data science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/ML-Azure/" class="md-nav__link">
+        ML Azure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+      
+      <label class="md-nav__link" for="nav-11">
+        Infra
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Infra" data-md-level="1">
+        <label class="md-nav__title" for="nav-11">
+          <span class="md-nav__icon md-icon"></span>
+          Infra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra/DevOps/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      
+      <label class="md-nav__link" for="nav-12">
+        Lang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="nav-12">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/C-C%2B%2B/" class="md-nav__link">
+        C C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3" >
+      
+      <label class="md-nav__link" for="nav-12-3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/golang/go/" class="md-nav__link">
+        Go
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" >
+      
+      <label class="md-nav__link" for="nav-12-4">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-OOPs/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Production-Servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/Piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programming-languages" class="md-nav__link">
+    Programming Languages
+  </a>
+  
+    <nav class="md-nav" aria-label="Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-overview-of-programs-and-programming-languages" class="md-nav__link">
+    An Overview of Programs and Programming Languages
+  </a>
+  
+    <nav class="md-nav" aria-label="An Overview of Programs and Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compiled-interpreted-or-jit-compiled" class="md-nav__link">
+    Compiled, interpreted, or JIT-compiled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-or-low-level-level" class="md-nav__link">
+    High or Low Level Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-system" class="md-nav__link">
+    Type System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigms" class="md-nav__link">
+    Paradigms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardization" class="md-nav__link">
+    Standardization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    Repository Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+    <nav class="md-nav" aria-label="History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-guide" class="md-nav__link">
+    Open Source Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-licensing" class="md-nav__link">
+    Software Licensing
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Licensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-20" class="md-nav__link">
+    Apache-2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mit" class="md-nav__link">
+    MIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bsd-2-clause" class="md-nav__link">
+    BSD-2-Clause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bsd-3-clause" class="md-nav__link">
+    BSD-3-Clause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpl-20" class="md-nav__link">
+    GPL-2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpl-30" class="md-nav__link">
+    GPL-3.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agpl-30" class="md-nav__link">
+    AGPL-3.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-security" class="md-nav__link">
+    Software Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obfuscation" class="md-nav__link">
+    Obfuscation
+  </a>
+  
+    <nav class="md-nav" aria-label="Obfuscation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obfuscation-tools" class="md-nav__link">
+    Obfuscation Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect-code" class="md-nav__link">
+    Protect Code
+  </a>
+  
+    <nav class="md-nav" aria-label="Protect Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protect-net-code" class="md-nav__link">
+    Protect .Net Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompile-tools" class="md-nav__link">
+    Decompile Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Decompile Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlls" class="md-nav__link">
+    DLLs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plsql" class="md-nav__link">
+    PL/SQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-key-encryption" class="md-nav__link">
+    Symmetric Key Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="Symmetric Key Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#des-data-encryption-standard" class="md-nav__link">
+    DES (Data Encryption Standard)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes-advanced-encryption-standard" class="md-nav__link">
+    AES (Advanced Encryption Standard)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-encryption-privatepublic-key" class="md-nav__link">
+    Asymmetric Encryption (Private/Public Key)
+  </a>
+  
+    <nav class="md-nav" aria-label="Asymmetric Encryption (Private/Public Key)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deffie-hellman-key-exchange" class="md-nav__link">
+    Deffie-Hellman Key Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-rivestshamiradleman" class="md-nav__link">
+    RSA (Rivest–Shamir–Adleman)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#net-dll-vs-c-dll" class="md-nav__link">
+    .Net DLL vs C++ DLL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bit-vs-64-bit-dll" class="md-nav__link">
+    32 bit vs 64 bit DLL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/#docs/cs-fundamentals/SE.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>SE</h1>
+                
+                <div class="toc">
+<ul>
+<li><a href="#programming-languages">Programming Languages</a><ul>
+<li><a href="#an-overview-of-programs-and-programming-languages">An Overview of Programs and Programming Languages</a><ul>
+<li><a href="#compiled-interpreted-or-jit-compiled">Compiled, interpreted, or JIT-compiled</a></li>
+<li><a href="#high-or-low-level-level">High or Low Level Level</a></li>
+<li><a href="#type-system">Type System</a></li>
+<li><a href="#paradigms">Paradigms</a></li>
+<li><a href="#standardization">Standardization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#repository-structure">Repository Structure</a></li>
+<li><a href="#history">History</a><ul>
+<li><a href="#os">OS</a></li>
+</ul>
+</li>
+<li><a href="#open-source-guide">Open Source Guide</a></li>
+<li><a href="#software-licensing">Software Licensing</a><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#apache-20">Apache-2.0</a></li>
+<li><a href="#mit">MIT</a></li>
+<li><a href="#bsd-2-clause">BSD-2-Clause</a></li>
+<li><a href="#bsd-3-clause">BSD-3-Clause</a></li>
+<li><a href="#gpl-20">GPL-2.0</a></li>
+<li><a href="#gpl-30">GPL-3.0</a></li>
+<li><a href="#agpl-30">AGPL-3.0</a></li>
+</ul>
+</li>
+<li><a href="#software-security">Software Security</a><ul>
+<li><a href="#obfuscation">Obfuscation</a><ul>
+<li><a href="#obfuscation-tools">Obfuscation Tools</a></li>
+</ul>
+</li>
+<li><a href="#protect-code">Protect Code</a><ul>
+<li><a href="#protect-net-code">Protect .Net Code</a></li>
+</ul>
+</li>
+<li><a href="#decompile-tools">Decompile Tools</a><ul>
+<li><a href="#dlls">DLLs</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#plsql">PL/SQL</a></li>
+</ul>
+</li>
+<li><a href="#encryption">Encryption</a><ul>
+<li><a href="#symmetric-key-encryption">Symmetric Key Encryption</a><ul>
+<li><a href="#des-data-encryption-standard">DES (Data Encryption Standard)</a></li>
+<li><a href="#aes-advanced-encryption-standard">AES (Advanced Encryption Standard)</a></li>
+</ul>
+</li>
+<li><a href="#asymmetric-encryption-privatepublic-key">Asymmetric Encryption (Private/Public Key)</a><ul>
+<li><a href="#deffie-hellman-key-exchange">Deffie-Hellman Key Exchange</a></li>
+<li><a href="#rsa-rivestshamiradleman">RSA (Rivest–Shamir–Adleman)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#misc">Misc</a><ul>
+<li><a href="#net-dll-vs-c-dll">.Net DLL vs C++ DLL</a></li>
+<li><a href="#32-bit-vs-64-bit-dll">32 bit vs 64 bit DLL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="programming-languages">Programming Languages<a class="headerlink" href="#programming-languages" title="Permanent link">#</a></h2>
+<h3 id="an-overview-of-programs-and-programming-languages">An Overview of Programs and Programming Languages<a class="headerlink" href="#an-overview-of-programs-and-programming-languages" title="Permanent link">#</a></h3>
+<p>In order to better communicate to our computers what exactly it is we want them to do, we've developed a wide range of <strong>programming languages</strong> to make the communication process easier.  </p>
+<p>Depending on the type of project, there are many factors that have to be considered when choosing a language. Here is a list of some of the more noteworthy ones:  </p>
+<h4 id="compiled-interpreted-or-jit-compiled">Compiled, interpreted, or JIT-compiled<a class="headerlink" href="#compiled-interpreted-or-jit-compiled" title="Permanent link">#</a></h4>
+<p><strong>Compiled languages</strong> are translated to the target machine's native language by a program called a compiler. This can result in very fast code, especially if the compiler is effective at optimizing, however the resulting code may not port well across operating systems and the compilation process may take a while.<br />
+<strong>Interpreted languages</strong> are read by a program called an interpreter and are executed by that program. While they are as portable as their interpreter and have no long compile times, interpreted languages are usually <em>much</em> slower than an equivalent compiled program.<br />
+Finally, <strong>just-in-time compiled</strong> (or JIT-compiled) languages are languages that are quickly compiled when programs written in them need to be run (usually with very little optimization), offering a balance between performance and portability.  </p>
+<h4 id="high-or-low-level-level">High or Low Level Level<a class="headerlink" href="#high-or-low-level-level" title="Permanent link">#</a></h4>
+<p>In this case, refers to how much the nature of the language reflects the underlying system. In other words, a programming language's level refers to how similar the language is to a computer's native language. The higher the level, the <em>less</em> similar it is.<br />
+A <strong>low-level language</strong> is generally quite similar to machine code, and thus is more suitable for programs like device drivers or very high performance programs that really need access to the hardware. Generally, the term is reserved for machine code itself and assembly languages, though many languages offer low-level elements. Since a low-level language is subject to all the nuances of the hardware it's accessing, however, a program written in a low-level language is generally difficult to port to other platforms. Low level languages are practically never interpreted, as this generally defeats the purpose.<br />
+A <strong>high-level language</strong> focuses more on concepts that are easy to understand by the human mind, such as objects or mathematical functions. A high-level language usually is easier to understand than a low-level language, and it usually takes less time to develop a program in a high-level language than it does in a low-level language. As a trade-off one generally needs to sacrifice some degree of control over what the resulting program actually does. It is not, however, impossible to mix high-level and low-level functionality in a language.  </p>
+<h4 id="type-system">Type System<a class="headerlink" href="#type-system" title="Permanent link">#</a></h4>
+<p>A <strong>type system</strong> refers to the rules that the different types of variables of a language have to follow. Some languages (including most assembly languages) do not have types and thus this section does not apply to them. However, as most languages (including C++) have types, this information is important.  </p>
+<ul>
+<li>
+<p><strong>Type Strength: Strong or Weak</strong><br />
+A strong typing system puts restrictions on how different types of variables can be converted to each other without any converting statements. An ideal strong typing system would forbid implicit "casts" to types that do not make any sense, such as an integer to a Fruit object. A weak typing system would try to find some way to make the cast work.  </p>
+</li>
+<li>
+<p><strong>Type Expression: Manifest or Inferred</strong><br />
+This deals with how the compiler/interpreter for a language infers the types of variables. Many languages require variables' types to be explicitly defined, and thus rely on manifest typing. Some however, will infer the type of the variable based on the contexts in which it is used, and thus use inferred typing.  </p>
+</li>
+<li>
+<p><strong>Type Checking: Static or Dynamic</strong><br />
+If a language is statically typed, then the compiler/interpreter does the type checking once before the program runs/is compiled. If the language is dynamically type checked, then the types are checked at run-time.  </p>
+</li>
+<li>
+<p><strong>Type Safety: Safe or Unsafe</strong><br />
+These refer to the degree to which a language will prohibit operations on typed variables that might lead to undefined behavior or errors. A safe language will do more to ensure that such operations or conversions do not occur, while an unsafe language will give more responsibility to the user in this regard.  </p>
+</li>
+</ul>
+<p>These typing characteristics are not necessarily mutually exclusive, and some languages mix them.  </p>
+<h4 id="paradigms">Paradigms<a class="headerlink" href="#paradigms" title="Permanent link">#</a></h4>
+<p>A programming paradigm is a methodology or way of programming that a programming language supports. Here is a summary of a few common paradigms:  </p>
+<ul>
+<li>
+<p><strong>Declarative</strong><br />
+A declarative language will focus more on specifying what a language is supposed to accomplish rather than by what means it is supposed to accomplish it. Such a paradigm might be used to avoid undesired side-effects resulting from having to write one's own code.  </p>
+</li>
+<li>
+<p><strong>Functional</strong><br />
+Functional programming is a subset of declarative programming that tries to express problems in terms of mathematical equations and functions. It goes out of its way to avoid the concepts of states and mutable variables which are common in imperative languages.  </p>
+</li>
+<li>
+<p><strong>Generic</strong><br />
+Generic programming focuses on writing skeleton algorithms in terms of types that will be specified when the algorithm is actually used, thus allowing some leniency to programmers who wish to avoid strict strong typing rules. It can be a very powerful paradigm if well-implemented.  </p>
+</li>
+<li>
+<p><strong>Imperative</strong><br />
+Imperative languages allow programmers to give the computer ordered lists of instructions without necessarily having to explicitly state the task. It can be thought of being the opposite of declarative programming.  </p>
+</li>
+<li>
+<p><strong>Structured</strong><br />
+Structured programming languages aim to provide some form of noteworthy structure to a language, such as intuitive control over the order in which statements are executed (if X then do Y otherwise do Z, do X while Y is Z). Such languages generally deprecate "jumps", such as those provided by the goto statement in C and C++.  </p>
+</li>
+<li>
+<p><strong>Procedural</strong><br />
+Although it is sometimes used as a synonym for imperative programming, a procedural programming language can also refer to an imperative structured programming language which supports the concept of procedures and subroutines (also known as functions in C or C++).  </p>
+</li>
+<li>
+<p><strong>Object-Oriented</strong><br />
+Object-Oriented programming (sometimes abbreviated to OOP) is a subset of structured programming which expresses programs in the terms of "objects", which are meant to model objects in the real world. Such a paradigm allows code to be reused in remarkable ways and is meant to be easy to understand.  </p>
+</li>
+</ul>
+<h4 id="standardization">Standardization<a class="headerlink" href="#standardization" title="Permanent link">#</a></h4>
+<p>Does a language have a formal standard? This can be very important to ensure that programs written to work with one compiler/interpreter will work with another. Some languages are standardized by the American National Standards Institute (ANSI), some are standardized by the International Organization for Standardization (ISO), and some have an informal but de-facto standard not maintained by any standards organization.  </p>
+<h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">#</a></h2>
+<pre><code class="language-bash">
+                Repo/
+                |
+                |------- README.md
+                |
+                |------- LICENSE
+                |
+                |------- CONTRIBUTING.md
+                |
+                |------- CODE_OF_CONDUCT.md
+                |
+                |------- NOTICE.md
+                |
+                |
+                |------- configs/
+                |        |----- anyfile.json
+                |
+                |
+                |
+                |------- docs/
+                |        |----- Index
+                |        |----- Overview
+                |        |----- API
+                |        |----- Code Structure
+                |        |----- Installation
+                |        |----- Configuration
+                |        |----- References
+                |        |----- Future
+                |        
+                |
+                |
+                |------- src/
+                         |  
+                         |-----project/
+                         |     |--__init__.py 
+                         |     |--settings.py
+                         |     |--urls.py
+                         |     └--wsgi.py
+                         |
+                         |-----app1/  
+                         |  
+                         |  
+                         |  
+                         |-----app2-RESTful/  
+                         |  
+                         |  
+                         |  
+                         |-----manage.py  
+                         |  
+                         |  
+                         |  
+                         └-----db.sqlite3  
+</code></pre>
+<ul>
+<li><a href="https://www.djangoproject.com/conduct/">Django - Code of Conduct</a></li>
+<li><a href="https://www.contributor-covenant.org/">Other - Code of Conduct</a></li>
+</ul>
+<h2 id="history">History<a class="headerlink" href="#history" title="Permanent link">#</a></h2>
+<h3 id="os">OS<a class="headerlink" href="#os" title="Permanent link">#</a></h3>
+<ul>
+<li>https://en.wikipedia.org/wiki/Timeline_of_operating_systems</li>
+</ul>
+<h2 id="open-source-guide"><a href="https://opensource.guide/">Open Source Guide</a><a class="headerlink" href="#open-source-guide" title="Permanent link">#</a></h2>
+<h2 id="software-licensing">Software Licensing<a class="headerlink" href="#software-licensing" title="Permanent link">#</a></h2>
+<h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
+<ul>
+<li>https://opensource.org/licenses/alphabetical</li>
+<li>http://www.gnu.org/licenses/</li>
+<li>https://opensource.org/licenses</li>
+</ul>
+<h3 id="apache-20"><a href="https://opensource.org/licenses/Apache-2.0">Apache-2.0</a><a class="headerlink" href="#apache-20" title="Permanent link">#</a></h3>
+<p>TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+- free, reproduce, sublicense, re-distribute in any form
+- Redistribution
+    - provide copy of license
+    - mention you changed this file/code
+    - retain copy of source code
+- can be monitized <br />
+- <a href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)"> Summary</a></p>
+<h3 id="mit"><a href="https://opensource.org/licenses/MIT">MIT</a><a class="headerlink" href="#mit" title="Permanent link">#</a></h3>
+<p>Permission is hereby granted, <code>free of charge</code>, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software <code>without restriction</code>, including without limitation the <code>rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies</code> of the Software, and to permit persons to whom the Software is furnished to do so.</p>
+<ul>
+<li><a href="https://tldrlegal.com/license/mit-license"> Summary</a></li>
+</ul>
+<h3 id="bsd-2-clause"><a href="https://opensource.org/licenses/BSD-2-Clause">BSD-2-Clause</a><a class="headerlink" href="#bsd-2-clause" title="Permanent link">#</a></h3>
+<p>Redistribution and use in source and binary forms, <code>with or without modification, are permitted provided</code> that the following conditions are met:</p>
+<pre><code>1. Redistributions of source code must `retain the above copyright notice`, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form `must reproduce the above copyright notice`, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+</code></pre>
+<ul>
+<li>also known as <code>Simplified BSD</code> or <code>FreeBSD</code></li>
+<li>can be monitized</li>
+<li><a href="https://tldrlegal.com/license/bsd-2-clause-license-(freebsd)"> Summary</a></li>
+</ul>
+<h3 id="bsd-3-clause"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a><a class="headerlink" href="#bsd-3-clause" title="Permanent link">#</a></h3>
+<p>Redistribution and use in source and binary forms, <code>with or without modification, are permitted</code> provided that the following conditions are met:</p>
+<pre><code>1. Redistributions of source code must `retain the above copyright notice`, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must `reproduce the above copyright notice`, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the `name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived` from this software without specific prior written permission.
+</code></pre>
+<ul>
+<li>also known as <code>Modified BSD</code> or <code>New BSD</code></li>
+<li>can be monitized</li>
+<li><a href="https://tldrlegal.com/license/bsd-3-clause-license-(revised)"> Summary</a></li>
+</ul>
+<h3 id="gpl-20"><a href="https://opensource.org/licenses/GPL-2.0">GPL-2.0</a><a class="headerlink" href="#gpl-20" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>everyone is <code>permitted to copy and distribute verbatim copies
+of this LICENSE document, but changing it is not allowed</code></p>
+</li>
+<li>
+<p>can use, modify, redistribute</p>
+</li>
+<li>
+<p>original licensor can relicense to GPL-3.0</p>
+</li>
+<li>also used as <code>GPL version 2 or any later version</code><ul>
+<li>gives option to follow the terms and conditions of any later version<ul>
+<li>so, any other licensors can follow the the term &amp; conditions of <code>GPL-3.0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>can be monitized       </li>
+<li>modified versions of code/software be marked as changed with the date of the change</li>
+<li>any patent must be licensed for everyone's free use or not licensed at all</li>
+<li><a href="https://tldrlegal.com/license/gnu-general-public-license-v2"> Summary</a></li>
+</ul>
+<h3 id="gpl-30"><a href="https://opensource.org/licenses/GPL-3.0">GPL-3.0</a><a class="headerlink" href="#gpl-30" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>everyone is <code>permitted to copy and distribute verbatim copies of this LICENSE document, but changing it is not allowed</code></p>
+</li>
+<li>
+<p>can use, modify, redistribute</p>
+</li>
+<li>else, similar to <code>GPL-2.0</code> but re-phrased</li>
+<li><a href="https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)"> Summary</a></li>
+</ul>
+<h3 id="agpl-30"><a href="https://opensource.org/licenses/AGPL-3.0">AGPL-3.0</a><a class="headerlink" href="#agpl-30" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>everyone is <code>permitted to copy and distribute verbatim copies of this LICENSE document, but changing it is not allowed</code></p>
+</li>
+<li>
+<p>built for network software</p>
+</li>
+<li>can distribute modified versions if you keep track of the changes and the date you made them</li>
+<li>source code must be distributed along with web service publication</li>
+<li>the AGPL is the GPL of the web</li>
+<li>http://www.gnu.org/licenses/agpl.html</li>
+<li><a href="https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)">Summary</a></li>
+</ul>
+<h2 id="software-security">Software Security<a class="headerlink" href="#software-security" title="Permanent link">#</a></h2>
+<h3 id="obfuscation">Obfuscation<a class="headerlink" href="#obfuscation" title="Permanent link">#</a></h3>
+<p>The process of protecting the protable executable files (EXE, DLL) from getting decompiled into the original source code is called Obfuscation.</p>
+<h4 id="obfuscation-tools">Obfuscation Tools<a class="headerlink" href="#obfuscation-tools" title="Permanent link">#</a></h4>
+<ul>
+<li>ConfuserEx: https://yck1509.github.io/ConfuserEx/ (EXE, DLLs)<ul>
+<li>ConfuserEx Decoder: https://github.com/cawk/ConfuserEx-Unpacker</li>
+</ul>
+</li>
+<li>dotfuscators: https://www.preemptive.com/products/dotfuscator/overview</li>
+<li>https://translate.google.it/translate?hl=it?sl=it&amp;tl=en&amp;u=https%3A//gianmarcocastagna.blogspot.it/</li>
+</ul>
+<h3 id="protect-code">Protect Code<a class="headerlink" href="#protect-code" title="Permanent link">#</a></h3>
+<ul>
+<li>https://stackoverflow.com/questions/805461/how-to-protect-dlls</li>
+<li>https://stackoverflow.com/questions/109997/how-do-you-protect-your-software-from-illegal-distribution</li>
+<li>https://stackoverflow.com/questions/506282/protect-net-code-from-reverse-engineering</li>
+<li>https://www.codeproject.com/Articles/1139773/Protect-Your-Source-Code-from-Decompiling-or-Rever</li>
+<li>https://stackoverflow.com/questions/7849620/what-is-the-best-way-to-protect-sensitive-data-in-the-code</li>
+</ul>
+<h4 id="protect-net-code">Protect .Net Code<a class="headerlink" href="#protect-net-code" title="Permanent link">#</a></h4>
+<ul>
+<li>https://stackoverflow.com/questions/7669684/encrypt-app-config-file-automatically-during-build-process</li>
+</ul>
+<h3 id="decompile-tools">Decompile Tools<a class="headerlink" href="#decompile-tools" title="Permanent link">#</a></h3>
+<ul>
+<li>https://stackoverflow.com/questions/130058/how-are-serial-generators-cracks-developed</li>
+</ul>
+<h4 id="dlls">DLLs<a class="headerlink" href="#dlls" title="Permanent link">#</a></h4>
+<ul>
+<li>dumpbin (c/c+)</li>
+<li>ILSpy</li>
+<li>dotPeek: https://www.jetbrains.com/decompiler/</li>
+<li>ReSharper</li>
+</ul>
+<h4 id="python">Python<a class="headerlink" href="#python" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://pypi.org/project/uncompyle6/">uncompyle6</a> (.pyc/.pyo to .py)<ul>
+<li>A native Python cross-version decompiler and fragment decompiler. The successor to decompyle, uncompyle, and uncompyle2.</li>
+</ul>
+</li>
+<li><a href="https://sourceforge.net/projects/pyinstallerextractor/">pyinstallerextractor</a> (.exe to .py)</li>
+</ul>
+<h4 id="plsql">PL/SQL<a class="headerlink" href="#plsql" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://www.codecrete.net/UnwrapIt/">UnwrapIt</a></li>
+</ul>
+<h3 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">#</a></h3>
+<h4 id="symmetric-key-encryption"><a href="https://en.wikipedia.org/wiki/Symmetric-key_algorithm">Symmetric Key Encryption</a><a class="headerlink" href="#symmetric-key-encryption" title="Permanent link">#</a></h4>
+<ul>
+<li>Intro<ul>
+<li>use the same cryptographic keys for both encryption of plaintext and decryption of ciphertext</li>
+<li>The keys may be identical or there may be a simple transformation to go between the two keys</li>
+<li>Insecure</li>
+</ul>
+</li>
+</ul>
+<h5 id="des-data-encryption-standard"><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES (Data Encryption Standard)</a><a class="headerlink" href="#des-data-encryption-standard" title="Permanent link">#</a></h5>
+<ul>
+<li>Intro<ul>
+<li>Insecure <ul>
+<li>mainly due to the 56-bit key size being too small</li>
+<li>Once hacked in 22hrs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="aes-advanced-encryption-standard"><a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES (Advanced Encryption Standard)</a><a class="headerlink" href="#aes-advanced-encryption-standard" title="Permanent link">#</a></h5>
+<ul>
+<li>Intro<ul>
+<li>a subset of Rijndael</li>
+<li>superseded DES</li>
+<li>uses block cipher<ul>
+<li>block cipher is a method of encrypting text (to produce ciphertext)</li>
+<li>a cryptographic key and algorithm are applied to a block of data (for example, 64 contiguous bits) at once as a group rather than to one bit at a time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Design Principle        <ul>
+<li><a href="https://en.wikipedia.org/wiki/Substitution%E2%80%93permutation_network">substitution–permutation network</a><ul>
+<li>a combination of both substitution and permutation are applied to the plain text</li>
+</ul>
+</li>
+<li>fixed block size of 128 bits, and a key size of 128, 192, or 256 bits</li>
+</ul>
+</li>
+<li>Variaties<ul>
+<li>MARS</li>
+<li>RC6</li>
+<li>Rijndael</li>
+<li>Serpent</li>
+<li>Twofish</li>
+</ul>
+</li>
+</ul>
+<h4 id="asymmetric-encryption-privatepublic-key"><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Asymmetric Encryption (Private/Public Key)</a><a class="headerlink" href="#asymmetric-encryption-privatepublic-key" title="Permanent link">#</a></h4>
+<ul>
+<li>Intro<ul>
+<li>pair of keys made up of long random strings</li>
+<li>public key: known to every one</li>
+<li>private key: known to owner only</li>
+</ul>
+</li>
+<li>Functions<ul>
+<li>Authentication<ul>
+<li>public key verifies that message received is sent by paired private key holder only </li>
+</ul>
+</li>
+<li>Encryption<ul>
+<li>only paired private key can decrypt the message encrypted by the public key</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="deffie-hellman-key-exchange"><a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Deffie-Hellman Key Exchange</a><a class="headerlink" href="#deffie-hellman-key-exchange" title="Permanent link">#</a></h5>
+<ul>
+<li>http://www.omnisecu.com/security/public-key-infrastructure/asymmetric-encryption-algorithms.php</li>
+<li>Intro</li>
+</ul>
+<h5 id="rsa-rivestshamiradleman"><a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA (Rivest–Shamir–Adleman)</a><a class="headerlink" href="#rsa-rivestshamiradleman" title="Permanent link">#</a></h5>
+<h3 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h3>
+<h4 id="net-dll-vs-c-dll">.Net DLL vs C++ DLL<a class="headerlink" href="#net-dll-vs-c-dll" title="Permanent link">#</a></h4>
+<ul>
+<li>https://stackoverflow.com/questions/10634743/net-dll-vs-c-dll</li>
+</ul>
+<h4 id="32-bit-vs-64-bit-dll">32 bit vs 64 bit DLL<a class="headerlink" href="#32-bit-vs-64-bit-dll" title="Permanent link">#</a></h4>
+<ul>
+<li>https://stackoverflow.com/questions/495244/how-can-i-test-a-windows-dll-file-to-determine-if-it-is-32-bit-or-64-bit</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../OS/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                OS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../ToC/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ToC
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

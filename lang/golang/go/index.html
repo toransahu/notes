@@ -1,0 +1,4081 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>Go - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#install" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Go
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maths/" class="md-nav__link">
+        Maths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/" class="md-nav__link">
+        Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Api" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/REST/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Cs fundamentals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Cs fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/Algo/" class="md-nav__link">
+        Algo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/CS-Dictionary/" class="md-nav__link">
+        CS Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/DBMS/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/DS/" class="md-nav__link">
+        DS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/SE/" class="md-nav__link">
+        SE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs-fundamentals/ToC/" class="md-nav__link">
+        ToC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Data science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data science" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Data science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-science/ML-Azure/" class="md-nav__link">
+        ML Azure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+      
+      <label class="md-nav__link" for="nav-11">
+        Infra
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Infra" data-md-level="1">
+        <label class="md-nav__title" for="nav-11">
+          <span class="md-nav__icon md-icon"></span>
+          Infra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infra/DevOps/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      
+      <label class="md-nav__link" for="nav-12">
+        Lang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="nav-12">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C-C%2B%2B/" class="md-nav__link">
+        C C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3" checked>
+      
+      <label class="md-nav__link" for="nav-12-3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Go
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+    <nav class="md-nav" aria-label="Keywords">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#func" class="md-nav__link">
+    func
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    struct
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    Declaration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type" class="md-nav__link">
+    Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string
+  </a>
+  
+    <nav class="md-nav" aria-label="string">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utf-8-and-string-literals" class="md-nav__link">
+    UTF-8 and string literals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool" class="md-nav__link">
+    bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#byte" class="md-nav__link">
+    byte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-points-characters-and-runes" class="md-nav__link">
+    Code points, characters, and runes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    Data Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slice" class="md-nav__link">
+    Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    interface{}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flows" class="md-nav__link">
+    Control Flows
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if, else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goto" class="md-nav__link">
+    goto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-class" class="md-nav__link">
+    First Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined" class="md-nav__link">
+    User-defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#higher-order" class="md-nav__link">
+    Higher-order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closures" class="md-nav__link">
+    Closures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-return-values" class="md-nav__link">
+    Multiple Return Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variadic" class="md-nav__link">
+    Variadic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymouslambda" class="md-nav__link">
+    Anonymous/Lambda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-modifier" class="md-nav__link">
+    Access Modifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct_1" class="md-nav__link">
+    Struct
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface_1" class="md-nav__link">
+    Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goroutine" class="md-nav__link">
+    goroutine
+  </a>
+  
+    <nav class="md-nav" aria-label="goroutine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defer" class="md-nav__link">
+    defer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panic" class="md-nav__link">
+    panic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recover" class="md-nav__link">
+    recover
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    Channels
+  </a>
+  
+    <nav class="md-nav" aria-label="Channels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-buffering" class="md-nav__link">
+    Channel Buffering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-synchromization" class="md-nav__link">
+    Channel Synchromization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-directions" class="md-nav__link">
+    Channel Directions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select
+  </a>
+  
+    <nav class="md-nav" aria-label="select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeouts" class="md-nav__link">
+    Timeouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-blocking-channel-operations" class="md-nav__link">
+    Non-blocking Channel operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-channels" class="md-nav__link">
+    Closing Channels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-over-channels" class="md-nav__link">
+    range over channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    Modules
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-mod" class="md-nav__link">
+    go mod
+  </a>
+  
+    <nav class="md-nav" aria-label="go mod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-import-versioning-semver" class="md-nav__link">
+    Semantic Import Versioning (SEMVER)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package_1" class="md-nav__link">
+    Package
+  </a>
+  
+    <nav class="md-nav" aria-label="Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    main
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-vs-directory" class="md-nav__link">
+    package Vs directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-packages" class="md-nav__link">
+    Built-in Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timer-ticker" class="md-nav__link">
+    timer &amp; ticker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import_1" class="md-nav__link">
+    Import
+  </a>
+  
+    <nav class="md-nav" aria-label="Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inbuilt-package" class="md-nav__link">
+    Inbuilt Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intra-package" class="md-nav__link">
+    Intra Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-package" class="md-nav__link">
+    Inter Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-package" class="md-nav__link">
+    Remote Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic" class="md-nav__link">
+    Cyclic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+    <nav class="md-nav" aria-label="json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding" class="md-nav__link">
+    Decoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-json-with-interface" class="md-nav__link">
+    Generic JSON with interface{}
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic JSON with interface{}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-arbitrary-data" class="md-nav__link">
+    Creating arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoding-arbitrary-data" class="md-nav__link">
+    Encoding arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-arbitrary-data" class="md-nav__link">
+    Decoding arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-reference-type-pointers-slices-maps" class="md-nav__link">
+    Json &amp; Reference Type (pointers, slices, maps)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-encoders-and-decoders" class="md-nav__link">
+    Streaming Encoders and Decoders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regexp" class="md-nav__link">
+    regexp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testcase" class="md-nav__link">
+    Testcase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    Benchmarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping" class="md-nav__link">
+    Skipping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtests-and-sub-benchmarks" class="md-nav__link">
+    Subtests and Sub-benchmarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main_1" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_1" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage" class="md-nav__link">
+    Coverage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    gdb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delve" class="md-nav__link">
+    Delve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    Profiling
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pprof" class="md-nav__link">
+    pprof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-profiling-stack-sampling-vs-instrumentation" class="md-nav__link">
+    CPU Profiling - stack sampling (vs instrumentation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-profiling-allocation-profiling" class="md-nav__link">
+    Heap Profiling - allocation profiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trace" class="md-nav__link">
+    Trace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circleci" class="md-nav__link">
+    CircleCI
+  </a>
+  
+    <nav class="md-nav" aria-label="CircleCI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-test" class="md-nav__link">
+    Run Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advance-testing" class="md-nav__link">
+    Advance Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Advance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    assert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    Extra
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convetions" class="md-nav__link">
+    Naming Convetions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-organization" class="md-nav__link">
+    Code Organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#godoc" class="md-nav__link">
+    Godoc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-typing" class="md-nav__link">
+    Static Typing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer" class="md-nav__link">
+    Pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garbage-collection" class="md-nav__link">
+    Garbage Collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" >
+      
+      <label class="md-nav__link" for="nav-12-4">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-Advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-Basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-Django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-OOPs/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-Production-Servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python-Testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../music/Piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+    <nav class="md-nav" aria-label="Keywords">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#func" class="md-nav__link">
+    func
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    struct
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    Declaration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type" class="md-nav__link">
+    Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string
+  </a>
+  
+    <nav class="md-nav" aria-label="string">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utf-8-and-string-literals" class="md-nav__link">
+    UTF-8 and string literals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool" class="md-nav__link">
+    bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#byte" class="md-nav__link">
+    byte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-points-characters-and-runes" class="md-nav__link">
+    Code points, characters, and runes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    Data Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slice" class="md-nav__link">
+    Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    interface{}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flows" class="md-nav__link">
+    Control Flows
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if, else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goto" class="md-nav__link">
+    goto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-class" class="md-nav__link">
+    First Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined" class="md-nav__link">
+    User-defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#higher-order" class="md-nav__link">
+    Higher-order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closures" class="md-nav__link">
+    Closures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-return-values" class="md-nav__link">
+    Multiple Return Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variadic" class="md-nav__link">
+    Variadic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymouslambda" class="md-nav__link">
+    Anonymous/Lambda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-modifier" class="md-nav__link">
+    Access Modifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct_1" class="md-nav__link">
+    Struct
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface_1" class="md-nav__link">
+    Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goroutine" class="md-nav__link">
+    goroutine
+  </a>
+  
+    <nav class="md-nav" aria-label="goroutine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defer" class="md-nav__link">
+    defer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panic" class="md-nav__link">
+    panic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recover" class="md-nav__link">
+    recover
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    Channels
+  </a>
+  
+    <nav class="md-nav" aria-label="Channels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-buffering" class="md-nav__link">
+    Channel Buffering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-synchromization" class="md-nav__link">
+    Channel Synchromization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-directions" class="md-nav__link">
+    Channel Directions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select
+  </a>
+  
+    <nav class="md-nav" aria-label="select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeouts" class="md-nav__link">
+    Timeouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-blocking-channel-operations" class="md-nav__link">
+    Non-blocking Channel operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-channels" class="md-nav__link">
+    Closing Channels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-over-channels" class="md-nav__link">
+    range over channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    Modules
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-mod" class="md-nav__link">
+    go mod
+  </a>
+  
+    <nav class="md-nav" aria-label="go mod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-import-versioning-semver" class="md-nav__link">
+    Semantic Import Versioning (SEMVER)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package_1" class="md-nav__link">
+    Package
+  </a>
+  
+    <nav class="md-nav" aria-label="Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    main
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-vs-directory" class="md-nav__link">
+    package Vs directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-packages" class="md-nav__link">
+    Built-in Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timer-ticker" class="md-nav__link">
+    timer &amp; ticker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import_1" class="md-nav__link">
+    Import
+  </a>
+  
+    <nav class="md-nav" aria-label="Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inbuilt-package" class="md-nav__link">
+    Inbuilt Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intra-package" class="md-nav__link">
+    Intra Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-package" class="md-nav__link">
+    Inter Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-package" class="md-nav__link">
+    Remote Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic" class="md-nav__link">
+    Cyclic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+    <nav class="md-nav" aria-label="json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding" class="md-nav__link">
+    Decoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-json-with-interface" class="md-nav__link">
+    Generic JSON with interface{}
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic JSON with interface{}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-arbitrary-data" class="md-nav__link">
+    Creating arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoding-arbitrary-data" class="md-nav__link">
+    Encoding arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-arbitrary-data" class="md-nav__link">
+    Decoding arbitrary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-reference-type-pointers-slices-maps" class="md-nav__link">
+    Json &amp; Reference Type (pointers, slices, maps)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-encoders-and-decoders" class="md-nav__link">
+    Streaming Encoders and Decoders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regexp" class="md-nav__link">
+    regexp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testcase" class="md-nav__link">
+    Testcase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    Benchmarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping" class="md-nav__link">
+    Skipping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtests-and-sub-benchmarks" class="md-nav__link">
+    Subtests and Sub-benchmarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main_1" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_1" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage" class="md-nav__link">
+    Coverage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    gdb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delve" class="md-nav__link">
+    Delve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    Profiling
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pprof" class="md-nav__link">
+    pprof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-profiling-stack-sampling-vs-instrumentation" class="md-nav__link">
+    CPU Profiling - stack sampling (vs instrumentation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-profiling-allocation-profiling" class="md-nav__link">
+    Heap Profiling - allocation profiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trace" class="md-nav__link">
+    Trace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circleci" class="md-nav__link">
+    CircleCI
+  </a>
+  
+    <nav class="md-nav" aria-label="CircleCI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-test" class="md-nav__link">
+    Run Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advance-testing" class="md-nav__link">
+    Advance Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Advance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    assert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    Extra
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convetions" class="md-nav__link">
+    Naming Convetions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-organization" class="md-nav__link">
+    Code Organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#godoc" class="md-nav__link">
+    Godoc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-typing" class="md-nav__link">
+    Static Typing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer" class="md-nav__link">
+    Pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garbage-collection" class="md-nav__link">
+    Garbage Collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/#docs/lang/golang/go.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Go</h1>
+                
+                <div class="toc">
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#run">Run</a></li>
+<li><a href="#keywords">Keywords</a><ul>
+<li><a href="#package">package</a></li>
+<li><a href="#import">import</a></li>
+<li><a href="#type">type</a></li>
+<li><a href="#const">const</a></li>
+<li><a href="#var">var</a></li>
+<li><a href="#func">func</a></li>
+<li><a href="#struct">struct</a></li>
+</ul>
+</li>
+<li><a href="#declaration">Declaration</a></li>
+<li><a href="#data-type">Data Type</a><ul>
+<li><a href="#int">int</a></li>
+<li><a href="#string">string</a><ul>
+<li><a href="#utf-8-and-string-literals">UTF-8 and string literals</a></li>
+</ul>
+</li>
+<li><a href="#bool">bool</a></li>
+<li><a href="#byte">byte</a></li>
+<li><a href="#code-points-characters-and-runes">Code points, characters, and runes</a></li>
+</ul>
+</li>
+<li><a href="#data-structure">Data Structure</a><ul>
+<li><a href="#array">Array</a></li>
+<li><a href="#slice">Slice</a></li>
+<li><a href="#map">Map</a></li>
+<li><a href="#interface">interface{}</a></li>
+</ul>
+</li>
+<li><a href="#statements">Statements</a><ul>
+<li><a href="#control-flows">Control Flows</a><ul>
+<li><a href="#if-else">if, else</a></li>
+<li><a href="#for">for</a></li>
+<li><a href="#switch">switch</a></li>
+<li><a href="#goto">goto</a></li>
+</ul>
+</li>
+<li><a href="#range">range</a></li>
+</ul>
+</li>
+<li><a href="#functions">Functions</a><ul>
+<li><a href="#first-class">First Class</a></li>
+<li><a href="#user-defined">User-defined</a></li>
+<li><a href="#higher-order">Higher-order</a></li>
+<li><a href="#closures">Closures</a></li>
+<li><a href="#multiple-return-values">Multiple Return Values</a></li>
+<li><a href="#variadic">Variadic</a></li>
+<li><a href="#anonymouslambda">Anonymous/Lambda</a></li>
+<li><a href="#access-modifier">Access Modifier</a></li>
+</ul>
+</li>
+<li><a href="#struct_1">Struct</a><ul>
+<li><a href="#methods">Methods</a></li>
+</ul>
+</li>
+<li><a href="#interface_1">Interface</a></li>
+<li><a href="#constructor">Constructor</a></li>
+<li><a href="#goroutine">goroutine</a><ul>
+<li><a href="#go">go</a></li>
+<li><a href="#defer">defer</a></li>
+<li><a href="#panic">panic</a></li>
+<li><a href="#recover">recover</a></li>
+</ul>
+</li>
+<li><a href="#channels">Channels</a><ul>
+<li><a href="#channel-buffering">Channel Buffering</a></li>
+<li><a href="#channel-synchromization">Channel Synchromization</a></li>
+<li><a href="#channel-directions">Channel Directions</a></li>
+<li><a href="#select">select</a><ul>
+<li><a href="#timeouts">Timeouts</a></li>
+<li><a href="#non-blocking-channel-operations">Non-blocking Channel operations</a></li>
+</ul>
+</li>
+<li><a href="#closing-channels">Closing Channels</a></li>
+<li><a href="#range-over-channels">range over channels</a></li>
+</ul>
+</li>
+<li><a href="#modules">Modules</a><ul>
+<li><a href="#go-mod">go mod</a><ul>
+<li><a href="#semantic-import-versioning-semver">Semantic Import Versioning (SEMVER)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#package_1">Package</a><ul>
+<li><a href="#main">main</a></li>
+<li><a href="#package-vs-directory">package Vs directory</a></li>
+<li><a href="#built-in-packages">Built-in Packages</a><ul>
+<li><a href="#timer-ticker">timer &amp; ticker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#import_1">Import</a><ul>
+<li><a href="#inbuilt-package">Inbuilt Package</a></li>
+<li><a href="#intra-package">Intra Package</a></li>
+<li><a href="#inter-package">Inter Package</a></li>
+<li><a href="#remote-package">Remote Package</a></li>
+<li><a href="#cyclic">Cyclic</a></li>
+</ul>
+</li>
+<li><a href="#json">json</a><ul>
+<li><a href="#encoding">Encoding</a></li>
+<li><a href="#decoding">Decoding</a></li>
+<li><a href="#generic-json-with-interface">Generic JSON with interface{}</a><ul>
+<li><a href="#creating-arbitrary-data">Creating arbitrary data</a></li>
+<li><a href="#encoding-arbitrary-data">Encoding arbitrary data</a></li>
+<li><a href="#decoding-arbitrary-data">Decoding arbitrary data</a></li>
+<li><a href="#json-reference-type-pointers-slices-maps">Json &amp; Reference Type (pointers, slices, maps)</a></li>
+<li><a href="#streaming-encoders-and-decoders">Streaming Encoders and Decoders</a></li>
+<li><a href="#misc">Misc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#regexp">regexp</a></li>
+<li><a href="#errors">Errors</a><ul>
+<li><a href="#error-handling">Error Handling</a></li>
+</ul>
+</li>
+<li><a href="#testing">Testing</a><ul>
+<li><a href="#testcase">Testcase</a></li>
+<li><a href="#benchmarks">Benchmarks</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#skipping">Skipping</a></li>
+<li><a href="#subtests-and-sub-benchmarks">Subtests and Sub-benchmarks</a></li>
+<li><a href="#main_1">Main</a></li>
+<li><a href="#run_1">Run</a></li>
+<li><a href="#coverage">Coverage</a></li>
+</ul>
+</li>
+<li><a href="#debug">Debug</a><ul>
+<li><a href="#gdb">gdb</a></li>
+<li><a href="#delve">Delve</a></li>
+</ul>
+</li>
+<li><a href="#profiling">Profiling</a><ul>
+<li><a href="#pprof">pprof</a></li>
+<li><a href="#cpu-profiling-stack-sampling-vs-instrumentation">CPU Profiling - stack sampling (vs instrumentation)</a></li>
+<li><a href="#heap-profiling-allocation-profiling">Heap Profiling - allocation profiling</a></li>
+<li><a href="#block">Block</a></li>
+<li><a href="#trace">Trace</a></li>
+</ul>
+</li>
+<li><a href="#deploy">Deploy</a><ul>
+<li><a href="#circleci">CircleCI</a><ul>
+<li><a href="#run-test">Run Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#misc_1">Misc</a><ul>
+<li><a href="#generate">generate</a></li>
+<li><a href="#advance-testing">Advance Testing</a><ul>
+<li><a href="#assert">assert</a></li>
+</ul>
+</li>
+<li><a href="#extra">Extra</a></li>
+</ul>
+</li>
+<li><a href="#best-practices">Best Practices</a><ul>
+<li><a href="#naming-convetions">Naming Convetions</a></li>
+<li><a href="#code-organization">Code Organization</a></li>
+</ul>
+</li>
+<li><a href="#documentation">Documentation</a><ul>
+<li><a href="#godoc">Godoc</a></li>
+</ul>
+</li>
+<li><a href="#best-practices_1">Best Practices</a></li>
+<li><a href="#concepts">Concepts</a><ul>
+<li><a href="#compilation">Compilation</a></li>
+<li><a href="#static-typing">Static Typing</a></li>
+<li><a href="#pointer">Pointer</a></li>
+<li><a href="#garbage-collection">Garbage Collection</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h2>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h2>
+<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h2>
+<h2 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">#</a></h2>
+<h3 id="package"><code>package</code><a class="headerlink" href="#package" title="Permanent link">#</a></h3>
+<h3 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link">#</a></h3>
+<h3 id="type"><code>type</code><a class="headerlink" href="#type" title="Permanent link">#</a></h3>
+<h3 id="const"><code>const</code><a class="headerlink" href="#const" title="Permanent link">#</a></h3>
+<h3 id="var"><code>var</code><a class="headerlink" href="#var" title="Permanent link">#</a></h3>
+<h3 id="func"><code>func</code><a class="headerlink" href="#func" title="Permanent link">#</a></h3>
+<h3 id="struct"><code>struct</code><a class="headerlink" href="#struct" title="Permanent link">#</a></h3>
+<h2 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">#</a></h2>
+<h2 id="data-type">Data Type<a class="headerlink" href="#data-type" title="Permanent link">#</a></h2>
+<h3 id="int"><code>int</code><a class="headerlink" href="#int" title="Permanent link">#</a></h3>
+<h3 id="string"><code>string</code><a class="headerlink" href="#string" title="Permanent link">#</a></h3>
+<ul>
+<li>https://blog.golang.org/strings</li>
+<li>In Go, a string is in effect a read-only slice of bytes</li>
+<li>string holds arbitrary bytes<ul>
+<li>It is not required to hold Unicode text, UTF-8 text, or any other predefined format</li>
+</ul>
+</li>
+<li>string literal that uses \xNN notation to define a string constant holding some peculiar byte values    <ul>
+<li>Of course, bytes range from hexadecimal values 00 through FF, inclusive</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">const sample = &quot;\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98&quot;
+fmt.Println(sample) // out: ��=� ⌘
+//  in our sample string are not valid ASCII, not even valid UTF-8, printing the string directly will produce ugly output
+</code></pre>
+<ul>
+<li><em>NOTE</em>: indexing/iterating over string gives bytes and not characters in Go</li>
+</ul>
+<h4 id="utf-8-and-string-literals">UTF-8 and string literals<a class="headerlink" href="#utf-8-and-string-literals" title="Permanent link">#</a></h4>
+<ul>
+<li>placeOfInterest = <code>⌘</code><ul>
+<li>Unicode character value U+2318</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">const placeOfInterest = `⌘`
+
+fmt.Printf(&quot;%s&quot;, placeOfInterest) // plain string: ⌘
+
+fmt.Printf(&quot;%+q&quot;, placeOfInterest) // quoted string: &quot;\u2318&quot;
+
+for i := 0; i &lt; len(placeOfInterest); i++ {
+    fmt.Printf(&quot;%x &quot;, placeOfInterest[i])  // hex bytes: e2 8c 98
+}
+
+</code></pre>
+<ul>
+<li><em>NOTE</em>:<ul>
+<li>Source code in Go is defined to be UTF-8 text; no other representation is allowed</li>
+</ul>
+</li>
+</ul>
+<h3 id="bool"><code>bool</code><a class="headerlink" href="#bool" title="Permanent link">#</a></h3>
+<h3 id="byte"><code>byte</code><a class="headerlink" href="#byte" title="Permanent link">#</a></h3>
+<h3 id="code-points-characters-and-runes">Code points, characters, and runes<a class="headerlink" href="#code-points-characters-and-runes" title="Permanent link">#</a></h3>
+<ul>
+<li>https://blog.golang.org/strings</li>
+</ul>
+<p>Given
+- lower case Latin letter 'A': a
+    - A: unicode code point: U+0061 
+- lower case grave-accented letter 'A', à
+    - B: unicode code point: U+00E0
+- grave accent code point (that sign above a):
+    - C: unicode code point: U+0300    </p>
+<p>Then<br />
+   à == A + C
+or à == B</p>
+<ul>
+<li>code point == rune<ul>
+<li>code point is a bit of mouthful, hence go introduces shorter term <code>rune</code></li>
+<li>rune meaning: any of the characters of any of several alphabets</li>
+</ul>
+</li>
+<li>
+<p>character</p>
+<ul>
+<li>when we store a character value in a string, we store its byte-at-a-time representation</li>
+<li>In general, a character may be represented by a number of different sequences of code points, and therefore different sequences of UTF-8 bytes</li>
+<li>The concept of character in computing is therefore ambiguous, or at least confusing, so we use it with care</li>
+</ul>
+</li>
+<li>
+<p><em>NOTE</em>:</p>
+<ul>
+<li>Go team have been very careful so far in how we use the words "byte" and "character"</li>
+<li>That's partly because strings hold bytes, and partly because the idea of "character" is a little hard/ambiguous to define</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-structure">Data Structure<a class="headerlink" href="#data-structure" title="Permanent link">#</a></h2>
+<h3 id="array">Array<a class="headerlink" href="#array" title="Permanent link">#</a></h3>
+<pre><code class="language-go">var a [5]int
+fmt.Println(&quot;emp:&quot;, a)
+a[4] = 100
+fmt.Println(&quot;set:&quot;, a)
+fmt.Println(&quot;get:&quot;, a[4])
+</code></pre>
+<h3 id="slice">Slice<a class="headerlink" href="#slice" title="Permanent link">#</a></h3>
+<pre><code class="language-go">s := make([]string, 3)
+fmt.Println(&quot;emp:&quot;, s)
+
+s[0] = &quot;a&quot;
+s[1] = &quot;b&quot;
+s[2] = &quot;c&quot;
+fmt.Println(&quot;set:&quot;, s)
+
+fmt.Println(&quot;get:&quot;, s[2])
+
+fmt.Println(&quot;len:&quot;, len(s))
+
+s = append(s, &quot;d&quot;)
+s = append(s, &quot;e&quot;, &quot;f&quot;)
+
+c := make([]string, len(s))
+copy(c, s)
+
+l := s[2:5]
+
+t := []string{&quot;g&quot;, &quot;h&quot;, &quot;i&quot;}
+
+// TODO: len vs size??
+</code></pre>
+<h3 id="map">Map<a class="headerlink" href="#map" title="Permanent link">#</a></h3>
+<pre><code class="language-go">m := make(map[string]int)
+
+m[&quot;k1&quot;] = 7
+v1 := m[&quot;k1&quot;]
+
+fmt.Println(&quot;len:&quot;, len(m))
+
+delete(m, &quot;k2&quot;)  // no error
+
+isThere, value := m[&quot;k2&quot;] // out: false, 0
+isThere, value := m[&quot;k1&quot;] // out: true, 7
+
+n := map[string]int{&quot;foo&quot;: 1, &quot;bar&quot;: 2}
+n := map[string]interface{}{&quot;foo&quot;: 1, &quot;bar&quot;: &quot;some string&quot;}
+</code></pre>
+<h3 id="interface"><code>interface{}</code><a class="headerlink" href="#interface" title="Permanent link">#</a></h3>
+<p>A.K.A. Empty Interface</p>
+<ul>
+<li>interface{} (empty interface) type describes an interface with zero methods</li>
+<li>Every Go type implements at least zero methods <ul>
+<li>therefore satisfies the empty interface</li>
+</ul>
+</li>
+<li>so we can receive any go data type in an empty interface (similar to object/var in other langs.)    </li>
+</ul>
+<pre><code>var i interface{}
+i = &quot;a string&quot;
+i = 2011
+i = 2.777
+
+fmt.Println()
+</code></pre>
+<ul>
+<li>https://github.com/toransahu/go-misc/blob/master/interfac/main.go</li>
+</ul>
+<h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">#</a></h2>
+<h3 id="control-flows">Control Flows<a class="headerlink" href="#control-flows" title="Permanent link">#</a></h3>
+<h4 id="if-else"><code>if</code>, <code>else</code><a class="headerlink" href="#if-else" title="Permanent link">#</a></h4>
+<pre><code class="language-go">if num := 9; num &lt; 0 {
+    fmt.Println(num, &quot;is negative&quot;)
+} else if num &lt; 10 {
+    fmt.Println(num, &quot;has 1 digit&quot;)
+} else {
+    fmt.Println(num, &quot;has multiple digits&quot;)
+}
+</code></pre>
+<ul>
+<li><em>NOTE</em>: there is no ternary <code>?</code> if else condition</li>
+</ul>
+<h4 id="for"><code>for</code><a class="headerlink" href="#for" title="Permanent link">#</a></h4>
+<ul>
+<li><code>for</code> is the only looping construct in Go</li>
+<li><code>for</code> have 3-4 pattern </li>
+</ul>
+<pre><code class="language-go">
+// like while loop
+i := 1
+for i &lt;= 3 {
+    fmt.Println(i)
+    i = i + 1
+}
+
+// regular for loop
+for j := 7; j &lt;= 9; j++ {
+    fmt.Println(j)
+}
+
+for n := 0; n &lt;= 5; n++ {
+        if n%2 == 0 {
+            continue
+        }
+        fmt.Println(n)
+    }
+
+// infinite loop (or with break
+for {
+    fmt.Println(&quot;loop&quot;)
+    break
+}
+</code></pre>
+<h4 id="switch"><code>switch</code><a class="headerlink" href="#switch" title="Permanent link">#</a></h4>
+<pre><code class="language-go">
+// regular switch case
+i := 2
+fmt.Print(&quot;Write &quot;, i, &quot; as &quot;)
+switch i {
+case 1:
+    fmt.Println(&quot;one&quot;)
+case 2:
+    fmt.Println(&quot;two&quot;)
+case 3:
+    fmt.Println(&quot;three&quot;)
+}
+
+// TODO:
+switch time.Now().Weekday() {
+case time.Saturday, time.Sunday:
+    fmt.Println(&quot;It's the weekend&quot;)
+default:
+    fmt.Println(&quot;It's a weekday&quot;)
+}
+
+// regular if else
+t := time.Now()
+switch {
+case t.Hour() &lt; 12:
+    fmt.Println(&quot;It's before noon&quot;)
+default:
+    fmt.Println(&quot;It's after noon&quot;)
+}
+
+// interface type assertion
+whatAmI := func(i interface{}) {
+    switch t := i.(type) {
+    case bool:
+        fmt.Println(&quot;I'm a bool&quot;)
+    case int:
+        fmt.Println(&quot;I'm an int&quot;)
+    default:
+        fmt.Printf(&quot;Don't know type %T\n&quot;, t)
+    }
+}
+whatAmI(true)
+whatAmI(1)
+whatAmI(&quot;hey&quot;)
+</code></pre>
+<h4 id="goto"><code>goto</code><a class="headerlink" href="#goto" title="Permanent link">#</a></h4>
+<ul>
+<li>why its still valid in a new-gen prog. lang. ??</li>
+</ul>
+<h3 id="range"><code>range</code><a class="headerlink" href="#range" title="Permanent link">#</a></h3>
+<pre><code class="language-go">nums := []int{2, 3, 4}
+sum := 0
+
+// range on arrays and slices provides both the index and value for each entry
+for _, num := range nums {
+    sum += num
+}
+
+for i, num := range nums {
+    if num == 3 {
+        fmt.Println(&quot;index:&quot;, i)
+    }
+}
+
+// range on map iterates over key/value pairs
+kvs := map[string]string{&quot;a&quot;: &quot;apple&quot;, &quot;b&quot;: &quot;banana&quot;}
+for k, v := range kvs {
+    fmt.Printf(&quot;%s -&gt; %s\n&quot;, k, v)
+}
+
+// range can also iterate over just the keys of a map
+for k := range kvs {
+    fmt.Println(&quot;key:&quot;, k)
+}
+
+// range on strings iterates over Unicode code points
+// The first value is the starting byte index of the rune and the second the rune itself.
+for i, c := range &quot;go&quot; {
+    fmt.Println(i, c)
+}
+// out: 
+0 103
+1 111
+</code></pre>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
+<ul>
+<li>src:<ul>
+<li>https://golang.org/doc/codewalk/functions/</li>
+</ul>
+</li>
+</ul>
+<h3 id="first-class">First Class<a class="headerlink" href="#first-class" title="Permanent link">#</a></h3>
+<h3 id="user-defined">User-defined<a class="headerlink" href="#user-defined" title="Permanent link">#</a></h3>
+<h3 id="higher-order">Higher-order<a class="headerlink" href="#higher-order" title="Permanent link">#</a></h3>
+<ul>
+<li>a function which accepts another function as a arg</li>
+</ul>
+<h3 id="closures">Closures<a class="headerlink" href="#closures" title="Permanent link">#</a></h3>
+<ul>
+<li>a concept of having access of outer scope</li>
+<li>in an Anonynous function, <code>function literals</code> are closures: they inherit the scope of the function in which they are declared</li>
+<li>same as python, javascript</li>
+</ul>
+<h3 id="multiple-return-values">Multiple Return Values<a class="headerlink" href="#multiple-return-values" title="Permanent link">#</a></h3>
+<ul>
+<li>similar to pl/sql procedures</li>
+</ul>
+<pre><code class="language-go">func() string, int { return &quot;Yes&quot;, 1}
+</code></pre>
+<h3 id="variadic">Variadic<a class="headerlink" href="#variadic" title="Permanent link">#</a></h3>
+<ul>
+<li>variable/arbitrary numbers of arguments</li>
+<li>similar to <code>*args</code></li>
+<li><code>variable</code> [space] <code>...</code> concateanted to <code>type</code></li>
+<li><code>vardiac</code> arg is always a <code>slice</code>    </li>
+<li>builtin e.g.<ul>
+<li><code>fmt.Println</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">func sum(nums ...int) int {
+    total := 0
+    for _, number := range nums {
+        total += number
+    }
+    return total
+}
+
+func main() {
+    sum(1,2)
+    sum(1,2,3)
+}
+</code></pre>
+<ul>
+<li>can directly pass a <code>slice</code> like </li>
+</ul>
+<pre><code class="language-go">num_slice := []int{1,2,3}
+sum(num_slice ...) 
+</code></pre>
+<h3 id="anonymouslambda">Anonymous/Lambda<a class="headerlink" href="#anonymouslambda" title="Permanent link">#</a></h3>
+<pre><code class="language-go">func(msg string) {
+    fmt.Println(msg)
+}(&quot;Some message&quot;)
+</code></pre>
+<h3 id="access-modifier">Access Modifier<a class="headerlink" href="#access-modifier" title="Permanent link">#</a></h3>
+<ul>
+<li>depends on CASE of the func<ul>
+<li>if starts with Capital case --&gt; Public<ul>
+<li>should have comment/doc string</li>
+</ul>
+</li>
+<li>else private</li>
+</ul>
+</li>
+</ul>
+<h2 id="struct_1">Struct<a class="headerlink" href="#struct_1" title="Permanent link">#</a></h2>
+<ul>
+<li>regular struct</li>
+<li>in go, struct are alternative to classes </li>
+</ul>
+<pre><code class="language-go">type Vehicle struct {
+    Make string  `json:make`  // additional json tag for de/serialization
+    Fuel string
+    Engine Engine 
+    owner string // not an exportable/exposed/public key/object
+}
+
+type Engine struct {
+    Stroke string
+    HorsePower string
+}
+</code></pre>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">#</a></h3>
+<pre><code class="language-go">func (v *Vehicle) Start() (string, error) {
+    return &quot;Vrooom&quot;, nil
+}
+
+engine := Engine{&quot;Four&quot;, &quot;1000&quot;}
+car := Vehicle{&quot;Tesla&quot;, &quot;Li&quot;, engine, &quot;Toran&quot;}
+res, err := car.Start()
+</code></pre>
+<h2 id="interface_1">Interface<a class="headerlink" href="#interface_1" title="Permanent link">#</a></h2>
+<ul>
+<li>Interfaces are named collections of method signatures</li>
+<li>https://gobyexample.com/interfaces</li>
+</ul>
+<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permanent link">#</a></h2>
+<h2 id="goroutine">goroutine<a class="headerlink" href="#goroutine" title="Permanent link">#</a></h2>
+<ul>
+<li>A goroutine is a lightweight thread of execution</li>
+</ul>
+<h3 id="go"><code>go</code><a class="headerlink" href="#go" title="Permanent link">#</a></h3>
+<pre><code class="language-go">func f(from string) {
+    for i := 0; i &lt; 3; i++ {
+        fmt.Println(from, &quot;:&quot;, i)
+    }
+}
+
+func main() {
+    f(&quot;direct&quot;)  // direct call
+
+    go f(&quot;goroutine&quot;)  // goroutine call
+
+    go func(msg string){
+        fmt.Println(msg)
+    }(&quot;goroutine from anonymous func&quot;)
+
+    fmt.Scanln() // input from stdio
+
+    fmt.Println(&quot;done&quot;)
+}
+
+// out:
+direct : 0
+direct : 1
+direct : 2
+goroutine : 0
+goroutine from anonymous func
+goroutine : 1
+goroutine : 2
+&lt;enter&gt;
+done
+</code></pre>
+<p>by going through above mentioned example:
+- if we want to invoke the function <code>f</code> as a goroutine we call it using <code>go</code> statement
+    - func <code>f</code> will execute concurrently with the calling/main one
+- we can also start a goroutine for an anonymous func
+- our two function calls are running asynchronously in separate goroutines now
+- we see output of 
+    - blocking/synchronous call first
+    - then the interleaved output of two goroutines (output order may vary system to system)</p>
+<h3 id="defer"><code>defer</code><a class="headerlink" href="#defer" title="Permanent link">#</a></h3>
+<p>tbd
+- https://blog.golang.org/defer-panic-and-recover</p>
+<h3 id="panic"><code>panic</code><a class="headerlink" href="#panic" title="Permanent link">#</a></h3>
+<h3 id="recover"><code>recover</code><a class="headerlink" href="#recover" title="Permanent link">#</a></h3>
+<h2 id="channels">Channels<a class="headerlink" href="#channels" title="Permanent link">#</a></h2>
+<ul>
+<li>https://gobyexample.com/channels</li>
+<li>Channels are the pipes that connect concurrent goroutines<ul>
+<li>You can send values into channels from one goroutine and receive those values into another goroutine</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">messages := make(chan string) // create a channel named message
+go func() { messages &lt;- &quot;ping&quot; }() // from go routine `send` a string value/msg &quot;ping&quot; to the channel
+msg := &lt;-messages // `receive` value/msg from the channel
+fmt.Println(msg)
+fmt.Println(msg.(string) // assert type
+</code></pre>
+<ul>
+<li><em>NOTE</em>: By default sends and receives block until both the sender and receiver are ready. This property allowed us to wait at the end of our program for the "ping" message without having to use any other synchronization.<ul>
+<li>meaning that, whenever there will be receiver (and is ready to receive the value) then only sender can send the value/msg to the channel</li>
+<li>see: https://github.com/toransahu/go-misc/blob/master/goroutines/channels/channels.go#L30</li>
+<li>hence we can say, by default go channels are <em>unbufferred</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="channel-buffering">Channel Buffering<a class="headerlink" href="#channel-buffering" title="Permanent link">#</a></h3>
+<ul>
+<li>we checked above <em>NOTE</em> about readiness of <code>senders</code> &amp; <code>receivers</code><ul>
+<li>channel buffering is to alter that nature &amp; keep the value/msg in the buffer</li>
+</ul>
+</li>
+<li>Buffered channels accept a limited number of values without a corresponding receiver for those values</li>
+</ul>
+<pre><code class="language-go">message := make(chan string, 2) // here 2 is capacity of the buffer
+message &lt;- &quot;value 1&quot;
+message &lt;- &quot;value 2&quot;
+fmt.Println(&lt;-message)
+fmt.Println(&lt;-message)
+</code></pre>
+<ul>
+<li>https://github.com/toransahu/go-misc/blob/master/goroutines/channels/buffered/buffered_channels.go</li>
+</ul>
+<h3 id="channel-synchromization">Channel Synchromization<a class="headerlink" href="#channel-synchromization" title="Permanent link">#</a></h3>
+<p>tbd
+- https://gobyexample.com/channel-synchronization</p>
+<h3 id="channel-directions">Channel Directions<a class="headerlink" href="#channel-directions" title="Permanent link">#</a></h3>
+<p>tbd
+- https://gobyexample.com/channel-directions</p>
+<h3 id="select"><code>select</code><a class="headerlink" href="#select" title="Permanent link">#</a></h3>
+<p>tbd
+- https://gobyexample.com/select</p>
+<h4 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">#</a></h4>
+<p>tbd
+- https://gobyexample.com/timeouts</p>
+<h4 id="non-blocking-channel-operations">Non-blocking Channel operations<a class="headerlink" href="#non-blocking-channel-operations" title="Permanent link">#</a></h4>
+<p>tbd
+- https://gobyexample.com/non-blocking-channel-operations</p>
+<h3 id="closing-channels">Closing Channels<a class="headerlink" href="#closing-channels" title="Permanent link">#</a></h3>
+<p>tbd
+- https://gobyexample.com/closing-channels</p>
+<h3 id="range-over-channels"><code>range</code> over channels<a class="headerlink" href="#range-over-channels" title="Permanent link">#</a></h3>
+<p>tbd
+- https://gobyexample.com/range-over-channels</p>
+<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">#</a></h2>
+<p>A module is a collection of related Go packages that are versioned together as a single unit.</p>
+<p>Ref: 
+- https://github.com/golang/go/wiki/Modules#modules
+- https://github.com/golang/go/wiki/Modules</p>
+<h3 id="go-mod"><code>go mod</code><a class="headerlink" href="#go-mod" title="Permanent link">#</a></h3>
+<ul>
+<li>to manage [versioned] dependencies</li>
+<li>was out with go 1.11 with preliminary/provisionary support &amp; target to finalizing the feature for 1.14 (considering all feedbacks since 1.11-1.13)</li>
+<li>don't need to live the code in GOPATH</li>
+<li>creates/uses go.mod file</li>
+<li>the initial prototype <code>vgo</code> was announced in February 2018</li>
+<li>other alternatives were: dep, gom etc.</li>
+<li>management of interdependencies:<ul>
+<li>vgo's controversial algo uses the oldest common version to support stability<ul>
+<li>this may while discard the acceptance of any security bug fixed in newer version</li>
+</ul>
+</li>
+<li>e.g. <ul>
+<li>package A uses B and B uses D's atleast 1.0 version</li>
+<li>package A also uses C and C uses D's either 1.0 or 1.1 version</li>
+<li>then, as per vgo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>vgo<ul>
+<li>versioned go</li>
+<li>manages all the algorithm of versioning the go projects/packages/modules</li>
+<li>cmd <code>vgo build</code> is capable of generating go.mod </li>
+<li>creates/manages versioned cache packages inside GOPATH/src/v</li>
+</ul>
+</li>
+<li>there are support for more than one module in repository, but general idea is one</li>
+<li>As of Go 1.11, the go command enables the use of modules when the current directory or any parent directory has a go.mod, provided the    directory is outside GOPATH/src. (Inside GOPATH/src, for compatibility, the go command still runs in the old GOPATH mode, even if a     go.mod is found. See the go command documentation for details.) </li>
+<li>Starting in Go 1.13, module mode will be the default for all development. </li>
+<li>In addition to go.mod, the go command maintains a file named go.sum containing the expected cryptographic hashes of the content of        specific module versions<ul>
+<li>to maintain the intigrity of the go.mod</li>
+</ul>
+</li>
+</ul>
+<h4 id="semantic-import-versioning-semver">Semantic Import Versioning (SEMVER)<a class="headerlink" href="#semantic-import-versioning-semver" title="Permanent link">#</a></h4>
+<ul>
+<li>way to handle major dependency changes like:<ul>
+<li>v1 to v2, v3,...</li>
+<li>API/interface changes</li>
+</ul>
+</li>
+<li>how<ul>
+<li>/github.com/mistsys/log (contains all v1.x.x) &amp; /github.com/mistsys/log/v2 (contains all v2.x.x)    </li>
+</ul>
+</li>
+</ul>
+<p>Ref:
+- https://research.swtch.com/vgo-import</p>
+<h2 id="package_1">Package<a class="headerlink" href="#package_1" title="Permanent link">#</a></h2>
+<h3 id="main">main<a class="headerlink" href="#main" title="Permanent link">#</a></h3>
+<h3 id="package-vs-directory"><code>package</code> Vs <code>directory</code><a class="headerlink" href="#package-vs-directory" title="Permanent link">#</a></h3>
+<h3 id="built-in-packages">Built-in Packages<a class="headerlink" href="#built-in-packages" title="Permanent link">#</a></h3>
+<h4 id="timer-ticker"><code>timer</code> &amp; <code>ticker</code><a class="headerlink" href="#timer-ticker" title="Permanent link">#</a></h4>
+<p>tbd
+- https://gobyexample.com/timers
+- https://gobyexample.com/tickers</p>
+<p>continue exploring other packages from here</p>
+<h2 id="import_1">Import<a class="headerlink" href="#import_1" title="Permanent link">#</a></h2>
+<h3 id="inbuilt-package">Inbuilt Package<a class="headerlink" href="#inbuilt-package" title="Permanent link">#</a></h3>
+<h3 id="intra-package">Intra Package<a class="headerlink" href="#intra-package" title="Permanent link">#</a></h3>
+<h3 id="inter-package">Inter Package<a class="headerlink" href="#inter-package" title="Permanent link">#</a></h3>
+<h3 id="remote-package">Remote Package<a class="headerlink" href="#remote-package" title="Permanent link">#</a></h3>
+<h3 id="cyclic">Cyclic<a class="headerlink" href="#cyclic" title="Permanent link">#</a></h3>
+<h2 id="json"><code>json</code><a class="headerlink" href="#json" title="Permanent link">#</a></h2>
+<h3 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">#</a></h3>
+<ul>
+<li><code>func Marshal(v interface{}) ([]byte, error)</code></li>
+<li>
+<p>Only data structures that can be represented as valid JSON will be encoded:</p>
+<ul>
+<li>JSON objects only support strings as keys; to encode a Go map type it must be of the form map[string]T (where T is any Go type supported by the json package).</li>
+<li>TODO: Channel, complex, and function types cannot be encoded.</li>
+<li>TODO: Cyclic data structures are not supported; they will cause Marshal to go into an infinite loop.</li>
+<li>Pointers will be encoded as the values they point to (or 'null' if the pointer is nil)</li>
+<li>The json package only accesses the exported fields of struct types (those that begin with an uppercase letter). Therefore only the the exported fields of a struct will be present in the JSON output. </li>
+<li>TODO: what if alias is also provided?</li>
+<li>we can also provide <code>json:"alias"</code> for each field in the struct</li>
+<li>so that those fields will be encoded as per <code>aliases</code></li>
+<li>shortcut to generate those:<ul>
+<li>vim-go:<ul>
+<li>visual select -&gt; <code>&lt;leader&gt; GoAddTags</code></li>
+</ul>
+</li>
+<li>GoLand:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">// data structure, Message
+type Message struct {
+    Name string    `json:&quot;name&quot;`
+    Body string    `json:&quot;body&quot;`
+    Time int64     `json:&quot;time&quot;`
+}
+
+// an instance of Message
+m := Message{&quot;Alice&quot;, &quot;Hello&quot;, 1294706395881547000}
+
+// encoding m
+b, err := json.Marshal(m)
+
+// If all is well, err will be nil and b will be a []byte containing this JSON data
+b == []byte(`{&quot;Name&quot;:&quot;Alice&quot;,&quot;Body&quot;:&quot;Hello&quot;,&quot;Time&quot;:1294706395881547000}`)
+</code></pre>
+<ul>
+<li>https://github.com/toransahu/go-misc/blob/master/json/encoding.go</li>
+</ul>
+<h3 id="decoding">Decoding<a class="headerlink" href="#decoding" title="Permanent link">#</a></h3>
+<ul>
+<li>https://github.com/toransahu/go-misc/blob/master/json/decoding.go</li>
+</ul>
+<h3 id="generic-json-with-interface">Generic JSON with interface{}<a class="headerlink" href="#generic-json-with-interface" title="Permanent link">#</a></h3>
+<ul>
+<li>The json package uses map[string]interface{} and []interface{} values <ul>
+<li>to store arbitrary JSON objects and arrays</li>
+</ul>
+</li>
+<li>it will happily unmarshal any valid JSON blob into a plain interface{} value</li>
+<li>default concrete Go types are:<ul>
+<li><code>bool</code> for JSON booleans</li>
+<li><code>float64</code> for JSON numbers</li>
+<li><code>string</code> for JSON strings</li>
+<li><code>nil</code> for JSON null</li>
+</ul>
+</li>
+</ul>
+<h4 id="creating-arbitrary-data">Creating arbitrary data<a class="headerlink" href="#creating-arbitrary-data" title="Permanent link">#</a></h4>
+<pre><code class="language-go">i := map[string]interface{}{&quot;id&quot;: 1111, &quot;name&quot;: &quot;Toran&quot;}
+    fmt.Println(i)
+}
+</code></pre>
+<h4 id="encoding-arbitrary-data">Encoding arbitrary data<a class="headerlink" href="#encoding-arbitrary-data" title="Permanent link">#</a></h4>
+<pre><code class="language-go">bytes := json.Marshal(i)
+</code></pre>
+<h4 id="decoding-arbitrary-data">Decoding arbitrary data<a class="headerlink" href="#decoding-arbitrary-data" title="Permanent link">#</a></h4>
+<ul>
+<li>https://github.com/toransahu/go-misc/blob/master/json/json_test.go#L33</li>
+</ul>
+<pre><code class="language-go">var i interface{}
+json.Unmarshal(bytes, &amp;i)
+</code></pre>
+<h4 id="json-reference-type-pointers-slices-maps">Json &amp; Reference Type (pointers, slices, maps)<a class="headerlink" href="#json-reference-type-pointers-slices-maps" title="Permanent link">#</a></h4>
+<ul>
+<li>https://blog.golang.org/json-and-go</li>
+<li>https://github.com/toransahu/go-misc/blob/master/jsons/reference_type.go#L53</li>
+</ul>
+<h4 id="streaming-encoders-and-decoders">Streaming Encoders and Decoders<a class="headerlink" href="#streaming-encoders-and-decoders" title="Permanent link">#</a></h4>
+<ul>
+<li>https://blog.golang.org/json-and-go</li>
+</ul>
+<h4 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h4>
+<ul>
+<li>https://vsupalov.com/go-json-omitempty/</li>
+</ul>
+<h2 id="regexp"><code>regexp</code><a class="headerlink" href="#regexp" title="Permanent link">#</a></h2>
+<p>Ref:
+- https://golang.org/pkg/regexp/
+- https://github.com/google/re2/wiki/Syntax
+- https://shapeshed.com/golang-regexp/</p>
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">#</a></h2>
+<ul>
+<li>https://gobyexample.com/errors</li>
+</ul>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">#</a></h3>
+<ul>
+<li>https://blog.golang.org/error-handling-and-go</li>
+</ul>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">#</a></h2>
+<ul>
+<li>test module should named as <code>*_test.go</code> under packages</li>
+<li>FIXME: better to organize test modules in a separate package - similar to Java??</li>
+</ul>
+<h3 id="testcase"><code>Testcase</code><a class="headerlink" href="#testcase" title="Permanent link">#</a></h3>
+<h3 id="benchmarks"><code>Benchmarks</code><a class="headerlink" href="#benchmarks" title="Permanent link">#</a></h3>
+<h3 id="examples"><code>Examples</code><a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
+<h3 id="skipping"><code>Skipping</code><a class="headerlink" href="#skipping" title="Permanent link">#</a></h3>
+<h3 id="subtests-and-sub-benchmarks"><code>Subtests</code> and <code>Sub-benchmarks</code><a class="headerlink" href="#subtests-and-sub-benchmarks" title="Permanent link">#</a></h3>
+<h3 id="main_1"><code>Main</code><a class="headerlink" href="#main_1" title="Permanent link">#</a></h3>
+<h3 id="run_1">Run<a class="headerlink" href="#run_1" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>a test file</p>
+<blockquote>
+<p>~/go/src/github.com/toransahu/go-misc/json on <code></code> master! ⌚ 14:18:45 <br />
+&#36; go test json_test.go config.go encoding.go
+ok    command-line-arguments  0.003s</p>
+</blockquote>
+</li>
+<li>
+<p>all test files under a package</p>
+<blockquote>
+<p>~/go/src/github.com/toransahu/go-misc/json on <code></code> master! ⌚ 14:18:56<br />
+&#36; go test                                 <br />
+PASS<br />
+ok    github.com/toransahu/go-misc/json   0.002s  </p>
+</blockquote>
+</li>
+<li>
+<p>all test files in all packages</p>
+<blockquote>
+<p>tbd</p>
+</blockquote>
+</li>
+<li>
+<p>specific test function of a test file</p>
+<blockquote>
+<p>tbd</p>
+</blockquote>
+</li>
+<li>
+<p>specific test function/file with pattern/regex</p>
+<blockquote>
+<p>tbd</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="coverage">Coverage<a class="headerlink" href="#coverage" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>https://blog.alexellis.io/golang-writing-unit-tests/</p>
+</li>
+<li>
+<p>src:</p>
+<ul>
+<li>https://golang.org/pkg/testing/#hdr-Subtests_and_Sub_benchmarks</li>
+<li>https://stackoverflow.com/questions/16935965/how-to-run-test-cases-in-a-specified-file</li>
+</ul>
+</li>
+</ul>
+<h2 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">#</a></h2>
+<h3 id="gdb">gdb<a class="headerlink" href="#gdb" title="Permanent link">#</a></h3>
+<h3 id="delve">Delve<a class="headerlink" href="#delve" title="Permanent link">#</a></h3>
+<h2 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">#</a></h2>
+<h3 id="pprof"><code>pprof</code><a class="headerlink" href="#pprof" title="Permanent link">#</a></h3>
+<h3 id="cpu-profiling-stack-sampling-vs-instrumentation">CPU Profiling - stack sampling (vs instrumentation)<a class="headerlink" href="#cpu-profiling-stack-sampling-vs-instrumentation" title="Permanent link">#</a></h3>
+<h3 id="heap-profiling-allocation-profiling">Heap Profiling - allocation profiling<a class="headerlink" href="#heap-profiling-allocation-profiling" title="Permanent link">#</a></h3>
+<h3 id="block">Block<a class="headerlink" href="#block" title="Permanent link">#</a></h3>
+<h3 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">#</a></h3>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">#</a></h2>
+<h3 id="circleci">CircleCI<a class="headerlink" href="#circleci" title="Permanent link">#</a></h3>
+<h4 id="run-test">Run Test<a class="headerlink" href="#run-test" title="Permanent link">#</a></h4>
+<h2 id="misc_1">Misc<a class="headerlink" href="#misc_1" title="Permanent link">#</a></h2>
+<h3 id="generate"><code>generate</code><a class="headerlink" href="#generate" title="Permanent link">#</a></h3>
+<ul>
+<li>automatically generate golang code for a particular purpose<ul>
+<li>like print name of memebers in a struct<ul>
+<li><code>stringr</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>https://blog.golang.org/generate</li>
+<li>can set header/preprocessor (with commands) in the go file to do the job on each build</li>
+</ul>
+<h3 id="advance-testing">Advance Testing<a class="headerlink" href="#advance-testing" title="Permanent link">#</a></h3>
+<h4 id="assert"><code>assert</code><a class="headerlink" href="#assert" title="Permanent link">#</a></h4>
+<ul>
+<li>3rd party packages for assert.*</li>
+<li>https://github.com/stretchr/testify</li>
+</ul>
+<h3 id="extra">Extra<a class="headerlink" href="#extra" title="Permanent link">#</a></h3>
+<ul>
+<li>https://talks.golang.org/2012/10things.slide#3</li>
+</ul>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
+<h3 id="naming-convetions">Naming Convetions<a class="headerlink" href="#naming-convetions" title="Permanent link">#</a></h3>
+<ul>
+<li>https://golang.org/doc/effective_go.html#names</li>
+<li>https://blog.golang.org/package-names</li>
+</ul>
+<h3 id="code-organization">Code Organization<a class="headerlink" href="#code-organization" title="Permanent link">#</a></h3>
+<ul>
+<li>Package</li>
+<li>main</li>
+<li>test</li>
+<li>https://blog.golang.org/organizing-go-code</li>
+<li>inside a directory <ul>
+<li>all modules with only single package name</li>
+</ul>
+</li>
+<li>can only execute/run <code>main</code> package module<ul>
+<li>hence <code>main</code> package</li>
+</ul>
+</li>
+<li><code>func main</code> should be declared to run the <code>main</code> package module</li>
+</ul>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h2>
+<ul>
+<li>to document a type, variable, constant, function, or even a package, write a regular comment directly preceding its declaration, with no intervening blank line</li>
+<li>a complete sentence </li>
+<li>begins with the name of the element </li>
+<li>similar to <code>python</code>'s <code>Docstring</code> &amp; <code>java</code>'s <code>Javadoc</code> but simpler than them</li>
+<li>src:<ul>
+<li>https://blog.golang.org/godoc-documenting-go-code</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">// Package sort provides primitives for sorting slices and user-defined
+// collections.
+package sort
+
+... 
+
+// Fprint formats using the default formats for its operands and writes to w.
+// Spaces are added between operands when neither is a string.
+// It returns the number of bytes written and any write error encountered.
+func Fprint(w io.Writer, a ...interface{}) (n int, err error) {
+</code></pre>
+<ul>
+<li>
+<p>extra:</p>
+<ul>
+<li>do something like <a href="https://golang.org/src/encoding/gob/doc.go">this</a> to achieve <a href="https://golang.org/pkg/encoding/gob/">this</a></li>
+</ul>
+</li>
+<li>
+<p>notable keywords:</p>
+<ul>
+<li><code>Deprecated:</code></li>
+<li><code>BUG(&lt;contact person&gt;)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="godoc"><code>Godoc</code><a class="headerlink" href="#godoc" title="Permanent link">#</a></h3>
+<h2 id="best-practices_1">Best Practices<a class="headerlink" href="#best-practices_1" title="Permanent link">#</a></h2>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">#</a></h2>
+<h3 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">#</a></h3>
+<h3 id="static-typing">Static Typing<a class="headerlink" href="#static-typing" title="Permanent link">#</a></h3>
+<h3 id="pointer">Pointer<a class="headerlink" href="#pointer" title="Permanent link">#</a></h3>
+<h3 id="garbage-collection">Garbage Collection<a class="headerlink" href="#garbage-collection" title="Permanent link">#</a></h3>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ul>
+<li>https://golang.org/doc/code.html</li>
+<li>https://github.com/golang/go/wiki/Learn</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../markdown/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Markdown
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../python/Python-Advanced/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Python Advanced
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

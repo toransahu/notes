@@ -1,0 +1,3305 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>Algo - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynamic-programing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Algo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Maths/" class="md-nav__link">
+        Maths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/" class="md-nav__link">
+        Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Api" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/REST/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      
+      <label class="md-nav__link" for="nav-9">
+        Cs fundamentals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Cs fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Algo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Algo
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programing" class="md-nav__link">
+    Dynamic Programing
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Programing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoization" class="md-nav__link">
+    Memoization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabulation" class="md-nav__link">
+    Tabulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-distance" class="md-nav__link">
+    Edit Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem" class="md-nav__link">
+    Knapsack problem
+  </a>
+  
+    <nav class="md-nav" aria-label="Knapsack problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-knapsack-problem" class="md-nav__link">
+    0/1 Knapsack Problem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-knapsack-problem-with-repetition-of-items" class="md-nav__link">
+    0/1 Knapsack Problem (with repetition of items)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem-with-fractional-items" class="md-nav__link">
+    Knapsack Problem (with fractional items)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-chain-multiplication" class="md-nav__link">
+    Matrix Chain Multiplication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-common-substring" class="md-nav__link">
+    Longest Common Substring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-common-subsequence" class="md-nav__link">
+    Longest Common Subsequence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-increasing-monotonical-subsequence" class="md-nav__link">
+    Longest Increasing Monotonical Subsequence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rod-cutting" class="md-nav__link">
+    Rod Cutting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-algorithms" class="md-nav__link">
+    Searching Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linear" class="md-nav__link">
+    1. Linear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-binary" class="md-nav__link">
+    2. Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-jump" class="md-nav__link">
+    3. Jump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-interpolation" class="md-nav__link">
+    4. Interpolation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-exponential" class="md-nav__link">
+    5. Exponential
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ternary" class="md-nav__link">
+    6.  Ternary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting-algorithms" class="md-nav__link">
+    Sorting Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Sorting Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_1" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bubble-sort" class="md-nav__link">
+    1. Bubble Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-selection-sort" class="md-nav__link">
+    2. Selection Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-insertion-sort" class="md-nav__link">
+    3. Insertion Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-merge-sort" class="md-nav__link">
+    4. Merge Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-quick-sort-recursivearrleftright" class="md-nav__link">
+    5. Quick Sort Recursive(arr,left,right):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-quick-sort-iterative" class="md-nav__link">
+    5.1 Quick Sort Iterative:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-heap-sort" class="md-nav__link">
+    6. Heap Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-bucket-sort" class="md-nav__link">
+    7. Bucket Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-counting-sort" class="md-nav__link">
+    8. Counting Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-radix-sort" class="md-nav__link">
+    9. Radix Sort.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-tim-sort" class="md-nav__link">
+    10. Tim sort
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Tim sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-sort-vs-merge-sort" class="md-nav__link">
+    Quick Sort Vs Merge Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-algorithms" class="md-nav__link">
+    Greedy Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Greedy Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_2" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementary-cases-fractional-knapsack-problem-task-scheduling" class="md-nav__link">
+    Elementary cases : Fractional Knapsack Problem, Task Scheduling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-compression-using-huffman-trees" class="md-nav__link">
+    Data Compression using Huffman Trees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-selection" class="md-nav__link">
+    Activity Selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphsearch-algorithms" class="md-nav__link">
+    Graph/Search Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph/Search Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_3" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#depth-first-search-dfs" class="md-nav__link">
+    Depth First Search (DFS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadth-first-search-bfs" class="md-nav__link">
+    Breadth First Search (BFS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-deepening-depth-first-search-depth-limited-search" class="md-nav__link">
+    Iterative Deepening Depth First Search (Depth Limited Search)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-search" class="md-nav__link">
+    A* Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ternary-search" class="md-nav__link">
+    Ternary Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-in-the-middle" class="md-nav__link">
+    Meet in the middle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongly-connected-components-scc" class="md-nav__link">
+    Strongly Connected Components (SCC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-matching" class="md-nav__link">
+    Bipartite Matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kruskal-minimum-cost-spanning-tree-algorithm" class="md-nav__link">
+    Kruskal Minimum Cost Spanning Tree Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prims-minumum-cost-spanning-tree" class="md-nav__link">
+    Prim's Minumum Cost Spanning Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstras-algorithm-for-shortest-paths" class="md-nav__link">
+    Dijkstra's Algorithm for Shortest Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floyd-warshall-algorithm-for-shortest-paths" class="md-nav__link">
+    Floyd-Warshall Algorithm for Shortest Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bellman-ford-algorithm" class="md-nav__link">
+    Bellman-Ford Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edmonds-karp-algorithm" class="md-nav__link">
+    Edmonds-Karp Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hungarian-algorithm" class="md-nav__link">
+    Hungarian Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sweep-line-algorithm" class="md-nav__link">
+    Sweep Line Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graham-scan" class="md-nav__link">
+    Graham scan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarjans-algorithm" class="md-nav__link">
+    Tarjan's Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knuth-morris-pratt-algorithm" class="md-nav__link">
+    Knuth-Morris-Pratt Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-algorithm" class="md-nav__link">
+    Z algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hill-climbing" class="md-nav__link">
+    Hill Climbing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-theory" class="md-nav__link">
+    Number Theory
+  </a>
+  
+    <nav class="md-nav" aria-label="Number Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_4" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modular-arithmetic" class="md-nav__link">
+    Modular Arithmetic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fermats-theorem" class="md-nav__link">
+    Fermat’s Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chinese-remainder-theoremcrt" class="md-nav__link">
+    Chinese Remainder Theorem(CRT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidian-method-for-gcd" class="md-nav__link">
+    Euclidian Method for GCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logarithmic-exponentiation" class="md-nav__link">
+    Logarithmic Exponentiation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sieve-of-eratosthenes" class="md-nav__link">
+    Sieve of Eratosthenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eulers-totient-function" class="md-nav__link">
+    Euler’s Totient Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-algorithms" class="md-nav__link">
+    Geometric Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_5" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-and-scale-matrices" class="md-nav__link">
+    2D Rotation and Scale Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-and-translation-matrices" class="md-nav__link">
+    2D Rotation and Translation Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-changing-coordinate-systems" class="md-nav__link">
+    2D Changing Coordinate Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-rotation-and-scale-matrices" class="md-nav__link">
+    3D Rotation and Scale Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-changing-coordinate-systems" class="md-nav__link">
+    3D Changing Coordinate Systems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recursion" class="md-nav__link">
+    Recursion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huffman-coding" class="md-nav__link">
+    Huffman Coding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex-algorithm-pattern-matching-and-parsing" class="md-nav__link">
+    Regex Algorithm (Pattern Matching and Parsing)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashing-hash-functions" class="md-nav__link">
+    Hashing- Hash Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monotone-chains-algorithm" class="md-nav__link">
+    Monotone Chains Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-compression" class="md-nav__link">
+    Coordinate Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ford-fulkerson-method" class="md-nav__link">
+    Ford-Fulkerson Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preflow-push-algorithm" class="md-nav__link">
+    Preflow-Push Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinics-algorithm" class="md-nav__link">
+    Dinic's Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monte-carlo-method-or-metropolis-algorithm" class="md-nav__link">
+    Monte Carlo method or Metropolis Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krylov-subspace-iteration-method" class="md-nav__link">
+    Krylov Subspace Iteration Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#householder-matrix-decomposition" class="md-nav__link">
+    Householder Matrix Decomposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qr-algorithm" class="md-nav__link">
+    QR Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-fourier-transform" class="md-nav__link">
+    Fast Fourier Transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-relation-detection-algorithm" class="md-nav__link">
+    Integer Relation Detection Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-multipole-algorithm" class="md-nav__link">
+    Fast Multipole algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minmax-algorithm" class="md-nav__link">
+    MinMax Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divide-and-conquer-algorithm" class="md-nav__link">
+    Divide and Conquer Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS-Dictionary/" class="md-nav__link">
+        CS Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DBMS/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DS/" class="md-nav__link">
+        DS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SE/" class="md-nav__link">
+        SE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToC/" class="md-nav__link">
+        ToC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Data science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data science" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Data science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/ML-Azure/" class="md-nav__link">
+        ML Azure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+      
+      <label class="md-nav__link" for="nav-11">
+        Infra
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Infra" data-md-level="1">
+        <label class="md-nav__title" for="nav-11">
+          <span class="md-nav__icon md-icon"></span>
+          Infra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra/DevOps/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      
+      <label class="md-nav__link" for="nav-12">
+        Lang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="nav-12">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/C-C%2B%2B/" class="md-nav__link">
+        C C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3" >
+      
+      <label class="md-nav__link" for="nav-12-3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/golang/go/" class="md-nav__link">
+        Go
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" >
+      
+      <label class="md-nav__link" for="nav-12-4">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-OOPs/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Production-Servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lang/python/Python-Testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/Piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programing" class="md-nav__link">
+    Dynamic Programing
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Programing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoization" class="md-nav__link">
+    Memoization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabulation" class="md-nav__link">
+    Tabulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-distance" class="md-nav__link">
+    Edit Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem" class="md-nav__link">
+    Knapsack problem
+  </a>
+  
+    <nav class="md-nav" aria-label="Knapsack problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-knapsack-problem" class="md-nav__link">
+    0/1 Knapsack Problem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-knapsack-problem-with-repetition-of-items" class="md-nav__link">
+    0/1 Knapsack Problem (with repetition of items)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem-with-fractional-items" class="md-nav__link">
+    Knapsack Problem (with fractional items)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-chain-multiplication" class="md-nav__link">
+    Matrix Chain Multiplication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-common-substring" class="md-nav__link">
+    Longest Common Substring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-common-subsequence" class="md-nav__link">
+    Longest Common Subsequence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-increasing-monotonical-subsequence" class="md-nav__link">
+    Longest Increasing Monotonical Subsequence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rod-cutting" class="md-nav__link">
+    Rod Cutting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-algorithms" class="md-nav__link">
+    Searching Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linear" class="md-nav__link">
+    1. Linear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-binary" class="md-nav__link">
+    2. Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-jump" class="md-nav__link">
+    3. Jump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-interpolation" class="md-nav__link">
+    4. Interpolation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-exponential" class="md-nav__link">
+    5. Exponential
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ternary" class="md-nav__link">
+    6.  Ternary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting-algorithms" class="md-nav__link">
+    Sorting Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Sorting Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_1" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bubble-sort" class="md-nav__link">
+    1. Bubble Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-selection-sort" class="md-nav__link">
+    2. Selection Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-insertion-sort" class="md-nav__link">
+    3. Insertion Sort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-merge-sort" class="md-nav__link">
+    4. Merge Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-quick-sort-recursivearrleftright" class="md-nav__link">
+    5. Quick Sort Recursive(arr,left,right):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-quick-sort-iterative" class="md-nav__link">
+    5.1 Quick Sort Iterative:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-heap-sort" class="md-nav__link">
+    6. Heap Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-bucket-sort" class="md-nav__link">
+    7. Bucket Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-counting-sort" class="md-nav__link">
+    8. Counting Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-radix-sort" class="md-nav__link">
+    9. Radix Sort.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-tim-sort" class="md-nav__link">
+    10. Tim sort
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Tim sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-sort-vs-merge-sort" class="md-nav__link">
+    Quick Sort Vs Merge Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-algorithms" class="md-nav__link">
+    Greedy Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Greedy Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_2" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementary-cases-fractional-knapsack-problem-task-scheduling" class="md-nav__link">
+    Elementary cases : Fractional Knapsack Problem, Task Scheduling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-compression-using-huffman-trees" class="md-nav__link">
+    Data Compression using Huffman Trees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-selection" class="md-nav__link">
+    Activity Selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphsearch-algorithms" class="md-nav__link">
+    Graph/Search Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph/Search Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_3" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#depth-first-search-dfs" class="md-nav__link">
+    Depth First Search (DFS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadth-first-search-bfs" class="md-nav__link">
+    Breadth First Search (BFS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-deepening-depth-first-search-depth-limited-search" class="md-nav__link">
+    Iterative Deepening Depth First Search (Depth Limited Search)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-search" class="md-nav__link">
+    A* Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ternary-search" class="md-nav__link">
+    Ternary Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-in-the-middle" class="md-nav__link">
+    Meet in the middle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongly-connected-components-scc" class="md-nav__link">
+    Strongly Connected Components (SCC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-matching" class="md-nav__link">
+    Bipartite Matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kruskal-minimum-cost-spanning-tree-algorithm" class="md-nav__link">
+    Kruskal Minimum Cost Spanning Tree Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prims-minumum-cost-spanning-tree" class="md-nav__link">
+    Prim's Minumum Cost Spanning Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstras-algorithm-for-shortest-paths" class="md-nav__link">
+    Dijkstra's Algorithm for Shortest Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floyd-warshall-algorithm-for-shortest-paths" class="md-nav__link">
+    Floyd-Warshall Algorithm for Shortest Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bellman-ford-algorithm" class="md-nav__link">
+    Bellman-Ford Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edmonds-karp-algorithm" class="md-nav__link">
+    Edmonds-Karp Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hungarian-algorithm" class="md-nav__link">
+    Hungarian Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sweep-line-algorithm" class="md-nav__link">
+    Sweep Line Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graham-scan" class="md-nav__link">
+    Graham scan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarjans-algorithm" class="md-nav__link">
+    Tarjan's Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knuth-morris-pratt-algorithm" class="md-nav__link">
+    Knuth-Morris-Pratt Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-algorithm" class="md-nav__link">
+    Z algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hill-climbing" class="md-nav__link">
+    Hill Climbing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-theory" class="md-nav__link">
+    Number Theory
+  </a>
+  
+    <nav class="md-nav" aria-label="Number Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_4" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modular-arithmetic" class="md-nav__link">
+    Modular Arithmetic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fermats-theorem" class="md-nav__link">
+    Fermat’s Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chinese-remainder-theoremcrt" class="md-nav__link">
+    Chinese Remainder Theorem(CRT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidian-method-for-gcd" class="md-nav__link">
+    Euclidian Method for GCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logarithmic-exponentiation" class="md-nav__link">
+    Logarithmic Exponentiation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sieve-of-eratosthenes" class="md-nav__link">
+    Sieve of Eratosthenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eulers-totient-function" class="md-nav__link">
+    Euler’s Totient Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-algorithms" class="md-nav__link">
+    Geometric Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_5" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-and-scale-matrices" class="md-nav__link">
+    2D Rotation and Scale Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-and-translation-matrices" class="md-nav__link">
+    2D Rotation and Translation Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-changing-coordinate-systems" class="md-nav__link">
+    2D Changing Coordinate Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-rotation-and-scale-matrices" class="md-nav__link">
+    3D Rotation and Scale Matrices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-changing-coordinate-systems" class="md-nav__link">
+    3D Changing Coordinate Systems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recursion" class="md-nav__link">
+    Recursion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huffman-coding" class="md-nav__link">
+    Huffman Coding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex-algorithm-pattern-matching-and-parsing" class="md-nav__link">
+    Regex Algorithm (Pattern Matching and Parsing)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashing-hash-functions" class="md-nav__link">
+    Hashing- Hash Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monotone-chains-algorithm" class="md-nav__link">
+    Monotone Chains Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-compression" class="md-nav__link">
+    Coordinate Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ford-fulkerson-method" class="md-nav__link">
+    Ford-Fulkerson Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preflow-push-algorithm" class="md-nav__link">
+    Preflow-Push Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinics-algorithm" class="md-nav__link">
+    Dinic's Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monte-carlo-method-or-metropolis-algorithm" class="md-nav__link">
+    Monte Carlo method or Metropolis Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krylov-subspace-iteration-method" class="md-nav__link">
+    Krylov Subspace Iteration Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#householder-matrix-decomposition" class="md-nav__link">
+    Householder Matrix Decomposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qr-algorithm" class="md-nav__link">
+    QR Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-fourier-transform" class="md-nav__link">
+    Fast Fourier Transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-relation-detection-algorithm" class="md-nav__link">
+    Integer Relation Detection Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-multipole-algorithm" class="md-nav__link">
+    Fast Multipole algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minmax-algorithm" class="md-nav__link">
+    MinMax Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divide-and-conquer-algorithm" class="md-nav__link">
+    Divide and Conquer Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/#docs/cs-fundamentals/Algo.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Algo</h1>
+                
+                <div class="toc">
+<ul>
+<li><a href="#dynamic-programing">Dynamic Programing</a><ul>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#memoization">Memoization</a></li>
+<li><a href="#tabulation">Tabulation</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#edit-distance">Edit Distance</a></li>
+<li><a href="#knapsack-problem">Knapsack problem</a><ul>
+<li><a href="#01-knapsack-problem">0/1 Knapsack Problem</a></li>
+<li><a href="#01-knapsack-problem-with-repetition-of-items">0/1 Knapsack Problem (with repetition of items)</a></li>
+<li><a href="#knapsack-problem-with-fractional-items">Knapsack Problem (with fractional items)</a></li>
+</ul>
+</li>
+<li><a href="#matrix-chain-multiplication">Matrix Chain Multiplication</a></li>
+<li><a href="#longest-common-substring">Longest Common Substring</a></li>
+<li><a href="#longest-common-subsequence">Longest Common Subsequence</a></li>
+<li><a href="#longest-increasing-monotonical-subsequence">Longest Increasing Monotonical Subsequence</a></li>
+<li><a href="#rod-cutting">Rod Cutting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#searching-algorithms">Searching Algorithms</a><ul>
+<li><a href="#types">Types</a><ul>
+<li><a href="#1-linear">1. Linear</a></li>
+<li><a href="#2-binary">2. Binary</a></li>
+<li><a href="#3-jump">3. Jump</a></li>
+<li><a href="#4-interpolation">4. Interpolation</a></li>
+<li><a href="#5-exponential">5. Exponential</a></li>
+<li><a href="#6-ternary">6.  Ternary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sorting-algorithms">Sorting Algorithms</a><ul>
+<li><a href="#types_1">Types</a><ul>
+<li><a href="#1-bubble-sort">1. Bubble Sort:</a></li>
+<li><a href="#2-selection-sort">2. Selection Sort:</a></li>
+<li><a href="#3-insertion-sort">3. Insertion Sort:</a></li>
+<li><a href="#4-merge-sort">4. Merge Sort</a></li>
+<li><a href="#5-quick-sort-recursivearrleftright">5. Quick Sort Recursive(arr,left,right):</a></li>
+<li><a href="#51-quick-sort-iterative">5.1 Quick Sort Iterative:</a></li>
+<li><a href="#6-heap-sort">6. Heap Sort</a></li>
+<li><a href="#7-bucket-sort">7. Bucket Sort</a></li>
+<li><a href="#8-counting-sort">8. Counting Sort</a></li>
+<li><a href="#9-radix-sort">9. Radix Sort.</a></li>
+<li><a href="#10-tim-sort">10. Tim sort</a><ul>
+<li><a href="#quick-sort-vs-merge-sort">Quick Sort Vs Merge Sort</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#greedy-algorithms">Greedy Algorithms</a><ul>
+<li><a href="#types_2">Types</a><ul>
+<li><a href="#elementary-cases-fractional-knapsack-problem-task-scheduling">Elementary cases : Fractional Knapsack Problem, Task Scheduling</a></li>
+<li><a href="#data-compression-using-huffman-trees">Data Compression using Huffman Trees</a></li>
+<li><a href="#activity-selection">Activity Selection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#graphsearch-algorithms">Graph/Search Algorithms</a><ul>
+<li><a href="#types_3">Types</a><ul>
+<li><a href="#depth-first-search-dfs">Depth First Search (DFS)</a></li>
+<li><a href="#breadth-first-search-bfs">Breadth First Search (BFS)</a></li>
+<li><a href="#iterative-deepening-depth-first-search-depth-limited-search">Iterative Deepening Depth First Search (Depth Limited Search)</a></li>
+<li><a href="#a-search">A* Search</a></li>
+<li><a href="#ternary-search">Ternary Search</a></li>
+<li><a href="#meet-in-the-middle">Meet in the middle</a></li>
+<li><a href="#strongly-connected-components-scc">Strongly Connected Components (SCC)</a></li>
+<li><a href="#bipartite-matching">Bipartite Matching</a></li>
+<li><a href="#kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm</a></li>
+<li><a href="#prims-minumum-cost-spanning-tree">Prim's Minumum Cost Spanning Tree</a></li>
+<li><a href="#dijkstras-algorithm-for-shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="#floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall Algorithm for Shortest Paths</a></li>
+<li><a href="#bellman-ford-algorithm">Bellman-Ford Algorithm</a></li>
+<li><a href="#edmonds-karp-algorithm">Edmonds-Karp Algorithm</a></li>
+<li><a href="#hungarian-algorithm">Hungarian Algorithm</a></li>
+<li><a href="#sweep-line-algorithm">Sweep Line Algorithm</a></li>
+<li><a href="#graham-scan">Graham scan</a></li>
+<li><a href="#tarjans-algorithm">Tarjan's Algorithm</a></li>
+<li><a href="#knuth-morris-pratt-algorithm">Knuth-Morris-Pratt Algorithm</a></li>
+<li><a href="#z-algorithm">Z algorithm</a></li>
+<li><a href="#hill-climbing">Hill Climbing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#number-theory">Number Theory</a><ul>
+<li><a href="#types_4">Types</a><ul>
+<li><a href="#modular-arithmetic">Modular Arithmetic</a></li>
+<li><a href="#fermats-theorem">Fermat’s Theorem</a></li>
+<li><a href="#chinese-remainder-theoremcrt">Chinese Remainder Theorem(CRT)</a></li>
+<li><a href="#euclidian-method-for-gcd">Euclidian Method for GCD</a></li>
+<li><a href="#logarithmic-exponentiation">Logarithmic Exponentiation</a></li>
+<li><a href="#sieve-of-eratosthenes">Sieve of Eratosthenes</a></li>
+<li><a href="#eulers-totient-function">Euler’s Totient Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometric-algorithms">Geometric Algorithms</a><ul>
+<li><a href="#types_5">Types</a><ul>
+<li><a href="#2d-rotation-and-scale-matrices">2D Rotation and Scale Matrices</a></li>
+<li><a href="#2d-rotation-and-translation-matrices">2D Rotation and Translation Matrices</a></li>
+<li><a href="#2d-changing-coordinate-systems">2D Changing Coordinate Systems</a></li>
+<li><a href="#3d-rotation-and-scale-matrices">3D Rotation and Scale Matrices</a></li>
+<li><a href="#3d-changing-coordinate-systems">3D Changing Coordinate Systems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#misc">Misc</a><ul>
+<li><a href="#recursion">Recursion</a></li>
+<li><a href="#huffman-coding">Huffman Coding</a></li>
+<li><a href="#regex-algorithm-pattern-matching-and-parsing">Regex Algorithm (Pattern Matching and Parsing)</a></li>
+<li><a href="#hashing-hash-functions">Hashing- Hash Functions</a></li>
+<li><a href="#monotone-chains-algorithm">Monotone Chains Algorithm</a></li>
+<li><a href="#coordinate-compression">Coordinate Compression</a></li>
+<li><a href="#ford-fulkerson-method">Ford-Fulkerson Method</a></li>
+<li><a href="#preflow-push-algorithm">Preflow-Push Algorithm</a></li>
+<li><a href="#dinics-algorithm">Dinic's Algorithm</a></li>
+<li><a href="#monte-carlo-method-or-metropolis-algorithm">Monte Carlo method or Metropolis Algorithm</a></li>
+<li><a href="#krylov-subspace-iteration-method">Krylov Subspace Iteration Method</a></li>
+<li><a href="#householder-matrix-decomposition">Householder Matrix Decomposition</a></li>
+<li><a href="#qr-algorithm">QR Algorithm</a></li>
+<li><a href="#fast-fourier-transform">Fast Fourier Transform</a></li>
+<li><a href="#integer-relation-detection-algorithm">Integer Relation Detection Algorithm</a></li>
+<li><a href="#fast-multipole-algorithm">Fast Multipole algorithm</a></li>
+<li><a href="#minmax-algorithm">MinMax Algorithm</a></li>
+<li><a href="#divide-and-conquer-algorithm">Divide and Conquer Algorithm</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<h2 id="dynamic-programing">Dynamic Programing<a class="headerlink" href="#dynamic-programing" title="Permanent link">#</a></h2>
+<h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
+<h4 id="memoization">Memoization<a class="headerlink" href="#memoization" title="Permanent link">#</a></h4>
+<p>Top - Down approach in a subproblem tree</p>
+<ul>
+<li>
+<p>Intro</p>
+<ul>
+<li>divides a big problem into subproblems</li>
+<li>starts solving smallest problem  first; approaching root of problem</li>
+<li>memoize/cache the solved subproblems</li>
+<li>for repeated/same subproblems, utilizes the cache/memoization table</li>
+<li>uses recursion</li>
+</ul>
+</li>
+<li>
+<p>Pros</p>
+<ul>
+<li>easy implementation</li>
+</ul>
+</li>
+<li>
+<p>Cons</p>
+<ul>
+<li>recusrsion stach could be deeper and that might create stack-overflow/memory issue</li>
+</ul>
+</li>
+<li>
+<p>Extra</p>
+<ul>
+<li>memo table fills up in bottom to top order</li>
+</ul>
+</li>
+</ul>
+<h4 id="tabulation">Tabulation<a class="headerlink" href="#tabulation" title="Permanent link">#</a></h4>
+<p>Bottom - Up approach in a subproblem tree</p>
+<ul>
+<li>
+<p>Intro</p>
+<ul>
+<li>Understands a root problem and finds subproblems to that</li>
+<li>starts solving subproblems (in a particular order which approaches the root problem, like smallest to bigger, 1 to 100 etc.) in iterative way</li>
+<li>store the answer to those subproblems in a table</li>
+</ul>
+</li>
+<li>
+<p>Pros</p>
+<ul>
+<li>avoids recursion stack issue</li>
+<li>suitable for extremly complicated problems</li>
+<li>suitable where optimization is concern<ul>
+<li>because it gives flexibility of command over coding style</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cons</p>
+<ul>
+<li>need more rigid thinking ahead of time to find the ordering of subproblems so that we do not need to backtrack and solve a smaller problem in order to solve a larger problem</li>
+</ul>
+</li>
+<li>
+<p>Extra</p>
+<ul>
+<li>table fills up in top to bottom order</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
+<h4 id="edit-distance">Edit Distance<a class="headerlink" href="#edit-distance" title="Permanent link">#</a></h4>
+<h4 id="knapsack-problem">Knapsack problem<a class="headerlink" href="#knapsack-problem" title="Permanent link">#</a></h4>
+<h5 id="01-knapsack-problem">0/1 Knapsack Problem<a class="headerlink" href="#01-knapsack-problem" title="Permanent link">#</a></h5>
+<h5 id="01-knapsack-problem-with-repetition-of-items">0/1 Knapsack Problem (with repetition of items)<a class="headerlink" href="#01-knapsack-problem-with-repetition-of-items" title="Permanent link">#</a></h5>
+<h5 id="knapsack-problem-with-fractional-items">Knapsack Problem (with fractional items)<a class="headerlink" href="#knapsack-problem-with-fractional-items" title="Permanent link">#</a></h5>
+<h4 id="matrix-chain-multiplication">Matrix Chain Multiplication<a class="headerlink" href="#matrix-chain-multiplication" title="Permanent link">#</a></h4>
+<h4 id="longest-common-substring">Longest Common Substring<a class="headerlink" href="#longest-common-substring" title="Permanent link">#</a></h4>
+<h4 id="longest-common-subsequence">Longest Common Subsequence<a class="headerlink" href="#longest-common-subsequence" title="Permanent link">#</a></h4>
+<h4 id="longest-increasing-monotonical-subsequence">Longest Increasing Monotonical Subsequence<a class="headerlink" href="#longest-increasing-monotonical-subsequence" title="Permanent link">#</a></h4>
+<h4 id="rod-cutting">Rod Cutting<a class="headerlink" href="#rod-cutting" title="Permanent link">#</a></h4>
+<hr />
+<h2 id="searching-algorithms">Searching Algorithms<a class="headerlink" href="#searching-algorithms" title="Permanent link">#</a></h2>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">#</a></h3>
+<h4 id="1-linear">1. Linear<a class="headerlink" href="#1-linear" title="Permanent link">#</a></h4>
+<h4 id="2-binary">2. Binary<a class="headerlink" href="#2-binary" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> Sorted array of numbers (integers/floats)</li>
+<li><strong>Method</strong>: Divide and search (conquer)</li>
+<li>Equation: T(n) = T(n/2) + O(1)</li>
+<li><strong>Time Complexity:</strong> $ O(log n) $</li>
+<li>Implementaion:<ul>
+<li>Recursive<ul>
+<li>Auxilary Space: $ O(log n) $  recursion call stack space</li>
+</ul>
+</li>
+<li>Iterative<ul>
+<li>Auxilary Space: $ O(1) $</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-jump">3. Jump<a class="headerlink" href="#3-jump" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> Sorted array of numbers</li>
+<li><strong>Desc:</strong><ul>
+<li>Enhancement over linear search.</li>
+<li>Jumps a step (of m) <strong>by index</strong> and search, if it was searching value 52 and found 55 then will jump a step back and start linear search from that index.</li>
+<li>Similar to linear search.</li>
+</ul>
+</li>
+<li>Recurrence Equation: <ul>
+<li>Total number of comparision in worst case: (n/m) + (m-1) i.e. (total number of jumps + linear search within one step)</li>
+<li>Best value of <span><span class="MathJax_Preview">m = \sqrt(n)</span><script type="math/tex">m = \sqrt(n)</script></span></li>
+</ul>
+</li>
+<li>Time Complexity: $ O(\sqrt(n))$ i.e. between O(linear) &amp; O(binary)</li>
+<li>Auxiliary Space : O(1)</li>
+</ul>
+<h4 id="4-interpolation">4. Interpolation<a class="headerlink" href="#4-interpolation" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> Sorted array</li>
+<li><strong>Desc:</strong><ul>
+<li>Enhancement over Binary search.</li>
+<li>Enhancement:<ul>
+<li>Pivot is calculated based on interpolation, i.e.</li>
+<li>Pivot = $ left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])} $</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Time Complexity: <ul>
+<li>$ O(log log n) $ (if elements are uniformaly distributed)</li>
+<li>Worst case: O(n)</li>
+</ul>
+</li>
+<li>Auxilary space:
+    $ O(1) $  </li>
+</ul>
+<h4 id="5-exponential">5. Exponential<a class="headerlink" href="#5-exponential" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> Sorted array</li>
+<li><strong>Desc:</strong><ul>
+<li>Enhancement over binary search.</li>
+<li>Enhancement: <ul>
+<li>Find a range where element is present, and then do binary search found range.</li>
+<li>Range: <ul>
+<li>Start with subarray of size 1 and chech if last element of subarray is greater than 'e'.</li>
+<li>If not, then increment size by two times</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Equation:</li>
+<li>Time Complexity: O(log n)</li>
+<li>Auxilary Space: O(1) (if used iterative binary search)</li>
+<li>Advantage: Better to use if array is infinite (Unbounded Searches/ Unbounded Binary Search)</li>
+</ul>
+<h4 id="6-ternary">6.  Ternary<a class="headerlink" href="#6-ternary" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> Sorted array</li>
+<li><strong>Desc:</strong><ul>
+<li>Divide and Conquer + Linear search</li>
+<li>Same as binary search.</li>
+<li>When searching space gets shorter, use linear search according to precision = right-left</li>
+</ul>
+</li>
+<li>Time Complexity: O(log<sub>3</sub>n)</li>
+<li>Auxilary Space:<ul>
+<li>Iterative = O(1)</li>
+<li>Recursive = O(log<sub>3</sub>n) recursive stack space</li>
+</ul>
+</li>
+<li>Application:<ul>
+<li>Unimodel Functions</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="sorting-algorithms">Sorting Algorithms<a class="headerlink" href="#sorting-algorithms" title="Permanent link">#</a></h2>
+<h3 id="types_1">Types<a class="headerlink" href="#types_1" title="Permanent link">#</a></h3>
+<h4 id="1-bubble-sort">1. Bubble Sort:<a class="headerlink" href="#1-bubble-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Description:</strong><ul>
+<li>Swapping adjacent elements if there are in wrong orders.</li>
+</ul>
+</li>
+<li>Time Complexity: Always O(n <sup>2 </sup>) (even for sorted arrays)</li>
+<li>Can be optimized for sorted array  </li>
+</ul>
+<h4 id="2-selection-sort">2. Selection Sort:<a class="headerlink" href="#2-selection-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Description:</strong><ul>
+<li>Pulls a minimum element from unsorted-subarray and appends infront of the array (as a sorted sub-array)</li>
+</ul>
+</li>
+<li>Time Complexity: O(n<sup>2</sup>) (all cases)</li>
+<li>Auxilary Space: O(1)  </li>
+</ul>
+<h4 id="3-insertion-sort">3. Insertion Sort:<a class="headerlink" href="#3-insertion-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Description:</strong>
+    Keep first element on left side, start one by one from 2nd element (lets say ith element). Compare the picked element (ith) with all the elements in left sub-array (i.e. with i-1<sup>th</sup> to 0<sup>th</sup>).
+    If LHS sub-array element is greater than i element, then shift that element right by one index.
+    Repeat for all LHS elements.
+    Fill the empty cell with picked element.</li>
+<li><strong>Time Complexity:</strong> <ul>
+<li>Best Case: O(n); if array is as small as n=1 or array is already sorted</li>
+<li>Avg Case: Theta(n<sup>2</sup>))</li>
+<li>Worst Case: O(n<sup>2</sup>)</li>
+</ul>
+</li>
+<li><strong>Auxilary Space:</strong> O(1)  </li>
+</ul>
+<h4 id="4-merge-sort">4. Merge Sort<a class="headerlink" href="#4-merge-sort" title="Permanent link">#</a></h4>
+<ul>
+<li>Description:<ol>
+<li>Split the array in Binary fashion, till you get minimum/single entity</li>
+<li>Start merging 2 single entities --&gt; you'll get 2 sorted sub-array --&gt; merge both</li>
+<li>Continue merging till end</li>
+</ol>
+</li>
+<li>Merge Function:<ol>
+<li>Merges two sorted sub-arrays by using an extra space of O(n).</li>
+<li>Begin from 0th index of both sub-array (using pointers like i,j), do comparision in temporary (un-touched) array</li>
+<li>Make changes in original array till both i &amp; j reaches the end of the sub-array</li>
+</ol>
+</li>
+<li>Time Complexity: <ul>
+<li>Merge: O(n)</li>
+<li>Merge Sort:<ul>
+<li>Best Case: O(nlogn)</li>
+<li>Avg Case: O(nlogn)</li>
+<li>Worst Case: O(nlogn)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Auxiliary Space: <ul>
+<li>Merge: O(n)</li>
+<li>Merge Sort: O(n) + O(1)</li>
+</ul>
+</li>
+<li>Algorithmic Paradigm: Divide and Conquer</li>
+<li>Implementations: Recursive only</li>
+<li>Sorting In Place: Yes (No in a typical implementation)</li>
+<li>Applications:<ul>
+<li>Sorting linkedlist in O(nlogn)</li>
+<li>Inversion Count Problem (i.e. in an array Ei&gt;Ej&gt;Ek where i&lt;j&lt;k)</li>
+<li>In External Sorting  </li>
+</ul>
+</li>
+</ul>
+<h4 id="5-quick-sort-recursivearrleftright">5. Quick Sort Recursive(arr,left,right):<a class="headerlink" href="#5-quick-sort-recursivearrleftright" title="Permanent link">#</a></h4>
+<ul>
+<li>Description:<ol>
+<li>Partition the array about a pivot: re-arrange smaller elements in LHS &amp; greater elements in RHS of pivot</li>
+<li>Return partitioned index (i.e. index of pivot after re-arrangement)</li>
+<li>Re-call quicksort for sub-array smaller than pivot</li>
+<li>Re-call quicksort for sub-array greater than pivot</li>
+</ol>
+</li>
+<li>Partition Function(arr,left,right):<ul>
+<li>Desc:<ul>
+<li>Pick pivot is any preferable fashion:<ol>
+<li>First element</li>
+<li>Last element</li>
+<li>Mean</li>
+<li>Randon</li>
+</ol>
+</li>
+<li>Find index of pivot element in array by counting number of elements smaller than it + re-arranges elements smaller than pivot to left (and greater to right) in original Array.</li>
+<li>Swap pivot element with element at that index </li>
+<li>return the pivot/partioning index</li>
+</ul>
+</li>
+<li>Returns: Partitioning Index (Re-calculated index of pivot)</li>
+<li>Time Complexity: O(n)</li>
+<li>Auxilary Space: O(1)</li>
+</ul>
+</li>
+<li>Time Complexity:<ol>
+<li>Best Case: O(nlogn) (Occurs when pivot element is middle element value-wise)</li>
+<li>Avg Case: O(nlogn) </li>
+<li>Worst Case: O(n2) (Occurs when pivot element is either smaller or larger element)</li>
+</ol>
+</li>
+<li>Auxilary Space: O(1)</li>
+<li>Algorithm Paradigm: Divide and Conquer</li>
+<li>Implementation: Recursive (Generally) and Iterative</li>
+<li>In-Place: Yes (because auxilary space O(n))</li>
+<li>Recurrence Relation:<ul>
+<li>Best Case: T(n) = O(n) + 2*T(n/2) == O(nlogn) </li>
+<li>Avg Case: T(n) = O(n) + 2*T(n/2) == O(nlogn)</li>
+<li>Worst Case: T(n) =  O(n) + T(n-1) == O(n<sup>2</sup>) </li>
+</ul>
+</li>
+<li>Applications:<ol>
+<li>In case of memory limitation this algo is used</li>
+</ol>
+</li>
+<li>Advantages: <ol>
+<li>One of the fastest algo for avg case</li>
+<li>Does not need additional memory, i.e. In-place processing/sorting</li>
+</ol>
+</li>
+<li>Disadvantages:<ol>
+<li>Worst case complexity O(n2)</li>
+<li>speed is not guaranteed</li>
+</ol>
+</li>
+</ul>
+<h4 id="51-quick-sort-iterative">5.1 Quick Sort Iterative:<a class="headerlink" href="#51-quick-sort-iterative" title="Permanent link">#</a></h4>
+<ul>
+<li>Description:<ul>
+<li>Use tha same Partition technique</li>
+<li>Instead of re-calling the quick_sort function, use stack to keep track of left and right indexes of the sub-arrays (LHS &amp; RHS of partition_idx) found after partition. Keep doing this while stack is not empty.</li>
+<li>At the end partition() will arrange all the elements at their perfect index.</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-heap-sort">6. Heap Sort<a class="headerlink" href="#6-heap-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Desc:</strong><ul>
+<li>Make max heap using heapify(). To do so, start from last leaf and make max heap till root node.</li>
+<li>Loop from last leaf to second node.<ul>
+<li>Swap last leaf with root node in max heap</li>
+<li>Heapify the sub-tree (by ignoring last leaf) at root node till the loop covers all the nodes except the root node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Pre-requisites:</strong> </li>
+<li><strong>Useful:</strong><ul>
+<li>When there is time (Quick's problem) and space (Merge's problem) bound</li>
+</ul>
+</li>
+<li><strong>Advantage:</strong><ul>
+<li>Worst case upper bound is O(nlogn) with only O(1) auxilary space</li>
+</ul>
+</li>
+<li><strong>Applications:</strong><ul>
+<li>Sort a nearly sorted (or K sorted) array</li>
+<li>k largest(or smallest) elements in an array</li>
+</ul>
+</li>
+<li><strong>Time Complexity:</strong> O(heapify) * O(n) = O(nlogn)</li>
+<li><strong>Auxilary Space:</strong> O(1)</li>
+<li><strong>In-Place:</strong> Yes</li>
+<li><strong>Implementation:</strong> Recursive (Heapify)</li>
+<li><strong>Algorithm Paradigm:</strong> Comparision Based</li>
+<li><strong>Data Structure:</strong> Array + Complete Binary Tree</li>
+<li><strong>Stable:</strong> Not in general</li>
+<li><strong>Note:</strong> Quick &amp; Merge are better in practice.</li>
+</ul>
+<h4 id="7-bucket-sort">7. Bucket Sort<a class="headerlink" href="#7-bucket-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites:</strong> <ul>
+<li>Standard: A uniform distributed input array in a range of [0,1). CLRS. </li>
+<li>Generalized: A uniform distributed input array in a range of non negative integers + floats. [0, k).</li>
+<li>Efficient Hash Function (specially in case of "Generalized" implementation.</li>
+</ul>
+</li>
+<li><strong>Desc:</strong><ul>
+<li>Hashing:<ul>
+<li>hash_table_size or number of buckets:<ul>
+<li>= size of input array; Standard</li>
+<li>OR = int(sqrt(size)); Generalized</li>
+</ul>
+</li>
+<li>hash_func() = (element/MAX)* (hash_table_size)</li>
+</ul>
+</li>
+<li>Condition: if i &lt; k then hash(i) &lt; hash(k)</li>
+<li>Partion inp array on the basis of hash function, store then in right bucket/array</li>
+<li>Sort each array using Insertionsort </li>
+<li>Merge all sorted arrays into one.</li>
+</ul>
+</li>
+<li><strong>Useful:</strong> When input is uniformly distributed over a positive range</li>
+<li><strong>Advantage:</strong> <ul>
+<li>Sorting in O(n)</li>
+</ul>
+</li>
+<li><strong>Applications:</strong><ul>
+<li>When input is uniformly distributed over a positive range</li>
+</ul>
+</li>
+<li><strong>Recurrence Equation:</strong> <span><span class="MathJax_Preview">\theta(n) + n.O(2 - 1/n)</span><script type="math/tex">\theta(n) + n.O(2 - 1/n)</script></span></li>
+<li><strong>Time Complexity:</strong> <ul>
+<li>Best: Omega(n) == <span><span class="MathJax_Preview">\Omega(n)</span><script type="math/tex">\Omega(n)</script></span></li>
+<li>Avg: Theta(n)</li>
+<li>Worst: Theta(n2); When all the elements fall under single bucket</li>
+</ul>
+</li>
+<li><strong>Auxilary Space:</strong>  <span><span class="MathJax_Preview">O(bucket size) == O(n)</span><script type="math/tex">O(bucket size) == O(n)</script></span></li>
+<li><strong>In-Place:</strong> No</li>
+<li><strong>Implementation:</strong>  Iterative</li>
+<li><strong>Algorithm Paradigm:</strong> Hashing, Partion</li>
+<li><strong>Data Structure:</strong> Hashtable, Array</li>
+<li><strong>Stable:</strong> Yes</li>
+<li><strong>Note:</strong> If input is not uniformally distributed, but also bucketsort may still run in linear time. CLRS.</li>
+<li><strong>Why Insertion sort is used here? How overall time complexity of bucketsort is still O(n) then?</strong>
+    Following Standard way: As, input is uniformly distributed, On avg each bucket/array will have 1 elements (k/k=1), some may have zero and some may have multiple with same value. And as insertionsort's best case is O(n) (if array size is 1). Hence overall its O(n)</li>
+</ul>
+<h4 id="8-counting-sort">8. Counting Sort<a class="headerlink" href="#8-counting-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites (Standard):</strong><ol>
+<li>Elements should be Non Negative Integers</li>
+<li>Over a range of 0 to k where k &lt; size of array to maintain O(n)    </li>
+</ol>
+</li>
+<li><strong>Desc:</strong>
+    For each element X in the input array find the number of elements smaller than X.
+Steps:<ol>
+<li>Store counts of each element in a counting array</li>
+<li>Add previous count to current count, to find index of last occurence of that element</li>
+<li>Reverse Iterate over input array &amp; pick index of the element from counting array</li>
+<li>Put the element in output array and decrement the count by 1</li>
+</ol>
+</li>
+<li><strong>Useful:</strong> same as pre-requisites</li>
+<li><strong>Advantage:</strong><ol>
+<li>Sorting in O(n + k)</li>
+</ol>
+</li>
+<li><strong>Applications:</strong><ol>
+<li>Same as pre-requisites</li>
+<li>As a subroutine in Radix Sort</li>
+</ol>
+</li>
+<li><strong>Time Complexity:</strong>
+    Best: Omega(n + k)
+    Avg: Theta(n + k)
+    Worst: O(n + k)</li>
+<li><strong>Auxilary Space:</strong> O(counting + output array) == O(n + k)</li>
+<li><strong>In-Place:</strong> No</li>
+<li><strong>Implementation:</strong> Iterative</li>
+<li><strong>Algorithm Paradigm:</strong> Partial Hashing</li>
+<li><strong>Data Structure:</strong> Hashtable, Array</li>
+<li><strong>Stable:</strong> Yes (order of elements with same value in input array maintains same order in output)</li>
+<li><strong>Comparion Sort:</strong> No</li>
+<li><strong>Note:</strong> Can be extended to sort negative integers also    </li>
+</ul>
+<h4 id="9-radix-sort">9. Radix Sort.<a class="headerlink" href="#9-radix-sort" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Pre-requisites (Standard):</strong><ul>
+<li>input array have non negative integers</li>
+<li>range should be 0 to n**c where c is some constant &amp; numbers are represented in base n</li>
+<li>or each number takes only log2(n) bits</li>
+</ul>
+</li>
+<li><strong>Desc:</strong><ul>
+<li>for 1 to d: where d is most significant digit position of MAX element in inp array</li>
+<li>do counting sort on array (considering current digit of each iteration)</li>
+</ul>
+</li>
+<li><strong>Useful:</strong> same as prerequisites</li>
+<li><strong>Advantage:</strong> Better worst case performance than bucket sort's Worst case</li>
+<li><strong>Applications:</strong> Card sorting machine</li>
+<li><strong>Recurrence Equation:</strong> n*O(n + k) == O(n + k)</li>
+<li><strong>Time Complexity:</strong><ul>
+<li>Best Case: Omega(n + k)</li>
+<li>Avg Case: theta(n + k)</li>
+<li>Worst Case: O(n + k)</li>
+</ul>
+</li>
+<li><strong>Auxilary Space:</strong> d<em>O(counting array + output array) = d</em>O(n + k)</li>
+<li><strong>In-Place:</strong> No</li>
+<li><strong>Implementation:</strong> Iterative</li>
+<li><strong>Algorithm Paradigm:</strong> Partial Hashing</li>
+<li><strong>Data Structure:</strong> Hashtable, array</li>
+<li><strong>Stable:</strong> Yes</li>
+<li><strong>Comparion Sort:</strong> No</li>
+<li><strong>Note:</strong></li>
+</ul>
+<h4 id="10-tim-sort">10. Tim sort<a class="headerlink" href="#10-tim-sort" title="Permanent link">#</a></h4>
+<h5 id="quick-sort-vs-merge-sort">Quick Sort Vs Merge Sort<a class="headerlink" href="#quick-sort-vs-merge-sort" title="Permanent link">#</a></h5>
+<ul>
+<li>Merge sort is preferred over Quick sort when:<ul>
+<li>Sorting a linkedlist: </li>
+</ul>
+</li>
+<li>Quick sort is preferred over Merge sort when:<ul>
+<li>There is memory limitation</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="greedy-algorithms">Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permanent link">#</a></h2>
+<h3 id="types_2">Types<a class="headerlink" href="#types_2" title="Permanent link">#</a></h3>
+<h4 id="elementary-cases-fractional-knapsack-problem-task-scheduling">Elementary cases : Fractional Knapsack Problem, Task Scheduling<a class="headerlink" href="#elementary-cases-fractional-knapsack-problem-task-scheduling" title="Permanent link">#</a></h4>
+<h4 id="data-compression-using-huffman-trees">Data Compression using Huffman Trees<a class="headerlink" href="#data-compression-using-huffman-trees" title="Permanent link">#</a></h4>
+<h4 id="activity-selection">Activity Selection<a class="headerlink" href="#activity-selection" title="Permanent link">#</a></h4>
+<hr />
+<h2 id="graphsearch-algorithms">Graph/Search Algorithms<a class="headerlink" href="#graphsearch-algorithms" title="Permanent link">#</a></h2>
+<h3 id="types_3">Types<a class="headerlink" href="#types_3" title="Permanent link">#</a></h3>
+<h4 id="depth-first-search-dfs">Depth First Search (DFS)<a class="headerlink" href="#depth-first-search-dfs" title="Permanent link">#</a></h4>
+<h4 id="breadth-first-search-bfs">Breadth First Search (BFS)<a class="headerlink" href="#breadth-first-search-bfs" title="Permanent link">#</a></h4>
+<h4 id="iterative-deepening-depth-first-search-depth-limited-search">Iterative Deepening Depth First Search (Depth Limited Search)<a class="headerlink" href="#iterative-deepening-depth-first-search-depth-limited-search" title="Permanent link">#</a></h4>
+<h4 id="a-search">A* Search<a class="headerlink" href="#a-search" title="Permanent link">#</a></h4>
+<h4 id="ternary-search">Ternary Search<a class="headerlink" href="#ternary-search" title="Permanent link">#</a></h4>
+<h4 id="meet-in-the-middle">Meet in the middle<a class="headerlink" href="#meet-in-the-middle" title="Permanent link">#</a></h4>
+<h4 id="strongly-connected-components-scc">Strongly Connected Components (SCC)<a class="headerlink" href="#strongly-connected-components-scc" title="Permanent link">#</a></h4>
+<h4 id="bipartite-matching">Bipartite Matching<a class="headerlink" href="#bipartite-matching" title="Permanent link">#</a></h4>
+<h4 id="kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm<a class="headerlink" href="#kruskal-minimum-cost-spanning-tree-algorithm" title="Permanent link">#</a></h4>
+<h4 id="prims-minumum-cost-spanning-tree">Prim's Minumum Cost Spanning Tree<a class="headerlink" href="#prims-minumum-cost-spanning-tree" title="Permanent link">#</a></h4>
+<h4 id="dijkstras-algorithm-for-shortest-paths">Dijkstra's Algorithm for Shortest Paths<a class="headerlink" href="#dijkstras-algorithm-for-shortest-paths" title="Permanent link">#</a></h4>
+<h4 id="floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall Algorithm for Shortest Paths<a class="headerlink" href="#floyd-warshall-algorithm-for-shortest-paths" title="Permanent link">#</a></h4>
+<h4 id="bellman-ford-algorithm">Bellman-Ford Algorithm<a class="headerlink" href="#bellman-ford-algorithm" title="Permanent link">#</a></h4>
+<h4 id="edmonds-karp-algorithm">Edmonds-Karp Algorithm<a class="headerlink" href="#edmonds-karp-algorithm" title="Permanent link">#</a></h4>
+<h4 id="hungarian-algorithm">Hungarian Algorithm<a class="headerlink" href="#hungarian-algorithm" title="Permanent link">#</a></h4>
+<h4 id="sweep-line-algorithm">Sweep Line Algorithm<a class="headerlink" href="#sweep-line-algorithm" title="Permanent link">#</a></h4>
+<h4 id="graham-scan">Graham scan<a class="headerlink" href="#graham-scan" title="Permanent link">#</a></h4>
+<h4 id="tarjans-algorithm">Tarjan's Algorithm<a class="headerlink" href="#tarjans-algorithm" title="Permanent link">#</a></h4>
+<h4 id="knuth-morris-pratt-algorithm">Knuth-Morris-Pratt Algorithm<a class="headerlink" href="#knuth-morris-pratt-algorithm" title="Permanent link">#</a></h4>
+<h4 id="z-algorithm">Z algorithm<a class="headerlink" href="#z-algorithm" title="Permanent link">#</a></h4>
+<h4 id="hill-climbing">Hill Climbing<a class="headerlink" href="#hill-climbing" title="Permanent link">#</a></h4>
+<h2 id="number-theory">Number Theory<a class="headerlink" href="#number-theory" title="Permanent link">#</a></h2>
+<h3 id="types_4">Types<a class="headerlink" href="#types_4" title="Permanent link">#</a></h3>
+<h4 id="modular-arithmetic">Modular Arithmetic<a class="headerlink" href="#modular-arithmetic" title="Permanent link">#</a></h4>
+<h4 id="fermats-theorem">Fermat’s Theorem<a class="headerlink" href="#fermats-theorem" title="Permanent link">#</a></h4>
+<h4 id="chinese-remainder-theoremcrt">Chinese Remainder Theorem(CRT)<a class="headerlink" href="#chinese-remainder-theoremcrt" title="Permanent link">#</a></h4>
+<h4 id="euclidian-method-for-gcd">Euclidian Method for GCD<a class="headerlink" href="#euclidian-method-for-gcd" title="Permanent link">#</a></h4>
+<h4 id="logarithmic-exponentiation">Logarithmic Exponentiation<a class="headerlink" href="#logarithmic-exponentiation" title="Permanent link">#</a></h4>
+<h4 id="sieve-of-eratosthenes">Sieve of Eratosthenes<a class="headerlink" href="#sieve-of-eratosthenes" title="Permanent link">#</a></h4>
+<h4 id="eulers-totient-function">Euler’s Totient Function<a class="headerlink" href="#eulers-totient-function" title="Permanent link">#</a></h4>
+<h2 id="geometric-algorithms">Geometric Algorithms<a class="headerlink" href="#geometric-algorithms" title="Permanent link">#</a></h2>
+<h3 id="types_5">Types<a class="headerlink" href="#types_5" title="Permanent link">#</a></h3>
+<h4 id="2d-rotation-and-scale-matrices">2D Rotation and Scale Matrices<a class="headerlink" href="#2d-rotation-and-scale-matrices" title="Permanent link">#</a></h4>
+<h4 id="2d-rotation-and-translation-matrices">2D Rotation and Translation Matrices<a class="headerlink" href="#2d-rotation-and-translation-matrices" title="Permanent link">#</a></h4>
+<h4 id="2d-changing-coordinate-systems">2D Changing Coordinate Systems<a class="headerlink" href="#2d-changing-coordinate-systems" title="Permanent link">#</a></h4>
+<h4 id="3d-rotation-and-scale-matrices">3D Rotation and Scale Matrices<a class="headerlink" href="#3d-rotation-and-scale-matrices" title="Permanent link">#</a></h4>
+<h4 id="3d-changing-coordinate-systems">3D Changing Coordinate Systems<a class="headerlink" href="#3d-changing-coordinate-systems" title="Permanent link">#</a></h4>
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
+<h3 id="recursion">Recursion<a class="headerlink" href="#recursion" title="Permanent link">#</a></h3>
+<h3 id="huffman-coding">Huffman Coding<a class="headerlink" href="#huffman-coding" title="Permanent link">#</a></h3>
+<h3 id="regex-algorithm-pattern-matching-and-parsing">Regex Algorithm (Pattern Matching and Parsing)<a class="headerlink" href="#regex-algorithm-pattern-matching-and-parsing" title="Permanent link">#</a></h3>
+<h3 id="hashing-hash-functions">Hashing- Hash Functions<a class="headerlink" href="#hashing-hash-functions" title="Permanent link">#</a></h3>
+<h3 id="monotone-chains-algorithm">Monotone Chains Algorithm<a class="headerlink" href="#monotone-chains-algorithm" title="Permanent link">#</a></h3>
+<h3 id="coordinate-compression">Coordinate Compression<a class="headerlink" href="#coordinate-compression" title="Permanent link">#</a></h3>
+<h3 id="ford-fulkerson-method">Ford-Fulkerson Method<a class="headerlink" href="#ford-fulkerson-method" title="Permanent link">#</a></h3>
+<h3 id="preflow-push-algorithm">Preflow-Push Algorithm<a class="headerlink" href="#preflow-push-algorithm" title="Permanent link">#</a></h3>
+<h3 id="dinics-algorithm">Dinic's Algorithm<a class="headerlink" href="#dinics-algorithm" title="Permanent link">#</a></h3>
+<h3 id="monte-carlo-method-or-metropolis-algorithm">Monte Carlo method or Metropolis Algorithm<a class="headerlink" href="#monte-carlo-method-or-metropolis-algorithm" title="Permanent link">#</a></h3>
+<h3 id="krylov-subspace-iteration-method">Krylov Subspace Iteration Method<a class="headerlink" href="#krylov-subspace-iteration-method" title="Permanent link">#</a></h3>
+<h3 id="householder-matrix-decomposition">Householder Matrix Decomposition<a class="headerlink" href="#householder-matrix-decomposition" title="Permanent link">#</a></h3>
+<h3 id="qr-algorithm">QR Algorithm<a class="headerlink" href="#qr-algorithm" title="Permanent link">#</a></h3>
+<h3 id="fast-fourier-transform">Fast Fourier Transform<a class="headerlink" href="#fast-fourier-transform" title="Permanent link">#</a></h3>
+<h3 id="integer-relation-detection-algorithm">Integer Relation Detection Algorithm<a class="headerlink" href="#integer-relation-detection-algorithm" title="Permanent link">#</a></h3>
+<h3 id="fast-multipole-algorithm">Fast Multipole algorithm<a class="headerlink" href="#fast-multipole-algorithm" title="Permanent link">#</a></h3>
+<h3 id="minmax-algorithm">MinMax Algorithm<a class="headerlink" href="#minmax-algorithm" title="Permanent link">#</a></h3>
+<h3 id="divide-and-conquer-algorithm">Divide and Conquer Algorithm<a class="headerlink" href="#divide-and-conquer-algorithm" title="Permanent link">#</a></h3>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ul>
+<li>https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../api/REST/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                REST
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../CS-Dictionary/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                CS Dictionary
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

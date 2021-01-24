@@ -1,0 +1,2658 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>Git - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Git
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminologies" class="md-nav__link">
+    Terminologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master" class="md-nav__link">
+    master
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote" class="md-nav__link">
+    remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-config" class="md-nav__link">
+    Setup &amp; Config
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup &amp; Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    config
+  </a>
+  
+    <nav class="md-nav" aria-label="config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crlf-lf-cr" class="md-nav__link">
+    CRLF, LF, CR
+  </a>
+  
+    <nav class="md-nav" aria-label="CRLF, LF, CR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-only" class="md-nav__link">
+    Windows Only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmac-only" class="md-nav__link">
+    Linux/Mac Only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-both" class="md-nav__link">
+    If Both
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspection-comparision" class="md-nav__link">
+    Inspection &amp; Comparision
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspection &amp; Comparision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    diff
+  </a>
+  
+    <nav class="md-nav" aria-label="diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-local-with-remote-branch" class="md-nav__link">
+    Compare local with remote branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-tree" class="md-nav__link">
+    diff-tree
+  </a>
+  
+    <nav class="md-nav" aria-label="diff-tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-the-files-in-a-commit" class="md-nav__link">
+    List all the files in a commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    show
+  </a>
+  
+    <nav class="md-nav" aria-label="show">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-the-files-in-a-commit_1" class="md-nav__link">
+    List all the files in a commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav" aria-label="init">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-bare" class="md-nav__link">
+    --bare
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull" class="md-nav__link">
+    pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflog" class="md-nav__link">
+    reflog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    reset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses" class="md-nav__link">
+    Uses
+  </a>
+  
+    <nav class="md-nav" aria-label="Uses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    Branching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging" class="md-nav__link">
+    Merging
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-vs-rebase" class="md-nav__link">
+    merge Vs rebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    rebase:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-one-branch-on-the-top-of-another" class="md-nav__link">
+    rebase one branch on the top of another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverting-back-to-old-commits" class="md-nav__link">
+    Reverting back to old commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseting" class="md-nav__link">
+    Reseting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-last-commit-message" class="md-nav__link">
+    Modify last commit Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-a-particular-commit" class="md-nav__link">
+    Modify a particular commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squashing-last-x-commits-into-one" class="md-nav__link">
+    Squashing last x commits into one
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#travis-ci-continue-integration" class="md-nav__link">
+    Travis CI (Continue Integration)
+  </a>
+  
+    <nav class="md-nav" aria-label="Travis CI (Continue Integration)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-integrate-ci" class="md-nav__link">
+    Steps to Integrate CI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-to-install-dependencies" class="md-nav__link">
+    command to install dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-to-run-tests" class="md-nav__link">
+    command to run tests
+  </a>
+  
+    <nav class="md-nav" aria-label="command to run tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-ssh-key" class="md-nav__link">
+    Setup SSH key
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup SSH key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-or-get-ssh-key" class="md-nav__link">
+    Generate or Get ssh key
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate or Get ssh key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    Generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-paraphrase" class="md-nav__link">
+    Set paraphrase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-key-to-the-ssh-agent" class="md-nav__link">
+    Add the key to the ssh-agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add the key to the ssh-agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start" class="md-nav__link">
+    Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_1" class="md-nav__link">
+    Add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provide-paraphrase" class="md-nav__link">
+    Provide paraphrase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-public-key-to-your-vcs-portal-settings" class="md-nav__link">
+    Add the public key to your VCS portal settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Add the public key to your VCS portal settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-hash-of-public-key" class="md-nav__link">
+    Copy hash of public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paste-in-settings" class="md-nav__link">
+    Paste in settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-remotes-with-ssh-url" class="md-nav__link">
+    Update remotes with ssh url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maths/" class="md-nav__link">
+        Maths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/" class="md-nav__link">
+        Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Api" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/REST/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Cs fundamentals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Cs fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/Algo/" class="md-nav__link">
+        Algo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/CS-Dictionary/" class="md-nav__link">
+        CS Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/DBMS/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/DS/" class="md-nav__link">
+        DS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/SE/" class="md-nav__link">
+        SE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs-fundamentals/ToC/" class="md-nav__link">
+        ToC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Data science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data science" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Data science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-science/ML-Azure/" class="md-nav__link">
+        ML Azure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+      
+      <label class="md-nav__link" for="nav-11">
+        Infra
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Infra" data-md-level="1">
+        <label class="md-nav__title" for="nav-11">
+          <span class="md-nav__icon md-icon"></span>
+          Infra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra/DevOps/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      
+      <label class="md-nav__link" for="nav-12">
+        Lang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="nav-12">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/C-C%2B%2B/" class="md-nav__link">
+        C C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3" >
+      
+      <label class="md-nav__link" for="nav-12-3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/golang/go/" class="md-nav__link">
+        Go
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" >
+      
+      <label class="md-nav__link" for="nav-12-4">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-12-4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-Advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-Basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-Django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-OOPs/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-Production-Servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/python/Python-Testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../music/Piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminologies" class="md-nav__link">
+    Terminologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master" class="md-nav__link">
+    master
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote" class="md-nav__link">
+    remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-config" class="md-nav__link">
+    Setup &amp; Config
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup &amp; Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    config
+  </a>
+  
+    <nav class="md-nav" aria-label="config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crlf-lf-cr" class="md-nav__link">
+    CRLF, LF, CR
+  </a>
+  
+    <nav class="md-nav" aria-label="CRLF, LF, CR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-only" class="md-nav__link">
+    Windows Only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmac-only" class="md-nav__link">
+    Linux/Mac Only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-both" class="md-nav__link">
+    If Both
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspection-comparision" class="md-nav__link">
+    Inspection &amp; Comparision
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspection &amp; Comparision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    diff
+  </a>
+  
+    <nav class="md-nav" aria-label="diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-local-with-remote-branch" class="md-nav__link">
+    Compare local with remote branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-tree" class="md-nav__link">
+    diff-tree
+  </a>
+  
+    <nav class="md-nav" aria-label="diff-tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-the-files-in-a-commit" class="md-nav__link">
+    List all the files in a commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    show
+  </a>
+  
+    <nav class="md-nav" aria-label="show">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-the-files-in-a-commit_1" class="md-nav__link">
+    List all the files in a commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav" aria-label="init">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-bare" class="md-nav__link">
+    --bare
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull" class="md-nav__link">
+    pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflog" class="md-nav__link">
+    reflog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    reset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses" class="md-nav__link">
+    Uses
+  </a>
+  
+    <nav class="md-nav" aria-label="Uses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    Branching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging" class="md-nav__link">
+    Merging
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-vs-rebase" class="md-nav__link">
+    merge Vs rebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    rebase:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-one-branch-on-the-top-of-another" class="md-nav__link">
+    rebase one branch on the top of another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverting-back-to-old-commits" class="md-nav__link">
+    Reverting back to old commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseting" class="md-nav__link">
+    Reseting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-last-commit-message" class="md-nav__link">
+    Modify last commit Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-a-particular-commit" class="md-nav__link">
+    Modify a particular commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squashing-last-x-commits-into-one" class="md-nav__link">
+    Squashing last x commits into one
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#travis-ci-continue-integration" class="md-nav__link">
+    Travis CI (Continue Integration)
+  </a>
+  
+    <nav class="md-nav" aria-label="Travis CI (Continue Integration)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-integrate-ci" class="md-nav__link">
+    Steps to Integrate CI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-to-install-dependencies" class="md-nav__link">
+    command to install dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-to-run-tests" class="md-nav__link">
+    command to run tests
+  </a>
+  
+    <nav class="md-nav" aria-label="command to run tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-ssh-key" class="md-nav__link">
+    Setup SSH key
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup SSH key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-or-get-ssh-key" class="md-nav__link">
+    Generate or Get ssh key
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate or Get ssh key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    Generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-paraphrase" class="md-nav__link">
+    Set paraphrase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-key-to-the-ssh-agent" class="md-nav__link">
+    Add the key to the ssh-agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add the key to the ssh-agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start" class="md-nav__link">
+    Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_1" class="md-nav__link">
+    Add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provide-paraphrase" class="md-nav__link">
+    Provide paraphrase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-public-key-to-your-vcs-portal-settings" class="md-nav__link">
+    Add the public key to your VCS portal settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Add the public key to your VCS portal settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-hash-of-public-key" class="md-nav__link">
+    Copy hash of public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paste-in-settings" class="md-nav__link">
+    Paste in settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-remotes-with-ssh-url" class="md-nav__link">
+    Update remotes with ssh url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/#docs/Git.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Git</h1>
+                
+                <div class="toc">
+<ul>
+<li><a href="#intro">Intro</a><ul>
+<li><a href="#what">What?</a></li>
+<li><a href="#why">Why?</a></li>
+</ul>
+</li>
+<li><a href="#terminologies">Terminologies</a><ul>
+<li><a href="#master">master</a></li>
+<li><a href="#origin">origin</a></li>
+<li><a href="#remote">remote</a></li>
+<li><a href="#url">url</a></li>
+</ul>
+</li>
+<li><a href="#setup-config">Setup &amp; Config</a><ul>
+<li><a href="#config">config</a><ul>
+<li><a href="#crlf-lf-cr">CRLF, LF, CR</a><ul>
+<li><a href="#windows-only">Windows Only</a></li>
+<li><a href="#linuxmac-only">Linux/Mac Only</a></li>
+<li><a href="#if-both">If Both</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#inspection-comparision">Inspection &amp; Comparision</a><ul>
+<li><a href="#diff">diff</a><ul>
+<li><a href="#compare-local-with-remote-branch">Compare local with remote branch</a></li>
+</ul>
+</li>
+<li><a href="#diff-tree">diff-tree</a><ul>
+<li><a href="#list-all-the-files-in-a-commit">List all the files in a commit</a></li>
+</ul>
+</li>
+<li><a href="#show">show</a><ul>
+<li><a href="#list-all-the-files-in-a-commit_1">List all the files in a commit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#commands">Commands</a><ul>
+<li><a href="#init">init</a><ul>
+<li><a href="#-bare">--bare</a></li>
+</ul>
+</li>
+<li><a href="#clone">clone</a></li>
+<li><a href="#pull">pull</a></li>
+<li><a href="#add">add</a></li>
+<li><a href="#rm">rm</a></li>
+<li><a href="#commit">commit</a></li>
+<li><a href="#push">push</a></li>
+<li><a href="#checkout">checkout</a></li>
+<li><a href="#status">status</a></li>
+<li><a href="#log">log</a></li>
+<li><a href="#reflog">reflog</a></li>
+<li><a href="#reset">reset</a></li>
+</ul>
+</li>
+<li><a href="#uses">Uses</a><ul>
+<li><a href="#branching">Branching</a></li>
+<li><a href="#merging">Merging</a><ul>
+<li><a href="#merge-vs-rebase">merge Vs rebase</a></li>
+<li><a href="#merge">merge</a></li>
+<li><a href="#rebase">rebase:</a></li>
+<li><a href="#rebase-one-branch-on-the-top-of-another">rebase one branch on the top of another</a></li>
+</ul>
+</li>
+<li><a href="#reverting-back-to-old-commits">Reverting back to old commits</a></li>
+<li><a href="#reseting">Reseting</a></li>
+<li><a href="#modify-last-commit-message">Modify last commit Message</a></li>
+<li><a href="#modify-a-particular-commit">Modify a particular commit</a></li>
+<li><a href="#squashing-last-x-commits-into-one">Squashing last x commits into one</a></li>
+</ul>
+</li>
+<li><a href="#misc">Misc</a><ul>
+<li><a href="#travis-ci-continue-integration">Travis CI (Continue Integration)</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#steps-to-integrate-ci">Steps to Integrate CI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#command-to-install-dependencies">command to install dependencies</a></li>
+<li><a href="#command-to-run-tests">command to run tests</a><ul>
+<li><a href="#setup-ssh-key">Setup SSH key</a><ul>
+<li><a href="#generate-or-get-ssh-key">Generate or Get ssh key</a><ul>
+<li><a href="#generate">Generate</a></li>
+<li><a href="#set-paraphrase">Set paraphrase</a></li>
+<li><a href="#get">Get</a></li>
+</ul>
+</li>
+<li><a href="#add-the-key-to-the-ssh-agent">Add the key to the ssh-agent</a><ul>
+<li><a href="#start">Start</a></li>
+<li><a href="#add_1">Add</a></li>
+<li><a href="#provide-paraphrase">Provide paraphrase</a></li>
+</ul>
+</li>
+<li><a href="#add-the-public-key-to-your-vcs-portal-settings">Add the public key to your VCS portal settings</a><ul>
+<li><a href="#copy-hash-of-public-key">Copy hash of public key</a></li>
+<li><a href="#paste-in-settings">Paste in settings</a></li>
+<li><a href="#update-remotes-with-ssh-url">Update remotes with ssh url</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2">Book</a></li>
+<li><a href="https://git-scm.com/docs">Ref</a></li>
+<li><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">Cheatsheet</a></li>
+</ul>
+<h3 id="what">What?<a class="headerlink" href="#what" title="Permanent link">#</a></h3>
+<h3 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">#</a></h3>
+<ol>
+<li>As a collaboration tool</li>
+<li>As a version control tool</li>
+</ol>
+<h2 id="terminologies">Terminologies<a class="headerlink" href="#terminologies" title="Permanent link">#</a></h2>
+<h3 id="master">master<a class="headerlink" href="#master" title="Permanent link">#</a></h3>
+<h3 id="origin">origin<a class="headerlink" href="#origin" title="Permanent link">#</a></h3>
+<h3 id="remote">remote<a class="headerlink" href="#remote" title="Permanent link">#</a></h3>
+<h3 id="url">url<a class="headerlink" href="#url" title="Permanent link">#</a></h3>
+<h2 id="setup-config">Setup &amp; Config<a class="headerlink" href="#setup-config" title="Permanent link">#</a></h2>
+<h3 id="config"><code>config</code><a class="headerlink" href="#config" title="Permanent link">#</a></h3>
+<h4 id="crlf-lf-cr">CRLF, LF, CR<a class="headerlink" href="#crlf-lf-cr" title="Permanent link">#</a></h4>
+<h5 id="windows-only">Windows Only<a class="headerlink" href="#windows-only" title="Permanent link">#</a></h5>
+<ul>
+<li>Then turn off automatical convertions, and stick to CRLF only</li>
+</ul>
+<pre><code>git config --global core.autocrlf false
+</code></pre>
+<h5 id="linuxmac-only">Linux/Mac Only<a class="headerlink" href="#linuxmac-only" title="Permanent link">#</a></h5>
+<ul>
+<li>If on <code>LF</code> system, then do this to convert any CRLF to LF</li>
+<li>but not LF to CRLF</li>
+</ul>
+<pre><code>git config --global core.autocrlf input
+</code></pre>
+<h5 id="if-both">If Both<a class="headerlink" href="#if-both" title="Permanent link">#</a></h5>
+<ul>
+<li>Then set this in Windows system only<ul>
+<li>auto-converting CRLF line endings into LF when you add a file to the index</li>
+<li>and vice versa when it checks out code onto your filesystem</li>
+<li>hence Git will be having LF but windows filesystem will always have CRLF</li>
+</ul>
+</li>
+</ul>
+<pre><code>git config --global core.autocrlf true
+</code></pre>
+<h2 id="inspection-comparision">Inspection &amp; Comparision<a class="headerlink" href="#inspection-comparision" title="Permanent link">#</a></h2>
+<h3 id="diff"><code>diff</code><a class="headerlink" href="#diff" title="Permanent link">#</a></h3>
+<h4 id="compare-local-with-remote-branch">Compare local with remote branch<a class="headerlink" href="#compare-local-with-remote-branch" title="Permanent link">#</a></h4>
+<pre><code>git diff &lt;masterbranch_path&gt; &lt;remotebranch_path&gt;
+
+#or 
+
+git diff master origin/master
+</code></pre>
+<h3 id="diff-tree"><code>diff-tree</code><a class="headerlink" href="#diff-tree" title="Permanent link">#</a></h3>
+<h4 id="list-all-the-files-in-a-commit">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit" title="Permanent link">#</a></h4>
+<pre><code>git diff-tree --no-commit-id --name-only -r bd61ad98
+</code></pre>
+<h3 id="show"><code>show</code><a class="headerlink" href="#show" title="Permanent link">#</a></h3>
+<h4 id="list-all-the-files-in-a-commit_1">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit_1" title="Permanent link">#</a></h4>
+<pre><code>git show --pretty=&quot;&quot; --name-only bd61ad98  
+</code></pre>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h2>
+<h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">#</a></h3>
+<h4 id="-bare"><code>--bare</code><a class="headerlink" href="#-bare" title="Permanent link">#</a></h4>
+<ul>
+<li>Source: http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/</li>
+</ul>
+<h3 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Normal Way  <code>git clone url:repo</code></p>
+</li>
+<li>
+<p>Clone a specific release  <code>git clone url:repo --branch &lt;tag#&gt;</code></p>
+</li>
+</ul>
+<h3 id="pull">pull<a class="headerlink" href="#pull" title="Permanent link">#</a></h3>
+<ul>
+<li><code>git pull origin master</code></li>
+<li><code>git pull origin master -f</code></li>
+<li><code>git pull --rebase origin master</code></li>
+</ul>
+<h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">#</a></h3>
+<h3 id="rm">rm<a class="headerlink" href="#rm" title="Permanent link">#</a></h3>
+<h3 id="commit">commit<a class="headerlink" href="#commit" title="Permanent link">#</a></h3>
+<ul>
+<li>commit -m "message"</li>
+<li>commit --amend<ul>
+<li>to re-phrase the commit message; iff commit has not been pushed</li>
+</ul>
+</li>
+</ul>
+<h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">#</a></h3>
+<h3 id="checkout">checkout<a class="headerlink" href="#checkout" title="Permanent link">#</a></h3>
+<h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
+<h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">#</a></h3>
+<p>To see in descriptive format</p>
+<pre><code class="language-bash">git log --graph --decorate --oneline
+</code></pre>
+<p>where:<br />
+    --graph: shows flow<br />
+    --decorate: shows branch names<br />
+    --oneline: compact description in single line  </p>
+<h3 id="reflog">reflog<a class="headerlink" href="#reflog" title="Permanent link">#</a></h3>
+<p>To see in short</p>
+<h3 id="reset">reset<a class="headerlink" href="#reset" title="Permanent link">#</a></h3>
+<h2 id="uses">Uses<a class="headerlink" href="#uses" title="Permanent link">#</a></h2>
+<h3 id="branching">Branching<a class="headerlink" href="#branching" title="Permanent link">#</a></h3>
+<ul>
+<li>Lets say you have 2 branches:<ul>
+<li>master</li>
+<li>dev</li>
+</ul>
+</li>
+<li>
+<p>Options:</p>
+<ul>
+<li>create a new branch dev
+<code>bash
+git checkout -b dev</code></li>
+<li>dev is active
+<code>bash 
+git checkout dev</code></li>
+<li>master is active
+<code>bash 
+git checkout master</code></li>
+<li>dev is active &amp; incorporate master in it
+<code>bash 
+git checkout dev
+git merge master</code></li>
+<li>
+<p>master is active &amp; incorporate dev in it
+<code>bash 
+git checkout master
+git merge dev</code></p>
+</li>
+<li>
+<p>delete a local branch if completely merged 
+<code>bash
+git branch -d dev</code></p>
+</li>
+<li>
+<p>delete a local branch if not merged 
+<code>bash
+git branch -D dev</code></p>
+</li>
+<li>
+<p>delete a remote branch
+<code>bash
+git push origin :dev</code></p>
+</li>
+<li>
+<p>Rename your local branch.</p>
+<ul>
+<li>If you are on the branch you want to rename:
+<code>bash
+git branch -m new-name</code></li>
+<li>If you are on a different branch:
+<code>bash
+git branch -m old-name new-name</code></li>
+</ul>
+</li>
+<li>
+<p>Delete the old-name remote branch and push the new-name local branch.
+<code>bash
+git push origin :old-name new-name</code></p>
+</li>
+<li>
+<p>Reset the upstream branch for the new-name local branch.</p>
+<ul>
+<li>Switch to the branch and then:
+<code>bash
+git push origin -u new-name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Golden rules   </p>
+<ul>
+<li>first incorporate master into dev</li>
+<li>check compatibility/bugs/conflicts &amp; resolve them</li>
+<li>now incorporate/merge dev in master</li>
+</ul>
+</li>
+</ul>
+<h3 id="merging">Merging<a class="headerlink" href="#merging" title="Permanent link">#</a></h3>
+<h4 id="merge-vs-rebase">merge Vs rebase<a class="headerlink" href="#merge-vs-rebase" title="Permanent link">#</a></h4>
+<ol>
+<li>Both are used for same purpose but with different approach</li>
+<li>Integrates changes from one branch to another  </li>
+</ol>
+<h4 id="merge">merge<a class="headerlink" href="#merge" title="Permanent link">#</a></h4>
+<ul>
+<li>Lets say, if you're woring on a feature in a dedicated branch. And someone makes a commit in master branch and you want to pull those changes to your feature branch, i.e.</li>
+</ul>
+<pre><code>      A---B---C feature
+     /
+D---E---F---G master
+
+here A,B,C are commits in feature. F,G are new commits in master
+</code></pre>
+<p>then:</p>
+<pre><code class="language-bash">git checkout feature
+git merge master
+</code></pre>
+<p>Or in one line </p>
+<pre><code class="language-bash">git merge master feature
+</code></pre>
+<p><strong> This will create a new commit in feature branch called as "merge commit" and feature branch will have same history as master (but not vice-versa)</strong>
+i.e.</p>
+<pre><code>      A---B---C---(*) feature
+     /           /
+D---E---F---G---H master
+
+here (*) is merge commit
+</code></pre>
+<ul>
+<li>Very active master branch can pollute the feature branch.  </li>
+</ul>
+<h4 id="rebase">rebase:<a class="headerlink" href="#rebase" title="Permanent link">#</a></h4>
+<ul>
+<li>Alternative to merging</li>
+<li>rebases feature branch onto master branch</li>
+</ul>
+<pre><code class="language-bash">git checkout feature
+git rebase master
+</code></pre>
+<p><strong> shifts the entire feature branch to tip/(latest node) of the master branch.</strong>
+i.e.</p>
+<pre><code>               A'--B'--C' feature
+             /
+D---E---F---G master
+
+here A',B',C' are brand new commits
+</code></pre>
+<ul>
+<li>instead of creating "merge commit", it creates <strong>brand new commits</strong> in feature branch for all the commits created earlier on the feature branch (the changes will same, but with new commit infos)</li>
+<li>i.e. re-writes branch history</li>
+<li>Benifits over merge<ul>
+<li>gives cleaner history log by avoiding un-necessary "merge commits"</li>
+<li>results in perfectly linear project history  </li>
+</ul>
+</li>
+</ul>
+<p><strong>Golden rules to use rebase</strong>:
+* never use rebase on any public branch: Means, don't rebase the master branch onto feature branch (it is opposite of rebasing feature branch onto master branch). It will create a brand new commit/history in master branch which will affect other developers.</p>
+<h4 id="rebase-one-branch-on-the-top-of-another">rebase one branch on the top of another<a class="headerlink" href="#rebase-one-branch-on-the-top-of-another" title="Permanent link">#</a></h4>
+<pre><code>         Branch-1   Branch-2
+         X--Y     A--B--C 
+        /        /
+D---E---F---G---H   master
+
+
+After rebaseing Branch-1 on the top of Branch-2
+
+         A--B--C--X--Y   Branch-1
+        /    
+         A--B--C         Branch-2
+        /       
+D---E---F---G---H        master
+
+</code></pre>
+<pre><code class="language-bash">git checkout branch1
+git rebase branch2
+</code></pre>
+<h3 id="reverting-back-to-old-commits">Reverting back to old commits<a class="headerlink" href="#reverting-back-to-old-commits" title="Permanent link">#</a></h3>
+<p>https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit</p>
+<h3 id="reseting">Reseting<a class="headerlink" href="#reseting" title="Permanent link">#</a></h3>
+<pre><code class="language-bash">git checkout &lt;branch&gt;
+
+git reflog
+
+pick the commit_sha one prior to the the incident
+
+git reset --hard &lt;commit_sha&gt;
+
+--hard    Matches the working tree and index to that of the tree being
+               switched  to. Any changes to tracked files in the working tree since
+               &lt;commit&gt; are lost.
+
+
+
+
+git reset --merge &lt;commit_sha&gt;
+or 
+git reset --merge &lt;head_count&gt;
+
+--merge       Resets the index to match the tree recorded by the named commit, and
+              updates the files that are different between the named commit and
+              the current commit in the working tree.
+</code></pre>
+<h3 id="modify-last-commit-message">Modify last commit Message<a class="headerlink" href="#modify-last-commit-message" title="Permanent link">#</a></h3>
+<pre><code class="language-bash">git commit -a -m
+</code></pre>
+<h3 id="modify-a-particular-commit">Modify a particular commit<a class="headerlink" href="#modify-a-particular-commit" title="Permanent link">#</a></h3>
+<p>If you want to modify files at commit <SHA></p>
+<pre><code class="language-bash">git rebase -i &lt;SHA&gt;
+</code></pre>
+<p>You will get a editor opened up with list of all the commits prior to that.</p>
+<p>Change the <code>pick</code> to <code>edit</code> for that particular commit <SHA>. Save &amp; close the editor.</p>
+<p>Make changes to your files.</p>
+<p>After that add or rm files.</p>
+<p>If you want to change the commit msg also then</p>
+<pre><code class="language-bash">git commit -a
+</code></pre>
+<p>Then continue rebasing</p>
+<pre><code class="language-bash">git rebase --continue
+</code></pre>
+<h3 id="squashing-last-x-commits-into-one">Squashing last x commits into one<a class="headerlink" href="#squashing-last-x-commits-into-one" title="Permanent link">#</a></h3>
+<p>If you want to squash last X commits into single commit then</p>
+<pre><code class="language-bash">git rebase -i HEAD~X
+</code></pre>
+<p>You will get a editor opened up with list of all the X commits.</p>
+<p>Change the <code>pick</code> to <code>s</code> for all the commits except the oldest one into which you want to merge all the lastest. </p>
+<p>Save &amp; close the editor.</p>
+<p>Again you'll get an editor with list &amp; order of all the squashed commits. (if you want you can change the commit msgs at this moment)</p>
+<p>Then continue rebasing</p>
+<pre><code class="language-bash">git rebase --continue
+</code></pre>
+<p>Done.</p>
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
+<h3 id="travis-ci-continue-integration">Travis CI (Continue Integration)<a class="headerlink" href="#travis-ci-continue-integration" title="Permanent link">#</a></h3>
+<p>Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments.</p>
+<ul>
+<li><a href="https://docs.travis-ci.com/user/getting-started/">Source</a></li>
+</ul>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
+<p>To start using Travis CI, make sure you have all of the following:</p>
+<ul>
+<li>GitHub login</li>
+<li>Project hosted as a repository on GitHub</li>
+<li>Working code in your project</li>
+<li>Working build or test script</li>
+</ul>
+<h4 id="steps-to-integrate-ci">Steps to Integrate CI<a class="headerlink" href="#steps-to-integrate-ci" title="Permanent link">#</a></h4>
+<ul>
+<li>Using github login to  <ul>
+<li><a href="TravisCI.org">TravisCI.org</a> for public repositories</li>
+<li><a href="TravisCI.com">TravisCI.com</a> for private repositories</li>
+</ul>
+</li>
+<li>Enable the repo in CI portal   </li>
+<li>
+<p>Add <code>.travis.yml</code> file to the repo to tell Travis CI what to do</p>
+<ul>
+<li>e.g.
+```yaml</li>
+</ul>
+<p>language: python
+python:
+  - "3.6.4"</p>
+<h2 id="command-to-install-dependencies">command to install dependencies<a class="headerlink" href="#command-to-install-dependencies" title="Permanent link">#</a></h2>
+<p>install:
+  # - pip install -r requirements.pip
+  - pip install pipenv
+  - "pipenv install --dev"</p>
+<h2 id="command-to-run-tests">command to run tests<a class="headerlink" href="#command-to-run-tests" title="Permanent link">#</a></h2>
+<p>script:
+  # - pytest src/test.py # or py.test for Python versions 3.5 and below
+  - pipenv run pytest src/test.py # or py.test for Python versions 3.5 and below
+  ```</p>
+</li>
+<li>
+<p>Infrastructure options<br />
+  ```yaml</p>
+<p>os: linux</p>
+<p>dist: trusty</p>
+<p>sudo: enabled</p>
+<p>```</p>
+</li>
+<li>
+<p>Add the <code>.travis.yml</code> file to git, commit and push, to trigger a Travis CI build</p>
+<ul>
+<li>Travis only runs builds on the commits you push after you’ve enabled the repository in Travis CI.</li>
+</ul>
+</li>
+<li>check the build page</li>
+<li>embbed build status on github page</li>
+</ul>
+<h3 id="setup-ssh-key">Setup SSH key<a class="headerlink" href="#setup-ssh-key" title="Permanent link">#</a></h3>
+<h4 id="generate-or-get-ssh-key">Generate or Get ssh key<a class="headerlink" href="#generate-or-get-ssh-key" title="Permanent link">#</a></h4>
+<h5 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">ssh-keygen
+</code></pre>
+<h5 id="set-paraphrase">Set paraphrase<a class="headerlink" href="#set-paraphrase" title="Permanent link">#</a></h5>
+<h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">ls ~/.ssh
+</code></pre>
+<h4 id="add-the-key-to-the-ssh-agent">Add the key to the ssh-agent<a class="headerlink" href="#add-the-key-to-the-ssh-agent" title="Permanent link">#</a></h4>
+<h5 id="start">Start<a class="headerlink" href="#start" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">eval `ssh-agent` 
+</code></pre>
+<h5 id="add_1">Add<a class="headerlink" href="#add_1" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">ssh-add ~/.ssh/&lt;private_key_file&gt;
+</code></pre>
+<p>where <private_key_file> is generally id_rsa</p>
+<h5 id="provide-paraphrase">Provide paraphrase<a class="headerlink" href="#provide-paraphrase" title="Permanent link">#</a></h5>
+<h4 id="add-the-public-key-to-your-vcs-portal-settings">Add the public key to your VCS portal settings<a class="headerlink" href="#add-the-public-key-to-your-vcs-portal-settings" title="Permanent link">#</a></h4>
+<h5 id="copy-hash-of-public-key">Copy hash of public key<a class="headerlink" href="#copy-hash-of-public-key" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">cat ~/.ssh/id_rsa.pub
+
+or
+
+xclip -sel clip ~/.ssh/id_rsa.pub
+</code></pre>
+<h5 id="paste-in-settings">Paste in settings<a class="headerlink" href="#paste-in-settings" title="Permanent link">#</a></h5>
+<h5 id="update-remotes-with-ssh-url">Update remotes with ssh url<a class="headerlink" href="#update-remotes-with-ssh-url" title="Permanent link">#</a></h5>
+<pre><code class="language-bash">git remote rm origin
+
+git remote add origin git@bitbucket.org:toransahu/ethereal-machines-backend.git
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../Blockchain/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Blockchain
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Maths/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Maths
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
