@@ -1,8 +1,9 @@
 [TOC]
 
-src: 
-1. https://courses.mist.com/dashboard
-1. https://www.mist.com/documentation/wi-fi-basics-1/
+Sources:
+
+1. [https://courses.mist.com/dashboard](https://courses.mist.com/dashboard)
+1. [https://www.mist.com/documentation/wi-fi-basics-1/](https://www.mist.com/documentation/wi-fi-basics-1/)
 
 # IEEE & Wi-Fi Alliance
 
