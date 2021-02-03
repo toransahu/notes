@@ -1,0 +1,2019 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>Wifi - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ieee-wi-fi-alliance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../../.." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Wifi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Maths/" class="md-nav__link">
+        Maths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Projects/" class="md-nav__link">
+        Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Api" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/REST/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Cs fundamentals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Cs fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/Algo/" class="md-nav__link">
+        Algo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/CS-Dictionary/" class="md-nav__link">
+        CS Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/DBMS/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/DS/" class="md-nav__link">
+        DS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/SE/" class="md-nav__link">
+        SE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs-fundamentals/ToC/" class="md-nav__link">
+        ToC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Data science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data science" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Data science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-science/ML-Azure/" class="md-nav__link">
+        ML Azure
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      
+      <label class="md-nav__link" for="nav-11">
+        Industrial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Industrial" data-md-level="1">
+        <label class="md-nav__title" for="nav-11">
+          <span class="md-nav__icon md-icon"></span>
+          Industrial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-1" type="checkbox" id="nav-11-1" checked>
+      
+      <label class="md-nav__link" for="nav-11-1">
+        Networking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="nav-11-1">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-1-1" type="checkbox" id="nav-11-1-1" checked>
+      
+      <label class="md-nav__link" for="nav-11-1-1">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="nav-11-1-1">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Wifi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Wifi
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-wi-fi-alliance" class="md-nav__link">
+    IEEE &amp; Wi-Fi Alliance
+  </a>
+  
+    <nav class="md-nav" aria-label="IEEE &amp; Wi-Fi Alliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ieee" class="md-nav__link">
+    IEEE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi-alliance" class="md-nav__link">
+    Wi-Fi Alliance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-frequencies" class="md-nav__link">
+    Wi-Fi Frequencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Frequencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz-5-ghz" class="md-nav__link">
+    2.4 GHz &amp; 5 GHz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz-band" class="md-nav__link">
+    2.4 GHz Band
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghz-band" class="md-nav__link">
+    5 GHz Band
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-history" class="md-nav__link">
+    Wi-Fi History
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-80211-amendments" class="md-nav__link">
+    Major 802.11 Amendments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ghz-band-channels" class="md-nav__link">
+    2.4 GHz Band Channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-24-ghz-and-interference" class="md-nav__link">
+    Wi-Fi 2.4 Ghz and Interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-adjacent-channel-interference" class="md-nav__link">
+    Wi-Fi Adjacent Channel Interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#half-duplex-wi-fi" class="md-nav__link">
+    Half Duplex Wi-Fi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#co-channel-interference" class="md-nav__link">
+    Co-channel interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ghz-channel-re-use" class="md-nav__link">
+    2.4 GHz Channel Re-Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-5-ghz" class="md-nav__link">
+    Wi-Fi 5 Ghz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-5-ghz-channels" class="md-nav__link">
+    Wi-Fi 5 Ghz Channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-dfs" class="md-nav__link">
+    Wi-Fi DFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-channel-bonding" class="md-nav__link">
+    Wi-Fi Channel Bonding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ghz-channel-re-use" class="md-nav__link">
+    5 GHz Channel Re-Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-signal-strength" class="md-nav__link">
+    Wi-Fi Signal Strength
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bssid-ssid-and-essids" class="md-nav__link">
+    BSSID, SSID and ESSIDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-wireless-technologies" class="md-nav__link">
+    Other Wireless Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluetooth-low-energy-ble" class="md-nav__link">
+    Bluetooth Low Energy (BLE)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-nics-vs-ethernet" class="md-nav__link">
+    Wi-Fi NICs vs Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snr-and-data-rates" class="md-nav__link">
+    SNR and Data Rates
+  </a>
+  
+    <nav class="md-nav" aria-label="SNR and Data Rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    SNR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-rate" class="md-nav__link">
+    Data Rate
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcs" class="md-nav__link">
+    MCS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-packets-vs-frame" class="md-nav__link">
+    Network Packets vs Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-frame-types-and-timing" class="md-nav__link">
+    Wi-Fi Frame Types and Timing
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Frame Types and Timing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airtime-arbitration-process" class="md-nav__link">
+    Airtime Arbitration Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-roaming" class="md-nav__link">
+    Wi-Fi Roaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-security" class="md-nav__link">
+    Wi-Fi Security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roaming" class="md-nav__link">
+    Roaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-design" class="md-nav__link">
+    Wi-Fi Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determine-requirements" class="md-nav__link">
+    Determine requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Determine requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-channel-support" class="md-nav__link">
+    Client channel support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#further-define-metrics" class="md-nav__link">
+    Further Define Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-ekahau-design" class="md-nav__link">
+    Wi-Fi Ekahau Design
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      
+      <label class="md-nav__link" for="nav-12">
+        Infra
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Infra" data-md-level="1">
+        <label class="md-nav__title" for="nav-12">
+          <span class="md-nav__icon md-icon"></span>
+          Infra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infra/DevOps/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        Lang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/C-C%2B%2B/" class="md-nav__link">
+        C C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13-3" type="checkbox" id="nav-13-3" >
+      
+      <label class="md-nav__link" for="nav-13-3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="nav-13-3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/golang/go/" class="md-nav__link">
+        Go
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13-4" type="checkbox" id="nav-13-4" >
+      
+      <label class="md-nav__link" for="nav-13-4">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-13-4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-Advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-Basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-Django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-OOPs/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-Production-Servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/python/Python-Testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" >
+      
+      <label class="md-nav__link" for="nav-14">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="nav-14">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../music/Piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-wi-fi-alliance" class="md-nav__link">
+    IEEE &amp; Wi-Fi Alliance
+  </a>
+  
+    <nav class="md-nav" aria-label="IEEE &amp; Wi-Fi Alliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ieee" class="md-nav__link">
+    IEEE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi-alliance" class="md-nav__link">
+    Wi-Fi Alliance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-frequencies" class="md-nav__link">
+    Wi-Fi Frequencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Frequencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz-5-ghz" class="md-nav__link">
+    2.4 GHz &amp; 5 GHz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz-band" class="md-nav__link">
+    2.4 GHz Band
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghz-band" class="md-nav__link">
+    5 GHz Band
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-history" class="md-nav__link">
+    Wi-Fi History
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-80211-amendments" class="md-nav__link">
+    Major 802.11 Amendments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ghz-band-channels" class="md-nav__link">
+    2.4 GHz Band Channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-24-ghz-and-interference" class="md-nav__link">
+    Wi-Fi 2.4 Ghz and Interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-adjacent-channel-interference" class="md-nav__link">
+    Wi-Fi Adjacent Channel Interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#half-duplex-wi-fi" class="md-nav__link">
+    Half Duplex Wi-Fi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#co-channel-interference" class="md-nav__link">
+    Co-channel interference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ghz-channel-re-use" class="md-nav__link">
+    2.4 GHz Channel Re-Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-5-ghz" class="md-nav__link">
+    Wi-Fi 5 Ghz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-5-ghz-channels" class="md-nav__link">
+    Wi-Fi 5 Ghz Channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-dfs" class="md-nav__link">
+    Wi-Fi DFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-channel-bonding" class="md-nav__link">
+    Wi-Fi Channel Bonding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ghz-channel-re-use" class="md-nav__link">
+    5 GHz Channel Re-Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-signal-strength" class="md-nav__link">
+    Wi-Fi Signal Strength
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bssid-ssid-and-essids" class="md-nav__link">
+    BSSID, SSID and ESSIDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-wireless-technologies" class="md-nav__link">
+    Other Wireless Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluetooth-low-energy-ble" class="md-nav__link">
+    Bluetooth Low Energy (BLE)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-nics-vs-ethernet" class="md-nav__link">
+    Wi-Fi NICs vs Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snr-and-data-rates" class="md-nav__link">
+    SNR and Data Rates
+  </a>
+  
+    <nav class="md-nav" aria-label="SNR and Data Rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    SNR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-rate" class="md-nav__link">
+    Data Rate
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcs" class="md-nav__link">
+    MCS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-packets-vs-frame" class="md-nav__link">
+    Network Packets vs Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-frame-types-and-timing" class="md-nav__link">
+    Wi-Fi Frame Types and Timing
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Frame Types and Timing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airtime-arbitration-process" class="md-nav__link">
+    Airtime Arbitration Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-roaming" class="md-nav__link">
+    Wi-Fi Roaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-security" class="md-nav__link">
+    Wi-Fi Security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roaming" class="md-nav__link">
+    Roaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-design" class="md-nav__link">
+    Wi-Fi Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Wi-Fi Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determine-requirements" class="md-nav__link">
+    Determine requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Determine requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-channel-support" class="md-nav__link">
+    Client channel support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#further-define-metrics" class="md-nav__link">
+    Further Define Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wi-fi-ekahau-design" class="md-nav__link">
+    Wi-Fi Ekahau Design
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/industrial/networking/wireless/wifi.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Wifi</h1>
+                
+                <div class="toc">
+<ul>
+<li><a href="#ieee-wi-fi-alliance">IEEE &amp; Wi-Fi Alliance</a><ul>
+<li><a href="#ieee">IEEE</a></li>
+<li><a href="#wi-fi-alliance">Wi-Fi Alliance</a></li>
+</ul>
+</li>
+<li><a href="#wi-fi-frequencies">Wi-Fi Frequencies</a><ul>
+<li><a href="#24-ghz-5-ghz">2.4 GHz &amp; 5 GHz</a></li>
+<li><a href="#24-ghz-band">2.4 GHz Band</a></li>
+<li><a href="#5-ghz-band">5 GHz Band</a></li>
+</ul>
+</li>
+<li><a href="#wi-fi-history">Wi-Fi History</a><ul>
+<li><a href="#major-80211-amendments">Major 802.11 Amendments</a></li>
+</ul>
+</li>
+<li><a href="#24-ghz-band-channels">2.4 GHz Band Channels</a></li>
+<li><a href="#wi-fi-24-ghz-and-interference">Wi-Fi 2.4 Ghz and Interference</a></li>
+<li><a href="#wi-fi-adjacent-channel-interference">Wi-Fi Adjacent Channel Interference</a></li>
+<li><a href="#half-duplex-wi-fi">Half Duplex Wi-Fi</a></li>
+<li><a href="#co-channel-interference">Co-channel interference</a></li>
+<li><a href="#24-ghz-channel-re-use">2.4 GHz Channel Re-Use</a></li>
+<li><a href="#wi-fi-5-ghz">Wi-Fi 5 Ghz</a></li>
+<li><a href="#wi-fi-5-ghz-channels">Wi-Fi 5 Ghz Channels</a></li>
+<li><a href="#wi-fi-dfs">Wi-Fi DFS</a></li>
+<li><a href="#wi-fi-channel-bonding">Wi-Fi Channel Bonding</a></li>
+<li><a href="#5-ghz-channel-re-use">5 GHz Channel Re-Use</a></li>
+<li><a href="#wi-fi-signal-strength">Wi-Fi Signal Strength</a></li>
+<li><a href="#bssid-ssid-and-essids">BSSID, SSID and ESSIDs</a></li>
+<li><a href="#other-wireless-technologies">Other Wireless Technologies</a></li>
+<li><a href="#bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)</a></li>
+<li><a href="#wi-fi-nics-vs-ethernet">Wi-Fi NICs vs Ethernet</a></li>
+<li><a href="#snr-and-data-rates">SNR and Data Rates</a><ul>
+<li><a href="#snr">SNR</a></li>
+<li><a href="#data-rate">Data Rate</a><ul>
+<li><a href="#mcs">MCS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#network-packets-vs-frame">Network Packets vs Frame</a></li>
+<li><a href="#wi-fi-frame-types-and-timing">Wi-Fi Frame Types and Timing</a><ul>
+<li><a href="#airtime-arbitration-process">Airtime Arbitration Process</a></li>
+</ul>
+</li>
+<li><a href="#wi-fi-roaming">Wi-Fi Roaming</a></li>
+<li><a href="#wi-fi-security">Wi-Fi Security</a></li>
+<li><a href="#roaming">Roaming</a></li>
+<li><a href="#wi-fi-design">Wi-Fi Design</a><ul>
+<li><a href="#determine-requirements">Determine requirements</a><ul>
+<li><a href="#client-channel-support">Client channel support</a></li>
+<li><a href="#further-define-metrics">Further Define Metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#wi-fi-ekahau-design">Wi-Fi Ekahau Design</a></li>
+</ul>
+</div>
+<p>src: 
+1. https://courses.mist.com/dashboard
+1. https://www.mist.com/documentation/wi-fi-basics-1/</p>
+<h2 id="ieee-wi-fi-alliance">IEEE &amp; Wi-Fi Alliance<a class="headerlink" href="#ieee-wi-fi-alliance" title="Permanent link">#</a></h2>
+<h3 id="ieee">IEEE<a class="headerlink" href="#ieee" title="Permanent link">#</a></h3>
+<p>Institute of Electrical &amp; Electronics Engineers</p>
+<ul>
+<li>creates standard</li>
+<li>like:<ul>
+<li>802.15.1 (BlueTooth)</li>
+<li>802.15.4 (Zigbee)</li>
+<li>IEEE 1394 (FireWire)</li>
+<li>802.3 (Ethernet)</li>
+<li>802.11 (Wi-Fi)</li>
+</ul>
+</li>
+</ul>
+<h3 id="wi-fi-alliance">Wi-Fi Alliance<a class="headerlink" href="#wi-fi-alliance" title="Permanent link">#</a></h3>
+<p>Composed of major players in the wireless industry/space</p>
+<ul>
+<li>Apple</li>
+<li>Comcast</li>
+<li>Sony</li>
+<li>Motorola</li>
+<li>Intel</li>
+<li>Qualcomm</li>
+<li>T-Mobile</li>
+</ul>
+<p>Provides branding for Wi-Fi</p>
+<ul>
+<li>"Wi-Fi"</li>
+<li>WPA/WPA2/WPA3<ul>
+<li>802.11i</li>
+</ul>
+</li>
+<li>WMM</li>
+<li>Wi-Fi 6</li>
+</ul>
+<p>Ensures interoperability between diff vendors</p>
+<h2 id="wi-fi-frequencies">Wi-Fi Frequencies<a class="headerlink" href="#wi-fi-frequencies" title="Permanent link">#</a></h2>
+<h3 id="24-ghz-5-ghz">2.4 GHz &amp; 5 GHz<a class="headerlink" href="#24-ghz-5-ghz" title="Permanent link">#</a></h3>
+<ul>
+<li>unlicensed spectrum</li>
+</ul>
+<div class="highlight"><pre><span></span><code>.-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
+   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;   &#39;-&#39;
+</code></pre></div>
+<h3 id="24-ghz-band">2.4 GHz Band<a class="headerlink" href="#24-ghz-band" title="Permanent link">#</a></h3>
+<ul>
+<li>low freq<ul>
+<li>punch stuffs</li>
+<li>tend to attenuate</li>
+</ul>
+</li>
+<li>longer wavelength<ul>
+<li>4.9 inch long</li>
+</ul>
+</li>
+<li>more range<ul>
+<li>300 ft ?</li>
+</ul>
+</li>
+<li>more <em>crowded</em></li>
+<li>more non Wi-Fi interference</li>
+<li>802.11b/g/n/ax</li>
+</ul>
+<h3 id="5-ghz-band">5 GHz Band<a class="headerlink" href="#5-ghz-band" title="Permanent link">#</a></h3>
+<ul>
+<li>higher freq</li>
+<li>shorter wavelength<ul>
+<li>2.5 inch long</li>
+</ul>
+</li>
+<li>less range<ul>
+<li>90 ft ?</li>
+</ul>
+</li>
+<li>less <em>crowded</em></li>
+<li>less non Wi-Fi interference</li>
+<li>802.11a/n/ac/ax</li>
+</ul>
+<p>Q. Can a Wi-Fi adapter support multiple bands?<br />
+    Yes, depends on capabilities. Its called Dual-band.</p>
+<h2 id="wi-fi-history">Wi-Fi History<a class="headerlink" href="#wi-fi-history" title="Permanent link">#</a></h2>
+<h3 id="major-80211-amendments">Major 802.11 Amendments<a class="headerlink" href="#major-80211-amendments" title="Permanent link">#</a></h3>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 12-20-23.png" /></p>
+<p>Q. Band vs Channel?<br />
+Within these (2.4/5) Wi-Fi frequency bands, we have smaller bands which are referred to as Wi-Fi channels.
+A Wi-Fi channel is the medium through which our wireless networks can send and receive data. For routers made in the U.S., the 2.4 GHz band has 11 channels and the 5 GHz band has 45 channels.</p>
+<p>Q. Why should I care what Wi-Fi channel I'm on?<br />
+The reason that certain channels aren't the best choice to use is because they have interference. There are a couple different ways this interference is caused: Co-Channel interference results when there are numerous devices all competing for time to talk on the same channel. Adjacent-Channel interference occurs when devices from overlapping channels are trying to talk over each other.</p>
+<p>Channels that have interference from other devices are considered to be 'crowded'. The time it takes to transmit data is increased and you are left waiting for your Internet request to be made. The channels with the most interference are those that overlap with each other. </p>
+<p>To further explain channel overlapping, let's look at the 2.4 GHz band, where each channel is allotted 20 MHz and separated by 5 MHz. Considering the 2.4 GHz band is only 100 MHz wide, the 11 channels of 20 MHz overlap with one another. This is what causes the interference on your network and and a lag in your Wi-Fi's performance.</p>
+<p>Certain channels yield better Wi-Fi performance than others because they are non-overlapping. Yes, there are some channels in the 2.4 GHz spectrum that don't overlap with the other channels. These are the channels you ought to look for, especially if experiencing Wi-Fi problems: Channels 1, 6, and 11.</p>
+<p>Read more: 
+1. https://www.minim.com/blog/wifi-channels-explained
+1. https://www.electronics-notes.com/articles/connectivity/wifi-ieee-802-11/channels-frequencies-bands-bandwidth.php</p>
+<p>Note: There are also 24 non-overlapping channels in the 5 GHz band spectrum.</p>
+<h2 id="24-ghz-band-channels">2.4 GHz Band Channels<a class="headerlink" href="#24-ghz-band-channels" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 12-22-36.png" /></p>
+<ul>
+<li>20 MHz wide</li>
+<li>11 channels</li>
+</ul>
+<p>Q. Different Country vs Channels? Possible?<br />
+Yes. Europe has 12,13 as well. Japan has 14 as well.</p>
+<h2 id="wi-fi-24-ghz-and-interference">Wi-Fi 2.4 Ghz and Interference<a class="headerlink" href="#wi-fi-24-ghz-and-interference" title="Permanent link">#</a></h2>
+<h2 id="wi-fi-adjacent-channel-interference">Wi-Fi Adjacent Channel Interference<a class="headerlink" href="#wi-fi-adjacent-channel-interference" title="Permanent link">#</a></h2>
+<p>STAs on overlapping channels will corrupt each other's transmission.</p>
+<h2 id="half-duplex-wi-fi">Half Duplex Wi-Fi<a class="headerlink" href="#half-duplex-wi-fi" title="Permanent link">#</a></h2>
+<p>Only one device can transmit on a channel at a time.</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 12-37-48.png" /></p>
+<p><em>Ethernet cables are made up of multiple twisted pair of copper, they MUX. They can talk &amp; listen at the same time.</em></p>
+<h2 id="co-channel-interference">Co-channel interference<a class="headerlink" href="#co-channel-interference" title="Permanent link">#</a></h2>
+<p>Slow devices on the channel consume more airtime.</p>
+<h2 id="24-ghz-channel-re-use">2.4 GHz Channel Re-Use<a class="headerlink" href="#24-ghz-channel-re-use" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 12-57-59.png" /></p>
+<p>But avoiding interference in 2.4GHz is hard due to high range.</p>
+<p>NOTE: Mist use channels 1,6,11 world-wide. (btw, they support all)</p>
+<h2 id="wi-fi-5-ghz">Wi-Fi 5 Ghz<a class="headerlink" href="#wi-fi-5-ghz" title="Permanent link">#</a></h2>
+<h2 id="wi-fi-5-ghz-channels">Wi-Fi 5 Ghz Channels<a class="headerlink" href="#wi-fi-5-ghz-channels" title="Permanent link">#</a></h2>
+<ul>
+<li>lot more channels</li>
+<li>thus lot more throughput</li>
+</ul>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 13-17-10.png" /></p>
+<h2 id="wi-fi-dfs">Wi-Fi DFS<a class="headerlink" href="#wi-fi-dfs" title="Permanent link">#</a></h2>
+<p>Dynamic frequency selection</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 13-43-37.png" /></p>
+<p>If detected radar, move to other channel. Announce to move other APs as well.</p>
+<h2 id="wi-fi-channel-bonding">Wi-Fi Channel Bonding<a class="headerlink" href="#wi-fi-channel-bonding" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 13-52-02.png" /></p>
+<p>haha typo.</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 13-56-13.png" /></p>
+<p>haha typo again.</p>
+<h2 id="5-ghz-channel-re-use">5 GHz Channel Re-Use<a class="headerlink" href="#5-ghz-channel-re-use" title="Permanent link">#</a></h2>
+<p>Channel reuse is much easier in 5 GHz band.</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 13-59-04.png" /></p>
+<h2 id="wi-fi-signal-strength">Wi-Fi Signal Strength<a class="headerlink" href="#wi-fi-signal-strength" title="Permanent link">#</a></h2>
+<p>Unit/repr: dB
+and dBm for absolute values.</p>
+<p><em>dB quantifies the ratio between two values, whereas dBm expresses the absolute power level. dBm is an absolute unit, whereas dB is a dimensionless unit. dBm is always relative to 1mW, while dB is expressed in watts and can be relative to other powers.</em></p>
+<p>the unit is logarithmic &amp; not linear, so lets see 3 &amp; 10 rule for simiplicty:</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-09-04.png" /></p>
+<p>Isn't there something in positive scale? Yes, <em>mW</em>. :D  LOL! see the figures in mW.</p>
+<div class="highlight"><pre><span></span><code>iwconfig
+
+<span class="c1"># for streaming results</span>
+watch -n1 iwconfig
+</code></pre></div>
+<h2 id="bssid-ssid-and-essids">BSSID, SSID and ESSIDs<a class="headerlink" href="#bssid-ssid-and-essids" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-31-40.png" /></p>
+<h2 id="other-wireless-technologies">Other Wireless Technologies<a class="headerlink" href="#other-wireless-technologies" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-36-51.png" /></p>
+<h2 id="bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)<a class="headerlink" href="#bluetooth-low-energy-ble" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-40-26.png" /></p>
+<h2 id="wi-fi-nics-vs-ethernet">Wi-Fi NICs vs Ethernet<a class="headerlink" href="#wi-fi-nics-vs-ethernet" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-45-53.png" /></p>
+<h2 id="snr-and-data-rates">SNR and Data Rates<a class="headerlink" href="#snr-and-data-rates" title="Permanent link">#</a></h2>
+<h3 id="snr">SNR<a class="headerlink" href="#snr" title="Permanent link">#</a></h3>
+<p>How much signal above the background noise.</p>
+<p>Unit: dB</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 15-11-33.png" /></p>
+<h3 id="data-rate">Data Rate<a class="headerlink" href="#data-rate" title="Permanent link">#</a></h3>
+<p>The same "Maximum Signaling Rate". Defined per standards 802.11xyz.
+Unit: Mbps</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 16-44-53.png" /></p>
+<p>Good the SNR, Can choose/set higher Data rates.</p>
+<p>Q. Signaling Rate vs Throughput?<br />
+TBD</p>
+<h4 id="mcs">MCS<a class="headerlink" href="#mcs" title="Permanent link">#</a></h4>
+<p>Modulation and Coding scheme.</p>
+<p>Ref:
+1. http://mcsindex.com/
+1. https://www.wlanpros.com/mcs-index-charts/</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/" /></p>
+<h2 id="network-packets-vs-frame">Network Packets vs Frame<a class="headerlink" href="#network-packets-vs-frame" title="Permanent link">#</a></h2>
+<p>TBD</p>
+<h2 id="wi-fi-frame-types-and-timing">Wi-Fi Frame Types and Timing<a class="headerlink" href="#wi-fi-frame-types-and-timing" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 16-50-48.png" /></p>
+<p><em>STA (Station): In IEEE 802.11 (Wi-Fi) terminology, a station (abbreviated as STA) is a device that has the capability to use the 802.11 protocol. For example, a station may be a laptop, a desktop PC, PDA, access point or Wi-Fi phone.</em></p>
+<h3 id="airtime-arbitration-process">Airtime Arbitration Process<a class="headerlink" href="#airtime-arbitration-process" title="Permanent link">#</a></h3>
+<p>How wireless devices decides, who's going to talk next?</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 16-57-05.png" /></p>
+<h2 id="wi-fi-roaming">Wi-Fi Roaming<a class="headerlink" href="#wi-fi-roaming" title="Permanent link">#</a></h2>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/" /></p>
+<h2 id="wi-fi-security">Wi-Fi Security<a class="headerlink" href="#wi-fi-security" title="Permanent link">#</a></h2>
+<p><em>Ethernet is a bounded medium, inheritently &amp; physically secure. What about security of unbounded Wi-Fi?</em></p>
+<p>A Wi-Fi adapter in monitor mode can eavesdrop.. can capture all the packets nearby.. hmm..</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 17-19-13.png" /></p>
+<p>What Mist supports today:</p>
+<ul>
+<li>WPA-2/PSK with passphrase</li>
+<li>WPA-2/EAP (802.1X)</li>
+<li>Open Access</li>
+<li>WPA-2/PSK with multiple passphrases</li>
+<li>WPA-PSK/TKIP</li>
+<li>WPA2-PSK/TKIP</li>
+<li>WEP</li>
+<li>Multi-mode/PSK with passphrase</li>
+<li>Multi-mode/EAP (802.1X)</li>
+<li>OWE Transition</li>
+<li>OWE<ul>
+<li>Opportunistic Wireless Encryption</li>
+</ul>
+</li>
+<li>MAC address authentication by RADIUS lookup</li>
+</ul>
+<h2 id="roaming">Roaming<a class="headerlink" href="#roaming" title="Permanent link">#</a></h2>
+<p>Every client device has its own green diamond. :D
+Some can roam, some are not designed to roam.</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-03 17-25-55.png" /></p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-03 17-27-21.png" /></p>
+<h2 id="wi-fi-design">Wi-Fi Design<a class="headerlink" href="#wi-fi-design" title="Permanent link">#</a></h2>
+<p>How to design a wireless network? Probably for a customer.. :p</p>
+<h3 id="determine-requirements">Determine requirements<a class="headerlink" href="#determine-requirements" title="Permanent link">#</a></h3>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 17-22-24.png" /></p>
+<h4 id="client-channel-support">Client channel support<a class="headerlink" href="#client-channel-support" title="Permanent link">#</a></h4>
+<p>Some devices might not support some channels, so plan accordingly.</p>
+<p>Ref: https://clients.mikealbano.com/ (Mike - Our OpenConfig guy, from Wireless N/W Team, Google) ;)</p>
+<h4 id="further-define-metrics">Further Define Metrics<a class="headerlink" href="#further-define-metrics" title="Permanent link">#</a></h4>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-03 17-40-32.png" /></p>
+<h2 id="wi-fi-ekahau-design">Wi-Fi Ekahau Design<a class="headerlink" href="#wi-fi-ekahau-design" title="Permanent link">#</a></h2>
+<p>Software to design a Wireless network.</p>
+<p><img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-03 17-41-55.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../../../data-science/ML-Azure/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ML Azure
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../../../infra/DevOps/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                DevOps
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
