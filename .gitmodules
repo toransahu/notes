@@ -1,3 +1,6 @@
 [submodule "statics"]
 	path = statics
 	url = git@github.com:toransahu/statics
+[submodule "docs/statics"]
+	path = docs/statics
+	url = git@github.com:toransahu/statics
