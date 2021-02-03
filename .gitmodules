@@ -1,0 +1,3 @@
+[submodule "statics"]
+	path = statics
+	url = git@github.com:toransahu/statics
