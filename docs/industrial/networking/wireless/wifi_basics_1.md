@@ -236,10 +236,9 @@ TBD
 Modulation and Coding scheme.
 
 Ref:
+
 1. http://mcsindex.com/
 1. https://www.wlanpros.com/mcs-index-charts/
-
-<img src="../../../../statics/notes/docs/industrial/networking/wireless/img/" />
 
 # Network Packets vs Frame
 TBD
