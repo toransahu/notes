@@ -23,7 +23,7 @@ So,
     
     d = difference == 2  
     
-nth or last term =  $ l = a + (n-1)d $
+nth or last term =  $l = a + (n-1)d$
     
     
 **Sum of AP**  
