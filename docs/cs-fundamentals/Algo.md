@@ -387,7 +387,7 @@ Steps:
 ## Types
 
 ###  Depth First Search (DFS)
-###  Breadth First Search (BFS)
+###  Breadth First Search (BFS) / Level order traversal
 ###  Iterative Deepening Depth First Search (Depth Limited Search)
 ###  A* Search
 ###  Ternary Search
@@ -407,6 +407,7 @@ Steps:
 ###  Knuth-Morris-Pratt Algorithm
 ###  Z algorithm
 ###  Hill Climbing
+### Topological Sort
 
 
 # Number Theory
