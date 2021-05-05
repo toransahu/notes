@@ -94,8 +94,8 @@ The data items are not arranged in a sequential structure.
         - Closed Hash Tables (Open Addressing)
         - Closed Hash Tables, using buckets
 - [Graph](#graph)
-    - Undirected
-    - Directed
+    - Undirected Graph
+    - Directed Graph (Digraph)
         - Directed Acyclic Graph (DAG)
         - Directed Cyclic Graph [having cycle(s)] (DCG)
     - Weighted
@@ -114,7 +114,7 @@ The data items are not arranged in a sequential structure.
         - Trivial Graph
         - Simple Graph
         - Multi Graph
-        - Null Graph
+        - Null Graph (Empty Graph)
         - Complete Graph
         - Pseudo Graph
         - Regular Graph
@@ -123,9 +123,16 @@ The data items are not arranged in a sequential structure.
         - Connected & Disconnected Graph
         - Cyclic Graph
         - Vertex Labelled Graph
-        - Digraph
         - Subgraph
-
+        - Rooted Graph
+        - Mixed Graph
+        - Path Graph
+        - Planar Graph
+        - Cycle Graph
+        - Petersen Graph
+        - Perfect Graph
+        - Cograph
+        - Chordal Graph
 - Misc
     - Disjoint-set Data Structures
     - Suffix Arrays
@@ -390,6 +397,58 @@ Every internal node has one child. Performance-wise same as linked list.
 ## Trie
 
 # Graph
+
+`G = (V, E)`
+
+## Desc
+- a data structure describing pairwise relations between objects
+- made up of nodes/vertices and edges; with or without having any cycle
+- sometimes called undirected graph for distinguishing from a directed graph, or simple graph for distinguishing from a multigraph
+
+## Terminologies
+- Vertex (Node/Point): fundamental unit of the graph; 
+- Edge (Link/Line/Arc): The connection between one vertex and another
+- Degree (of a Vertex): `𝛿(v)` in a graph is the number of edges incident to it
+- In Degree: `𝛿 -(v)` number of incoming edges
+- Out Degree: `𝛿 +(v)` number of outgoing edges 
+- Adjacent Vertex: vertices directly connected to the given vertex
+- Adjacency Matrix: `Size: VxV` a matrix denoting (ordered/unordered) relations/edge between all the vertices
+- Adjacency List: a map of size `V` of list/linkedlist denoting vertices connected to a particular vertex
+- Isolated Vertex: is a vertex with degree zero
+- Leaf Vertex (Pendant Vertex): is a vertex with degree one
+- source vertex: is a vertex with indegree zero
+- sink vertex: is a vertex with outdegree zero
+- simplicial vertex: is one whose neighbors form a clique: every two neighbors are adjacent
+- universal vertex: is a vertex that is adjacent to every other vertex in the graph
+- cut vertex: is a vertex the removal of which would disconnect the remaining graph
+
+- Level
+- Height
+- Depth
+
+## Why
+- need to store network of objects / relations between objects
+    - e.g. 
+        - a map of cities
+        - social n/w
+    - to describe such complicated thing in less space
+
+## Application
+- Easy to search (using traversal)
+- Router Algorithm
+- decision making
+
+## Operations
+- Addition
+    - Add Node
+    - Add Edge
+- Removal
+    - Remove Node
+    - Remove Edge
+- Search
+    - Contains - check if the graph contains a given value
+    - HasEdge - check if there is an edge between 2 given vertices
+- Traversal - traverse the graph & its nodes/edges in various fashion
 
 ## Undirected Graph
 
