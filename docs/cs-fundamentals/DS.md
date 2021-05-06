@@ -416,15 +416,25 @@ Every internal node has one child. Performance-wise same as linked list.
 - Adjacency List: a map of size `V` of list/linkedlist denoting vertices connected to a particular vertex
 - Isolated Vertex: is a vertex with degree zero
 - Leaf Vertex (Pendant Vertex): is a vertex with degree one
-- source vertex: is a vertex with indegree zero
-- sink vertex: is a vertex with outdegree zero
-- simplicial vertex: is one whose neighbors form a clique: every two neighbors are adjacent
-- universal vertex: is a vertex that is adjacent to every other vertex in the graph
-- cut vertex: is a vertex the removal of which would disconnect the remaining graph
+- Source vertex: is a vertex with indegree zero
+- Sink vertex: is a vertex with outdegree zero
+- Simplicial vertex: is one whose neighbors form a clique: every two neighbors are adjacent
+- Universal vertex: is a vertex that is adjacent to every other vertex in the graph
+- Cut vertex: is a vertex the removal of which would disconnect the remaining graph
+- Tree: A graph with no cycle; aka Acyclic Connected Graph
+- Forest: is a disjoint set (non-overlapping elements in each set) iof trees
+- Spanning Tree: A subset of a graph, such that it covers all the vertices of the graph but with minimal edges.
+    - Thus, it does NOT have any cycle
+    - It is NOT disconncted
+    - Can say, every connected & undirected graphs have atleast 1 spanning tree
 
-- Level
-- Height
-- Depth
+    ![spanning-tree](https://www.tutorialspoint.com/data_structures_algorithms/images/spanning_trees.jpg)
+
+- Connected components: A connected component or simply component of an undirected graph is a subgraph in which each pair of nodes is connected with each other via a path
+- Strongly connected components (SCC): In a directed graph if every vertex is reachable from every other vertex
+<!-- - Level -->
+<!-- - Height -->
+<!-- - Depth -->
 
 ## Why
 - need to store network of objects / relations between objects
@@ -434,9 +444,57 @@ Every internal node has one child. Performance-wise same as linked list.
     - to describe such complicated thing in less space
 
 ## Application
-- Easy to search (using traversal)
-- Router Algorithm
-- decision making
+- transport networks
+- computer networks
+- database relationships
+- relationships between electronic components
+
+## Representation
+
+### Adjacency Matrix
+
+A matrix (2-d array) denoting if there is an edge (directed/undirected) between 2 vertices or not.
+
+```
+  | 0 1 2 3
+--|--------
+0 | 0 1 1 1
+1 | 0 0 1 0
+2 | 1 0 0 1
+3 | 0 0 0 0 
+```
+
+- Size: V*V
+- Advantages
+    - Some operations are efficient and easy
+- Disadvantages
+    - More space
+        - could be wastage if the graph is sparse (not dense)
+
+### Adjacency List
+
+A array of list (or a map of list) denoting adjacent vetices of a particular vertex.
+
+```
+[0]: [1]-->[2]--[3]
+[1]: [2]
+[2]: [0]-->[3]
+[3]:
+```
+
+- Size: E + V
+- Advantages
+    - less space than adjacency matrix
+        - especially when the graph is not dense
+- Disadvantages
+    - some operations are not efficient using adjacency list
+        - where lookup (whether there is an edge between 2 vertices or not) is required
+    - deleting a vertex
+    - deleting an edge 
+
+### Adjacency Set
+
+TODO
 
 ## Operations
 - Addition
@@ -459,6 +517,28 @@ Every internal node has one child. Performance-wise same as linked list.
 ## Directed Cyclic Graph (DCG)
 
 ## Weighted Graph
+
+## Subgraph
+A graph whose edge & veritices are subset of the other graph.
+
+## Bipartite Graph
+
+A graph whose vertices could be divided/partitioned into 2 sets. Such that vertices of one set incidents an edge to verices on the other set.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Simple-bipartite-graph.svg/800px-Simple-bipartite-graph.svg.png" style="width:200px"/>
+
+## Complete Graph
+A graph whose all the vertices are connected to each other. aka A graph whose all the edges are present.
+
+## Sparse Graph
+A graph with relatively less edges.
+
+```
+E < |V| * log|V|
+```
+
+## Dense Graph
+A graph with relatively less edges are missing.
 
 ---
 

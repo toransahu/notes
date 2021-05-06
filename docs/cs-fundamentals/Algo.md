@@ -74,7 +74,7 @@ Bottom - Up approach in a subproblem tree
 - **Method**: Divide and search (conquer)
 - Equation: T(n) = T(n/2) + O(1)
 - **Time Complexity:** $ O(log n) $
-- Implementaion:
+- Implementation:
     - Recursive
         - Auxilary Space: $ O(log n) $  recursion call stack space
     - Iterative
@@ -373,27 +373,221 @@ Bottom - Up approach in a subproblem tree
 # Graph Algorithms
 
 ## Depth First Search (DFS)
+
+DFS works in similar manner as pre-order travesal of a tree.
+
+### Idea
+
+The idea is to randomly select a starting vertex and from there start traversing other vertices such that we go through a path at a time till its end depth and start printing the vertices from there while back tracking. Do the same for the rest of the untraversed/unvisited/unprinted paths/vertices.
+
+Imagine a person trying to figure out escape a maze. Trying to explore a path at once till its end (depth).
+
+### Applications
+- Finding the path
+- To check if the graph is bipartite
+- To detect cycles in the graph
+- [Topological sort](#topological-sort)
+- Solving puzzles as maze
+- Finding connected components
+- Finding strongly connected components
+- Finding "cut vertices"
+
+### Implementation - Standard (Recursive)
+- Desc: TODO
+- Approach: Recursive
+- DS Used: (Internally Stack - for recursive function calls)
+- Time Complexity:
+    - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
+    - Avg: same
+    - Worst: same 
+- Auxilary Space:
+    - Best: O(V) (to track the visited/unvisited vertices)
+    - Avg: same
+    - Worst: same
+- Disadvantage:
+    - TODO
+
+### Properties
+TODO
+
+#### Pseudo Code
+
+1. pick/choose a vertex as starting point - randomly
+1. find it adjacent vertices
+1. mark the the choosen vertex as visited & print it
+1. pick one of the adjacent vertices - randomly
+1. repeat [2-4] for this node as well; return
+1. repeat [4-5] for rest of the unvisited adjacent vertices
+
+
+### Implementation Using Stack (Iterative, Which is same as Recursive one)
+- Desc: TODO
+- Apprach: Iterative
+- DS Used: Stack
+- Time Complexity:
+    - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
+    - Avg: same
+    - Worst: same
+- Auxilary Space:
+    - Best: O(V) (to track the visited/unvisited vertices + size of Stack)
+    - Avg: same
+    - Worst: same
+- Disadvantage:
+    - TODO
+
+#### Pseudo Code
+
+1. mark all the vertices as unvisited
+1. pick/choose a vertex as starting point - randomly
+1. put that into a stack; mark that as visited; print the vertex
+1. find any _one_ of its (the vertex we printed recently) unvisited adjacent vertices
+1. put that into the stack; mark that as visited; print the vertex
+1. repeat [4-5] until we reach a vertex from where we can't move forward  
+   (i.e. it has no adjacent vertices or has no unvisited adjacent vertices)
+1. now start back tracking (using the stack) from current vertex
+    1. pop the top element from the stack
+    1. go back to that vertex
+    1. repeat [4-6] for that vertex
+1. we may have some unvisited / disconncted graph (vertices) at this moment
+    1. so, iterate through all the unvisited vertices (if any)
+    2. repeat [2-6] for them
+
+
+### DFS Tree
+TODO
+
 ## Breadth First Search (BFS) / Level order traversal
+
+BFS works in similar manner as level-order travesal of a tree.
+
+### Idea
+
+The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step until we visited all the vertices.
+
+### Applications
+- Finding the path
+- To check if the graph is bipartite
+- To find the shortest path between two vetices
+- Finding connected components
+
+### Properties
+TODO
+
+
+### Implementation Using Queue (Iterative)
+
+- Desc: TODO
+- Apprach: Iterative
+- DS Used: Queue
+- Time Complexity:
+    - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
+    - Avg: same
+    - Worst: same
+- Auxilary Space:
+    - Best: O(V) (to track the visited/unvisited vertices + size of Queue)
+    - Avg: same
+    - Worst: same
+- Disadvantage:
+    - TODO
+
+#### Pseudo Code
+
+1. mark all the vertices as unvisited
+1. pick/choose a vertex as starting point - randomly
+    1. put it into a queue 
+    1. mark this as visited
+1. dequeue and get the item from the queue
+1. print the vertex
+1. find/explore its unvisited adjacent vertices
+    1. mark all of them as visited
+    1. put them into the queue
+1. repeat [3-5] until the queue is empty
+1. we may have some unvisited / disconncted graph (vertices) at this moment
+    1. so, iterate through all the unvisited vertices (if any)
+    1. repeat [2-6] for them
+
+
+## Topological Sort
+
+Topological sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.
+
+Saying that, [1] will come before [2], if there is an edge from [1] to [2]
+
+Note: There is no solution if the graph is a) Undirected, or b) Directed with cycle(s) - it will cause a deadlock.
+
+### Idea
+
+Topological sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
+Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the least, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to at the end of the sorted list.
+
+### Applications
+- To execute some inter-dependent tasks/jobs
+    - Run pipeline of computing jobs
+    - To implement formulae in Speadsheet cells
+- To detect dead locks
+
+### Properties
+- A DAG may have one or more Topological Order
+- If all the consecutive vertices in a topological order, are connected by edges, then these edges forms Hamiltonian path
+    - If the Hamiltonian path exists, then the topological order is unique; else the DAG can have two or more topological order
+
+### Implementation Using Stack / DFS
+- Desc: TODO
+- Apprach: Iterative+Recursive
+- DS Used: Stack
+- Time Complexity:
+    - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
+    - Avg: same
+    - Worst: same
+- Auxilary Space:
+    - Best: O(V) (to track the visited/unvisited vertices + size of Stack)
+    - Avg: same
+    - Worst: same
+- Disadvantage:
+    - TODO
+
+#### Pseudo Code
+
+#### Using Queue / In-degree
+- Desc: TODO
+- Apprach: Iterative
+- DS Used: Queue
+- Time Complexity:
+    - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
+    - Avg: same
+    - Worst: same
+- Auxilary Space:
+    - Best: O(V) (to track the visited/unvisited vertices + size of Queue)
+    - Avg: same
+    - Worst: same
+- Disadvantage:
+    - TODO
+
+#### Pseudo Code
+
+1. traverse the graph & calculate the in-degree of every vertices
+1. if there are vertices with in-degree zero then goto step [3]; else goto step []
+1. 
+
+## Dijkstra's Algorithm for Shortest Paths
+## Bellman-Ford Algorithm
+## Floyd-Warshall Algorithm for Shortest Paths
+## Kruskal Minimum Cost Spanning Tree Algorithm
+## Prim's Minumum Cost Spanning Tree
+## Knuth-Morris-Pratt Algorithm
+## Bipartite Matching
 ## Iterative Deepening Depth First Search (Depth Limited Search)
 ## A* Search
 ## Ternary Search
 ## Meet in the middle
 ## Strongly Connected Components (SCC)
-## Bipartite Matching
-## Kruskal Minimum Cost Spanning Tree Algorithm
-## Prim's Minumum Cost Spanning Tree
-## Dijkstra's Algorithm for Shortest Paths
-## Floyd-Warshall Algorithm for Shortest Paths
-## Bellman-Ford Algorithm
 ## Edmonds-Karp Algorithm
 ## Hungarian Algorithm
 ## Sweep Line Algorithm
 ## Graham scan
 ## Tarjan's Algorithm
-## Knuth-Morris-Pratt Algorithm
 ## Z algorithm
 ## Hill Climbing
-## Topological Sort
 
 ---
 
