@@ -1010,6 +1010,40 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#representation_1" class="md-nav__link">
+    Representation
+  </a>
+  
+    <nav class="md-nav" aria-label="Representation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-matrix" class="md-nav__link">
+    Adjacency Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-list" class="md-nav__link">
+    Adjacency List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-set" class="md-nav__link">
+    Adjacency Set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#operations_3" class="md-nav__link">
     Operations
   </a>
@@ -1047,6 +1081,41 @@
           <li class="md-nav__item">
   <a href="#weighted-graph" class="md-nav__link">
     Weighted Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subgraph" class="md-nav__link">
+    Subgraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-graph" class="md-nav__link">
+    Bipartite Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-graph" class="md-nav__link">
+    Complete Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparse-graph" class="md-nav__link">
+    Sparse Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dense-graph" class="md-nav__link">
+    Dense Graph
   </a>
   
 </li>
@@ -2192,6 +2261,40 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#representation_1" class="md-nav__link">
+    Representation
+  </a>
+  
+    <nav class="md-nav" aria-label="Representation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-matrix" class="md-nav__link">
+    Adjacency Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-list" class="md-nav__link">
+    Adjacency List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-set" class="md-nav__link">
+    Adjacency Set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#operations_3" class="md-nav__link">
     Operations
   </a>
@@ -2229,6 +2332,41 @@
           <li class="md-nav__item">
   <a href="#weighted-graph" class="md-nav__link">
     Weighted Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subgraph" class="md-nav__link">
+    Subgraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-graph" class="md-nav__link">
+    Bipartite Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-graph" class="md-nav__link">
+    Complete Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparse-graph" class="md-nav__link">
+    Sparse Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dense-graph" class="md-nav__link">
+    Dense Graph
   </a>
   
 </li>
@@ -2351,12 +2489,23 @@
 <li><a href="#terminologies_2">Terminologies</a></li>
 <li><a href="#why_2">Why</a></li>
 <li><a href="#application_2">Application</a></li>
+<li><a href="#representation_1">Representation</a><ul>
+<li><a href="#adjacency-matrix">Adjacency Matrix</a></li>
+<li><a href="#adjacency-list">Adjacency List</a></li>
+<li><a href="#adjacency-set">Adjacency Set</a></li>
+</ul>
+</li>
 <li><a href="#operations_3">Operations</a></li>
 <li><a href="#undirected-graph">Undirected Graph</a></li>
 <li><a href="#directed-graph">Directed Graph</a></li>
 <li><a href="#directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</a></li>
 <li><a href="#directed-cyclic-graph-dcg">Directed Cyclic Graph (DCG)</a></li>
 <li><a href="#weighted-graph">Weighted Graph</a></li>
+<li><a href="#subgraph">Subgraph</a></li>
+<li><a href="#bipartite-graph">Bipartite Graph</a></li>
+<li><a href="#complete-graph">Complete Graph</a></li>
+<li><a href="#sparse-graph">Sparse Graph</a></li>
+<li><a href="#dense-graph">Dense Graph</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -2864,19 +3013,31 @@ Practical e.g.: Binary Heap</p>
 <li>Adjacency List: a map of size <code>V</code> of list/linkedlist denoting vertices connected to a particular vertex</li>
 <li>Isolated Vertex: is a vertex with degree zero</li>
 <li>Leaf Vertex (Pendant Vertex): is a vertex with degree one</li>
-<li>source vertex: is a vertex with indegree zero</li>
-<li>sink vertex: is a vertex with outdegree zero</li>
-<li>simplicial vertex: is one whose neighbors form a clique: every two neighbors are adjacent</li>
-<li>universal vertex: is a vertex that is adjacent to every other vertex in the graph</li>
+<li>Source vertex: is a vertex with indegree zero</li>
+<li>Sink vertex: is a vertex with outdegree zero</li>
+<li>Simplicial vertex: is one whose neighbors form a clique: every two neighbors are adjacent</li>
+<li>Universal vertex: is a vertex that is adjacent to every other vertex in the graph</li>
+<li>Cut vertex: is a vertex the removal of which would disconnect the remaining graph</li>
+<li>Tree: A graph with no cycle; aka Acyclic Connected Graph</li>
+<li>Forest: is a disjoint set (non-overlapping elements in each set) iof trees</li>
 <li>
-<p>cut vertex: is a vertex the removal of which would disconnect the remaining graph</p>
-</li>
-<li>
-<p>Level</p>
-</li>
-<li>Height</li>
-<li>Depth</li>
+<p>Spanning Tree: A subset of a graph, such that it covers all the vertices of the graph but with minimal edges.</p>
+<ul>
+<li>Thus, it does NOT have any cycle</li>
+<li>It is NOT disconncted</li>
+<li>Can say, every connected &amp; undirected graphs have atleast 1 spanning tree</li>
 </ul>
+<p><img alt="spanning-tree" src="https://www.tutorialspoint.com/data_structures_algorithms/images/spanning_trees.jpg" /></p>
+</li>
+<li>
+<p>Connected components: A connected component or simply component of an undirected graph is a subgraph in which each pair of nodes is connected with each other via a path</p>
+</li>
+<li>Strongly connected components (SCC): In a directed graph if every vertex is reachable from every other vertex</li>
+</ul>
+<!-- - Level -->
+<!-- - Height -->
+<!-- - Depth -->
+
 <h3 id="why_2">Why<a class="headerlink" href="#why_2" title="Permanent link">#</a></h3>
 <ul>
 <li>need to store network of objects / relations between objects<ul>
@@ -2891,10 +3052,63 @@ Practical e.g.: Binary Heap</p>
 </ul>
 <h3 id="application_2">Application<a class="headerlink" href="#application_2" title="Permanent link">#</a></h3>
 <ul>
-<li>Easy to search (using traversal)</li>
-<li>Router Algorithm</li>
-<li>decision making</li>
+<li>transport networks</li>
+<li>computer networks</li>
+<li>database relationships</li>
+<li>relationships between electronic components</li>
 </ul>
+<h3 id="representation_1">Representation<a class="headerlink" href="#representation_1" title="Permanent link">#</a></h3>
+<h4 id="adjacency-matrix">Adjacency Matrix<a class="headerlink" href="#adjacency-matrix" title="Permanent link">#</a></h4>
+<p>A matrix (2-d array) denoting if there is an edge (directed/undirected) between 2 vertices or not.</p>
+<div class="highlight"><pre><span></span><code>  | 0 1 2 3
+--|--------
+0 | 0 1 1 1
+1 | 0 0 1 0
+2 | 1 0 0 1
+3 | 0 0 0 0 
+</code></pre></div>
+<ul>
+<li>Size: V*V</li>
+<li>Advantages<ul>
+<li>Some operations are efficient and easy</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>More space<ul>
+<li>could be wastage if the graph is sparse (not dense)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="adjacency-list">Adjacency List<a class="headerlink" href="#adjacency-list" title="Permanent link">#</a></h4>
+<p>A array of list (or a map of list) denoting adjacent vetices of a particular vertex.</p>
+<div class="highlight"><pre><span></span><code>[0]: [1]--&gt;[2]--[3]
+[1]: [2]
+[2]: [0]--&gt;[3]
+[3]:
+</code></pre></div>
+<ul>
+<li>Size: E + V</li>
+<li>Advantages<ul>
+<li>less space than adjacency matrix<ul>
+<li>especially when the graph is not dense</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>some operations are not efficient using adjacency list<ul>
+<li>where lookup (whether there is an edge between 2 vertices or not) is required</li>
+</ul>
+</li>
+<li>deleting a vertex</li>
+<li>deleting an edge </li>
+</ul>
+</li>
+</ul>
+<h4 id="adjacency-set">Adjacency Set<a class="headerlink" href="#adjacency-set" title="Permanent link">#</a></h4>
+<p>TODO</p>
 <h3 id="operations_3">Operations<a class="headerlink" href="#operations_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Addition<ul>
@@ -2919,6 +3133,19 @@ Practical e.g.: Binary Heap</p>
 <h3 id="directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)<a class="headerlink" href="#directed-acyclic-graph-dag" title="Permanent link">#</a></h3>
 <h3 id="directed-cyclic-graph-dcg">Directed Cyclic Graph (DCG)<a class="headerlink" href="#directed-cyclic-graph-dcg" title="Permanent link">#</a></h3>
 <h3 id="weighted-graph">Weighted Graph<a class="headerlink" href="#weighted-graph" title="Permanent link">#</a></h3>
+<h3 id="subgraph">Subgraph<a class="headerlink" href="#subgraph" title="Permanent link">#</a></h3>
+<p>A graph whose edge &amp; veritices are subset of the other graph.</p>
+<h3 id="bipartite-graph">Bipartite Graph<a class="headerlink" href="#bipartite-graph" title="Permanent link">#</a></h3>
+<p>A graph whose vertices could be divided/partitioned into 2 sets. Such that vertices of one set incidents an edge to verices on the other set.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Simple-bipartite-graph.svg/800px-Simple-bipartite-graph.svg.png" style="width:200px"/></p>
+<h3 id="complete-graph">Complete Graph<a class="headerlink" href="#complete-graph" title="Permanent link">#</a></h3>
+<p>A graph whose all the vertices are connected to each other. aka A graph whose all the edges are present.</p>
+<h3 id="sparse-graph">Sparse Graph<a class="headerlink" href="#sparse-graph" title="Permanent link">#</a></h3>
+<p>A graph with relatively less edges.</p>
+<div class="highlight"><pre><span></span><code>E &lt; |V| * log|V|
+</code></pre></div>
+<h3 id="dense-graph">Dense Graph<a class="headerlink" href="#dense-graph" title="Permanent link">#</a></h3>
+<p>A graph with relatively less edges are missing.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
 <ul>
