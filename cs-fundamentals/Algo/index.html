@@ -11,8 +11,8 @@
         <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -33,7 +33,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -51,8 +51,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-      
   
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -60,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamic-programing" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -69,27 +70,25 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Toran&#39;s Notes" class="md-header-nav__button md-logo" aria-label="Toran's Notes">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             Toran's Notes
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               Algo
@@ -99,8 +98,10 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
@@ -109,11 +110,11 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -130,12 +131,12 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -156,20 +157,18 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes">
+    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     Toran's Notes
@@ -177,10 +176,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source">
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -193,7 +192,6 @@
       
       
       
-
 
   
   
@@ -210,7 +208,6 @@
       
       
 
-
   
   
   
@@ -225,7 +222,6 @@
       
       
       
-
 
   
   
@@ -242,7 +238,6 @@
       
       
 
-
   
   
   
@@ -257,7 +252,6 @@
       
       
       
-
 
   
   
@@ -274,7 +268,6 @@
       
       
 
-
   
   
   
@@ -289,7 +282,6 @@
       
       
       
-
 
   
   
@@ -306,7 +298,6 @@
       
       
 
-
   
   
   
@@ -314,19 +305,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="nav-8">
+      <label class="md-nav__link" for="__nav_8">
         Api
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Api" data-md-level="1">
-        <label class="md-nav__title" for="nav-8">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Api
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -362,7 +352,6 @@
       
       
 
-
   
   
   
@@ -370,19 +359,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="nav-9">
+      <label class="md-nav__link" for="__nav_9">
         Behavioural
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Behavioural" data-md-level="1">
-        <label class="md-nav__title" for="nav-9">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Behavioural
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -406,7 +394,6 @@
       
       
 
-
   
   
     
@@ -416,19 +403,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
       
-      <label class="md-nav__link" for="nav-10">
+      <label class="md-nav__link" for="__nav_10">
         Cs fundamentals
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Cs fundamentals" data-md-level="1">
-        <label class="md-nav__title" for="nav-10">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Cs fundamentals
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -439,6 +425,7 @@
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -455,11 +442,170 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-algorithm" class="md-nav__link">
+    What is Algorithm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-analysis-of-algorithms" class="md-nav__link">
+    Why Analysis of Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-of-analysis-of-algorithms" class="md-nav__link">
+    Goal of Analysis of Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-running-time-analysis" class="md-nav__link">
+    What is Running Time Analysis?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-running-time" class="md-nav__link">
+    What is Running Time?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-compare-algorithms" class="md-nav__link">
+    How to compare Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rate-of-growth" class="md-nav__link">
+    What is Rate of Growth?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-used-rate-of-growths" class="md-nav__link">
+    Common used Rate of Growths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-analysis" class="md-nav__link">
+    Type of Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Type of Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worst-case" class="md-nav__link">
+    Worst Case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-case" class="md-nav__link">
+    Best Case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-case" class="md-nav__link">
+    Average Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-asymptotic-notation" class="md-nav__link">
+    What is Asymptotic Notation?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Asymptotic Notation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-o-o-notation" class="md-nav__link">
+    Big-O O Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-notation" class="md-nav__link">
+    Omega Ω Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theta-notation" class="md-nav__link">
+    Theta θ Notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-asymptotic-ness" class="md-nav__link">
+    What is Asymptotic-ness?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrence-relation" class="md-nav__link">
+    Recurrence Relation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master-theorem" class="md-nav__link">
+    Master Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#dynamic-programing" class="md-nav__link">
@@ -988,12 +1134,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#using-queue-in-degree" class="md-nav__link">
-    Using Queue / In-degree
-  </a>
+      </ul>
+    </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-queue-in-degree" class="md-nav__link">
+    Implementation Using Queue / In-degree
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Queue / In-degree">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pseudo-code_4" class="md-nav__link">
@@ -1013,9 +1165,110 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dijkstras-algorithm-for-shortest-paths" class="md-nav__link">
-    Dijkstra's Algorithm for Shortest Paths
+  <a href="#shortest-path-in-unweighted-graph" class="md-nav__link">
+    Shortest Path in Unweighted Graph
   </a>
+  
+    <nav class="md-nav" aria-label="Shortest Path in Unweighted Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_3" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_3" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-queue-bfs" class="md-nav__link">
+    Implementation Using Queue / BFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Queue / BFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_5" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstras-algorithm-shortest-path-single-source-weighted-graph" class="md-nav__link">
+    Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_4" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_4" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-priority-queue-bfs" class="md-nav__link">
+    Implementation Using Priority Queue + BFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Priority Queue + BFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_6" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1024,6 +1277,53 @@
     Bellman-Ford Algorithm
   </a>
   
+    <nav class="md-nav" aria-label="Bellman-Ford Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_5" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_5" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-dynamic-programing" class="md-nav__link">
+    Implementation Using Dynamic Programing
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Dynamic Programing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_7" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1031,12 +1331,106 @@
     Floyd-Warshall Algorithm for Shortest Paths
   </a>
   
+    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm for Shortest Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_6" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_6" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_6" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-stack-dfs_1" class="md-nav__link">
+    Implementation Using Stack / DFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_8" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#kruskal-minimum-cost-spanning-tree-algorithm" class="md-nav__link">
     Kruskal Minimum Cost Spanning Tree Algorithm
   </a>
+  
+    <nav class="md-nav" aria-label="Kruskal Minimum Cost Spanning Tree Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_7" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_7" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_7" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-stack-dfs_2" class="md-nav__link">
+    Implementation Using Stack / DFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_9" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1554,7 +1948,6 @@
       
       
 
-
   
   
   
@@ -1562,19 +1955,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
-      <label class="md-nav__link" for="nav-11">
+      <label class="md-nav__link" for="__nav_11">
         Data science
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Data science" data-md-level="1">
-        <label class="md-nav__title" for="nav-11">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Data science
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1598,7 +1990,6 @@
       
       
 
-
   
   
   
@@ -1606,19 +1997,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
       
-      <label class="md-nav__link" for="nav-12">
+      <label class="md-nav__link" for="__nav_12">
         Industrial
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Industrial" data-md-level="1">
-        <label class="md-nav__title" for="nav-12">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Industrial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1628,19 +2018,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1" type="checkbox" id="nav-12-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1" type="checkbox" id="__nav_12_1" >
       
-      <label class="md-nav__link" for="nav-12-1">
+      <label class="md-nav__link" for="__nav_12_1">
         Networking
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Networking" data-md-level="2">
-        <label class="md-nav__title" for="nav-12-1">
+        <label class="md-nav__title" for="__nav_12_1">
           <span class="md-nav__icon md-icon"></span>
           Networking
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1662,19 +2051,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1-2" type="checkbox" id="nav-12-1-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1_2" type="checkbox" id="__nav_12_1_2" >
       
-      <label class="md-nav__link" for="nav-12-1-2">
+      <label class="md-nav__link" for="__nav_12_1_2">
         Openconfig
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Openconfig" data-md-level="3">
-        <label class="md-nav__title" for="nav-12-1-2">
+        <label class="md-nav__title" for="__nav_12_1_2">
           <span class="md-nav__icon md-icon"></span>
           Openconfig
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1702,19 +2090,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1-3" type="checkbox" id="nav-12-1-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1_3" type="checkbox" id="__nav_12_1_3" >
       
-      <label class="md-nav__link" for="nav-12-1-3">
+      <label class="md-nav__link" for="__nav_12_1_3">
         Wireless
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Wireless" data-md-level="3">
-        <label class="md-nav__title" for="nav-12-1-3">
+        <label class="md-nav__title" for="__nav_12_1_3">
           <span class="md-nav__icon md-icon"></span>
           Wireless
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1772,19 +2159,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2" type="checkbox" id="nav-12-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2" type="checkbox" id="__nav_12_2" >
       
-      <label class="md-nav__link" for="nav-12-2">
+      <label class="md-nav__link" for="__nav_12_2">
         Product development
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Product development" data-md-level="2">
-        <label class="md-nav__title" for="nav-12-2">
+        <label class="md-nav__title" for="__nav_12_2">
           <span class="md-nav__icon md-icon"></span>
           Product development
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1814,7 +2200,6 @@
       
       
 
-
   
   
   
@@ -1822,19 +2207,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
       
-      <label class="md-nav__link" for="nav-13">
+      <label class="md-nav__link" for="__nav_13">
         Infra
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Infra" data-md-level="1">
-        <label class="md-nav__title" for="nav-13">
+        <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           Infra
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1858,7 +2242,6 @@
       
       
 
-
   
   
   
@@ -1866,19 +2249,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
       
-      <label class="md-nav__link" for="nav-14">
+      <label class="md-nav__link" for="__nav_14">
         Lang
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Lang" data-md-level="1">
-        <label class="md-nav__title" for="nav-14">
+        <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           Lang
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1912,19 +2294,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14-3" type="checkbox" id="nav-14-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_3" type="checkbox" id="__nav_14_3" >
       
-      <label class="md-nav__link" for="nav-14-3">
+      <label class="md-nav__link" for="__nav_14_3">
         Golang
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Golang" data-md-level="2">
-        <label class="md-nav__title" for="nav-14-3">
+        <label class="md-nav__title" for="__nav_14_3">
           <span class="md-nav__icon md-icon"></span>
           Golang
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1952,19 +2333,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14-4" type="checkbox" id="nav-14-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" >
       
-      <label class="md-nav__link" for="nav-14-4">
+      <label class="md-nav__link" for="__nav_14_4">
         Python
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="nav-14-4">
+        <label class="md-nav__title" for="__nav_14_4">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -2054,7 +2434,6 @@
       
       
 
-
   
   
   
@@ -2062,19 +2441,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
-      <label class="md-nav__link" for="nav-15">
+      <label class="md-nav__link" for="__nav_15">
         Music
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Music" data-md-level="1">
-        <label class="md-nav__title" for="nav-15">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Music
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -2102,7 +2480,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2110,11 +2488,170 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-algorithm" class="md-nav__link">
+    What is Algorithm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-analysis-of-algorithms" class="md-nav__link">
+    Why Analysis of Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-of-analysis-of-algorithms" class="md-nav__link">
+    Goal of Analysis of Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-running-time-analysis" class="md-nav__link">
+    What is Running Time Analysis?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-running-time" class="md-nav__link">
+    What is Running Time?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-compare-algorithms" class="md-nav__link">
+    How to compare Algorithms?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rate-of-growth" class="md-nav__link">
+    What is Rate of Growth?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-used-rate-of-growths" class="md-nav__link">
+    Common used Rate of Growths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-analysis" class="md-nav__link">
+    Type of Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Type of Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worst-case" class="md-nav__link">
+    Worst Case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-case" class="md-nav__link">
+    Best Case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-case" class="md-nav__link">
+    Average Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-asymptotic-notation" class="md-nav__link">
+    What is Asymptotic Notation?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Asymptotic Notation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-o-o-notation" class="md-nav__link">
+    Big-O O Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-notation" class="md-nav__link">
+    Omega Ω Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theta-notation" class="md-nav__link">
+    Theta θ Notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-asymptotic-ness" class="md-nav__link">
+    What is Asymptotic-ness?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrence-relation" class="md-nav__link">
+    Recurrence Relation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master-theorem" class="md-nav__link">
+    Master Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#dynamic-programing" class="md-nav__link">
@@ -2643,12 +3180,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#using-queue-in-degree" class="md-nav__link">
-    Using Queue / In-degree
-  </a>
+      </ul>
+    </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-queue-in-degree" class="md-nav__link">
+    Implementation Using Queue / In-degree
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Queue / In-degree">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pseudo-code_4" class="md-nav__link">
@@ -2668,9 +3211,110 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dijkstras-algorithm-for-shortest-paths" class="md-nav__link">
-    Dijkstra's Algorithm for Shortest Paths
+  <a href="#shortest-path-in-unweighted-graph" class="md-nav__link">
+    Shortest Path in Unweighted Graph
   </a>
+  
+    <nav class="md-nav" aria-label="Shortest Path in Unweighted Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_3" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_3" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-queue-bfs" class="md-nav__link">
+    Implementation Using Queue / BFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Queue / BFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_5" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkstras-algorithm-shortest-path-single-source-weighted-graph" class="md-nav__link">
+    Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_4" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_4" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-priority-queue-bfs" class="md-nav__link">
+    Implementation Using Priority Queue + BFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Priority Queue + BFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_6" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2679,6 +3323,53 @@
     Bellman-Ford Algorithm
   </a>
   
+    <nav class="md-nav" aria-label="Bellman-Ford Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_5" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_5" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-dynamic-programing" class="md-nav__link">
+    Implementation Using Dynamic Programing
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Dynamic Programing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_7" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2686,12 +3377,106 @@
     Floyd-Warshall Algorithm for Shortest Paths
   </a>
   
+    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm for Shortest Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_6" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_6" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_6" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-stack-dfs_1" class="md-nav__link">
+    Implementation Using Stack / DFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_8" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#kruskal-minimum-cost-spanning-tree-algorithm" class="md-nav__link">
     Kruskal Minimum Cost Spanning Tree Algorithm
   </a>
+  
+    <nav class="md-nav" aria-label="Kruskal Minimum Cost Spanning Tree Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_7" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_7" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_7" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-stack-dfs_2" class="md-nav__link">
+    Implementation Using Stack / DFS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code_9" class="md-nav__link">
+    Pseudo Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3103,7 +3888,7 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -3116,6 +3901,32 @@
                 
                 <div class="toc">
 <ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#what-is-algorithm">What is Algorithm?</a></li>
+<li><a href="#why-analysis-of-algorithms">Why Analysis of Algorithms?</a></li>
+<li><a href="#goal-of-analysis-of-algorithms">Goal of Analysis of Algorithms?</a></li>
+<li><a href="#what-is-running-time-analysis">What is Running Time Analysis?</a></li>
+<li><a href="#what-is-running-time">What is Running Time?</a></li>
+<li><a href="#how-to-compare-algorithms">How to compare Algorithms?</a></li>
+<li><a href="#what-is-rate-of-growth">What is Rate of Growth?</a></li>
+<li><a href="#common-used-rate-of-growths">Common used Rate of Growths</a></li>
+<li><a href="#type-of-analysis">Type of Analysis</a><ul>
+<li><a href="#worst-case">Worst Case</a></li>
+<li><a href="#best-case">Best Case</a></li>
+<li><a href="#average-case">Average Case</a></li>
+</ul>
+</li>
+<li><a href="#what-is-asymptotic-notation">What is Asymptotic Notation?</a><ul>
+<li><a href="#big-o-o-notation">Big-O O Notation</a></li>
+<li><a href="#omega-notation">Omega Ω Notation</a></li>
+<li><a href="#theta-notation">Theta θ Notation</a></li>
+</ul>
+</li>
+<li><a href="#what-is-asymptotic-ness">What is Asymptotic-ness?</a></li>
+<li><a href="#recurrence-relation">Recurrence Relation</a></li>
+<li><a href="#master-theorem">Master Theorem</a></li>
+</ul>
+</li>
 <li><a href="#dynamic-programing">Dynamic Programing</a><ul>
 <li><a href="#intro">Intro</a><ul>
 <li><a href="#memoization">Memoization</a></li>
@@ -3208,16 +4019,64 @@
 <li><a href="#properties_2">Properties</a></li>
 <li><a href="#implementation-using-stack-dfs">Implementation Using Stack / DFS</a><ul>
 <li><a href="#pseudo-code_3">Pseudo Code</a></li>
-<li><a href="#using-queue-in-degree">Using Queue / In-degree</a></li>
+</ul>
+</li>
+<li><a href="#implementation-using-queue-in-degree">Implementation Using Queue / In-degree</a><ul>
 <li><a href="#pseudo-code_4">Pseudo Code</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#dijkstras-algorithm-for-shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="#bellman-ford-algorithm">Bellman-Ford Algorithm</a></li>
-<li><a href="#floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall Algorithm for Shortest Paths</a></li>
-<li><a href="#kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm</a></li>
+<li><a href="#shortest-path-in-unweighted-graph">Shortest Path in Unweighted Graph</a><ul>
+<li><a href="#idea_3">Idea</a></li>
+<li><a href="#applications_3">Applications</a></li>
+<li><a href="#properties_3">Properties</a></li>
+<li><a href="#implementation-using-queue-bfs">Implementation Using Queue / BFS</a><ul>
+<li><a href="#pseudo-code_5">Pseudo Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#dijkstras-algorithm-shortest-path-single-source-weighted-graph">Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]</a><ul>
+<li><a href="#idea_4">Idea</a></li>
+<li><a href="#properties_4">Properties</a></li>
+<li><a href="#applications_4">Applications</a></li>
+<li><a href="#implementation-using-priority-queue-bfs">Implementation Using Priority Queue + BFS</a><ul>
+<li><a href="#pseudo-code_6">Pseudo Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#bellman-ford-algorithm">Bellman-Ford Algorithm</a><ul>
+<li><a href="#idea_5">Idea</a></li>
+<li><a href="#applications_5">Applications</a></li>
+<li><a href="#properties_5">Properties</a></li>
+<li><a href="#implementation-using-dynamic-programing">Implementation Using Dynamic Programing</a><ul>
+<li><a href="#pseudo-code_7">Pseudo Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall Algorithm for Shortest Paths</a><ul>
+<li><a href="#idea_6">Idea</a></li>
+<li><a href="#applications_6">Applications</a></li>
+<li><a href="#properties_6">Properties</a></li>
+<li><a href="#implementation-using-stack-dfs_1">Implementation Using Stack / DFS</a><ul>
+<li><a href="#pseudo-code_8">Pseudo Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm</a><ul>
+<li><a href="#idea_7">Idea</a></li>
+<li><a href="#applications_7">Applications</a></li>
+<li><a href="#properties_7">Properties</a></li>
+<li><a href="#implementation-using-stack-dfs_2">Implementation Using Stack / DFS</a><ul>
+<li><a href="#pseudo-code_9">Pseudo Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#prims-minumum-cost-spanning-tree">Prim's Minumum Cost Spanning Tree</a></li>
 <li><a href="#knuth-morris-pratt-algorithm">Knuth-Morris-Pratt Algorithm</a></li>
 <li><a href="#bipartite-matching">Bipartite Matching</a></li>
@@ -3283,7 +4142,70 @@
 <li><a href="#references">References</a></li>
 </ul>
 </div>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<h3 id="what-is-algorithm">What is Algorithm?<a class="headerlink" href="#what-is-algorithm" title="Permanent link">#</a></h3>
+<p>Step by step instructions to sove a problem.</p>
+<h3 id="why-analysis-of-algorithms">Why Analysis of Algorithms?<a class="headerlink" href="#why-analysis-of-algorithms" title="Permanent link">#</a></h3>
+<p>To determine efficient amongst multiple solution in terms of Time &amp; Space consumed.</p>
+<h3 id="goal-of-analysis-of-algorithms">Goal of Analysis of Algorithms?<a class="headerlink" href="#goal-of-analysis-of-algorithms" title="Permanent link">#</a></h3>
+<p>To compare solutions/algorithms mainly in terms of <em>running time</em>, but also in other factors like <em>memory</em>, developers effort, readability, simplicity etc.</p>
+<h3 id="what-is-running-time-analysis">What is Running Time Analysis?<a class="headerlink" href="#what-is-running-time-analysis" title="Permanent link">#</a></h3>
+<p>Determining how processing time increases with the size of the input (or problem).</p>
+<h3 id="what-is-running-time">What is Running Time?<a class="headerlink" href="#what-is-running-time" title="Permanent link">#</a></h3>
+<p><em>Execution time</em> taken by a program in a particular machine? <strong>NO</strong>.</p>
+<p>This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.</p>
+<p>So, we express the Running Time as a mathematical function of the input size i.e. <code>f(n)</code>.</p>
+<h3 id="how-to-compare-algorithms">How to compare Algorithms?<a class="headerlink" href="#how-to-compare-algorithms" title="Permanent link">#</a></h3>
+<p>Using Running Time.</p>
+<h3 id="what-is-rate-of-growth">What is Rate of Growth?<a class="headerlink" href="#what-is-rate-of-growth" title="Permanent link">#</a></h3>
+<p>The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of <code>f(n)</code> increases with the <code>n</code>.</p>
+<p>Say, <code>g(n)</code> such that <code>f(n) ∝ g(n)</code>.</p>
+<h3 id="common-used-rate-of-growths">Common used Rate of Growths<a class="headerlink" href="#common-used-rate-of-growths" title="Permanent link">#</a></h3>
+<p><code>1 &lt; log log n &lt; sqrt(log n) &lt; sqr(log n) &lt; 2^log n &lt; n &lt; log(n!) &lt; n log n &lt; n^2 &lt; 2^n &lt; 4^n &lt; n! &lt; 2^(2^n)</code></p>
+<h3 id="type-of-analysis">Type of Analysis<a class="headerlink" href="#type-of-analysis" title="Permanent link">#</a></h3>
+<p>Types of analyzing an algorithm.</p>
+<h4 id="worst-case">Worst Case<a class="headerlink" href="#worst-case" title="Permanent link">#</a></h4>
+<p>This considers the size of input for which the algorithm may take longest time (or algorithm runs slowest).
+Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
+<p>The asymptotic notation for the same is: <code>f(n) ~= O(g(n))</code></p>
+<h4 id="best-case">Best Case<a class="headerlink" href="#best-case" title="Permanent link">#</a></h4>
+<p>This considers the size of input for which the algorithm may take lowest time (or algorithm runs fastest).
+Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
+<p>The asymptotic notation for the same is: <code>f(n) ~= Ω(g(n))</code></p>
+<h4 id="average-case">Average Case<a class="headerlink" href="#average-case" title="Permanent link">#</a></h4>
+<p>This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
+<p>The asymptotic notation for the same is: <code>f(n) ~= θ(g(n))</code></p>
+<h3 id="what-is-asymptotic-notation">What is Asymptotic Notation?<a class="headerlink" href="#what-is-asymptotic-notation" title="Permanent link">#</a></h3>
+<p>Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.</p>
+<p>Lets understand this by taking an example of a function <code>f(n)</code> (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input (<code>n</code>).</p>
+<h4 id="big-o-o-notation">Big-O <code>O</code> Notation<a class="headerlink" href="#big-o-o-notation" title="Permanent link">#</a></h4>
+<p>This notation gives <strong>smallest</strong> rate of growth <code>g(n)</code> which is <strong>greater than or equal</strong> to the Running Time <code>f(n)</code> of the given algorithm/solution.</p>
+<p>i.e. there exists some positive constants n<sub>0</sub> &amp; <code>c</code>:</p>
+<p>such that <code>0 =&lt; f(n) =&lt; cg(n)</code>;  where n <code>&gt;=</code> n<sub>0</sub></p>
+<p>This is also called <strong>tight upper bound</strong> of the given function.</p>
+<p><code>f(n) ~= O(g(n))</code></p>
+<h4 id="omega-notation">Omega <code>Ω</code> Notation<a class="headerlink" href="#omega-notation" title="Permanent link">#</a></h4>
+<p>This notation gives <strong>largest</strong> rate of growth <code>g(n)</code> which is <strong>less than or equal</strong> to the Running Time <code>f(n)</code> of the given algorithm/solution.</p>
+<p>i.e. there exists some positive constants n<sub>0</sub> &amp; <code>c</code>:</p>
+<p>such that <code>0 =&lt; cg(n) =&lt; f(n)</code>;  where n <code>&gt;=</code> n<sub>0</sub></p>
+<p>This is also called <strong>tight lower bound</strong> of the given function.</p>
+<p><code>f(n) ~= Ω(g(n))</code></p>
+<h4 id="theta-notation">Theta <code>θ</code> Notation<a class="headerlink" href="#theta-notation" title="Permanent link">#</a></h4>
+<p>This notation defines a rate of growth <code>g(n)</code> such that it falls in between the tight lower &amp; upper bound of the function.</p>
+<p>i.e. there exists some positive constants c1, c2, and n<sub>0</sub>:
+such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</code> n<sub>0</sub></p>
+<p>This is also called asymptotic <strong>tight bound</strong> of the given function.</p>
+<p><code>f(n) ~= θ(g(n))</code></p>
+<h3 id="what-is-asymptotic-ness">What is Asymptotic-ness?<a class="headerlink" href="#what-is-asymptotic-ness" title="Permanent link">#</a></h3>
+<p>For a given function <code>f(n)</code> if, another function <code>g(n)</code> tries to approximate <code>f(n)</code>; then <code>g(n)</code> is called <em>asymptotic curve</em> for <code>f(n)</code>.</p>
+<h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">#</a></h3>
+<h3 id="master-theorem">Master Theorem<a class="headerlink" href="#master-theorem" title="Permanent link">#</a></h3>
+<p>If the recurrence relation is of the form:</p>
+<p><span><span class="MathJax_Preview">T(n) = aT(n/b) + \theta(n^klog^pn)</span><script type="math/tex">T(n) = aT(n/b) + \theta(n^klog^pn)</script></span></p>
 <h2 id="dynamic-programing">Dynamic Programing<a class="headerlink" href="#dynamic-programing" title="Permanent link">#</a></h2>
+<p>Dynamic programing is an approach to solve a problem which requires an optimal solutions amongst various other possible solutions.</p>
+<p>So, the goal is to get a global optimal solution.</p>
+<p>To do so, we analyze the problem and identify a repeated subtask (step) in that. Then we make decision at each step considering current problem and solution to previously solved sub problem to calculate optimal solution.</p>
 <h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
 <h4 id="memoization">Memoization<a class="headerlink" href="#memoization" title="Permanent link">#</a></h4>
 <p>Top - Down approach in a subproblem tree</p>
@@ -3825,7 +4747,7 @@
 <h4 id="implementation-using-stack-iterative-which-is-same-as-recursive-one">Implementation Using Stack (Iterative, Which is same as Recursive one)<a class="headerlink" href="#implementation-using-stack-iterative-which-is-same-as-recursive-one" title="Permanent link">#</a></h4>
 <ul>
 <li>Desc: TODO</li>
-<li>Apprach: Iterative</li>
+<li>Approach: Iterative</li>
 <li>DS Used: Stack</li>
 <li>Time Complexity:<ul>
 <li>Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix</li>
@@ -3883,7 +4805,7 @@
 <h4 id="implementation-using-queue-iterative">Implementation Using Queue (Iterative)<a class="headerlink" href="#implementation-using-queue-iterative" title="Permanent link">#</a></h4>
 <ul>
 <li>Desc: TODO</li>
-<li>Apprach: Iterative</li>
+<li>Approach: Iterative</li>
 <li>DS Used: Queue</li>
 <li>Time Complexity:<ul>
 <li>Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix</li>
@@ -3935,10 +4857,13 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 <ul>
 <li>To execute some inter-dependent tasks/jobs<ul>
 <li>Run pipeline of computing jobs</li>
-<li>To implement formulae in Speadsheet cells</li>
+<li>To implement/evaluate formulae in Speadsheet cells</li>
 </ul>
 </li>
-<li>To detect dead locks</li>
+<li>To detect dead locks<ul>
+<li>To check symbolic link loop (deadlock)</li>
+</ul>
+</li>
 </ul>
 <h4 id="properties_2">Properties<a class="headerlink" href="#properties_2" title="Permanent link">#</a></h4>
 <ul>
@@ -3951,7 +4876,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 <h4 id="implementation-using-stack-dfs">Implementation Using Stack / DFS<a class="headerlink" href="#implementation-using-stack-dfs" title="Permanent link">#</a></h4>
 <ul>
 <li>Desc: TODO</li>
-<li>Apprach: Iterative+Recursive</li>
+<li>Approach: Iterative+Recursive</li>
 <li>DS Used: Stack</li>
 <li>Time Complexity:<ul>
 <li>Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix</li>
@@ -3971,10 +4896,34 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 </li>
 </ul>
 <h5 id="pseudo-code_3">Pseudo Code<a class="headerlink" href="#pseudo-code_3" title="Permanent link">#</a></h5>
-<h5 id="using-queue-in-degree">Using Queue / In-degree<a class="headerlink" href="#using-queue-in-degree" title="Permanent link">#</a></h5>
+<ol>
+<li>start [perform a tweaked version of DFS of the graph]</li>
+<li>mark all the vertices unvisited</li>
+<li>create two stacks (backtrack-stack &amp; topo-stack) to hold |V| number of vertices in each<br />
+   (one to help backtrack, another for topological order)</li>
+<li>arbitrarily choose a vertex as root to start DFS</li>
+<li>push that vertex into the backtrack-stack</li>
+<li>mark that vertex as visited</li>
+<li>find <em>one</em> of the unvisited adjacent vertices</li>
+<li>put that unvisted adjacent vertex into the backtrack-stack</li>
+<li>mark that vertex as visited</li>
+<li>repeat [7-9] for the current vertex</li>
+<li>if there is no way further (i.e. no unvisited adjacent vertices); then pop the top element from the backtrack-stack</li>
+<li>push that popped vertex to the topo-stack</li>
+<li>go to that popped vertex</li>
+<li>while backtrack-stack is not empty; repeat [7-14]</li>
+<li>we may have some unvisited / disconncted graph (vertices) at this moment<ol>
+<li>so, iterate through all the unvisited vertices (if any)</li>
+<li>repeat [4-15] for them</li>
+</ol>
+</li>
+<li>while topo-stack is not empty; pop the top element from the stack and print them</li>
+<li>end</li>
+</ol>
+<h4 id="implementation-using-queue-in-degree">Implementation Using Queue / In-degree<a class="headerlink" href="#implementation-using-queue-in-degree" title="Permanent link">#</a></h4>
 <ul>
 <li>Desc: TODO</li>
-<li>Apprach: Iterative</li>
+<li>Approach: Iterative</li>
 <li>DS Used: Queue</li>
 <li>Time Complexity:<ul>
 <li>Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix</li>
@@ -3995,14 +4944,279 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 </ul>
 <h5 id="pseudo-code_4">Pseudo Code<a class="headerlink" href="#pseudo-code_4" title="Permanent link">#</a></h5>
 <ol>
-<li>traverse the graph &amp; calculate the in-degree of every vertices</li>
-<li>if there are vertices with in-degree zero then goto step [3]; else goto step []</li>
-<li></li>
+<li>start</li>
+<li>traverse the graph (adjacency matrix/list) &amp; calculate the in-degree of every vertices<ol>
+<li>maintain an array to store in-degree of each vertices</li>
+<li>traverse the adjacency matrix/list</li>
+<li>increment the in-degree value corresponding to vertex if a new edge is known to incident on that</li>
 </ol>
-<h3 id="dijkstras-algorithm-for-shortest-paths">Dijkstra's Algorithm for Shortest Paths<a class="headerlink" href="#dijkstras-algorithm-for-shortest-paths" title="Permanent link">#</a></h3>
+</li>
+<li>if there are vertices with in-degree zero then goto step [4]; else goto step [10]</li>
+<li>create a queue &amp; enqueue all those vertices with in-degree = 0</li>
+<li>dequeue an element from the queue</li>
+<li>print that vertex</li>
+<li>find all the adjacent vertices of that vertex and decrement their in-degree</li>
+<li>if the in-degree of any of those adjacent vertices becomes zero, enqueue them</li>
+<li>while the queue is not empty; repeat [5-8]</li>
+<li>end</li>
+</ol>
+<h3 id="shortest-path-in-unweighted-graph">Shortest Path in Unweighted Graph<a class="headerlink" href="#shortest-path-in-unweighted-graph" title="Permanent link">#</a></h3>
+<p>Given a <em>unweighted</em> graph (directed/undirected) <code>G = (V, E)</code>, and a source/distinguished vertex <code>S</code> find the shortest path from <code>S</code> to every other vertices in <code>G</code>.</p>
+<h4 id="idea_3">Idea<a class="headerlink" href="#idea_3" title="Permanent link">#</a></h4>
+<p>If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges.</p>
+<p>Cycles may exist in the graph.</p>
+<p>As the graph is unweighted, we can consider the cost of a path between 2 adjacent vertices are either zero or equal (suppose 1) - apply the same for all the <code>V</code> in the <code>G</code>.</p>
+<p>Start traversing the graph starting from <code>S</code> in level-order (BFS fashion), meaning explore all the adjacent vertices of the given vertex, then explore the adjacent vertices of them - while doing so, increment the distance of the adjacent vertices (from its parents) by 1.</p>
+<p>Interestingly -  we'll be calculating the distance of each vertices only once (keep track of visited vertices), thus we'll not encounter such condition where we'll be updating/overwriting the existing distance, and we also don't need to bother about checking if the newly calculated distance is lesser than the existing one.</p>
+<p>Why so? Why the calculated distance/path will be the shortest?
+Think we started traversing from <code>S</code> parallely (round-robin?) . And a Queue &amp; BFS helped us to achieve so.
+This is possible because of the fact that - the distance got calculated by traversing a path - which was shortest among others (think level order traversing) thats why <em>this</em> path brought us to that vertext first (among others) and we calculated the distance. There could be multiple shortest path as well.</p>
+<p>At the end, all the vertices will have shortest distance calculated from the vertex <code>S</code>.</p>
+<h4 id="applications_3">Applications<a class="headerlink" href="#applications_3" title="Permanent link">#</a></h4>
+<ul>
+<li>finding <em>fastest</em> way to go from one place to another</li>
+</ul>
+<h4 id="properties_3">Properties<a class="headerlink" href="#properties_3" title="Permanent link">#</a></h4>
+<h4 id="implementation-using-queue-bfs">Implementation Using Queue / BFS<a class="headerlink" href="#implementation-using-queue-bfs" title="Permanent link">#</a></h4>
+<ul>
+<li>Desc:</li>
+<li>Approach: Iterative / Recursive</li>
+<li>DS Used: 1 Queue, 2 Arrays</li>
+<li>Time Complexity: O(V+E) if adjacency list is used; O(VxV) if adjacency matrix is used<ul>
+<li>Best: --</li>
+<li>Avg: --</li>
+<li>Worst: --</li>
+</ul>
+</li>
+<li>Auxilary Space: O(V)<ul>
+<li>Best: --</li>
+<li>Avg: --</li>
+<li>Worst: --</li>
+</ul>
+</li>
+<li>Disadvantage:<ul>
+<li>can't be applied on a weighted graph</li>
+</ul>
+</li>
+</ul>
+<h5 id="pseudo-code_5">Pseudo Code<a class="headerlink" href="#pseudo-code_5" title="Permanent link">#</a></h5>
+<ol>
+<li>start</li>
+<li>create a queue</li>
+<li>create an array to store distances of the vertices from source <code>S</code> vertex</li>
+<li>initialize the distance array <code>d</code> with <code>-1</code> (or <code>INF</code> infinite)</li>
+<li>mark all the vertices unvisited</li>
+<li>set the distance from <code>S</code> to <code>S</code> zero</li>
+<li>enqueue the source vertex <code>S</code></li>
+<li>mark that vertex as visited</li>
+<li>dequeue an element</li>
+<li>explore the adjacent vertices of that vertex (<code>u</code> - dequeued vertex)</li>
+<li>set the distance of the adjacent vertices to: d(<code>u</code>) + 1</li>
+<li>enqueue them</li>
+<li>mark them as visited</li>
+<li>while queue is not empty; repeat [9-13]</li>
+<li>end</li>
+</ol>
+<h3 id="dijkstras-algorithm-shortest-path-single-source-weighted-graph">Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]<a class="headerlink" href="#dijkstras-algorithm-shortest-path-single-source-weighted-graph" title="Permanent link">#</a></h3>
+<p>Given a <em>weighted</em> graph (directed/undirected) <code>G = (V, E)</code>, and a source/distinguished vertex <code>S</code> find the shortest path from <code>S</code> to every other vertices in <code>G</code>.</p>
+<h4 id="idea_4">Idea<a class="headerlink" href="#idea_4" title="Permanent link">#</a></h4>
+<p>If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.</p>
+<p>Cycles may exist in the graph.</p>
+<p>As the given graph is <em>weighted</em> in nature, simply following BFS and incrementing the distance (or just keep adding the prev. distance + weight) of a vertex may NOT lead us to find an optimal solution.</p>
+<p>Why so? Why wouldn't the same method help us here, as it did in the case of unweighted graph?
+As we'll start traversing the paths <em>parallely</em>, the  calculated  distance (prev. distance + weight) would become the factor of comparision among candidate paths (to the same vertex from <code>S</code>). And blindly following a single/first/nearest (just based on number of edges inbetween) path may lead to an incorrect answer.</p>
+<p>This has become an minimization/optimization problem. Greedy approach might have solution for that.</p>
+<p>So, this time need to explore all the paths from <code>S--&gt;v</code>, visit the same vertex <code>v</code> multiple times using all the possible paths to that vertex from <code>S</code>. And update/overwrite the existing distance of the vertex <code>v</code> from <code>S</code> when the newly calculated distance is lesser.</p>
+<p>Again, doing this would definitely </p>
+<p>Dijkstra says:</p>
+<p>Do this initial exercise:</p>
+<ol>
+<li>Calculate the distance of the immediate reachable (adjacent) vertices first, and set the distance of other vertices as <code>INF</code> (infinite)</li>
+<li>Mark all the vertices as <code>not done</code></li>
+</ol>
+<p>Then perform this sub task:</p>
+<ol>
+<li>Now pick the one (say <code>u</code>) from <strong>all</strong> vertices whose distance is minimal &amp; is <code>not done</code></li>
+<li>
+<p>Find its adjacent vertices (say <code>v</code>) and <strong>Relax</strong> (recalculate the distance &amp; update) them. No need to Relax the <code>done</code> marked adjacent vertices (not fruitful).</p>
+<p>Relaxation:</p>
+<div class="highlight"><pre><span></span><code>if d[u] + w(u, v) &lt; d[v]; then
+    d[v] = d[u] + w(u, v)
+</code></pre></div>
+</li>
+<li>
+<p>Now, mark that vertex <code>u</code> as <code>done</code>. </p>
+</li>
+</ol>
+<p>Then repeat the sub task until all the vertices are marked <code>done</code>.</p>
+<h4 id="properties_4">Properties<a class="headerlink" href="#properties_4" title="Permanent link">#</a></h4>
+<ul>
+<li>A minimization problem --&gt; an optimization problem --&gt; Greedy method</li>
+<li>May work for negative weights, may not</li>
+</ul>
+<h4 id="applications_4">Applications<a class="headerlink" href="#applications_4" title="Permanent link">#</a></h4>
+<ul>
+<li>finding <em>cheapest</em> way to go from one place to another</li>
+</ul>
+<h4 id="implementation-using-priority-queue-bfs">Implementation Using Priority Queue + BFS<a class="headerlink" href="#implementation-using-priority-queue-bfs" title="Permanent link">#</a></h4>
+<ul>
+<li>Desc:</li>
+<li>Approach: Greedy + BFS</li>
+<li>DS Used: 1 Priority Queue, 1 Array</li>
+<li>Time Complexity:<ul>
+<li>Best: O(V) if no edges between the vertices</li>
+<li>Avg: <ul>
+<li>O((V + E) x logV) [# of updates <code>X</code> time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used</li>
+<li>O((V x V) + (E x logV)) [to traverse all the edges (and weigths) <code>+</code> # of updates <code>X</code> time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used</li>
+</ul>
+</li>
+<li>Worst: O(E x logV) if the graph is a complete graph, where |E| ~ |V| x |V|</li>
+</ul>
+</li>
+<li>Auxilary Space: O(V)<ul>
+<li>Best: --</li>
+<li>Avg: --</li>
+<li>Worst: --</li>
+</ul>
+</li>
+<li>Disadvantage:<ul>
+<li>does a blind search and wastes resources</li>
+<li>can't guarantee a solution for a negative weighted graph</li>
+</ul>
+</li>
+</ul>
+<h5 id="pseudo-code_6">Pseudo Code<a class="headerlink" href="#pseudo-code_6" title="Permanent link">#</a></h5>
+<ol>
+<li>start</li>
+<li>create a priority queue</li>
+<li>create an array to mark vertices as <code>done</code></li>
+<li>create an array to keep track of the distance (d[v]: S--&gt;v)</li>
+<li>initialize the distance array to <code>INF</code>, but set the distance of source vertex to zero</li>
+<li>create an array to keep track of the path (u--&gt;v)</li>
+<li>explore [BFS] the adjacent vertices of the source vertext <code>S</code></li>
+<li>calculate the distance to those immediate adjacent vertices from <code>S</code></li>
+<li>update the distance array for those adjacent vertices</li>
+<li>enqueue them into the priority queue</li>
+<li>dequeue a vertex from the priority queue (the one with minimum distance from the source vertex)</li>
+<li>explore [BFS] the adjacent vertices of the current vertex which are <code>not done</code></li>
+<li><strong>relax</strong> (calculate &amp; update) the distance to those adjacent vertices from <code>S</code> </li>
+<li>if the distances got relaxed due to <code>current vertex</code> then:<ol>
+<li>update the distance array for those adjacent vertices</li>
+<li>store the current vertex against these vertices in the path-array<br />
+(this will help track the shortest path)</li>
+</ol>
+</li>
+<li>enqueue them into the priority queue</li>
+<li>mark the current vertex as <code>done</code></li>
+<li>while priority queue is not empty; repeat [11-16]</li>
+<li>end</li>
+</ol>
 <h3 id="bellman-ford-algorithm">Bellman-Ford Algorithm<a class="headerlink" href="#bellman-ford-algorithm" title="Permanent link">#</a></h3>
+<p>Given a <em>weighted</em> graph (directed/undirected) <code>G = (V, E)</code>, and a source/distinguished vertex <code>S</code> find the shortest path from <code>S</code> to every other vertices in <code>G</code>.</p>
+<p>This algorithm can handle the negative weights in the graph which overcomes the drawbacks of Dijkstra's algorithm.</p>
+<h4 id="idea_5">Idea<a class="headerlink" href="#idea_5" title="Permanent link">#</a></h4>
+<p>If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.</p>
+<p>Cycles may exist in the graph. (But not negative weight cycles)</p>
+<p>As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex <code>v</code> from source <code>S</code>. And pick the shortest path (minimum distance) amongst them.</p>
+<p>This is again the same minimization/optimization problem, but approach would be Dynamic Programing - where the target would be to optimize the global solution rather just focusing on the local optimal solution.</p>
+<p>Bellman-Ford says:</p>
+<ol>
+<li>List down all the edges</li>
+<li>And start relaxing a vertex <code>v</code> in an edge <code>u -&gt; v</code> for all the edges</li>
+<li>Perform the relaxation of the vertex <code>v</code> for <code>|V| - 1</code> times (because it might be connected to all the rest of the vertices) - i.e. repeat step 2 <code>|V| - 1</code> times</li>
+<li>If no more relaxation happens/is possible in step 3; then stop</li>
+</ol>
+<p>Relaxation:</p>
+<div class="highlight"><pre><span></span><code>if d[u] + w(u, v) &lt; d[v]; then
+    d[v] = d[u] + w(u, v)
+</code></pre></div>
+<h4 id="applications_5">Applications<a class="headerlink" href="#applications_5" title="Permanent link">#</a></h4>
+<ul>
+<li>Negative weights are found in various applications of graphs. For example, instead of paying cost for a path, we may get some advantage if we follow the path.</li>
+<li>in networks, in routing information protocol (RIP)</li>
+<li>finding <em>cheapest</em> way to go (or send something) from one place to another</li>
+</ul>
+<h4 id="properties_5">Properties<a class="headerlink" href="#properties_5" title="Permanent link">#</a></h4>
+<ul>
+<li>A minimization problem --&gt; an optimization problem --&gt; Dynamic Programing<ul>
+<li>works in bottom-up manner</li>
+</ul>
+</li>
+<li>Negative Weight Cycle</li>
+<li>Does not work if there is a negative weight cycle</li>
+</ul>
+<h4 id="implementation-using-dynamic-programing">Implementation Using Dynamic Programing<a class="headerlink" href="#implementation-using-dynamic-programing" title="Permanent link">#</a></h4>
+<ul>
+<li>Desc:</li>
+<li>Approach: Dynamic Programing, Recursive</li>
+<li>DS Used:</li>
+<li>Time Complexity:<ul>
+<li>Best:</li>
+<li>Avg: O(V x E) (# of vertices to be relaxed <code>x</code> # of paths/adjacents to be considered while relaxing each vertex)</li>
+<li>Worst: O(V x V x V) if the graph is a complete graph</li>
+</ul>
+</li>
+<li>Auxilary Space:<ul>
+<li>Best:</li>
+<li>Avg:</li>
+<li>Worst:</li>
+</ul>
+</li>
+<li>Disadvantage:<ul>
+<li>Does not work if there is a negative weight cycle</li>
+<li>does not scale well</li>
+</ul>
+</li>
+</ul>
+<h5 id="pseudo-code_7">Pseudo Code<a class="headerlink" href="#pseudo-code_7" title="Permanent link">#</a></h5>
 <h3 id="floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall Algorithm for Shortest Paths<a class="headerlink" href="#floyd-warshall-algorithm-for-shortest-paths" title="Permanent link">#</a></h3>
+<h4 id="idea_6">Idea<a class="headerlink" href="#idea_6" title="Permanent link">#</a></h4>
+<h4 id="applications_6">Applications<a class="headerlink" href="#applications_6" title="Permanent link">#</a></h4>
+<h4 id="properties_6">Properties<a class="headerlink" href="#properties_6" title="Permanent link">#</a></h4>
+<h4 id="implementation-using-stack-dfs_1">Implementation Using Stack / DFS<a class="headerlink" href="#implementation-using-stack-dfs_1" title="Permanent link">#</a></h4>
+<ul>
+<li>Desc:</li>
+<li>Approach:</li>
+<li>DS Used:</li>
+<li>Time Complexity:<ul>
+<li>Best:</li>
+<li>Avg:</li>
+<li>Worst:</li>
+</ul>
+</li>
+<li>Auxilary Space:<ul>
+<li>Best:</li>
+<li>Avg:</li>
+<li>Worst:</li>
+</ul>
+</li>
+<li>Disadvantage:</li>
+</ul>
+<h5 id="pseudo-code_8">Pseudo Code<a class="headerlink" href="#pseudo-code_8" title="Permanent link">#</a></h5>
 <h3 id="kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm<a class="headerlink" href="#kruskal-minimum-cost-spanning-tree-algorithm" title="Permanent link">#</a></h3>
+<h4 id="idea_7">Idea<a class="headerlink" href="#idea_7" title="Permanent link">#</a></h4>
+<h4 id="applications_7">Applications<a class="headerlink" href="#applications_7" title="Permanent link">#</a></h4>
+<h4 id="properties_7">Properties<a class="headerlink" href="#properties_7" title="Permanent link">#</a></h4>
+<h4 id="implementation-using-stack-dfs_2">Implementation Using Stack / DFS<a class="headerlink" href="#implementation-using-stack-dfs_2" title="Permanent link">#</a></h4>
+<ul>
+<li>Desc:</li>
+<li>Approach:</li>
+<li>DS Used:</li>
+<li>Time Complexity:<ul>
+<li>Best:</li>
+<li>Avg:</li>
+<li>Worst:</li>
+</ul>
+</li>
+<li>Auxilary Space:<ul>
+<li>Best:</li>
+<li>Avg:</li>
+<li>Worst:</li>
+</ul>
+</li>
+<li>Disadvantage:</li>
+</ul>
+<h5 id="pseudo-code_9">Pseudo Code<a class="headerlink" href="#pseudo-code_9" title="Permanent link">#</a></h5>
 <h3 id="prims-minumum-cost-spanning-tree">Prim's Minumum Cost Spanning Tree<a class="headerlink" href="#prims-minumum-cost-spanning-tree" title="Permanent link">#</a></h3>
 <h3 id="knuth-morris-pratt-algorithm">Knuth-Morris-Pratt Algorithm<a class="headerlink" href="#knuth-morris-pratt-algorithm" title="Permanent link">#</a></h3>
 <h3 id="bipartite-matching">Bipartite Matching<a class="headerlink" href="#bipartite-matching" title="Permanent link">#</a></h3>
@@ -4036,6 +5250,10 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 <h3 id="3d-changing-coordinate-systems">3D Changing Coordinate Systems<a class="headerlink" href="#3d-changing-coordinate-systems" title="Permanent link">#</a></h3>
 <hr />
 <h2 id="greedy-algorithms">Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permanent link">#</a></h2>
+<p>The problem should be solved in stages, by consider one step a time and one input at a time.
+The each step should find a local optimal solution, and those local optimal should lead to global optimal solution.</p>
+<p>These algorithms provides a predefined procedure to be followed in each step.</p>
+<p>An optimization problem <em>can</em> be solved using greedy approach.</p>
 <h3 id="elementary-cases-fractional-knapsack-problem-task-scheduling">Elementary cases : Fractional Knapsack Problem, Task Scheduling<a class="headerlink" href="#elementary-cases-fractional-knapsack-problem-task-scheduling" title="Permanent link">#</a></h3>
 <h3 id="data-compression-using-huffman-trees">Data Compression using Huffman Trees<a class="headerlink" href="#data-compression-using-huffman-trees" title="Permanent link">#</a></h3>
 <h3 id="activity-selection">Activity Selection<a class="headerlink" href="#activity-selection" title="Permanent link">#</a></h3>
@@ -4074,45 +5292,44 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
             </article>
           </div>
         </div>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../../behavioural/FAQ/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../behavioural/FAQ/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              About Yourself?
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                About Yourself?
-              </div>
+          </div>
+        </a>
+      
+      
+        <a href="../CS-Dictionary/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CS Dictionary
             </div>
-          </a>
-        
-        
-          <a href="../CS-Dictionary/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                CS Dictionary
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4122,6 +5339,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
     </div>
@@ -4129,19 +5347,13 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
-      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
-      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../../javascripts/config.js"></script>
       
