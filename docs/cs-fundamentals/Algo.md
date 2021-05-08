@@ -183,12 +183,12 @@ Bottom - Up approach in a subproblem tree
 - **Pre-requisites:** Sorted array of numbers (integers/floats)
 - **Method**: Divide and search (conquer)
 - Equation: T(n) = T(n/2) + O(1)
-- **Time Complexity:** $ O(log n) $
+- **Time Complexity:** $O(log n)$
 - Implementation:
     - Recursive
-        - Auxilary Space: $ O(log n) $  recursion call stack space
+        - Auxilary Space: $O(log n)$  recursion call stack space
     - Iterative
-        - Auxilary Space: $ O(1) $
+        - Auxilary Space: $O(1)$
 
 
 ### 3. Jump
@@ -210,12 +210,12 @@ Bottom - Up approach in a subproblem tree
     - Enhancement over Binary search.
     - Enhancement:
         - Pivot is calculated based on interpolation, i.e.
-        - Pivot = $ left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])} $
+        - Pivot = $left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])}$
 - Time Complexity: 
-    - $ O(log log n) $ (if elements are uniformaly distributed)
+    - $O(log log n)$ (if elements are uniformaly distributed)
     - Worst case: O(n)
 - Auxilary space:
-    $ O(1) $
+    $O(1)$
 
 ### 5. Exponential 
 - **Pre-requisites:** Sorted array
