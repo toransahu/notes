@@ -19,19 +19,19 @@ _Execution time_ taken by a program in a particular machine? __NO__.
 
 This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.
 
-So, we express the Running Time as a mathematical function of the input size i.e. `f(n)`.
+So, we express the Running Time as a mathematical function of the input size i.e. $f(n)$.
 
 ## How to compare Algorithms?
 Using Running Time.
 
 ## What is Rate of Growth?
-The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of `f(n)` increases with the `n`.
+The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of $f(n)$ increases with the $n$.
 
-Say, `g(n)` such that `f(n) ∝ g(n)`.
+Say, $g(n)$ such that $f(n) \propto g(n)$.
 
 ## Common used Rate of Growths
-
-`1 < log log n < sqrt(log n) < sqr(log n) < 2^log n < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^(2^n)`
+$1 < log{log n} < \sqrt{log n} < log^2n < 2^{log n} < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^{2^n}$
+<!-- > just to fix the syntax highlighting :P-->
 
 ## Type of Analysis
 
@@ -41,58 +41,59 @@ Types of analyzing an algorithm.
 This considers the size of input for which the algorithm may take longest time (or algorithm runs slowest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: `f(n) ~= O(g(n))`
+The asymptotic notation for the same is: $f(n) ~= O(g(n))$
 
 ### Best Case
 This considers the size of input for which the algorithm may take lowest time (or algorithm runs fastest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: `f(n) ~= Ω(g(n))`
+The asymptotic notation for the same is: $f(n) ~= \Omega(g(n))$
 
 ### Average Case
 This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: `f(n) ~= θ(g(n))`
+The asymptotic notation for the same is: $f(n) ~= \Theta(g(n))$
 
 ## What is Asymptotic Notation?
 Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.
 
-Lets understand this by taking an example of a function `f(n)` (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input (`n`).
+Lets understand this by taking an example of a function $f(n)$ (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input ($n$).
 
-### Big-O `O` Notation
-This notation gives __smallest__ rate of growth `g(n)` which is __greater than or equal__ to the Running Time `f(n)` of the given algorithm/solution.
+### Big-O $O$ Notation
+This notation gives __smallest__ rate of growth $g(n)$ which is __greater than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
 
-i.e. there exists some positive constants n<sub>0</sub> & `c`:
+i.e. there exists some positive constants $n_0$ & $c$:
 
-such that `0 =< f(n) =< cg(n)`;  where n `>=` n<sub>0</sub>
+such that $0 \le f(n) \le cg(n)$;  where $n \ge n_0$
 
 This is also called __tight upper bound__ of the given function.
 
-`f(n) ~= O(g(n))`
+$f(n) = O(g(n))$
 
-### Omega `Ω` Notation
-This notation gives __largest__ rate of growth `g(n)` which is __less than or equal__ to the Running Time `f(n)` of the given algorithm/solution.
+### Omega $\Omega$ Notation
+This notation gives __largest__ rate of growth $g(n)$ which is __less than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
 
-i.e. there exists some positive constants n<sub>0</sub> & `c`:
+i.e. there exists some positive constants $n_0$ & $c$:
 
-such that `0 =< cg(n) =< f(n)`;  where n `>=` n<sub>0</sub>
+such that $0 \le cg(n) \le f(n)$;  where $n \ge n_0$
 
 This is also called __tight lower bound__ of the given function.
 
-`f(n) ~= Ω(g(n))`
+$f(n) = \Omega(g(n))$
 
-### Theta `θ` Notation
-This notation defines a rate of growth `g(n)` such that it falls in between the tight lower & upper bound of the function.
+### Theta $\Theta$ Notation
+This notation defines a rate of growth $g(n)$ such that it falls in between the tight lower & upper bound of the function.
 
-i.e. there exists some positive constants c1, c2, and n<sub>0</sub>:
-such that `0 =< c1g(n) =< f(n) c2g(n)`; where n `>=` n<sub>0</sub>
+i.e. there exists some positive constants $c_1$, $c_2$, and $n_0$:
+
+such that $0 \le c_1g(n) \le f(n) \le c_2g(n)$; where $n \ge n_0$
 
 This is also called asymptotic __tight bound__ of the given function.
 
-`f(n) ~= θ(g(n))`
+$f(n) = \Theta(g(n))$
 
 ## What is Asymptotic-ness?
-For a given function `f(n)` if, another function `g(n)` tries to approximate `f(n)`; then `g(n)` is called _asymptotic curve_ for `f(n)`.
+For a given function $f(n)$ if, another function $g(n)$ tries to approximate $f(n)$; then $g(n)$ is called _asymptotic curve_ for $f(n)$.
 
 ## Recurrence Relation
 
@@ -100,8 +101,7 @@ For a given function `f(n)` if, another function `g(n)` tries to approximate `f(
 
 If the recurrence relation is of the form:
 
-$T(n) = aT(n/b) + \theta(n^klog^pn)$
-
+$T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
 
 # Dynamic Programing
@@ -390,11 +390,11 @@ Bottom - Up approach in a subproblem tree
     - Sorting in O(n)
 - __Applications:__
     - When input is uniformly distributed over a positive range
-- __Recurrence Equation:__ $\theta(n) + n.O(2 - 1/n)$
+- __Recurrence Equation:__ $\Theta(n) + n.O(2 - 1/n)$
 - __Time Complexity:__ 
-    - Best: Omega(n) == $\Omega(n)$
-    - Avg: Theta(n)
-    - Worst: Theta(n2); When all the elements fall under single bucket
+    - Best: $\Omega(n)$
+    - Avg: $\Theta(n)$
+    - Worst: $\Theta(n2)$; When all the elements fall under single bucket
 - __Auxilary Space:__  $O(bucket size) == O(n)$
 - __In-Place:__ No
 - __Implementation:__  Iterative
@@ -425,10 +425,10 @@ Bottom - Up approach in a subproblem tree
     1. Same as pre-requisites
     2. As a subroutine in Radix Sort
 - __Time Complexity:__
-    - Best: Omega(n + k)
-    - Avg: Theta(n + k)
-    - Worst: O(n + k)
-- __Auxilary Space:__ O(counting + output array) == O(n + k)
+    - Best: $\Omega(n + k)$
+    - Avg: $\Theta(n + k)$
+    - Worst: $O(n + k)$
+- __Auxilary Space:__ $O(counting + output array) == O(n + k)$
 - __In-Place:__ No
 - __Implementation:__ Iterative
 - __Algorithm Paradigm:__ Partial Hashing
@@ -442,19 +442,19 @@ Bottom - Up approach in a subproblem tree
 - __Pre-requisites (Standard):__
     - input array have non negative integers
     - range should be 0 to n__c where c is some constant & numbers are represented in base n
-    - or each number takes only log2(n) bits
+    - or each number takes only $log_2n$ bits
 - __Desc:__
     - for 1 to d: where d is most significant digit position of MAX element in inp array
     - do counting sort on array (considering current digit of each iteration)
 - __Useful:__ same as prerequisites
 - __Advantage:__ Better worst case performance than bucket sort's Worst case
 - __Applications:__ Card sorting machine
-- __Recurrence Equation:__ n*O(n + k) == O(n + k)
+- __Recurrence Equation:__ $n*O(n + k) == O(n + k)$
 - __Time Complexity:__
-    - Best Case: Omega(n + k)
-    - Avg Case: theta(n + k)
-    - Worst Case: O(n + k)
-- __Auxilary Space:__ d*O(counting array + output array) = d*O(n + k)
+    - Best Case: $\Omega(n + k)$
+    - Avg Case: $\Theta(n + k)$
+    - Worst Case: $O(n + k)$
+- __Auxilary Space:__ $d*O(counting array + output array) = d*O(n + k)$
 - __In-Place:__ No
 - __Implementation:__ Iterative
 - __Algorithm Paradigm:__ Partial Hashing
