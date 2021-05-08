@@ -556,22 +556,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#big-o-o-notation" class="md-nav__link">
-    Big-O O Notation
+  <a href="#big-o-oo-notation" class="md-nav__link">
+    Big-O OO Notation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#omega-notation" class="md-nav__link">
-    Omega Ω Notation
+  <a href="#omega-omegaomega-notation" class="md-nav__link">
+    Omega \Omega\Omega Notation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#theta-notation" class="md-nav__link">
-    Theta θ Notation
+  <a href="#theta-thetatheta-notation" class="md-nav__link">
+    Theta \Theta\Theta Notation
   </a>
   
 </li>
@@ -2602,22 +2602,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#big-o-o-notation" class="md-nav__link">
-    Big-O O Notation
+  <a href="#big-o-oo-notation" class="md-nav__link">
+    Big-O OO Notation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#omega-notation" class="md-nav__link">
-    Omega Ω Notation
+  <a href="#omega-omegaomega-notation" class="md-nav__link">
+    Omega \Omega\Omega Notation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#theta-notation" class="md-nav__link">
-    Theta θ Notation
+  <a href="#theta-thetatheta-notation" class="md-nav__link">
+    Theta \Theta\Theta Notation
   </a>
   
 </li>
@@ -3917,9 +3917,9 @@
 </ul>
 </li>
 <li><a href="#what-is-asymptotic-notation">What is Asymptotic Notation?</a><ul>
-<li><a href="#big-o-o-notation">Big-O O Notation</a></li>
-<li><a href="#omega-notation">Omega Ω Notation</a></li>
-<li><a href="#theta-notation">Theta θ Notation</a></li>
+<li><a href="#big-o-oo-notation">Big-O OO Notation</a></li>
+<li><a href="#omega-omegaomega-notation">Omega \Omega\Omega Notation</a></li>
+<li><a href="#theta-thetatheta-notation">Theta \Theta\Theta Notation</a></li>
 </ul>
 </li>
 <li><a href="#what-is-asymptotic-ness">What is Asymptotic-ness?</a></li>
@@ -4154,54 +4154,56 @@
 <h3 id="what-is-running-time">What is Running Time?<a class="headerlink" href="#what-is-running-time" title="Permanent link">#</a></h3>
 <p><em>Execution time</em> taken by a program in a particular machine? <strong>NO</strong>.</p>
 <p>This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.</p>
-<p>So, we express the Running Time as a mathematical function of the input size i.e. <code>f(n)</code>.</p>
+<p>So, we express the Running Time as a mathematical function of the input size i.e. <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>.</p>
 <h3 id="how-to-compare-algorithms">How to compare Algorithms?<a class="headerlink" href="#how-to-compare-algorithms" title="Permanent link">#</a></h3>
 <p>Using Running Time.</p>
 <h3 id="what-is-rate-of-growth">What is Rate of Growth?<a class="headerlink" href="#what-is-rate-of-growth" title="Permanent link">#</a></h3>
-<p>The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of <code>f(n)</code> increases with the <code>n</code>.</p>
-<p>Say, <code>g(n)</code> such that <code>f(n) ∝ g(n)</code>.</p>
+<p>The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> increases with the <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>.</p>
+<p>Say, <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> such that <span><span class="MathJax_Preview">f(n) \propto g(n)</span><script type="math/tex">f(n) \propto g(n)</script></span>.</p>
 <h3 id="common-used-rate-of-growths">Common used Rate of Growths<a class="headerlink" href="#common-used-rate-of-growths" title="Permanent link">#</a></h3>
-<p><code>1 &lt; log log n &lt; sqrt(log n) &lt; sqr(log n) &lt; 2^log n &lt; n &lt; log(n!) &lt; n log n &lt; n^2 &lt; 2^n &lt; 4^n &lt; n! &lt; 2^(2^n)</code></p>
+<p><span><span class="MathJax_Preview">1 &lt; log{log n} &lt; \sqrt{log n} &lt; log^2n &lt; 2^{log n} &lt; n &lt; log(n!) &lt; n log n &lt; n^2 &lt; 2^n &lt; 4^n &lt; n! &lt; 2^{2^n}</span><script type="math/tex">1 < log{log n} < \sqrt{log n} < log^2n < 2^{log n} < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^{2^n}</script></span></p>
+<!-- > just to fix the syntax highlighting :P-->
+
 <h3 id="type-of-analysis">Type of Analysis<a class="headerlink" href="#type-of-analysis" title="Permanent link">#</a></h3>
 <p>Types of analyzing an algorithm.</p>
 <h4 id="worst-case">Worst Case<a class="headerlink" href="#worst-case" title="Permanent link">#</a></h4>
 <p>This considers the size of input for which the algorithm may take longest time (or algorithm runs slowest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
-<p>The asymptotic notation for the same is: <code>f(n) ~= O(g(n))</code></p>
+<p>The asymptotic notation for the same is: <span><span class="MathJax_Preview">f(n) ~= O(g(n))</span><script type="math/tex">f(n) ~= O(g(n))</script></span></p>
 <h4 id="best-case">Best Case<a class="headerlink" href="#best-case" title="Permanent link">#</a></h4>
 <p>This considers the size of input for which the algorithm may take lowest time (or algorithm runs fastest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
-<p>The asymptotic notation for the same is: <code>f(n) ~= Ω(g(n))</code></p>
+<p>The asymptotic notation for the same is: <span><span class="MathJax_Preview">f(n) ~= \Omega(g(n))</span><script type="math/tex">f(n) ~= \Omega(g(n))</script></span></p>
 <h4 id="average-case">Average Case<a class="headerlink" href="#average-case" title="Permanent link">#</a></h4>
 <p>This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
-<p>The asymptotic notation for the same is: <code>f(n) ~= θ(g(n))</code></p>
+<p>The asymptotic notation for the same is: <span><span class="MathJax_Preview">f(n) ~= \Theta(g(n))</span><script type="math/tex">f(n) ~= \Theta(g(n))</script></span></p>
 <h3 id="what-is-asymptotic-notation">What is Asymptotic Notation?<a class="headerlink" href="#what-is-asymptotic-notation" title="Permanent link">#</a></h3>
 <p>Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.</p>
-<p>Lets understand this by taking an example of a function <code>f(n)</code> (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input (<code>n</code>).</p>
-<h4 id="big-o-o-notation">Big-O <code>O</code> Notation<a class="headerlink" href="#big-o-o-notation" title="Permanent link">#</a></h4>
-<p>This notation gives <strong>smallest</strong> rate of growth <code>g(n)</code> which is <strong>greater than or equal</strong> to the Running Time <code>f(n)</code> of the given algorithm/solution.</p>
-<p>i.e. there exists some positive constants n<sub>0</sub> &amp; <code>c</code>:</p>
-<p>such that <code>0 =&lt; f(n) =&lt; cg(n)</code>;  where n <code>&gt;=</code> n<sub>0</sub></p>
+<p>Lets understand this by taking an example of a function <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input (<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>).</p>
+<h4 id="big-o-oo-notation">Big-O <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span> Notation<a class="headerlink" href="#big-o-oo-notation" title="Permanent link">#</a></h4>
+<p>This notation gives <strong>smallest</strong> rate of growth <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> which is <strong>greater than or equal</strong> to the Running Time <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> of the given algorithm/solution.</p>
+<p>i.e. there exists some positive constants <span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span> &amp; <span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>:</p>
+<p>such that <span><span class="MathJax_Preview">0 \le f(n) \le cg(n)</span><script type="math/tex">0 \le f(n) \le cg(n)</script></span>;  where <span><span class="MathJax_Preview">n \ge n_0</span><script type="math/tex">n \ge n_0</script></span></p>
 <p>This is also called <strong>tight upper bound</strong> of the given function.</p>
-<p><code>f(n) ~= O(g(n))</code></p>
-<h4 id="omega-notation">Omega <code>Ω</code> Notation<a class="headerlink" href="#omega-notation" title="Permanent link">#</a></h4>
-<p>This notation gives <strong>largest</strong> rate of growth <code>g(n)</code> which is <strong>less than or equal</strong> to the Running Time <code>f(n)</code> of the given algorithm/solution.</p>
-<p>i.e. there exists some positive constants n<sub>0</sub> &amp; <code>c</code>:</p>
-<p>such that <code>0 =&lt; cg(n) =&lt; f(n)</code>;  where n <code>&gt;=</code> n<sub>0</sub></p>
+<p><span><span class="MathJax_Preview">f(n) = O(g(n))</span><script type="math/tex">f(n) = O(g(n))</script></span></p>
+<h4 id="omega-omegaomega-notation">Omega <span><span class="MathJax_Preview">\Omega</span><script type="math/tex">\Omega</script></span> Notation<a class="headerlink" href="#omega-omegaomega-notation" title="Permanent link">#</a></h4>
+<p>This notation gives <strong>largest</strong> rate of growth <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> which is <strong>less than or equal</strong> to the Running Time <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> of the given algorithm/solution.</p>
+<p>i.e. there exists some positive constants <span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span> &amp; <span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>:</p>
+<p>such that <span><span class="MathJax_Preview">0 \le cg(n) \le f(n)</span><script type="math/tex">0 \le cg(n) \le f(n)</script></span>;  where <span><span class="MathJax_Preview">n \ge n_0</span><script type="math/tex">n \ge n_0</script></span></p>
 <p>This is also called <strong>tight lower bound</strong> of the given function.</p>
-<p><code>f(n) ~= Ω(g(n))</code></p>
-<h4 id="theta-notation">Theta <code>θ</code> Notation<a class="headerlink" href="#theta-notation" title="Permanent link">#</a></h4>
-<p>This notation defines a rate of growth <code>g(n)</code> such that it falls in between the tight lower &amp; upper bound of the function.</p>
-<p>i.e. there exists some positive constants c1, c2, and n<sub>0</sub>:
-such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</code> n<sub>0</sub></p>
+<p><span><span class="MathJax_Preview">f(n) = \Omega(g(n))</span><script type="math/tex">f(n) = \Omega(g(n))</script></span></p>
+<h4 id="theta-thetatheta-notation">Theta <span><span class="MathJax_Preview">\Theta</span><script type="math/tex">\Theta</script></span> Notation<a class="headerlink" href="#theta-thetatheta-notation" title="Permanent link">#</a></h4>
+<p>This notation defines a rate of growth <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> such that it falls in between the tight lower &amp; upper bound of the function.</p>
+<p>i.e. there exists some positive constants <span><span class="MathJax_Preview">c_1</span><script type="math/tex">c_1</script></span>, <span><span class="MathJax_Preview">c_2</span><script type="math/tex">c_2</script></span>, and <span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span>:</p>
+<p>such that <span><span class="MathJax_Preview">0 \le c_1g(n) \le f(n) \le c_2g(n)</span><script type="math/tex">0 \le c_1g(n) \le f(n) \le c_2g(n)</script></span>; where <span><span class="MathJax_Preview">n \ge n_0</span><script type="math/tex">n \ge n_0</script></span></p>
 <p>This is also called asymptotic <strong>tight bound</strong> of the given function.</p>
-<p><code>f(n) ~= θ(g(n))</code></p>
+<p><span><span class="MathJax_Preview">f(n) = \Theta(g(n))</span><script type="math/tex">f(n) = \Theta(g(n))</script></span></p>
 <h3 id="what-is-asymptotic-ness">What is Asymptotic-ness?<a class="headerlink" href="#what-is-asymptotic-ness" title="Permanent link">#</a></h3>
-<p>For a given function <code>f(n)</code> if, another function <code>g(n)</code> tries to approximate <code>f(n)</code>; then <code>g(n)</code> is called <em>asymptotic curve</em> for <code>f(n)</code>.</p>
+<p>For a given function <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> if, another function <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> tries to approximate <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>; then <span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span> is called <em>asymptotic curve</em> for <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>.</p>
 <h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">#</a></h3>
 <h3 id="master-theorem">Master Theorem<a class="headerlink" href="#master-theorem" title="Permanent link">#</a></h3>
 <p>If the recurrence relation is of the form:</p>
-<p><span><span class="MathJax_Preview">T(n) = aT(n/b) + \theta(n^klog^pn)</span><script type="math/tex">T(n) = aT(n/b) + \theta(n^klog^pn)</script></span></p>
+<p><span><span class="MathJax_Preview">T(n) = aT(n/b) + \Theta(n^klog^pn)</span><script type="math/tex">T(n) = aT(n/b) + \Theta(n^klog^pn)</script></span></p>
 <h2 id="dynamic-programing">Dynamic Programing<a class="headerlink" href="#dynamic-programing" title="Permanent link">#</a></h2>
 <p>Dynamic programing is an approach to solve a problem which requires an optimal solutions amongst various other possible solutions.</p>
 <p>So, the goal is to get a global optimal solution.</p>
@@ -4583,11 +4585,11 @@ such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</co
 <li>When input is uniformly distributed over a positive range</li>
 </ul>
 </li>
-<li><strong>Recurrence Equation:</strong> <span><span class="MathJax_Preview">\theta(n) + n.O(2 - 1/n)</span><script type="math/tex">\theta(n) + n.O(2 - 1/n)</script></span></li>
+<li><strong>Recurrence Equation:</strong> <span><span class="MathJax_Preview">\Theta(n) + n.O(2 - 1/n)</span><script type="math/tex">\Theta(n) + n.O(2 - 1/n)</script></span></li>
 <li><strong>Time Complexity:</strong> <ul>
-<li>Best: Omega(n) == <span><span class="MathJax_Preview">\Omega(n)</span><script type="math/tex">\Omega(n)</script></span></li>
-<li>Avg: Theta(n)</li>
-<li>Worst: Theta(n2); When all the elements fall under single bucket</li>
+<li>Best: <span><span class="MathJax_Preview">\Omega(n)</span><script type="math/tex">\Omega(n)</script></span></li>
+<li>Avg: <span><span class="MathJax_Preview">\Theta(n)</span><script type="math/tex">\Theta(n)</script></span></li>
+<li>Worst: <span><span class="MathJax_Preview">\Theta(n2)</span><script type="math/tex">\Theta(n2)</script></span>; When all the elements fall under single bucket</li>
 </ul>
 </li>
 <li><strong>Auxilary Space:</strong>  <span><span class="MathJax_Preview">O(bucket size) == O(n)</span><script type="math/tex">O(bucket size) == O(n)</script></span></li>
@@ -4631,12 +4633,12 @@ such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</co
 </ol>
 </li>
 <li><strong>Time Complexity:</strong><ul>
-<li>Best: Omega(n + k)</li>
-<li>Avg: Theta(n + k)</li>
-<li>Worst: O(n + k)</li>
+<li>Best: <span><span class="MathJax_Preview">\Omega(n + k)</span><script type="math/tex">\Omega(n + k)</script></span></li>
+<li>Avg: <span><span class="MathJax_Preview">\Theta(n + k)</span><script type="math/tex">\Theta(n + k)</script></span></li>
+<li>Worst: <span><span class="MathJax_Preview">O(n + k)</span><script type="math/tex">O(n + k)</script></span></li>
 </ul>
 </li>
-<li><strong>Auxilary Space:</strong> O(counting + output array) == O(n + k)</li>
+<li><strong>Auxilary Space:</strong> <span><span class="MathJax_Preview">O(counting + output array) == O(n + k)</span><script type="math/tex">O(counting + output array) == O(n + k)</script></span></li>
 <li><strong>In-Place:</strong> No</li>
 <li><strong>Implementation:</strong> Iterative</li>
 <li><strong>Algorithm Paradigm:</strong> Partial Hashing</li>
@@ -4650,7 +4652,7 @@ such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</co
 <li><strong>Pre-requisites (Standard):</strong><ul>
 <li>input array have non negative integers</li>
 <li>range should be 0 to n__c where c is some constant &amp; numbers are represented in base n</li>
-<li>or each number takes only log2(n) bits</li>
+<li>or each number takes only <span><span class="MathJax_Preview">log_2n</span><script type="math/tex">log_2n</script></span> bits</li>
 </ul>
 </li>
 <li><strong>Desc:</strong><ul>
@@ -4661,14 +4663,14 @@ such that <code>0 =&lt; c1g(n) =&lt; f(n) c2g(n)</code>; where n <code>&gt;=</co
 <li><strong>Useful:</strong> same as prerequisites</li>
 <li><strong>Advantage:</strong> Better worst case performance than bucket sort's Worst case</li>
 <li><strong>Applications:</strong> Card sorting machine</li>
-<li><strong>Recurrence Equation:</strong> n*O(n + k) == O(n + k)</li>
+<li><strong>Recurrence Equation:</strong> <span><span class="MathJax_Preview">n*O(n + k) == O(n + k)</span><script type="math/tex">n*O(n + k) == O(n + k)</script></span></li>
 <li><strong>Time Complexity:</strong><ul>
-<li>Best Case: Omega(n + k)</li>
-<li>Avg Case: theta(n + k)</li>
-<li>Worst Case: O(n + k)</li>
+<li>Best Case: <span><span class="MathJax_Preview">\Omega(n + k)</span><script type="math/tex">\Omega(n + k)</script></span></li>
+<li>Avg Case: <span><span class="MathJax_Preview">\Theta(n + k)</span><script type="math/tex">\Theta(n + k)</script></span></li>
+<li>Worst Case: <span><span class="MathJax_Preview">O(n + k)</span><script type="math/tex">O(n + k)</script></span></li>
 </ul>
 </li>
-<li><strong>Auxilary Space:</strong> d<em>O(counting array + output array) = d</em>O(n + k)</li>
+<li><strong>Auxilary Space:</strong> <span><span class="MathJax_Preview">d*O(counting array + output array) = d*O(n + k)</span><script type="math/tex">d*O(counting array + output array) = d*O(n + k)</script></span></li>
 <li><strong>In-Place:</strong> No</li>
 <li><strong>Implementation:</strong> Iterative</li>
 <li><strong>Algorithm Paradigm:</strong> Partial Hashing</li>
