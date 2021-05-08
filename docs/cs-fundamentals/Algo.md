@@ -103,146 +103,6 @@ If the recurrence relation is of the form:
 
 $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
-
-# Dynamic Programing
-
-Dynamic programing is an approach to solve a problem which requires an optimal solutions amongst various other possible solutions.
-
-So, the goal is to get a global optimal solution.
-
-To do so, we analyze the problem and identify a repeated subtask (step) in that. Then we make decision at each step considering current problem and solution to previously solved sub problem to calculate optimal solution.
-
-## Intro
-
-### Memoization
-Top - Down approach in a subproblem tree
-
-- Intro
-    - divides a big problem into subproblems
-    - starts solving smallest problem  first; approaching root of problem
-    - memoize/cache the solved subproblems
-    - for repeated/same subproblems, utilizes the cache/memoization table
-    - uses recursion
-- Pros
-    - easy implementation
-- Cons
-    - recusrsion stach could be deeper and that might create stack-overflow/memory issue
-- Extra
-    - memo table fills up in bottom to top order
-
-### Tabulation
-Bottom - Up approach in a subproblem tree
-
-- Intro
-    - Understands a root problem and finds subproblems to that
-    - starts solving subproblems (in a particular order which approaches the root problem, like smallest to bigger, 1 to 100 etc.) in iterative way
-    - store the answer to those subproblems in a table
-- Pros
-    - avoids recursion stack issue
-    - suitable for extremly complicated problems
-    - suitable where optimization is concern
-        - because it gives flexibility of command over coding style
-- Cons
-    - need more rigid thinking ahead of time to find the ordering of subproblems so that we do not need to backtrack and solve a smaller problem in order to solve a larger problem
-
-- Extra
-    - table fills up in top to bottom order
-
-## Examples    
-
-### Edit Distance
-
-### Knapsack problem
-
-#### 0/1 Knapsack Problem
-
-#### 0/1 Knapsack Problem (with repetition of items)
-
-#### Knapsack Problem (with fractional items)
-
-### Matrix Chain Multiplication
-
-### Longest Common Substring
-
-### Longest Common Subsequence
-
-### Longest Increasing Monotonical Subsequence
-
-### Rod Cutting
-
----
-
-# Searching Algorithms
-
-## Types
-
-### 1. Linear
-
-
-### 2. Binary
-- **Pre-requisites:** Sorted array of numbers (integers/floats)
-- **Method**: Divide and search (conquer)
-- Equation: $T(n) = T(n/2) + O(1)$
-- **Time Complexity:** $O(log n)$
-- Implementation:
-    - Recursive
-        - Auxilary Space: $O(log n)$  recursion call stack space
-    - Iterative
-        - Auxilary Space: $O(1)$
-
-
-### 3. Jump
-- **Pre-requisites:** Sorted array of numbers
-- **Desc:**
-    - Enhancement over linear search.
-    - Jumps a step (of $m$) --by index-- and search, if it was searching value 52 and found 55 then will jump a step back and start linear search from that index.
-    - Similar to linear search.
-- Recurrence Equation: 
-    - Total number of comparision in worst case: $(n/m) + (m-1)$ i.e. (total number of jumps + linear search within one step)
-    - Best value of $m = \sqrt{n}$
-- Time Complexity: $O(\sqrt{n})$ i.e. between $O(linear)$ & $O(binary)$
-- Auxiliary Space : $O(1)$
-
-
-### 4. Interpolation
-- **Pre-requisites:** Sorted array
-- **Desc:**
-    - Enhancement over Binary search.
-    - Enhancement:
-        - Pivot is calculated based on interpolation, i.e.
-        - $Pivot = left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])}$
-- Time Complexity: 
-    - $O(log log n)$ (if elements are uniformaly distributed)
-    - Worst case: $O(n)$
-- Auxilary space: $O(1)$
-
-### 5. Exponential 
-- **Pre-requisites:** Sorted array
-- **Desc:**
-    - Enhancement over binary search.
-    - Enhancement: 
-        - Find a range where element is present, and then do binary search found range.
-        - Range: 
-            - Start with subarray of size 1 and chech if last element of subarray is greater than 'e'.
-            - If not, then increment size by two times
-- Equation:
-- Time Complexity: $O(log n)$
-- Auxilary Space: $O(1)$ (if used iterative binary search)
-- Advantage: Better to use if array is infinite (Unbounded Searches/ Unbounded Binary Search)
-
-### 6.  Ternary
-- **Pre-requisites:** Sorted array
-- **Desc:**
-    - Divide and Conquer + Linear search
-    - Same as binary search.
-    - When searching space gets shorter, use linear search according to precision = right-left
-- Time Complexity: $O(log_3 n)$
-- Auxilary Space:
-    - Iterative = $O(1)$
-    - Recursive = $O(log_3 n)$ recursive stack space
-- Application:
-    - Unimodel Functions
-
 ---    
 
 # Sorting Algorithms
@@ -469,6 +329,80 @@ Bottom - Up approach in a subproblem tree
     - Sorting a linkedlist: 
 - Quick sort is preferred over Merge sort when:
     - There is memory limitation
+
+---
+
+# Searching Algorithms
+
+## Types
+
+### 1. Linear
+
+
+### 2. Binary
+- **Pre-requisites:** Sorted array of numbers (integers/floats)
+- **Method**: Divide and search (conquer)
+- Equation: $T(n) = T(n/2) + O(1)$
+- **Time Complexity:** $O(log n)$
+- Implementation:
+    - Recursive
+        - Auxilary Space: $O(log n)$  recursion call stack space
+    - Iterative
+        - Auxilary Space: $O(1)$
+
+
+### 3. Jump
+- **Pre-requisites:** Sorted array of numbers
+- **Desc:**
+    - Enhancement over linear search.
+    - Jumps a step (of $m$) --by index-- and search, if it was searching value 52 and found 55 then will jump a step back and start linear search from that index.
+    - Similar to linear search.
+- Recurrence Equation: 
+    - Total number of comparision in worst case: $(n/m) + (m-1)$ i.e. (total number of jumps + linear search within one step)
+    - Best value of $m = \sqrt{n}$
+- Time Complexity: $O(\sqrt{n})$ i.e. between $O(linear)$ & $O(binary)$
+- Auxiliary Space : $O(1)$
+
+
+### 4. Interpolation
+- **Pre-requisites:** Sorted array
+- **Desc:**
+    - Enhancement over Binary search.
+    - Enhancement:
+        - Pivot is calculated based on interpolation, i.e.
+        - $Pivot = left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])}$
+- Time Complexity: 
+    - $O(log log n)$ (if elements are uniformaly distributed)
+    - Worst case: $O(n)$
+- Auxilary space: $O(1)$
+
+### 5. Exponential 
+- **Pre-requisites:** Sorted array
+- **Desc:**
+    - Enhancement over binary search.
+    - Enhancement: 
+        - Find a range where element is present, and then do binary search found range.
+        - Range: 
+            - Start with subarray of size 1 and chech if last element of subarray is greater than 'e'.
+            - If not, then increment size by two times
+- Equation:
+- Time Complexity: $O(log n)$
+- Auxilary Space: $O(1)$ (if used iterative binary search)
+- Advantage: Better to use if array is infinite (Unbounded Searches/ Unbounded Binary Search)
+
+### 6.  Ternary
+- **Pre-requisites:** Sorted array
+- **Desc:**
+    - Divide and Conquer + Linear search
+    - Same as binary search.
+    - When searching space gets shorter, use linear search according to precision = right-left
+- Time Complexity: $O(log_3 n)$
+- Auxilary Space:
+    - Iterative = $O(1)$
+    - Recursive = $O(log_3 n)$ recursive stack space
+- Application:
+    - Unimodel Functions
+
 
 ---
 
@@ -1022,6 +956,74 @@ An optimization problem _can_ be solved using greedy approach.
 ## Elementary cases : Fractional Knapsack Problem, Task Scheduling
 ## Data Compression using Huffman Trees
 ## Activity Selection
+
+---
+
+# Dynamic Programing
+
+Dynamic programing is an approach to solve a problem which requires an optimal solutions amongst various other possible solutions.
+
+So, the goal is to get a global optimal solution.
+
+To do so, we analyze the problem and identify a repeated subtask (step) in that. Then we make decision at each step considering current problem and solution to previously solved sub problem to calculate optimal solution.
+
+## Intro
+
+### Memoization
+Top - Down approach in a subproblem tree
+
+- Intro
+    - divides a big problem into subproblems
+    - starts solving smallest problem  first; approaching root of problem
+    - memoize/cache the solved subproblems
+    - for repeated/same subproblems, utilizes the cache/memoization table
+    - uses recursion
+- Pros
+    - easy implementation
+- Cons
+    - recusrsion stach could be deeper and that might create stack-overflow/memory issue
+- Extra
+    - memo table fills up in bottom to top order
+
+### Tabulation
+Bottom - Up approach in a subproblem tree
+
+- Intro
+    - Understands a root problem and finds subproblems to that
+    - starts solving subproblems (in a particular order which approaches the root problem, like smallest to bigger, 1 to 100 etc.) in iterative way
+    - store the answer to those subproblems in a table
+- Pros
+    - avoids recursion stack issue
+    - suitable for extremly complicated problems
+    - suitable where optimization is concern
+        - because it gives flexibility of command over coding style
+- Cons
+    - need more rigid thinking ahead of time to find the ordering of subproblems so that we do not need to backtrack and solve a smaller problem in order to solve a larger problem
+
+- Extra
+    - table fills up in top to bottom order
+
+## Examples
+
+### Edit Distance
+
+### Knapsack problem
+
+#### 0/1 Knapsack Problem
+
+#### 0/1 Knapsack Problem (with repetition of items)
+
+#### Knapsack Problem (with fractional items)
+
+### Matrix Chain Multiplication
+
+### Longest Common Substring
+
+### Longest Common Subsequence
+
+### Longest Increasing Monotonical Subsequence
+
+### Rod Cutting
 
 ---
 
