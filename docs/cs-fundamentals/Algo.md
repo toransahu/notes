@@ -3,7 +3,7 @@
 # Introduction
 
 ## What is Algorithm?
-Step by step instructions to sove a problem.
+Step by step instructions to solve a problem.
 
 ## Why Analysis of Algorithms?
 To determine efficient amongst multiple solution in terms of Time & Space consumed.
@@ -29,7 +29,7 @@ The rate at which the Running Time increases with the size of the input. aka. th
 
 Say, $g(n)$ such that $f(n) \propto g(n)$.
 
-## Common used Rate of Growths
+## Commonly used Rate of Growths
 $1 < log{log n} < \sqrt{log n} < log^2n < 2^{log n} < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^{2^n}$
 <!-- > just to fix the syntax highlighting :P-->
 
@@ -182,7 +182,7 @@ Bottom - Up approach in a subproblem tree
 ### 2. Binary
 - **Pre-requisites:** Sorted array of numbers (integers/floats)
 - **Method**: Divide and search (conquer)
-- Equation: T(n) = T(n/2) + O(1)
+- Equation: $T(n) = T(n/2) + O(1)$
 - **Time Complexity:** $O(log n)$
 - Implementation:
     - Recursive
@@ -195,13 +195,13 @@ Bottom - Up approach in a subproblem tree
 - **Pre-requisites:** Sorted array of numbers
 - **Desc:**
     - Enhancement over linear search.
-    - Jumps a step (of m) --by index-- and search, if it was searching value 52 and found 55 then will jump a step back and start linear search from that index.
+    - Jumps a step (of $m$) --by index-- and search, if it was searching value 52 and found 55 then will jump a step back and start linear search from that index.
     - Similar to linear search.
 - Recurrence Equation: 
-    - Total number of comparision in worst case: (n/m) + (m-1) i.e. (total number of jumps + linear search within one step)
+    - Total number of comparision in worst case: $(n/m) + (m-1)$ i.e. (total number of jumps + linear search within one step)
     - Best value of $m = \sqrt(n)$
-- Time Complexity: $ O(\sqrt(n))$ i.e. between O(linear) & O(binary)
-- Auxiliary Space : O(1)
+- Time Complexity: $O(\sqrt(n))$ i.e. between $O(linear)$ & $O(binary)$
+- Auxiliary Space : $O(1)$
 
 
 ### 4. Interpolation
@@ -210,12 +210,11 @@ Bottom - Up approach in a subproblem tree
     - Enhancement over Binary search.
     - Enhancement:
         - Pivot is calculated based on interpolation, i.e.
-        - Pivot = $left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])}$
+        - $Pivot = left + \frac{(right - left)} { (arr[right] - arr[left])  (e - arr[left])}$
 - Time Complexity: 
     - $O(log log n)$ (if elements are uniformaly distributed)
-    - Worst case: O(n)
-- Auxilary space:
-    $O(1)$
+    - Worst case: $O(n)$
+- Auxilary space: $O(1)$
 
 ### 5. Exponential 
 - **Pre-requisites:** Sorted array
@@ -227,8 +226,8 @@ Bottom - Up approach in a subproblem tree
             - Start with subarray of size 1 and chech if last element of subarray is greater than 'e'.
             - If not, then increment size by two times
 - Equation:
-- Time Complexity: O(log n)
-- Auxilary Space: O(1) (if used iterative binary search)
+- Time Complexity: $O(log n)$
+- Auxilary Space: $O(1)$ (if used iterative binary search)
 - Advantage: Better to use if array is infinite (Unbounded Searches/ Unbounded Binary Search)
 
 ### 6.  Ternary
@@ -237,10 +236,10 @@ Bottom - Up approach in a subproblem tree
     - Divide and Conquer + Linear search
     - Same as binary search.
     - When searching space gets shorter, use linear search according to precision = right-left
-- Time Complexity: O(log<sub>3</sub>n)
+- Time Complexity: $O(log_3 n)$
 - Auxilary Space:
-    - Iterative = O(1)
-    - Recursive = O(log<sub>3</sub>n) recursive stack space
+    - Iterative = $O(1)$
+    - Recursive = $O(log_3 n)$ recursive stack space
 - Application:
     - Unimodel Functions
 
@@ -254,26 +253,26 @@ Bottom - Up approach in a subproblem tree
 ### 1. Bubble Sort:
 - **Description:**
     - Swapping adjacent elements if there are in wrong orders.
-- Time Complexity: Always O(n <sup>2 </sup>) (even for sorted arrays)
+- Time Complexity: Always $O(n^2)$ (even for sorted arrays)
 - Can be optimized for sorted array 
 
 ### 2. Selection Sort:
 - **Description:**
     - Pulls a minimum element from unsorted-subarray and appends infront of the array (as a sorted sub-array)
-- Time Complexity: O(n<sup>2</sup>) (all cases)
-- Auxilary Space: O(1)
+- Time Complexity: $O(n^2)$ (all cases)
+- Auxilary Space: $O(1)$
 
 ### 3. Insertion Sort:
 - **Description:**
-    Keep first element on left side, start one by one from 2nd element (lets say ith element). Compare the picked element (ith) with all the elements in left sub-array (i.e. with i-1<sup>th</sup> to 0<sup>th</sup>).
+    Keep first element on left side, start one by one from $2^{nd}$ element (lets say ith element). Compare the picked element ($i^{th}$) with all the elements in left sub-array (i.e. with $i-1^{th}$ to $0^{th}$).
     If LHS sub-array element is greater than i element, then shift that element right by one index.
     Repeat for all LHS elements.
     Fill the empty cell with picked element.
 - **Time Complexity:** 
-    - Best Case: O(n); if array is as small as n=1 or array is already sorted
-    - Avg Case: Theta(n<sup>2</sup>))
-    - Worst Case: O(n<sup>2</sup>)
-- **Auxilary Space:** O(1)
+    - Best Case: $O(n)$; if array is as small as n=1 or array is already sorted
+    - Avg Case: $\Theta(n^2)$
+    - Worst Case: $O(n^2)$
+- **Auxilary Space:** $O(1)$
 
 ### 4. Merge Sort
 - Description:
@@ -283,31 +282,31 @@ Bottom - Up approach in a subproblem tree
 - Merge Function:
     1. Merges two sorted sub-arrays by using an extra space of O(n).
     2. Begin from 0th index of both sub-array (using pointers like i,j), do comparision in temporary (un-touched) array
-    3. Make changes in original array till both i & j reaches the end of the sub-array
+    3. Make changes in original array till both $i$ & $j$ reaches the end of the sub-array
 - Time Complexity: 
-    - Merge: O(n)
+    - Merge: $O(n)$
     - Merge Sort:
-        - Best Case: O(nlogn)
-        - Avg Case: O(nlogn)
-        - Worst Case: O(nlogn)
+        - Best Case: $O(nlogn)$
+        - Avg Case: $O(nlogn)$
+        - Worst Case: $O(nlogn)$
 - Auxiliary Space: 
-    - Merge: O(n)
-    - Merge Sort: O(n) + O(1)
+    - Merge: $O(n)$
+    - Merge Sort: $O(n) + O(1)$
 - Algorithmic Paradigm: Divide and Conquer
 - Implementations: Recursive only
 - Sorting In Place: Yes (No in a typical implementation)
 - Applications:
-    - Sorting linkedlist in O(nlogn)
-    - Inversion Count Problem (i.e. in an array Ei>Ej>Ek where `i<j<k`)
+    - Sorting linkedlist in $O(nlogn)$
+    - Inversion Count Problem (i.e. in an array $E_i>E_j>E_k$ where $i<j<k$) <!--just to fix syntax hl-->
     - In External Sorting
 
-### 5. Quick Sort Recursive(arr,left,right):
+### 5. Quick Sort Recursive(arr, left, right):
 - Description:
     1. Partition the array about a pivot: re-arrange smaller elements in LHS & greater elements in RHS of pivot
     2. Return partitioned index (i.e. index of pivot after re-arrangement)
     3. Re-call quicksort for sub-array smaller than pivot
     4. Re-call quicksort for sub-array greater than pivot
-- Partition Function(arr,left,right):
+- Partition Function(arr, left, right):
     - Desc:
         - Pick pivot is any preferable fashion:
             1. First element
@@ -318,27 +317,27 @@ Bottom - Up approach in a subproblem tree
         - Swap pivot element with element at that index 
         - return the pivot/partioning index
     - Returns: Partitioning Index (Re-calculated index of pivot)
-    - Time Complexity: O(n)
-    - Auxilary Space: O(1)
+    - Time Complexity: $O(n)$
+    - Auxilary Space: $O(1)$
 - Time Complexity:
-    1. Best Case: O(nlogn) (Occurs when pivot element is middle element value-wise)
-    2. Avg Case: O(nlogn) 
-    3. Worst Case: O(n2) (Occurs when pivot element is either smaller or larger element)
-- Auxilary Space: O(1)
+    1. Best Case: $O(nlogn)$ (Occurs when pivot element is middle element value-wise)
+    2. Avg Case: $O(nlogn)$ 
+    3. Worst Case: $O(n^2)$ (Occurs when pivot element is either smaller or larger element)
+- Auxilary Space: $O(1)$
 - Algorithm Paradigm: Divide and Conquer
 - Implementation: Recursive (Generally) and Iterative
-- In-Place: Yes (because auxilary space O(n))
+- In-Place: Yes (because auxilary space $O(n)$)
 - Recurrence Relation:
-    - Best Case: T(n) = O(n) + 2*T(n/2) == O(nlogn) 
-    - Avg Case: T(n) = O(n) + 2*T(n/2) == O(nlogn)
-    - Worst Case: T(n) =  O(n) + T(n-1) == O(n<sup>2</sup>) 
+    - Best Case: $T(n) = O(n) + 2*T(n/2) == O(nlogn)$
+    - Avg Case: $T(n) = O(n) + 2*T(n/2) == O(nlogn)$
+    - Worst Case: $T(n) =  O(n) + T(n-1) == O(n^2)$ 
 - Applications:
     1. In case of memory limitation this algo is used
 - Advantages: 
     1. One of the fastest algo for avg case
     2. Does not need additional memory, i.e. In-place processing/sorting
 - Disadvantages:
-    1. Worst case complexity O(n2)
+    1. Worst case complexity $O(n^2)$
     2. speed is not guaranteed
 
 ### 5.1 Quick Sort Iterative:
@@ -361,8 +360,8 @@ Bottom - Up approach in a subproblem tree
 - **Applications:**
     - Sort a nearly sorted (or K sorted) array
     - k largest(or smallest) elements in an array
-- **Time Complexity:** O(heapify) * O(n) = O(nlogn)
-- **Auxilary Space:** O(1)
+- **Time Complexity:** $O(heapify) * O(n) = O(nlogn)$
+- **Auxilary Space:** $O(1)$
 - **In-Place:** Yes
 - **Implementation:** Recursive (Heapify)
 - **Algorithm Paradigm:** Comparision Based
@@ -372,29 +371,29 @@ Bottom - Up approach in a subproblem tree
 
 ### 7. Bucket Sort
 - **Pre-requisites:** 
-    - Standard: A uniform distributed input array in a range of [0,1). CLRS. 
-    - Generalized: A uniform distributed input array in a range of non negative integers + floats. [0, k).
+    - Standard: A uniform distributed input array in a range of $[0,1)$. CLRS. 
+    - Generalized: A uniform distributed input array in a range of non negative integers + floats. $[0, k)$.
     - Efficient Hash Function (specially in case of "Generalized" implementation.
 - **Desc:**
     - Hashing:
         - hash_table_size or number of buckets:
             - = size of input array; Standard
-            - OR = int(sqrt(size)); Generalized
-        - hash_func() = (element/MAX)* (hash_table_size)
-    - Condition: if `i < k` then `hash(i) < hash(k)`
+            - OR = $int(sqrt(size))$; Generalized
+        - `hash_func() = (element/MAX)* (hash_table_size)`
+    - Condition: if $i < k$ then $hash(i) < hash(k)$ <!---->
     - Partion inp array on the basis of hash function, store then in right bucket/array
     - Sort each array using Insertionsort 
     - Merge all sorted arrays into one.
 - __Useful:__ When input is uniformly distributed over a positive range
 - __Advantage:__ 
-    - Sorting in O(n)
+    - Sorting in $O(n)$
 - __Applications:__
     - When input is uniformly distributed over a positive range
-- __Recurrence Equation:__ $\Theta(n) + n.O(2 - 1/n)$
+- __Recurrence Equation:__ $\Theta(n) + nO(2 - 1/n)$
 - __Time Complexity:__ 
     - Best: $\Omega(n)$
     - Avg: $\Theta(n)$
-    - Worst: $\Theta(n2)$; When all the elements fall under single bucket
+    - Worst: $\Theta(n^2)$; When all the elements fall under single bucket
 - __Auxilary Space:__  $O(bucket size) == O(n)$
 - __In-Place:__ No
 - __Implementation:__  Iterative
@@ -403,15 +402,15 @@ Bottom - Up approach in a subproblem tree
 - __Stable:__ Yes
 - __Note:__ If input is not uniformally distributed, but also bucketsort may still run in linear time. CLRS.
 - __Why Insertion sort is used here? How overall time complexity of bucketsort is still O(n) then?__
-    Following Standard way: As, input is uniformly distributed, On avg each bucket/array will have 1 elements (k/k=1), some may have zero and some may have multiple with same value. And as insertionsort's best case is O(n) (if array size is 1). Hence overall its O(n)
+    Following Standard way: As, input is uniformly distributed, On avg each bucket/array will have 1 elements $(k/k=1)$, some may have zero and some may have multiple with same value. And as insertionsort's best case is $O(n)$ (if array size is 1). Hence overall its $O(n)$
 
 ### 8. Counting Sort
 
 - __Pre-requisites (Standard):__
     1. Elements should be Non Negative Integers
-    2. Over a range of 0 to k where `k < size` of array to maintain O(n)
+    2. Over a range of 0 to k where `k < size` of array to maintain $O(n)$
 - __Desc:__
-    For each element X in the input array find the number of elements smaller than X.
+    For each element $X$ in the input array find the number of elements smaller than $X$.
 
 - Steps:
     1. Store counts of each element in a counting array
@@ -420,7 +419,7 @@ Bottom - Up approach in a subproblem tree
     4. Put the element in output array and decrement the count by 1
 - __Useful:__ same as pre-requisites
 - __Advantage:__
-    1. Sorting in O(n + k)
+    1. Sorting in $O(n + k)$
 - __Applications:__
     1. Same as pre-requisites
     2. As a subroutine in Radix Sort
@@ -441,10 +440,10 @@ Bottom - Up approach in a subproblem tree
 
 - __Pre-requisites (Standard):__
     - input array have non negative integers
-    - range should be 0 to n__c where c is some constant & numbers are represented in base n
+    - range should be $0$ to $n^c$ where $c$ is some constant & numbers are represented in base $n$
     - or each number takes only $log_2n$ bits
 - __Desc:__
-    - for 1 to d: where d is most significant digit position of MAX element in inp array
+    - for $1$ to $d$: where d is most significant digit position of MAX element in inp array
     - do counting sort on array (considering current digit of each iteration)
 - __Useful:__ same as prerequisites
 - __Advantage:__ Better worst case performance than bucket sort's Worst case
