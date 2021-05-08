@@ -199,8 +199,8 @@ Bottom - Up approach in a subproblem tree
     - Similar to linear search.
 - Recurrence Equation: 
     - Total number of comparision in worst case: $(n/m) + (m-1)$ i.e. (total number of jumps + linear search within one step)
-    - Best value of $m = \sqrt(n)$
-- Time Complexity: $O(\sqrt(n))$ i.e. between $O(linear)$ & $O(binary)$
+    - Best value of $m = \sqrt{n}$
+- Time Complexity: $O(\sqrt{n})$ i.e. between $O(linear)$ & $O(binary)$
 - Auxiliary Space : $O(1)$
 
 
