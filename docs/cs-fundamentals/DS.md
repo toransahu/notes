@@ -530,6 +530,10 @@ A graph whose vertices could be divided/partitioned into 2 sets. Such that verti
 ## Complete Graph
 A graph whose all the vertices are connected to each other. aka A graph whose all the edges are present.
 
+```
+|E| = |V|(|V|-1)/2
+```
+
 ## Sparse Graph
 A graph with relatively less edges.
 
