@@ -1,6 +1,116 @@
 [TOC]
 
+# Introduction
+
+## What is Algorithm?
+Step by step instructions to sove a problem.
+
+## Why Analysis of Algorithms?
+To determine efficient amongst multiple solution in terms of Time & Space consumed.
+
+## Goal of Analysis of Algorithms?
+To compare solutions/algorithms mainly in terms of _running time_, but also in other factors like _memory_, developers effort, readability, simplicity etc.
+
+## What is Running Time Analysis?
+Determining how processing time increases with the size of the input (or problem).
+
+## What is Running Time?
+_Execution time_ taken by a program in a particular machine? __NO__.
+
+This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.
+
+So, we express the Running Time as a mathematical function of the input size i.e. `f(n)`.
+
+## How to compare Algorithms?
+Using Running Time.
+
+## What is Rate of Growth?
+The rate at which the Running Time increases with the size of the input. aka. the rate at which the value of `f(n)` increases with the `n`.
+
+Say, `g(n)` such that `f(n) ∝ g(n)`.
+
+## Common used Rate of Growths
+
+`1 < log log n < sqrt(log n) < sqr(log n) < 2^log n < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^(2^n)`
+
+## Type of Analysis
+
+Types of analyzing an algorithm.
+
+### Worst Case
+This considers the size of input for which the algorithm may take longest time (or algorithm runs slowest).
+Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
+
+The asymptotic notation for the same is: `f(n) ~= O(g(n))`
+
+### Best Case
+This considers the size of input for which the algorithm may take lowest time (or algorithm runs fastest).
+Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
+
+The asymptotic notation for the same is: `f(n) ~= Ω(g(n))`
+
+### Average Case
+This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.
+
+The asymptotic notation for the same is: `f(n) ~= θ(g(n))`
+
+## What is Asymptotic Notation?
+Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.
+
+Lets understand this by taking an example of a function `f(n)` (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input (`n`).
+
+### Big-O `O` Notation
+This notation gives __smallest__ rate of growth `g(n)` which is __greater than or equal__ to the Running Time `f(n)` of the given algorithm/solution.
+
+i.e. there exists some positive constants n<sub>0</sub> & `c`:
+
+such that `0 =< f(n) =< cg(n)`;  where n `>=` n<sub>0</sub>
+
+This is also called __tight upper bound__ of the given function.
+
+`f(n) ~= O(g(n))`
+
+### Omega `Ω` Notation
+This notation gives __largest__ rate of growth `g(n)` which is __less than or equal__ to the Running Time `f(n)` of the given algorithm/solution.
+
+i.e. there exists some positive constants n<sub>0</sub> & `c`:
+
+such that `0 =< cg(n) =< f(n)`;  where n `>=` n<sub>0</sub>
+
+This is also called __tight lower bound__ of the given function.
+
+`f(n) ~= Ω(g(n))`
+
+### Theta `θ` Notation
+This notation defines a rate of growth `g(n)` such that it falls in between the tight lower & upper bound of the function.
+
+i.e. there exists some positive constants c1, c2, and n<sub>0</sub>:
+such that `0 =< c1g(n) =< f(n) c2g(n)`; where n `>=` n<sub>0</sub>
+
+This is also called asymptotic __tight bound__ of the given function.
+
+`f(n) ~= θ(g(n))`
+
+## What is Asymptotic-ness?
+For a given function `f(n)` if, another function `g(n)` tries to approximate `f(n)`; then `g(n)` is called _asymptotic curve_ for `f(n)`.
+
+## Recurrence Relation
+
+## Master Theorem
+
+If the recurrence relation is of the form:
+
+$T(n) = aT(n/b) + \theta(n^klog^pn)$
+
+
+
 # Dynamic Programing
+
+Dynamic programing is an approach to solve a problem which requires an optimal solutions amongst various other possible solutions.
+
+So, the goal is to get a global optimal solution.
+
+To do so, we analyze the problem and identify a repeated subtask (step) in that. Then we make decision at each step considering current problem and solution to previously solved sub problem to calculate optimal solution.
 
 ## Intro
 
@@ -422,7 +532,7 @@ TODO
 
 ### Implementation Using Stack (Iterative, Which is same as Recursive one)
 - Desc: TODO
-- Apprach: Iterative
+- Approach: Iterative
 - DS Used: Stack
 - Time Complexity:
     - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
@@ -477,7 +587,7 @@ TODO
 ### Implementation Using Queue (Iterative)
 
 - Desc: TODO
-- Apprach: Iterative
+- Approach: Iterative
 - DS Used: Queue
 - Time Complexity:
     - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
@@ -523,8 +633,9 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 ### Applications
 - To execute some inter-dependent tasks/jobs
     - Run pipeline of computing jobs
-    - To implement formulae in Speadsheet cells
+    - To implement/evaluate formulae in Speadsheet cells
 - To detect dead locks
+    - To check symbolic link loop (deadlock)
 
 ### Properties
 - A DAG may have one or more Topological Order
@@ -533,7 +644,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 
 ### Implementation Using Stack / DFS
 - Desc: TODO
-- Apprach: Iterative+Recursive
+- Approach: Iterative+Recursive
 - DS Used: Stack
 - Time Complexity:
     - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
@@ -548,9 +659,30 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 
 #### Pseudo Code
 
-#### Using Queue / In-degree
+1. start [perform a tweaked version of DFS of the graph]
+1. mark all the vertices unvisited
+1. create two stacks (backtrack-stack & topo-stack) to hold |V| number of vertices in each  
+   (one to help backtrack, another for topological order)
+1. arbitrarily choose a vertex as root to start DFS
+1. push that vertex into the backtrack-stack
+1. mark that vertex as visited
+1. find _one_ of the unvisited adjacent vertices
+1. put that unvisted adjacent vertex into the backtrack-stack
+1. mark that vertex as visited
+1. repeat [7-9] for the current vertex
+1. if there is no way further (i.e. no unvisited adjacent vertices); then pop the top element from the backtrack-stack
+1. push that popped vertex to the topo-stack
+1. go to that popped vertex
+1. while backtrack-stack is not empty; repeat [7-14]
+1. we may have some unvisited / disconncted graph (vertices) at this moment
+    1. so, iterate through all the unvisited vertices (if any)
+    1. repeat [4-15] for them
+1. while topo-stack is not empty; pop the top element from the stack and print them
+1. end
+
+### Implementation Using Queue / In-degree
 - Desc: TODO
-- Apprach: Iterative
+- Approach: Iterative
 - DS Used: Queue
 - Time Complexity:
     - Best: O(V + E) if used adjacency list; O(V x V) if used adjacency matrix
@@ -565,14 +697,280 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 
 #### Pseudo Code
 
-1. traverse the graph & calculate the in-degree of every vertices
-1. if there are vertices with in-degree zero then goto step [3]; else goto step []
-1. 
+1. start
+1. traverse the graph (adjacency matrix/list) & calculate the in-degree of every vertices
+    1. maintain an array to store in-degree of each vertices
+    1. traverse the adjacency matrix/list
+    1. increment the in-degree value corresponding to vertex if a new edge is known to incident on that
+1. if there are vertices with in-degree zero then goto step [4]; else goto step [10]
+1. create a queue & enqueue all those vertices with in-degree = 0
+1. dequeue an element from the queue
+1. print that vertex
+1. find all the adjacent vertices of that vertex and decrement their in-degree
+1. if the in-degree of any of those adjacent vertices becomes zero, enqueue them
+1. while the queue is not empty; repeat [5-8]
+1. end
 
-## Dijkstra's Algorithm for Shortest Paths
+## Shortest Path in Unweighted Graph
+
+Given a _unweighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
+
+### Idea
+
+If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges.
+
+Cycles may exist in the graph.
+
+As the graph is unweighted, we can consider the cost of a path between 2 adjacent vertices are either zero or equal (suppose 1) - apply the same for all the `V` in the `G`.
+
+Start traversing the graph starting from `S` in level-order (BFS fashion), meaning explore all the adjacent vertices of the given vertex, then explore the adjacent vertices of them - while doing so, increment the distance of the adjacent vertices (from its parents) by 1.
+
+Interestingly -  we'll be calculating the distance of each vertices only once (keep track of visited vertices), thus we'll not encounter such condition where we'll be updating/overwriting the existing distance, and we also don't need to bother about checking if the newly calculated distance is lesser than the existing one.
+
+Why so? Why the calculated distance/path will be the shortest?
+Think we started traversing from `S` parallely (round-robin?) . And a Queue & BFS helped us to achieve so.
+This is possible because of the fact that - the distance got calculated by traversing a path - which was shortest among others (think level order traversing) thats why _this_ path brought us to that vertext first (among others) and we calculated the distance. There could be multiple shortest path as well.
+
+At the end, all the vertices will have shortest distance calculated from the vertex `S`.
+
+### Applications
+- finding _fastest_ way to go from one place to another
+
+### Properties
+
+### Implementation Using Queue / BFS
+- Desc:
+- Approach: Iterative / Recursive
+- DS Used: 1 Queue, 2 Arrays
+- Time Complexity: O(V+E) if adjacency list is used; O(VxV) if adjacency matrix is used
+    - Best: --
+    - Avg: --
+    - Worst: --
+- Auxilary Space: O(V)
+    - Best: --
+    - Avg: --
+    - Worst: --
+- Disadvantage:
+    - can't be applied on a weighted graph
+
+#### Pseudo Code
+
+1. start
+1. create a queue
+1. create an array to store distances of the vertices from source `S` vertex
+1. initialize the distance array `d` with `-1` (or `INF` infinite)
+1. mark all the vertices unvisited
+1. set the distance from `S` to `S` zero
+1. enqueue the source vertex `S`
+1. mark that vertex as visited
+1. dequeue an element
+1. explore the adjacent vertices of that vertex (`u` - dequeued vertex)
+1. set the distance of the adjacent vertices to: d(`u`) + 1
+1. enqueue them
+1. mark them as visited
+1. while queue is not empty; repeat [9-13]
+1. end
+
+## Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]
+
+Given a _weighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
+
+### Idea
+
+If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.
+
+Cycles may exist in the graph.
+
+As the given graph is _weighted_ in nature, simply following BFS and incrementing the distance (or just keep adding the prev. distance + weight) of a vertex may NOT lead us to find an optimal solution.
+
+Why so? Why wouldn't the same method help us here, as it did in the case of unweighted graph?
+As we'll start traversing the paths _parallely_, the  calculated  distance (prev. distance + weight) would become the factor of comparision among candidate paths (to the same vertex from `S`). And blindly following a single/first/nearest (just based on number of edges inbetween) path may lead to an incorrect answer.
+
+This has become an minimization/optimization problem. Greedy approach might have solution for that.
+
+So, this time need to explore all the paths from `S-->v`, visit the same vertex `v` multiple times using all the possible paths to that vertex from `S`. And update/overwrite the existing distance of the vertex `v` from `S` when the newly calculated distance is lesser.
+
+Again, doing this would definitely 
+
+Dijkstra says:
+
+Do this initial exercise:
+
+1. Calculate the distance of the immediate reachable (adjacent) vertices first, and set the distance of other vertices as `INF` (infinite)
+2. Mark all the vertices as `not done`
+
+Then perform this sub task:
+
+1. Now pick the one (say `u`) from __all__ vertices whose distance is minimal & is `not done`
+2. Find its adjacent vertices (say `v`) and __Relax__ (recalculate the distance & update) them. No need to Relax the `done` marked adjacent vertices (not fruitful).
+
+    Relaxation:
+    
+    ```
+    if d[u] + w(u, v) < d[v]; then
+        d[v] = d[u] + w(u, v)
+    ```
+
+3. Now, mark that vertex `u` as `done`. 
+
+Then repeat the sub task until all the vertices are marked `done`.
+
+### Properties
+- A minimization problem --> an optimization problem --> Greedy method
+- May work for negative weights, may not
+
+### Applications
+- finding _cheapest_ way to go from one place to another
+
+### Implementation Using Priority Queue + BFS
+- Desc:
+- Approach: Greedy + BFS
+- DS Used: 1 Priority Queue, 1 Array
+- Time Complexity:
+    - Best: O(V) if no edges between the vertices
+    - Avg: 
+        - O((V + E) x logV) [# of updates `X` time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used
+        - O((V x V) + (E x logV)) [to traverse all the edges (and weigths) `+` # of updates `X` time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used
+    - Worst: O(E x logV) if the graph is a complete graph, where |E| ~ |V| x |V|
+- Auxilary Space: O(V)
+    - Best: --
+    - Avg: --
+    - Worst: --
+- Disadvantage:
+    - does a blind search and wastes resources
+    - can't guarantee a solution for a negative weighted graph
+
+#### Pseudo Code
+
+1. start
+1. create a priority queue
+1. create an array to mark vertices as `done`
+1. create an array to keep track of the distance (d[v]: S-->v)
+1. initialize the distance array to `INF`, but set the distance of source vertex to zero
+1. create an array to keep track of the path (u-->v)
+1. explore [BFS] the adjacent vertices of the source vertext `S`
+1. calculate the distance to those immediate adjacent vertices from `S`
+1. update the distance array for those adjacent vertices
+1. enqueue them into the priority queue
+1. dequeue a vertex from the priority queue (the one with minimum distance from the source vertex)
+1. explore [BFS] the adjacent vertices of the current vertex which are `not done`
+1. __relax__ (calculate & update) the distance to those adjacent vertices from `S` 
+1. if the distances got relaxed due to `current vertex` then:
+    1. update the distance array for those adjacent vertices
+    1. store the current vertex against these vertices in the path-array  
+    (this will help track the shortest path)
+1. enqueue them into the priority queue
+1. mark the current vertex as `done`
+1. while priority queue is not empty; repeat [11-16]
+1. end
+
 ## Bellman-Ford Algorithm
+
+Given a _weighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
+
+This algorithm can handle the negative weights in the graph which overcomes the drawbacks of Dijkstra's algorithm.
+
+### Idea
+
+If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.
+
+Cycles may exist in the graph. (But not negative weight cycles)
+
+As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex `v` from source `S`. And pick the shortest path (minimum distance) amongst them.
+
+This is again the same minimization/optimization problem, but approach would be Dynamic Programing - where the target would be to optimize the global solution rather just focusing on the local optimal solution.
+
+Bellman-Ford says:
+
+1. List down all the edges
+2. And start relaxing a vertex `v` in an edge `u -> v` for all the edges
+3. Perform the relaxation of the vertex `v` for `|V| - 1` times (because it might be connected to all the rest of the vertices) - i.e. repeat step 2 `|V| - 1` times
+4. If no more relaxation happens/is possible in step 3; then stop
+
+Relaxation:
+
+```
+if d[u] + w(u, v) < d[v]; then
+    d[v] = d[u] + w(u, v)
+```
+
+### Applications
+- Negative weights are found in various applications of graphs. For example, instead of paying cost for a path, we may get some advantage if we follow the path.
+- in networks, in routing information protocol (RIP)
+- finding _cheapest_ way to go (or send something) from one place to another
+
+### Properties
+- A minimization problem --> an optimization problem --> Dynamic Programing
+    - works in bottom-up manner
+- Negative Weight Cycle
+- Does not work if there is a negative weight cycle
+
+### Implementation Using Dynamic Programing
+- Desc:
+- Approach: Dynamic Programing, Recursive
+- DS Used:
+- Time Complexity:
+    - Best:
+    - Avg: O(V x E) (# of vertices to be relaxed `x` # of paths/adjacents to be considered while relaxing each vertex)
+    - Worst: O(V x V x V) if the graph is a complete graph
+- Auxilary Space:
+    - Best:
+    - Avg:
+    - Worst:
+- Disadvantage:
+    - Does not work if there is a negative weight cycle
+    - does not scale well
+
+#### Pseudo Code
+
 ## Floyd-Warshall Algorithm for Shortest Paths
+
+### Idea
+
+### Applications
+
+### Properties
+
+### Implementation Using Stack / DFS
+- Desc:
+- Approach:
+- DS Used:
+- Time Complexity:
+    - Best:
+    - Avg:
+    - Worst:
+- Auxilary Space:
+    - Best:
+    - Avg:
+    - Worst:
+- Disadvantage:
+
+#### Pseudo Code
+
 ## Kruskal Minimum Cost Spanning Tree Algorithm
+
+### Idea
+
+### Applications
+
+### Properties
+
+### Implementation Using Stack / DFS
+- Desc:
+- Approach:
+- DS Used:
+- Time Complexity:
+    - Best:
+    - Avg:
+    - Worst:
+- Auxilary Space:
+    - Best:
+    - Avg:
+    - Worst:
+- Disadvantage:
+
+#### Pseudo Code
+
 ## Prim's Minumum Cost Spanning Tree
 ## Knuth-Morris-Pratt Algorithm
 ## Bipartite Matching
@@ -614,6 +1012,13 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 ---
 
 # Greedy Algorithms
+
+The problem should be solved in stages, by consider one step a time and one input at a time.
+The each step should find a local optimal solution, and those local optimal should lead to global optimal solution.
+
+These algorithms provides a predefined procedure to be followed in each step.
+
+An optimization problem _can_ be solved using greedy approach.
 
 ## Elementary cases : Fractional Knapsack Problem, Task Scheduling
 ## Data Compression using Huffman Trees
