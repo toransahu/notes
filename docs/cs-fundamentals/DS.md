@@ -176,12 +176,19 @@ FIFO
 
 ## Simple Queue
 
-## Priority Queue
+## Max-Priority Queue
 ### Desc
+### Application
+- job scheduling
+- event-driven simulation
 ### Properties
 ### Operations
+- INSERT
+- MAXIMUM
+- EXTRACT-MAX
+- INCREASE-KEY
 ### Implementation
-- Array
+- Array/Set/List(LinkedList)
 - Binary Heap
 - Fibbonacci Heap
 
