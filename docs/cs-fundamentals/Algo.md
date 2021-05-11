@@ -29,9 +29,54 @@ The rate at which the Running Time increases with the size of the input. aka. th
 
 Say, $g(n)$ such that $f(n) \propto g(n)$.
 
+Such, $g(n)$ are known as __asymptotic__ in nature to $f(n)$.
+
 ## Commonly used Rate of Growths
 $1 < log{log n} < \sqrt{log n} < log^2n < 2^{log n} < n < log(n!) < n log n < n^2 < 2^n < 4^n < n! < 2^{2^n}$
 <!-- > just to fix the syntax highlighting :P-->
+
+## What is Asymptotic-ness?
+For a given function $f(n)$ if, another function $g(n)$ tries to approximate $f(n)$; then $g(n)$ is called _asymptotic curve_ for $f(n)$.
+
+## What is Asymptotic Notation?
+Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.
+
+Lets understand this by taking an example of a function $f(n)$ (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input ($n$).
+
+### Big-O 'O' Notation
+This notation gives __smallest__ rate of growth $g(n)$ which is __greater than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
+
+i.e. there exists some positive constants $n_0$ & $c$:
+
+such that $0 \le f(n) \le cg(n)$;  where $n \ge n_0$
+
+This is also called __asymptotically tight upper bound__ of the given function.
+
+$f(n) = O(g(n))$
+
+In this representation/expression $f(n)$ or $O(g(n))$ represents Running Time of an algorithm, $n$ represents the size of the input, $g(n)$ represents the Rate of Growth of the Running Time of the algorithm, and $O$ represents the nature of the asymptoticness of curve $g(n)$ with curve $f(n)$.
+
+### Omega 'Ω' Notation
+This notation gives __largest__ rate of growth $g(n)$ which is __less than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
+
+i.e. there exists some positive constants $n_0$ & $c$:
+
+such that $0 \le cg(n) \le f(n)$;  where $n \ge n_0$
+
+This is also called __asymptotically tight lower bound__ of the given function.
+
+$f(n) = \Omega(g(n))$
+
+### Theta 'Θ' Notation
+This notation gives a rate of growth $g(n)$ such that it falls in between the tight lower & upper bound of theRunning Time of the given algorithm.
+
+i.e. there exists some positive constants $c_1$, $c_2$, and $n_0$:
+
+such that $0 \le c_1g(n) \le f(n) \le c_2g(n)$; where $n \ge n_0$
+
+This is also called __asymptotically tight bound__ of the given function.
+
+$f(n) = \Theta(g(n))$
 
 ## Type of Analysis
 
@@ -41,59 +86,46 @@ Types of analyzing an algorithm.
 This considers the size of input for which the algorithm may take longest time (or algorithm runs slowest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: $f(n) ~= O(g(n))$
+We can use any of the asymptotic notation to represent the worst-case Rate of Growth i.e. either $O$ or $\Theta$ or $\Omega$. There is no hard rule to use $O$ to represent the worst-case. Asymptotic notations just tells about the asymptotic nature of the function/curve. It has nothing in specific with the worst/avg/best case analysis.
+
+However, there could be a suitable notation of choice for a type of analysis.
+Let's take an example of an algorithm whose Running Time seems to be $f(n) = n^2 + 2n + 1$. 
+We can represent the worst-case running time by $\Theta(n^2)$ as for some positive constant $c_1, c_2, n_0$, where $n \ge n_0$ for which the following holds true:
+
+$0 \le c_1g(n) \le f(n) \le c_2g(n)$ i.e. $0 \le c_1*n^2 \le n^2 + 2n + 1 \le c_2*n^2$
+
+Suppose, $n = 1$ & $c_1=4$, $c_2=4$; then $0 \le 4 \le 4 \le 4$. 
+
+Suppose, $n = 1$ & $c_1=3$, $c_2=5$; then $0 \le 3 \le 4 \le 5$.
+
+Also, to be on a safer side we can use $O(n)$ to express worst-case running time, like:
+
+For some positive constant $c, n_0$, where $n \ge n_0$ for which the following holds true:
+
+$0 \le f(n) \le cg(n)$ i.e. $0 \le n^2 + 2n + 1 \le c*n^2$
+
+Suppose, $n = 1$ & $c=4$; then $0 \le 4 \le 4$. 
+Suppose, $n = 1$ & $c=5$; then $0 \le 4 \le 5$. 
+
+So, we can say $\Theta$ is a __strong__ notion than $O$. And also can say:
+
+1. if $f(n) = \Theta(g(n))$, then $f(n) = O(g(n))$
+2. $\Theta(g(n)) \subseteq O(g(n))$
+
+However, using $\Omega$ to denote the worst-case is acceptable but doesn't makes sense. We can say something like: the longest time this algorithm can take will always be more than or equal to 5 minutes. Non sense. Not much of use.
+
+So, the suitable asymptotic notations for this case could be $O$ & $\Theta$.
 
 ### Best Case
 This considers the size of input for which the algorithm may take lowest time (or algorithm runs fastest).
 Thus it defines the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: $f(n) ~= \Omega(g(n))$
+Suitable asymptotic notations for this case could be $\Omega$ & $\Theta$.
 
 ### Average Case
 This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.
 
-The asymptotic notation for the same is: $f(n) ~= \Theta(g(n))$
-
-## What is Asymptotic Notation?
-Syntax/Symbol/Expression to represent the different Asymptotic nature of a function.
-
-Lets understand this by taking an example of a function $f(n)$ (which may represent Running Time of an algorithm/solution to a problem) in terms of size of input ($n$).
-
-### Big-O $O$ Notation
-This notation gives __smallest__ rate of growth $g(n)$ which is __greater than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
-
-i.e. there exists some positive constants $n_0$ & $c$:
-
-such that $0 \le f(n) \le cg(n)$;  where $n \ge n_0$
-
-This is also called __tight upper bound__ of the given function.
-
-$f(n) = O(g(n))$
-
-### Omega $\Omega$ Notation
-This notation gives __largest__ rate of growth $g(n)$ which is __less than or equal__ to the Running Time $f(n)$ of the given algorithm/solution.
-
-i.e. there exists some positive constants $n_0$ & $c$:
-
-such that $0 \le cg(n) \le f(n)$;  where $n \ge n_0$
-
-This is also called __tight lower bound__ of the given function.
-
-$f(n) = \Omega(g(n))$
-
-### Theta $\Theta$ Notation
-This notation defines a rate of growth $g(n)$ such that it falls in between the tight lower & upper bound of the function.
-
-i.e. there exists some positive constants $c_1$, $c_2$, and $n_0$:
-
-such that $0 \le c_1g(n) \le f(n) \le c_2g(n)$; where $n \ge n_0$
-
-This is also called asymptotic __tight bound__ of the given function.
-
-$f(n) = \Theta(g(n))$
-
-## What is Asymptotic-ness?
-For a given function $f(n)$ if, another function $g(n)$ tries to approximate $f(n)$; then $g(n)$ is called _asymptotic curve_ for $f(n)$.
+Suitable asymptotic notations for this case could be $\Theta$ & $O$.
 
 ## Recurrence Relation
 
@@ -644,7 +676,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 1. while the queue is not empty; repeat [5-8]
 1. end
 
-## Shortest Path in Unweighted Graph
+## Single-Source Shortest Path in Unweighted Graph
 
 Given a _unweighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
 
@@ -704,68 +736,133 @@ At the end, all the vertices will have shortest distance calculated from the ver
 1. while queue is not empty; repeat [9-13]
 1. end
 
-## Dijkstra's Algorithm [Shortest Path, Single Source, Weighted Graph]
-
-Given a _weighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
+## Single-Source Shortest Path in Weighted Directed Acyclic Graph (DAG)
 
 ### Idea
 
-If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.
+### Applications
+
+### Properties
+
+### Implementation Using Stack / DFS (Topological Sort)
+- Desc:
+- Approach: Topological Sort
+- DS Used:
+- Time Complexity:
+    - Best:
+    - Avg: $\Theta(V + E)$
+    - Worst:
+- Auxilary Space:
+    - Best:
+    - Avg:
+    - Worst:
+- Disadvantage:
+
+#### Pseudo Code
+
+### Optimization
+
+## Dijkstra's Algorithm [Single-Source Shortest Path in Weighted (non-negative) Graph]
+
+Given a _weighted_ graph (directed/undirected) $G = (V, E)$, and a source/distinguished vertex $s$ find the shortest path from $s$ to every other vertices in $G$.
+
+### Idea
+
+If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.
 
 Cycles may exist in the graph.
 
 As the given graph is _weighted_ in nature, simply following BFS and incrementing the distance (or just keep adding the prev. distance + weight) of a vertex may NOT lead us to find an optimal solution.
 
 Why so? Why wouldn't the same method help us here, as it did in the case of unweighted graph?
-As we'll start traversing the paths _parallely_, the  calculated  distance (prev. distance + weight) would become the factor of comparision among candidate paths (to the same vertex from `S`). And blindly following a single/first/nearest (just based on number of edges inbetween) path may lead to an incorrect answer.
+As we'll start traversing the paths _parallely_ (round-robin), the  calculated  distance (prev. distance + weight) would become the factor of comparision among candidate paths (to the same vertex from $s$). So we cannot rely on the closest/nearest (just based on number of edges inbetween) path because this may lead to an incorrect answer. The path with more edges could be the cheapest/shortest path.
 
-This has become an minimization/optimization problem. Greedy approach might have solution for that.
+This has become an minimization/optimization problem. 
+Which could either be solved by Greedy or Dynamic Programing approach.
+Dijkstra chose the Greedy one.
 
-So, this time need to explore all the paths from `S-->v`, visit the same vertex `v` multiple times using all the possible paths to that vertex from `S`. And update/overwrite the existing distance of the vertex `v` from `S` when the newly calculated distance is lesser.
+So, this time need to explore all the paths from $s$->$v$, visit the same vertex $v$ multiple times using all the possible (via adjacent vertices, say $u$) paths to that vertex from $s$. And relax(update/overwrite) the existing distance of the vertex $v$ from $s$ when the newly calculated distance is lesser.
 
-Again, doing this would definitely 
 
 Dijkstra says:
 
 Do this initial exercise:
 
-1. Calculate the distance of the immediate reachable (adjacent) vertices first, and set the distance of other vertices as `INF` (infinite)
+1. Calculate the distance of the immediate reachable (adjacent) vertices first, and set the distance of other vertices as $\infty$
 2. Mark all the vertices as `not done`
 
 Then perform this sub task:
 
-1. Now pick the one (say `u`) from __all__ vertices whose distance is minimal & is `not done`
-2. Find its adjacent vertices (say `v`) and __Relax__ (recalculate the distance & update) them. No need to Relax the `done` marked adjacent vertices (not fruitful).
+1. Now pick the one (say $u$) from __all__ vertices whose distance is minimal & is `not done`
+2. Find its adjacent vertices (say $v$) and __Relax__ (recalculate the distance & update) them. __No need to Relax the `done` marked adjacent vertices (not fruitful as per Dijkstra)__.
 
     Relaxation:
-    
+ 
     ```
     if d[u] + w(u, v) < d[v]; then
         d[v] = d[u] + w(u, v)
     ```
 
-3. Now, mark that vertex `u` as `done`. 
+3. Now, mark that vertex $u$ as `done`. 
 
 Then repeat the sub task until all the vertices are marked `done`.
-
-### Properties
-- A minimization problem --> an optimization problem --> Greedy method
-- May work for negative weights, may not
 
 ### Applications
 - finding _cheapest_ way to go from one place to another
 
-### Implementation Using Priority Queue + BFS
-- Desc:
+### Properties
+- approach is Greedy in nature
+    - why/how?
+        - it's iteratively makes one greedy choice after another
+            - mark the distances of nearest vertices first
+            - choose the vertex with minimum distance
+    - the approach is also dynamic in nature because distances are updated using previously calculated values
+- does not relax the edge going (incidenting) to already selected vertex
+    - thats why it may give in the cases of a graph with negative edges
+
+### Pseudo Code
+
+1. start
+1. create a set/array $S$ to maintain the vertices whose shortest-path has been finalized/determined
+1. create a min-priority queue $Q$ (i.e. keyed by distance $u.d$ of the vertex $u$)
+1. initialize the distances $u.d$ of all the vertices $u \in G.V$ with $\infty$, but set the distance of source vertex to zero i.e. $s.d = 0$
+1. __insert__ (enqueue) all the vertices $u \in G.V$ into the priority queue $Q$
+1. create an array $P$ to keep track of the path ($u$-->$v$)
+1. __while__ $Q \ne \emptyset$ (min-priority queue is not empty)
+    1. $u =$ __extract-min__ (dequeue a vertex $u$) from the priority queue (the one with minimum distance from the source vertex)  
+    1. $S = S \cup \{u\}$ (add the current vertex $u$ into the determined set $S$)  
+    (as $u$ has already gone through the relaxation & has the minimum distance amongst others)  
+    (think about $s$ during the inital step, $s.d == 0$)
+    1. explore [BFS] those adjacent vertices $G.adj[u] - S$ (of the current vertex $u$) whose shortest-path are not yet determined
+    1. __for__ all adjacent vertices $v \in G.adj[u] - S$
+        1. __relax__ (calculate, compare, & __decrease-key__ the distance) $d.v$ for the vertex $v$; where
+            1. calculate: the new distance $\delta(s, u) + w(u, v)$
+            1. compare: the old distance $\delta(s, u) + w(u, v) < d.v$ <!---->
+            1. decrease-key: $v.d = \delta(s, u) + w(u, v)$
+        1. if the distance $v.d$ got relaxed due to _current vertex_ $u$; then
+            1. store the current vertex $u$ against this vertex $v$ in the path-array $P$  
+            (this will help track the shortest path)
+1. end
+
+### Implementation Using Adjacency List, Priority Queue, BFS
 - Approach: Greedy + BFS
 - DS Used: 1 Priority Queue, 1 Array
 - Time Complexity:
-    - Best: O(V) if no edges between the vertices
+    - Best: $O(V)$
+        - if no edges between the vertices (step-7 will run |V| times)
     - Avg: 
-        - O((V + E) x logV) [# of updates `X` time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used
-        - O((V x V) + (E x logV)) [to traverse all the edges (and weigths) `+` # of updates `X` time complexity of insert/enqueue to a priority queue (for V items)] - if adjacency list is used
-    - Worst: O(E x logV) if the graph is a complete graph, where |E| ~ |V| x |V|
-- Auxilary Space: O(V)
+        - $O((V + E) * logV)$
+            - if min-heap based priority queue is used
+                - DECREASE-KEY: $O(log n)$
+                - EXTRACT-MIN: $O(1)$
+                - INSERT: $O(log n)$
+            - step 5 = insert/enqueue $|V|$ vertices to a priority queue = $O(V * log n)$
+            - step 7 * 7.d = loop over $|E|$ times (traverse through each edge exactly once) = $O(E)$
+            - step 7.d.i.iii = $O(log n)$
+            - step 7 * 7.d * 7.d.i.iii = $O(E * log n)$
+            - DOUBT: why the constraint "If the graph is sufficiently sparse — in  particular, $E = O(V^2/log V)$ — we can improve the algorithm by implementing the min-priority queue with a binary min-heap" in CLRS? Why not always use min-heap based PQ?
+    - Worst: $O(V + V^2)* logV)$ == $O(E * logV)$ if the graph is a complete graph, where $|E| = |V|*(|V|-1)/2$
+- Auxilary Space: $O(V)$
     - Best: --
     - Avg: --
     - Worst: --
@@ -773,52 +870,42 @@ Then repeat the sub task until all the vertices are marked `done`.
     - does a blind search and wastes resources
     - can't guarantee a solution for a negative weighted graph
 
-#### Pseudo Code
+### Optimization
 
-1. start
-1. create a priority queue
-1. create an array to mark vertices as `done`
-1. create an array to keep track of the distance (d[v]: S-->v)
-1. initialize the distance array to `INF`, but set the distance of source vertex to zero
-1. create an array to keep track of the path (u-->v)
-1. explore [BFS] the adjacent vertices of the source vertext `S`
-1. calculate the distance to those immediate adjacent vertices from `S`
-1. update the distance array for those adjacent vertices
-1. enqueue them into the priority queue
-1. dequeue a vertex from the priority queue (the one with minimum distance from the source vertex)
-1. explore [BFS] the adjacent vertices of the current vertex which are `not done`
-1. __relax__ (calculate & update) the distance to those adjacent vertices from `S` 
-1. if the distances got relaxed due to `current vertex` then:
-    1. update the distance array for those adjacent vertices
-    1. store the current vertex against these vertices in the path-array  
-    (this will help track the shortest path)
-1. enqueue them into the priority queue
-1. mark the current vertex as `done`
-1. while priority queue is not empty; repeat [11-16]
-1. end
+### Extra
+- I personally don't like the way CLRS has mentioned the time complexity $O(V^2 + E)$ = $O(V^2)$ when array/list based priority queue is used. It says `EXTRACT-MIN` would have time complexity $O(n)$, which is a bad implementation IMO. Rather, I'd implement `EXTRACT-MIN` in $O(1)$ & `INSERT` in $O(n)$.
+- Why the algorithm may give incorrect answer in the case of a graph with negative edges?
+    - because the algorithm does not relax edge pointing (going/incidenting) to the already selected vertex
+- Why/how the algorithm is greedy?
+    - [see properties section]
+- Can Dijkstra's algorithm handle negative edge & result correct answer if we add a positive constant to all the edges?
 
-## Bellman-Ford Algorithm
+## Bellman-Ford Algorithm [Single-Source Shortest Path in Weighted (negative) Graph]
 
-Given a _weighted_ graph (directed/undirected) `G = (V, E)`, and a source/distinguished vertex `S` find the shortest path from `S` to every other vertices in `G`.
+Given a _weighted_ graph (directed/undirected) $G = (V, E)$, and a source/distinguished vertex $s$ find the shortest path from $s$ to every other vertices in $G$.
 
-This algorithm can handle the negative weights in the graph which overcomes the drawbacks of Dijkstra's algorithm.
+This algorithm can __handle the negative weights__ in the graph which overcomes the drawbacks of Dijkstra's algorithm.
 
 ### Idea
 
 If the given graph is undirected, treat is as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges.
 
-Cycles may exist in the graph. (But not negative weight cycles)
+Cycles may exist in the graph. (__But not negative weight cycles__)
 
-As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex `v` from source `S`. And pick the shortest path (minimum distance) amongst them.
+As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex $v$ from source $s$. And pick the shortest path (minimum distance) amongst them.
 
-This is again the same minimization/optimization problem, but approach would be Dynamic Programing - where the target would be to optimize the global solution rather just focusing on the local optimal solution.
+This is again the same minimization/optimization problem, but approach is not Greedy this time.
+Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the local optimal solution.
 
 Bellman-Ford says:
 
 1. List down all the edges
-2. And start relaxing a vertex `v` in an edge `u -> v` for all the edges
-3. Perform the relaxation of the vertex `v` for `|V| - 1` times (because it might be connected to all the rest of the vertices) - i.e. repeat step 2 `|V| - 1` times
-4. If no more relaxation happens/is possible in step 3; then stop
+1. And start relaxing an edge $u$ -> $v$ for each edge pairs $(u, v)$ in $G.E$
+1. Repeat the step-2 $|V| - 1$ times, thus it will perform the relaxation of the each edge $(u, v)$ for $|V| - 1$ times - because the vertex $v$ might be reachable from all the rest of the vertices at max
+    1. Why such idea? Because in a worst-case, a simple shortest path from $s$ to $v$ might have maximum $|V|-1$ edges to pass by. Thus, to get a final correct/relaxed distance/answer, all the intermediate edges have to be relaxed as well. Thing to observe in step-2-3 is, each iteration guarantees relaxation/correctness of atleast one edge. (So, in first iteration it calculates the shortest path with atmost one edge in the path, in second iteration it calculates the shortest path with atmost two edges in the path, thus in $i^{th}$ iteration it calculates the shortest path with atmost $i$ edges in the path. So, in each of these repetitions, the number of vertices with correctly calculated distances grows, from which it follows that eventually all vertices will have their correct distances). So, a graph without cycle (assume) expects $|V|-1$ relaxation.
+    1. Also, this idea has nothing to do with negative weights (till $|V|-1$ iterations)
+    1. [Illustration](https://riptutorial.com/algorithm/example/24029/why-do-we-need-to-relax-all-the-edges-at-most--v-1--times)
+1. Repeat the step-2 one more time, and check if further relaxation is possible in $|V|$^{th}$ round; if so, then there exists a Negative Weight Cycle
 
 Relaxation:
 
@@ -835,28 +922,56 @@ if d[u] + w(u, v) < d[v]; then
 ### Properties
 - A minimization problem --> an optimization problem --> Dynamic Programing
     - works in bottom-up manner
-- Negative Weight Cycle
-- Does not work if there is a negative weight cycle
+- Does not work if there is a Negative Weight Cycle
+
+### Pseudo Code
+
+__input__: graph $G(V, E)$, weight function $w$, and source $s$
+
+__output__: a) True, b) distance of all the $v \in V$, c) the shortest path; iff there in no negative weight cycle reachable from source $s$; else a) False
+
+1. __start__
+1. create a distance array $d$ & initialize $d[u] \forall u \in V$ with $\infty$
+1. create an array $P$ to keep track of the path ($u$-->$v$)
+1. set $d[s] = 0$
+1. __for__ $|V| -1$ times:
+    1. __for__ each edge $(u, v) \in E$:
+        1.  __relax__$(u, v, w)$ i.e.
+            1. if $d[v] \gt d[u] + w(u, v)$:
+                1. $d[v] = d[u] + w(u, v)$
+                1. $P[v] = u$
+1. __for__ each edge $(u, v) \in E$:
+    1. if $d[v] \gt d[u] + w(u, v)$:
+        1. return False
+1. return True
+1. __end__
 
 ### Implementation Using Dynamic Programing
 - Desc:
-- Approach: Dynamic Programing, Recursive
+- Approach: Dynamic Programing
 - DS Used:
 - Time Complexity:
     - Best:
-    - Avg: O(V x E) (# of vertices to be relaxed `x` # of paths/adjacents to be considered while relaxing each vertex)
-    - Worst: O(V x V x V) if the graph is a complete graph
-- Auxilary Space:
+    - Avg: $O(V * E)$ (at most $|V|-1$ number of edges might be between vertex $s$ & $v$ `x` # of edges to be relaxed)
+    - Worst: $O(V^3)$ if the graph is a complete graph
+- Auxilary Space: $O(V)$
     - Best:
     - Avg:
     - Worst:
 - Disadvantage:
-    - Does not work if there is a negative weight cycle
+    - does not work if there is a negative weight cycle
     - does not scale well
 
-#### Pseudo Code
+### Optimization
+- If no more relaxation happens in the Graph; then immediately stop/return.
+    - just maintain a flag & check the flag of the
 
-## Floyd-Warshall Algorithm for Shortest Paths
+### Extra
+- Can Bellman-Ford's algorithm handle negative edge cycle & result correct answer if we add a positive constant to all the edges?
+- How negative weight cycle check works?
+    - A final scan of all the edges is performed and if any distance is updated, then a path of length $|V|$ edges has been found which can only occur if at least one negative cycle exists in the graph. 
+
+## Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]
 
 ### Idea
 
@@ -864,7 +979,7 @@ if d[u] + w(u, v) < d[v]; then
 
 ### Properties
 
-### Implementation Using Stack / DFS
+### Implementation Using
 - Desc:
 - Approach:
 - DS Used:
@@ -879,6 +994,8 @@ if d[u] + w(u, v) < d[v]; then
 - Disadvantage:
 
 #### Pseudo Code
+
+### Optimization
 
 ## Kruskal Minimum Cost Spanning Tree Algorithm
 
@@ -1051,4 +1168,7 @@ Bottom - Up approach in a subproblem tree
 ---
 
 # References
+- [CLRS 3rd Edition](https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf)
+- [Algorithms Unlocked - 2013, by Dr. Thomas Cormen](http://dahlan.unimal.ac.id/files/ebooks/2013%20Algorithms_Unlocked.pdf)
 - https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a
+- https://www.freetechbooks.com/algorithms-and-data-structures-f11.html
