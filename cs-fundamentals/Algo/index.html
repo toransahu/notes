@@ -1275,11 +1275,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#floyd-warshall-algorithm-shortest-path-all-pairs-weighted-graph" class="md-nav__link">
-    Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]
+  <a href="#floyd-warshall-algorithm-all-pair-shortest-path-in-weighted-negative-graph" class="md-nav__link">
+    Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]
   </a>
   
-    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]">
+    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1304,28 +1304,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#implementation-using" class="md-nav__link">
-    Implementation Using
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Using">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#pseudo-code_9" class="md-nav__link">
     Pseudo Code
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#pseudo-code-detect-negative-weight-cycle" class="md-nav__link">
+    Pseudo Code - detect negative weight cycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-reconstruct-shortest-path" class="md-nav__link">
+    Pseudo Code - reconstruct shortest-path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-adjacency-matrix" class="md-nav__link">
+    Implementation using Adjacency Matrix
+  </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#optimization_3" class="md-nav__link">
     Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_2" class="md-nav__link">
+    Extra
   </a>
   
 </li>
@@ -1908,6 +1923,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nomenclature" class="md-nav__link">
+    Nomenclature
+  </a>
   
 </li>
       
@@ -3405,11 +3427,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#floyd-warshall-algorithm-shortest-path-all-pairs-weighted-graph" class="md-nav__link">
-    Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]
+  <a href="#floyd-warshall-algorithm-all-pair-shortest-path-in-weighted-negative-graph" class="md-nav__link">
+    Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]
   </a>
   
-    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]">
+    <nav class="md-nav" aria-label="Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3434,28 +3456,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#implementation-using" class="md-nav__link">
-    Implementation Using
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Using">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#pseudo-code_9" class="md-nav__link">
     Pseudo Code
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#pseudo-code-detect-negative-weight-cycle" class="md-nav__link">
+    Pseudo Code - detect negative weight cycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-reconstruct-shortest-path" class="md-nav__link">
+    Pseudo Code - reconstruct shortest-path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-using-adjacency-matrix" class="md-nav__link">
+    Implementation using Adjacency Matrix
+  </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#optimization_3" class="md-nav__link">
     Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_2" class="md-nav__link">
+    Extra
   </a>
   
 </li>
@@ -4042,6 +4079,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#nomenclature" class="md-nav__link">
+    Nomenclature
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -4213,15 +4257,16 @@
 <li><a href="#extra_1">Extra</a></li>
 </ul>
 </li>
-<li><a href="#floyd-warshall-algorithm-shortest-path-all-pairs-weighted-graph">Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]</a><ul>
+<li><a href="#floyd-warshall-algorithm-all-pair-shortest-path-in-weighted-negative-graph">Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]</a><ul>
 <li><a href="#idea_7">Idea</a></li>
 <li><a href="#applications_7">Applications</a></li>
 <li><a href="#properties_7">Properties</a></li>
-<li><a href="#implementation-using">Implementation Using</a><ul>
 <li><a href="#pseudo-code_9">Pseudo Code</a></li>
-</ul>
-</li>
+<li><a href="#pseudo-code-detect-negative-weight-cycle">Pseudo Code - detect negative weight cycle</a></li>
+<li><a href="#pseudo-code-reconstruct-shortest-path">Pseudo Code - reconstruct shortest-path</a></li>
+<li><a href="#implementation-using-adjacency-matrix">Implementation using Adjacency Matrix</a></li>
 <li><a href="#optimization_3">Optimization</a></li>
+<li><a href="#extra_2">Extra</a></li>
 </ul>
 </li>
 <li><a href="#kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm</a><ul>
@@ -4319,6 +4364,7 @@
 <li><a href="#divide-and-conquer-algorithm">Divide and Conquer Algorithm</a></li>
 </ul>
 </li>
+<li><a href="#nomenclature">Nomenclature</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -4381,7 +4427,7 @@ We can represent the worst-case running time by <span><span class="MathJax_Previ
 <p><span><span class="MathJax_Preview">0 \le c_1g(n) \le f(n) \le c_2g(n)</span><script type="math/tex">0 \le c_1g(n) \le f(n) \le c_2g(n)</script></span> i.e. <span><span class="MathJax_Preview">0 \le c_1*n^2 \le n^2 + 2n + 1 \le c_2*n^2</span><script type="math/tex">0 \le c_1*n^2 \le n^2 + 2n + 1 \le c_2*n^2</script></span></p>
 <p>Suppose, <span><span class="MathJax_Preview">n = 1</span><script type="math/tex">n = 1</script></span> &amp; <span><span class="MathJax_Preview">c_1=4</span><script type="math/tex">c_1=4</script></span>, <span><span class="MathJax_Preview">c_2=4</span><script type="math/tex">c_2=4</script></span>; then <span><span class="MathJax_Preview">0 \le 4 \le 4 \le 4</span><script type="math/tex">0 \le 4 \le 4 \le 4</script></span>. </p>
 <p>Suppose, <span><span class="MathJax_Preview">n = 1</span><script type="math/tex">n = 1</script></span> &amp; <span><span class="MathJax_Preview">c_1=3</span><script type="math/tex">c_1=3</script></span>, <span><span class="MathJax_Preview">c_2=5</span><script type="math/tex">c_2=5</script></span>; then <span><span class="MathJax_Preview">0 \le 3 \le 4 \le 5</span><script type="math/tex">0 \le 3 \le 4 \le 5</script></span>.</p>
-<p>Also, to be on a safer side we can use <span><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> to express worst-case running time, like:</p>
+<p>Also, to be on a safer side we can use <span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> to express worst-case running time, like:</p>
 <p>For some positive constant <span><span class="MathJax_Preview">c, n_0</span><script type="math/tex">c, n_0</script></span>, where <span><span class="MathJax_Preview">n \ge n_0</span><script type="math/tex">n \ge n_0</script></span> for which the following holds true:</p>
 <p><span><span class="MathJax_Preview">0 \le f(n) \le cg(n)</span><script type="math/tex">0 \le f(n) \le cg(n)</script></span> i.e. <span><span class="MathJax_Preview">0 \le n^2 + 2n + 1 \le c*n^2</span><script type="math/tex">0 \le n^2 + 2n + 1 \le c*n^2</script></span></p>
 <p>Suppose, <span><span class="MathJax_Preview">n = 1</span><script type="math/tex">n = 1</script></span> &amp; <span><span class="MathJax_Preview">c=4</span><script type="math/tex">c=4</script></span>; then <span><span class="MathJax_Preview">0 \le 4 \le 4</span><script type="math/tex">0 \le 4 \le 4</script></span>. 
@@ -5348,11 +5394,11 @@ Bellman-Ford prefers to explore all the possibilies using Dynamic Programing app
 </ul>
 <h4 id="properties_6">Properties<a class="headerlink" href="#properties_6" title="Permanent link">#</a></h4>
 <ul>
-<li>A minimization problem --&gt; an optimization problem --&gt; Dynamic Programing<ul>
+<li>follows Dynamic Programing approach<ul>
 <li>works in bottom-up manner</li>
 </ul>
 </li>
-<li>Does not work if there is a Negative Weight Cycle</li>
+<li>can detect a Negative Weight Cycle</li>
 </ul>
 <h4 id="pseudo-code_8">Pseudo Code<a class="headerlink" href="#pseudo-code_8" title="Permanent link">#</a></h4>
 <p><strong>input</strong>: graph <span><span class="MathJax_Preview">G(V, E)</span><script type="math/tex">G(V, E)</script></span>, weight function <span><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span>, and source <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span></p>
@@ -5424,31 +5470,152 @@ Bellman-Ford prefers to explore all the possibilies using Dynamic Programing app
 </ul>
 </li>
 </ul>
-<h3 id="floyd-warshall-algorithm-shortest-path-all-pairs-weighted-graph">Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]<a class="headerlink" href="#floyd-warshall-algorithm-shortest-path-all-pairs-weighted-graph" title="Permanent link">#</a></h3>
+<h3 id="floyd-warshall-algorithm-all-pair-shortest-path-in-weighted-negative-graph">Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]<a class="headerlink" href="#floyd-warshall-algorithm-all-pair-shortest-path-in-weighted-negative-graph" title="Permanent link">#</a></h3>
+<p>Given a <em>weighted</em> graph (directed/undirected) <span><span class="MathJax_Preview">G(V, E)</span><script type="math/tex">G(V, E)</script></span> with vertices <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> numbered <span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> to <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>, and a weight-function <span><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> to denote weight of the edge between vertext <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> &amp; <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>, then find the shortest path from each vertex <span><span class="MathJax_Preview">i \in V</span><script type="math/tex">i \in V</script></span> to every other vertex <span><span class="MathJax_Preview">j \in V</span><script type="math/tex">j \in V</script></span> in <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>.</p>
+<p>This can be solved using shortest-path single-source algorithm, by running them for <span><span class="MathJax_Preview">|V|</span><script type="math/tex">|V|</script></span> times considering each vertex as source each time.</p>
+<p>If Floyd-Warshall have chosen Dijkstra's algorithm then it would have cost: <span><span class="MathJax_Preview">O(V) * O((V + E)* log V)</span><script type="math/tex">O(V) * O((V + E)* log V)</script></span> (considering it cannot handle negative weights). And <span><span class="MathJax_Preview">O(V^3 log V)</span><script type="math/tex">O(V^3 log V)</script></span> in case of a dense graph.</p>
+<p>If Floyd-Warshall have chosen Bellman-Ford's algorithm then it would have cost: <span><span class="MathJax_Preview">O(V) * O(V * E)</span><script type="math/tex">O(V) * O(V * E)</script></span>, and <span><span class="MathJax_Preview">O(V^4)</span><script type="math/tex">O(V^4)</script></span> in case of a dense graph.</p>
+<p>However, those two algorithms were based on using Adjacency List, while this algorithm uses Adjacency Matrix. And even with that it solves the problem in <span><span class="MathJax_Preview">\Theta(V^3)</span><script type="math/tex">\Theta(V^3)</script></span>.</p>
+<p>Note:
+- If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges
+- Negative weights may exist in the graph
+- Cycles may exist in the graph
+- The algorithm assumes that there are no negative cycles
+    - if there are negative cycles, the Floyd–Warshall algorithm can be used to detect them
+    - How?
+        - Its true that the distance between same vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> should be zero
+        - If that distance changes to a negative value, then there is a negative weight cycle</p>
 <h4 id="idea_7">Idea<a class="headerlink" href="#idea_7" title="Permanent link">#</a></h4>
+<p>It's reasonable to think/assume/say that a shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> could have (may not have) some intermediate vertices from a set of vertices say <span><span class="MathJax_Preview">\{1, 2, 3, ..., k \}</span><script type="math/tex">\{1, 2, 3, ..., k \}</script></span>.</p>
+<p>Also, the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> may go through vertex <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> and may not.</p>
+<p>If we denote:
+1. a shortest-distance (length of a <strong>shortest-path</strong>) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> via <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> as <span><span class="MathJax_Preview">d_{ij}^k</span><script type="math/tex">d_{ij}^k</script></span>
+1. and, a shortest-distance from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> - if there is only 1 edge between them  (i.e. no extra vertext between them) as <span><span class="MathJax_Preview">d_{ij}^0</span><script type="math/tex">d_{ij}^0</script></span> (suppose we denote this case by <span><span class="MathJax_Preview">k=0</span><script type="math/tex">k=0</script></span>)</p>
+<p>So, for each pair <span><span class="MathJax_Preview">i, j \in V</span><script type="math/tex">i, j \in V</script></span>, the observation could be: </p>
+<ol>
+<li>if the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> does NOT even have more than 1 edge.<br />
+   Then we can denote the shortest-distance by <span><span class="MathJax_Preview">d_{ij}^0 = w_{ij}</span><script type="math/tex">d_{ij}^0 = w_{ij}</script></span> (i.e. whatever weight is initially given in the <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>).</li>
+<li>if the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> does NOT go through <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>; i.e. the intermediate vertices falls in set <span><span class="MathJax_Preview">\{1, 2, 3, ..., k-1\}</span><script type="math/tex">\{1, 2, 3, ..., k-1\}</script></span> only.<br />
+   Then, we can denote the shortest-distance by <span><span class="MathJax_Preview">d_{ij}^{k-1}</span><script type="math/tex">d_{ij}^{k-1}</script></span></li>
+<li>
+<p>if the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> GOES through <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>; then the path could be broken into two parts, say:</p>
+<ol>
+<li><span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> --&gt; <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> (say path <span><span class="MathJax_Preview">p_1</span><script type="math/tex">p_1</script></span>)</li>
+<li><span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> --&gt; <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> (say path <span><span class="MathJax_Preview">p_2</span><script type="math/tex">p_2</script></span>)</li>
+</ol>
+<p>where both the path using intermediate vertices from set <span><span class="MathJax_Preview">\{1, 2, 3, ..., k-1\}</span><script type="math/tex">\{1, 2, 3, ..., k-1\}</script></span>.</p>
+<p>And, if the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> from <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> goes via <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, then it should definitely be the concatenation of a <strong>shortest-path</strong> from <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> (<span><span class="MathJax_Preview">p_1</span><script type="math/tex">p_1</script></span>, using intermediate vertices from set <span><span class="MathJax_Preview">\{1, 2, 3, ..., k-1\}</span><script type="math/tex">\{1, 2, 3, ..., k-1\}</script></span>), and a <strong>shortest-path</strong> from <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> (<span><span class="MathJax_Preview">p_2</span><script type="math/tex">p_2</script></span>, only using intermediate vertices from set <span><span class="MathJax_Preview">\{1, 2, 3, ..., k-1\}</span><script type="math/tex">\{1, 2, 3, ..., k-1\}</script></span>).<br />
+   Then, we can denote the shortest-distance (of shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>) by <span><span class="MathJax_Preview">d_{ik}^{k-1} + d_{kj}^{k-1}</span><script type="math/tex">d_{ik}^{k-1} + d_{kj}^{k-1}</script></span></p>
+</li>
+</ol>
+<p>Then, from the above observations, we can deduce a relationship between the:
+1. shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> (or its distance) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>
+1. some intermediate vertex <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>
+1. weight-function <span><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> given in the graph <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span></p>
+<p>Which can be recursively defined as:</p>
+<div>
+<div class="MathJax_Preview">
+d_{ij}^k = \left
+\{
+\begin{array}{lcl} 
+w_{ij} &amp; if &amp; k=0 \\
+min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) &amp; if &amp; k \gt 0 \\
+\end{array}
+\right. 
+</div>
+<script type="math/tex; mode=display">
+d_{ij}^k = \left
+\{
+\begin{array}{lcl} 
+w_{ij} & if & k=0 \\
+min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) & if & k \gt 0 \\
+\end{array}
+\right. 
+</script>
+</div>
 <h4 id="applications_7">Applications<a class="headerlink" href="#applications_7" title="Permanent link">#</a></h4>
-<h4 id="properties_7">Properties<a class="headerlink" href="#properties_7" title="Permanent link">#</a></h4>
-<h4 id="implementation-using">Implementation Using<a class="headerlink" href="#implementation-using" title="Permanent link">#</a></h4>
 <ul>
-<li>Desc:</li>
-<li>Approach:</li>
-<li>DS Used:</li>
-<li>Time Complexity:<ul>
-<li>Best:</li>
-<li>Avg:</li>
-<li>Worst:</li>
+<li>find shortest path (from all the vertices) in directed graphs</li>
+<li>detect negative weight cycle in directed graphs</li>
+<li>many more real life applications (see <a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">this</a>)</li>
+</ul>
+<h4 id="properties_7">Properties<a class="headerlink" href="#properties_7" title="Permanent link">#</a></h4>
+<ul>
+<li>follows dynamic programing approach</li>
+<li>can detect negative weight cycle</li>
+<li>utilizes Adjacency Matrix</li>
+</ul>
+<h4 id="pseudo-code_9">Pseudo Code<a class="headerlink" href="#pseudo-code_9" title="Permanent link">#</a></h4>
+<p><strong>input</strong>: graph <span><span class="MathJax_Preview">G(V, E)</span><script type="math/tex">G(V, E)</script></span> with weight function <span><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> (or just weight matrix <span><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span>)<br />
+<strong>output</strong>: shortest distance between each vertices</p>
+<blockquote>
+<p>Typically Floyd–Warshall algorithm calculates distances only, and does not reconstruct the shortest path (i.e. does not return predecessor map), also does not tell if a negative weight cycle exists. Though those could be achieved by some additional simple logic/code/steps.</p>
+</blockquote>
+<ol>
+<li><span><span class="MathJax_Preview">N = |V|</span><script type="math/tex">N = |V|</script></span> // number of vertices</li>
+<li><span><span class="MathJax_Preview">D =  (d_{ij})</span><script type="math/tex">D =  (d_{ij})</script></span>  // initialize 2-d array of size <span><span class="MathJax_Preview">N*N</span><script type="math/tex">N*N</script></span> with <span><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span>, to store shortest-distance between vertices</li>
+<li><strong>for</strong> <span><span class="MathJax_Preview">(i, j) \in G.E</span><script type="math/tex">(i, j) \in G.E</script></span> // for all edges from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span><ol>
+<li><span><span class="MathJax_Preview">d_{ij} = w_{ij}</span><script type="math/tex">d_{ij} = w_{ij}</script></span> // set distance from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> using <span><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span></li>
+</ol>
+</li>
+<li><strong>for</strong> <span><span class="MathJax_Preview">i \in V</span><script type="math/tex">i \in V</script></span><ol>
+<li><span><span class="MathJax_Preview">d_{ii} = 0</span><script type="math/tex">d_{ii} = 0</script></span> // set distance between same vertex (<span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>, i.e. self loop) to zero</li>
+</ol>
+</li>
+<li><strong>for</strong> <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> = 1 to <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span><ol>
+<li><strong>for</strong> <span><span class="MathJax_Preview">i \in V</span><script type="math/tex">i \in V</script></span><ol>
+<li><strong>for</strong> <span><span class="MathJax_Preview">j \in V</span><script type="math/tex">j \in V</script></span><ol>
+<li><span><span class="MathJax_Preview">d_{ij} = min(d_{ij}, \space d_{ik} + d_{kj})</span><script type="math/tex">d_{ij} = min(d_{ij}, \space d_{ik} + d_{kj})</script></span> // relaxation</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>return <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span></li>
+</ol>
+<h4 id="pseudo-code-detect-negative-weight-cycle">Pseudo Code - detect negative weight cycle<a class="headerlink" href="#pseudo-code-detect-negative-weight-cycle" title="Permanent link">#</a></h4>
+<p><strong>input</strong>: final distance matrix <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> from Floyd–Warshall algorithm<br />
+<strong>output</strong>: True if negative weight cycle exists; else False</p>
+<ol>
+<li><span><span class="MathJax_Preview">N = |D|</span><script type="math/tex">N = |D|</script></span></li>
+<li><strong>for</strong> <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> = 1 to <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span><ol>
+<li><strong>for</strong> <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> = 1 to <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span><ol>
+<li>if <span><span class="MathJax_Preview">i == j</span><script type="math/tex">i == j</script></span> // if diagonal coordinate of the matrix<ol>
+<li>if <span><span class="MathJax_Preview">d_{ij} &lt; 0</span><script type="math/tex">d_{ij} < 0</script></span> <!----><ol>
+<li>return True</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>return False</li>
+</ol>
+<h4 id="pseudo-code-reconstruct-shortest-path">Pseudo Code - reconstruct shortest-path<a class="headerlink" href="#pseudo-code-reconstruct-shortest-path" title="Permanent link">#</a></h4>
+<p>TODO</p>
+<h4 id="implementation-using-adjacency-matrix">Implementation using Adjacency Matrix<a class="headerlink" href="#implementation-using-adjacency-matrix" title="Permanent link">#</a></h4>
+<ul>
+<li>Approach: Dynamic Programing</li>
+<li>DS Used: Matrix (2-d array)</li>
+<li>Time Complexity: <span><span class="MathJax_Preview">\Theta(V^3)</span><script type="math/tex">\Theta(V^3)</script></span><ul>
+<li>Best: --</li>
+<li>Avg: --</li>
+<li>Worst: --</li>
 </ul>
 </li>
-<li>Auxilary Space:<ul>
-<li>Best:</li>
-<li>Avg:</li>
-<li>Worst:</li>
+<li>Auxilary Space: <span><span class="MathJax_Preview">\Theta(V^2)</span><script type="math/tex">\Theta(V^2)</script></span><ul>
+<li>Best: --</li>
+<li>Avg: --</li>
+<li>Worst: --</li>
 </ul>
 </li>
-<li>Disadvantage:</li>
+<li>Disadvantage: --</li>
 </ul>
-<h5 id="pseudo-code_9">Pseudo Code<a class="headerlink" href="#pseudo-code_9" title="Permanent link">#</a></h5>
 <h4 id="optimization_3">Optimization<a class="headerlink" href="#optimization_3" title="Permanent link">#</a></h4>
+<h4 id="extra_2">Extra<a class="headerlink" href="#extra_2" title="Permanent link">#</a></h4>
 <h3 id="kruskal-minimum-cost-spanning-tree-algorithm">Kruskal Minimum Cost Spanning Tree Algorithm<a class="headerlink" href="#kruskal-minimum-cost-spanning-tree-algorithm" title="Permanent link">#</a></h3>
 <h4 id="idea_8">Idea<a class="headerlink" href="#idea_8" title="Permanent link">#</a></h4>
 <h4 id="applications_8">Applications<a class="headerlink" href="#applications_8" title="Permanent link">#</a></h4>
@@ -5606,12 +5773,24 @@ The each step should find a local optimal solution, and those local optimal shou
 <h3 id="minmax-algorithm">MinMax Algorithm<a class="headerlink" href="#minmax-algorithm" title="Permanent link">#</a></h3>
 <h3 id="divide-and-conquer-algorithm">Divide and Conquer Algorithm<a class="headerlink" href="#divide-and-conquer-algorithm" title="Permanent link">#</a></h3>
 <hr />
+<h2 id="nomenclature">Nomenclature<a class="headerlink" href="#nomenclature" title="Permanent link">#</a></h2>
+<ul>
+<li>use uppercase letters to denote matrices and corresponding subscripted lowercase letters to denote their elements</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf">CLRS 3rd Edition</a></li>
 <li><a href="http://dahlan.unimal.ac.id/files/ebooks/2013%20Algorithms_Unlocked.pdf">Algorithms Unlocked - 2013, by Dr. Thomas Cormen</a></li>
 <li>https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a</li>
 <li>https://www.freetechbooks.com/algorithms-and-data-structures-f11.html</li>
+<li>LaTex Math Syntax<ul>
+<li>https://www.caam.rice.edu/~heinken/latex/symbols.pdf</li>
+<li>https://en.wikibooks.org/wiki/LaTeX/Mathematics</li>
+<li>https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference</li>
+<li>https://latex.wikia.org/wiki/Array_(LaTeX_environment)</li>
+<li>https://tex.stackexchange.com/questions/77589/what-do-the-pieces-of-latex-left-and-right-respectively-mean</li>
+</ul>
+</li>
 </ul>
                 
               
