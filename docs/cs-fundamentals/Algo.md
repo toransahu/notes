@@ -1001,6 +1001,7 @@ It's reasonable to think/assume/say that a shortest-path $p$ from vertex $i$ to 
 Also, the shortest-path $p$ may go through vertex $k$ and may not.
 
 If we denote:
+
 1. a shortest-distance (length of a __shortest-path__) from vertex $i$ to $j$ via $k$ as $d_{ij}^k$
 1. and, a shortest-distance from vertex $i$ to $j$ - if there is only 1 edge between them  (i.e. no extra vertext between them) as $d_{ij}^0$ (suppose we denote this case by $k=0$)
 
@@ -1020,6 +1021,7 @@ So, for each pair $i, j \in V$, the observation could be:
    Then, we can denote the shortest-distance (of shortest-path $p$) by $d_{ik}^{k-1} + d_{kj}^{k-1}$
 
 Then, from the above observations, we can deduce a relationship between the:
+
 1. shortest-path $p$ (or its distance) from vertex $i$ to $j$
 1. some intermediate vertex $k$
 1. weight-function $w_{ij}$ given in the graph $G$
