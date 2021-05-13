@@ -1045,6 +1045,7 @@ $$
 
 ### Properties
 - follows dynamic programing approach
+    - bottom up way (i.e. sub problems are already in indivisible state, so keep combining the results from sub problems till we get the final result)
 - can detect negative weight cycle
 - utilizes Adjacency Matrix
 
@@ -1091,7 +1092,7 @@ TODO
     - Best: --
     - Avg: --
     - Worst: --
-- Auxilary Space: $\Theta(V^2)$
+- Auxilary Space: $\Theta(V^2)$ (if weight matrix and/or predecessor matrix has to be created) else $\Theta(1)$
     - Best: --
     - Avg: --
     - Worst: --
