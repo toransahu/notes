@@ -971,7 +971,7 @@ __output__: a) True, b) distance of all the $v \in V$, c) the shortest path; iff
 - How negative weight cycle check works?
     - A final scan of all the edges is performed and if any distance is updated, then a path of length $|V|$ edges has been found which can only occur if at least one negative cycle exists in the graph. 
 
-## Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]
+## Floyd-Warshall Algorithm [All-Pair Shortest-Path in Weighted (negative) Graph]
 
 Given a _weighted_ graph (directed/undirected) $G(V, E)$ with vertices $V$ numbered $1$ to $N$, and a weight-function $w_{ij}$ to denote weight of the edge between vertext $i$ & $j$, then find the shortest path from each vertex $i \in V$ to every other vertex $j \in V$ in $G$.
 
