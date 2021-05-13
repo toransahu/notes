@@ -5551,7 +5551,10 @@ min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) & if & k \gt 0 \\
 </ul>
 <h4 id="properties_7">Properties<a class="headerlink" href="#properties_7" title="Permanent link">#</a></h4>
 <ul>
-<li>follows dynamic programing approach</li>
+<li>follows dynamic programing approach<ul>
+<li>bottom up way (i.e. sub problems are already in indivisible state, so keep combining the results from sub problems till we get the final result)</li>
+</ul>
+</li>
 <li>can detect negative weight cycle</li>
 <li>utilizes Adjacency Matrix</li>
 </ul>
@@ -5616,7 +5619,7 @@ min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) & if & k \gt 0 \\
 <li>Worst: --</li>
 </ul>
 </li>
-<li>Auxilary Space: <span><span class="MathJax_Preview">\Theta(V^2)</span><script type="math/tex">\Theta(V^2)</script></span><ul>
+<li>Auxilary Space: <span><span class="MathJax_Preview">\Theta(V^2)</span><script type="math/tex">\Theta(V^2)</script></span> (if weight matrix and/or predecessor matrix has to be created) else <span><span class="MathJax_Preview">\Theta(1)</span><script type="math/tex">\Theta(1)</script></span><ul>
 <li>Best: --</li>
 <li>Avg: --</li>
 <li>Worst: --</li>
