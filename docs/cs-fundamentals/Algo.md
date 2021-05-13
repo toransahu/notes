@@ -984,6 +984,7 @@ If Floyd-Warshall have chosen Bellman-Ford's algorithm then it would have cost: 
 However, those two algorithms were based on using Adjacency List, while this algorithm uses Adjacency Matrix. And even with that it solves the problem in $\Theta(V^3)$.
 
 Note:
+
 - If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges
 - Negative weights may exist in the graph
 - Cycles may exist in the graph
