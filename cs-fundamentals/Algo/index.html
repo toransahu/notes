@@ -5476,21 +5476,29 @@ Bellman-Ford prefers to explore all the possibilies using Dynamic Programing app
 <p>If Floyd-Warshall have chosen Dijkstra's algorithm then it would have cost: <span><span class="MathJax_Preview">O(V) * O((V + E)* log V)</span><script type="math/tex">O(V) * O((V + E)* log V)</script></span> (considering it cannot handle negative weights). And <span><span class="MathJax_Preview">O(V^3 log V)</span><script type="math/tex">O(V^3 log V)</script></span> in case of a dense graph.</p>
 <p>If Floyd-Warshall have chosen Bellman-Ford's algorithm then it would have cost: <span><span class="MathJax_Preview">O(V) * O(V * E)</span><script type="math/tex">O(V) * O(V * E)</script></span>, and <span><span class="MathJax_Preview">O(V^4)</span><script type="math/tex">O(V^4)</script></span> in case of a dense graph.</p>
 <p>However, those two algorithms were based on using Adjacency List, while this algorithm uses Adjacency Matrix. And even with that it solves the problem in <span><span class="MathJax_Preview">\Theta(V^3)</span><script type="math/tex">\Theta(V^3)</script></span>.</p>
-<p>Note:
-- If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges
-- Negative weights may exist in the graph
-- Cycles may exist in the graph
-- The algorithm assumes that there are no negative cycles
-    - if there are negative cycles, the Floyd–Warshall algorithm can be used to detect them
-    - How?
-        - Its true that the distance between same vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> should be zero
-        - If that distance changes to a negative value, then there is a negative weight cycle</p>
+<p>Note:</p>
+<ul>
+<li>If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges</li>
+<li>Negative weights may exist in the graph</li>
+<li>Cycles may exist in the graph</li>
+<li>The algorithm assumes that there are no negative cycles<ul>
+<li>if there are negative cycles, the Floyd–Warshall algorithm can be used to detect them</li>
+<li>How?<ul>
+<li>Its true that the distance between same vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> should be zero</li>
+<li>If that distance changes to a negative value, then there is a negative weight cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h4 id="idea_7">Idea<a class="headerlink" href="#idea_7" title="Permanent link">#</a></h4>
 <p>It's reasonable to think/assume/say that a shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> could have (may not have) some intermediate vertices from a set of vertices say <span><span class="MathJax_Preview">\{1, 2, 3, ..., k \}</span><script type="math/tex">\{1, 2, 3, ..., k \}</script></span>.</p>
 <p>Also, the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> may go through vertex <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> and may not.</p>
-<p>If we denote:
-1. a shortest-distance (length of a <strong>shortest-path</strong>) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> via <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> as <span><span class="MathJax_Preview">d_{ij}^k</span><script type="math/tex">d_{ij}^k</script></span>
-1. and, a shortest-distance from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> - if there is only 1 edge between them  (i.e. no extra vertext between them) as <span><span class="MathJax_Preview">d_{ij}^0</span><script type="math/tex">d_{ij}^0</script></span> (suppose we denote this case by <span><span class="MathJax_Preview">k=0</span><script type="math/tex">k=0</script></span>)</p>
+<p>If we denote:</p>
+<ol>
+<li>a shortest-distance (length of a <strong>shortest-path</strong>) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> via <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> as <span><span class="MathJax_Preview">d_{ij}^k</span><script type="math/tex">d_{ij}^k</script></span></li>
+<li>and, a shortest-distance from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> - if there is only 1 edge between them  (i.e. no extra vertext between them) as <span><span class="MathJax_Preview">d_{ij}^0</span><script type="math/tex">d_{ij}^0</script></span> (suppose we denote this case by <span><span class="MathJax_Preview">k=0</span><script type="math/tex">k=0</script></span>)</li>
+</ol>
 <p>So, for each pair <span><span class="MathJax_Preview">i, j \in V</span><script type="math/tex">i, j \in V</script></span>, the observation could be: </p>
 <ol>
 <li>if the shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> does NOT even have more than 1 edge.<br />
@@ -5508,10 +5516,12 @@ Bellman-Ford prefers to explore all the possibilies using Dynamic Programing app
    Then, we can denote the shortest-distance (of shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>) by <span><span class="MathJax_Preview">d_{ik}^{k-1} + d_{kj}^{k-1}</span><script type="math/tex">d_{ik}^{k-1} + d_{kj}^{k-1}</script></span></p>
 </li>
 </ol>
-<p>Then, from the above observations, we can deduce a relationship between the:
-1. shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> (or its distance) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>
-1. some intermediate vertex <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>
-1. weight-function <span><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> given in the graph <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span></p>
+<p>Then, from the above observations, we can deduce a relationship between the:</p>
+<ol>
+<li>shortest-path <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> (or its distance) from vertex <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> to <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span></li>
+<li>some intermediate vertex <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span></li>
+<li>weight-function <span><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> given in the graph <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span></li>
+</ol>
 <p>Which can be recursively defined as:</p>
 <div>
 <div class="MathJax_Preview">
