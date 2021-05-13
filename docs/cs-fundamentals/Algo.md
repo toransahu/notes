@@ -98,7 +98,7 @@ Suppose, $n = 1$ & $c_1=4$, $c_2=4$; then $0 \le 4 \le 4 \le 4$.
 
 Suppose, $n = 1$ & $c_1=3$, $c_2=5$; then $0 \le 3 \le 4 \le 5$.
 
-Also, to be on a safer side we can use $O(n)$ to express worst-case running time, like:
+Also, to be on a safer side we can use $O(n^2)$ to express worst-case running time, like:
 
 For some positive constant $c, n_0$, where $n \ge n_0$ for which the following holds true:
 
@@ -920,9 +920,9 @@ if d[u] + w(u, v) < d[v]; then
 - finding _cheapest_ way to go (or send something) from one place to another
 
 ### Properties
-- A minimization problem --> an optimization problem --> Dynamic Programing
+- follows Dynamic Programing approach
     - works in bottom-up manner
-- Does not work if there is a Negative Weight Cycle
+- can detect a Negative Weight Cycle
 
 ### Pseudo Code
 
@@ -973,29 +973,130 @@ __output__: a) True, b) distance of all the $v \in V$, c) the shortest path; iff
 
 ## Floyd-Warshall Algorithm [Shortest Path, All Pairs, Weighted Graph]
 
+Given a _weighted_ graph (directed/undirected) $G(V, E)$ with vertices $V$ numbered $1$ to $N$, and a weight-function $w_{ij}$ to denote weight of the edge between vertext $i$ & $j$, then find the shortest path from each vertex $i \in V$ to every other vertex $j \in V$ in $G$.
+
+This can be solved using shortest-path single-source algorithm, by running them for $|V|$ times considering each vertex as source each time.
+
+If Floyd-Warshall have chosen Dijkstra's algorithm then it would have cost: $O(V) * O((V + E)* log V)$ (considering it cannot handle negative weights). And $O(V^3 log V)$ in case of a dense graph.
+
+If Floyd-Warshall have chosen Bellman-Ford's algorithm then it would have cost: $O(V) * O(V * E)$, and $O(V^4)$ in case of a dense graph.
+
+However, those two algorithms were based on using Adjacency List, while this algorithm uses Adjacency Matrix. And even with that it solves the problem in $\Theta(V^3)$.
+
+Note:
+- If the given graph is undirected, treat it as a directed graph by replacing an undirected edge with two directed edges. And assigning the same given weight to both the edges
+- Negative weights may exist in the graph
+- Cycles may exist in the graph
+- The algorithm assumes that there are no negative cycles
+    - if there are negative cycles, the Floyd–Warshall algorithm can be used to detect them
+    - How?
+        - Its true that the distance between same vertex $i$ should be zero
+        - If that distance changes to a negative value, then there is a negative weight cycle
+
 ### Idea
 
+It's reasonable to think/assume/say that a shortest-path $p$ from vertex $i$ to $j$ could have (may not have) some intermediate vertices from a set of vertices say $\{1, 2, 3, ..., k \}$.
+
+Also, the shortest-path $p$ may go through vertex $k$ and may not.
+
+If we denote:
+1. a shortest-distance (length of a __shortest-path__) from vertex $i$ to $j$ via $k$ as $d_{ij}^k$
+1. and, a shortest-distance from vertex $i$ to $j$ - if there is only 1 edge between them  (i.e. no extra vertext between them) as $d_{ij}^0$ (suppose we denote this case by $k=0$)
+
+So, for each pair $i, j \in V$, the observation could be: 
+
+1. if the shortest-path $p$ does NOT even have more than 1 edge.  
+   Then we can denote the shortest-distance by $d_{ij}^0 = w_{ij}$ (i.e. whatever weight is initially given in the $G$).
+1. if the shortest-path $p$ does NOT go through $k$; i.e. the intermediate vertices falls in set $\{1, 2, 3, ..., k-1\}$ only.  
+   Then, we can denote the shortest-distance by $d_{ij}^{k-1}$
+1. if the shortest-path $p$ GOES through $k$; then the path could be broken into two parts, say:
+    1. $i$ --> $k$ (say path $p_1$)
+    1. $k$ --> $j$ (say path $p_2$)
+
+    where both the path using intermediate vertices from set $\{1, 2, 3, ..., k-1\}$.
+
+    And, if the shortest-path $p$ from $i$ to $j$ goes via $k$, then it should definitely be the concatenation of a __shortest-path__ from $i$ to $k$ ($p_1$, using intermediate vertices from set $\{1, 2, 3, ..., k-1\}$), and a __shortest-path__ from $k$ to $j$ ($p_2$, only using intermediate vertices from set $\{1, 2, 3, ..., k-1\}$).  
+   Then, we can denote the shortest-distance (of shortest-path $p$) by $d_{ik}^{k-1} + d_{kj}^{k-1}$
+
+Then, from the above observations, we can deduce a relationship between the:
+1. shortest-path $p$ (or its distance) from vertex $i$ to $j$
+1. some intermediate vertex $k$
+1. weight-function $w_{ij}$ given in the graph $G$
+
+Which can be recursively defined as:
+
+$$
+d_{ij}^k = \left
+\{
+\begin{array}{lcl} 
+w_{ij} & if & k=0 \\
+min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) & if & k \gt 0 \\
+\end{array}
+\right. 
+$$
+
 ### Applications
+- find shortest path (from all the vertices) in directed graphs
+- detect negative weight cycle in directed graphs
+- many more real life applications (see [this](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm))
 
 ### Properties
+- follows dynamic programing approach
+- can detect negative weight cycle
+- utilizes Adjacency Matrix
 
-### Implementation Using
-- Desc:
-- Approach:
-- DS Used:
-- Time Complexity:
-    - Best:
-    - Avg:
-    - Worst:
-- Auxilary Space:
-    - Best:
-    - Avg:
-    - Worst:
-- Disadvantage:
+### Pseudo Code
 
-#### Pseudo Code
+__input__: graph $G(V, E)$ with weight function $w$ (or just weight matrix $W$)  
+__output__: shortest distance between each vertices
+
+> Typically Floyd–Warshall algorithm calculates distances only, and does not reconstruct the shortest path (i.e. does not return predecessor map), also does not tell if a negative weight cycle exists. Though those could be achieved by some additional simple logic/code/steps.
+
+1. $N = |V|$ // number of vertices
+1. $D =  (d_{ij})$  // initialize 2-d array of size $N*N$ with $\infty$, to store shortest-distance between vertices
+1. __for__ $(i, j) \in G.E$ // for all edges from vertex $i$ to $j$
+    1. $d_{ij} = w_{ij}$ // set distance from vertex $i$ to $j$ using $w_{ij}$
+1. __for__ $i \in V$
+    1. $d_{ii} = 0$ // set distance between same vertex ($i$ to $i$, i.e. self loop) to zero
+1. __for__ $k$ = 1 to $N$
+    1. __for__ $i \in V$
+        1. __for__ $j \in V$
+            1. $d_{ij} = min(d_{ij}, \space d_{ik} + d_{kj})$ // relaxation
+1. return $D$
+
+### Pseudo Code - detect negative weight cycle
+
+__input__: final distance matrix $D$ from Floyd–Warshall algorithm  
+__output__: True if negative weight cycle exists; else False
+
+1. $N = |D|$
+1. __for__ $i$ = 1 to $N$
+    1. __for__ $j$ = 1 to $N$
+        1. if $i == j$ // if diagonal coordinate of the matrix
+            1. if $d_{ij} < 0$ <!---->
+                1. return True
+1. return False
+
+### Pseudo Code - reconstruct shortest-path
+
+TODO
+
+### Implementation using Adjacency Matrix
+- Approach: Dynamic Programing
+- DS Used: Matrix (2-d array)
+- Time Complexity: $\Theta(V^3)$
+    - Best: --
+    - Avg: --
+    - Worst: --
+- Auxilary Space: $\Theta(V^2)$
+    - Best: --
+    - Avg: --
+    - Worst: --
+- Disadvantage: --
 
 ### Optimization
+
+### Extra
 
 ## Kruskal Minimum Cost Spanning Tree Algorithm
 
@@ -1167,8 +1268,17 @@ Bottom - Up approach in a subproblem tree
 
 ---
 
+# Nomenclature
+- use uppercase letters to denote matrices and corresponding subscripted lowercase letters to denote their elements
+
 # References
 - [CLRS 3rd Edition](https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf)
 - [Algorithms Unlocked - 2013, by Dr. Thomas Cormen](http://dahlan.unimal.ac.id/files/ebooks/2013%20Algorithms_Unlocked.pdf)
 - https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a
 - https://www.freetechbooks.com/algorithms-and-data-structures-f11.html
+- LaTex Math Syntax
+    - https://www.caam.rice.edu/~heinken/latex/symbols.pdf
+    - https://en.wikibooks.org/wiki/LaTeX/Mathematics
+    - https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+    - https://latex.wikia.org/wiki/Array_(LaTeX_environment)
+    - https://tex.stackexchange.com/questions/77589/what-do-the-pieces-of-latex-left-and-right-respectively-mean
