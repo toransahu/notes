@@ -599,6 +599,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 - To execute some inter-dependent tasks/jobs
     - Run pipeline of computing jobs
     - To implement/evaluate formulae in Speadsheet cells
+    - serialization & deserialization
 - To detect dead locks
     - To check symbolic link loop (deadlock)
 
