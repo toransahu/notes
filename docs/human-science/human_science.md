@@ -30,6 +30,7 @@
 - greedy
 - hard-worker
 - humble
+- idealistic
 - impatient
 - integral
 - intelligent
@@ -52,6 +53,7 @@
 - quick XXX
     - quick decision maker
     - quick thinker
+- realistic
 - sensible
 - sensitive
 - serious
