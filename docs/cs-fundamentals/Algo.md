@@ -435,6 +435,11 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 - Application:
     - Unimodel Functions
 
+---
+
+# Linkedlist Algorithms
+
+## Floyd's Cycle Detection Algorithm
 
 ---
 
@@ -676,6 +681,9 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 1. if the in-degree of any of those adjacent vertices becomes zero, enqueue them
 1. while the queue is not empty; repeat [5-8]
 1. end
+
+## Detect Cycle in Graph
+TODO
 
 ## Single-Source Shortest Path in Unweighted Graph
 
