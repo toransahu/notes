@@ -441,6 +441,116 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
 ## Floyd's Cycle Detection Algorithm
 
+```
+        <------------------- S -------------------> <---- X -------
+        [a]-->[i]-->[j]-->[k]-->[l]-->[m]-------→ [b] ------→ [d] |
+                                                   ↑           |  |
+	            	                               |           ↓  |
+            	            	                  [e] ←------ [c] ↓
+```
+
+A. If a loop is suspected in a linkedlist, then run two pointers - one slow & another fast - starting from the head ($a$). Run the faster pointer double the speed of the slower one. If they meet at some node ($c$), then the loop exists & else not.
+
+
+B. If a loop has been detected using #A, then idetifying the start of the loop and removing the loop is also possible.
+
+
+### Corollary A
+
+If in a loop we're at some point $i$, and if we finish $K$ complete (whole number) cycles/rounds of the loop, we'll be back to the same point $i$.  
+
+>  $P_i \cong P_i + K.N$
+
+where:
+
+- $P_i$ is a pointer at some $i^{th}$ node in the __loop__
+- $N$ is the length (or number of nodes) of the loop
+- $K$ is some non-negative integer
+
+### Lemma A
+
+If pointer $P_s$ and $P_f$ starts from the head ($a$) of the linkedlist. $P_s$ moves 1 node at a time & $P_f$ moves 2 nodes at a time.
+Then the __hypothesis__ is they will meet at some node ($c$), $X$ unit far from the start node ($b$) of the loop.
+
+Before they met each other, $P_s$ might have completed $K_1$ whole rounds of the loop and $P_f$ might have completed $K_2$ whole rounds. So,
+
+>
+$D_s = S + K_1.N + X$  - where $K_1$ is a whole number  
+$D_f = S + K_2.N + X$  - where $K_2$ is a whole number
+
+#### Proof
+
+Suppose $D_s = D$, then $D_f = 2D$, then by this:
+
+$$
+\frac{
+    \begin{array}{l,c,l}
+        +(2D & = & S + K_2.N + X) \\
+        -(D & = & S + K_1.N + X)
+    \end{array}
+}{
+    \begin{array}{r,c,l}
+        D & = & (K_2 - K_1).N \\
+        \therefore D & = & K.N
+    \end{array}
+}
+$$
+
+
+We conclude that, this equation holds true for appropriate values of $D$ & $K$. Thus our hypothesis that both slow & fast pointer will meet at some point is true.
+
+#### Inference A.1
+
+By lemma-2, as we know that the speed of the pointer $P_f$ is twice the speed of $P_s$, and they were moving for the same time interval. So,
+
+>
+$2.S_s = S_f$  
+$\therefore 2.\frac{D_s}{T} = \frac{D_f}{T}$  
+$\therefore 2.D_s = D_f$  
+$\therefore 2(S + K_1.N + X) = S + K_2.N + X$  
+$\therefore 2S + 2K_1.N + 2X = S + K_2.N + X$  
+$\therefore S + X = K_2.N - 2K_1.N$  
+$\therefore S + X = (K_2 - 2K_1).N$  
+$\therefore S = K.N  - X$
+
+By this we can say that the moving $K.N - X$ units from the meeting point $c$, within the loop, is exactly equal to $S$, for some appropriate value of $K$.
+
+(just remember this relationship)
+
+### Lemma B
+
+If move a pointer from the head $a$ of the linkedlist, and move another pointer from the meeting point $c$, simultaniously, at the same speed, then the __hypothesis__ is both the pointer will meet at the start node $b$ of the loop.
+
+(Note that both the pointers are moving in opposite direction towards each other, thus they are going to meet each other at some node.)
+
+In another word, the __hypothesis__ is, the start node $b$ of the loop could be reached from the meeting point $c$ if we move a pointer $S$ units from the meeting point $c$.
+
+#### Proof
+
+We know that both the pointers met at node $c$ (meeting point).
+
+Assume that both the pointers meets at the start node ($b$) of the loop.
+
+That means $P_s$ reaches the start node $b$ by travelling $D_s$ distance from the head. That is $S$ units.
+
+And, $P_f$ reaches the start node $b$ by travelling $D_f$ distance from the meeting point $c$. That is $N - X$ units.  
+But, it is also possible that $P_f$ might have travelled some cycles of the loop before meeting $P_s$. 
+
+Lets assume that $P_f$ might have travelled $J_1$ cycles of the loop. So, $P_f$ reaches the start node $b$ by travelling $J_1.N + (N - X)$ units in total.
+
+i.e. $(J_1 + 1).N - X$
+
+As the speed of both the pointers were same & distance were travelled within the same time interval, we can relate it like:
+
+>
+$S_s = S_f$  
+$\therefore \frac{D_s}{T} = \frac{D_f}{T}$  
+$\therefore D_s = D_f$  
+$\therefore S = (J_1 + 1).N - X$  
+$\therefore S = J.N - X$  
+
+With the help of Lemma-A & Inference-A.1 we can conculde that this relation $S = J.N - X$ is true, thus our hypothesis is true as well.
+
 ---
 
 # Tree Algorithms
