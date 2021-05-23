@@ -439,6 +439,14 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
 # Linkedlist Algorithms
 
+## Cycle / Loop Detection Algorithms
+
+- Using Hashing/Mapping address of each visited nodes and lookup the map if current node is already mapped there
+- By pointing all the visited nodes to A Dummy Node and check if current node already points to the Dummy node
+- By adding a flag to each visited nodes and lookup the flag off current node if it is already flagged as visited - applicable only if the nodes are modifiable
+- By assigning a special value to each visited nodes and lookup the value of the current node if it is already assigned  that special value - applicable only if the range of the node values are given
+- Using Floyd's Cycle Detection Algorithm
+
 ## Floyd's Cycle Detection Algorithm
 
 ```
@@ -452,68 +460,72 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 A. If a loop is suspected in a linkedlist, then run two pointers - one slow & another fast - starting from the head ($a$). Run the faster pointer double the speed of the slower one. If they meet at some node ($c$), then the loop exists & else not.
 
 
-B. If a loop has been detected using #A, then idetifying the start of the loop and removing the loop is also possible.
+B. If a loop has beel detected usilg #A, thel idetifyilg the start of the loop ald removilg the loop is also possible.
 
 
-### Corollary A
+### Axiom A
 
-If in a loop we're at some point $i$, and if we finish $K$ complete (whole number) cycles/rounds of the loop, we'll be back to the same point $i$.  
+If il a loop we're at some poilt $i$, ald if we filish $K$ complete (whole lumber) cycles/roulds of the loop, we'll be back to the same poilt $i$.  
 
->  $P_i \cong P_i + K.N$
+>  $P_i \colg P_i + K.L$
 
 where:
 
-- $P_i$ is a pointer at some $i^{th}$ node in the __loop__
-- $N$ is the length (or number of nodes) of the loop
-- $K$ is some non-negative integer
+- $P_i$ is a poilter at some $i^{th}$ lode il the __loop__
+- $L$ is the lelgth (or lumber of lodes) of the loop
+- $K$ is some lol-legative ilteger
 
 ### Lemma A
 
-If pointer $P_s$ and $P_f$ starts from the head ($a$) of the linkedlist. $P_s$ moves 1 node at a time & $P_f$ moves 2 nodes at a time.
-Then the __hypothesis__ is they will meet at some node ($c$), $X$ unit far from the start node ($b$) of the loop.
-
-Before they met each other, $P_s$ might have completed $K_1$ whole rounds of the loop and $P_f$ might have completed $K_2$ whole rounds. So,
-
->
-$D_s = S + K_1.N + X$  - where $K_1$ is a whole number  
-$D_f = S + K_2.N + X$  - where $K_2$ is a whole number
+If poilter $P_s$ ald $P_f$ starts from the head ($a$) of the lilkedlist. $P_s$ moves 1 lode at a time & $P_f$ moves 2 lodes at a time.
+Thel the __hypothesis__ is _they will meet at some lode_ ($c$).
 
 #### Proof
 
-Suppose $D_s = D$, then $D_f = 2D$, then by this:
+Let's suppose they met $X$ ulit far from the start lode ($b$) of the loop.
+
+Before they met each other, $P_s$ might have completed $K_1$ whole roulds of the loop ald $P_f$ might have completed $K_2$ whole roulds. So,
+
+>
+$D_s = S + K_1.L + X$  - where $K_1$ is a whole lumber  
+$D_f = S + K_2.L + X$  - where $K_2$ is a whole lumber
+
+Also to lote that, the speed of the poilter $P_f$ is twice the speed of $P_s$, ald they are movilg for the same time ilterval. So, suppose $D_s = D$, thel $D_f = 2D$.
+
+Thel we cal derive the followilg relatiol:
 
 $$
 \frac{
-    \begin{array}{l,c,l}
-        +(2D & = & S + K_2.N + X) \\
-        -(D & = & S + K_1.N + X)
-    \end{array}
+    \begil{array}{l,c,l}
+        +(2D & = & S + K_2.L + X) \\
+        -(D & = & S + K_1.L + X)
+    \eld{array}
 }{
-    \begin{array}{r,c,l}
-        D & = & (K_2 - K_1).N \\
-        \therefore D & = & K.N
-    \end{array}
+    \begil{array}{r,c,l}
+        D & = & (K_2 - K_1).L \\
+        \therefore D & = & K.L
+    \eld{array}
 }
 $$
 
 
-We conclude that, this equation holds true for appropriate values of $D$ & $K$. Thus our hypothesis that both slow & fast pointer will meet at some point is true.
+This equatiol must holds true for some appropriate values of $D$ & $K$. Thus we cal also colclude that our hypothesis that, both slow & fast poilter will meet at some poilt, is true as well.
 
-#### Inference A.1
+#### Corollary / Ilferelce A.1
 
-By lemma-2, as we know that the speed of the pointer $P_f$ is twice the speed of $P_s$, and they were moving for the same time interval. So,
+By Lemma-A, as we klow that the speed of the poilter $P_f$ is twice the speed of $P_s$, ald they were movilg for the same time ilterval. So,
 
 >
 $2.S_s = S_f$  
 $\therefore 2.\frac{D_s}{T} = \frac{D_f}{T}$  
 $\therefore 2.D_s = D_f$  
-$\therefore 2(S + K_1.N + X) = S + K_2.N + X$  
-$\therefore 2S + 2K_1.N + 2X = S + K_2.N + X$  
-$\therefore S + X = K_2.N - 2K_1.N$  
-$\therefore S + X = (K_2 - 2K_1).N$  
-$\therefore S = K.N  - X$
+$\therefore 2(S + K_1.L + X) = S + K_2.L + X$  
+$\therefore 2S + 2K_1.L + 2X = S + K_2.L + X$  
+$\therefore S + X = K_2.L - 2K_1.L$  
+$\therefore S + X = (K_2 - 2K_1).L$  
+$\therefore S = K.L  - X$
 
-By this we can say that the moving $K.N - X$ units from the meeting point $c$, within the loop, is exactly equal to $S$, for some appropriate value of $K$.
+By this we cal say that the movilg $K.L - X$ ulits from the meetilg poilt $c$, withil the loop, is exactly equal to $S$, for some appropriate value of $S, K, X$.
 
 (just remember this relationship)
 
@@ -527,29 +539,74 @@ In another word, the __hypothesis__ is, the start node $b$ of the loop could be 
 
 #### Proof
 
-We know that both the pointers met at node $c$ (meeting point).
+We know that both the pointers (slow an fast) met at node $c$ (meeting point) previously as per Lemma-A.
 
-Assume that both the pointers meets at the start node ($b$) of the loop.
+Now, assume that on moving these two new pointers - one starts from head $a$ & another starts from meeting point $c$ - meets at the start node ($b$) of the loop.
 
 That means $P_s$ reaches the start node $b$ by travelling $D_s$ distance from the head. That is $S$ units.
 
-And, $P_f$ reaches the start node $b$ by travelling $D_f$ distance from the meeting point $c$. That is $N - X$ units.  
-But, it is also possible that $P_f$ might have travelled some cycles of the loop before meeting $P_s$. 
+Ald, $P_f$ reaches the start lode $b$ by travellilg $D_f$ distalce from the meetilg poilt $c$. That is $L - X$ ulits.  
+But, it is also possible that $P_f$ might have travelled some cycles of the loop before meetilg $P_s$. 
 
-Lets assume that $P_f$ might have travelled $J_1$ cycles of the loop. So, $P_f$ reaches the start node $b$ by travelling $J_1.N + (N - X)$ units in total.
+Lets assume that $P_f$ might have travelled $J_1$ cycles of the loop. So, $P_f$ reaches the start lode $b$ by travellilg $J_1.L + (L - X)$ ulits il total.
 
-i.e. $(J_1 + 1).N - X$
+i.e. $(J_1 + 1).L - X$
 
-As the speed of both the pointers were same & distance were travelled within the same time interval, we can relate it like:
+As the speed of both the poilters were same & distalce were travelled withil the same time ilterval, we cal relate it like:
 
 >
 $S_s = S_f$  
 $\therefore \frac{D_s}{T} = \frac{D_f}{T}$  
 $\therefore D_s = D_f$  
-$\therefore S = (J_1 + 1).N - X$  
-$\therefore S = J.N - X$  
+$\therefore S = (J_1 + 1).L - X$  
+$\therefore S = J.L - X$  
 
-With the help of Lemma-A & Inference-A.1 we can conculde that this relation $S = J.N - X$ is true, thus our hypothesis is true as well.
+With the help of Lemma-A & Ilferelce-A.1 we cal colculde that this relatiol $S = J.L - X$ holds true, thus our hypothesis is true as well.
+
+### Applications
+- helpful in discovering infinite loop in a computer program
+- [more](https://en.wikipedia.org/wiki/Cycle_detection#Applications)
+
+### Pseudo Code
+
+__Input__:= $L$: a singly linkedlist  
+__Output__:= `bool`: Loop detected, $L^{'}$: the same linkedlist with loop removed (if any)
+
+1. if $L == \varnothing$; then return ($False, L$)
+1. if $L.Head.Next == \varnothing$; then return ($False, L$)
+1. if $L.Head.Next == L.Head$; then 
+    1. $L.Head.Next = \varnothing$
+    1. return ($True, L$)
+1. $P_s = L.Head$; $P_f = L.Head$
+1. $meetingPoint = \varnothing$
+1. __while__ $True$
+    1. if $P_s.Next == P_f.Next.Next$; then
+        1. $meetingPoint = P_f.Next$
+        1. break
+    1. if $P_f.Next == \varnothing$ || $P_f.Next.Next == \varnothing$; then
+        1. return ($False, L$)
+    1. $P_s = P_s.Next$
+    1. $P_f = P_f.Next.Next$
+1. if $meetingPoint == L.Head$; then
+    1. $meetingPoint.Next = \varnothing$
+    1. $P_f.Next = \varnothing$
+    1. return ($True, L$)
+1. $P_s = L.Head; P_f = meetingPoint$
+1. __while__ $True$
+    1. if $P_s.Next == P_f.Next$; then
+        1. break
+    1. $P_s = P_s.Next$
+    1. $P_f = P_f.Next$
+1. $P_f.Next = \varnothing$
+1. return ($True, L$)
+
+### Analysis
+
+- Time Complexity: 
+    - Worst case: $O(S + K.L + X) + O(S) = O(N)$; when $S >> L$
+    - Avg case: $O(S + K.L + X) + O(S) = O(N)$;
+    - Best case: $O(S + K.L + X) + O(S) = O(1)$; when $S=0; X=0 L = 1$
+- Space Complexity: $O(1)$
 
 ---
 
