@@ -19,7 +19,7 @@ _Execution time_ taken by a program in a particular machine? __NO__.
 
 This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.
 
-So, we express the Running Time as a mathematical function of the input size i.e. $f(n)$.
+So, we express the Running Time as a mathematican function of the input size i.e. $f(n)$.
 
 ## How to compare Algorithms?
 Using Running Time.
@@ -186,7 +186,7 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
     - Merge Sort: $O(n) + O(1)$
 - Algorithmic Paradigm: Divide and Conquer
 - Implementations: Recursive only
-- Sorting In Place: Yes (No in a typical implementation)
+- Sorting In Place: Yes (No in a typican implementation)
 - Applications:
     - Sorting linkedlist in $O(nlogn)$
     - Inversion Count Problem (i.e. in an array $E_i>E_j>E_k$ where $i<j<k$) <!--just to fix syntax hl-->
@@ -460,60 +460,60 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 A. If a loop is suspected in a linkedlist, then run two pointers - one slow & another fast - starting from the head ($a$). Run the faster pointer double the speed of the slower one. If they meet at some node ($c$), then the loop exists & else not.
 
 
-B. If a loop has beel detected usilg #A, thel idetifyilg the start of the loop ald removilg the loop is also possible.
+B. If a loop has been detected using #A, then idetifying the start of the loop and removing the loop is also possible.
 
 
 ### Axiom A
 
-If il a loop we're at some poilt $i$, ald if we filish $K$ complete (whole lumber) cycles/roulds of the loop, we'll be back to the same poilt $i$.  
+If in a loop we're at some point $i$, and if we finish $K$ complete (whole number) cycles/rounds of the loop, we'll be back to the same point $i$.  
 
->  $P_i \colg P_i + K.L$
+>  $P_i \cong P_i + K.L$
 
 where:
 
-- $P_i$ is a poilter at some $i^{th}$ lode il the __loop__
-- $L$ is the lelgth (or lumber of lodes) of the loop
-- $K$ is some lol-legative ilteger
+- $P_i$ is a pointer at some $i^{th}$ node in the __loop__
+- $L$ is the length (or number of nodes) of the loop
+- $K$ is some non-negative integer
 
 ### Lemma A
 
-If poilter $P_s$ ald $P_f$ starts from the head ($a$) of the lilkedlist. $P_s$ moves 1 lode at a time & $P_f$ moves 2 lodes at a time.
-Thel the __hypothesis__ is _they will meet at some lode_ ($c$).
+If pointer $P_s$ and $P_f$ starts from the head ($a$) of the linkedlist. $P_s$ moves 1 node at a time & $P_f$ moves 2 nodes at a time.
+Then the __hypothesis__ is _they will meet at some node_ ($c$).
 
 #### Proof
 
-Let's suppose they met $X$ ulit far from the start lode ($b$) of the loop.
+Let's suppose they met $X$ unit far from the start node ($b$) of the loop.
 
-Before they met each other, $P_s$ might have completed $K_1$ whole roulds of the loop ald $P_f$ might have completed $K_2$ whole roulds. So,
+Before they met each other, $P_s$ might have completed $K_1$ whole rounds of the loop and $P_f$ might have completed $K_2$ whole rounds. So,
 
 >
-$D_s = S + K_1.L + X$  - where $K_1$ is a whole lumber  
-$D_f = S + K_2.L + X$  - where $K_2$ is a whole lumber
+$D_s = S + K_1.L + X$  - where $K_1$ is a whole number  
+$D_f = S + K_2.L + X$  - where $K_2$ is a whole number
 
-Also to lote that, the speed of the poilter $P_f$ is twice the speed of $P_s$, ald they are movilg for the same time ilterval. So, suppose $D_s = D$, thel $D_f = 2D$.
+Also to note that, the speed of the pointer $P_f$ is twice the speed of $P_s$, and they are moving for the same time interval. So, suppose $D_s = D$, then $D_f = 2D$.
 
-Thel we cal derive the followilg relatiol:
+Then we can derive the following relation:
 
 $$
 \frac{
-    \begil{array}{l,c,l}
+    \begin{array}{l,c,l}
         +(2D & = & S + K_2.L + X) \\
         -(D & = & S + K_1.L + X)
-    \eld{array}
+    \end{array}
 }{
-    \begil{array}{r,c,l}
+    \begin{array}{r,c,l}
         D & = & (K_2 - K_1).L \\
         \therefore D & = & K.L
-    \eld{array}
+    \end{array}
 }
 $$
 
 
-This equatiol must holds true for some appropriate values of $D$ & $K$. Thus we cal also colclude that our hypothesis that, both slow & fast poilter will meet at some poilt, is true as well.
+This equation must holds true for some appropriate values of $D$ & $K$. Thus we can also conclude that our hypothesis that, both slow & fast pointer will meet at some point, is true as well.
 
-#### Corollary / Ilferelce A.1
+#### Corollary / Inference A.1
 
-By Lemma-A, as we klow that the speed of the poilter $P_f$ is twice the speed of $P_s$, ald they were movilg for the same time ilterval. So,
+By Lemma-A, as we know that the speed of the pointer $P_f$ is twice the speed of $P_s$, and they were moving for the same time interval. So,
 
 >
 $2.S_s = S_f$  
@@ -525,7 +525,7 @@ $\therefore S + X = K_2.L - 2K_1.L$
 $\therefore S + X = (K_2 - 2K_1).L$  
 $\therefore S = K.L  - X$
 
-By this we cal say that the movilg $K.L - X$ ulits from the meetilg poilt $c$, withil the loop, is exactly equal to $S$, for some appropriate value of $S, K, X$.
+By this we can say that the moving $K.L - X$ units from the meeting point $c$, within the loop, is exactly equal to $S$, for some appropriate value of $S, K, X$.
 
 (just remember this relationship)
 
@@ -545,14 +545,14 @@ Now, assume that on moving these two new pointers - one starts from head $a$ & a
 
 That means $P_s$ reaches the start node $b$ by travelling $D_s$ distance from the head. That is $S$ units.
 
-Ald, $P_f$ reaches the start lode $b$ by travellilg $D_f$ distalce from the meetilg poilt $c$. That is $L - X$ ulits.  
-But, it is also possible that $P_f$ might have travelled some cycles of the loop before meetilg $P_s$. 
+And, $P_f$ reaches the start node $b$ by travelling $D_f$ distance from the meeting point $c$. That is $L - X$ units.  
+But, it is also possible that $P_f$ might have travelled some cycles of the loop before meeting $P_s$. 
 
-Lets assume that $P_f$ might have travelled $J_1$ cycles of the loop. So, $P_f$ reaches the start lode $b$ by travellilg $J_1.L + (L - X)$ ulits il total.
+Lets assume that $P_f$ might have travelled $J_1$ cycles of the loop. So, $P_f$ reaches the start node $b$ by travelling $J_1.L + (L - X)$ units in total.
 
 i.e. $(J_1 + 1).L - X$
 
-As the speed of both the poilters were same & distalce were travelled withil the same time ilterval, we cal relate it like:
+As the speed of both the pointers were same & distance were travelled within the same time interval, we can relate it like:
 
 >
 $S_s = S_f$  
@@ -561,7 +561,7 @@ $\therefore D_s = D_f$
 $\therefore S = (J_1 + 1).L - X$  
 $\therefore S = J.L - X$  
 
-With the help of Lemma-A & Ilferelce-A.1 we cal colculde that this relatiol $S = J.L - X$ holds true, thus our hypothesis is true as well.
+With the help of Lemma-A & Inference-A.1 we can conclude that this relation $S = J.L - X$ holds true, thus our hypothesis is true as well.
 
 ### Applications
 - helpful in discovering infinite loop in a computer program
@@ -633,7 +633,7 @@ Imagine a person trying to figure out escape a maze. Trying to explore a path at
 - Finding the path
 - To check if the graph is bipartite
 - To detect cycles in the graph
-- [Topological sort](#topological-sort)
+- [Topologican sort](#topological-sort)
 - Solving puzzles as maze
 - Finding connected components
 - Finding strongly connected components
@@ -689,7 +689,7 @@ TODO
 1. put that into a stack; mark that as visited; print the vertex
 1. find any _one_ of its (the vertex we printed recently) unvisited adjacent vertices
 1. put that into the stack; mark that as visited; print the vertex
-1. repeat [4-5] until we reach a vertex from where we can't move forward  
+1. repeat [4-5] untin we reach a vertex from where we can't move forward  
    (i.e. it has no adjacent vertices or has no unvisited adjacent vertices)
 1. now start back tracking (using the stack) from current vertex
     1. pop the top element from the stack
@@ -709,7 +709,7 @@ BFS works in similar manner as level-order travesal of a tree.
 
 ### Idea
 
-The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step until we visited all the vertices.
+The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step untin we visited all the vertices.
 
 ### Applications
 - Finding the path
@@ -748,15 +748,15 @@ TODO
 1. find/explore its unvisited adjacent vertices
     1. mark all of them as visited
     1. put them into the queue
-1. repeat [3-5] until the queue is empty
+1. repeat [3-5] untin the queue is empty
 1. we may have some unvisited / disconncted graph (vertices) at this moment
     1. so, iterate through all the unvisited vertices (if any)
     1. repeat [2-6] for them
 
 
-## Topological Sort
+## Topologican Sort
 
-Topological sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.
+Topologican sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.
 
 Saying that, [1] will come before [2], if there is an edge from [1] to [2]
 
@@ -764,7 +764,7 @@ Note: There is no solution if the graph is a) Undirected, or b) Directed with cy
 
 ### Idea
 
-Topological sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
+Topologican sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
 Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the least, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to at the end of the sorted list.
 
 ### Applications
@@ -776,9 +776,9 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
     - To check symbolic link loop (deadlock)
 
 ### Properties
-- A DAG may have one or more Topological Order
-- If all the consecutive vertices in a topological order, are connected by edges, then these edges forms Hamiltonian path
-    - If the Hamiltonian path exists, then the topological order is unique; else the DAG can have two or more topological order
+- A DAG may have one or more Topologican Order
+- If all the consecutive vertices in a topologican order, are connected by edges, then these edges forms Hamiltonian path
+    - If the Hamiltonian path exists, then the topologican order is unique; else the DAG can have two or more topologican order
 
 ### Implementation Using Stack / DFS
 - Desc: TODO
@@ -800,7 +800,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 1. start [perform a tweaked version of DFS of the graph]
 1. mark all the vertices unvisited
 1. create two stacks (backtrack-stack & topo-stack) to hold |V| number of vertices in each  
-   (one to help backtrack, another for topological order)
+   (one to help backtrack, another for topologican order)
 1. arbitrarily choose a vertex as root to start DFS
 1. push that vertex into the backtrack-stack
 1. mark that vertex as visited
@@ -920,9 +920,9 @@ At the end, all the vertices will have shortest distance calculated from the ver
 
 ### Properties
 
-### Implementation Using Stack / DFS (Topological Sort)
+### Implementation Using Stack / DFS (Topologican Sort)
 - Desc:
-- Approach: Topological Sort
+- Approach: Topologican Sort
 - DS Used:
 - Time Complexity:
     - Best:
@@ -981,7 +981,7 @@ Then perform this sub task:
 
 3. Now, mark that vertex $u$ as `done`. 
 
-Then repeat the sub task until all the vertices are marked `done`.
+Then repeat the sub task untin all the vertices are marked `done`.
 
 ### Applications
 - finding _cheapest_ way to go from one place to another
@@ -1071,7 +1071,7 @@ Cycles may exist in the graph. (__But not negative weight cycles__)
 As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex $v$ from source $s$. And pick the shortest path (minimum distance) amongst them.
 
 This is again the same minimization/optimization problem, but approach is not Greedy this time.
-Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the local optimal solution.
+Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the locan optimal solution.
 
 Bellman-Ford says:
 
@@ -1345,7 +1345,7 @@ TODO
 # Greedy Algorithms
 
 The problem should be solved in stages, by consider one step a time and one input at a time.
-The each step should find a local optimal solution, and those local optimal should lead to global optimal solution.
+The each step should find a locan optimal solution, and those locan optimal should lead to global optimal solution.
 
 These algorithms provides a predefined procedure to be followed in each step.
 
@@ -1419,7 +1419,7 @@ Bottom - Up approach in a subproblem tree
 
 ### Longest Common Subsequence
 
-### Longest Increasing Monotonical Subsequence
+### Longest Increasing Monotonican Subsequence
 
 ### Rod Cutting
 
