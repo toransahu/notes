@@ -547,6 +547,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    Amortized Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-is-it-different-than-average-case-analyse" class="md-nav__link">
+    How is it different than average-case analyse?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    Techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#recurrence-relation" class="md-nav__link">
     Recurrence Relation
   </a>
@@ -756,6 +783,13 @@
   
     <nav class="md-nav" aria-label="Linkedlist Algorithms">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reverse-the-linkedlist" class="md-nav__link">
+    Reverse the Linkedlist
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#cycle-loop-detection-algorithms" class="md-nav__link">
@@ -2868,6 +2902,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    Amortized Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-is-it-different-than-average-case-analyse" class="md-nav__link">
+    How is it different than average-case analyse?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    Techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#recurrence-relation" class="md-nav__link">
     Recurrence Relation
   </a>
@@ -3077,6 +3138,13 @@
   
     <nav class="md-nav" aria-label="Linkedlist Algorithms">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reverse-the-linkedlist" class="md-nav__link">
+    Reverse the Linkedlist
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#cycle-loop-detection-algorithms" class="md-nav__link">
@@ -4377,6 +4445,11 @@
 <li><a href="#average-case">Average Case</a></li>
 </ul>
 </li>
+<li><a href="#amortized-analysis">Amortized Analysis</a><ul>
+<li><a href="#how-is-it-different-than-average-case-analyse">How is it different than average-case analyse?</a></li>
+<li><a href="#techniques">Techniques</a></li>
+</ul>
+</li>
 <li><a href="#recurrence-relation">Recurrence Relation</a></li>
 <li><a href="#master-theorem">Master Theorem</a></li>
 </ul>
@@ -4414,6 +4487,7 @@
 </ul>
 </li>
 <li><a href="#linkedlist-algorithms">Linkedlist Algorithms</a><ul>
+<li><a href="#reverse-the-linkedlist">Reverse the Linkedlist</a></li>
 <li><a href="#cycle-loop-detection-algorithms">Cycle / Loop Detection Algorithms</a></li>
 <li><a href="#floyds-cycle-detection-algorithm">Floyd's Cycle Detection Algorithm</a><ul>
 <li><a href="#axiom-a">Axiom A</a></li>
@@ -4709,6 +4783,18 @@ Thus it defines the Rate of Growth (the influencing factor in the Running Time) 
 <h4 id="average-case">Average Case<a class="headerlink" href="#average-case" title="Permanent link">#</a></h4>
 <p>This considers a random size of input tries to define the Rate of Growth (the influencing factor in the Running Time) for such input.</p>
 <p>Suitable asymptotic notations for this case could be <span><span class="MathJax_Preview">\Theta</span><script type="math/tex">\Theta</script></span> &amp; <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span>.</p>
+<h3 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">#</a></h3>
+<p>Instead of analysis a data-structure operation and defining the time complexity/cost soley based on that single one, analyse a sequence of data-structure operations and average the cost of all those operations. So that it could be shown that the average cost of an operation is smaller, even though the cost of a single operation within the sequence is expensive.</p>
+<h4 id="how-is-it-different-than-average-case-analyse">How is it different than average-case analyse?<a class="headerlink" href="#how-is-it-different-than-average-case-analyse" title="Permanent link">#</a></h4>
+<p>Average case analysis is based on the input to the algorithm, as it assumes that the input provided in this case is a random sized. Thus it relies on a probablistic assumption about the input.</p>
+<p>While the amortized analysis does not rely on the input. It applies for all the inputs / any size of input.
+Amortized analysis guarantees on the worst-case cost of <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> operations.</p>
+<h4 id="techniques">Techniques<a class="headerlink" href="#techniques" title="Permanent link">#</a></h4>
+<ul>
+<li>Aggregate Method</li>
+<li>Accounting Method</li>
+<li>Potential Method</li>
+</ul>
 <h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">#</a></h3>
 <h3 id="master-theorem">Master Theorem<a class="headerlink" href="#master-theorem" title="Permanent link">#</a></h3>
 <p>If the recurrence relation is of the form:</p>
@@ -5130,6 +5216,13 @@ Thus it defines the Rate of Growth (the influencing factor in the Running Time) 
 </ul>
 <hr />
 <h2 id="linkedlist-algorithms">Linkedlist Algorithms<a class="headerlink" href="#linkedlist-algorithms" title="Permanent link">#</a></h2>
+<h3 id="reverse-the-linkedlist">Reverse the Linkedlist<a class="headerlink" href="#reverse-the-linkedlist" title="Permanent link">#</a></h3>
+<ul>
+<li>Reverse a singly linkedlist</li>
+<li>Reverse a portion of a singly linkedlist</li>
+<li>Reverse a doubly linkedlist</li>
+<li>Reverse a portion of a doubly linkedlist</li>
+</ul>
 <h3 id="cycle-loop-detection-algorithms">Cycle / Loop Detection Algorithms<a class="headerlink" href="#cycle-loop-detection-algorithms" title="Permanent link">#</a></h3>
 <ul>
 <li>Using Hashing/Mapping address of each visited nodes and lookup the map if current node is already mapped there</li>
@@ -5568,7 +5661,11 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 <li>end</li>
 </ol>
 <h3 id="detect-cycle-in-graph">Detect Cycle in Graph<a class="headerlink" href="#detect-cycle-in-graph" title="Permanent link">#</a></h3>
-<p>TODO</p>
+<ul>
+<li>Using DFS by maintaining the immediate call stack (i.e. before any backtrack) a.k.a. detecting back-edge</li>
+<li>Using BFS by maintaining 3 flags/colors/sets</li>
+<li>Using BFS by decreasing In-Degree of the nodes</li>
+</ul>
 <h3 id="single-source-shortest-path-in-unweighted-graph">Single-Source Shortest Path in Unweighted Graph<a class="headerlink" href="#single-source-shortest-path-in-unweighted-graph" title="Permanent link">#</a></h3>
 <p>Given a <em>unweighted</em> graph (directed/undirected) <code>G = (V, E)</code>, and a source/distinguished vertex <code>S</code> find the shortest path from <code>S</code> to every other vertices in <code>G</code>.</p>
 <h4 id="idea_3">Idea<a class="headerlink" href="#idea_3" title="Permanent link">#</a></h4>
