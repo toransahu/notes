@@ -127,6 +127,21 @@ This considers a random size of input tries to define the Rate of Growth (the in
 
 Suitable asymptotic notations for this case could be $\Theta$ & $O$.
 
+## Amortized Analysis
+
+Instead of analysis a data-structure operation and defining the time complexity/cost soley based on that single one, analyse a sequence of data-structure operations and average the cost of all those operations. So that it could be shown that the average cost of an operation is smaller, even though the cost of a single operation within the sequence is expensive.
+
+### How is it different than average-case analyse?
+Average case analysis is based on the input to the algorithm, as it assumes that the input provided in this case is a random sized. Thus it relies on a probablistic assumption about the input.
+
+While the amortized analysis does not rely on the input. It applies for all the inputs / any size of input.
+Amortized analysis guarantees on the worst-case cost of $N$ operations.
+
+### Techniques
+- Aggregate Method
+- Accounting Method
+- Potential Method
+
 ## Recurrence Relation
 
 ## Master Theorem
@@ -438,6 +453,13 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 ---
 
 # Linkedlist Algorithms
+
+## Reverse the Linkedlist
+
+- Reverse a singly linkedlist
+- Reverse a portion of a singly linkedlist
+- Reverse a doubly linkedlist
+- Reverse a portion of a doubly linkedlist
 
 ## Cycle / Loop Detection Algorithms
 
@@ -850,7 +872,10 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 1. end
 
 ## Detect Cycle in Graph
-TODO
+
+- Using DFS by maintaining the immediate call stack (i.e. before any backtrack) a.k.a. detecting back-edge
+- Using BFS by maintaining 3 flags/colors/sets
+- Using BFS by decreasing In-Degree of the nodes
 
 ## Single-Source Shortest Path in Unweighted Graph
 
