@@ -60,11 +60,12 @@ The data items are not arranged in a sequential structure.
     - [Binary Tree](#binary-tree)
         - [Full Binary Tree](#full-binary-tree)
         - [Complete Binary Tree](#complete-binary-tree)
-            - Binary Heap
-                - Max Heap
-                - Min Heap
+            - Heap
         - [Perfect Binary Tree](#perfect-binary-tree)
         - [Degenerated / Pathological Tree](#degenerated-pathological-tree)
+        - Skew Binary Tree
+            - Left Skew Tree
+            - Right Skew Tree
     - [Binary Search Tree - BST](#binary-search-tree-bst)
         - Self Balancing / Balanced / Height Balanced BST
             - AVL Tree
@@ -75,11 +76,13 @@ The data items are not arranged in a sequential structure.
     - B Tree
         - B+ tree
     - Heap
-        - Max Heap
-        - Min Heap
         - Binary Heap
+            - Max Heap
+            - Min Heap
         - Bionomial Heap
         - Fibbonacci Heap
+        - Leftist Heap
+        - Skew Heap
     - Trie
     - Misc
         - Indexing with Trees
@@ -87,9 +90,6 @@ The data items are not arranged in a sequential structure.
         - Fenwick Tree
         - Binary Indexed Tree (BIT)
         - Binomial Queues
-        - Fibonacci Heaps
-        - Leftist Heaps
-        - Skew Heaps
         - Open Hash Tables (Closed Addressing)
         - Closed Hash Tables (Open Addressing)
         - Closed Hash Tables, using buckets
@@ -247,22 +247,28 @@ FIFO
 - The tree with no nodes is called the null or empty tree
 
 ## Terminologies
-- Root: The top node in a tree.
-- Child: A node directly connected to another node when moving away from the Root.
-- Parent: The converse notion of a child.
-- Siblings: A group of nodes with the same parent.
-- Descendant: A node reachable by repeated proceeding from parent to child.
-- Ancestor: A node reachable by repeated proceeding from child to parent.
-- Leaf: (less commonly called External node) A node with no children.
-- Branch: Internal node, A node with at least one child.
-- Degree: The number of subtrees of a node.
-- Edge: The connection between one node and another.
-- Path: A sequence of nodes and edges connecting a node with a descendant.
-- **Level**: The level of a node is defined by 1 + (the number of connections between the node and the root).
-- **Height of node**: The height of a node is the number of edges on the longest path between that node and a leaf.
-- Height of tree: The height of a tree is the height of its root node.
-- Depth: The depth of a node is the number of edges from the tree's root node to the node.
-- Forest: A forest is a set of n â¥ 0 disjoint trees.
+- Root: The top node in a tree
+- Child: A node directly connected to another node when moving away from the Root
+- Parent: The converse notion of a child
+- Siblings: A group of nodes with the same parent
+- Descendant: A node reachable by repeated proceeding from parent to child
+- Ancestor: A node reachable by repeated proceeding from child to parent
+- Leaf: (less commonly called External node) A node with no children
+- Branch: Internal node, A node with at least one child
+- Degree: The number of subtrees of a node
+- Edge: The connection between one node and another
+- Path: A sequence of nodes and edges connecting a node with a descendant
+- __Depth of node__: The depth of a node is the number of edges from the tree's root node to the node
+- __Level of node__: All nodes of depth $d$ are at level $d$
+- __Height of node__: The height of a node is the number of edges on the longest path between that node and a leaf
+- __Depth & Level__ of __root__ node is zero (some may say 1 as well - no problem)
+- __Depth & Level__ are measured from top (root) to bottom (leaf)
+- __Height__ is measured from bottom (leaf) to top (root)
+- __Height__ of the __leaf in last level__ is zero
+- __Depth of tree__: The number of edges between root & deepest leaf + 1
+- __Level of tree__: The number of levels in the tree (i.e. number of edges between root & deepest leaf + 1; i.e. _same as Depth of tree_)
+- __Height of tree__: The height of a tree is the height of its root node using longest path
+- Forest: A forest is a set of $n \ge 0$ disjoint trees
 
 ## Why
 - need to store in hierchical way, e.g. computer filesystem
@@ -275,22 +281,32 @@ FIFO
 - decision making
 
 ## Hand Shaking Lemma
-In an undirected graph, Number of vertex of odd degree are alway even.
-Vertex of odd degree = Vertex connected to 3 edges.
+In an undirected graph, Number of vertex of odd degree are always even
+
+e.g. Vertex of odd degree = Vertex connected to 3 edges.
 
 ## Binary Tree
 
 ### Desc
 - tree whose each node have at most 2 children
-- children typically known as left and right child.
+- children typically known as left and right child
 
 ### Representation
 - a node consist of data, pointer to left child, pointer to right child
 
+#### Array Representation
+- Root at index $0$
+- Left child at index $2 \times i$
+- Right child at index $2 \times i + 1$
+- Parent at index $i / 2$
+
+Note: The array should be filled with `nil` value for non-existing child nodes
+
 ### Properties
-- Level(Root) = 1, but height = 0 (don't get confuse)
-- Maximum number of nodes at level $ i = 2^{i-1}$ 
-- Level of a Node = Height of the Node + 1
+- Level(Root) = 0
+- Height of tree with only root node = 0
+- Maximum number of nodes at level $i = 2^{i-1}$ 
+- no. of Levels in a Tree = Height of the Tree + 1
 - Minimum Possible Height of a tree having N nodes: $h = \lfloor \log_2{(N+1)} \rfloor$
 - A binary tree with L leaves is of at least height $h = \lceil \log_2{L} \rceil$
 - Number of leaves = Number of internal nodes having 2 children + 1
@@ -348,6 +364,103 @@ Vertex of odd degree = Vertex connected to 3 edges.
     - Non recursive solution
     - Traversal starts from root, unlike DFS. So, better if our finding is closer to root.
 
+#### Vertical Order Traversal
+
+When nodes are traversed in vertical lines.
+
+```
+          1
+        /   \
+       2     3
+      / \   / \
+     4   5 6   7
+              /  \
+             8    9
+
+Vertical Order should be:
+
+4
+2
+1 5 6
+3 8
+7
+9
+```
+
+TODO
+
+## Views
+
+### Top View of a binary tree
+Top view of a binary tree is the set of nodes visible when the tree is viewed from the __top__.
+
+Imagine a real X-mas tree, and view it from sky.
+
+Note: Order of nodes doesn't matter.
+
+```
+       1
+    /     \
+   2       3
+  /  \    / \
+ 4    5  6   7
+Top view:
+4 2 1 3 7
+
+        1
+      /   \
+    2       3
+      \
+        4
+          \
+            5
+             \
+               6
+Top view:
+2 1 3 6
+```
+
+
+### Bottom View of a binary tree
+Bottom view of a binary tree is the set of nodes visible when the tree is viewed from the __bottom__.
+
+__Horizontal distance of node__: The distance of a node from root, when measured horizontally (say in x-axis).
+And suppose root node lies on y-axis (i.e. x=0).
+
+So, another definition of bottom view: 
+
+Set of bottommost nodes at their horizontal distance, i.e. For each horizontal distance unit, pick the bottom most node.
+
+Note: If there are two bottom most nodes at same horizontal distance, then pick the last/right one.
+
+```
+                      20
+                    /    \
+                  8       22
+                /   \      \
+              5      3      25
+                    / \
+                  10    14
+
+        Bottom view: 5, 10, 3, 14, 25
+        Horizontal Distance: -2, -1, 0, 1, 2
+
+                      20
+                    /    \
+                  8       22
+                /   \    /   \
+              5      3 4     25
+                    / \      
+                  10    14
+
+              5, 10, 4, 14, 25
+```            
+
+### Left View of a binary tree
+Left view of a binary tree is the set of nodes visible when the tree is viewed from the __left-side__.
+
+### Right View of a binary tree
+Right view of a binary tree is the set of nodes visible when the tree is viewed from the __right-side__.
 
 ## Full Binary Tree
 Every node has 0 or 2 children
@@ -380,6 +493,15 @@ All internal nodes have 2 children and all leaves are at same level.
 ## Degenerated / Pathological Tree
 Every internal node has one child. Performance-wise same as linked list.
 
+## Skew (Binary) Tree
+A tree with every node having one child only
+
+## Left Skew (Binary) Tree
+A tree with every node having one Left child only
+
+## Right Skew (Binary) Tree
+A tree with every node having one Right child only
+
 ## Binary Search Tree (BST)
 ### Desc
 ### Operations
@@ -395,13 +517,58 @@ Every internal node has one child. Performance-wise same as linked list.
 - Filesystem
 
 
-## Heap
+# Heap
 
-## Min Heap
+- Heap are nothing but a speacial form of tree
+- The special condition is:
+    - the value of a node MUST be $\ge$ (or $\le$ ) value of its children (heap property)
+        - notice its different than BST
+- Another good to have condition is (not mandatory, but good for performance)
+    - all the levels should be fullfilled, except the possible last
+    - i.e. all the leaves should be in the level $l$ or $l-1$ (suppose $l$ is height of the tree/root, for $l \gt 0$)
+    - i.e. the heap should be a complete binary tree
+    - __reason__:
+        - it will guarantee $O(log_{2} N)$ to __build__ operation
+        - it will guarantee $O(log_{2} N)$ to __insert__ operation
+        - because both depends on the height of the heap
+            - and $height = log_{2} N$, where $N$ is size of the heap
 
-## Max Heap
+# Binary Heap
+A heap with atmost 2 children
 
-## Trie
+# Min Heap
+A __binary__ heap in which the value of a node MUST be $\le$ value of its children
+
+## Operations
+
+### Insert
+
+__input__: a node 
+__output__: nothing
+
+1. 
+
+# Max Heap
+A __binary__ heap in which the value of a node MUST be $\ge$ value of its children
+
+# Priority Queue
+
+## Implementations
+|Implementation|Insert|Delete-Max|Extract-Min|
+|--------------|------|----------|-----------|
+|Unordered Array|1|n|n|
+|Unordered List|1|n|n|
+|Ordered Array|n|1|1|
+|Ordered List|n|1|1|
+|Binary Search Tree|$log n$|$log n$|$log n$|
+|Balanced Binary Search Tree|$log n$|$log n$|$log n$|
+|Binary Heaps|$log n$|$log n$|1|
+
+
+
+## Operations
+
+# Trie
 
 # Graph
 
