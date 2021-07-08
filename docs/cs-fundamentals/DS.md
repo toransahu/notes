@@ -44,10 +44,10 @@ Only one data element can directly be reached.
     - Doubly Linked List
 - [Stack](#stack)
 - [Queue](#queue)
-    - Simple Queue
-    - Circular Queue
+    - [Simple Queue](#simple-queue)
+    - [Circular Queue](#cicular-queue)
     - [Priority Queue](#priority-queue)
-    - Dequeue / Double Ended Queue
+    - [Dequeue / Double Ended Queue](#dequeue)
 - [Hash](#hash)
 - Matrix
 
@@ -60,7 +60,7 @@ The data items are not arranged in a sequential structure.
     - [Binary Tree](#binary-tree)
         - [Full Binary Tree](#full-binary-tree)
         - [Complete Binary Tree](#complete-binary-tree)
-            - Heap
+            - [Heap](#heap)
         - [Perfect Binary Tree](#perfect-binary-tree)
         - [Degenerated / Pathological Tree](#degenerated-pathological-tree)
         - Skew Binary Tree
@@ -75,10 +75,10 @@ The data items are not arranged in a sequential structure.
     - K-ary Tree
     - B Tree
         - B+ tree
-    - Heap
-        - Binary Heap
-            - Max Heap
-            - Min Heap
+    - [Heap](#heap)
+        - [Binary Heap](#binary-heap)
+            - [Max Heap](#max-heap)
+            - [Min Heap](#min-heap)
         - Bionomial Heap
         - Fibbonacci Heap
         - Leftist Heap
@@ -176,7 +176,13 @@ FIFO
 
 ## Simple Queue
 
-## Max-Priority Queue
+## Circular Queue
+
+## Dequeue
+
+(aka Doubly eneded queue)
+
+## Priority Queue
 ### Desc
 ### Application
 - job scheduling
@@ -186,10 +192,10 @@ FIFO
 - INSERT
 - MAXIMUM
 - EXTRACT-MAX
-- INCREASE-KEY
+- REPLACE
 ### Implementation
 - Array/Set/List(LinkedList)
-- Binary Heap
+- [Binary Heap](#binary-heap)
 - Fibbonacci Heap
 
 # Hash
@@ -300,12 +306,15 @@ e.g. Vertex of odd degree = Vertex connected to 3 edges.
 - Right child at index $2 \times i + 1$
 - Parent at index $i / 2$
 
-Note: The array should be filled with `nil` value for non-existing child nodes
+Note: 
+- The array should be filled with `nil` value for non-existing child nodes
+- i.e. if traverse level-by-level, then if there are any missing nodes, then the index of those nodes should be filled with `nil` values
 
 ### Properties
 - Level(Root) = 0
 - Height of tree with only root node = 0
-- Maximum number of nodes at level $i = 2^{i-1}$ 
+- Maximum number of nodes __possible at level__ $i$ is $2^{i}$ 
+- Maximum number of nodes __possible in a binary tree__ of height $h$ is $2^{h+1}-1$ 
 - no. of Levels in a Tree = Height of the Tree + 1
 - Minimum Possible Height of a tree having N nodes: $h = \lfloor \log_2{(N+1)} \rfloor$
 - A binary tree with L leaves is of at least height $h = \lceil \log_2{L} \rceil$
@@ -463,29 +472,32 @@ Left view of a binary tree is the set of nodes visible when the tree is viewed f
 Right view of a binary tree is the set of nodes visible when the tree is viewed from the __right-side__.
 
 ## Full Binary Tree
-Every node has 0 or 2 children
+Every node __at a particular level__ has 0 or 2 children
 
 ## Complete Binary Tree
 All level are completely filled, except possibly last level and last level has all keys as left as possible.  
 Practical e.g.: Binary Heap
 
 
+                                                 18
+                                               /    \  
+                                             15      30  
+                                            /  \     / \
+                                          40    50  100 40
+
+
                                                   18
-                                               /       \  
-                                             15         30  
-                                            /  \        /  \
-                                          40    50    100   40
-
-
-                                                   18
-                                               /       \  
-                                             15         30  
-                                            /  \        /  \ 
-                                          40    50    100   40
+                                                /    \
+                                               /      \  
+                                             15        30  
+                                            /  \       /  \ 
+                                          40    50   100   40
                                          /  \   /
                                         8   7  9 
 
 
+### Properties
+1. height of a complete binary tree (having N nodes) = $\log_2{N}$
 
 ## Perfect Binary Tree
 All internal nodes have 2 children and all leaves are at same level.
@@ -536,22 +548,33 @@ A tree with every node having one Right child only
 # Binary Heap
 A heap with atmost 2 children
 
+## Applications
+- Heap Sort: Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
+- Priority Queue: Priority queues can be efficiently implemented using Binary Heap because it supports insert(), delete() and extractmax(), decreaseKey() operations in O(logn) time. Binomoial Heap and Fibonacci Heap are variations of Binary Heap. These variations perform union also efficiently.
+- Graph Algorithms: The priority queues are especially used in Graph Algorithms like Dijkstra’s Shortest Path and Prim’s Minimum Spanning Tree.
+- Many problems likes
+    - K’th Largest Element in an array.
+    - Sort an almost sorted array/
+    - Merge K Sorted Arrays.
+
 # Min Heap
 A __binary__ heap in which the value of a node MUST be $\le$ value of its children
 
 ## Operations
+- Insertion
+- Top/Min
+- Delete-Top / Extract-Min (Get & Delete) Top
+- Replace
 
-### Insert
-
-__input__: a node 
-__output__: nothing
-
-1. 
 
 # Max Heap
 A __binary__ heap in which the value of a node MUST be $\ge$ value of its children
 
-# Priority Queue
+## Operations
+- Insertion
+- Top/Max
+- Delete-Top / Extract-Max (Get & Delete) Top
+- Replace
 
 ## Implementations
 |Implementation|Insert|Delete-Max|Extract-Min|
