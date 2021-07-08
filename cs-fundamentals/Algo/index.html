@@ -785,6 +785,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#remove-duplicates" class="md-nav__link">
+    Remove duplicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reverse-the-linkedlist" class="md-nav__link">
     Reverse the Linkedlist
   </a>
@@ -909,6 +916,26 @@
           <li class="md-nav__item">
   <a href="#breadth-first-search-bfs-level-order-traversal" class="md-nav__link">
     Breadth First Search (BFS) / Level order traversal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heap-algorithms" class="md-nav__link">
+    Heap Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Heap Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-implemented-using-complete-binary-tree" class="md-nav__link">
+    Heap implemented using (Complete) Binary Tree
   </a>
   
 </li>
@@ -3140,6 +3167,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#remove-duplicates" class="md-nav__link">
+    Remove duplicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reverse-the-linkedlist" class="md-nav__link">
     Reverse the Linkedlist
   </a>
@@ -3264,6 +3298,26 @@
           <li class="md-nav__item">
   <a href="#breadth-first-search-bfs-level-order-traversal" class="md-nav__link">
     Breadth First Search (BFS) / Level order traversal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heap-algorithms" class="md-nav__link">
+    Heap Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Heap Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-implemented-using-complete-binary-tree" class="md-nav__link">
+    Heap implemented using (Complete) Binary Tree
   </a>
   
 </li>
@@ -4487,6 +4541,7 @@
 </ul>
 </li>
 <li><a href="#linkedlist-algorithms">Linkedlist Algorithms</a><ul>
+<li><a href="#remove-duplicates">Remove duplicates</a></li>
 <li><a href="#reverse-the-linkedlist">Reverse the Linkedlist</a></li>
 <li><a href="#cycle-loop-detection-algorithms">Cycle / Loop Detection Algorithms</a></li>
 <li><a href="#floyds-cycle-detection-algorithm">Floyd's Cycle Detection Algorithm</a><ul>
@@ -4510,6 +4565,10 @@
 <li><a href="#tree-algorithms">Tree Algorithms</a><ul>
 <li><a href="#depth-first-search-dfs">Depth First Search (DFS)</a></li>
 <li><a href="#breadth-first-search-bfs-level-order-traversal">Breadth First Search (BFS) / Level order traversal</a></li>
+</ul>
+</li>
+<li><a href="#heap-algorithms">Heap Algorithms</a><ul>
+<li><a href="#heap-implemented-using-complete-binary-tree">Heap implemented using (Complete) Binary Tree</a></li>
 </ul>
 </li>
 <li><a href="#graph-algorithms">Graph Algorithms</a><ul>
@@ -4944,14 +5003,20 @@ Amortized analysis guarantees on the worst-case cost of <span><span class="MathJ
 </ul>
 <h4 id="6-heap-sort">6. Heap Sort<a class="headerlink" href="#6-heap-sort" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Desc:</strong><ul>
-<li>Make max heap using heapify(). To do so, start from last leaf and make max heap till root node.</li>
-<li>Loop from last leaf to second node.<ul>
-<li>Swap last leaf with root node in max heap</li>
-<li>Heapify the sub-tree (by ignoring last leaf) at root node till the loop covers all the nodes except the root node</li>
-</ul>
+<li><strong>Desc:</strong><ol>
+<li>Create a max-heap: Using HEAPIFY (aka <code>BUILD_&lt;MIN/MAX&gt;_HEAP</code>. To do so, start from last leaf and make max heap till root node.</li>
+<li>EXTRACT (Get and Delete) the Top/Root nodes from the heap one by one to get sorted items<ol>
+<li>DELETE the top/root node</li>
+<li>Fill the empty root position by Swapping the last leaf with root node in max heap</li>
+<li>PERCOLATE_DOWN the (newly added) root node (by ignoring nodes added in step #3)
+   till the loop covers all the nodes (no need to do anything with the last node in the heap)</li>
+</ol>
 </li>
-</ul>
+<li>While doing step #2, why not add those items/nodes back again to the same array  (start at the end, in right to left direction) so that we can avoid an auxilary space and utilize the same array (to store items in sorted order)<ol>
+<li>Note: while doing step #2, make sure we're  not considering the nodes added during step #3</li>
+</ol>
+</li>
+</ol>
 </li>
 <li><strong>Pre-requisites:</strong> </li>
 <li><strong>Useful:</strong><ul>
@@ -5216,6 +5281,11 @@ Amortized analysis guarantees on the worst-case cost of <span><span class="MathJ
 </ul>
 <hr />
 <h2 id="linkedlist-algorithms">Linkedlist Algorithms<a class="headerlink" href="#linkedlist-algorithms" title="Permanent link">#</a></h2>
+<h3 id="remove-duplicates">Remove duplicates<a class="headerlink" href="#remove-duplicates" title="Permanent link">#</a></h3>
+<ul>
+<li>Remove duplicate nodes from an unsorted linkedlist (w/ auxilary space)</li>
+<li>Remove duplicate nodes from an unsorted linkedlist (w/o auxilary space)</li>
+</ul>
 <h3 id="reverse-the-linkedlist">Reverse the Linkedlist<a class="headerlink" href="#reverse-the-linkedlist" title="Permanent link">#</a></h3>
 <ul>
 <li>Reverse a singly linkedlist</li>
@@ -5393,6 +5463,28 @@ But, it is also possible that <span><span class="MathJax_Preview">P_f</span><scr
 <h3 id="depth-first-search-dfs">Depth First Search (DFS)<a class="headerlink" href="#depth-first-search-dfs" title="Permanent link">#</a></h3>
 <h3 id="breadth-first-search-bfs-level-order-traversal">Breadth First Search (BFS) / Level order traversal<a class="headerlink" href="#breadth-first-search-bfs-level-order-traversal" title="Permanent link">#</a></h3>
 <hr />
+<h2 id="heap-algorithms">Heap Algorithms<a class="headerlink" href="#heap-algorithms" title="Permanent link">#</a></h2>
+<h3 id="heap-implemented-using-complete-binary-tree">Heap implemented using (Complete) Binary Tree<a class="headerlink" href="#heap-implemented-using-complete-binary-tree" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L44-L82">Basic</a><ul>
+<li>Insert</li>
+<li>Top</li>
+<li>Extract Top</li>
+<li>Replace</li>
+</ul>
+</li>
+<li><a href="https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L84-L156">Internal</a><ul>
+<li>percolate-down</li>
+<li>percolate-up</li>
+<li>heapify</li>
+</ul>
+</li>
+<li>Creation<ul>
+<li><a href="https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L34-L42">Build</a></li>
+</ul>
+</li>
+</ul>
+<hr />
 <h2 id="graph-algorithms">Graph Algorithms<a class="headerlink" href="#graph-algorithms" title="Permanent link">#</a></h2>
 <h3 id="depth-first-search-dfs_1">Depth First Search (DFS)<a class="headerlink" href="#depth-first-search-dfs_1" title="Permanent link">#</a></h3>
 <p>DFS works in similar manner as pre-order travesal of a tree.</p>
@@ -5551,7 +5643,7 @@ But, it is also possible that <span><span class="MathJax_Preview">P_f</span><scr
 <p>Note: There is no solution if the graph is a) Undirected, or b) Directed with cycle(s) - it will cause a deadlock.</p>
 <h4 id="idea_2">Idea<a class="headerlink" href="#idea_2" title="Permanent link">#</a></h4>
 <p>Topologican sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
-Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the least, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to at the end of the sorted list.</p>
+Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the list, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to be at the end of the sorted list.</p>
 <h4 id="applications_3">Applications<a class="headerlink" href="#applications_3" title="Permanent link">#</a></h4>
 <ul>
 <li>To execute some inter-dependent tasks/jobs<ul>
