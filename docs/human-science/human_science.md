@@ -60,12 +60,26 @@
 - short-tempered
 - skeptic
 - smart
+- sympathic
 - technical
 - toxic
 - workaholic
 - worrier
 
+# Tactful Honesty
+
+# Niceness/Empathic over Truth/Honesty
+
 # Observation Vs Judgement
+
+# Over confidence, Confidence, and Under confidence
+- Over confidence
+    - arrogant
+    - denying the lack/gap
+- Under confident
+    - covering the lack/gap
+- Confidence
+    - knowing & accepting the lack/gap
 
 # Parenting
 
