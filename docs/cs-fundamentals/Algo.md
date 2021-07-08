@@ -255,10 +255,14 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
 ### 6. Heap Sort    
 - **Desc:**
-    - Make max heap using heapify(). To do so, start from last leaf and make max heap till root node.
-    - Loop from last leaf to second node.
-        - Swap last leaf with root node in max heap
-        - Heapify the sub-tree (by ignoring last leaf) at root node till the loop covers all the nodes except the root node
+    1. Create a max-heap: Using HEAPIFY (aka `BUILD_<MIN/MAX>_HEAP`. To do so, start from last leaf and make max heap till root node.
+    2. EXTRACT (Get and Delete) the Top/Root nodes from the heap one by one to get sorted items
+        1. DELETE the top/root node
+        1. Fill the empty root position by Swapping the last leaf with root node in max heap
+        2. PERCOLATE_DOWN the (newly added) root node (by ignoring nodes added in step #3)
+       till the loop covers all the nodes (no need to do anything with the last node in the heap)
+    3. While doing step #2, why not add those items/nodes back again to the same array  (start at the end, in right to left direction) so that we can avoid an auxilary space and utilize the same array (to store items in sorted order)
+        1. Note: while doing step #2, make sure we're  not considering the nodes added during step #3
 - **Pre-requisites:** 
 - **Useful:**
     - When there is time (Quick's problem) and space (Merge's problem) bound
@@ -454,6 +458,10 @@ $T(n) = aT(n/b) + \Theta(n^klog^pn)$
 
 # Linkedlist Algorithms
 
+## Remove duplicates
+- Remove duplicate nodes from an unsorted linkedlist (w/ auxilary space)
+- Remove duplicate nodes from an unsorted linkedlist (w/o auxilary space)
+
 ## Reverse the Linkedlist
 
 - Reverse a singly linkedlist
@@ -639,6 +647,24 @@ __Output__:= `bool`: Loop detected, $L^{'}$: the same linkedlist with loop remov
 
 ---
 
+# Heap Algorithms
+
+## Heap implemented using (Complete) Binary Tree
+
+- [Basic](https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L44-L82)
+    - Insert
+    - Top
+    - Extract Top
+    - Replace
+- [Internal](https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L84-L156)
+    - percolate-down
+    - percolate-up
+    - heapify
+- Creation
+    - [Build](https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L34-L42)
+
+---
+
 # Graph Algorithms
 
 ## Depth First Search (DFS)
@@ -787,7 +813,7 @@ Note: There is no solution if the graph is a) Undirected, or b) Directed with cy
 ### Idea
 
 Topologican sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
-Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the least, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to at the end of the sorted list.
+Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the list, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to be at the end of the sorted list.
 
 ### Applications
 - To execute some inter-dependent tasks/jobs
