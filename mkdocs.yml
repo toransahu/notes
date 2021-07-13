@@ -30,6 +30,8 @@ markdown_extensions:
         baselevel: 2
         separator: "-"
     - pymdownx.arithmatex:
+    - pymdownx.highlight:
+        linenums: true
     - pymdownx.superfences:
 extra_javascript:
   - javascripts/config.js
