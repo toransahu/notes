@@ -5104,7 +5104,7 @@ Amortized analysis guarantees on the worst-case cost of <span><span class="MathJ
 F(n) = \left
 \{
 \begin{array}{lcl} 
-0 &amp; if &amp; n=1 \\
+0 &amp; if &amp; n=0 \\
 1 &amp; if &amp; n=1 \\
 F(n-1) + F(n-2) &amp; if &amp; n&gt;1 \\
 \end{array}
@@ -5114,27 +5114,47 @@ F(n-1) + F(n-2) &amp; if &amp; n&gt;1 \\
 F(n) = \left
 \{
 \begin{array}{lcl} 
-0 & if & n=1 \\
+0 & if & n=0 \\
 1 & if & n=1 \\
 F(n-1) + F(n-2) & if & n>1 \\
 \end{array}
 \right. 
 </script>
 </div>
-<p>So, the recurrence relation should be: <span><span class="MathJax_Preview">T(n) = T(n - 1) + T(n -2)</span><script type="math/tex">T(n) = T(n - 1) + T(n -2)</script></span>.</p>
+<p>So, the recurrence relation should be: </p>
+<div>
+<div class="MathJax_Preview">
+T(n) = \left
+\{
+\begin{array}{lcl} 
+0 &amp; if &amp; n \le 1 \\
+T(n-1) + T(n-2) &amp; if &amp; n&gt;1 \\
+\end{array}
+\right. 
+</div>
+<script type="math/tex; mode=display">
+T(n) = \left
+\{
+\begin{array}{lcl} 
+0 & if & n \le 1 \\
+T(n-1) + T(n-2) & if & n>1 \\
+\end{array}
+\right. 
+</script>
+</div>
 <p>Solution using substitution method:</p>
 <div>
 <div class="MathJax_Preview">
 \begin{array}{r, c, l,l}
     T(n) &amp; = &amp; T(n-1) + T(n - 2) &amp; \text{(this will become harder to solve)} \\
-    T(n) &amp; \le &amp; T(n-1) + T(n-1)  &amp; \text{(so, approximate} \space T(n-2) \sim T(n-1) \space \text{for upper bound)} \\
+    T(n) &amp; \le &amp; T(n-1) + T(n-1)  &amp; \text{(so, approximate} \space T(n-2) \approx T(n-1) \space \text{for upper bound)} \\
     \therefore T(n) &amp; \le &amp; 2 \times T(n-1) &amp; \text{ eq. 1}\\
 \end{array}
 </div>
 <script type="math/tex; mode=display">
 \begin{array}{r, c, l,l}
     T(n) & = & T(n-1) + T(n - 2) & \text{(this will become harder to solve)} \\
-    T(n) & \le & T(n-1) + T(n-1)  & \text{(so, approximate} \space T(n-2) \sim T(n-1) \space \text{for upper bound)} \\
+    T(n) & \le & T(n-1) + T(n-1)  & \text{(so, approximate} \space T(n-2) \approx T(n-1) \space \text{for upper bound)} \\
     \therefore T(n) & \le & 2 \times T(n-1) & \text{ eq. 1}\\
 \end{array}
 </script>
@@ -5208,15 +5228,18 @@ F(n-1) + F(n-2) & if & n>1 \\
 \begin{array}{r,c,l}
     T(n) &amp; \le &amp; 2^n \times T(0) &amp; \text{(for } k=n \text{)} \\
     \therefore T(n) &amp; \le &amp; 2^n \\
+    \therefore T(n) &amp; = &amp; O(2^n) &amp; \text{(this is upper bound of the worst case analysis)} \\
 \end{array}
 </div>
 <script type="math/tex; mode=display">
 \begin{array}{r,c,l}
     T(n) & \le & 2^n \times T(0) & \text{(for } k=n \text{)} \\
     \therefore T(n) & \le & 2^n \\
+    \therefore T(n) & = & O(2^n) & \text{(this is upper bound of the worst case analysis)} \\
 \end{array}
 </script>
 </div>
+<p>However, the tighter bound is <span><span class="MathJax_Preview">\Theta(\phi^n)</span><script type="math/tex">\Theta(\phi^n)</script></span> where <span><span class="MathJax_Preview">\phi = \frac{1+\sqrt{5}}{2} \approx 1.62 \approx 2</span><script type="math/tex">\phi = \frac{1+\sqrt{5}}{2} \approx 1.62 \approx 2</script></span>, called as <strong>Golden Ratio</strong>.</p>
 <p><strong>Example 3: Calculate the time complexity of recursive solution of finding the number of ways to reach the top of a stair if allowed steps are 1, 2, and 3</strong>?</p>
 <h3 id="master-theorem">Master Theorem<a class="headerlink" href="#master-theorem" title="Permanent link">#</a></h3>
 <p>If the recurrence relation is of the form:</p>
