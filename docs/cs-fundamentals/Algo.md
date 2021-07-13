@@ -144,11 +144,97 @@ Amortized analysis guarantees on the worst-case cost of $N$ operations.
 
 ## Recurrence Relation
 
+### Ways to solve recurrence relation
+1. Substitution Method (aka Back substitution / Induction)
+2. Recursion Tree
+3. Master Theorem
+
+Let's understand deriving a recurrence relation and solving it using some examples.
+
+__Example 1: Calculate the time complexity of finding an item in array using Binary Search__?
+
+__Example 2: Calculate the time complexity of finding $n^{th}$ item of the Fibonacci Series__?
+
+A recurrsive solution says that:
+
+$$
+F(n) = \left
+\{
+\begin{array}{lcl} 
+0 & if & n=1 \\
+1 & if & n=1 \\
+F(n-1) + F(n-2) & if & n>1 \\
+\end{array}
+\right. 
+$$
+
+So, the recurrence relation should be: $T(n) = T(n - 1) + T(n -2)$.
+
+
+Solution using substitution method:
+
+$$
+\begin{array}{r, c, l,l}
+    T(n) & = & T(n-1) + T(n - 2) & \text{(this will become harder to solve)} \\
+    T(n) & \le & T(n-1) + T(n-1)  & \text{(so, approximate} \space T(n-2) \sim T(n-1) \space \text{for upper bound)} \\
+    \therefore T(n) & \le & 2 \times T(n-1) & \text{ eq. 1}\\
+\end{array}
+$$
+
+Let's derive a few other terms using the eq. 1
+
+$$
+ \begin{array}{r, c, l,l}
+     T(n-1) & \le & 2 \times T(n-2) \\
+     T(n-2) & \le & 2 \times T(n-3) \\
+     ... \\
+     T(1) & = & 1 \\
+     T(0) & = & 1 \\
+ \end{array}
+$$
+
+Now do the substitution
+
+$$
+\begin{array}{r, c, l,l}
+    T(n) & \le & 2 \times T(n-1) \\
+    T(n) & \le & 2 \times [2 \times T(n-2)] \\
+    T(n) & \le & 2^3 \times T(n-3) \\
+    T(n) & \le & 2^4 \times T(n-4) \\
+    ... \\
+    T(n) & \le & 2^k \times T(n-k) \\
+\end{array}
+$$
+
+As we know
+
+$$
+\begin{array}{r,c,l}
+    T(0) & = & 1 \\
+    \therefore T(n-k) & = & 1 \\
+    \text{and } n-k & = & 0 \\
+    \therefore k & = & n & \text{(for } T(0) = 1 \text{)} \\
+\end{array}
+$$
+
+Thus
+
+$$
+\begin{array}{r,c,l}
+    T(n) & \le & 2^n \times T(0) & \text{(for } k=n \text{)} \\
+    \therefore T(n) & \le & 2^n \\
+\end{array}
+$$
+
+__Example 3: Calculate the time complexity of recursive solution of finding the number of ways to reach the top of a stair if allowed steps are 1, 2, and 3__?
+
 ## Master Theorem
 
 If the recurrence relation is of the form:
 
 $T(n) = aT(n/b) + \Theta(n^klog^pn)$
+
+TODO
 
 ---    
 
@@ -662,6 +748,129 @@ __Output__:= `bool`: Loop detected, $L^{'}$: the same linkedlist with loop remov
     - heapify
 - Creation
     - [Build](https://github.com/toransahu/goutils/blob/master/adt/heap/heap.go#L34-L42)
+
+
+### `heapify()` 
+
+#### Pseudo Code
+
+__input__ = an array $arr$ of numbers  
+__output__ = array ordered to follow min-heap properties  
+__return__ = none
+
+```python
+for i in range(arr.length - 1 to 0):
+    percolate_down(arr, i)
+```
+
+#### Analysis
+
+##### Asymptotically
+
+$T(n) = n * O(log_2{n})$  
+$T(n) = O(nlog_2{n})$  
+
+##### Amortized 
+
+Worst case running time of $heapify()$ =  
+percolate down all the nodes at last/leaf ($h$) level to 0 steps/levels  (note: level start from top, i.e. 0 and, $h$ is total height of the heap)  
++ percolate down all the nodes at second last ($h-1$) level to 1 steps/levels  
++ percolate down all the nodes at third last ($h-2$) level to 2 steps/levels  
++ ...  
++ percolate down all the nodes at $h - i$ level to $i$ steps/levels  
++ ...  
++ percolate down all the nodes at zeroth ($0$) level to $h$ steps/levels  
+
+
+i.e. $T(n) = \sum_{i=1}^{h}$ percolate down all the nodes at level=$h-i$ to $i$ steps/levels  
+
+$\therefore T(n) = \sum_{i=0}^{h}$ (number of nodes at level $h - i$ to percolate down) $\times$ (cost of percolate down a node to $i$ levels)  
+
+$\therefore T(n) = \sum_{i=0}^{h} 2^{h-i} \times O(i)$  $\because$ number of nodes a level $x = 2^{x}$  
+
+$\therefore T(n) = \sum_{i=0}^{\log_2{n}} 2^{h-i} \times i$  $\because$ height $h$ of a heap = $\log_2{n}$  
+
+$\therefore T(n) = \sum_{i=0}^{\log_2{n}} 2^{\log_2{n}-i} \times i$
+
+$\therefore T(n) = \sum_{i=0}^{\log_2{n}} \frac{2^{\log_2{n}}}{2^i} \times i$
+
+$\therefore T(n) = \sum_{i=0}^{\log_2{n}} \frac{n}{2^i} \times i$
+
+$\therefore T(n) = n \times \sum_{i=0}^{\log_2{n}} \frac{i}{2^i}$
+
+$\therefore T(n) \le n \times 2 \because \sum_{i=0}^{\infty} \frac{i}{2^i} = 2$  (upper bound)  
+
+$\therefore T(n) \le O(n)$
+
+
+### `percolateDown()` 
+
+#### Pseudo Code
+
+__input__ = an array $arr$ of numbers, some index $i$ (index starting at $0$)  
+__output__ = item at index $i$ in the array gets repositioned to follow min-heap properties  
+__return__ = none
+
+1. if the node at given index $i$ is a leaf node or non-existing node 
+    1. __return__
+- $leftChildPos := 2*i + 1$
+- $rightChildPos := 2*i + 2$
+- $minimumNodePos := i$
+- if $leftChildPos$ exists and $arr[leftChildPos] \lt arr[i]$:
+    1. $minimumNodePos := leftChildPos$
+- if $rightChildPos$ exists and $arr[rightChildPos] \lt arr[i]$:
+    1. $minimumNodePos := rightChildPos$
+- if $i$ and $minimumNodePos$ are not same:
+    1. swap item at index $minimumNodePos$ and $i$
+    - $percolateDown(arr, minimumNodePos)$
+
+#### Analysis
+
+At worst, a node might have to reposition/move from root to leaf position. Saying that, it might need tree/heap __height__ / __level__ steps i.e. $\log_2{n}$. Where $n$ is number of nodes in the heap.
+
+##### Recurrence relation
+
+$T(n) = T(n/2) + C$ 
+
+i.e. size of the problem is reducing by half (no. of nodes at a left or right sub-tree) each time.
+
+By substitution method:
+
+$$
+\frac{
+    \begin{array}{l,c,l}
+        T(n) = T(n/2) + C \\
+        T(n/2) = T(n/2^2) + C \\
+        T(n/4) = T(n/2^3) + C \\
+        ... \\
+        T(1) = 1 \\
+        T(0) = 1 \\
+    \end{array}
+}{
+    \begin{array}{r,c,l}
+        T(n) = T(n/2^k) + k*C 
+    \end{array}
+}
+$$
+
+Suppose for some $k$, $n/2^k$ becomes 1 so $T(n/2^k) = 1$ i.e. $T(1) = 1$.  
+
+Thus,
+
+$n/2^k =1$  
+$n = 2^k$  
+$log_2{n} = log_2{2^k}$  
+$log_2{n} = k$  
+i.e. $k = log_2{n}$  
+
+by putting the value of $k$ in form of $n$  
+
+
+$T(n) = T(1) + log_2{n}*C$  
+$T(n) = 1 + log_2{n}*C$  
+$T(n) = O(1) + O(log_2{n})$  
+$T(n) = O(log_2{n})$  
+
 
 ---
 
