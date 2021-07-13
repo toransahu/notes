@@ -1280,21 +1280,27 @@
 <h3 id="adb">adb<a class="headerlink" href="#adb" title="Permanent link">#</a></h3>
 <h4 id="issue-no-permission">Issue: no permission<a class="headerlink" href="#issue-no-permission" title="Permanent link">#</a></h4>
 <p>When i try:</p>
-<div class="highlight"><pre><span></span><code>adb devices
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>adb devices
 </code></pre></div>
+</td></tr></table>
 <p>i get the result:</p>
-<div class="highlight"><pre><span></span><code>List of devices attached 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>List of devices attached 
 ????????????    no permissions
 </code></pre></div>
+</td></tr></table>
 <p>Then I tried to restart the Adb server</p>
-<div class="highlight"><pre><span></span><code>sudo adb kill-server
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo adb kill-server
 </code></pre></div>
+</td></tr></table>
 <p>and then</p>
-<div class="highlight"><pre><span></span><code>sudo adb start-server
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo adb start-server
 </code></pre></div>
+</td></tr></table>
 <p>then connected the device, turn Debugging on and type</p>
-<div class="highlight"><pre><span></span><code>adb devices
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>adb devices
 </code></pre></div>
+</td></tr></table>
 <p>Still any issue? then follow <a href="https://askubuntu.com/questions/908306/adb-no-permissions-on-ubuntu-17-04">this</a></p>
 <h3 id="root">Root<a class="headerlink" href="#root" title="Permanent link">#</a></h3>
 <h4 id="magisk">Magisk<a class="headerlink" href="#magisk" title="Permanent link">#</a></h4>

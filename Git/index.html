@@ -2437,15 +2437,17 @@
 <ul>
 <li>Then turn off automatical convertions, and stick to CRLF only</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git config --global core.autocrlf false
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf false
 </code></pre></div>
+</td></tr></table>
 <h5 id="linuxmac-only">Linux/Mac Only<a class="headerlink" href="#linuxmac-only" title="Permanent link">#</a></h5>
 <ul>
 <li>If on <code>LF</code> system, then do this to convert any CRLF to LF</li>
 <li>but not LF to CRLF</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
 </code></pre></div>
+</td></tr></table>
 <h5 id="if-both">If Both<a class="headerlink" href="#if-both" title="Permanent link">#</a></h5>
 <ul>
 <li>Then set this in Windows system only<ul>
@@ -2455,25 +2457,33 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>git config --global core.autocrlf true
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf true
 </code></pre></div>
+</td></tr></table>
 <h2 id="inspection-comparision">Inspection &amp; Comparision<a class="headerlink" href="#inspection-comparision" title="Permanent link">#</a></h2>
 <h3 id="diff"><code>diff</code><a class="headerlink" href="#diff" title="Permanent link">#</a></h3>
 <h4 id="compare-local-with-remote-branch">Compare local with remote branch<a class="headerlink" href="#compare-local-with-remote-branch" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>git diff &lt;masterbranch_path&gt; &lt;remotebranch_path&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git diff &lt;masterbranch_path&gt; &lt;remotebranch_path&gt;
 
 #or 
 
 git diff master origin/master
 </code></pre></div>
+</td></tr></table>
 <h3 id="diff-tree"><code>diff-tree</code><a class="headerlink" href="#diff-tree" title="Permanent link">#</a></h3>
 <h4 id="list-all-the-files-in-a-commit">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>git diff-tree --no-commit-id --name-only -r bd61ad98
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git diff-tree --no-commit-id --name-only -r bd61ad98
 </code></pre></div>
+</td></tr></table>
 <h3 id="show"><code>show</code><a class="headerlink" href="#show" title="Permanent link">#</a></h3>
 <h4 id="list-all-the-files-in-a-commit_1">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit_1" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>git show --pretty=&quot;&quot; --name-only bd61ad98  
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git show --pretty=&quot;&quot; --name-only bd61ad98  
 </code></pre></div>
+</td></tr></table>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h2>
 <h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">#</a></h3>
 <h4 id="-bare"><code>--bare</code><a class="headerlink" href="#-bare" title="Permanent link">#</a></h4>
@@ -2510,8 +2520,9 @@ git diff master origin/master
 <h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">#</a></h3>
 <p>To see in descriptive format</p>
-<div class="highlight"><pre><span></span><code>git log --graph --decorate --oneline
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git log --graph --decorate --oneline
 </code></pre></div>
+</td></tr></table>
 <p>where:<br />
     --graph: shows flow<br />
     --decorate: shows branch names<br />
@@ -2531,61 +2542,75 @@ git diff master origin/master
 <p>Options:</p>
 <ul>
 <li>create a new branch dev
-<div class="highlight"><pre><span></span><code>git checkout -b dev
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout -b dev
+</code></pre></div>
+</td></tr></table></li>
 <li>dev is active
-<div class="highlight"><pre><span></span><code>git checkout dev
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout dev
+</code></pre></div>
+</td></tr></table></li>
 <li>master is active
-<div class="highlight"><pre><span></span><code>git checkout master
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout master
+</code></pre></div>
+</td></tr></table></li>
 <li>dev is active &amp; incorporate master in it
-<div class="highlight"><pre><span></span><code>git checkout dev
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout dev
 git merge master
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>
 <p>master is active &amp; incorporate dev in it
-<div class="highlight"><pre><span></span><code>git checkout master
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout master
 git merge dev
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>delete a local branch if completely merged 
-<div class="highlight"><pre><span></span><code>git branch -d dev
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -d dev
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>delete a local branch if not merged 
-<div class="highlight"><pre><span></span><code>git branch -D dev
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -D dev
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>delete a remote branch
-<div class="highlight"><pre><span></span><code>git push origin :dev
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin :dev
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>Rename your local branch.</p>
 <ul>
 <li>If you are on the branch you want to rename:
-<div class="highlight"><pre><span></span><code>git branch -m new-name
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -m new-name
+</code></pre></div>
+</td></tr></table></li>
 <li>If you are on a different branch:
-<div class="highlight"><pre><span></span><code>git branch -m old-name new-name
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -m old-name new-name
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>
 <p>Delete the old-name remote branch and push the new-name local branch.
-<div class="highlight"><pre><span></span><code>git push origin :old-name new-name
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin :old-name new-name
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>Reset the upstream branch for the new-name local branch.</p>
 <ul>
 <li>Switch to the branch and then:
-<div class="highlight"><pre><span></span><code>git push origin -u new-name
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin -u new-name
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -2609,27 +2634,40 @@ git merge dev
 <ul>
 <li>Lets say, if you're woring on a feature in a dedicated branch. And someone makes a commit in master branch and you want to pull those changes to your feature branch, i.e.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>      A---B---C feature
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      A---B---C feature
      /
 D---E---F---G master
 
 here A,B,C are commits in feature. F,G are new commits in master
 </code></pre></div>
+</td></tr></table>
 <p>then:</p>
-<p><div class="highlight"><pre><span></span><code>git checkout feature
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout feature
 git merge master
 </code></pre></div>
+</td></tr></table>
 Or in one line 
-<div class="highlight"><pre><span></span><code>git merge master feature
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git merge master feature
 </code></pre></div>
+</td></tr></table>
 <strong> This will create a new commit in feature branch called as "merge commit" and feature branch will have same history as master (but not vice-versa)</strong>
 i.e.
-<div class="highlight"><pre><span></span><code>      A---B---C---(*) feature
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      A---B---C---(*) feature
      /           /
 D---E---F---G---H master
 
 here (*) is merge commit
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <ul>
 <li>Very active master branch can pollute the feature branch.  </li>
 </ul>
@@ -2638,17 +2676,24 @@ here (*) is merge commit
 <li>Alternative to merging</li>
 <li>rebases feature branch onto master branch</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git checkout feature
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout feature
 git rebase master
 </code></pre></div>
+</td></tr></table>
 <p><strong> shifts the entire feature branch to tip/(latest node) of the master branch.</strong>
 i.e.</p>
-<div class="highlight"><pre><span></span><code>               A&#39;--B&#39;--C&#39; feature
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>               A&#39;--B&#39;--C&#39; feature
              /
 D---E---F---G master
 
 here A&#39;,B&#39;,C&#39; are brand new commits
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>instead of creating "merge commit", it creates <strong>brand new commits</strong> in feature branch for all the commits created earlier on the feature branch (the changes will same, but with new commit infos)</li>
 <li>i.e. re-writes branch history</li>
@@ -2661,7 +2706,19 @@ here A&#39;,B&#39;,C&#39; are brand new commits
 <p><strong>Golden rules to use rebase</strong>:
 * never use rebase on any public branch: Means, don't rebase the master branch onto feature branch (it is opposite of rebasing feature branch onto master branch). It will create a brand new commit/history in master branch which will affect other developers.</p>
 <h4 id="rebase-one-branch-on-the-top-of-another">rebase one branch on the top of another<a class="headerlink" href="#rebase-one-branch-on-the-top-of-another" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>         Branch-1   Branch-2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>         Branch-1   Branch-2
          X--Y     A--B--C 
         /        /
 D---E---F---G---H   master
@@ -2675,13 +2732,37 @@ After rebaseing Branch-1 on the top of Branch-2
         /       
 D---E---F---G---H        master
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>git checkout branch1
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout branch1
 git rebase branch2
 </code></pre></div>
+</td></tr></table>
 <h3 id="reverting-back-to-old-commits">Reverting back to old commits<a class="headerlink" href="#reverting-back-to-old-commits" title="Permanent link">#</a></h3>
 <p>https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit</p>
 <h3 id="reseting">Reseting<a class="headerlink" href="#reseting" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>git checkout &lt;branch&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout &lt;branch&gt;
 
 git reflog
 
@@ -2704,34 +2785,41 @@ git reset --merge &lt;head_count&gt;
               updates the files that are different between the named commit and
               the current commit <span class="k">in</span> the working tree.
 </code></pre></div>
+</td></tr></table>
 <h3 id="modify-last-commit-message">Modify last commit Message<a class="headerlink" href="#modify-last-commit-message" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>git commit -a -m
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git commit -a -m
 </code></pre></div>
+</td></tr></table>
 <h3 id="modify-a-particular-commit">Modify a particular commit<a class="headerlink" href="#modify-a-particular-commit" title="Permanent link">#</a></h3>
 <p>If you want to modify files at commit <SHA></p>
-<div class="highlight"><pre><span></span><code>git rebase -i &lt;SHA&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase -i &lt;SHA&gt;
 </code></pre></div>
+</td></tr></table>
 <p>You will get a editor opened up with list of all the commits prior to that.</p>
 <p>Change the <code>pick</code> to <code>edit</code> for that particular commit <SHA>. Save &amp; close the editor.</p>
 <p>Make changes to your files.</p>
 <p>After that add or rm files.</p>
 <p>If you want to change the commit msg also then</p>
-<div class="highlight"><pre><span></span><code>git commit -a
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git commit -a
 </code></pre></div>
+</td></tr></table>
 <p>Then continue rebasing</p>
-<div class="highlight"><pre><span></span><code>git rebase --continue
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase --continue
 </code></pre></div>
+</td></tr></table>
 <h3 id="squashing-last-x-commits-into-one">Squashing last x commits into one<a class="headerlink" href="#squashing-last-x-commits-into-one" title="Permanent link">#</a></h3>
 <p>If you want to squash last X commits into single commit then</p>
-<div class="highlight"><pre><span></span><code>git rebase -i HEAD~X
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase -i HEAD~X
 </code></pre></div>
+</td></tr></table>
 <p>You will get a editor opened up with list of all the X commits.</p>
 <p>Change the <code>pick</code> to <code>s</code> for all the commits except the oldest one into which you want to merge all the lastest. </p>
 <p>Save &amp; close the editor.</p>
 <p>Again you'll get an editor with list &amp; order of all the squashed commits. (if you want you can change the commit msgs at this moment)</p>
 <p>Then continue rebasing</p>
-<div class="highlight"><pre><span></span><code>git rebase --continue
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase --continue
 </code></pre></div>
+</td></tr></table>
 <p>Done.</p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
 <h3 id="travis-ci-continue-integration">Travis CI (Continue Integration)<a class="headerlink" href="#travis-ci-continue-integration" title="Permanent link">#</a></h3>
@@ -2795,35 +2883,47 @@ python:
 <h3 id="setup-ssh-key">Setup SSH key<a class="headerlink" href="#setup-ssh-key" title="Permanent link">#</a></h3>
 <h4 id="generate-or-get-ssh-key">Generate or Get ssh key<a class="headerlink" href="#generate-or-get-ssh-key" title="Permanent link">#</a></h4>
 <h5 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>ssh-keygen
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh-keygen
 </code></pre></div>
+</td></tr></table>
 <h5 id="set-paraphrase">Set paraphrase<a class="headerlink" href="#set-paraphrase" title="Permanent link">#</a></h5>
 <h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>ls ~/.ssh
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls ~/.ssh
 </code></pre></div>
+</td></tr></table>
 <h4 id="add-the-key-to-the-ssh-agent">Add the key to the ssh-agent<a class="headerlink" href="#add-the-key-to-the-ssh-agent" title="Permanent link">#</a></h4>
 <h5 id="start">Start<a class="headerlink" href="#start" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span> 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span> 
 </code></pre></div>
+</td></tr></table>
 <h5 id="add_1">Add<a class="headerlink" href="#add_1" title="Permanent link">#</a></h5>
-<p><div class="highlight"><pre><span></span><code>ssh-add ~/.ssh/&lt;private_key_file&gt;
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh-add ~/.ssh/&lt;private_key_file&gt;
 </code></pre></div>
+</td></tr></table>
 where <private_key_file> is generally id_rsa</p>
 <h5 id="provide-paraphrase">Provide paraphrase<a class="headerlink" href="#provide-paraphrase" title="Permanent link">#</a></h5>
 <h4 id="add-the-public-key-to-your-vcs-portal-settings">Add the public key to your VCS portal settings<a class="headerlink" href="#add-the-public-key-to-your-vcs-portal-settings" title="Permanent link">#</a></h4>
 <h5 id="copy-hash-of-public-key">Copy hash of public key<a class="headerlink" href="#copy-hash-of-public-key" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
 
 or
 
 xclip -sel clip ~/.ssh/id_rsa.pub
 </code></pre></div>
+</td></tr></table>
 <h5 id="paste-in-settings">Paste in settings<a class="headerlink" href="#paste-in-settings" title="Permanent link">#</a></h5>
 <h5 id="update-remotes-with-ssh-url">Update remotes with ssh url<a class="headerlink" href="#update-remotes-with-ssh-url" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>git remote rm origin
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git remote rm origin
 
 git remote add origin git@bitbucket.org:toransahu/ethereal-machines-backend.git
 </code></pre></div>
+</td></tr></table>
                 
               
               

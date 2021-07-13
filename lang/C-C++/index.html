@@ -2430,16 +2430,18 @@ A search for "library" on the popular project-management website <a href="http:/
 <ul>
 <li>aka Raw binary code</li>
 <li>e.g.
-    <div class="highlight"><pre><span></span><code>8B 0E <span class="m">34</span> <span class="m">12</span>
-</code></pre></div></li>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>8B 0E <span class="m">34</span> <span class="m">12</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h4 id="assembly-code">Assembly Code<a class="headerlink" href="#assembly-code" title="Permanent link">#</a></h4>
 <ul>
 <li>Assembly is one level higher that is semi readable without having to memorize a bunch of hex or binary codes</li>
 <li>allows you to use symbolic names for addresses and do some simple math in creating the code.</li>
 <li>e.g.
-    <div class="highlight"><pre><span></span><code>MOV CX, 1234H
-</code></pre></div></li>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MOV CX, 1234H
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="linker">Linker<a class="headerlink" href="#linker" title="Permanent link">#</a></h3>
 <p>Linker links together a number of object files to produce a binary file which can be directly executed.
@@ -2500,21 +2502,25 @@ A search for "library" on the popular project-management website <a href="http:/
 <h2 id="define">define<a class="headerlink" href="#define" title="Permanent link">#</a></h2>
 <ul>
 <li>mainly used to define constants
-<div class="highlight"><pre><span></span><code> <span class="cp">#define BIGNUM 1000000</span>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="cp">#define BIGNUM 1000000</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>
 <h2 id="include">include<a class="headerlink" href="#include" title="Permanent link">#</a></h2>
 <ul>
 <li>used to access function definitions defined outside of a source code file
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;somelocalcode.h&quot;</span><span class="cp"></span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <p>or</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;somelocalcode.c&quot;</span><span class="cp"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;somelocalcode.c&quot;</span><span class="cp"></span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 </li>
@@ -2561,9 +2567,11 @@ A search for "library" on the popular project-management website <a href="http:/
 <ul>
 <li>func.o from func.c, and</li>
 <li>source.o from source.c which includes main method and unresolved reference of hello() function
-<div class="highlight"><pre><span></span><code>gcc -c func.c
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcc -c func.c
 gcc -c source.c
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>
@@ -2580,8 +2588,9 @@ gcc -c source.c
 <li>now it connects the dot between both the object files &amp; resolves the un-resolved reference</li>
 <li>now, at run time, program can jump to the correct location</li>
 </ul>
-<div class="highlight"><pre><span></span><code>gcc func.o source.o -o program
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcc func.o source.o -o program
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h4 id="gcc-misc">gcc Misc<a class="headerlink" href="#gcc-misc" title="Permanent link">#</a></h4>
@@ -2600,19 +2609,28 @@ gcc -c source.c
 <ul>
 <li>Arrow <code>--&gt;</code>: Used to access classes, structure, or union member using pointer.<ul>
 <li>e.g.
-<div class="highlight"><pre><span></span><code>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>Dot <code>.</code>: Used to access classes, structure, or union member.<ul>
 <li>e.g.
-<div class="highlight"><pre><span></span><code>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>Scope Resolution <code>::</code> : Qualifies the abstracted/hidden member/names<ul>
 <li>e.g. 
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2620,7 +2638,8 @@ gcc -c source.c
   <span class="n">count</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// set local count to 2</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -2642,8 +2661,9 @@ gcc -c source.c
 <ul>
 <li>typedef: typedef is used to give data type a new name<ul>
 <li>e.g.
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">BYTE</span><span class="p">;</span>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">BYTE</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>

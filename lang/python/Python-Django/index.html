@@ -5567,7 +5567,27 @@
 <p><strong>Note:</strong>  According to Django the framework + URL config feature itself is known as <strong>Controller.</strong></p>
 <p><img alt="arch" src="https://cdn.edureka.co/blog/wp-content/uploads/2017/08/Architecture-Django-Tutorial-Edureka-1.png" /></p>
 <h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="err">                             Project (just a container)/</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">                             Project (just a container)/</span>
 <span class="err">                             |  </span>
 <span class="err">                             |-----project/</span>
 <span class="err">                             |     |--__init__.py </span>
@@ -5589,6 +5609,7 @@
 <span class="err">                             |  </span>
 <span class="err">                             └-----db.sqlite3  </span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>Project: main project package<ul>
 <li>settings.py: python module (module level) represents django settings</li>
@@ -5619,28 +5640,39 @@
 <ul>
 <li>
 <p>Your django project structure
-<div class="highlight"><pre><span></span><code>ProjectName/
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ProjectName/
          manage.py 
          ProjectName/ 
                  __init__.py 
                  settings.py 
                  urls.py 
                  wsgi.py
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>changes required at 4 places</p>
 <ul>
 <li>settings.py
-<div class="highlight"><pre><span></span><code>ROOT_URLCONF = &#39;NewProjectName.urls&#39;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ROOT_URLCONF = &#39;NewProjectName.urls&#39;
 WSGI_APPLICATION = &#39;NewProjectName.wsgi.application&#39;
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>wsgi.py
-<div class="highlight"><pre><span></span><code>os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;NewProjectName.settings&quot;)
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;NewProjectName.settings&quot;)
+</code></pre></div>
+</td></tr></table></li>
 <li>manage.py
-<div class="highlight"><pre><span></span><code>os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;NewProjectName.settings&quot;)
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;NewProjectName.settings&quot;)
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -5660,21 +5692,45 @@ WSGI_APPLICATION = &#39;NewProjectName.wsgi.application&#39;
 </ul>
 <h4 id="uses">Uses<a class="headerlink" href="#uses" title="Permanent link">#</a></h4>
 <h5 id="clean-database">Clean Database<a class="headerlink" href="#clean-database" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py flush
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py flush
 </code></pre></div>
+</td></tr></table>
 <h5 id="load-initial-data-fixtures">Load initial data / fixtures<a class="headerlink" href="#load-initial-data-fixtures" title="Permanent link">#</a></h5>
 <ul>
 <li>src: https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#prerequisites- &lt;app_dir&gt;/&lt;fixtures&gt;/&lt;fixture_file.json&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#prerequisites- &lt;app_dir&gt;/&lt;fixtures&gt;/&lt;fixture_file.json&gt;</span>
 <span class="c1">#else provide fixture files path</span>
 python manage.py loaddata &lt;fixture_file_name&gt;
 </code></pre></div>
+</td></tr></table>
 <h5 id="dump-data-save-db-data">dump data / save DB data<a class="headerlink" href="#dump-data-save-db-data" title="Permanent link">#</a></h5>
 <ul>
 <li>src: https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#whole db</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#whole db</span>
 python manage.py dumpdata &gt; <span class="o">[</span>db.json<span class="o">]</span>
 
 <span class="c1">#app wise</span>
@@ -5696,21 +5752,27 @@ python manage.py dumpdata --format <span class="o">[</span>json/xml/yaml<span cl
 <span class="c1">#backup whole db fresh (without any Integrity Issue)</span>
 python manage.py dumpdata --exclude auth.permission --exclude contenttypes &gt; db.json
 </code></pre></div>
+</td></tr></table>
 <h5 id="check-production-readyness">Check production readyness<a class="headerlink" href="#check-production-readyness" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py check --deploy 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py check --deploy 
 </code></pre></div>
+</td></tr></table>
 <h5 id="run-dev-server">Run Dev server<a class="headerlink" href="#run-dev-server" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py runserver <span class="m">0</span>.0.0.0:8000
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py runserver <span class="m">0</span>.0.0.0:8000
 </code></pre></div>
+</td></tr></table>
 <h5 id="makemigrations-into-files">makemigrations into files<a class="headerlink" href="#makemigrations-into-files" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py makemifrations &lt;app_name&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py makemifrations &lt;app_name&gt;
 </code></pre></div>
+</td></tr></table>
 <h5 id="migrate-changes-into-db">migrate changes into db<a class="headerlink" href="#migrate-changes-into-db" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py migrate
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py migrate
 </code></pre></div>
+</td></tr></table>
 <h5 id="makemigrations-into-files_1">makemigrations into files<a class="headerlink" href="#makemigrations-into-files_1" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>python manage.py makemifrations &lt;app_name&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py makemifrations &lt;app_name&gt;
 </code></pre></div>
+</td></tr></table>
 <h5 id="clean-migration-files">Clean Migration Files<a class="headerlink" href="#clean-migration-files" title="Permanent link">#</a></h5>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
 <ul>
@@ -5743,7 +5805,21 @@ python manage.py dumpdata --exclude auth.permission --exclude contenttypes &gt; 
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;sqlite3&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
         <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">),</span>
@@ -5759,39 +5835,48 @@ python manage.py dumpdata --exclude auth.permission --exclude contenttypes &gt; 
 
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>(optional) are required in case of DB other than sqlite.</li>
 </ul>
 <h3 id="set-charset">Set CharSet<a class="headerlink" href="#set-charset" title="Permanent link">#</a></h3>
 <p>By deafult django uses <code>latin1</code>, its better to use unicode <code>utf8</code> to support all types of language characters.
 So, Put this in settings.py:
-<div class="highlight"><pre><span></span><code><span class="n">DATABASE_OPTIONS</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DATABASE_OPTIONS</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">#</a></h3>
 <h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>sudo apt install python-dev libmysqlclient-dev
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install python-dev libmysqlclient-dev
 pipenv install mysqlclient
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>login to <code>root</code>
-<div class="highlight"><pre><span></span><code>sudo mysql -u root -p
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo mysql -u root -p
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>create another user &amp; grant all access
-<div class="highlight"><pre><span></span><code>use <span class="sb">`</span>&lt;db_name&gt;<span class="sb">`</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>use <span class="sb">`</span>&lt;db_name&gt;<span class="sb">`</span>
 CREATE USER <span class="s1">&#39;dev&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;password&#39;</span><span class="p">;</span>
 GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class="s1">&#39;localhost&#39;</span> WITH GRANT OPTION<span class="p">;</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>use <code>dev</code> user in django</p>
 </li>
 <li>
 <p>install workbench (optional)
-<div class="highlight"><pre><span></span><code>sudo apt install  mysql-workbench
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install  mysql-workbench
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ul>
 <h3 id="do-django-models-support-multiple-column-primary-keys">Do Django models support multiple-column primary keys?<a class="headerlink" href="#do-django-models-support-multiple-column-primary-keys" title="Permanent link">#</a></h3>
@@ -5801,7 +5886,14 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <h3 id="using-multiple-databases-in-django">Using Multiple Databases in Django<a class="headerlink" href="#using-multiple-databases-in-django" title="Permanent link">#</a></h3>
 <p>Different ways of using multiple databases:
 * QuerySet's "using" Method
-    <div class="highlight"><pre><span></span><code><span class="c1"># This will run on the &#39;default&#39; database.</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># This will run on the &#39;default&#39; database.</span>
 <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
 <span class="c1"># So will this.</span>
@@ -5809,13 +5901,17 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 
 <span class="c1"># This will run on the &#39;other&#39; database.</span>
 <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <ul>
 <li>Model.save()'s "using" Parameter
-        <div class="highlight"><pre><span></span><code><span class="n">choice_one</span> <span class="o">=</span> <span class="n">Choice</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">choice_one</span> <span class="o">=</span> <span class="n">Choice</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">choice_one</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;New Text&quot;</span>
 <span class="n">choice_one</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">using</span> <span class="o">=</span> <span class="s2">&quot;Polls_DB&quot;</span><span class="p">)</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Database Routing</li>
 </ul>
 <h3 id="migrations-in-django">Migrations in Django<a class="headerlink" href="#migrations-in-django" title="Permanent link">#</a></h3>
@@ -5829,20 +5925,23 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <li>creates migration files as per changes in models</li>
 <li>inside app--&gt;migrations--&gt;0001_initial.py, contains Migration class with all the operations/changes</li>
 <li>does not applies changes in DB
-<div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigrations</span>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigrations</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li><strong>migrate</strong><ul>
 <li>applies migration files to DB
-<div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li><strong>sqlmigrate</strong><ul>
 <li>generates sql from migration files
-<div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">sqlmigrate</span> <span class="n">polls_app</span> <span class="mi">0001</span><span class="n">_initial</span>
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">sqlmigrate</span> <span class="n">polls_app</span> <span class="mi">0001</span><span class="n">_initial</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -5855,19 +5954,24 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 </ul>
 <h3 id="queryset-features">QuerySet Features:<a class="headerlink" href="#queryset-features" title="Permanent link">#</a></h3>
 <h4 id="iteration">Iteration<a class="headerlink" href="#iteration" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">headline</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="slicing">Slicing<a class="headerlink" href="#slicing" title="Permanent link">#</a></h4>
 <h4 id="len">len()<a class="headerlink" href="#len" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">record_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span> <span class="c1"># will return length of result list</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">record_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span> <span class="c1"># will return length of result list</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="list">list()<a class="headerlink" href="#list" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">entry_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span> <span class="c1"># convert to list</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">entry_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span> <span class="c1"># convert to list</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="bool">bool()<a class="headerlink" href="#bool" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="nb">bool</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">))</span> <span class="c1"># same as EXISTS, will return True if there are results</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">bool</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">))</span> <span class="c1"># same as EXISTS, will return True if there are results</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="queryset-operations">QuerySet Operations:<a class="headerlink" href="#queryset-operations" title="Permanent link">#</a></h3>
 <h4 id="field-lookups">Field Lookups<a class="headerlink" href="#field-lookups" title="Permanent link">#</a></h4>
 <ul>
@@ -5958,10 +6062,13 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <ul>
 <li>same as SELECT DISTINCT</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
 <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">)</span> <span class="c1"># write parameters in same order in both</span>
 <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">)</span> <span class="c1"># if &#39;blog&#39; is foreign Model, then by deafult order_by will take it as &#39;blog__name&#39;, so explicity define it as &#39;blog__id&#39; or &#39;blog__pk&#39;, else will not produce any result</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="filter">filter()<a class="headerlink" href="#filter" title="Permanent link">#</a></h4>
 <h4 id="select_for_update">select_for_update()<a class="headerlink" href="#select_for_update" title="Permanent link">#</a></h4>
 <ul>
@@ -5975,23 +6082,33 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <ul>
 <li>for updating (increment/decrement) column value without fetching the current value in python memory </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">F</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">F</span>
 
 <span class="n">User</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">salary</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="s1">&#39;salary&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># here F is usefull</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="order_by">order_by()<a class="headerlink" href="#order_by" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-salary&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="c1"># negative salary means in descending order</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-salary&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="c1"># negative salary means in descending order</span>
 <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span> <span class="c1"># random order (expensive)</span>
 <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span> 
 </code></pre></div>
+</td></tr></table>
 <h4 id="exclude">exclude()<a class="headerlink" href="#exclude" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">pub_date__gt</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># __gt: greater than</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">pub_date__gt</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># __gt: greater than</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="annotate">annotate()<a class="headerlink" href="#annotate" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Count</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Count</span>
 
 <span class="n">u</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="reverse">reverse()<a class="headerlink" href="#reverse" title="Permanent link">#</a></h4>
 <ul>
 <li>to reverse the order</li>
@@ -6000,9 +6117,11 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <ul>
 <li>returns dictionary object instead list query result</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 <span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="values_list">values_list()<a class="headerlink" href="#values_list" title="Permanent link">#</a></h4>
 <ul>
 <li>same as values() but returns tuple</li>
@@ -6042,7 +6161,19 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <ul>
 <li>returns Foreign key related objects without hitting database</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#Hits the database.</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Hits the database.</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">#Hits the database again to get the related Blog object.</span>
@@ -6056,6 +6187,7 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <span class="c1">#in the previous query.</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">blog</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="prefetch_related">prefetch_related()<a class="headerlink" href="#prefetch_related" title="Permanent link">#</a></h4>
 <ul>
 <li>To solve the <code>1 + N</code> problem in all types of ORM<ul>
@@ -6082,7 +6214,15 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <li>if you want to rename <strong>objects</strong></li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="c1">#...</span>
@@ -6092,6 +6232,7 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>    <span class="c1">#AttributeError  </span>
 <span class="n">Person</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>    
 </code></pre></div>
+</td></tr></table>
 <h4 id="custom-manager">Custom Manager<a class="headerlink" href="#custom-manager" title="Permanent link">#</a></h4>
 <ul>
 <li>if you want to define some more query methods</li>
@@ -6113,7 +6254,15 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 </li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CommonInfo</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CommonInfo</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">age</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
 
@@ -6123,12 +6272,21 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
 <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">CommonInfo</span><span class="p">):</span>
     <span class="n">home_group</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="multi-table-inheritance">Multi-table Inheritance<a class="headerlink" href="#multi-table-inheritance" title="Permanent link">#</a></h4>
 <ul>
 <li>This style is used when subclassing an existing model &amp; need each model to have its own database table</li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="k">class</span> <span class="nc">Place</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
@@ -6138,12 +6296,15 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;dev&#39;</span>@<span class
     <span class="n">serves_hot_dogs</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">serves_pizza</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>All of the fields of Place will also be available in Restaurant, although the data will reside in a different database table. So these are both possible:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>Place.objects.filter<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Bob&#39;s Cafe&quot;</span><span class="o">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Place.objects.filter<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Bob&#39;s Cafe&quot;</span><span class="o">)</span>
 Restaurant.objects.filter<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Bob&#39;s Cafe&quot;</span><span class="o">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>Note: The inheritance relationship introduces links between the child model and each of its parents (via an automatically-created OneToOneField)</li>
 </ul>
@@ -6163,7 +6324,19 @@ Restaurant.objects.filter<span class="o">(</span><span class="nv">name</span><sp
 </li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
@@ -6177,6 +6350,7 @@ Restaurant.objects.filter<span class="o">(</span><span class="nv">name</span><sp
         <span class="c1">#...</span>
         <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="extend-user-model-custom-user-model">Extend User Model (Custom User Model)<a class="headerlink" href="#extend-user-model-custom-user-model" title="Permanent link">#</a></h3>
 <p>Some modifications on top of Django's default User Model just to fit our web appplication.<br />
 Source: https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html</p>
@@ -6244,21 +6418,29 @@ Source: https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-
 <li>Code: https://gist.github.com/toransahu/0ce910494dedb8b9f2774b751f45b559    </li>
 </ul>
 <p>Whenever we define custom User Model like this</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">AbstractUser</span>
 
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <p>we need to specify custom user model in settings.py like
-<div class="highlight"><pre><span></span><code><span class="n">AUTH_USER_MODEL</span> <span class="o">=</span> <span class="err">‘</span><span class="n">your_app</span><span class="o">.</span><span class="n">User</span><span class="s1">&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">AUTH_USER_MODEL</span> <span class="o">=</span> <span class="err">‘</span><span class="n">your_app</span><span class="o">.</span><span class="n">User</span><span class="s1">&#39;</span>
 </code></pre></div>
+</td></tr></table>
 and we can refer this User model in our code either as
-<div class="highlight"><pre><span></span><code><span class="n">User</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">User</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table></p>
 <p>or<br />
-<div class="highlight"><pre><span></span><code><span class="n">User</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span> <span class="c1"># use when define a foreign relationship, to make it resuable app</span>
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">User</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span> <span class="c1"># use when define a foreign relationship, to make it resuable app</span>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h4>
 <p><strong>Proxy Model:</strong> You are happy with everything Django User provide and don’t need to store extra information.<br />
 <strong>User Profile:</strong> You are happy with the way Django handles the auth and need to add some non-auth related attributes to the User.<br />
@@ -6270,17 +6452,25 @@ and we can refer this User model in our code either as
 <h3 id="function-based-generic-view">Function Based Generic View<a class="headerlink" href="#function-based-generic-view" title="Permanent link">#</a></h3>
 <ul>
 <li>with template (by rendering)
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
 
 <span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>without template : using HttpResponse
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
 <span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Need to write conditional branch for different HTTP request type like POST, GET, PUT</li>
 <li>Need to provide view method name in URL</li>
 <li>Disadvantage: Cannot extend</li>
@@ -6292,7 +6482,27 @@ and we can refer this User model in our code either as
 <li>Need to define get(), post() like HTTP methods</li>
 <li>Need to provide ClassName.as_view() in URL</li>
 <li>Advantage: Can be extended by sub classes
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
     <span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">View</span>
 
     <span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
@@ -6313,29 +6523,40 @@ and we can refer this User model in our code either as
 
     <span class="k">class</span> <span class="nc">PublisherList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Publisher</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h2 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">#</a></h2>
 <h3 id="using-view-function">using view function<a class="headerlink" href="#using-view-function" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
         <span class="n">path</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">home</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),]</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="using-class-based-view">using class based view<a class="headerlink" href="#using-class-based-view" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
         <span class="n">path</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">IndexView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),]</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="including-app-urls">including app urls<a class="headerlink" href="#including-app-urls" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
 
     <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;home.urls&#39;</span><span class="p">)),]</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="django-20-using-path">django 2.0: using path<a class="headerlink" href="#django-20-using-path" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="django-19-using-url">django &lt;=1.9: using url<a class="headerlink" href="#django-19-using-url" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="static-files">Static files<a class="headerlink" href="#static-files" title="Permanent link">#</a></h2>
 <h3 id="in-production">In Production<a class="headerlink" href="#in-production" title="Permanent link">#</a></h3>
 <ul>
@@ -6343,7 +6564,16 @@ and we can refer this User model in our code either as
 <li>run manage.py collectstatic</li>
 </ul>
 <h3 id="in-developement">In Developement<a class="headerlink" href="#in-developement" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="n">STATICFILES_FINDERS</span> <span class="o">=</span> <span class="p">(</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">STATICFILES_FINDERS</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s1">&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;</span><span class="p">,</span>
         <span class="s1">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span>
     <span class="p">)</span>
@@ -6354,6 +6584,7 @@ and we can refer this User model in our code either as
     <span class="p">]</span>
     <span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="templates_1">Templates<a class="headerlink" href="#templates_1" title="Permanent link">#</a></h2>
 <ul>
 <li>Contains<ul>
@@ -6406,7 +6637,21 @@ and we can refer this User model in our code either as
 </li>
 </ul>
 <h4 id="function-based-custom-middleware">Function Based Custom Middleware<a class="headerlink" href="#function-based-custom-middleware" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">simple_middleware</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">simple_middleware</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
     <span class="c1"># One-time configuration and initialization.</span>
 
     <span class="k">def</span> <span class="nf">middleware</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
@@ -6422,8 +6667,23 @@ and we can refer this User model in our code either as
 
     <span class="k">return</span> <span class="n">middleware</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="class-based-custom-middleware">Class Based Custom Middleware<a class="headerlink" href="#class-based-custom-middleware" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SimpleMiddleware</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SimpleMiddleware</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">get_response</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">get_response</span> <span class="o">=</span> <span class="n">get_response</span>
         <span class="c1"># One-time configuration and initialization.</span>
@@ -6439,14 +6699,19 @@ and we can refer this User model in our code either as
 
         <span class="k">return</span> <span class="n">response</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">#</a></h2>
 <h3 id="place-in-settingspy">Place in settings.py<a class="headerlink" href="#place-in-settingspy" title="Permanent link">#</a></h3>
 <h3 id="separated-into-production-development-environments-like">Separated into production &amp; development environments like<a class="headerlink" href="#separated-into-production-development-environments-like" title="Permanent link">#</a></h3>
-<pre><code>- base_settings.py
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- base_settings.py
 - dev_settings.py
 - prod_settings.py
 - settings.py
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h3 id="strict-seperation-from-code">STRICT SEPERATION FROM CODE<a class="headerlink" href="#strict-seperation-from-code" title="Permanent link">#</a></h3>
 <h4 id="python-decouple">Python Decouple<a class="headerlink" href="#python-decouple" title="Permanent link">#</a></h4>
 <ul>
@@ -6549,14 +6814,16 @@ Source: https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-
 </ul>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
 <h4 id="task-queue-system-celery">Task Queue System - Celery<a class="headerlink" href="#task-queue-system-celery" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>pip install celery
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install celery
 </code></pre></div>
+</td></tr></table>
 <h4 id="message-broker-system-rabbitmq">Message Broker System - RabbitMQ<a class="headerlink" href="#message-broker-system-rabbitmq" title="Permanent link">#</a></h4>
 <ul>
 <li>src: http://docs.celeryproject.org/en/latest/getting-started/brokers/rabbitmq.html#broker-rabbitmq</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo apt install rabbitmq-server
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install rabbitmq-server
 </code></pre></div>
+</td></tr></table>
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h3>
 <ul>
 <li>no need to define any setup, but can set credentials for rabbitmq-server</li>
@@ -6583,34 +6850,45 @@ Source: https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-
 </li>
 <li>
 <p>either import celery app instance &amp; use
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">backend.celery</span> <span class="kn">import</span> <span class="n">app</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">backend.celery</span> <span class="kn">import</span> <span class="n">app</span>
 <span class="nd">@app</span><span class="o">.</span><span class="n">task</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">pass</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>or use <code>shared_task</code>
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
 <span class="nd">@shared_task</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">pass</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>
 <p>set broker_url inside settings.py</p>
 <ul>
 <li>every celery config variables start with <code>CELERY_</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">CELERY_BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;amqp://localhost&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">CELERY_BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;amqp://localhost&#39;</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>start rabbitmq</p>
 <ul>
 <li>starts automatically on boot</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
 sudo systemctl start rabbitmq-server
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>start celery worker</p>
@@ -6618,8 +6896,9 @@ sudo systemctl start rabbitmq-server
 <li>need to run inside src folder</li>
 <li>need to be in virtual env</li>
 </ul>
-<div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>or create script to start celery</p>
@@ -6666,7 +6945,13 @@ sudo systemctl start rabbitmq-server
 <li>can be implemented through middleware</li>
 <li>In client side cookies contain a session ID  not the data itself (unless youre using the cookie based backend)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
     <span class="p">]</span>
 
@@ -6674,6 +6959,7 @@ sudo systemctl start rabbitmq-server
     <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
     <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="anonymous-session">Anonymous Session<a class="headerlink" href="#anonymous-session" title="Permanent link">#</a></h4>
 <ul>
 <li>to keep track of data relevant to your visit</li>
@@ -6886,13 +7172,19 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 <p>SECRET_KEY</p>
 <ul>
 <li>Instead of hardcoding the secret key in your settings module, consider loading it from an environment variable or file
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span>
 
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/etc/secret_key.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>avoid committing it to source control</li>
 </ul>
 </li>
@@ -6989,18 +7281,25 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 <ul>
 <li>
 <p>Class level testing for each app</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
 
 <span class="k">class</span> <span class="nc">QuestionModelTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_was_published_recently_with_future_question</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1">#do something</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIs</span><span class="p">(</span><span class="n">future_question</span><span class="o">.</span><span class="n">was_published_recently</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h3 id="run-test-cases">Run Test Cases<a class="headerlink" href="#run-test-cases" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>python manage.py <span class="nb">test</span> appname
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py <span class="nb">test</span> appname
 </code></pre></div>
+</td></tr></table>
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h2>
 <h3 id="csrf-cross-site-request-forgery">CSRF - Cross Site Request Forgery<a class="headerlink" href="#csrf-cross-site-request-forgery" title="Permanent link">#</a></h3>
 <h4 id="why-csrf">Why CSRF?<a class="headerlink" href="#why-csrf" title="Permanent link">#</a></h4>
@@ -7041,11 +7340,15 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 </li>
 <li>Representation:<ul>
 <li>When a client makes a GET request to coders/toran/ client gets following JSON response
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="nt">&quot;nickname&quot;</span><span class="p">:</span> <span class="s2">&quot;toran&quot;</span><span class="p">,</span>
 <span class="nt">&quot;powerLevel&quot;</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">}</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>so, this is representation in the form of JSON having metadata</li>
 <li>representation also could be XML, HTML</li>
 <li>the same applies when a client sends a request which contains a 'coder' data, its sends representation</li>
@@ -7088,14 +7391,18 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 </ul>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/questions/&lt;existing_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/questions/&lt;existing_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com/</span>
 </code></pre></div>
+</td></tr></table>
 - Used to submit a new entity/data to a specified resource.
     - Do not mention the object/entity of the resource in the URL while creating it. Otherwise it will give "Resource Not Found" error.
-<div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/questions/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/questions/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com/</span>
 </code></pre></div>
+</td></tr></table>
 - Causes change in state of the resource
 - Use this if you want server to let the name, the URL object while creating a new one
 - Two simultaneous POST requests works fine (lets say, 1st request is updating some part &amp; 2nd request is updating other part of an object)<br />
@@ -7106,13 +7413,17 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 <ul>
 <li>Used to create a new resource entity or <strong>overrite</strong> (Completely replaces) the existing one.</li>
 <li>For a new resource entity:
-    <div class="highlight"><pre><span></span><code><span class="nf">PUT</span> <span class="nn">/questions/&lt;new_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">PUT</span> <span class="nn">/questions/&lt;new_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com/</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>To overrite an existing one
-    <div class="highlight"><pre><span></span><code><span class="nf">PUT</span> <span class="nn">/questions/&lt;existing_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">PUT</span> <span class="nn">/questions/&lt;existing_question&gt;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com/</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Usefull when you know the name of the entity/object</li>
 <li>Use this if you want to name the URL object while creating a new one</li>
 <li>PUT is idempotent, so if you PUT the same object twice, it has no effect (will overrite)</li>
@@ -7131,13 +7442,19 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 <li>Used to make partial modification to an existing resource object/entity.</li>
 <li>Works differently than POST &amp; PUT for update</li>
 <li>Need to have URL object known
-<div class="highlight"><pre><span></span><code><span class="nf">PATCH</span> <span class="nn">/users/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">PATCH</span> <span class="nn">/users/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/example</span>
 <span class="na">If-Match</span><span class="o">:</span> <span class="l">&quot;c0b42b66e&quot;</span>
 <span class="na">Content-Length</span><span class="o">:</span> <span class="l">120</span>
 <span class="err">[changes]</span>
 </code></pre></div>
+</td></tr></table>
 where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 </ul>
 </li>
@@ -7321,11 +7638,15 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <li>Function Based View    <ul>
 <li>Using normal functions like in Django (without using any rest_framework feature)<ul>
 <li>Modules: 
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">JsonResponse</span>
 <span class="kn">from</span> <span class="nn">rest_framework.renderers</span> <span class="kn">import</span> <span class="n">JSONRenderer</span>
 <span class="kn">from</span> <span class="nn">rest_framework.parsers</span> <span class="kn">import</span> <span class="n">JSONParser</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Approach:<ul>
 <li>write function with conditional branching for different http request methods</li>
 <li>write a _list function for listing all records (GET) &amp; submiting a record (POST)</li>
@@ -7339,10 +7660,13 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 </li>
 <li>Using @api_view() decorator<ul>
 <li>Modules: 
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">status</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">rest_framework.decorators</span> <span class="kn">import</span> <span class="n">api_view</span>
 <span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Approach:<ul>
 <li>write function with conditional branching for different http request methods</li>
 <li>write a _list function for listing all records (GET) &amp; submiting a record (POST) </li>
@@ -7361,11 +7685,15 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <ul>
 <li>By Inheriting APIView class<ul>
 <li>Modules: 
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.views</span> <span class="kn">import</span> <span class="n">APIView</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.views</span> <span class="kn">import</span> <span class="n">APIView</span>
 <span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
 <span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Approach:<ul>
 <li>write classes and define request handler methods in name of http request method for each http request method </li>
 <li>write a List class for listing all records (GET) &amp; submiting a record (POST) </li>
@@ -7388,9 +7716,11 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 </li>
 <li>Using mixins<ul>
 <li>Modules:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">mixins</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">mixins</span>
 <span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">generics</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Approach:<ul>
 <li>write classes and inherit <code>generics.GenericAPIView</code> &amp; mixins as per use</li>
 <li>write a List class and inherit mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView</li>
@@ -7405,8 +7735,9 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <p>Using generic class-based views</p>
 <ul>
 <li>Modules:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">generics</span>
-</code></pre></div></li>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">generics</span>
+</code></pre></div>
+</td></tr></table></li>
 <li>Approach:<ul>
 <li>write List class and inherit generics.ListCreateAPIView</li>
 <li>write Detail class and generics.RetrieveUpdateDestroyAPIView</li>
@@ -7479,7 +7810,15 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 </ul>
 <h4 id="routers">Routers<a class="headerlink" href="#routers" title="Permanent link">#</a></h4>
 <p>REST framework adds support for automatic URL routing to Django, and provides you with a simple, quick and consistent way of wiring your view logic to a set of URLs.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
 <span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">BlogViewSet</span>
 <span class="kn">from</span> <span class="nn">rest_framework.routers</span> <span class="kn">import</span> <span class="n">DefaultRouter</span>
 
@@ -7489,6 +7828,7 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">router</span><span class="o">.</span><span class="n">urls</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><strong>Note:</strong><ul>
 <li><strong>Try to keep <code>base_name</code> same as Model name, because <code>view_name</code> like blog-detail, blog-list comes from Model &amp; not from app's name</strong></li>
@@ -7526,39 +7866,56 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <ul>
 <li>settings.py  </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;DEFAULT_VERSIONING_CLASS&#39;</span><span class="p">:</span> <span class="s1">&#39;rest_framework.versioning.NamespaceVersioning&#39;</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>urls.py</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;api/v1/blogs/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;blogs.urls&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">)),</span>
 <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>blogs/urls.py</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">app_name</span> <span class="o">=</span> <span class="s1">&#39;blogs&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">app_name</span> <span class="o">=</span> <span class="s1">&#39;blogs&#39;</span>
 
 <span class="n">router</span> <span class="o">=</span> <span class="n">DefaultRouter</span><span class="p">()</span>
 <span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">BlogViewSet</span><span class="p">,</span> <span class="n">base_name</span><span class="o">=</span><span class="s1">&#39;blogs&#39;</span><span class="p">)</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">router</span><span class="o">.</span><span class="n">urls</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="uses_2">Uses<a class="headerlink" href="#uses_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Once you have set versioning, django will be able to provide value of <code>request.version</code> else it will be <code>None</code></li>
 <li>so, apply conditions (<code>if/else</code>) in View or serializers<ul>
 <li>if there are changes in fields, then use versioning in serializers</li>
 <li>else, if there are only changes in some functionalities, (which current client cannot consume), then use versioning in veiws only, like:
-    <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_serializer_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_serializer_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="s1">&#39;v1&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">AccountSerializerVersion1</span>
     <span class="k">return</span> <span class="n">AccountSerializer</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -7573,11 +7930,15 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <li><code>python manage.py startapp app</code></li>
 <li>
 <p>create <code>app/cors.py</code> and write</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CorsMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CorsMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">process_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">resp</span><span class="p">):</span>
     <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Access-Control-Allow-Origin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
     <span class="k">return</span> <span class="n">response</span>
 </code></pre></div>
+</td></tr></table>
 - <code>MIDDLEWARE_CLASSES = ['app.CorsMiddleware']</code></p>
 </li>
 </ul>
@@ -7615,7 +7976,14 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <li>source: http://www.django-rest-framework.org/api-guide/schemas/</li>
 <li><code>pipenv install coreapi</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.schemas</span> <span class="kn">import</span> <span class="n">get_schema_view</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.schemas</span> <span class="kn">import</span> <span class="n">get_schema_view</span>
 
 <span class="n">schema_view</span> <span class="o">=</span> <span class="n">get_schema_view</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Server Monitoring API&quot;</span><span class="p">)</span>
 
@@ -7624,13 +7992,23 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
     <span class="o">...</span>
 <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="setting-media-url-root">Setting Media URL &amp; ROOT<a class="headerlink" href="#setting-media-url-root" title="Permanent link">#</a></h3>
 <h4 id="site-wide">Site Wide<a class="headerlink" href="#site-wide" title="Permanent link">#</a></h4>
 <h4 id="app-based">App Based<a class="headerlink" href="#app-based" title="Permanent link">#</a></h4>
 <ul>
 <li>define MEDIA_URL &amp; MEDIA_ROOT in settings.py</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># Media files</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Media files</span>
 <span class="c1"># https://timmyomahony.com/blog/static-vs-media-and-root-vs-path-in-django/</span>
 
 <span class="c1"># the relative browser URL to be used when accessing our media files in the browser</span>
@@ -7641,8 +8019,15 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <span class="n">ENV_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span>
 <span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ENV_PATH</span><span class="p">,</span> <span class="s1">&#39;media/&#39;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 - add following code in app/urls.py  </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># adding media url</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># adding media url</span>
 <span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span> <span class="c1"># from backend.settings import DEBUG</span>
 <span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
 
@@ -7650,6 +8035,7 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>want to set upload_to directory dynamically:<ul>
 <li>code: https://gist.github.com/toransahu/8f9407250cee7a729473335bdd7a3f3b</li>
@@ -7716,20 +8102,33 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
 <ul>
 <li>function based</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nd">@authentication_classes</span><span class="p">([</span><span class="n">TokenAuthentication</span><span class="p">,</span> <span class="p">])</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@authentication_classes</span><span class="p">([</span><span class="n">TokenAuthentication</span><span class="p">,</span> <span class="p">])</span>
 <span class="k">def</span> <span class="nf">abcd</span><span class="o">-</span><span class="n">detail</span><span class="p">():</span>
     <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>class based</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Abcd</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Abcd</span><span class="p">():</span>
     <span class="n">authentication_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenAuthentication</span><span class="p">,</span> <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>settings.py
-<div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;DEFAULT_VERSIONING_CLASS&#39;</span><span class="p">:</span>
     <span class="s1">&#39;rest_framework.versioning.NamespaceVersioning&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DEFAULT_AUTHENTICATION_CLASSES&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -7738,7 +8137,8 @@ where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  </li>
         <span class="s1">&#39;rest_framework.authentication.TokenAuthentication&#39;</span><span class="p">,</span>
     <span class="p">),</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>Obtain Token
 DRF provides a view which returns a token on correct username &amp; password.<ul>
@@ -7748,22 +8148,29 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 </ul>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.authtoken.views</span> <span class="kn">import</span> <span class="n">obtain_auth_token</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.authtoken.views</span> <span class="kn">import</span> <span class="n">obtain_auth_token</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">(</span><span class="s1">&#39;api-auth-token/&#39;</span><span class="p">,</span> <span class="n">obtain_auth_token</span><span class="p">),]</span>
 </code></pre></div>
+</td></tr></table>
 - call the view as:
 <code>http POST 127.0.0.1:8000/api-token-auth/ username='admin' password='whatever'</code></p>
 <ul>
 <li>will get token like:
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;blah_blah_blah&quot;</span>
 <span class="p">}</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Use the Token in API call</li>
 <li>put the following in Header
- <div class="highlight"><pre><span></span><code>key: Authorization  value: Token token_value
+ <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>key: Authorization  value: Token token_value
 </code></pre></div>
+</td></tr></table>
  Please mind the space between Token &amp; token_value</li>
 </ul>
 <p><code>http GET 127.0.0.1:8000/whatever 'Authorization: Token your_token_value'</code></p>
@@ -7783,7 +8190,15 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 </li>
 <li>
 <p>add view in url
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework_jwt.views</span> <span class="kn">import</span> <span class="n">obtain_jwt_token</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework_jwt.views</span> <span class="kn">import</span> <span class="n">obtain_jwt_token</span>
 <span class="c1">#...</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -7792,7 +8207,8 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 
     <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^api-token-auth/&#39;</span><span class="p">,</span> <span class="n">obtain_jwt_token</span><span class="p">),</span>
 <span class="p">]</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ul>
 </li>
@@ -7800,7 +8216,41 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 <p>jwt setting variables</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">JWT_AUTH</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">JWT_AUTH</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;JWT_ENCODE_HANDLER&#39;</span><span class="p">:</span>  
     <span class="s1">&#39;rest_framework_jwt.utils.jwt_encode_handler&#39;</span><span class="p">,</span>
 
@@ -7836,6 +8286,7 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="django-rest-auth-register-login-logout-reset-change">django-rest-auth (Register, Login, Logout, Reset, Change..)<a class="headerlink" href="#django-rest-auth-register-login-logout-reset-change" title="Permanent link">#</a></h4>
 <ul>
 <li>src<ul>
@@ -7857,7 +8308,19 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 <ul>
 <li><code>from django.core.mail import send_mail</code></li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="n">CONFIG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ENV_PATH</span><span class="p">,</span> <span class="s1">&#39;../configs/&#39;</span><span class="p">)</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">CONFIG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ENV_PATH</span><span class="p">,</span> <span class="s1">&#39;../configs/&#39;</span><span class="p">)</span>
 
 <span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="c1">#EMAIL_USE_SSL = True  #Use any one from TLS, SSL</span>
@@ -7871,10 +8334,35 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 <span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="n">EMAIL_HOST_USER</span>
 <span class="n">EMAIL_ADMIN</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;toran.ethereal@gmail.com&#39;</span><span class="p">,</span> <span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 - djoser setting variables</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">DJOSER</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DJOSER</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;PASSWORD_RESET_CONFIRM_URL&#39;</span><span class="p">:</span> <span class="s1">&#39;auth/password/reset/confirm/</span><span class="si">{uid}</span><span class="s1">/</span><span class="si">{token}</span><span class="s1">&#39;</span><span class="p">,</span>
     <span class="s1">&#39;ACTIVATION_URL&#39;</span><span class="p">:</span> <span class="s1">&#39;auth/password/reset/confirm/</span><span class="si">{uid}</span><span class="s1">/</span><span class="si">{token}</span><span class="s1">&#39;</span><span class="p">,</span>
     <span class="s1">&#39;EMAIL&#39;</span><span class="p">:</span> <span class="p">{</span>
@@ -7900,6 +8388,7 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
     <span class="p">},</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="django-templated-mail">django-templated-mail<a class="headerlink" href="#django-templated-mail" title="Permanent link">#</a></h4>
 <ul>
 <li>djoser uses it to create mail template &amp; send mails</li>
@@ -7956,13 +8445,19 @@ DRF provides a view which returns a token on correct username &amp; password.<ul
 <li>source: http://effbot.org/zone/django-multihost.htm</li>
 </ul>
 <h3 id="get-request-url-string">Get request URL string<a class="headerlink" href="#get-request-url-string" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.sites.shortcuts</span> <span class="kn">import</span> <span class="n">get_current_site</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.sites.shortcuts</span> <span class="kn">import</span> <span class="n">get_current_site</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;query_params are:&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">build_absolute_uri</span><span class="p">())</span>  <span class="c1">#returns url with domain</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_full_path</span><span class="p">())</span>  <span class="c1">#returns url without domain</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_current_site</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">domain</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">get_host</span><span class="p">())</span>  <span class="c1">#both returns host or domain</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="get-slugs-from-url">Get slugs from url<a class="headerlink" href="#get-slugs-from-url" title="Permanent link">#</a></h3>
 <p>if you have any 
 - url like: http://127.0.0.1:8000/auth/password/reset/confirm/Mw/4vw-d9cdc8954482ecf8e253/

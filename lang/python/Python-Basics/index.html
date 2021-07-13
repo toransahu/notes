@@ -3616,8 +3616,9 @@
 <li>In computer software and media, an Easter egg is an intentional inside joke, hidden message or image, or secret feature of a work</li>
 </ul>
 <p>The Zen of python can be listed by importing <code>this</code></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">this</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">this</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">#</a></h3>
 <ul>
 <li>CPython (Default)</li>
@@ -3771,9 +3772,11 @@
 <li>Cannot handle <strong>reference cycle</strong></li>
 <li>Reference Cycle: When there is no way to reach an object but its reference count is still greater than zero</li>
 <li>e.g.
-    <div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>Examples, where the reference count increases:<ul>
@@ -3783,7 +3786,19 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">=</span> <span class="p">[]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># 2 references, 1 from the foo var and 1 from getrefcount</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
@@ -3797,6 +3812,7 @@
 <span class="c1"># 2 references, the function scope is destroyed</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Garbage Collection</p>
@@ -3828,7 +3844,14 @@
 <ul>
 <li>e.g.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">gc</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">gc</span>
 
 <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
 <span class="n">obj1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
@@ -3837,6 +3860,7 @@
 <span class="n">obj2</span><span class="p">[</span><span class="s2">&quot;obj1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj1</span>
 <span class="k">del</span> <span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span>
 </code></pre></div>
+</td></tr></table>
                     - it is most important to identify a memory space whether it is a garbage or not
 - otherwise it will lead to <code>memory leak</code>
     - <code>memory leak</code> means, automatically data loss</p>
@@ -3851,13 +3875,19 @@
 <p>Note: Automatic garbage collection will not run if your Python device is running out of memory</p>
 </li>
 <li>Manual / Explicitly 
-<div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">gc</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">gc</span>
 
     <span class="c1"># get_count() returns a tuple of (threshold, no. of objects allocated, no. of objects de-allocated)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">get_count</span><span class="p">())</span>
     <span class="c1"># With no arguments, run a full collection</span>
     <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -3931,7 +3961,18 @@
 <h2 id="data-types">Data Types<a class="headerlink" href="#data-types" title="Permanent link">#</a></h2>
 <h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">#</a></h3>
 <h4 id="string-formatting">String formatting<a class="headerlink" href="#string-formatting" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">v</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{0}</span><span class="s2"> is </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
@@ -3944,6 +3985,7 @@
 <span class="c1"># in Python 3.6.4</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of i is </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> and value of v is </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="what-is-doc-string">What is doc string?<a class="headerlink" href="#what-is-doc-string" title="Permanent link">#</a></h4>
 <ul>
 <li>way of associating document with modules, functions, class, methods</li>
@@ -4009,7 +4051,14 @@
 </li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">first_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">first_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span><span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">num</span>
@@ -4018,52 +4067,82 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">first_n</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h5 id="list-comprehension">List comprehension<a class="headerlink" href="#list-comprehension" title="Permanent link">#</a></h5>
-<p><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre></div></p>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre></div>
+</td></tr></table></p>
 <h5 id="list-flattening">List Flattening<a class="headerlink" href="#list-flattening" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">]</span>
 <span class="n">flat_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 <p>which is equivalent to </p>
-<div class="highlight"><pre><span></span><code><span class="n">flat_list</span> <span class="o">=</span> <span class="p">[]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">flat_list</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">:</span>
         <span class="n">flat_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h5 id="randomize-items-of-list-in-place">Randomize items of list in place<a class="headerlink" href="#randomize-items-of-list-in-place" title="Permanent link">#</a></h5>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
 <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">shuffle</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 <span class="n">shuffle</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>[3, 2, 1, 4]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[3, 2, 1, 4]
 [4, 1, 2, 3]
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h5 id="how-to-insert-an-element-in-between-a-list">How to insert an element in between a list?<a class="headerlink" href="#how-to-insert-an-element-in-between-a-list" title="Permanent link">#</a></h5>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
 <span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">l</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>[1, 2, 3, 4, 5, 6, 7]
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[1, 2, 3, 4, 5, 6, 7]
+</code></pre></div>
+</td></tr></table></p>
 <h5 id="diif-between-append-and-extend-method-in-list">Diif  between append and extend method in list?<a class="headerlink" href="#diif-between-append-and-extend-method-in-list" title="Permanent link">#</a></h5>
 <ul>
 <li>append - appends object at the end</li>
 <li>extend - extends list by appending elements from iterables</li>
 </ul>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 
@@ -4072,15 +4151,21 @@ Out:
 
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>[1, 2, 3, [4, 5], 6, 7, 8]
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[1, 2, 3, [4, 5], 6, 7, 8]
+</code></pre></div>
+</td></tr></table></p>
 <h5 id="enumerate">enumerate()<a class="headerlink" href="#enumerate" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">]):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">]):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">%d</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{0}</span><span class="s2"> is </span><span class="si">{1}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value at index </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="tuple">Tuple<a class="headerlink" href="#tuple" title="Permanent link">#</a></h3>
 <ul>
 <li>A fixed data structure/type to store objects/data/items</li>
@@ -4097,7 +4182,16 @@ Out:
 <li>use when need to store a db table data and want to maintain column structure</li>
 </ul>
 <h4 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
 <span class="n">t</span> <span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="c1">#Lets try to make changes in l &amp; t</span>
@@ -4108,11 +4202,25 @@ Out:
 <span class="c1"># t[2] = 3 #does not work</span>
 <span class="c1"># t[2][0] = 1 #works</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="expanding-tuple">Expanding Tuple<a class="headerlink" href="#expanding-tuple" title="Permanent link">#</a></h4>
 <ul>
 <li>used to pass tuple elements as function parameter</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># simple</span>
 <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
@@ -4127,6 +4235,7 @@ Out:
 
 <span class="n">foo</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="dictionary">Dictionary<a class="headerlink" href="#dictionary" title="Permanent link">#</a></h3>
 <ul>
 <li>Is map type of data structure which holds a key value pair.</li>
@@ -4145,21 +4254,28 @@ Out:
 </ul>
 <h4 id="dict-comprehension">dict comprehension<a class="headerlink" href="#dict-comprehension" title="Permanent link">#</a></h4>
 <p>Code:</p>
-<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="dict-with-order">dict with order<a class="headerlink" href="#dict-with-order" title="Permanent link">#</a></h4>
 <ul>
 <li>maintains the order of elements in which they were inserted</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;first&#39;</span><span class="p">})</span>
 <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
 <h3 id="global-vs-local-vs-non-local-variable">Global vs Local vs Non-Local Variable<a class="headerlink" href="#global-vs-local-vs-non-local-variable" title="Permanent link">#</a></h3>
 <ul>
@@ -4167,7 +4283,13 @@ Out:
 <li>not same as other languages (by default global)</li>
 <li>by default all are local (if you need, declare global)</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m local&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
@@ -4175,13 +4297,24 @@ Out:
 <span class="n">f</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>I&#39;m local
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>I&#39;m local
 I&#39;m global
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="global-variable">Global Variable<a class="headerlink" href="#global-variable" title="Permanent link">#</a></h3>
 <p>How to access global variable inside a function:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="c1"># print(s) #error : cannot access a global variable directly</span>
     <span class="k">global</span> <span class="n">s</span> <span class="c1"># keyword global will give access to outer s</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m local&quot;</span> <span class="c1"># value of global s has been changed</span>
@@ -4191,17 +4324,31 @@ I&#39;m global
 <span class="n">f</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>I&#39;m local
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>I&#39;m local
 I&#39;m local
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="global-variables-in-nested-functions">Global Variables in Nested Functions<a class="headerlink" href="#global-variables-in-nested-functions" title="Permanent link">#</a></h4>
 <ul>
 <li>keyword global inside inner function will not access the upper function level variable</li>
 <li>instead, it will create a variable in <strong>main </strong> scope</li>
 <li>to make it possible there is one more keyword : nonlocal</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
         <span class="k">global</span> <span class="n">x</span>
@@ -4214,12 +4361,17 @@ I&#39;m local
 <span class="n">f</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x in main: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>Before calling g: 42
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Before calling g: 42
 Calling g now:
 After calling g: 42
 x in main: 43
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="local-variable">Local Variable<a class="headerlink" href="#local-variable" title="Permanent link">#</a></h3>
 <ul>
 <li>variable defined inside a function are local to that function</li>
@@ -4231,7 +4383,18 @@ x in main: 43
 <li>can only be used inside of nested functions</li>
 <li>has to be defined in the enclosing/upper function scope</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
         <span class="k">nonlocal</span> <span class="n">y</span>
@@ -4244,12 +4407,17 @@ x in main: 43
 <span class="n">f</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y in main: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># this will create error</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:</p>
-<div class="highlight"><pre><span></span><code>Before calling g: <span class="m">42</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Before calling g: <span class="m">42</span>
 Calling g now:
 After calling g: <span class="m">43</span>
 NameError: name <span class="s1">&#39;y&#39;</span> is not defined
 </code></pre></div>
+</td></tr></table>
 <h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">#</a></h2>
 <h3 id="in"><code>in</code><a class="headerlink" href="#in" title="Permanent link">#</a></h3>
 <ul>
@@ -4321,7 +4489,13 @@ NameError: name <span class="s1">&#39;y&#39;</span> is not defined
 <li><a href="https://www.python.org/dev/peps/pep-0343/">read more</a></li>
 </ul>
 <h5 id="example-1-file-handling">Example #1 : file handling<a class="headerlink" href="#example-1-file-handling" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>    <span class="c1"># automatically acquring `csv.txt` file and does not allows others to acquire it</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="c1"># automatically acquring `csv.txt` file and does not allows others to acquire it</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="c1"># do some operations on f</span>
         <span class="c1"># do some operations more on f</span>
@@ -4329,6 +4503,7 @@ NameError: name <span class="s1">&#39;y&#39;</span> is not defined
 
     <span class="c1"># automatically closed/released `csv.txt` file for others</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><code>with</code> statement opens a file or acquires a resource then do some block of codes </li>
 <li>then closes the file or releases the resource</li>
@@ -4337,14 +4512,19 @@ NameError: name <span class="s1">&#39;y&#39;</span> is not defined
 <li>I/O operation : GIL free</li>
 </ul>
 <h5 id="example-2">Example #2:<a class="headerlink" href="#example-2" title="Permanent link">#</a></h5>
-<p><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span><span class="p">()</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span><span class="p">()</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
     <span class="n">suite</span>
 </code></pre></div>
+</td></tr></table>
 is equivalent to
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">B</span><span class="p">()</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">suite</span>
 </code></pre></div>
+</td></tr></table>
 - thats how, it does not need help of GIL</p>
 <h2 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">#</a></h2>
 <h3 id="lambda"><a href="#Lambda">lambda</a><a class="headerlink" href="#lambda" title="Permanent link">#</a></h3>
@@ -4352,13 +4532,17 @@ is equivalent to
 <h3 id="ternary-operator">Ternary Operator<a class="headerlink" href="#ternary-operator" title="Permanent link">#</a></h3>
 <p>[on-true] if [expression] else [on-flase]</p>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span><span class="mi">50</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span><span class="mi">50</span>
 <span class="n">big</span> <span class="o">=</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">big</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>50
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>50
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="operator-overloading-using-magic-methods">[Operator Overloading Using Magic Methods]<a class="headerlink" href="#operator-overloading-using-magic-methods" title="Permanent link">#</a></h3>
 <ul>
 <li>Read in Python-OOPs notebook</li>
@@ -4378,7 +4562,15 @@ Out:
 </li>
 <li>a built-in function to evaluate the python expression writter in string form</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;lambda x: x**2&quot;</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;lambda x: x**2&quot;</span>
 <span class="n">square</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 <span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># returns 4</span>
 
@@ -4388,6 +4580,7 @@ Out:
 <span class="n">str_dict</span> <span class="o">=</span> <span class="s2">&quot;{&#39;a&#39;:1, &#39;b&#39;:[2,3]}&quot;</span>
 <span class="nb">eval</span><span class="p">(</span><span class="n">str_dict</span><span class="p">)</span>  <span class="c1"># returns a dict</span>
 </code></pre></div>
+</td></tr></table>
 - eval takes 3 parameters
     - expression: string
     - globals: dict (used for namespace)
@@ -4403,7 +4596,14 @@ Out:
 <li><code>partial</code> always takes functions as first parameter</li>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m foo with </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, and </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -4412,6 +4612,7 @@ Out:
 
 <span class="n">foo_partial</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="lambda_1"><code>lambda</code><a class="headerlink" href="#lambda_1" title="Permanent link">#</a></h3>
 <ul>
 <li>format: lambda arg1, arg2, ...argN : expression using arguments</li>
@@ -4420,8 +4621,9 @@ Out:
 <li>in-place function definition</li>
 <li>can be stored in a variable</li>
 <li>syntax: 
-<div class="highlight"><pre><span></span><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 </code></pre></div>
+</td></tr></table>
 Scopes:<ul>
 <li>to make Jump Tables</li>
 <li>nested lambda</li>
@@ -4436,12 +4638,15 @@ Scopes:<ul>
 <li><strong>python2</strong>:returns a list containing all the function call results</li>
 <li><strong>python3</strong>:returns an iterator of type map object</li>
 <li>Syntax
-<div class="highlight"><pre><span></span><code><span class="n">sqrs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">sqrs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sqrs</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="filter">filter()<a class="headerlink" href="#filter" title="Permanent link">#</a></h3>
 <ul>
@@ -4450,12 +4655,15 @@ Out:
 <li><strong>python2</strong>:returns a list of items for whose <strong> function call returns True</strong></li>
 <li><strong>python3</strong>:returns an iterator of type map object for the items whose <strong> function call returns True</strong></li>
 <li>Syntax
-<div class="highlight"><pre><span></span><code><span class="n">evens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">evens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">evens</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>[0, 2, 4, 6, 8]
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[0, 2, 4, 6, 8]
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="reduce">reduce()<a class="headerlink" href="#reduce" title="Permanent link">#</a></h3>
 <p>(Dropped out in Python 3.x)
@@ -4465,18 +4673,27 @@ Out:
 * <strong>python3</strong>: dropped out</p>
 <p><img src="https://www.python-course.eu/images/reduce.png"></p>
 <h3 id="zip">zip()<a class="headerlink" href="#zip" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
 <span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span><span class="o">.</span>
 <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span> <span class="c1"># results in a list of tuples say [(&#39;A&#39;,10),(&#39;B&#39;,20),(&#39;C&#39;,30)]</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="inverse-a-matrix-listtuple">Inverse a Matrix (list/tuple)<a class="headerlink" href="#inverse-a-matrix-listtuple" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
      <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
      <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
     <span class="p">]</span>
 
 <span class="n">m_inverse</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">m</span><span class="p">))</span>   <span class="c1"># here *m is expanding of list/tuple, mostly used in passing tuple as func parameters</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="decorators">Decorators<a class="headerlink" href="#decorators" title="Permanent link">#</a></h3>
 <ul>
 <li>are a thin wrapper arround any function or any class<ul>
@@ -4508,10 +4725,13 @@ Out:
 <ul>
 <li>The way we have defined decorators so far hasn't taken into account that the attributes</li>
 </ul>
-<div class="highlight"><pre><span></span><code>    <span class="vm">__name__</span> <span class="p">(</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span><span class="p">),</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="vm">__name__</span> <span class="p">(</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span><span class="p">),</span>
     <span class="vm">__doc__</span> <span class="p">(</span><span class="n">the</span> <span class="n">docstring</span><span class="p">)</span> <span class="ow">and</span>
     <span class="vm">__module__</span> <span class="p">(</span><span class="n">The</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">the</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">defined</span><span class="p">)</span> 
 </code></pre></div>
+</td></tr></table>
 <p>of the original functions will be lost after the decoration. </p>
 </li>
 </ul>
@@ -4520,7 +4740,15 @@ Out:
 <p>simplest form of e.g. to create a custom decorator is:</p>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">exec_time</span><span class="p">(</span><span class="n">some_func</span><span class="p">):</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">exec_time</span><span class="p">(</span><span class="n">some_func</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is start time&#39;</span><span class="p">)</span>
     <span class="n">some_func</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is end time&#39;</span><span class="p">)</span>
@@ -4530,9 +4758,17 @@ Out:
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;running foo&#39;</span><span class="p">)</span>    
 </code></pre></div>
+</td></tr></table>
 - gist: https://gist.github.com/toransahu/7ac4c7f139e78d15b74ca0ce6e17cf85</p>
 <h3 id="nested-function">Nested function<a class="headerlink" href="#nested-function" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
   <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
   <span class="k">def</span> <span class="nf">inner_func</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
@@ -4541,6 +4777,7 @@ Out:
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">())</span>  <span class="c1"># 8</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="closures">Closures<a class="headerlink" href="#closures" title="Permanent link">#</a></h4>
 <ul>
 <li>is a concept - not a function<ul>
@@ -4559,7 +4796,18 @@ Out:
 <li>Function Factory takes in argument(s), creates local function that creates its own argument(s) and also uses the argument(s) passed to the function factory</li>
 <li>this is possible with closures</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">multiply_by</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">multiply_by</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
   <span class="k">def</span> <span class="nf">multiply_by_num</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">k</span>
   <span class="k">return</span> <span class="n">multiply_by_num</span>
@@ -4572,6 +4820,7 @@ Out:
 <span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>  <span class="c1"># 200</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>   <span class="c1"># 30</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="parameter-passing-in-python">Parameter passing in python<a class="headerlink" href="#parameter-passing-in-python" title="Permanent link">#</a></h3>
 <h4 id="passed-as">Passed As<a class="headerlink" href="#passed-as" title="Permanent link">#</a></h4>
 <ul>
@@ -4582,11 +4831,14 @@ Out:
 <ul>
 <li>Non-default parameters comes before default parameters</li>
 <li>following will give <code>SyntaxError</code>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>SyntaxError: non-default argument follows default argument
-</code></pre></div></li>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>SyntaxError: non-default argument follows default argument
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h4 id="variable-number-of-parameters">Variable Number of Parameters<a class="headerlink" href="#variable-number-of-parameters" title="Permanent link">#</a></h4>
 <ul>
@@ -4596,7 +4848,16 @@ Out:
 <h2 id="exception-handling">Exception Handling<a class="headerlink" href="#exception-handling" title="Permanent link">#</a></h2>
 <ul>
 <li>Syntax:
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># do something </span>
 <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="c1"># handle</span>
@@ -4606,7 +4867,8 @@ Out:
     <span class="c1"># handle</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="c1"># do final work</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>can also put an else block after all the except block (will be executed if no exception occurs)</li>
 </ul>
 <h4 id="inbuilt-exceptions">Inbuilt Exceptions<a class="headerlink" href="#inbuilt-exceptions" title="Permanent link">#</a></h4>
@@ -4657,10 +4919,12 @@ Out:
 <h5 id="syntaxerror">SyntaxError<a class="headerlink" href="#syntaxerror" title="Permanent link">#</a></h5>
 <ul>
 <li>when parser encounters some syntax error
-    <div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="mi">1</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="mi">1</span>
 </code></pre></div>
-    <div class="highlight"><pre><span></span><code>SyntaxError: Missing parentheses in call to &#39;print&#39;
-</code></pre></div></li>
+</td></tr></table>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>SyntaxError: Missing parentheses in call to &#39;print&#39;
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h5 id="typeerror">TypeError<a class="headerlink" href="#typeerror" title="Permanent link">#</a></h5>
 <ul>
@@ -4668,10 +4932,12 @@ Out:
 <li>e.g.<ul>
 <li>when index is not an int</li>
 <li>addition of int + str
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;abc&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;abc&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</code></pre></div></li>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 </ul>
@@ -4682,10 +4948,12 @@ Out:
 <h5 id="valueerror">ValueError<a class="headerlink" href="#valueerror" title="Permanent link">#</a></h5>
 <ul>
 <li>when a built-in operations or function receives an argument that has the right type but an inappropriate value.
-    <div class="highlight"><pre><span></span><code><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
 </code></pre></div>
-    <div class="highlight"><pre><span></span><code>ValueError: invalid literal for int() with base 10: &#39;abc&#39;
-</code></pre></div></li>
+</td></tr></table>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ValueError: invalid literal for int() with base 10: &#39;abc&#39;
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h5 id="zerodivisionerror">ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permanent link">#</a></h5>
 <ul>
@@ -4697,7 +4965,18 @@ Out:
 <li>inherit the <code>Exception</code> class</li>
 <li>syntax:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># define Python user-defined exceptions</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># define Python user-defined exceptions</span>
 <span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;Base class for other exceptions&quot;&quot;&quot;</span>
    <span class="k">pass</span>
@@ -4710,6 +4989,7 @@ Out:
    <span class="sd">&quot;&quot;&quot;Raised when the input value is too large&quot;&quot;&quot;</span>
    <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">#</a></h2>
 <ul>
 <li>https://wiki.python.org/moin/TimeComplexity</li>
@@ -4720,7 +5000,13 @@ Out:
 <li><code>==</code> compares for values</li>
 <li>i.e. checks that 2 arguments have the same value</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 
@@ -4728,11 +5014,18 @@ Out:
 <span class="n">l1</span> <span class="o">==</span> <span class="n">l3</span>  <span class="c1"># returns True</span>
 <span class="n">l3</span> <span class="o">==</span> <span class="n">l2</span>  <span class="c1"># returns True</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><code>is</code> checks if <code>operand1</code> is exact copy of <code>operand2</code></li>
 <li>i.e. checks that 2 arguments refer to the same object</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 
@@ -4740,6 +5033,7 @@ Out:
 <span class="n">l1</span> <span class="ow">is</span> <span class="n">l3</span>  <span class="c1"># returns False</span>
 <span class="n">l3</span> <span class="ow">is</span> <span class="n">l2</span>  <span class="c1"># returns False</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="pickling-unpickling">Pickling Unpickling<a class="headerlink" href="#pickling-unpickling" title="Permanent link">#</a></h3>
 <h4 id="pickling">Pickling<a class="headerlink" href="#pickling" title="Permanent link">#</a></h4>
 <ul>
@@ -4772,7 +5066,17 @@ Out:
 <li>for testing purpose, replace a function which calls a heavy API with a dummy one</li>
 </ul>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f()&quot;</span><span class="p">)</span>
 
@@ -4784,9 +5088,11 @@ Out:
 <span class="n">obj</span><span class="o">.</span><span class="n">f</span><span class="p">()</span> <span class="c1"># here, definition of f has been replace with def of monkey_f</span>
 <span class="c1">#obj.monkey_f()        </span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>monkey_f()
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>monkey_f()
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="duck-typing">Duck Typing<a class="headerlink" href="#duck-typing" title="Permanent link">#</a></h3>
 <ul>
 <li>EAFP: Easier to Ask Forgiveness than Permission</li>
@@ -4821,7 +5127,29 @@ The difference between shallow and deep copying is only relevant for compound ob
 <li>A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the deforiginal.</li>
 <li>slow downs programs</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular reference Example</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular reference Example</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ops on mutable&quot;</span><span class="p">)</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="n">l1</span> <span class="c1"># l2 have reference of l1</span>
@@ -4845,8 +5173,23 @@ The difference between shallow and deep copying is only relevant for compound ob
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Regular reference Example
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Regular reference Example
 
 Ops on mutable
 l1 = [1, 2, 3, 4]
@@ -4861,8 +5204,33 @@ abcd
 140486838172784
 140486838172392
 efgh abcd
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - Manual</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - Manual</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">l0</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">l0</span><span class="p">]</span>
@@ -4888,8 +5256,31 @@ efgh abcd
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Shallow Copy Example - Manual
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Shallow Copy Example - Manual
 
 l3 =  [1, [1, 2, 3]]
 l4 =  [1, [1, 2, 3]]
@@ -4912,7 +5303,8 @@ NameError                                 Traceback (most recent call last)
      23 
 
 NameError: name &#39;sys&#39; is not defined
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <p>Here,
 * values of l3 and l4 are same
 * but ids of l3 and l4 are different
@@ -4920,7 +5312,33 @@ NameError: name &#39;sys&#39; is not defined
 * the id of l3[1] &amp; l4[1] are same, means changes in l4[0] will affect l3[0].
 * sizes of l3 &amp; l4 are different
 * sizes of l3[1] &amp; l4[1] are different</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - copy.copy()&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shallow Copy Example - copy.copy()&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -4948,8 +5366,23 @@ NameError: name &#39;sys&#39; is not defined
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l3[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l3</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l4[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l4</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Shallow Copy Example - copy.copy()
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Shallow Copy Example - copy.copy()
 l3 =  [1, [1, 2, 3]]
 l4 =  [1, [1, 2, 3]]
 id(l3) = 140486838153032
@@ -4965,12 +5398,39 @@ Size of l4 =  104
 Size of l3[1] =  88
 Size of l4[1] =  88
 </code></pre></div>
+</td></tr></table>
 Here,
 * Results are same as Manual shallow copy.</p>
 <p>Except,
 * sizes of l3 &amp; l4 are different
 * sizes of l3[1] &amp; l4[1] are same</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - Manual&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - Manual&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -4998,8 +5458,23 @@ Here,
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Deep Copy Example - Manual
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Deep Copy Example - Manual
 l5 =  [1, [1, 2, 3]]
 l6 =  [1, [1, 2, 3]]
 id(l5) = 140486838605384
@@ -5014,7 +5489,8 @@ Size of l5 =  80
 Size of l6 =  80
 Size of l5[1] =  88
 Size of l6[1] =  112
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <p>Here,
 * values of l5 and l6 are same
 * but ids of l5 and l6 are different
@@ -5022,7 +5498,33 @@ Size of l6[1] =  112
 * the id of l5[1] &amp; l6[1] are different, means changes in l6[0] will not affect l5[0]
 * sizes of l5 &amp; l6 are same
 * sizes of l5[1] &amp; l6[1] are different</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - copy.deepcopy()&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Deep Copy Example - copy.deepcopy()&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -5050,8 +5552,23 @@ Size of l6[1] =  112
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l5[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l5</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of l6[1] = &quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">l6</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:</p>
-<div class="highlight"><pre><span></span><code>Deep Copy Example - copy.deepcopy()
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Deep Copy Example - copy.deepcopy()
 l5 =  [1, [1, 2, 3]]
 l6 =  [1, [1, 2, 3]]
 id(l5) = 140486838138056
@@ -5067,6 +5584,7 @@ Size of l6 =  96
 Size of l5[1] =  88
 Size of l6[1] =  96
 </code></pre></div>
+</td></tr></table>
 <p>Here, 
 * Results are same as Manual Deep copy. </p>
 <p>Except,

@@ -2914,72 +2914,104 @@
 <h2 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">#</a></h2>
 <h3 id="basic-patterns">Basic Patterns<a class="headerlink" href="#basic-patterns" title="Permanent link">#</a></h3>
 <h4 id="use-of">use of <code>.</code><a class="headerlink" href="#use-of" title="Permanent link">#</a></h4>
-<pre><code>- matches any character
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches any character
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of_1">use of <code>*</code><a class="headerlink" href="#use-of_1" title="Permanent link">#</a></h4>
-<pre><code>- matches 0 or more repetition of a char/set
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 0 or more repetition of a char/set
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of_2">use of <code>+</code><a class="headerlink" href="#use-of_2" title="Permanent link">#</a></h4>
-<pre><code>- matches 1 or more repetition of a char/set
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 1 or more repetition of a char/set
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of_3">use of <code>?</code><a class="headerlink" href="#use-of_3" title="Permanent link">#</a></h4>
-<pre><code>- matches 0 or 1 repetition of a char/set
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 0 or 1 repetition of a char/set
 - also works as a Non-greedy pattern (with repeaters)
-    - means in string '&lt;b&gt;Hello&lt;/b&gt;' pattern r'&lt;.*&gt;' will match the whole string instead of '&lt;b&gt;'
-    - but if pattern is used as r'&lt;.*?&gt;' then will match '&lt;b&gt;' only
+    - means in string &#39;&lt;b&gt;Hello&lt;/b&gt;&#39; pattern r&#39;&lt;.*&gt;&#39; will match the whole string instead of &#39;&lt;b&gt;&#39;
+    - but if pattern is used as r&#39;&lt;.*?&gt;&#39; then will match &#39;&lt;b&gt;&#39; only
     - AKA pcre (Perl Compatible Regular Expression)
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of_4">use of <code>\</code><a class="headerlink" href="#use-of_4" title="Permanent link">#</a></h4>
-<pre><code>- sign of speciality
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- sign of speciality
 - used before any special chars, to match that char
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of-t-r-n">use of <code>\t</code>, <code>\r</code>, <code>\n</code><a class="headerlink" href="#use-of-t-r-n" title="Permanent link">#</a></h4>
-<pre><code>- \t matches a tab
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- \t matches a tab
 - \r matches a carriage return (line break) in Mac, \n\r in Windows
 - \n matches a line break ( carriage return) in Linux &amp; Windows
-- note: On "old" printers, \r sent the print head back to the start of the line, and \n advanced the paper by one line. Both were therefore necessary to start printing on the next line.
-</code></pre>
+- note: On &quot;old&quot; printers, \r sent the print head back to the start of the line, and \n advanced the paper by one line. Both were therefore necessary to start printing on the next line.
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of-b-start-and-end-of-word-anchors">use of <code>\b</code> (start and end of word anchors)<a class="headerlink" href="#use-of-b-start-and-end-of-word-anchors" title="Permanent link">#</a></h4>
-<pre><code>- matches the boundary between word and non-word chars
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches the boundary between word and non-word chars
 - matches the position called word boundaries
     - match has zero length
     - usually before (including start of the line) and after a word
     -e.g. &lt;here&gt;apple&lt;here&gt;
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of-b">use of <code>\B</code><a class="headerlink" href="#use-of-b" title="Permanent link">#</a></h4>
-<pre><code>- opposite of \b
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- opposite of \b
 - matches every position where \b does not
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of-s">use of <code>\s</code><a class="headerlink" href="#use-of-s" title="Permanent link">#</a></h4>
 <h4 id="use-of-d">use of <code>\d</code><a class="headerlink" href="#use-of-d" title="Permanent link">#</a></h4>
 <h4 id="use-of-d_1">use of <code>\D</code><a class="headerlink" href="#use-of-d_1" title="Permanent link">#</a></h4>
 <h4 id="use-of-w">use of <code>\w</code><a class="headerlink" href="#use-of-w" title="Permanent link">#</a></h4>
 <h4 id="use-of-w_1">use of <code>\W</code><a class="headerlink" href="#use-of-w_1" title="Permanent link">#</a></h4>
 <h4 id="use-of_5">use of <code>[]</code><a class="headerlink" href="#use-of_5" title="Permanent link">#</a></h4>
-<pre><code>- dash - inside []
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- dash - inside []
 - dot . inside []
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of_6">use of <code>()</code><a class="headerlink" href="#use-of_6" title="Permanent link">#</a></h4>
 <h4 id="use-of-start-of-string-anchors">use of <code>^</code> (Start of String Anchors)<a class="headerlink" href="#use-of-start-of-string-anchors" title="Permanent link">#</a></h4>
-<pre><code>- with square bracket (set of chars)
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- with square bracket (set of chars)
+</code></pre></div>
+</td></tr></table>
 <h4 id="use-of-end-of-string-anchors">use of <code>$</code> <!--<code>$</code>-->  (End of String Anchors)<a class="headerlink" href="#use-of-end-of-string-anchors" title="Permanent link">#</a></h4>
 <h4 id="use-of_7">use of <code>|</code><a class="headerlink" href="#use-of_7" title="Permanent link">#</a></h4>
 <h4 id="use-of-syntax">use of syntax (<code>? ...</code>)<a class="headerlink" href="#use-of-syntax" title="Permanent link">#</a></h4>
-<pre><code>- Lookarounds
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- Lookarounds
     - +ve Lookahead
     - -ve Lookahead
     - +ve Lookbehind
     - -ve Lookbehind
 - Non-Capturing Group
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h3 id="builtin-functions">Builtin Functions:<a class="headerlink" href="#builtin-functions" title="Permanent link">#</a></h3>
 <h4 id="research">re.search<a class="headerlink" href="#research" title="Permanent link">#</a></h4>
 <h4 id="regroup">re.group<a class="headerlink" href="#regroup" title="Permanent link">#</a></h4>
 <h4 id="refindall">re.findall<a class="headerlink" href="#refindall" title="Permanent link">#</a></h4>
-<pre><code>- with files
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- with files
 - with groups
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="resub">re.sub<a class="headerlink" href="#resub" title="Permanent link">#</a></h4>
 <h4 id="recompile">re.compile<a class="headerlink" href="#recompile" title="Permanent link">#</a></h4>
 <h4 id="extra-options-to-above-functions">extra options to above functions<a class="headerlink" href="#extra-options-to-above-functions" title="Permanent link">#</a></h4>
@@ -2995,7 +3027,15 @@
 <li>Greedy vs Non-Greedy</li>
 <li>Substitution</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;This#is#$</span><span class="si">% a</span><span class="s2">&amp;%name%$ #&quot;</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[\w])([\W]+)(?=[\w])&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
@@ -3005,14 +3045,19 @@
 <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;q(?=u)&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>remove white spaces from starting of the line but line break</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[^\S\n]+&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[^\S\n]+&#39;</span>
 
 <span class="c1">#or if regex supports PCRE</span>
 <span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[\h]+&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <p>Credits:</p>
 <ul>
 <li>https://www.rexegg.com/regex-disambiguation.html#lookarounds</li>
@@ -3111,7 +3156,15 @@
 <ul>
 <li>is a duplex(two way) communication channel</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -3121,8 +3174,26 @@
     <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out: hello bob</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
@@ -3141,8 +3212,17 @@
     <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  
 </code></pre></div>
+</td></tr></table>
 <p>Out: </p>
-<div class="highlight"><pre><span></span><code>main line
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>main line
 module name: __main__
 parent process: 65
 process id: 66
@@ -3152,6 +3232,7 @@ parent process: 66
 process id: 80
 hello bob
 </code></pre></div>
+</td></tr></table>
 <h4 id="what-is-join">What is .join()?<a class="headerlink" href="#what-is-join" title="Permanent link">#</a></h4>
 <ul>
 <li>The join() method, when used with threading or multiprocessing, is not related to str.join()</li>
@@ -3166,7 +3247,18 @@ hello bob
 * This isn't as clearly stated in the multiprocessing docs as it should be, but it is mentioned in the Programming Guidelines section.
 * non-daemonic processes will be automatically be joined.
 * can override this behavior by setting the daemon flag on the Process to True prior to starting the process:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
@@ -3179,6 +3271,7 @@ hello bob
 <span class="c1"># Both parent and child will exit here, since the main process has completed.</span>
 <span class="c1"># the child process will be terminated as soon as the main process completes:</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
 Hello</p>
 <h4 id="daemon">daemon<a class="headerlink" href="#daemon" title="Permanent link">#</a></h4>
@@ -3214,22 +3307,31 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li><code>finally</code> is important because we need <code>f.close()</code> here to close the file descriptor with 100% guarantee</li>
 <li>file descriptors (fd) are limited at OS level, so we can save fd by closing after use</li>
 <li>code:
-    <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="using-with">Using <code>with</code><a class="headerlink" href="#using-with" title="Permanent link">#</a></h3>
 <ul>
 <li>Read <a href="https://notes-toransahu.notebooks.azure.com/nb//notebooks/python/Python-Basics.ipynb#with">here</a></li>
 <li>code:
-    <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h2 id="json-operations">JSON Operations<a class="headerlink" href="#json-operations" title="Permanent link">#</a></h2>
 <h3 id="import-json"><code>import json</code><a class="headerlink" href="#import-json" title="Permanent link">#</a></h3>
@@ -3285,8 +3387,9 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li>Uses the OS support to load the dynamic libraries, thus ensures full compatibility</li>
 <li>available for windows, linux, macOS etc.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pyinstaller -i &lt;icon.ico&gt; --windowed --onefile &lt;python_file.py&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pyinstaller -i &lt;icon.ico&gt; --windowed --onefile &lt;python_file.py&gt;
 </code></pre></div>
+</td></tr></table>
 <h4 id="py2exe">py2exe<a class="headerlink" href="#py2exe" title="Permanent link">#</a></h4>
 <h2 id="python-version-management">Python Version Management<a class="headerlink" href="#python-version-management" title="Permanent link">#</a></h2>
 <h3 id="setting-default-python-version">Setting default Python Version<a class="headerlink" href="#setting-default-python-version" title="Permanent link">#</a></h3>
@@ -3296,10 +3399,13 @@ There are also some other processes like orphan &amp; zombie</strong></p>
 <li>will affect other applications using another version of python</li>
 <li>can be done like:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>ln -l /usr/bin/python /usr/bin/python3.6
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ln -l /usr/bin/python /usr/bin/python3.6
 
 ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 </code></pre></div>
+</td></tr></table>
 <h4 id="by-aliasing-python">By aliasing python<a class="headerlink" href="#by-aliasing-python" title="Permanent link">#</a></h4>
 <ul>
 <li>not recommanded</li>
@@ -3310,8 +3416,9 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 </li>
 <li>can be done like:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">python</span><span class="o">=</span><span class="err">&#39;</span>/home/toran/anaconda/bin/python3.6<span class="sb">`</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">python</span><span class="o">=</span><span class="err">&#39;</span>/home/toran/anaconda/bin/python3.6<span class="sb">`</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="by-setting-path-env-variable">By setting PATH env variable<a class="headerlink" href="#by-setting-path-env-variable" title="Permanent link">#</a></h4>
 <ul>
 <li>recommanded with anaconda</li>
@@ -3319,8 +3426,9 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 <li>for persistency; include the command in .bashrc or .zshrc file</li>
 <li>can be done like:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="anaconda">Anaconda<a class="headerlink" href="#anaconda" title="Permanent link">#</a></h3>
 <ul>
 <li>install it from official site</li>
@@ -3333,19 +3441,24 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 <ul>
 <li>
 <p>set anaconda python as default</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h4>
 <ul>
 <li>set anaconda python as default</li>
 </ul>
-<div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 
 <span class="c1">#if using git bash</span>
 . /c/ProgramData/Miniconda3/Scripts/activate
 </code></pre></div>
+</td></tr></table>
 <h3 id="virtualenv">virtualenv<a class="headerlink" href="#virtualenv" title="Permanent link">#</a></h3>
 <h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">#</a></h3>
 <ul>
@@ -3364,39 +3477,50 @@ ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
 </li>
 </ul>
 <h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>pip install pipenv
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install pipenv
 </code></pre></div>
+</td></tr></table>
 <h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h4>
 <h5 id="create-venv">create venv<a class="headerlink" href="#create-venv" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv install 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install 
 </code></pre></div>
+</td></tr></table>
 <h5 id="create-venv-with-specific-python-version">create venv with specific python version<a class="headerlink" href="#create-venv-with-specific-python-version" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv --two install 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --two install 
 
 pipenv --three install 
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>will initialize the venv with that python version</li>
 </ul>
 <h5 id="installuninstall-dependencies">install/uninstall dependencies<a class="headerlink" href="#installuninstall-dependencies" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv install nose2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install nose2
 
 pipenv uninstall nose2
 </code></pre></div>
+</td></tr></table>
 <h5 id="lock-dependencies-for-production">lock dependencies for production<a class="headerlink" href="#lock-dependencies-for-production" title="Permanent link">#</a></h5>
-<p><div class="highlight"><pre><span></span><code>pipenv lock
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv lock
 </code></pre></div>
+</td></tr></table>
 - will keep record of all the deps in Pipfile.lock file with their specific versions</p>
 <h5 id="install-dependencies-only-for-development">install dependencies only for development<a class="headerlink" href="#install-dependencies-only-for-development" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv install --dev  nose2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install --dev  nose2
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>will keep this record in [dev-packages] section</li>
 <li>and will do not install it by default</li>
 <li>to install dev packages; need to do:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pipenv install --dev
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install --dev
 </code></pre></div>
+</td></tr></table>
 <h5 id="install-dependencies-with-other-options">install dependencies with other options<a class="headerlink" href="#install-dependencies-with-other-options" title="Permanent link">#</a></h5>
 <ul>
 <li><code>--dev</code>: Install both develop and default packages from Pipfile.lock.</li>
@@ -3405,38 +3529,52 @@ pipenv uninstall nose2
 <li><code>--skip-lock</code>: Ignore the Pipfile.lock and install from the Pipfile. In addition, do not write out a Pipfile.lock reflecting changes to the Pipfile. </li>
 </ul>
 <h5 id="run-command-within-venv">run command within venv<a class="headerlink" href="#run-command-within-venv" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv run which python
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv run which python
 </code></pre></div>
+</td></tr></table>
 <h5 id="remove-venv">remove venv<a class="headerlink" href="#remove-venv" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv --rm
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --rm
 </code></pre></div>
+</td></tr></table>
 <h5 id="see-venv-detailspath">see venv details/path<a class="headerlink" href="#see-venv-detailspath" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv --venv
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --venv
 </code></pre></div>
+</td></tr></table>
 <h5 id="enter-venv-shell">enter venv shell<a class="headerlink" href="#enter-venv-shell" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>pipenv shell
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv shell
 </code></pre></div>
+</td></tr></table>
 <h5 id="clean-venv">clean venv<a class="headerlink" href="#clean-venv" title="Permanent link">#</a></h5>
 <ul>
 <li>uninstall all the packages not recorded in Pipfile</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pipenv clean
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv clean
 </code></pre></div>
+</td></tr></table>
 <h5 id="update-venv">update venv<a class="headerlink" href="#update-venv" title="Permanent link">#</a></h5>
 <ul>
 <li>locks &amp; then update all the packages</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pipenv update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv update
 </code></pre></div>
+</td></tr></table>
 <h5 id="security-check">security check<a class="headerlink" href="#security-check" title="Permanent link">#</a></h5>
 <ul>
 <li>checks for compliance with PEP 508 <a href="https://www.python.org/dev/peps/pep-0508/">Dependency specification for Python Software Packages</a> as well as package safety</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pipenv check
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv check
 </code></pre></div>
+</td></tr></table>
 <h2 id="python-package-distribution-pypi">Python Package Distribution (PyPi)<a class="headerlink" href="#python-package-distribution-pypi" title="Permanent link">#</a></h2>
 <h3 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>/example_pkg
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>/example_pkg
   /pkg1
     __init__.py
   /pkg2
@@ -3445,6 +3583,7 @@ pipenv uninstall nose2
   LICENSE
   README.md
 </code></pre></div>
+</td></tr></table>
 <p>where 
 - <s><code>__init__.py</code> should contain a variable <code>name='example_pkg'</code></s>
 - <code>setup.py</code> should look like <a href="https://gist.github.com/toransahu/669efbb90a5019bb4a766d3c385de90c">this gist</a>
@@ -3458,45 +3597,63 @@ pipenv uninstall nose2
         - <code>packages=['pkg1', 'pkg2', 'pkg2.pkg2_1']</code></p>
 <p>Note: After installing the package, you able to import packages with names listed in <code>packages</code> var.</p>
 <h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#setuptools &amp; wheel - to create build in .whl as well as .tar.gz. format</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#setuptools &amp; wheel - to create build in .whl as well as .tar.gz. format</span>
 python3 -m pip install --user --upgrade setuptools wheel
 
 
 <span class="c1">#twine - to upload build in pypi server</span>
 python3 -m pip install --user --upgrade twine
 </code></pre></div>
+</td></tr></table>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h3>
 <ul>
 <li>change directory where <code>setup.py</code> is  &amp; run</li>
 </ul>
-<div class="highlight"><pre><span></span><code>python3 setup.py sdist bdist_wheel
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 setup.py sdist bdist_wheel
 </code></pre></div>
+</td></tr></table>
 <p>output will be like</p>
-<div class="highlight"><pre><span></span><code>dist/
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>dist/
   example_pkg-0.0.1-py3-none-any.whl
   example_pkg-0.0.1.tar.gz
 </code></pre></div>
+</td></tr></table>
 <h3 id="test-distribution">Test Distribution<a class="headerlink" href="#test-distribution" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 </code></pre></div>
+</td></tr></table>
 <h3 id="final-distribution">Final Distribution<a class="headerlink" href="#final-distribution" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>twine upload --repository-url https://upload.test.pypi.org/legacy/ dist/*
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>twine upload --repository-url https://upload.test.pypi.org/legacy/ dist/*
 
 <span class="c1">#OR</span>
 
 twine upload dist/*
 </code></pre></div>
+</td></tr></table>
 <h3 id="rebuild">Rebuild<a class="headerlink" href="#rebuild" title="Permanent link">#</a></h3>
 <ul>
 <li>delete <code>build</code>, <code>dist</code>, &amp; <code>*.egg-info</code> files then build again</li>
 </ul>
 <h3 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h3>
 <h4 id="test-package">(Test) Package<a class="headerlink" href="#test-package" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>python3 -m pip install --index-url https://test.pypi.org/simple/ example_pkg
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 -m pip install --index-url https://test.pypi.org/simple/ example_pkg
 </code></pre></div>
+</td></tr></table>
 <h4 id="final-package">(Final)  Package<a class="headerlink" href="#final-package" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>python3 -m pip install example_pkg
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 -m pip install example_pkg
 </code></pre></div>
+</td></tr></table>
 <h3 id="advanced-run-package-in-command-line">Advanced - Run Package in Command Line<a class="headerlink" href="#advanced-run-package-in-command-line" title="Permanent link">#</a></h3>
 <p>Source: http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html</p>
 <h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h3>

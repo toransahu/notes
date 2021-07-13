@@ -1421,7 +1421,16 @@
 <h3 id="rest-vs-graphql">REST vs GraphQL<a class="headerlink" href="#rest-vs-graphql" title="Permanent link">#</a></h3>
 <p>Lets say, we are consuming Facebook API</p>
 <p>A typical nested field data distribution:
-<div class="highlight"><pre><span></span><code>    FACEBOOK
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    FACEBOOK
     |
     |------ USERS
     |       |------- TORAN
@@ -1432,12 +1441,14 @@
     |                |----- ASSETS
     |                       |
 </code></pre></div>
+</td></tr></table>
     - GraphQL can retrieve various fields from different endpoint routes in fewer or single query
     - whereas REST requires multiple calls for each fields
     - e.g.
         - REST
-        <div class="highlight"><pre><span></span><code>
-</code></pre></div></p>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="terminologies">Terminologies<a class="headerlink" href="#terminologies" title="Permanent link">#</a></h3>
 <h4 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">#</a></h4>
 <h4 id="field">Field<a class="headerlink" href="#field" title="Permanent link">#</a></h4>

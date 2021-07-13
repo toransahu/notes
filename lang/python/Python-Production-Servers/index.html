@@ -2393,13 +2393,15 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 <ul>
 <li>
 <p>create heroku app from existing code (it will only create empty git repo in heroku's private git)
-<div class="highlight"><pre><span></span><code>heroku create appname
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>heroku create appname
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>add heroku remote to your local git repo
-<div class="highlight"><pre><span></span><code>git remote add heroku https://git.heroku.&lt;app_name&gt;.git
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git remote add heroku https://git.heroku.&lt;app_name&gt;.git
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ul>
 <h3 id="add-procfile">Add Procfile<a class="headerlink" href="#add-procfile" title="Permanent link">#</a></h3>
@@ -2417,8 +2419,9 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 <ul>
 <li>
 <p>push code to heroku's git repo named <app_name>
-<div class="highlight"><pre><span></span><code>git push heroku dev:master
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push heroku dev:master
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>here</p>
@@ -2442,8 +2445,9 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 </ul>
 </li>
 <li>disable static files
-<div class="highlight"><pre><span></span><code>heroku config:set DISABLE_COLLECTSTATIC=1 
-</code></pre></div></li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>heroku config:set DISABLE_COLLECTSTATIC=1 
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">#</a></h2>
 <ul>
@@ -2486,17 +2490,32 @@ Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-gi
 </li>
 <li>
 <p>if <code>.pem</code> file is downloaded from some storage, then give proper permission
-<div class="highlight"><pre><span></span><code>chmod <span class="m">600</span> ~/.ssh/ethereal-site-backend.pem
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>chmod <span class="m">600</span> ~/.ssh/ethereal-site-backend.pem
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ul>
 <h3 id="update">Update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>   sudo apt-get update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>   sudo apt-get update
    sudo apt-get upgrade
 </code></pre></div>
+</td></tr></table>
 <h3 id="set-password">Set Password<a class="headerlink" href="#set-password" title="Permanent link">#</a></h3>
 <p>Source: https://comtechies.com/password-authentication-aws-ec2.html
-<div class="highlight"><pre><span></span><code><span class="c1">#1.open</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#1.open</span>
 sudo vi /etc/ssh/sshd_config
 
 <span class="c1">#2.edit no to yes</span>
@@ -2509,14 +2528,33 @@ sudo passwd ubuntu
 
 <span class="c1">#5.restart service</span>
 sudo service sshd restart
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="install-prerequisites">Install Prerequisites<a class="headerlink" href="#install-prerequisites" title="Permanent link">#</a></h3>
 <h4 id="python-stuff">Python Stuff<a class="headerlink" href="#python-stuff" title="Permanent link">#</a></h4>
 <h5 id="recommanded-way">Recommanded Way<a class="headerlink" href="#recommanded-way" title="Permanent link">#</a></h5>
 <ul>
 <li>Using miniconda</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#download miniconda - for deployment, testing, build</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#download miniconda - for deployment, testing, build</span>
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 <span class="c1">#install</span>
@@ -2536,8 +2574,37 @@ anaconda
 <span class="c1">#cd to repo &amp; create venv using pipenv &amp; install dependencies</span>
 <span class="o">(</span>base<span class="o">)</span> pipenv --python <span class="m">3</span> install
 </code></pre></div>
+</td></tr></table>
 <h5 id="original-way">Original Way<a class="headerlink" href="#original-way" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code>sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
 sudo tar xJf Python-3.6.4.tar.xz 
 <span class="nb">cd</span> Python-3.6.4/
 ./configure
@@ -2567,6 +2634,7 @@ ln -s virtualenv-3.5 virtualenv
 
 git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>if sudo ./configure gives error<ul>
 <li>Error: <code>no acceptable C compiler found in PATH when installing python</code></li>
@@ -2639,12 +2707,17 @@ git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.gi
 <ul>
 <li>starts automatically on boot</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
 sudo systemctl start rabbitmq-server
 
 <span class="c1">#- in WSL do this</span>
 sudo service rabbitmq-server start
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>start celery worker</p>
@@ -2652,8 +2725,9 @@ sudo service rabbitmq-server start
 <li>need to run inside src folder</li>
 <li>need to be in virtual env</li>
 </ul>
-<div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>or create script to start celery</p>
@@ -2893,7 +2967,13 @@ src: https://gist.github.com/toransahu/31874def1bd661db676d0dfe02e1c651</li>
 </ul>
 <h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
 <h4 id="confirm-before-run">Confirm before run<a class="headerlink" href="#confirm-before-run" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>python manage.py makemigrations &lt;apps&gt;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py makemigrations &lt;apps&gt;
 
 python manage.py migrate
 
@@ -2901,6 +2981,7 @@ python manage.py createsuperuser
 
 python manage.py collectstatic
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><code>cd /home/ubuntu/ethereal-machines/ethereal-machines-backend/</code></li>
 <li><code>./start_gunicorn.sh</code></li>
@@ -2985,16 +3066,19 @@ python manage.py collectstatic
 <ul>
 <li>Install <code>ssl-cert-check</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo apt install ssl-cert-check
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install ssl-cert-check
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>Run</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem
 </code></pre></div>
+</td></tr></table>
 <p>or awk the final result</p>
-<div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem <span class="p">|</span> awk <span class="s1">&#39;END { print &lt;dollar_sign&gt;NF }&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem <span class="p">|</span> awk <span class="s1">&#39;END { print &lt;dollar_sign&gt;NF }&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="renew-certificate">Renew Certificate<a class="headerlink" href="#renew-certificate" title="Permanent link">#</a></h4>
 <ul>
 <li>
@@ -3012,18 +3096,21 @@ python manage.py collectstatic
 </li>
 <li>
 <p>to check/dry run renewal do:
-    <div class="highlight"><pre><span></span><code>sudo certbot renew --dry-run
-</code></pre></div></p>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo certbot renew --dry-run
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>automate autonewal using cron job: 
-    <div class="highlight"><pre><span></span><code>0 6 * * * /path/to/certbot/certbot-auto renew --text &gt;&gt; /path/to/certbot/certbot-cron.log &amp;&amp; sudo service nginx reload
-</code></pre></div></p>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>0 6 * * * /path/to/certbot/certbot-auto renew --text &gt;&gt; /path/to/certbot/certbot-cron.log &amp;&amp; sudo service nginx reload
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ul>
 <h4 id="delete-the-certificate">delete the certificate<a class="headerlink" href="#delete-the-certificate" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>sudo certbot delete --cert-name  api.etherealmachines.com
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo certbot delete --cert-name  api.etherealmachines.com
 </code></pre></div>
+</td></tr></table>
 <h4 id="troubleshoots">Troubleshoots<a class="headerlink" href="#troubleshoots" title="Permanent link">#</a></h4>
 <ul>
 <li>while certificate renew/new if it fails with TLS handshake/auth issue:<ul>
@@ -3059,12 +3146,17 @@ python manage.py collectstatic
 <ul>
 <li>
 <p>By API</p>
-<div class="highlight"><pre><span></span><code>curl -X DELETE <span class="s2">&quot;https://api.cloudflare.com/client/v4/zones/&lt;site-id&gt;/purge_cache&quot;</span> <span class="se">\</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>curl -X DELETE <span class="s2">&quot;https://api.cloudflare.com/client/v4/zones/&lt;site-id&gt;/purge_cache&quot;</span> <span class="se">\</span>
      -H <span class="s2">&quot;X-Auth-Email: &lt;email&gt;&quot;</span> <span class="se">\</span>
      -H <span class="s2">&quot;X-Auth-Key: &lt;apikey&gt;&quot;</span> <span class="se">\</span>
      -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
      --data <span class="s1">&#39;{&quot;purge_everything&quot;:true}&#39;</span><span class="o">)</span><span class="s2">&quot;</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>source: https://www.supertechcrew.com/clear-cloudflare-cache-when-pushing-from-git-github-pages/</li>
 </ul>

@@ -3000,9 +3000,11 @@
 <h4 id="ex">Ex<a class="headerlink" href="#ex" title="Permanent link">#</a></h4>
 <ol>
 <li>Imagine a graphics library "nicepic" that contains pre-defined functions for: rectangles, squares, triangles, house, village.
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">nicepic</span> 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">nicepic</span> 
 <span class="n">draw_house</span><span class="p">()</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 <li>Suppose an ATM. You simply insert your card and click some buttons and get the money. You dont know what is happening internally on press of these buttons.</li>
 </ol>
 <h3 id="encapsulation">Encapsulation<a class="headerlink" href="#encapsulation" title="Permanent link">#</a></h3>
@@ -3037,7 +3039,22 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
       <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Toran&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_lastname</span> <span class="o">=</span> <span class="s1">&#39;Sahu&#39;</span> <span class="c1"># protected</span>
@@ -3054,6 +3071,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">PrintName</span><span class="p">())</span> <span class="c1"># Out - Toran Sahu</span>
     <span class="c1"># print(p._lastname) # Out - Sahu</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>Private members:</p>
@@ -3061,9 +3079,11 @@
 <li>Add ____ (double underscore ) in front of the variable and function name</li>
 <li>Accessing private member : Using name mangling : obj._classname__private_mem</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># print(p.__gender) # AttributeError - no attribute &#39;__gender&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># print(p.__gender) # AttributeError - no attribute &#39;__gender&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">_Person__gender</span><span class="p">)</span> <span class="c1"># name-mangling : Out - Male</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h3 id="polymorphism">Polymorphism<a class="headerlink" href="#polymorphism" title="Permanent link">#</a></h3>
@@ -3100,7 +3120,22 @@ Specifically: The ability to redefine methods for derived classes.</p>
 </ul>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
@@ -3117,9 +3152,11 @@ Specifically: The ability to redefine methods for derived classes.</p>
 <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
 <span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>m of C called
-</code></pre></div></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>m of C called
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="need-of-super">Need of super()<a class="headerlink" href="#need-of-super" title="Permanent link">#</a></h4>
 <ul>
 <li>lets avoid referring to the base class explicitly (i.e. just one class above)</li>
@@ -3176,7 +3213,31 @@ Out:
 </ul>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
@@ -3202,12 +3263,17 @@ Out:
 <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
 <span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 Out:
-<div class="highlight"><pre><span></span><code>m of D called
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>m of D called
 m of B called
 m of C called
 m of A called
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="other-relationships">Other relationships<a class="headerlink" href="#other-relationships" title="Permanent link">#</a></h4>
 <ul>
 <li>src: https://javapapers.com/oops/association-aggregation-composition-abstraction-generalization-realization-dependency/</li>
@@ -3446,8 +3512,9 @@ m of A called
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">cls_a</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,),</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}))</span> <span class="c1"># type(class_name_str, base_classes_tuple, body_dict)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cls_a</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,),</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}))</span> <span class="c1"># type(class_name_str, base_classes_tuple, body_dict)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>this way we can create a class at runtime</li>
 </ul>
@@ -3457,13 +3524,19 @@ m of A called
 <ul>
 <li><code>type</code> is the class of python classes</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
 <span class="n">e</span><span class="o">.</span><span class="vm">__class__</span>  <span class="c1"># prints: &lt;class __main__.Example&gt;</span>
 <span class="n">Example</span><span class="o">.</span><span class="vm">__class__</span>  <span class="c1"># prints: &lt;type &#39;type&#39;&gt;</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>so in above code, e is object of class Example and Example is object of class <code>type</code></li>
 <li>in python3 we can use <code>type</code> and <code>class</code> interchangabely<ul>
@@ -3486,11 +3559,15 @@ m of A called
 <ul>
 <li>we can define a <code>metaclass</code> for a <code>class</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">SomeMetaclass</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">SomeMetaclass</span><span class="p">):</span>
     <span class="c1"># in python2 define metaclass here like</span>
     <span class="c1"># __metaclass__ = SomeMetaclass</span>
     <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Since a metaclass is the class of a class</p>
@@ -3544,9 +3621,24 @@ m of A called
     - confusion in magic method call orders
 - how a <code>class</code> instance are created
     - as a class is object of a metaclass</p>
-<pre><code>```python
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>```python
 #here class A
-A = type('A', (object,), {"a":1})
+A = type(&#39;A&#39;, (object,), {&quot;a&quot;:1})
 ```
 
 - whenever we call any object/instance of any class, it calls the `__call__` of that class
@@ -3559,8 +3651,9 @@ a = A()
 
 - so, a is created by A(), where A() means calling `__call__` of `type` metaclass
 - if we provide A() parameters, like A(1,2), then `__call__(self, *args, **kwargs)__` handles those parameters
-- then inside metaclass's `__call__` , `__init__` of the class is called by passing all the parameters passed to `__call__`
-</code></pre>
+- then inside metaclass&#39;s `__call__` , `__init__` of the class is called by passing all the parameters passed to `__call__`
+</code></pre></div>
+</td></tr></table>
 <ul>
 <li>so, whenever we create an object/instance of a class, following things happens:<ul>
 <li>metaclass's <code>__new__</code> is called; creates memory (object) for class</li>
@@ -3591,9 +3684,11 @@ a = A()
 </li>
 <li>syntax are like </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>New-Style</p>
@@ -3604,9 +3699,11 @@ a = A()
 <ul>
 <li>hence no need to inherit <code>object</code> in class</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span> <span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span> <span class="p">:</span>
     <span class="k">pass</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>introduced in python2.2 to unify the concepts of <code>class</code> and <code>type</code></p>
@@ -3639,7 +3736,27 @@ a = A()
     - https://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path
 - <code>class.__mro__</code> is only available in New-Style class</p>
 <p>Script: 1 </p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m of A called&quot;</span><span class="p">)</span>
 
@@ -3661,8 +3778,34 @@ a = A()
 <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
 <span class="n">d</span><span class="o">.</span><span class="n">m</span><span class="p">()</span>        
 </code></pre></div>
+</td></tr></table>
 <p>Script: 2</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A1</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A1</span><span class="p">():</span>
 <span class="c1">#      def who_am_i(self):</span>
 <span class="c1">#          print(&quot;I am a A1&quot;)</span>
     <span class="k">pass</span>
@@ -3689,6 +3832,7 @@ a = A()
 <span class="n">d1</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
 <span class="n">d1</span><span class="o">.</span><span class="n">who_am_i</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <h5 id="old-mro-algorithm-based-on-old-style-class">Old MRO Algorithm (Based on Old-Style Class)<a class="headerlink" href="#old-mro-algorithm-based-on-old-style-class" title="Permanent link">#</a></h5>
 <ul>
 <li>uses <code>depth-first</code> serach followed by <code>linear</code> search (left to right)<ul>
@@ -3751,7 +3895,25 @@ a = A()
 <h5 id="impossible-method-resolution">Impossible Method Resolution<a class="headerlink" href="#impossible-method-resolution" title="Permanent link">#</a></h5>
 <p><img src="https://makina-corpus.com/blog/metier/2014/python-mro-conflict" ></p>
 <p>Script:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">X</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">X</span><span class="p">():</span>
     <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a X&quot;</span><span class="p">)</span>
 
@@ -3771,6 +3933,7 @@ a = A()
     <span class="k">def</span> <span class="nf">who_am_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a F&quot;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>In Old MRO algo, search path is F, A, X, Y, B, Y, X</li>
 <li>
@@ -3778,8 +3941,9 @@ a = A()
 <ul>
 <li>and throws following exception</li>
 </ul>
-<div class="highlight"><pre><span></span><code>TypeError: Cannot create a consistent method resolution
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>TypeError: Cannot create a consistent method resolution
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h4 id="abstract-base-class-abstract-class">Abstract Base Class (Abstract Class)<a class="headerlink" href="#abstract-base-class-abstract-class" title="Permanent link">#</a></h4>
@@ -3789,7 +3953,28 @@ a = A()
 <li>Subclass which implements all the abstract method can be instantiated</li>
 </ul>
 <p>Python Implementation:
-<div class="highlight"><pre><span></span><code>    <span class="c1"># Python 3.4+</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="c1"># Python 3.4+</span>
     <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
     <span class="k">class</span> <span class="nc">Abstract</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
         <span class="nd">@abstractmethod</span>
@@ -3811,7 +3996,8 @@ a = A()
         <span class="nd">@abstractmethod</span>
         <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>    
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="bottom-line">Bottom Line<a class="headerlink" href="#bottom-line" title="Permanent link">#</a></h4>
 <ul>
 <li>in python3:<ul>
@@ -3853,14 +4039,21 @@ TODO:</li>
 * Behaviour/methods which <strong>must</strong> be implemented by classes
 * Class which implement interface should <strong>implement all the methods</strong> OR <strong>be an abstract class</strong></p>
 <p>Python Implementation:
-<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Engine</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Engine</span><span class="p">():</span>
         <span class="sd">&quot;&quot;&quot; Engine Interface&quot;&quot;&quot;</span>
 
         <span class="k">def</span> <span class="nf">ignition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span> <span class="s2">&quot;Ingnition should have implemented.&quot;</span> <span class="p">)</span>
         <span class="k">def</span> <span class="nf">fuel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span> <span class="s2">&quot;Fuel should have implemented.&quot;</span> <span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h3>
 <h4 id="instance-variable">Instance Variable<a class="headerlink" href="#instance-variable" title="Permanent link">#</a></h4>
 <ul>
@@ -3884,7 +4077,21 @@ TODO:</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable&#39;</span>  <span class="c1"># static/class variable</span>
     <span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Static/class Var&#39;</span>  <span class="c1"># static/class variable</span>
 
@@ -3900,12 +4107,17 @@ TODO:</li>
 <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 <span class="n">a</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Static/class Variable
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Static/class Variable
 Instance Variable
 Static/class Var
 Static/class Variable Instance Variable
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="instance-vs-classstatic-attribute-lookup-order">Instance vs Class/Static attribute lookup order<a class="headerlink" href="#instance-vs-classstatic-attribute-lookup-order" title="Permanent link">#</a></h4>
 <blockquote>
 <p>instance/object &gt; static/class &gt; base class</p>
@@ -3927,12 +4139,17 @@ Static/class Variable Instance Variable
 <li>But a method's first argument always receives the instance object:</li>
 </ul>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outside_foo</span><span class="p">():</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outside_foo</span><span class="p">():</span>
     <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">outside_foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
     <span class="k">pass</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="static-method">Static Method<a class="headerlink" href="#static-method" title="Permanent link">#</a></h4>
 <h5 id="what">What<a class="headerlink" href="#what" title="Permanent link">#</a></h5>
 <ul>
@@ -3969,7 +4186,40 @@ Static/class Variable Instance Variable
 </li>
 </ul>
 <h5 id="code">Code<a class="headerlink" href="#code" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class A&#39;</span>  <span class="c1"># static/class variable</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -4004,11 +4254,15 @@ Static/class Variable Instance Variable
 <span class="n">A</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
 <span class="n">B</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>  <span class="c1"># still accessing static_variable from class A</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Inside static_method() Static/class Variable of class A
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Inside static_method() Static/class Variable of class A
 Inside static_method() Static/class Variable of class A
 Inside static_method() Static/class Variable of class A
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="class-method">Class Method<a class="headerlink" href="#class-method" title="Permanent link">#</a></h4>
 <h5 id="what_1">What<a class="headerlink" href="#what_1" title="Permanent link">#</a></h5>
 <ul>
@@ -4034,7 +4288,40 @@ Inside static_method() Static/class Variable of class A
 <li>to make code more maintanable than static methods</li>
 </ul>
 <h5 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="n">static_variable</span> <span class="o">=</span> <span class="s1">&#39;Static/class Variable of class A&#39;</span>  <span class="c1"># static/class variable</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -4069,11 +4356,15 @@ Inside static_method() Static/class Variable of class A
 <span class="n">A</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
 <span class="n">B</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>  <span class="c1"># now it will access static variable of class B</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:
-<div class="highlight"><pre><span></span><code>Inside class_method() Static/class Variable of class A
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Inside class_method() Static/class Variable of class A
 Inside class_method() Static/class Variable of class A
 Inside class_method() Static/class Variable of class B
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <h4 id="magic-method">Magic Method<a class="headerlink" href="#magic-method" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -4091,7 +4382,15 @@ Inside class_method() Static/class Variable of class B
 <p>Can be used for operator overloading, as</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Calc</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Calc</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -4101,9 +4400,11 @@ Inside class_method() Static/class Variable of class B
 <span class="n">b</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </code></pre></div>
+</td></tr></table>
 <p>Out:</p>
-<div class="highlight"><pre><span></span><code>3
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>3
 </code></pre></div>
+</td></tr></table>
 <h4 id="class-internal-methods">Class Internal Methods<a class="headerlink" href="#class-internal-methods" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -4146,9 +4447,11 @@ Inside class_method() Static/class Variable of class B
 <ul>
 <li>called when accessing any attribute via class instance </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
 <span class="n">c</span><span class="o">.</span><span class="n">name</span>
 </code></pre></div>
+</td></tr></table>
 <h5 id="__getattr__"><code>__getattr__</code><a class="headerlink" href="#__getattr__" title="Permanent link">#</a></h5>
 <ul>
 <li>same as <code>__getattribute__</code> but gets called only when attribiute is not found via <code>__getattribute__</code> </li>
@@ -4201,7 +4504,24 @@ Inside class_method() Static/class Variable of class B
 <ul>
 <li>e.g.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">,</span> <span class="n">bp</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">bp</span>
@@ -4220,6 +4540,7 @@ Inside class_method() Static/class Variable of class B
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_c</span><span class="p">())</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>solution e.g.</li>
 </ul>
@@ -4227,7 +4548,23 @@ Inside class_method() Static/class Variable of class B
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>        <span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>        <span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
             <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">,</span> <span class="n">bp</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">bp</span>
@@ -4245,6 +4582,7 @@ Inside class_method() Static/class Variable of class B
         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">_a</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>What</p>
@@ -4268,7 +4606,30 @@ Inside class_method() Static/class Variable of class B
 <p>uses : pattern 1</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
 
@@ -4293,10 +4654,42 @@ Inside class_method() Static/class Variable of class B
 <span class="k">del</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>  <span class="c1">#AttributeError: &#39;Example&#39; object has no attribute &#39;_a&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>uses : pattern 2</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ap</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">ap</span>
 
@@ -4329,6 +4722,7 @@ Inside class_method() Static/class Variable of class B
 <span class="k">del</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="c1"># AttributeError: &#39;Example&#39; object has no attribute &#39;_a&#39;</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="descriptors">Descriptors<a class="headerlink" href="#descriptors" title="Permanent link">#</a></h4>
 <p>TODO:</p>
 <ul>
@@ -4355,12 +4749,17 @@ Inside class_method() Static/class Variable of class B
 </li>
 </ul>
 <h5 id="protocol">Protocol<a class="headerlink" href="#protocol" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="n">descr</span><span class="o">.</span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="n">value</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">descr</span><span class="o">.</span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="n">value</span>
 
 <span class="n">descr</span><span class="o">.</span><span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="kc">None</span>
 
 <span class="n">descr</span><span class="o">.</span><span class="fm">__delete__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="kc">None</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>define any of the above in any class, and object will considered as descriptor<ul>
 <li>and descriptor will override the default attribute lookup behavior (in class dictionary lookup)</li>
@@ -4378,7 +4777,28 @@ Inside class_method() Static/class Variable of class B
 <h5 id="simple-implemetation">Simple Implemetation<a class="headerlink" href="#simple-implemetation" title="Permanent link">#</a></h5>
 <p>TODO
     - Issue with <code>__del__</code>; not explained in python doc</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleDescriptor</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleDescriptor</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
 
@@ -4401,8 +4821,44 @@ Inside class_method() Static/class Variable of class B
     <span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sahu&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> 
 </code></pre></div>
+</td></tr></table>
 <h5 id="property-implementation">Property implementation<a class="headerlink" href="#property-implementation" title="Permanent link">#</a></h5>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Property</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Property</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s2">&quot;Emulate PyProperty_Type() in Objects/descrobject.c&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -4439,18 +4895,23 @@ Inside class_method() Static/class Variable of class B
     <span class="k">def</span> <span class="nf">deleter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fdel</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">fget</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fset</span><span class="p">,</span> <span class="n">fdel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
 <h3 id="ways-to-call-a-class-member-function">Ways to call a class member function<a class="headerlink" href="#ways-to-call-a-class-member-function" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 <span class="n">a</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 <span class="n">A</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ul>
 <h3 id="__slots__-reduce-ram-usage"><code>__slots__</code> : reduce RAM usage<a class="headerlink" href="#__slots__-reduce-ram-usage" title="Permanent link">#</a></h3>
@@ -4475,7 +4936,22 @@ Inside class_method() Static/class Variable of class B
 <li>It's about nested function and the scope of the function</li>
 </ul>
 <p>Code:
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">startAt</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">startAt</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">inc</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="n">inc</span>
     <span class="k">return</span> <span class="n">incrementBy</span>
@@ -4491,11 +4967,14 @@ Inside class_method() Static/class Variable of class B
 <span class="n">f</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">startAt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 <p>Out:
-<div class="highlight"><pre><span></span><code>11 102
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>11 102
 11 102
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
                 
               
               

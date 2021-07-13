@@ -3353,7 +3353,22 @@
 </ul>
 <h5 id="vertical-order-traversal">Vertical Order Traversal<a class="headerlink" href="#vertical-order-traversal" title="Permanent link">#</a></h5>
 <p>When nodes are traversed in vertical lines.</p>
-<div class="highlight"><pre><span></span><code>          1
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>          1
         /   \
        2     3
       / \   / \
@@ -3370,13 +3385,32 @@ Vertical Order should be:
 7
 9
 </code></pre></div>
+</td></tr></table>
 <p>TODO</p>
 <h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h3>
 <h4 id="top-view-of-a-binary-tree">Top View of a binary tree<a class="headerlink" href="#top-view-of-a-binary-tree" title="Permanent link">#</a></h4>
 <p>Top view of a binary tree is the set of nodes visible when the tree is viewed from the <strong>top</strong>.</p>
 <p>Imagine a real X-mas tree, and view it from sky.</p>
 <p>Note: Order of nodes doesn't matter.</p>
-<div class="highlight"><pre><span></span><code>       1
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>       1
     /     \
    2       3
   /  \    / \
@@ -3396,6 +3430,7 @@ Top view:
 Top view:
 2 1 3 6
 </code></pre></div>
+</td></tr></table>
 <h4 id="bottom-view-of-a-binary-tree">Bottom View of a binary tree<a class="headerlink" href="#bottom-view-of-a-binary-tree" title="Permanent link">#</a></h4>
 <p>Bottom view of a binary tree is the set of nodes visible when the tree is viewed from the <strong>bottom</strong>.</p>
 <p><strong>Horizontal distance of node</strong>: The distance of a node from root, when measured horizontally (say in x-axis).
@@ -3403,7 +3438,26 @@ And suppose root node lies on y-axis (i.e. x=0).</p>
 <p>So, another definition of bottom view: </p>
 <p>Set of bottommost nodes at their horizontal distance, i.e. For each horizontal distance unit, pick the bottom most node.</p>
 <p>Note: If there are two bottom most nodes at same horizontal distance, then pick the last/right one.</p>
-<div class="highlight"><pre><span></span><code>                      20
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>                      20
                     /    \
                   8       22
                 /   \      \
@@ -3424,6 +3478,7 @@ And suppose root node lies on y-axis (i.e. x=0).</p>
 
               5, 10, 4, 14, 25
 </code></pre></div>
+</td></tr></table>
 <h4 id="left-view-of-a-binary-tree">Left View of a binary tree<a class="headerlink" href="#left-view-of-a-binary-tree" title="Permanent link">#</a></h4>
 <p>Left view of a binary tree is the set of nodes visible when the tree is viewed from the <strong>left-side</strong>.</p>
 <h4 id="right-view-of-a-binary-tree">Right View of a binary tree<a class="headerlink" href="#right-view-of-a-binary-tree" title="Permanent link">#</a></h4>
@@ -3433,7 +3488,21 @@ And suppose root node lies on y-axis (i.e. x=0).</p>
 <h3 id="complete-binary-tree">Complete Binary Tree<a class="headerlink" href="#complete-binary-tree" title="Permanent link">#</a></h3>
 <p>All level are completely filled, except possibly last level and last level has all keys as left as possible.<br />
 Practical e.g.: Binary Heap</p>
-<pre><code>                                             18
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>                                             18
                                            /    \  
                                          15      30  
                                         /  \     / \
@@ -3448,7 +3517,8 @@ Practical e.g.: Binary Heap</p>
                                       40    50   100   40
                                      /  \   /
                                     8   7  9
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 <h4 id="properties_2">Properties<a class="headerlink" href="#properties_2" title="Permanent link">#</a></h4>
 <ol>
 <li>height of a complete binary tree (having N nodes) = <span><span class="MathJax_Preview">\log_2{N}</span><script type="math/tex">\log_2{N}</script></span></li>
@@ -3662,13 +3732,19 @@ Practical e.g.: Binary Heap</p>
 <h3 id="representation_1">Representation<a class="headerlink" href="#representation_1" title="Permanent link">#</a></h3>
 <h4 id="adjacency-matrix">Adjacency Matrix<a class="headerlink" href="#adjacency-matrix" title="Permanent link">#</a></h4>
 <p>A matrix (2-d array) denoting if there is an edge (directed/undirected) between 2 vertices or not.</p>
-<div class="highlight"><pre><span></span><code>  | 0 1 2 3
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  | 0 1 2 3
 --|--------
 0 | 0 1 1 1
 1 | 0 0 1 0
 2 | 1 0 0 1
 3 | 0 0 0 0 
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>Size: V*V</li>
 <li>Advantages<ul>
@@ -3685,11 +3761,15 @@ Practical e.g.: Binary Heap</p>
 </ul>
 <h4 id="adjacency-list">Adjacency List<a class="headerlink" href="#adjacency-list" title="Permanent link">#</a></h4>
 <p>A array of list (or a map of list) denoting adjacent vetices of a particular vertex.</p>
-<div class="highlight"><pre><span></span><code>[0]: [1]--&gt;[2]--[3]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[0]: [1]--&gt;[2]--[3]
 [1]: [2]
 [2]: [0]--&gt;[3]
 [3]:
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>Size: E + V</li>
 <li>Advantages<ul>
@@ -3742,12 +3822,14 @@ Practical e.g.: Binary Heap</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Simple-bipartite-graph.svg/800px-Simple-bipartite-graph.svg.png" style="width:200px"/></p>
 <h3 id="complete-graph">Complete Graph<a class="headerlink" href="#complete-graph" title="Permanent link">#</a></h3>
 <p>A graph whose all the vertices are connected to each other. aka A graph whose all the edges are present.</p>
-<div class="highlight"><pre><span></span><code>|E| = |V|(|V|-1)/2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>|E| = |V|(|V|-1)/2
 </code></pre></div>
+</td></tr></table>
 <h3 id="sparse-graph">Sparse Graph<a class="headerlink" href="#sparse-graph" title="Permanent link">#</a></h3>
 <p>A graph with relatively less edges.</p>
-<div class="highlight"><pre><span></span><code>E &lt; |V| * log|V|
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>E &lt; |V| * log|V|
 </code></pre></div>
+</td></tr></table>
 <h3 id="dense-graph">Dense Graph<a class="headerlink" href="#dense-graph" title="Permanent link">#</a></h3>
 <p>A graph with relatively less edges are missing.</p>
 <hr />

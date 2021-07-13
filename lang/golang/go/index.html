@@ -3624,10 +3624,13 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sample</span> <span class="p">=</span> <span class="s">&quot;\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sample</span> <span class="p">=</span> <span class="s">&quot;\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98&quot;</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sample</span><span class="p">)</span> <span class="c1">// out: ��=� ⌘</span>
 <span class="c1">//  in our sample string are not valid ASCII, not even valid UTF-8, printing the string directly will produce ugly output</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><em>NOTE</em>: indexing/iterating over string gives bytes and not characters in Go</li>
 </ul>
@@ -3636,7 +3639,15 @@
 <li>placeOfInterest = <code>⌘</code></li>
 <li>Unicode character value U+2318</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">placeOfInterest</span> <span class="p">=</span> <span class="s">`⌘`</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">placeOfInterest</span> <span class="p">=</span> <span class="s">`⌘`</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="nx">placeOfInterest</span><span class="p">)</span> <span class="c1">// plain string: ⌘</span>
 
@@ -3646,6 +3657,7 @@
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%x &quot;</span><span class="p">,</span> <span class="nx">placeOfInterest</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>  <span class="c1">// hex bytes: e2 8c 98</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><em>NOTE</em>:<ul>
 <li>Source code in Go is defined to be UTF-8 text; no other representation is allowed</li>
@@ -3700,14 +3712,41 @@ or à == B</p>
 </ul>
 <h2 id="data-structure">Data Structure<a class="headerlink" href="#data-structure" title="Permanent link">#</a></h2>
 <h3 id="array">Array<a class="headerlink" href="#array" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;emp:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
 <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">=</span> <span class="mi">100</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;set:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;get:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="slice">Slice<a class="headerlink" href="#slice" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;emp:&quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
 
 <span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;a&quot;</span>
@@ -3731,8 +3770,22 @@ or à == B</p>
 
 <span class="c1">// TODO: len vs size??</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="map">Map<a class="headerlink" href="#map" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
 
 <span class="nx">m</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">7</span>
 <span class="nx">v1</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&quot;k1&quot;</span><span class="p">]</span>
@@ -3747,6 +3800,7 @@ or à == B</p>
 <span class="nx">n</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="nx">n</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">:</span> <span class="s">&quot;some string&quot;</span><span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="types-interfaces">Types &amp; interfaces<a class="headerlink" href="#types-interfaces" title="Permanent link">#</a></h2>
 <ul>
 <li>Go is statically typed</li>
@@ -3754,23 +3808,32 @@ or à == B</p>
 <li><code>interface</code> is one important category of type - which represent fixed/minimal sets of methods</li>
 </ul>
 <p>If we declare</p>
-<div class="highlight"><pre><span></span><code><span class="kd">type</span> <span class="nx">MyInt</span> <span class="kt">int</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">type</span> <span class="nx">MyInt</span> <span class="kt">int</span>
 
 <span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
 <span class="kd">var</span> <span class="nx">j</span> <span class="nx">MyInt</span>
 </code></pre></div>
+</td></tr></table>
 <p>then</p>
 <ul>
 <li><code>i</code> has type <code>int</code> and <code>j</code> has type <code>MyInt</code></li>
 <li>variables <code>i</code> and <code>j</code> have distinct static types and, although they have the same underlying type, they cannot be assigned to one another without a conversion</li>
 </ul>
 <p>An interface variable can store any concrete (non-interface) value as long as that value implements the interface's methods.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">r</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">r</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span>
 <span class="nx">r</span> <span class="p">=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
 <span class="nx">r</span> <span class="p">=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nx">NewReader</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
 <span class="nx">r</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">)</span>
 <span class="c1">// and so on</span>
 </code></pre></div>
+</td></tr></table>
 <p>Here <code>r</code> can exhibit lot more methods than <code>Read()</code> of <code>io.Reader</code>. Its not limited to methods provided by interface <code>io.Reader</code>.</p>
 <p>An extremely important example of an interface type is the empty interface: <code>interface{}</code></p>
 <h3 id="interface"><code>interface{}</code><a class="headerlink" href="#interface" title="Permanent link">#</a></h3>
@@ -3784,13 +3847,19 @@ or à == B</p>
 </li>
 <li>so we can receive any go data type in an empty interface (similar to object/var in other langs.)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>var i interface{}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>var i interface{}
 i = &quot;a string&quot;
 i = 2011
 i = 2.777
 
 fmt.Println()
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/interfac/main.go</li>
 </ul>
@@ -3800,16 +3869,33 @@ fmt.Println()
 <li>A variable of type <code>interface</code> type stores a pair: a concrete value assigned to the variable, and that concrete values's type/type-descriptor.</li>
 </ul>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">r</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">r</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Reader</span>
 <span class="nx">tty</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">OpenFile</span><span class="p">(</span><span class="s">&quot;/dev/tty&quot;</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">O_RDWR</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
 <span class="p">}</span>
 <span class="nx">r</span> <span class="p">=</span> <span class="nx">tty</span>
 </code></pre></div>
+</td></tr></table>
 <p>here <code>r</code> contains pair (value, concrete type) == (tty, *os.File).</p>
 <p>As a interface variable also stores the type details, we can do things like this:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span>
 <span class="nx">w</span> <span class="p">=</span> <span class="nx">r</span><span class="p">.(</span><span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">)</span> <span class="c1">// The expression in this assignment is a type assertion</span>
 <span class="c1">// it asserts is that the item inside r also implements io.Writer, and so we can assign it to w</span>
 
@@ -3822,6 +3908,7 @@ fmt.Println()
 
 <span class="nx">ss</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <p>this is called <code>type assertion</code>.</p>
 <h2 id="reflection">Reflection<a class="headerlink" href="#reflection" title="Permanent link">#</a></h2>
 <ul>
@@ -3844,7 +3931,13 @@ fmt.Println()
 <h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">#</a></h2>
 <h3 id="control-flows">Control Flows<a class="headerlink" href="#control-flows" title="Permanent link">#</a></h3>
 <h4 id="if-else"><code>if</code>, <code>else</code><a class="headerlink" href="#if-else" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;is negative&quot;</span><span class="p">)</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has 1 digit&quot;</span><span class="p">)</span>
@@ -3852,6 +3945,7 @@ fmt.Println()
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has multiple digits&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><em>NOTE</em>: there is no ternary <code>?</code> if else condition</li>
 </ul>
@@ -3860,7 +3954,30 @@ fmt.Println()
 <li><code>for</code> is the only looping construct in Go</li>
 <li><code>for</code> have 3-4 pattern</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// like while loop</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// like while loop</span>
 <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
@@ -3885,8 +4002,51 @@ fmt.Println()
     <span class="k">break</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="switch"><code>switch</code><a class="headerlink" href="#switch" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1">// regular switch case</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// regular switch case</span>
 <span class="nx">i</span> <span class="o">:=</span> <span class="mi">2</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Write &quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="s">&quot; as &quot;</span><span class="p">)</span>
 <span class="k">switch</span> <span class="nx">i</span> <span class="p">{</span>
@@ -3930,12 +4090,45 @@ fmt.Println()
 <span class="nx">whatAmI</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nx">whatAmI</span><span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="goto"><code>goto</code><a class="headerlink" href="#goto" title="Permanent link">#</a></h4>
 <ul>
 <li>why its still valid in a new-gen prog. lang. ??</li>
 </ul>
 <h3 id="range"><code>range</code><a class="headerlink" href="#range" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 <span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
 
 <span class="c1">// range on arrays and slices provides both the index and value for each entry</span>
@@ -3969,6 +4162,7 @@ fmt.Println()
 <span class="mi">0</span> <span class="mi">103</span>
 <span class="mi">1</span> <span class="mi">111</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
 <ul>
 <li>src:<ul>
@@ -3992,8 +4186,9 @@ fmt.Println()
 <ul>
 <li>similar to pl/sql procedures</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">()</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Yes&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">()</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Yes&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="variadic">Variadic<a class="headerlink" href="#variadic" title="Permanent link">#</a></h3>
 <ul>
 <li>variable/arbitrary numbers of arguments</li>
@@ -4005,7 +4200,18 @@ fmt.Println()
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">nums</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">nums</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="nx">total</span> <span class="o">:=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">number</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">nums</span> <span class="p">{</span>
         <span class="nx">total</span> <span class="o">+=</span> <span class="nx">number</span>
@@ -4018,17 +4224,23 @@ fmt.Println()
     <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>can directly pass a <code>slice</code> like</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nx">num_slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">num_slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="nx">sum</span><span class="p">(</span><span class="nx">num_slice</span> <span class="o">...</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="anonymouslambda">Anonymous/Lambda<a class="headerlink" href="#anonymouslambda" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
 <span class="p">}(</span><span class="s">&quot;Some message&quot;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="access-modifier">Access Modifier<a class="headerlink" href="#access-modifier" title="Permanent link">#</a></h3>
 <ul>
 <li>depends on CASE of the func<ul>
@@ -4045,7 +4257,17 @@ fmt.Println()
 <li>regular struct</li>
 <li>in go, struct are alternative to classes</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">type</span> <span class="nx">Vehicle</span> <span class="kd">struct</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">type</span> <span class="nx">Vehicle</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">Make</span> <span class="kt">string</span>  <span class="s">`json:make`</span>  <span class="c1">// additional json tag for de/serialization</span>
     <span class="nx">Fuel</span> <span class="kt">string</span>
     <span class="nx">Engine</span> <span class="nx">Engine</span>
@@ -4057,8 +4279,15 @@ fmt.Println()
     <span class="nx">HorsePower</span> <span class="kt">string</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="p">(</span><span class="nx">v</span> <span class="o">*</span><span class="nx">Vehicle</span><span class="p">)</span> <span class="nx">Start</span><span class="p">()</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="p">(</span><span class="nx">v</span> <span class="o">*</span><span class="nx">Vehicle</span><span class="p">)</span> <span class="nx">Start</span><span class="p">()</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s">&quot;Vrooom&quot;</span><span class="p">,</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
@@ -4066,6 +4295,7 @@ fmt.Println()
 <span class="nx">car</span> <span class="o">:=</span> <span class="nx">Vehicle</span><span class="p">{</span><span class="s">&quot;Tesla&quot;</span><span class="p">,</span> <span class="s">&quot;Li&quot;</span><span class="p">,</span> <span class="nx">engine</span><span class="p">,</span> <span class="s">&quot;Toran&quot;</span><span class="p">}</span>
 <span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">car</span><span class="p">.</span><span class="nx">Start</span><span class="p">()</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="interface_1">Interface<a class="headerlink" href="#interface_1" title="Permanent link">#</a></h2>
 <ul>
 <li>Interfaces are named collections of method signatures</li>
@@ -4077,7 +4307,36 @@ fmt.Println()
 <li>A goroutine is a lightweight thread of execution</li>
 </ul>
 <h3 id="go"><code>go</code><a class="headerlink" href="#go" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">f</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nx">f</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
     <span class="p">}</span>
@@ -4108,6 +4367,7 @@ fmt.Println()
 <span class="p">&lt;</span><span class="nx">enter</span><span class="p">&gt;</span>
 <span class="nx">done</span>
 </code></pre></div>
+</td></tr></table>
 <p>by going through above mentioned example:</p>
 <ul>
 <li>if we want to invoke the function <code>f</code> as a goroutine we call it using <code>go</code> statement<ul>
@@ -4137,12 +4397,17 @@ fmt.Println()
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nx">messages</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span> <span class="c1">// create a channel named message</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">messages</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span> <span class="c1">// create a channel named message</span>
 <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;ping&quot;</span> <span class="p">}()</span> <span class="c1">// from go routine `send` a string value/msg &quot;ping&quot; to the channel</span>
 <span class="nx">msg</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">messages</span> <span class="c1">// `receive` value/msg from the channel</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span> <span class="c1">// assert type</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li><em>NOTE</em>: By default sends and receives block until both the sender and receiver are ready. This property allowed us to wait at the end of our program for the "ping" message without having to use any other synchronization.<ul>
 <li>meaning that, whenever there will be receiver (and is ready to receive the value) then only sender can send the value/msg to the channel</li>
@@ -4159,12 +4424,17 @@ fmt.Println()
 </li>
 <li>Buffered channels accept a limited number of values without a corresponding receiver for those values</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nx">message</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// here 2 is capacity of the buffer</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">message</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// here 2 is capacity of the buffer</span>
 <span class="nx">message</span> <span class="o">&lt;-</span> <span class="s">&quot;value 1&quot;</span>
 <span class="nx">message</span> <span class="o">&lt;-</span> <span class="s">&quot;value 2&quot;</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">message</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">message</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/goroutines/channels/buffered/buffered_channels.go</li>
 </ul>
@@ -4311,7 +4581,21 @@ fmt.Println()
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// data structure, Message</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// data structure, Message</span>
 <span class="kd">type</span> <span class="nx">Message</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">Name</span> <span class="kt">string</span>    <span class="s">`json:&quot;name&quot;`</span>
     <span class="nx">Body</span> <span class="kt">string</span>    <span class="s">`json:&quot;body&quot;`</span>
@@ -4327,6 +4611,7 @@ fmt.Println()
 <span class="c1">// If all is well, err will be nil and b will be a []byte containing this JSON data</span>
 <span class="nx">b</span> <span class="o">==</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;Name&quot;:&quot;Alice&quot;,&quot;Body&quot;:&quot;Hello&quot;,&quot;Time&quot;:1294706395881547000}`</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/json/encoding.go</li>
 </ul>
@@ -4350,20 +4635,26 @@ fmt.Println()
 </li>
 </ul>
 <h4 id="creating-arbitrary-data">Creating arbitrary data<a class="headerlink" href="#creating-arbitrary-data" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="nx">i</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1111</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Toran&quot;</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">i</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1111</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Toran&quot;</span><span class="p">}</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="encoding-arbitrary-data">Encoding arbitrary data<a class="headerlink" href="#encoding-arbitrary-data" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="nx">bytes</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">bytes</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="decoding-arbitrary-data">Decoding arbitrary data<a class="headerlink" href="#decoding-arbitrary-data" title="Permanent link">#</a></h4>
 <ul>
 <li>https://github.com/toransahu/go-misc/blob/master/json/json_test.go#L33</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">i</span> <span class="kd">interface</span><span class="p">{}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">i</span> <span class="kd">interface</span><span class="p">{}</span>
 <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 <h4 id="json-reference-type-pointers-slices-maps">Json &amp; Reference Type (pointers, slices, maps)<a class="headerlink" href="#json-reference-type-pointers-slices-maps" title="Permanent link">#</a></h4>
 <ul>
 <li>https://blog.golang.org/json-and-go</li>
@@ -4526,7 +4817,16 @@ ok github.com/toransahu/go-misc/json 0.002s</p>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// Package sort provides primitives for sorting slices and user-defined</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Package sort provides primitives for sorting slices and user-defined</span>
 <span class="c1">// collections.</span>
 <span class="kn">package</span> <span class="nx">sort</span>
 
@@ -4537,6 +4837,7 @@ ok github.com/toransahu/go-misc/json 0.002s</p>
 <span class="c1">// It returns the number of bytes written and any write error encountered.</span>
 <span class="kd">func</span> <span class="nx">Fprint</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">a</span> <span class="o">...</span><span class="kd">interface</span><span class="p">{})</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 </code></pre></div>
+</td></tr></table>
 <ul>
 <li>extra:<ul>
 <li>do something like <a href="https://golang.org/src/encoding/gob/doc.go">this</a> to achieve <a href="https://golang.org/pkg/encoding/gob/">this</a></li>
