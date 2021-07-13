@@ -161,22 +161,31 @@ $$
 F(n) = \left
 \{
 \begin{array}{lcl} 
-0 & if & n=1 \\
+0 & if & n=0 \\
 1 & if & n=1 \\
 F(n-1) + F(n-2) & if & n>1 \\
 \end{array}
 \right. 
 $$
 
-So, the recurrence relation should be: $T(n) = T(n - 1) + T(n -2)$.
+So, the recurrence relation should be: 
 
+$$
+T(n) = \left
+\{
+\begin{array}{lcl} 
+0 & if & n \le 1 \\
+T(n-1) + T(n-2) & if & n>1 \\
+\end{array}
+\right. 
+$$
 
 Solution using substitution method:
 
 $$
 \begin{array}{r, c, l,l}
     T(n) & = & T(n-1) + T(n - 2) & \text{(this will become harder to solve)} \\
-    T(n) & \le & T(n-1) + T(n-1)  & \text{(so, approximate} \space T(n-2) \sim T(n-1) \space \text{for upper bound)} \\
+    T(n) & \le & T(n-1) + T(n-1)  & \text{(so, approximate} \space T(n-2) \approx T(n-1) \space \text{for upper bound)} \\
     \therefore T(n) & \le & 2 \times T(n-1) & \text{ eq. 1}\\
 \end{array}
 $$
@@ -223,8 +232,12 @@ $$
 \begin{array}{r,c,l}
     T(n) & \le & 2^n \times T(0) & \text{(for } k=n \text{)} \\
     \therefore T(n) & \le & 2^n \\
+    \therefore T(n) & = & O(2^n) & \text{(this is upper bound of the worst case analysis)} \\
 \end{array}
 $$
+
+However, the tighter bound is $\Theta(\phi^n)$ where $\phi = \frac{1+\sqrt{5}}{2} \approx 1.62 \approx 2$, called as __Golden Ratio__.
+
 
 __Example 3: Calculate the time complexity of recursive solution of finding the number of ways to reach the top of a stair if allowed steps are 1, 2, and 3__?
 
