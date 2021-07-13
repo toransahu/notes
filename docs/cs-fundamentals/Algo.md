@@ -174,7 +174,7 @@ $$
 T(n) = \left
 \{
 \begin{array}{lcl} 
-0 & if & n \le 1 \\
+1 & if & n \le 1 \\
 T(n-1) + T(n-2) & if & n>1 \\
 \end{array}
 \right. 
