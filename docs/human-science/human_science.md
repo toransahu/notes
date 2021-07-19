@@ -81,6 +81,9 @@
 - Confidence
     - knowing & accepting the lack/gap
 
+# Forgiveness
+- [A good read](https://getpocket.com/explore/item/how-to-forgive-someone-who-hurt-you-even-when-it-feels-impossible?utm_source=pocket-newtab-intl-en)
+
 # Parenting
 
 # Trust
