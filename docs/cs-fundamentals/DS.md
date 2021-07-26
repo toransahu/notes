@@ -69,12 +69,12 @@ The data items are not arranged in a sequential structure.
     - [Binary Search Tree - BST](#binary-search-tree-bst)
         - Self Balancing / Balanced / Height Balanced BST
             - AVL Tree
+            - B-tree
             - Red-Black Tree
+            - B+ tree
             - Splay Tree
             - Treap
     - K-ary Tree
-    - B Tree
-        - B+ tree
     - [Heap](#heap)
         - [Binary Heap](#binary-heap)
             - [Max Heap](#max-heap)
