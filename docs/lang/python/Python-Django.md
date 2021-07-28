@@ -821,15 +821,16 @@ TODO:
 * Need to define get(), post() like HTTP methods
 * Need to provide ClassName.as_view() in URL
 * Advantage: Can be extended by sub classes
-```python
-    from django.http import HttpResponse
-    from django.views import View
 
-    class MyView(View):
-        def get(self, request):
-            # <view logic>
-            return HttpResponse('result')
-    ```
+```python
+from django.http import HttpResponse
+from django.views import View
+
+class MyView(View):
+    def get(self, request):
+        # <view logic>
+        return HttpResponse('result')
+```
 
 ## Class Based Generic View
 * Module: from django.views.generic import ListView
@@ -837,46 +838,52 @@ TODO:
 * No need to define request handler methods
 * set model attribute to Model Class
 * Need to provide ClassName.as_view() in URL
-```python
-    from django.views.generic import ListView
-    from books.models import Publisher
 
-    class PublisherList(ListView):
-        model = Publisher
+```python
+from django.views.generic import ListView
+from books.models import Publisher
+
+class PublisherList(ListView):
+    model = Publisher
 ```
 
 # URLs
 ## using view function
+
 ```python
-    urlpatterns=[
-        path('/',views.home(),name='home'),]
+urlpatterns=[
+    path('/',views.home(),name='home'),]
 ```
-    
+
 ## using class based view
+
 ```python
-    urlpatterns=[
-        path('/',views.IndexView.as_view(),name='index'),]
+urlpatterns=[
+    path('/',views.IndexView.as_view(),name='index'),]
 ```
 
 ## including app urls
-```python
-    from django.urls import path, include
 
-    urlpatterns = [
-            path('', include('home.urls')),]
+```python
+from django.urls import path, include
+
+urlpatterns = [
+        path('', include('home.urls')),]
 ```
 
 ## django 2.0: using path
+
 ```python
-    from django.urls import path, include
+from django.urls import path, include
 ```
 
 ## django <=1.9: using url
+
 ```python
-    from django.conf.urls import url
+from django.conf.urls import url
 ```
-    
-    
+
+
 
 # Static files
 ## In Production
@@ -884,17 +891,18 @@ TODO:
 * run manage.py collectstatic
 
 ## In Developement
-```python
-    STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder'
-    )
 
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
-        '/var/www/static/',
-    ]
-    STATIC_URL = '/static/'
+```python
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+)
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    '/var/www/static/',
+]
+STATIC_URL = '/static/'
 ```
 
 # Templates
@@ -907,7 +915,7 @@ TODO:
             * {% load static %}
         * Comments
             * {# CSS files#}
-            
+
 
 #  Middlewares
 - Middleware is framework of hooks to Django's request/response processing
@@ -917,7 +925,7 @@ TODO:
     * Session management
     * User authentication
     * Cross-site request forgery protection
-    * Content Gzipping, etc.            
+    * Content Gzipping, etc.
 
 ## Custom Middleware
 - a middleware factory (i.e. outer function or a class) is a callable
@@ -966,7 +974,7 @@ class SimpleMiddleware:
         # the view is called.
 
         return response
-```    
+```
 
 
 # Settings
@@ -987,7 +995,7 @@ class SimpleMiddleware:
 - How it works?
     - Understanding the CAST argument
 
-            
+
 # Signals
 Signals are a strategy to allow decoupled applications to get notified when some event occurs.  
 Source: https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-django-signals.html
@@ -1160,7 +1168,7 @@ This lack of state is managed using sessions.
 INSTALLED_APPS = [
     'django.contrib.sessions',
     ]
-    
+
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     ]
@@ -1341,7 +1349,7 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
     - enable optional security features;
     - enable performance optimizations;
     - provide error reporting.
-- or Run manage.py check --deploy   
+- or Run manage.py check --deploy
     - to list all the factors listed below
 - take care of these things if releasing source code 
 
@@ -1358,7 +1366,7 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
         SECRET_KEY = f.read().strip()
     ```
     - avoid committing it to source control
-    
+
 - DEBUG : set to False
 
 
@@ -1388,7 +1396,7 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
     - Media files are uploaded by your users. They’re untrusted! 
     - Make sure your web server never attempts to interpret them. 
     - For instance, if a user uploads a .php file, the web server shouldn’t execute it.
-    
+
 ## HTTPS
 - Any website which allows users to log in should enforce site-wide HTTPS to avoid transmitting access tokens in clear. 
 - In Django, access tokens include the login/password, the session cookie, and password reset tokens. 
@@ -1411,7 +1419,7 @@ The complete answer is both Nginx and Gunicorn handle the request. Basically, Ng
 - LOGGING
     - Review your logging configuration before putting your website in production, and check that it works as expected as soon as you have received some traffic
 - Customize the default error views
-    - Django includes default views and templates for several HTTP error codes. You may want to override the default templates by creating the following templates in your root template directory: 404.html, 500.html, 403.html, and 400.html.     
+    - Django includes default views and templates for several HTTP error codes. You may want to override the default templates by creating the following templates in your root template directory: 404.html, 500.html, 403.html, and 400.html.
 
 # Testing
 * Class level testing for each app
@@ -1487,7 +1495,7 @@ Django REST framework "djangorestframework" is powerful & flexibal toolkit for c
 * Representational State Transfer
     * a client and server exchange representations of a resource, which reflects its current state or desired state.
     * So, REST is a way for two machines to transfer the state of a resource via representations.
-    
+
 
 ## HTTP Request Methods (HTTP verbs)
 HTTP defines a set of request methods to indicate the desired action to be performed for a given resource
@@ -1495,9 +1503,7 @@ HTTP defines a set of request methods to indicate the desired action to be perfo
 - **GET**
     - The GET method requests a representation of a specified resource.
     - GET request should only used for data retrieval. (But can also be used for submit/posting/sending data)
-    - a resource is mentioned in URL.  
-     
-     
+    - a resource is mentioned in URL.
 - **POST**
     - Used to modify/update an existing entity of a specified resource.
         - Do mention the object/entity of the resource in the URL to update
@@ -1505,7 +1511,7 @@ HTTP defines a set of request methods to indicate the desired action to be perfo
             - PUT would create a new unwanted resource when the resouce doesn't exists while updating that particular resource
             - PATCH is perfect for partial updation
         - But there is no restrictions using POST for updates
-        
+
     ```HTTP
     POST /questions/<existing_question> HTTP/1.1
     Host: www.example.com/
