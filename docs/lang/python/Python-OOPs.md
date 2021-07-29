@@ -569,8 +569,9 @@ d1 = D()
 d1.who_am_i()
 ```
 
-#### Old MRO Algorithm (Based on Old-Style Class)
-- uses `depth-first` serach followed by `linear` search (left to right)
+#### DLR (Old) MRO Algorithm (Based on Old-Style Class)
+- depth first left to right
+- uses `depth-first` search followed by `linear` search (left to right)
     - we call this order `search path`
 - in script 1
     - Looking in D
