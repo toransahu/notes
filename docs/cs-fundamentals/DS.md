@@ -62,16 +62,17 @@ The data items are not arranged in a sequential structure.
         - [Complete Binary Tree](#complete-binary-tree)
             - [Heap](#heap)
         - [Perfect Binary Tree](#perfect-binary-tree)
+        - [Binary Search Tree - BST](#binary-search-tree-bst)
         - [Degenerated / Pathological Tree](#degenerated-pathological-tree)
         - Skew Binary Tree
             - Left Skew Tree
             - Right Skew Tree
     - [Binary Search Tree - BST](#binary-search-tree-bst)
-        - Self Balancing / Balanced / Height Balanced BST
-            - AVL Tree
-            - B-tree
-            - Red-Black Tree
-            - B+ tree
+        - [Self Balancing / Balanced / Height Balanced BST](#self-balancing-binary-tree)
+            - [AVL Tree](#avl-tree)
+            - [B-tree](#b-tree)
+            - [Red-Black Tree](#red-black-tree)
+            - [B+ tree](#b-tree_1)
             - Splay Tree
             - Treap
     - K-ary Tree
@@ -521,13 +522,267 @@ A tree with every node having one Right child only
 
 ## Self Balancing Binary Tree
 
+(aka Balanced / Height Balanced BST)
+
+To over come the downside of the skewed BST, (when its search performance degrades to linear time), various self-balancing BST were proposed around 1962 - 1973.
+
+- AVL Tree [1962]
+- B-tree [1970]
+- Red-Black Tree [1972]
+- B+ tree [1972-73]
+- Splay Tree
+- Treap
+
+## AVL Tree
+
+First self-balancing BST to overcome the limitations of BST when its skewed.
+
+Invented|By
+--------|--
+1962|Georgy Adelson-Velsky & Evgenii Landis
+
+Idea: While creating/updating a BST, if the __heights of the two child subtree of a node__ differs by more than 1, then rebalance that node.
+
+Rebalancing is done by performing single or double-step rotation.
+
+Note: Try to rebalance the BST as soon as possible.
+
+### Rotations
+
+#### LL (left-left) Rotation
+
+           5
+          /
+         4
+        / 
+       3
+
+Here, the __balance factor__ of the:
+
+- node 3 
+    - = height of left subtree - height of right tree
+    - = 0 - 0
+    - = 0
+- node 4 
+    - = height of left subtree - height of right tree
+    - = 1 - 0
+    - = 1
+- node 5
+    - = height of left subtree - height of right tree
+    - = 2 - 0
+    - = 2
+
+The balance factor of 5 is not in -1,0,1 (i.e. imbalanced by more than 1).
+Thus node 5 is imbalanced due to recent addition of node 3, to which we can reach by following "Left-->Left" i.e. LL.
+
+Thus node 5 is said to be LL imbalanced.
+
+To fix that, rotate the tree around 5 such that, 4 becomes parent of 3 & 5.
+
+(Assume putting a nail under node 5 and pulling 5 1-step towards right)
+
+i.e.
+
+         4
+        / \
+       3   5
+
+Thus, it is called LL-rotation.
+
+
+#### RR (right-right) Rotation
+
+        5
+         \
+          7
+           \
+            9
+
+Similarly this is called RR imbalance.
+
+If we rotate the tree around node 5, such that node 7 become the parent of the 5 & 9. i.e.
+
+        7
+       / \
+      5   9
+Then, this is called RR rotation.
+
+
+#### LR (left-right) Rotation
+
+        7
+       /
+      5
+       \
+        6
+
+Here, the __balance factor__ of the:
+
+- node 6 
+    - = height of left subtree - height of right tree
+    - = 0 - 0
+    - = 0
+- node 5 
+    - = height of left subtree - height of right tree
+    - = 0 - 1
+    - = -1
+- node 7
+    - = height of left subtree - height of right tree
+    - = 2 - 0
+    - = 2
+
+The balance factor of 7 is not in -1,0,1 (i.e. imbalanced by more than 1).
+Thus node 7 is imbalanced due to recent addition of node 6, to which we can reach by following "Left-->Right" i.e. LR.
+
+Thus node 7 is said to be LR imbalanced.
+
+To fix that, follow a 2-step rotation:
+
+1. swap the node 5 & 6 (doing so, we achieved LL imbalanced state; Note: we changed the side as well)
+
+            7
+           /
+          6
+         /
+        5
+
+2. now follow the LL rotation (i.e. rotate the tree around 7 such that, 6 becomes parent of 5 & 7. i.e.
+
+            6
+           / \
+          5   7
+
+#### RL (right-left) Rotation
+
+        5
+         \
+          7
+         /
+        6  
+
+Similarly this is called RL imbalance.
+
+If we:
+
+1. swap the node 7 and 6
+
+        5
+         \
+          6
+           \
+            7
+
+1. rotate the tree around node 5, such that node 6 become the parent of the 5 & 7. i.e.
+
+          6
+         / \
+        5   7
+
+Then, this is called RL rotation.
+
+The shorthand for this 2-step rotation could be:
+
+Replace Parent (node 5) with node L (node 6) and make the Parent (node 5) L child of node 6.
+
+
+#### Exercises
+
+Q1. 
+
+
+            7
+           / \
+          6   St1  
+         / \
+        5   St2
+
+A.
+
+            6
+           / \
+          5   7
+             / \
+            St1 St2
+
+Q2.
+
+        5
+       / \
+      St1 7
+         / \
+        6   St2
+
+A.
+
+        6
+       / \
+      5   7
+     /     \
+    St1    St2
+
+Q3. 
+
+             7
+           /   \
+          6     St1
+         / \     \
+        3   St2   St3
+       / \
+      1   5
+         /
+        4 (added 4)
+
+A.
+
+Addition of 4 causes LLRL (no just call it LL) imbalance of node 7.
+
+Now, just focus on node 3, 6, and 7 (as we do in LL rotation).
+
+              6
+           /    \
+          3       7
+         /  \    /  \
+        1    5 St1 St2
+            /  /
+           4  St3
+
+### Complexities
+
+Of|Avg|Worst
+--|---|-----
+Space|$\Theta(n)$|$O(n)$
+Search|$\Theta(log_2{n})$|$O(log_2{n})$
+Insert|$\Theta(log_2{n})$|$O(log_2{n})$
+Delete|$\Theta(log_2{n})$|$O(log_2{n})$
+
 ## B-Tree
-### Desc
-- Generalization of BST i.e. a node can have more than 2 children
+
+(aka Balanced/Bayer/Boeing/Broad/Bushy Tree)
+
+First self-balancing [m-way Search Tree (ST)](#m-way-search-tree) to overcome the limitations of m-way ST when its skewed.
+
+Invented|By
+--------|--
+1970|Rudolf Bayer & Edward M. McCreight while working at Boeing Research Labs
+
+Idea: While creating/updating a BST, if the __heights of the two child subtree of a node__ differs by more than 1, then rebalance that node.
+
+
+I see it as: 
+- generalization of the AVL tree
+- self balanced version of m-way search tree
+
 ### Application
 - Indexing in Databases
 - Filesystem
 
+## Red-Black Tree
+
+## B+ Tree
+
+# K-ary Tree
+
+# M-way Search Tree
 
 # Heap
 
