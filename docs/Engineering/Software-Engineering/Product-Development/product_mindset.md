@@ -1,4 +1,4 @@
-<h1>Product Mindset</h1>
+# Product Mindset
 
 [TOC]
 

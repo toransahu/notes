@@ -1,4 +1,4 @@
-<h1>FAQs</h1>
+# FAQs
 
 <h3>Table of Contents</h3>
 

@@ -1,4 +1,4 @@
-<h1>Practice Problems</h1>
+# Practice Problems
 
 [TOC]
 

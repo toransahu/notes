@@ -1,4 +1,4 @@
-<h1>Theory of Computation</h1>
+# Theory of Computation
 
 <h3>Table of Contents</h3>
 

@@ -1,4 +1,4 @@
-<h1>Mathematics</h1>
+# Mathematics
 
 <h3>Table of Contents</h3>
 

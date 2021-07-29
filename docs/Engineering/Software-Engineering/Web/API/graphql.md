@@ -1,4 +1,4 @@
-<h1>GraphQL</h1>
+# GraphQL
 
 [TOC]
 

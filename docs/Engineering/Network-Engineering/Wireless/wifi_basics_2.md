@@ -1,4 +1,4 @@
-<h1>Wireless Basics - 2</h1>
+# Wireless Basics - 2
 
 [TOC]
 

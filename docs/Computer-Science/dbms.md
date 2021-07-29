@@ -1,4 +1,4 @@
-<h1>DBMS</h1>
+# DBMS
 
 <h3>Table of Contents</h3>
 

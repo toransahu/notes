@@ -1,4 +1,4 @@
-<h1>Design Patterns</h1>
+# Design Patterns
 
 [TOC]
 

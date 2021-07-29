@@ -1,4 +1,4 @@
-<h1>Caching</h1>
+# Caching
 
 [TOC]
 

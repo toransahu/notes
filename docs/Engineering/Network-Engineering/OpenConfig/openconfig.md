@@ -1,4 +1,4 @@
-<h1>OpenConfig</h1>
+# OpenConfig
 
 [TOC]
 
