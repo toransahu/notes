@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
         
       
     
@@ -40,6 +40,8 @@
     
     
       
+
+
     
     
   </head>
@@ -108,14 +110,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -976,19 +982,80 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#avl-tree" class="md-nav__link">
+    AVL Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotations" class="md-nav__link">
+    Rotations
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ll-left-left-rotation" class="md-nav__link">
+    LL (left-left) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rr-right-right-rotation" class="md-nav__link">
+    RR (right-right) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-left-right-rotation" class="md-nav__link">
+    LR (left-right) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-right-left-rotation" class="md-nav__link">
+    RL (right-left) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexities" class="md-nav__link">
+    Complexities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#b-tree" class="md-nav__link">
     B-Tree
   </a>
   
     <nav class="md-nav" aria-label="B-Tree">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desc_5" class="md-nav__link">
-    Desc
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#application_2" class="md-nav__link">
@@ -1002,8 +1069,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    Red-Black Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-tree_1" class="md-nav__link">
+    B+ Tree
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-ary-tree" class="md-nav__link">
+    K-ary Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m-way-search-tree" class="md-nav__link">
+    M-way Search Tree
+  </a>
   
 </li>
       
@@ -1104,7 +1199,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#desc_6" class="md-nav__link">
+  <a href="#desc_5" class="md-nav__link">
     Desc
   </a>
   
@@ -1310,6 +1405,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1440,22 +1547,46 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../industrial/faq/" class="md-nav__link">
+        Networking - Wireless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1" type="checkbox" id="__nav_12_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2" type="checkbox" id="__nav_12_2" >
       
-      <label class="md-nav__link" for="__nav_12_1">
+      <label class="md-nav__link" for="__nav_12_2">
         Networking
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Networking" data-md-level="2">
-        <label class="md-nav__title" for="__nav_12_1">
+        <label class="md-nav__title" for="__nav_12_2">
           <span class="md-nav__icon md-icon"></span>
           Networking
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../industrial/networking/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
           
             
   
@@ -1473,18 +1604,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../industrial/networking/tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1_2" type="checkbox" id="__nav_12_1_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2_4" type="checkbox" id="__nav_12_2_4" >
       
-      <label class="md-nav__link" for="__nav_12_1_2">
+      <label class="md-nav__link" for="__nav_12_2_4">
         Openconfig
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Openconfig" data-md-level="3">
-        <label class="md-nav__title" for="__nav_12_1_2">
+        <label class="md-nav__title" for="__nav_12_2_4">
           <span class="md-nav__icon md-icon"></span>
           Openconfig
         </label>
@@ -1516,14 +1659,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_1_3" type="checkbox" id="__nav_12_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2_5" type="checkbox" id="__nav_12_2_5" >
       
-      <label class="md-nav__link" for="__nav_12_1_3">
+      <label class="md-nav__link" for="__nav_12_2_5">
         Wireless
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Wireless" data-md-level="3">
-        <label class="md-nav__title" for="__nav_12_1_3">
+        <label class="md-nav__title" for="__nav_12_2_5">
           <span class="md-nav__icon md-icon"></span>
           Wireless
         </label>
@@ -1585,14 +1728,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2" type="checkbox" id="__nav_12_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" >
       
-      <label class="md-nav__link" for="__nav_12_2">
+      <label class="md-nav__link" for="__nav_12_3">
         Product development
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Product development" data-md-level="2">
-        <label class="md-nav__title" for="__nav_12_2">
+        <label class="md-nav__title" for="__nav_12_3">
           <span class="md-nav__icon md-icon"></span>
           Product development
         </label>
@@ -1705,6 +1848,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lang/faq/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lang/markdown/" class="md-nav__link">
         Markdown
       </a>
@@ -1720,14 +1875,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_3" type="checkbox" id="__nav_14_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" >
       
-      <label class="md-nav__link" for="__nav_14_3">
+      <label class="md-nav__link" for="__nav_14_4">
         Golang
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Golang" data-md-level="2">
-        <label class="md-nav__title" for="__nav_14_3">
+        <label class="md-nav__title" for="__nav_14_4">
           <span class="md-nav__icon md-icon"></span>
           Golang
         </label>
@@ -1759,14 +1914,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" >
       
-      <label class="md-nav__link" for="__nav_14_4">
+      <label class="md-nav__link" for="__nav_14_5">
         Python
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_14_4">
+        <label class="md-nav__title" for="__nav_14_5">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -2442,19 +2597,80 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#avl-tree" class="md-nav__link">
+    AVL Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotations" class="md-nav__link">
+    Rotations
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ll-left-left-rotation" class="md-nav__link">
+    LL (left-left) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rr-right-right-rotation" class="md-nav__link">
+    RR (right-right) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-left-right-rotation" class="md-nav__link">
+    LR (left-right) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-right-left-rotation" class="md-nav__link">
+    RL (right-left) Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexities" class="md-nav__link">
+    Complexities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#b-tree" class="md-nav__link">
     B-Tree
   </a>
   
     <nav class="md-nav" aria-label="B-Tree">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desc_5" class="md-nav__link">
-    Desc
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#application_2" class="md-nav__link">
@@ -2468,8 +2684,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    Red-Black Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-tree_1" class="md-nav__link">
+    B+ Tree
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-ary-tree" class="md-nav__link">
+    K-ary Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m-way-search-tree" class="md-nav__link">
+    M-way Search Tree
+  </a>
   
 </li>
       
@@ -2570,7 +2814,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#desc_6" class="md-nav__link">
+  <a href="#desc_5" class="md-nav__link">
     Desc
   </a>
   
@@ -2830,13 +3074,28 @@
 </ul>
 </li>
 <li><a href="#self-balancing-binary-tree">Self Balancing Binary Tree</a></li>
+<li><a href="#avl-tree">AVL Tree</a><ul>
+<li><a href="#rotations">Rotations</a><ul>
+<li><a href="#ll-left-left-rotation">LL (left-left) Rotation</a></li>
+<li><a href="#rr-right-right-rotation">RR (right-right) Rotation</a></li>
+<li><a href="#lr-left-right-rotation">LR (left-right) Rotation</a></li>
+<li><a href="#rl-right-left-rotation">RL (right-left) Rotation</a></li>
+<li><a href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li><a href="#complexities">Complexities</a></li>
+</ul>
+</li>
 <li><a href="#b-tree">B-Tree</a><ul>
-<li><a href="#desc_5">Desc</a></li>
 <li><a href="#application_2">Application</a></li>
 </ul>
 </li>
+<li><a href="#red-black-tree">Red-Black Tree</a></li>
+<li><a href="#b-tree_1">B+ Tree</a></li>
 </ul>
 </li>
+<li><a href="#k-ary-tree">K-ary Tree</a></li>
+<li><a href="#m-way-search-tree">M-way Search Tree</a></li>
 <li><a href="#heap">Heap</a></li>
 <li><a href="#binary-heap">Binary Heap</a><ul>
 <li><a href="#applications">Applications</a></li>
@@ -2854,7 +3113,7 @@
 </li>
 <li><a href="#trie">Trie</a></li>
 <li><a href="#graph">Graph</a><ul>
-<li><a href="#desc_6">Desc</a></li>
+<li><a href="#desc_5">Desc</a></li>
 <li><a href="#terminologies_2">Terminologies</a></li>
 <li><a href="#why_2">Why</a></li>
 <li><a href="#application_3">Application</a></li>
@@ -2945,6 +3204,7 @@
 </ul>
 </li>
 <li><a href="#perfect-binary-tree">Perfect Binary Tree</a></li>
+<li><a href="#binary-search-tree-bst">Binary Search Tree - BST</a></li>
 <li><a href="#degenerated-pathological-tree">Degenerated / Pathological Tree</a></li>
 <li>Skew Binary Tree<ul>
 <li>Left Skew Tree</li>
@@ -2954,9 +3214,11 @@
 </ul>
 </li>
 <li><a href="#binary-search-tree-bst">Binary Search Tree - BST</a><ul>
-<li>Self Balancing / Balanced / Height Balanced BST<ul>
-<li>AVL Tree</li>
-<li>Red-Black Tree</li>
+<li><a href="#self-balancing-binary-tree">Self Balancing / Balanced / Height Balanced BST</a><ul>
+<li><a href="#avl-tree">AVL Tree</a></li>
+<li><a href="#b-tree">B-tree</a></li>
+<li><a href="#red-black-tree">Red-Black Tree</a></li>
+<li><a href="#b-tree_1">B+ tree</a></li>
 <li>Splay Tree</li>
 <li>Treap</li>
 </ul>
@@ -2964,10 +3226,6 @@
 </ul>
 </li>
 <li>K-ary Tree</li>
-<li>B Tree<ul>
-<li>B+ tree</li>
-</ul>
-</li>
 <li><a href="#heap">Heap</a><ul>
 <li><a href="#binary-heap">Binary Heap</a><ul>
 <li><a href="#max-heap">Max Heap</a></li>
@@ -3540,16 +3798,360 @@ Practical e.g.: Binary Heap</p>
 <li>SEARCH, MINIMUM, MAXIMUM, PREDECESSOR, SUCCESSOR, INSERT, DELETE</li>
 </ul>
 <h3 id="self-balancing-binary-tree">Self Balancing Binary Tree<a class="headerlink" href="#self-balancing-binary-tree" title="Permanent link">#</a></h3>
-<h3 id="b-tree">B-Tree<a class="headerlink" href="#b-tree" title="Permanent link">#</a></h3>
-<h4 id="desc_5">Desc<a class="headerlink" href="#desc_5" title="Permanent link">#</a></h4>
+<p>(aka Balanced / Height Balanced BST)</p>
+<p>To over come the downside of the skewed BST, (when its search performance degrades to linear time), various self-balancing BST were proposed around 1962 - 1973.</p>
 <ul>
-<li>Generalization of BST i.e. a node can have more than 2 children</li>
+<li>AVL Tree [1962]</li>
+<li>B-tree [1970]</li>
+<li>Red-Black Tree [1972]</li>
+<li>B+ tree [1972-73]</li>
+<li>Splay Tree</li>
+<li>Treap</li>
 </ul>
+<h3 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">#</a></h3>
+<p>First self-balancing BST to overcome the limitations of BST when its skewed.</p>
+<table>
+<thead>
+<tr>
+<th>Invented</th>
+<th>By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1962</td>
+<td>Georgy Adelson-Velsky &amp; Evgenii Landis</td>
+</tr>
+</tbody>
+</table>
+<p>Idea: While creating/updating a BST, if the <strong>heights of the two child subtree of a node</strong> differs by more than 1, then rebalance that node.</p>
+<p>Rebalancing is done by performing single or double-step rotation.</p>
+<p>Note: Try to rebalance the BST as soon as possible.</p>
+<h4 id="rotations">Rotations<a class="headerlink" href="#rotations" title="Permanent link">#</a></h4>
+<h5 id="ll-left-left-rotation">LL (left-left) Rotation<a class="headerlink" href="#ll-left-left-rotation" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>       5
+      /
+     4
+    / 
+   3
+</code></pre></div>
+</td></tr></table>
+<p>Here, the <strong>balance factor</strong> of the:</p>
+<ul>
+<li>node 3 <ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 0 - 0</li>
+<li>= 0</li>
+</ul>
+</li>
+<li>node 4 <ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 1 - 0</li>
+<li>= 1</li>
+</ul>
+</li>
+<li>node 5<ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 2 - 0</li>
+<li>= 2</li>
+</ul>
+</li>
+</ul>
+<p>The balance factor of 5 is not in -1,0,1 (i.e. imbalanced by more than 1).
+Thus node 5 is imbalanced due to recent addition of node 3, to which we can reach by following "Left--&gt;Left" i.e. LL.</p>
+<p>Thus node 5 is said to be LL imbalanced.</p>
+<p>To fix that, rotate the tree around 5 such that, 4 becomes parent of 3 &amp; 5.</p>
+<p>(Assume putting a nail under node 5 and pulling 5 1-step towards right)</p>
+<p>i.e.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>     4
+    / \
+   3   5
+</code></pre></div>
+</td></tr></table>
+<p>Thus, it is called LL-rotation.</p>
+<h5 id="rr-right-right-rotation">RR (right-right) Rotation<a class="headerlink" href="#rr-right-right-rotation" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    5
+     \
+      7
+       \
+        9
+</code></pre></div>
+</td></tr></table>
+<p>Similarly this is called RR imbalance.</p>
+<p>If we rotate the tree around node 5, such that node 7 become the parent of the 5 &amp; 9. i.e.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    7
+   / \
+  5   9
+</code></pre></div>
+</td></tr></table>
+<p>Then, this is called RR rotation.</p>
+<h5 id="lr-left-right-rotation">LR (left-right) Rotation<a class="headerlink" href="#lr-left-right-rotation" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    7
+   /
+  5
+   \
+    6
+</code></pre></div>
+</td></tr></table>
+<p>Here, the <strong>balance factor</strong> of the:</p>
+<ul>
+<li>node 6 <ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 0 - 0</li>
+<li>= 0</li>
+</ul>
+</li>
+<li>node 5 <ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 0 - 1</li>
+<li>= -1</li>
+</ul>
+</li>
+<li>node 7<ul>
+<li>= height of left subtree - height of right tree</li>
+<li>= 2 - 0</li>
+<li>= 2</li>
+</ul>
+</li>
+</ul>
+<p>The balance factor of 7 is not in -1,0,1 (i.e. imbalanced by more than 1).
+Thus node 7 is imbalanced due to recent addition of node 6, to which we can reach by following "Left--&gt;Right" i.e. LR.</p>
+<p>Thus node 7 is said to be LR imbalanced.</p>
+<p>To fix that, follow a 2-step rotation:</p>
+<ol>
+<li>
+<p>swap the node 5 &amp; 6 (doing so, we achieved LL imbalanced state; Note: we changed the side as well)</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    7
+   /
+  6
+ /
+5
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>now follow the LL rotation (i.e. rotate the tree around 7 such that, 6 becomes parent of 5 &amp; 7. i.e.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    6
+   / \
+  5   7
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<h5 id="rl-right-left-rotation">RL (right-left) Rotation<a class="headerlink" href="#rl-right-left-rotation" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    5
+     \
+      7
+     /
+    6
+</code></pre></div>
+</td></tr></table>
+<p>Similarly this is called RL imbalance.</p>
+<p>If we:</p>
+<ol>
+<li>
+<p>swap the node 7 and 6</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>5
+ \
+  6
+   \
+    7
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>rotate the tree around node 5, such that node 6 become the parent of the 5 &amp; 7. i.e.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  6
+ / \
+5   7
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<p>Then, this is called RL rotation.</p>
+<p>The shorthand for this 2-step rotation could be:</p>
+<p>Replace Parent (node 5) with node L (node 6) and make the Parent (node 5) L child of node 6.</p>
+<h5 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">#</a></h5>
+<p>Q1. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>        7
+       / \
+      6   St1  
+     / \
+    5   St2
+</code></pre></div>
+</td></tr></table>
+<p>A.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>        6
+       / \
+      5   7
+         / \
+        St1 St2
+</code></pre></div>
+</td></tr></table>
+<p>Q2.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    5
+   / \
+  St1 7
+     / \
+    6   St2
+</code></pre></div>
+</td></tr></table>
+<p>A.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    6
+   / \
+  5   7
+ /     \
+St1    St2
+</code></pre></div>
+</td></tr></table>
+<p>Q3. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>         7
+       /   \
+      6     St1
+     / \     \
+    3   St2   St3
+   / \
+  1   5
+     /
+    4 (added 4)
+</code></pre></div>
+</td></tr></table>
+<p>A.</p>
+<p>Addition of 4 causes LLRL (no just call it LL) imbalance of node 7.</p>
+<p>Now, just focus on node 3, 6, and 7 (as we do in LL rotation).</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>          6
+       /    \
+      3       7
+     /  \    /  \
+    1    5 St1 St2
+        /  /
+       4  St3
+</code></pre></div>
+</td></tr></table>
+<h4 id="complexities">Complexities<a class="headerlink" href="#complexities" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Of</th>
+<th>Avg</th>
+<th>Worst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Space</td>
+<td><span><span class="MathJax_Preview">\Theta(n)</span><script type="math/tex">\Theta(n)</script></span></td>
+<td><span><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>Search</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-tree">B-Tree<a class="headerlink" href="#b-tree" title="Permanent link">#</a></h3>
+<p>(aka Balanced/Bayer/Boeing/Broad/Bushy Tree)</p>
+<p>First self-balancing <a href="#m-way-search-tree">m-way Search Tree (ST)</a> to overcome the limitations of m-way ST when its skewed.</p>
+<table>
+<thead>
+<tr>
+<th>Invented</th>
+<th>By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1970</td>
+<td>Rudolf Bayer &amp; Edward M. McCreight while working at Boeing Research Labs</td>
+</tr>
+</tbody>
+</table>
+<p>Idea: While creating/updating a BST, if the <strong>heights of the two child subtree of a node</strong> differs by more than 1, then rebalance that node.</p>
+<p>I see it as: 
+- generalization of the AVL tree
+- self balanced version of m-way search tree</p>
 <h4 id="application_2">Application<a class="headerlink" href="#application_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Indexing in Databases</li>
 <li>Filesystem</li>
 </ul>
+<h3 id="red-black-tree">Red-Black Tree<a class="headerlink" href="#red-black-tree" title="Permanent link">#</a></h3>
+<h3 id="b-tree_1">B+ Tree<a class="headerlink" href="#b-tree_1" title="Permanent link">#</a></h3>
+<h2 id="k-ary-tree">K-ary Tree<a class="headerlink" href="#k-ary-tree" title="Permanent link">#</a></h2>
+<h2 id="m-way-search-tree">M-way Search Tree<a class="headerlink" href="#m-way-search-tree" title="Permanent link">#</a></h2>
 <h2 id="heap">Heap<a class="headerlink" href="#heap" title="Permanent link">#</a></h2>
 <ul>
 <li>Heap are nothing but a speacial form of tree</li>
@@ -3667,7 +4269,7 @@ Practical e.g.: Binary Heap</p>
 <h2 id="trie">Trie<a class="headerlink" href="#trie" title="Permanent link">#</a></h2>
 <h2 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">#</a></h2>
 <p><code>G = (V, E)</code></p>
-<h3 id="desc_6">Desc<a class="headerlink" href="#desc_6" title="Permanent link">#</a></h3>
+<h3 id="desc_5">Desc<a class="headerlink" href="#desc_5" title="Permanent link">#</a></h3>
 <ul>
 <li>a data structure describing pairwise relations between objects</li>
 <li>made up of nodes/vertices and edges; with or without having any cycle</li>
@@ -3855,7 +4457,8 @@ Practical e.g.: Binary Heap</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../DBMS/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../DBMS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DBMS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3870,7 +4473,8 @@ Practical e.g.: Binary Heap</p>
         </a>
       
       
-        <a href="../Network/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../Network/" class="md-footer__link md-footer__link--next" aria-label="Next: Network" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -3905,10 +4509,10 @@ Practical e.g.: Binary Heap</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="../../javascripts/config.js"></script>
       
