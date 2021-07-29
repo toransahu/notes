@@ -51,6 +51,43 @@ AWS CodeDeploy is a deployment service that automates application deployments to
 ## CloudFlare
 
 ---
+# Load Balancer
+- https://www.ateam-oracle.com/long-lived-tcp-connections-and-load-balancers
+	- what happens when one or more servers comes up behind a load balancer?
+		- what in case of long lived TCP conn?
+
+## Algorithms
+- https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/daperture-load-balancer.html
+
+---
+# Data Center/Computer Clusters Manager  /  container-orchestration system
+
+## Tools
+
+### Kubernetes
+
+#### Minikube (Run Local)
+- https://github.com/kubernetes/minikube
+
+#### Load Balancer
+- https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
+- https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
+
+#### Long Lived Conn
+- Issue
+	- https://learnk8s.io/kubernetes-long-lived-connections
+	- https://tech.xing.com/a-reason-for-unexplained-connection-timeouts-on-kubernetes-docker-abd041cf7e02
+	- https://kubernetes.io/blog/2019/03/29/kube-proxy-subtleties-debugging-an-intermittent-connection-reset/
+	- https://www.edureka.co/community/57404/set-up-a-websocket-in-google-kubernetes-engine
+- Sol
+	- https://medium.com/johnjjung/how-to-use-gcp-loadbalancer-with-websockets-on-kubernetes-using-services-ingresses-and-backend-16a5565e4702
+
+
+### Docker Swarm
+
+### Apache Mesos
+
+---
 # Queues
 
 ## Celery

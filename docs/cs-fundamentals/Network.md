@@ -2,7 +2,7 @@
 
 # Network
 
-## Introduction
+## History
 
 18th century: age of mechanical systems - indutries
 19th century: age of steam engine
@@ -43,6 +43,60 @@ Differences
 The main differentiator is software or operating system. But no hardware.
 
 Middleware: software that acts as a bridge between an operating system or database and applications, especially on a network.
+
+
+## Basics
+
+- Topologies
+	- Bus
+	- Star
+	- Ring
+	- Mesh
+- Network Area Types
+	- PAN
+	- LAN
+	- CAN
+	- WAN
+	- MAN
+	- GAN
+- XXX
+	- MoDem
+	- Repeater
+		- Amplifier?
+- Network Equipments/Devices
+	- Hub
+		- 1
+			- all data to all ports
+	- Bridge
+		- 2
+			- Remember which MAC <-> Port
+	- Switch
+		- similar as Bride, but newer
+		- 2
+			- MAC addr. table in memory
+		- 3 (optional support)
+			- Routing table
+		- VLANs
+	- Router
+		- 3
+			- Routing table
+			- IP
+	- Wireless Access Point (WAP)
+		- Similar to Router, but wireless
+		- Modes
+			- Ad-hoc
+			- Enterprise
+		- Common Settings
+			- SSID
+			- SSID Broadcast
+			- Authentication methods
+				- WEP (Deprecated)
+				- WPA2 PSK (WiFi Protected Access)
+				- WPA2 Enterprise (RADIUS)
+					- RADIUS: Central Auth Server
+			- MAC Filtering
+- Network Interface Card (NIC)
+- NIC Types
 
 
 ## Network Usages
@@ -167,30 +221,51 @@ Because IP wasn't designed to be absolutely reliable & it doesn't have an inbuil
 - a layer serves the layer above it
 
 ## Application Layer
+
+- User apps, Network services
+
 ### Protocols
 - HTTP, HTTPS, SMTP, FTP
 
 ## Presentation Layer
+
+- Encryption, charsets
+
 ### Protocols
-- JPEG, MPEG
+- SSL, TLS, JPEG, MPEG
 
 ## Session Layer
+
+- Setup, maintain, tear-down sessions
+
 ### Protocols
-- NFS, SQL, RPC
+- NFS, SQL, RPC, Netbios
 
 ## Transport Layer
+
+- Datagram delivery (TCP/UDP), port number
+
 ### Protocols
 - TCP, UDP
 
 ## Network Layer
+
+- Routing, Software adrresses (IP)
+
 ### Protocols
 - IP, ICMP, ARP, RARP, IGMP
 
 ## Data Link Layer
+
+- Media access, Hardware addresses (MAC)
+
 ### Protocols
-- HDLC, PPP
+- ARP, HDLC, PPP
 
 ## Physical Layer
+
+- Cable, connectors, electrical specs
+
 ### Protocols
 - no protocols at this layer
 
@@ -219,6 +294,7 @@ Because IP wasn't designed to be absolutely reliable & it doesn't have an inbuil
 # Ethernet 
 
 Note: TCP/IP is a set of protocols that deals with layers 3 to 7 from the OSI reference model, while Ethernet is a set of protocols that deals with layers 1 and 2 from the OSI reference model
+
 
 # TODOs
 Packets
