@@ -11,8 +11,9 @@ jupyterlab = "*"
 mkdocs = "*"
 mkdocs-material = "*"
 pymdown-extensions = "*"
+plantuml-markdown = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3"
