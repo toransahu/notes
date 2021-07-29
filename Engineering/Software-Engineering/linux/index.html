@@ -1,0 +1,4672 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>Linux - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Linux
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-scripting" class="md-nav__link">
+    Bash Scripting
+  </a>
+  
+    <nav class="md-nav" aria-label="Bash Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    AWK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#includesourceimport" class="md-nav__link">
+    include/source/import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-comparison" class="md-nav__link">
+    String Comparison
+  </a>
+  
+    <nav class="md-nav" aria-label="String Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sub-string-comparison" class="md-nav__link">
+    Sub-String Comparison
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-elif-else-fi" class="md-nav__link">
+    If, elif, else, fi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    Switch Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unix-commands" class="md-nav__link">
+    UNIX Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="UNIX Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mv-all-filesdir-to-a-subdir" class="md-nav__link">
+    mv all files/dir to a subdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-system-informations" class="md-nav__link">
+    Get System Informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-deafult-shell" class="md-nav__link">
+    Set deafult shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xclip" class="md-nav__link">
+    xclip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-prefixed-commands" class="md-nav__link">
+    ls prefixed commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-hostname" class="md-nav__link">
+    Set hostname
+  </a>
+  
+    <nav class="md-nav" aria-label="Set hostname">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-at-etchosts" class="md-nav__link">
+    1. at /etc/hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-at-etchostname" class="md-nav__link">
+    2. at /etc/hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-then-tell-the-machine" class="md-nav__link">
+    3. then tell the machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-info" class="md-nav__link">
+    CPU Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-temperature" class="md-nav__link">
+    CPU Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-related" class="md-nav__link">
+    IP Related
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+    <nav class="md-nav" aria-label="ssh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-case-of-aws-ec2-ssh" class="md-nav__link">
+    In case of AWS EC2 SSH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshfs" class="md-nav__link">
+    sshfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-connected-to-the-network" class="md-nav__link">
+    Device connected to the Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-disk-dump-commands" class="md-nav__link">
+    dd (Disk Dump) commands
+  </a>
+  
+    <nav class="md-nav" aria-label="dd (Disk Dump) commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backup" class="md-nav__link">
+    Create a backup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-backup" class="md-nav__link">
+    Restore a backup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-a-hard-disk" class="md-nav__link">
+    Clone a hard disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-a-disk-image" class="md-nav__link">
+    Transfer a disk image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-iso-image-of-a-cddvd" class="md-nav__link">
+    Create an iso image of a CD/DVD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burn-an-iso-image-of-a-cddvd" class="md-nav__link">
+    Burn an iso image of a CD/DVD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rescue-a-file-that-contains-bad-blocks" class="md-nav__link">
+    Rescue a file that contains bad blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-bootloader" class="md-nav__link">
+    Create your own bootloader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backup-of-your-mbr" class="md-nav__link">
+    Create a backup of your MBR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-backup-of-your-mbr" class="md-nav__link">
+    Restore a backup of your MBR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-dd-image-of-and-entire-disk" class="md-nav__link">
+    Mount dd image of and entire disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-hard-disk-has-errors" class="md-nav__link">
+    When the hard disk has errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-clone" class="md-nav__link">
+    Network Clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-speed-test" class="md-nav__link">
+    Network speed test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-autorunautomation" class="md-nav__link">
+    Task Autorun/Automation
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Autorun/Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daemons" class="md-nav__link">
+    Daemons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shells" class="md-nav__link">
+    Shells
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphical" class="md-nav__link">
+    Graphical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron-jobs" class="md-nav__link">
+    Cron Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Cron Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-file" class="md-nav__link">
+    .desktop file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-etcrclocal" class="md-nav__link">
+    using /etc/rc.local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-etcinitd" class="md-nav__link">
+    using /etc/init.d
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-related" class="md-nav__link">
+    Disk Related
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Related">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdisk" class="md-nav__link">
+    fdisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsblk" class="md-nav__link">
+    lsblk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blkid" class="md-nav__link">
+    blkid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#du" class="md-nav__link">
+    du
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub" class="md-nav__link">
+    GRUB
+  </a>
+  
+    <nav class="md-nav" aria-label="GRUB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-grub-configs" class="md-nav__link">
+    Edit grub configs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub-update" class="md-nav__link">
+    grub update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reboot-into-other-os" class="md-nav__link">
+    Reboot into other OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-solutions" class="md-nav__link">
+    Problems &amp; Solutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems &amp; Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-anaconda-python-default" class="md-nav__link">
+    Make Anaconda Python Default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-cinnamon-freezes" class="md-nav__link">
+    If cinnamon freezes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-unable-to-resolve-host-ray-connection-timed-out" class="md-nav__link">
+    sudo: unable to resolve host Ray: Connection timed out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemo-context-menu-open-in-terminal-not-working" class="md-nav__link">
+    nemo context menu "open in terminal" not working
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedup-mouse-scroll" class="md-nav__link">
+    Speedup mouse scroll
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+    Utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multitouch-gesture" class="md-nav__link">
+    Multitouch Gesture
+  </a>
+  
+    <nav class="md-nav" aria-label="Multitouch Gesture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#battery-monitor" class="md-nav__link">
+    Battery Monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-optimization" class="md-nav__link">
+    Battery Optimization
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sata-power-management" class="md-nav__link">
+    SATA Power Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powertop-by-intel-recommanded" class="md-nav__link">
+    PowerTop by Intel (Recommanded)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlp-emergency" class="md-nav__link">
+    TLP (Emergency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mono" class="md-nav__link">
+    Mono
+  </a>
+  
+    <nav class="md-nav" aria-label="Mono">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify" class="md-nav__link">
+    Verify
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinkpad-touchpad-middle-button" class="md-nav__link">
+    Thinkpad Touchpad Middle Button
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinkpad Touchpad Middle Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install_1" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finger-print-reader" class="md-nav__link">
+    Finger Print Reader
+  </a>
+  
+    <nav class="md-nav" aria-label="Finger Print Reader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    Uninstallation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zsh" class="md-nav__link">
+    ZSH
+  </a>
+  
+    <nav class="md-nav" aria-label="ZSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oh-my-zsh" class="md-nav__link">
+    oh-my-zsh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    VIM
+  </a>
+  
+    <nav class="md-nav" aria-label="VIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vundle" class="md-nav__link">
+    Vundle
+  </a>
+  
+    <nav class="md-nav" aria-label="Vundle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-vundle" class="md-nav__link">
+    Using Vundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim-as-python-ide" class="md-nav__link">
+    VIM as Python IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    Tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="Tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tmux-package-manager" class="md-nav__link">
+    Tmux Package Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux-plugins" class="md-nav__link">
+    Tmux Plugins:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-bashrc-with-tmux" class="md-nav__link">
+    Load .bashrc with tmux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-custom-shortcuts-bindings" class="md-nav__link">
+    KeyBoard Custom Shortcuts Bindings
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyBoard Custom Shortcuts Bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emulate-right-click-from-keyboard" class="md-nav__link">
+    Emulate right click from keyboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-restore-cinnamon-settings" class="md-nav__link">
+    Backup &amp; Restore Cinnamon settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    OS
+  </a>
+  
+    <nav class="md-nav" aria-label="OS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-with-rpd-desktop" class="md-nav__link">
+    Raspbian with RPD Desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-lite-without-gui" class="md-nav__link">
+    Raspbian Lite (without GUI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspbian Lite (without GUI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-desktop-for-lite" class="md-nav__link">
+    Install Desktop for Lite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-ssh-enter-ssidwifi-details-without-keyboard" class="md-nav__link">
+    Enable ssh &amp; enter SSID/WiFi details without keyboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-coresnap" class="md-nav__link">
+    Ubuntu Core/Snap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-iot" class="md-nav__link">
+    Windows IoT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    Display
+  </a>
+  
+    <nav class="md-nav" aria-label="Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-screeen-config" class="md-nav__link">
+    Touch Screeen Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-image-from-burnt-image" class="md-nav__link">
+    Backup Image from Burnt Image
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Image from Burnt Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-a-different-linux-pc-using-usb" class="md-nav__link">
+    On a different linux PC using USB.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-raspberry-itself-using-rsync" class="md-nav__link">
+    In Raspberry Itself using rsync
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-drive-mount-sshfs" class="md-nav__link">
+    Network Drive Mount (sshfs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-audio" class="md-nav__link">
+    Remote Audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth" class="md-nav__link">
+    bluetooth
+  </a>
+  
+    <nav class="md-nav" aria-label="bluetooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-1" class="md-nav__link">
+    Way 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#way-2" class="md-nav__link">
+    Way 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    wifi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-ssh-from-card" class="md-nav__link">
+    enable ssh from card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-wifissid-from-card" class="md-nav__link">
+    set wifi/ssid  from card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi-to-ethernet" class="md-nav__link">
+    wifi to ethernet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-scripting" class="md-nav__link">
+    Bash Scripting
+  </a>
+  
+    <nav class="md-nav" aria-label="Bash Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    AWK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#includesourceimport" class="md-nav__link">
+    include/source/import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-comparison" class="md-nav__link">
+    String Comparison
+  </a>
+  
+    <nav class="md-nav" aria-label="String Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sub-string-comparison" class="md-nav__link">
+    Sub-String Comparison
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-elif-else-fi" class="md-nav__link">
+    If, elif, else, fi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    Switch Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unix-commands" class="md-nav__link">
+    UNIX Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="UNIX Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mv-all-filesdir-to-a-subdir" class="md-nav__link">
+    mv all files/dir to a subdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-system-informations" class="md-nav__link">
+    Get System Informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-deafult-shell" class="md-nav__link">
+    Set deafult shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xclip" class="md-nav__link">
+    xclip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-prefixed-commands" class="md-nav__link">
+    ls prefixed commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-hostname" class="md-nav__link">
+    Set hostname
+  </a>
+  
+    <nav class="md-nav" aria-label="Set hostname">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-at-etchosts" class="md-nav__link">
+    1. at /etc/hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-at-etchostname" class="md-nav__link">
+    2. at /etc/hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-then-tell-the-machine" class="md-nav__link">
+    3. then tell the machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-info" class="md-nav__link">
+    CPU Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-temperature" class="md-nav__link">
+    CPU Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-related" class="md-nav__link">
+    IP Related
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+    <nav class="md-nav" aria-label="ssh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-case-of-aws-ec2-ssh" class="md-nav__link">
+    In case of AWS EC2 SSH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshfs" class="md-nav__link">
+    sshfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-connected-to-the-network" class="md-nav__link">
+    Device connected to the Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-disk-dump-commands" class="md-nav__link">
+    dd (Disk Dump) commands
+  </a>
+  
+    <nav class="md-nav" aria-label="dd (Disk Dump) commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backup" class="md-nav__link">
+    Create a backup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-backup" class="md-nav__link">
+    Restore a backup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-a-hard-disk" class="md-nav__link">
+    Clone a hard disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-a-disk-image" class="md-nav__link">
+    Transfer a disk image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-iso-image-of-a-cddvd" class="md-nav__link">
+    Create an iso image of a CD/DVD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burn-an-iso-image-of-a-cddvd" class="md-nav__link">
+    Burn an iso image of a CD/DVD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rescue-a-file-that-contains-bad-blocks" class="md-nav__link">
+    Rescue a file that contains bad blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-bootloader" class="md-nav__link">
+    Create your own bootloader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backup-of-your-mbr" class="md-nav__link">
+    Create a backup of your MBR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-backup-of-your-mbr" class="md-nav__link">
+    Restore a backup of your MBR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-dd-image-of-and-entire-disk" class="md-nav__link">
+    Mount dd image of and entire disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-hard-disk-has-errors" class="md-nav__link">
+    When the hard disk has errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-clone" class="md-nav__link">
+    Network Clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-speed-test" class="md-nav__link">
+    Network speed test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-autorunautomation" class="md-nav__link">
+    Task Autorun/Automation
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Autorun/Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daemons" class="md-nav__link">
+    Daemons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shells" class="md-nav__link">
+    Shells
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphical" class="md-nav__link">
+    Graphical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron-jobs" class="md-nav__link">
+    Cron Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Cron Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-file" class="md-nav__link">
+    .desktop file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-etcrclocal" class="md-nav__link">
+    using /etc/rc.local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-etcinitd" class="md-nav__link">
+    using /etc/init.d
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-related" class="md-nav__link">
+    Disk Related
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Related">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdisk" class="md-nav__link">
+    fdisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsblk" class="md-nav__link">
+    lsblk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blkid" class="md-nav__link">
+    blkid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#du" class="md-nav__link">
+    du
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub" class="md-nav__link">
+    GRUB
+  </a>
+  
+    <nav class="md-nav" aria-label="GRUB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-grub-configs" class="md-nav__link">
+    Edit grub configs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub-update" class="md-nav__link">
+    grub update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reboot-into-other-os" class="md-nav__link">
+    Reboot into other OS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-solutions" class="md-nav__link">
+    Problems &amp; Solutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems &amp; Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-anaconda-python-default" class="md-nav__link">
+    Make Anaconda Python Default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-cinnamon-freezes" class="md-nav__link">
+    If cinnamon freezes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-unable-to-resolve-host-ray-connection-timed-out" class="md-nav__link">
+    sudo: unable to resolve host Ray: Connection timed out
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemo-context-menu-open-in-terminal-not-working" class="md-nav__link">
+    nemo context menu "open in terminal" not working
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedup-mouse-scroll" class="md-nav__link">
+    Speedup mouse scroll
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+    Utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multitouch-gesture" class="md-nav__link">
+    Multitouch Gesture
+  </a>
+  
+    <nav class="md-nav" aria-label="Multitouch Gesture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#battery-monitor" class="md-nav__link">
+    Battery Monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-optimization" class="md-nav__link">
+    Battery Optimization
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sata-power-management" class="md-nav__link">
+    SATA Power Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powertop-by-intel-recommanded" class="md-nav__link">
+    PowerTop by Intel (Recommanded)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlp-emergency" class="md-nav__link">
+    TLP (Emergency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mono" class="md-nav__link">
+    Mono
+  </a>
+  
+    <nav class="md-nav" aria-label="Mono">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify" class="md-nav__link">
+    Verify
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinkpad-touchpad-middle-button" class="md-nav__link">
+    Thinkpad Touchpad Middle Button
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinkpad Touchpad Middle Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install_1" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finger-print-reader" class="md-nav__link">
+    Finger Print Reader
+  </a>
+  
+    <nav class="md-nav" aria-label="Finger Print Reader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    Uninstallation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zsh" class="md-nav__link">
+    ZSH
+  </a>
+  
+    <nav class="md-nav" aria-label="ZSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oh-my-zsh" class="md-nav__link">
+    oh-my-zsh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    VIM
+  </a>
+  
+    <nav class="md-nav" aria-label="VIM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vundle" class="md-nav__link">
+    Vundle
+  </a>
+  
+    <nav class="md-nav" aria-label="Vundle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-vundle" class="md-nav__link">
+    Using Vundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim-as-python-ide" class="md-nav__link">
+    VIM as Python IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    Tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="Tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tmux-package-manager" class="md-nav__link">
+    Tmux Package Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux-plugins" class="md-nav__link">
+    Tmux Plugins:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-bashrc-with-tmux" class="md-nav__link">
+    Load .bashrc with tmux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-custom-shortcuts-bindings" class="md-nav__link">
+    KeyBoard Custom Shortcuts Bindings
+  </a>
+  
+    <nav class="md-nav" aria-label="KeyBoard Custom Shortcuts Bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emulate-right-click-from-keyboard" class="md-nav__link">
+    Emulate right click from keyboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-restore-cinnamon-settings" class="md-nav__link">
+    Backup &amp; Restore Cinnamon settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    OS
+  </a>
+  
+    <nav class="md-nav" aria-label="OS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-with-rpd-desktop" class="md-nav__link">
+    Raspbian with RPD Desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-lite-without-gui" class="md-nav__link">
+    Raspbian Lite (without GUI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspbian Lite (without GUI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-desktop-for-lite" class="md-nav__link">
+    Install Desktop for Lite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-ssh-enter-ssidwifi-details-without-keyboard" class="md-nav__link">
+    Enable ssh &amp; enter SSID/WiFi details without keyboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-coresnap" class="md-nav__link">
+    Ubuntu Core/Snap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-iot" class="md-nav__link">
+    Windows IoT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    Display
+  </a>
+  
+    <nav class="md-nav" aria-label="Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-screeen-config" class="md-nav__link">
+    Touch Screeen Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-image-from-burnt-image" class="md-nav__link">
+    Backup Image from Burnt Image
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Image from Burnt Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-a-different-linux-pc-using-usb" class="md-nav__link">
+    On a different linux PC using USB.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-raspberry-itself-using-rsync" class="md-nav__link">
+    In Raspberry Itself using rsync
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-drive-mount-sshfs" class="md-nav__link">
+    Network Drive Mount (sshfs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-audio" class="md-nav__link">
+    Remote Audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth" class="md-nav__link">
+    bluetooth
+  </a>
+  
+    <nav class="md-nav" aria-label="bluetooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-1" class="md-nav__link">
+    Way 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#way-2" class="md-nav__link">
+    Way 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    wifi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-ssh-from-card" class="md-nav__link">
+    enable ssh from card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-wifissid-from-card" class="md-nav__link">
+    set wifi/ssid  from card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi-to-ethernet" class="md-nav__link">
+    wifi to ethernet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/linux.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Linux</h1>
+                
+                <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">#</a></h2>
+<div class="toc">
+<ul>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#bash-scripting">Bash Scripting</a><ul>
+<li><a href="#awk">AWK</a></li>
+<li><a href="#includesourceimport">include/source/import</a></li>
+<li><a href="#string-comparison">String Comparison</a><ul>
+<li><a href="#sub-string-comparison">Sub-String Comparison</a></li>
+</ul>
+</li>
+<li><a href="#if-elif-else-fi">If, elif, else, fi</a></li>
+<li><a href="#switch-case">Switch Case</a></li>
+</ul>
+</li>
+<li><a href="#unix-commands">UNIX Commands</a><ul>
+<li><a href="#mv-all-filesdir-to-a-subdir">mv all files/dir to a subdir</a></li>
+<li><a href="#get-system-informations">Get System Informations</a></li>
+<li><a href="#set-deafult-shell">Set deafult shell</a></li>
+<li><a href="#xclip">xclip</a></li>
+<li><a href="#ls-prefixed-commands">ls prefixed commands</a></li>
+<li><a href="#find">find</a></li>
+<li><a href="#set-hostname">Set hostname</a><ul>
+<li><a href="#1-at-etchosts">1. at /etc/hosts</a></li>
+<li><a href="#2-at-etchostname">2. at /etc/hostname</a></li>
+<li><a href="#3-then-tell-the-machine">3. then tell the machine</a></li>
+</ul>
+</li>
+<li><a href="#cpu-info">CPU Info</a></li>
+<li><a href="#cpu-temperature">CPU Temperature</a></li>
+<li><a href="#ip-related">IP Related</a></li>
+<li><a href="#ssh">ssh</a><ul>
+<li><a href="#in-case-of-aws-ec2-ssh">In case of AWS EC2 SSH</a></li>
+</ul>
+</li>
+<li><a href="#sftp">sftp</a></li>
+<li><a href="#sshfs">sshfs</a></li>
+<li><a href="#device-connected-to-the-network">Device connected to the Network</a></li>
+<li><a href="#dd-disk-dump-commands">dd (Disk Dump) commands</a><ul>
+<li><a href="#create-a-backup">Create a backup</a></li>
+<li><a href="#restore-a-backup">Restore a backup</a></li>
+<li><a href="#clone-a-hard-disk">Clone a hard disk</a></li>
+<li><a href="#transfer-a-disk-image">Transfer a disk image</a></li>
+<li><a href="#create-an-iso-image-of-a-cddvd">Create an iso image of a CD/DVD</a></li>
+<li><a href="#burn-an-iso-image-of-a-cddvd">Burn an iso image of a CD/DVD</a></li>
+<li><a href="#rescue-a-file-that-contains-bad-blocks">Rescue a file that contains bad blocks</a></li>
+<li><a href="#create-your-own-bootloader">Create your own bootloader</a></li>
+<li><a href="#create-a-backup-of-your-mbr">Create a backup of your MBR</a></li>
+<li><a href="#restore-a-backup-of-your-mbr">Restore a backup of your MBR</a></li>
+<li><a href="#mount-dd-image-of-and-entire-disk">Mount dd image of and entire disk</a></li>
+<li><a href="#when-the-hard-disk-has-errors">When the hard disk has errors</a></li>
+<li><a href="#network-clone">Network Clone</a></li>
+<li><a href="#network-speed-test">Network speed test</a></li>
+</ul>
+</li>
+<li><a href="#links">Links</a></li>
+<li><a href="#task-autorunautomation">Task Autorun/Automation</a><ul>
+<li><a href="#daemons">Daemons</a></li>
+<li><a href="#shells">Shells</a></li>
+<li><a href="#graphical">Graphical</a></li>
+<li><a href="#cron-jobs">Cron Jobs</a><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#operations">Operations</a></li>
+<li><a href="#type">Type</a></li>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#misc">misc</a></li>
+</ul>
+</li>
+<li><a href="#services">Services</a></li>
+<li><a href="#desktop-file">.desktop file</a></li>
+<li><a href="#using-etcrclocal">using /etc/rc.local</a></li>
+<li><a href="#using-etcinitd">using /etc/init.d</a></li>
+</ul>
+</li>
+<li><a href="#disk-related">Disk Related</a><ul>
+<li><a href="#fdisk">fdisk</a></li>
+<li><a href="#lsblk">lsblk</a></li>
+<li><a href="#blkid">blkid</a></li>
+<li><a href="#df">df</a></li>
+<li><a href="#du">du</a></li>
+</ul>
+</li>
+<li><a href="#grub">GRUB</a><ul>
+<li><a href="#edit-grub-configs">Edit grub configs</a></li>
+<li><a href="#grub-update">grub update</a></li>
+<li><a href="#reboot-into-other-os">Reboot into other OS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#problems-solutions">Problems &amp; Solutions</a><ul>
+<li><a href="#make-anaconda-python-default">Make Anaconda Python Default</a></li>
+<li><a href="#if-cinnamon-freezes">If cinnamon freezes</a></li>
+<li><a href="#sudo-unable-to-resolve-host-ray-connection-timed-out">sudo: unable to resolve host Ray: Connection timed out</a></li>
+<li><a href="#nemo-context-menu-open-in-terminal-not-working">nemo context menu "open in terminal" not working</a></li>
+<li><a href="#speedup-mouse-scroll">Speedup mouse scroll</a></li>
+</ul>
+</li>
+<li><a href="#utilities">Utilities</a></li>
+<li><a href="#multitouch-gesture">Multitouch Gesture</a><ul>
+<li><a href="#battery-monitor">Battery Monitor</a></li>
+<li><a href="#battery-optimization">Battery Optimization</a><ul>
+<li><a href="#sata-power-management">SATA Power Management</a></li>
+<li><a href="#powertop-by-intel-recommanded">PowerTop by Intel (Recommanded)</a></li>
+<li><a href="#tlp-emergency">TLP (Emergency)</a></li>
+</ul>
+</li>
+<li><a href="#mono">Mono</a><ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#verify">Verify</a></li>
+</ul>
+</li>
+<li><a href="#thinkpad-touchpad-middle-button">Thinkpad Touchpad Middle Button</a><ul>
+<li><a href="#install_1">Install</a></li>
+<li><a href="#config">Config</a></li>
+</ul>
+</li>
+<li><a href="#finger-print-reader">Finger Print Reader</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+<li><a href="#zsh">ZSH</a><ul>
+<li><a href="#oh-my-zsh">oh-my-zsh</a></li>
+</ul>
+</li>
+<li><a href="#vim">VIM</a><ul>
+<li><a href="#vundle">Vundle</a><ul>
+<li><a href="#using-vundle">Using Vundle</a></li>
+</ul>
+</li>
+<li><a href="#vim-as-python-ide">VIM as Python IDE</a></li>
+</ul>
+</li>
+<li><a href="#tmux">Tmux</a><ul>
+<li><a href="#tmux-package-manager">Tmux Package Manager</a></li>
+<li><a href="#tmux-plugins">Tmux Plugins:</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#load-bashrc-with-tmux">Load .bashrc with tmux</a></li>
+</ul>
+</li>
+<li><a href="#keyboard-custom-shortcuts-bindings">KeyBoard Custom Shortcuts Bindings</a><ul>
+<li><a href="#emulate-right-click-from-keyboard">Emulate right click from keyboard</a></li>
+</ul>
+</li>
+<li><a href="#backup-restore-cinnamon-settings">Backup &amp; Restore Cinnamon settings</a></li>
+</ul>
+</li>
+<li><a href="#raspberry-pi">Raspberry Pi</a><ul>
+<li><a href="#os">OS</a><ul>
+<li><a href="#raspbian-with-rpd-desktop">Raspbian with RPD Desktop</a></li>
+<li><a href="#raspbian-lite-without-gui">Raspbian Lite (without GUI)</a><ul>
+<li><a href="#install-desktop-for-lite">Install Desktop for Lite</a></li>
+<li><a href="#enable-ssh-enter-ssidwifi-details-without-keyboard">Enable ssh &amp; enter SSID/WiFi details without keyboard</a></li>
+</ul>
+</li>
+<li><a href="#ubuntu-coresnap">Ubuntu Core/Snap</a></li>
+<li><a href="#windows-iot">Windows IoT</a></li>
+</ul>
+</li>
+<li><a href="#display">Display</a><ul>
+<li><a href="#touch-screeen-config">Touch Screeen Config</a></li>
+</ul>
+</li>
+<li><a href="#backup-image-from-burnt-image">Backup Image from Burnt Image</a><ul>
+<li><a href="#on-a-different-linux-pc-using-usb">On a different linux PC using USB.</a></li>
+<li><a href="#in-raspberry-itself-using-rsync">In Raspberry Itself using rsync</a></li>
+</ul>
+</li>
+<li><a href="#network-drive-mount-sshfs">Network Drive Mount (sshfs)</a></li>
+<li><a href="#remote-audio">Remote Audio</a><ul>
+<li><a href="#bluetooth">bluetooth</a><ul>
+<li><a href="#way-1">Way 1</a></li>
+<li><a href="#way-2">Way 2</a></li>
+</ul>
+</li>
+<li><a href="#wifi">wifi</a></li>
+</ul>
+</li>
+<li><a href="#enable-ssh-from-card">enable ssh from card</a></li>
+<li><a href="#set-wifissid-from-card">set wifi/ssid  from card</a></li>
+<li><a href="#wifi-to-ethernet">wifi to ethernet</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="bash-scripting">Bash Scripting<a class="headerlink" href="#bash-scripting" title="Permanent link">#</a></h2>
+<h3 id="awk">AWK<a class="headerlink" href="#awk" title="Permanent link">#</a></h3>
+<p>https://www.gnu.org/software/gawk/manual/gawk.html</p>
+<h3 id="includesourceimport">include/source/import<a class="headerlink" href="#includesourceimport" title="Permanent link">#</a></h3>
+<p>https://gist.github.com/toransahu/0a816af786b7d0b98ab1e7079bf0426f</p>
+<h3 id="string-comparison">String Comparison<a class="headerlink" href="#string-comparison" title="Permanent link">#</a></h3>
+<ul>
+<li>use <code>=</code> or <code>==</code></li>
+<li>keep proper square spacing between operators &amp; brackets (most imp)</li>
+<li>use <code>double quote</code> for strings and variables</li>
+<li>sometime we need to use brackets to access env variables</li>
+</ul>
+<p>https://gist.github.com/toransahu/4fd3abc369bb5c8a1ee424af07cb1563</p>
+<h4 id="sub-string-comparison">Sub-String Comparison<a class="headerlink" href="#sub-string-comparison" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">string</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">substr</span><span class="o">=</span><span class="s2">&quot;mint&quot;</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="si">${</span><span class="nv">string</span><span class="p">##*</span><span class="nv">$substr</span><span class="p">*</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</code></pre></div>
+</td></tr></table>
+<p>https://gist.github.com/toransahu/f812260a37947a299c5c26adddfa4cfa</p>
+<h3 id="if-elif-else-fi">If, elif, else, fi<a class="headerlink" href="#if-elif-else-fi" title="Permanent link">#</a></h3>
+<ul>
+<li>Source: https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php</li>
+</ul>
+<h3 id="switch-case">Switch Case<a class="headerlink" href="#switch-case" title="Permanent link">#</a></h3>
+<p>https://www.shellscript.sh/case.html</p>
+<hr />
+<h2 id="unix-commands">UNIX Commands<a class="headerlink" href="#unix-commands" title="Permanent link">#</a></h2>
+<h3 id="mv-all-filesdir-to-a-subdir">mv all files/dir to a subdir<a class="headerlink" href="#mv-all-filesdir-to-a-subdir" title="Permanent link">#</a></h3>
+<p>BASH</p>
+<ul>
+<li>https://askubuntu.com/questions/91740/how-to-move-all-files-in-current-folder-to-subfolder</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
+<p>TODO: zsh</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>setopt extended_glob
+mv 
+</code></pre></div>
+</td></tr></table>
+<h3 id="get-system-informations"><a href="https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/">Get System Informations</a><a class="headerlink" href="#get-system-informations" title="Permanent link">#</a></h3>
+<h3 id="set-deafult-shell">Set deafult shell<a class="headerlink" href="#set-deafult-shell" title="Permanent link">#</a></h3>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo chsh -s /bin/zsh
+</code></pre></div>
+</td></tr></table>
+then logout</p>
+<p><a href="https://github.com/toransahu/linux-tweaks/tree/master/guides">In Github:linux-tweaks/guides</a></p>
+<h3 id="xclip">xclip<a class="headerlink" href="#xclip" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>xclip -sel clip &lt;file&gt;
+</code></pre></div>
+</td></tr></table>
+<h3 id="ls-prefixed-commands">ls prefixed commands<a class="headerlink" href="#ls-prefixed-commands" title="Permanent link">#</a></h3>
+<p>ls           lsA          lsblk        lscpu        lshw         lsipc        lslogins     lsof         lspcmcia     lss16toppm   lsusb      <br />
+lsa          lsattr       lsb_release  lsdiff       lsinitramfs  lslocks      lsmod        lspci        lspgpot      lss3   </p>
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>find &lt;dir&gt; &lt;type&gt; &lt;test&gt; &lt;expression&gt; &lt;action&gt;
+
+find /Ray/ -type f -name <span class="s2">&quot;*.pyc&quot;</span> -delete
+</code></pre></div>
+</td></tr></table>
+<h3 id="set-hostname">Set hostname<a class="headerlink" href="#set-hostname" title="Permanent link">#</a></h3>
+<h4 id="1-at-etchosts">1. at /etc/hosts<a class="headerlink" href="#1-at-etchosts" title="Permanent link">#</a></h4>
+<p><code>127.0.1.1    mint-ThinkPad-L440</code></p>
+<h4 id="2-at-etchostname">2. at /etc/hostname<a class="headerlink" href="#2-at-etchostname" title="Permanent link">#</a></h4>
+<p>write <code>mint-ThinkPad-L440</code></p>
+<h4 id="3-then-tell-the-machine">3. then tell the machine<a class="headerlink" href="#3-then-tell-the-machine" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo hostname mint-ThinkPad-L440
+</code></pre></div>
+</td></tr></table>
+<h3 id="cpu-info">CPU Info<a class="headerlink" href="#cpu-info" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat flags /proc/cpuinfo
+</code></pre></div>
+</td></tr></table>
+<h3 id="cpu-temperature">CPU Temperature<a class="headerlink" href="#cpu-temperature" title="Permanent link">#</a></h3>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get install lm-sensors 
+</code></pre></div>
+</td></tr></table>
+After installation type the following in terminal<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo sensors-detect
+</code></pre></div>
+</td></tr></table>
+You may also need to run
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo service kmod start
+</code></pre></div>
+</td></tr></table>
+It will ask you few questions. Answer Yes for all of them. Finally to get your CPU temperature type sensors in your terminal.<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sensors
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="ip-related">IP Related<a class="headerlink" href="#ip-related" title="Permanent link">#</a></h3>
+<ul>
+<li>ifconfig</li>
+<li>ip addr</li>
+<li>hostname -I</li>
+</ul>
+<h3 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh pi@192.168.1.108
+</code></pre></div>
+</td></tr></table>
+<h4 id="in-case-of-aws-ec2-ssh">In case of AWS EC2 SSH<a class="headerlink" href="#in-case-of-aws-ec2-ssh" title="Permanent link">#</a></h4>
+<p>Connection freezes frequently on inactivity
+- source https://www.quora.com/Why-does-ssh-to-amazon-ec2-instance-gets-frozen-after-sometime
+- Solution
+    - sudo vim /etc/ssh/ssh_config
+        - add TCPKeepAlive yes
+        - add ServerAliveInterval 5  where 5 is minute
+    - sudo service sshd restart</p>
+<h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">#</a></h3>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sftp pi@192.168.1.108
+
+
+put local_file
+
+
+
+get remote_file
+</code></pre></div>
+</td></tr></table>
+files will upload/download @ home</p>
+<h3 id="sshfs">sshfs<a class="headerlink" href="#sshfs" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo mkdir /mnt/pi
+
+
+sudo sshfs -o allow_other  pi@192.168.1.108:/ /mnt/pi/
+</code></pre></div>
+</td></tr></table>
+<h3 id="device-connected-to-the-network">Device connected to the Network<a class="headerlink" href="#device-connected-to-the-network" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>nmap -sP <span class="m">192</span>.168.1.0/24
+</code></pre></div>
+</td></tr></table>
+<h3 id="dd-disk-dump-commands">dd (Disk Dump) commands<a class="headerlink" href="#dd-disk-dump-commands" title="Permanent link">#</a></h3>
+<h4 id="create-a-backup">Create a backup<a class="headerlink" href="#create-a-backup" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/sda of=/opt/backup_sda.img</code></p>
+<h4 id="restore-a-backup">Restore a backup<a class="headerlink" href="#restore-a-backup" title="Permanent link">#</a></h4>
+<p><code>dd if=/opt/backup_sda.img of=/dev/sda</code></p>
+<h4 id="clone-a-hard-disk">Clone a hard disk<a class="headerlink" href="#clone-a-hard-disk" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/sdb of=/dev/sdc</code></p>
+<h4 id="transfer-a-disk-image">Transfer a disk image<a class="headerlink" href="#transfer-a-disk-image" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/sdb | ssh root@target "(cat &gt; backup.img)"</code></p>
+<h4 id="create-an-iso-image-of-a-cddvd">Create an iso image of a CD/DVD<a class="headerlink" href="#create-an-iso-image-of-a-cddvd" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/cdrom of=cdimage.iso</code></p>
+<h4 id="burn-an-iso-image-of-a-cddvd">Burn an iso image of a CD/DVD<a class="headerlink" href="#burn-an-iso-image-of-a-cddvd" title="Permanent link">#</a></h4>
+<p><code>dd if=cdimage.iso of=/dev/cdrom obs=32k seek=0</code></p>
+<h4 id="rescue-a-file-that-contains-bad-blocks">Rescue a file that contains bad blocks<a class="headerlink" href="#rescue-a-file-that-contains-bad-blocks" title="Permanent link">#</a></h4>
+<p><code>dd if=movie.avi of=rescued_movie.avi conv=noerror</code></p>
+<h4 id="create-your-own-bootloader">Create your own bootloader<a class="headerlink" href="#create-your-own-bootloader" title="Permanent link">#</a></h4>
+<p><code>dd conv=notrunc if=bootloader of=qemu.img</code></p>
+<h4 id="create-a-backup-of-your-mbr">Create a backup of your MBR<a class="headerlink" href="#create-a-backup-of-your-mbr" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/sdb of=mbr_backup bs=512 count=1</code></p>
+<h4 id="restore-a-backup-of-your-mbr">Restore a backup of your MBR<a class="headerlink" href="#restore-a-backup-of-your-mbr" title="Permanent link">#</a></h4>
+<p><code>dd if=mbr_backup of=/dev/sdb bs=512 count=1</code></p>
+<h4 id="mount-dd-image-of-and-entire-disk">Mount dd image of and entire disk<a class="headerlink" href="#mount-dd-image-of-and-entire-disk" title="Permanent link">#</a></h4>
+<p><strong>You must use the start number of the partition.</strong>
+<code>fdisk -u -l disk_image</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Disk /mnt/storage/disk_image: <span class="m">0</span> MB, <span class="m">0</span> bytes255 heads, <span class="m">63</span> sectors/track, <span class="m">0</span> cylinders, total <span class="m">0</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytesDisk identifier: 0x41172ba5
+
+Device                      Boot    Start    End       Blocks   Id  System
+/mnt/storage/disk_image1            <span class="m">63</span>       <span class="m">64259</span>     <span class="m">32098</span>+   de  Dell Utility
+/mnt/storage/disk_image2    *       <span class="m">64260</span>    <span class="m">78108029</span>  <span class="m">39021885</span> <span class="m">7</span>   HPFS/NTFS
+
+Partition <span class="m">2</span> has different physical/logical endings:phys<span class="o">=(</span><span class="m">1023</span>, <span class="m">254</span>, <span class="m">63</span><span class="o">)</span> <span class="nv">logical</span><span class="o">=(</span><span class="m">4861</span>, <span class="m">254</span>, <span class="m">63</span><span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Then take the start of the partition that you want to edit, <code>64260</code> (disk_image2) in this case, and multiply it by <code>512</code></p>
+<p>Ex: <code>512 * 64260 = 32901120</code></p>
+<p><code>mount -o loop,offset=32901120 -t auto /mnt/storage/disk_image /mnt/image_partition_2</code></p>
+<h4 id="when-the-hard-disk-has-errors">When the hard disk has errors<a class="headerlink" href="#when-the-hard-disk-has-errors" title="Permanent link">#</a></h4>
+<p><strong>Get the dd_rescue tool</strong>
+<code>dd_rescue /dev/sdb /opt/backup_sdb.img</code></p>
+<h4 id="network-clone">Network Clone<a class="headerlink" href="#network-clone" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>Destination:
+<code>nc -l -p 2222 | dd of=/dev/sda bs=16M</code></p>
+</li>
+<li>
+<p>Source:
+<code>dd if=/dev/sda bs=16M | nc Destination 2222</code></p>
+</li>
+</ul>
+<h4 id="network-speed-test">Network speed test<a class="headerlink" href="#network-speed-test" title="Permanent link">#</a></h4>
+<p><code>dd if=/dev/zero bs=1M count=100 | ssh user@machine 'cat &gt; /dev/null'</code></p>
+<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Symbolic link
+ <code>ln -s original link</code></p>
+</li>
+<li>
+<p>Hard Link
+ <code>ln original link</code></p>
+</li>
+</ul>
+<h3 id="task-autorunautomation">Task Autorun/Automation<a class="headerlink" href="#task-autorunautomation" title="Permanent link">#</a></h3>
+<ul>
+<li>src1 : https://developer.toradex.com/knowledge-base/how-to-autorun-application-at-the-start-up-in-linux</li>
+</ul>
+<h4 id="daemons">Daemons<a class="headerlink" href="#daemons" title="Permanent link">#</a></h4>
+<h4 id="shells">Shells<a class="headerlink" href="#shells" title="Permanent link">#</a></h4>
+<h4 id="graphical">Graphical<a class="headerlink" href="#graphical" title="Permanent link">#</a></h4>
+<h4 id="cron-jobs">Cron Jobs<a class="headerlink" href="#cron-jobs" title="Permanent link">#</a></h4>
+<h5 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h5>
+<p>The cron service (daemon) runs in the background and constantly checks the /etc/crontab file, and /etc/cron.*/ directories. It also checks the /var/spool/cron/ directory.</p>
+<p><a href="https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">Source</a></p>
+<ul>
+<li>create cron job<ul>
+<li><code>crontab -e</code> and edit the opened file<ul>
+<li>add your task (in cron format)</li>
+</ul>
+</li>
+<li>or, create a new cron job under <code>/etc/cron.*/</code><ul>
+<li>add your task (in cron format)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">SHELL</span><span class="o">=</span>/bin/bash
+<span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+<span class="nv">MAILTO</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> /path/to/command arg1 arg2
+<span class="c1"># or  </span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> /root/backup.sh<span class="sb">`</span>  
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>
+<p>to automate tasks based on time like</p>
+<ul>
+<li>on boot: @reboot</li>
+<li>hourly: @hourly or “0 * <em> * </em>”</li>
+<li>daily : @daily or @midnight or “0 0 * <em> </em>”</li>
+<li>weekly: @weekly or  “0 0 * * 0”</li>
+<li>monthly: @monthly or “0 0 1 * *”</li>
+<li>
+<p>yearly: @yearly or @annually or  “0 0 1 1 *”</p>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>command to be executed  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>| | | | |<br />
+| | | | ----- Day of week (0 - 7) (Sunday=0 or 7)<br />
+| | | ------- Month (1 - 12)<br />
+| | --------- Day of month (1 - 31)<br />
+| ----------- Hour (0 - 23)<br />
+------------- Minute (0 - 59)  </p>
+</li>
+</ul>
+<h5 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">#</a></h5>
+<ul>
+<li>start: <code>sudo service cron start</code></li>
+<li>stop: <code>sudo service cron stop</code></li>
+<li>restart: <code>sudo service cron restart</code></li>
+<li>status: <code>sudo service cron status</code></li>
+<li>list: <code>crontab -l</code> or <code>crontab -u USERNAME -l</code></li>
+<li>delete all: <code>crontab -r</code> or <code>crontab -u USERNAME -r</code></li>
+</ul>
+<h5 id="type">Type<a class="headerlink" href="#type" title="Permanent link">#</a></h5>
+<ul>
+<li>System Level<ul>
+<li>need to define USERNAME</li>
+<li><code>1 2 3 4 5 USERNAME /path/to/command arg1 arg2</code></li>
+</ul>
+</li>
+<li>User Level<ul>
+<li>by default takes USERNAME of creator</li>
+<li><code>1 2 3 4 5 /path/to/command arg1 arg2</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">#</a></h5>
+<ul>
+<li>asterisk (*)<ul>
+<li>every [minute/hour/day/month/day of week]</li>
+</ul>
+</li>
+<li>comma (,)<ul>
+<li>list of values</li>
+<li>like, on this days: 1,2,3,4,5</li>
+</ul>
+</li>
+<li>dash (-)<ul>
+<li>range</li>
+<li>like, on this days: 1-5</li>
+</ul>
+</li>
+<li>seperator (/)<ul>
+<li>stepper</li>
+<li>like, */2 in hour field means: every 2 hours</li>
+</ul>
+</li>
+</ul>
+<h5 id="misc">misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h5>
+<ul>
+<li>print names of all valid files: <code>run-parts --list /etc/cron.d</code></li>
+<li>print script names which would run, but don't run them: <code>run-parts --test /etc/cron.d</code></li>
+</ul>
+<h4 id="services">Services<a class="headerlink" href="#services" title="Permanent link">#</a></h4>
+<h4 id="desktop-file">.desktop file<a class="headerlink" href="#desktop-file" title="Permanent link">#</a></h4>
+<ul>
+<li>Works on boot</li>
+<li>put <name>.desktop file with some script in <code>~/.config/autostart/</code></li>
+<li>write script like
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Exec</span><span class="o">=</span>sh /home/toran/Applications/linux_tweaks/LowBatterySound/LowBattery.sh
+X-GNOME-Autostart-enabled<span class="o">=</span><span class="nb">false</span>
+<span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">Hidden</span><span class="o">=</span><span class="nb">false</span>
+Name<span class="o">[</span>en_IN<span class="o">]=</span>Low Battery Warning
+Comment<span class="o">[</span>en_IN<span class="o">]=</span>Warning sound on battery less than <span class="m">15</span>%
+X-GNOME-Autostart-Delay<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h4 id="using-etcrclocal">using /etc/rc.local<a class="headerlink" href="#using-etcrclocal" title="Permanent link">#</a></h4>
+<h4 id="using-etcinitd">using /etc/init.d<a class="headerlink" href="#using-etcinitd" title="Permanent link">#</a></h4>
+<h3 id="disk-related">Disk Related<a class="headerlink" href="#disk-related" title="Permanent link">#</a></h3>
+<h4 id="fdisk">fdisk<a class="headerlink" href="#fdisk" title="Permanent link">#</a></h4>
+<ul>
+<li>manupulate disk partition table</li>
+<li>list devices:  <code>sudo fdisk -l</code></li>
+</ul>
+<h4 id="lsblk">lsblk<a class="headerlink" href="#lsblk" title="Permanent link">#</a></h4>
+<ul>
+<li>lists block devices</li>
+</ul>
+<h4 id="blkid">blkid<a class="headerlink" href="#blkid" title="Permanent link">#</a></h4>
+<ul>
+<li>locate/ print block device attributes</li>
+</ul>
+<h4 id="df">df<a class="headerlink" href="#df" title="Permanent link">#</a></h4>
+<ul>
+<li>reports filesystem disk space usage</li>
+</ul>
+<h4 id="du">du<a class="headerlink" href="#du" title="Permanent link">#</a></h4>
+<ul>
+<li>estimate file space usage<ul>
+<li>Summarize disk usage of the set of FILEs, recursively for directories.</li>
+</ul>
+</li>
+</ul>
+<h3 id="grub">GRUB<a class="headerlink" href="#grub" title="Permanent link">#</a></h3>
+<h4 id="edit-grub-configs">Edit <code>grub</code> configs<a class="headerlink" href="#edit-grub-configs" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>vim /etc/default/grub
+</code></pre></div>
+</td></tr></table>
+<h4 id="grub-update"><code>grub</code> update<a class="headerlink" href="#grub-update" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo update-grub
+</code></pre></div>
+</td></tr></table>
+<h4 id="reboot-into-other-os">Reboot into other OS<a class="headerlink" href="#reboot-into-other-os" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo grub-reboot 2
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="problems-solutions">Problems &amp; Solutions<a class="headerlink" href="#problems-solutions" title="Permanent link">#</a></h2>
+<h3 id="make-anaconda-python-default">Make Anaconda Python Default<a class="headerlink" href="#make-anaconda-python-default" title="Permanent link">#</a></h3>
+<ul>
+<li>put following in <code>.bashrc</code> or <code>.zshrc</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code># added by Anaconda3 installer
+export PATH=&quot;/home/toran/anaconda3/bin:$PATH&quot;
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h3 id="if-cinnamon-freezes">If cinnamon freezes<a class="headerlink" href="#if-cinnamon-freezes" title="Permanent link">#</a></h3>
+<ul>
+<li>go to <code>tty0</code> or <code>tty1</code> using <code>Alt</code> + <code>Ctrl</code> + <code>F1</code> or <code>F2</code></li>
+<li>login</li>
+<li>type <code>w</code> and <code>enter</code></li>
+<li>look under <code>FROM</code> column, where row is related to <code>cinnamon session</code></li>
+<li>note the value for that cell, in my case its <code>:0</code> (with colon)</li>
+<li>note type <code>export DISPLAY=:0 cinnamon &amp;</code> and <code>enter</code></li>
+</ul>
+<h3 id="sudo-unable-to-resolve-host-ray-connection-timed-out">sudo: unable to resolve host Ray: Connection timed out<a class="headerlink" href="#sudo-unable-to-resolve-host-ray-connection-timed-out" title="Permanent link">#</a></h3>
+<ul>
+<li>Two things to check (assuming your machine is called my-machine, you can change this as appropriate):</li>
+<li>That the /etc/hostname file contains just the name of the machine.</li>
+<li>That /etc/hosts has an entry for localhost. It should have something like:</li>
+</ul>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="m">127</span>.0.0.1    localhost.localdomain localhost
+ <span class="m">127</span>.0.1.1    my-machine
+</code></pre></div>
+</td></tr></table>
+- If either of these files aren't correct (since you can't sudo), you may have to reboot the machine into recovery mode and make the modifications, then reboot to your usual environment.</p>
+<h3 id="nemo-context-menu-open-in-terminal-not-working">nemo context menu "open in terminal" not working<a class="headerlink" href="#nemo-context-menu-open-in-terminal-not-working" title="Permanent link">#</a></h3>
+<p>source: https://forums.linuxmint.com/viewtopic.php?t=204933</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> org.cinnamon.desktop.default-applications.terminal <span class="nb">exec</span> mate-terminal
+</code></pre></div>
+</td></tr></table>
+<h3 id="speedup-mouse-scroll">Speedup mouse scroll<a class="headerlink" href="#speedup-mouse-scroll" title="Permanent link">#</a></h3>
+<p>Source: https://forums.linuxmint.com/viewtopic.php?t=221526
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install imwheel
+</code></pre></div>
+</td></tr></table>
+then use <code>mousewheel.sh</code> to adjust the speed.</p>
+<hr />
+<h2 id="utilities">Utilities<a class="headerlink" href="#utilities" title="Permanent link">#</a></h2>
+<h2 id="multitouch-gesture">Multitouch Gesture<a class="headerlink" href="#multitouch-gesture" title="Permanent link">#</a></h2>
+<ul>
+<li>src: https://github.com/toransahu/libinput-gestures - by bulletmark</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo gpasswd -a toran input
+sudo apt-get install xdotool wmctrl libinput-tools
+git clone http://github.com/toransahu/libinput-gestures
+cd libinput-gestures
+sudo ./libinput-gestures-setup install
+
+cd ~/libinput-gestures
+
+#edit the created libinput-gestures.conf:
+
+vim libinput-gestures.conf
+
+#set following:
+
+gesture swipe down  xdotool key ctrl+alt+Up
+gesture swipe up    xdotool key ctrl+alt+Down
+gesture swipe right xdotool key ctrl+super+Left
+gesture swipe left  xdotool key ctrl+super+Right
+
+sudo make install (or sudo ./libinput-gestures-setup install)
+
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+</code></pre></div>
+</td></tr></table>
+<h3 id="battery-monitor">Battery Monitor<a class="headerlink" href="#battery-monitor" title="Permanent link">#</a></h3>
+<ul>
+<li>Source: http://battery-monitor.maateen.me/</li>
+</ul>
+<h3 id="battery-optimization">Battery Optimization<a class="headerlink" href="#battery-optimization" title="Permanent link">#</a></h3>
+<h4 id="sata-power-management">SATA Power Management<a class="headerlink" href="#sata-power-management" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>source: https://askubuntu.com/questions/809127/how-to-turn-off-one-of-sata-hdds-installed-in-the-computer-to-save-power</p>
+</li>
+<li>
+<p>Using  hdparm utility.</p>
+<ul>
+<li>It allows you to control your hard drives' power settings, apart from benchmarking and other stuff.</li>
+</ul>
+</li>
+<li>
+<p>put the disk into standby mode</p>
+<ul>
+<li>whenever you access the disk, it should automatically wake up and work back again
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>hdparm -y /dev/sdX
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p>deeper resting mode</p>
+<ul>
+<li>may need to restart your computer in order to make the HDD work again
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>hdparm -Y /dev/sdX
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+</ul>
+<h4 id="powertop-by-intel-recommanded">PowerTop by Intel (Recommanded)<a class="headerlink" href="#powertop-by-intel-recommanded" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install powertop
+sudo powertop --auto-tune
+sudo powertop --calibrate
+</code></pre></div>
+</td></tr></table>
+<h4 id="tlp-emergency">TLP (Emergency)<a class="headerlink" href="#tlp-emergency" title="Permanent link">#</a></h4>
+<ul>
+<li>Source: https://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install tlp
+
+#restart
+
+#or
+sudo tlp start 
+</code></pre></div>
+</td></tr></table>
+<h3 id="mono">Mono<a class="headerlink" href="#mono" title="Permanent link">#</a></h3>
+<h4 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h4>
+<p>https://www.mono-project.com/download/stable/#download-lin</p>
+<h4 id="verify">Verify<a class="headerlink" href="#verify" title="Permanent link">#</a></h4>
+<p>Source: https://www.mono-project.com/docs/getting-started/mono-basics/
+Scripts: </p>
+<h3 id="thinkpad-touchpad-middle-button">Thinkpad Touchpad Middle Button<a class="headerlink" href="#thinkpad-touchpad-middle-button" title="Permanent link">#</a></h3>
+<h4 id="install_1">Install<a class="headerlink" href="#install_1" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install xserver-xorg-input-libinput
+</code></pre></div>
+</td></tr></table>
+<h4 id="config">Config<a class="headerlink" href="#config" title="Permanent link">#</a></h4>
+<ul>
+<li>restart</li>
+<li>alter touchpad setting and choose <code>use multiple fingers</code> in click actions</li>
+</ul>
+<h3 id="finger-print-reader">Finger Print Reader<a class="headerlink" href="#finger-print-reader" title="Permanent link">#</a></h3>
+<ul>
+<li>src: https://launchpad.net/~fingerprint/+archive/ubuntu/fingerprint-gui</li>
+</ul>
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>First of all, if you have installed Fingerprint GUI manually before, get rid of it completely. Remove all binaries, shared libraries, any other files and undo all the changes you have made to your system config files (especially to files under /etc/pam.d/).</p>
+</li>
+<li>
+<p>Add this PPA to your sources:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    sudo add-apt-repository ppa:fingerprint/fingerprint-gui
+    sudo apt-get update
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Install the packages:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    sudo apt-get install libbsapi policykit-1-fingerprint-gui fingerprint-gui
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Log out of your session and log back in (we need the new session defaults to be picked up).</p>
+</li>
+</ol>
+<h4 id="uninstallation">Uninstallation<a class="headerlink" href="#uninstallation" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    sudo apt-get install policykit-1-gnome
+    sudo apt-get remove fingerprint-gui
+</code></pre></div>
+</td></tr></table>
+<h3 id="zsh">ZSH<a class="headerlink" href="#zsh" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install zsh
+</code></pre></div>
+</td></tr></table>
+<h4 id="oh-my-zsh">oh-my-zsh<a class="headerlink" href="#oh-my-zsh" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1">#OR</span>
+
+sh -c <span class="s2">&quot;</span><span class="k">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="vim">VIM<a class="headerlink" href="#vim" title="Permanent link">#</a></h3>
+<h4 id="vundle">Vundle<a class="headerlink" href="#vundle" title="Permanent link">#</a></h4>
+<ul>
+<li>VIM plugin manager (VIM + Bundle)</li>
+<li>install from : https://github.com/VundleVim/Vundle.vim</li>
+<li>i.e. git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</li>
+</ul>
+<h5 id="using-vundle">Using Vundle<a class="headerlink" href="#using-vundle" title="Permanent link">#</a></h5>
+<ul>
+<li>Mention bundle names (as a github repo) in .vimrc file</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Plugin <span class="s1">&#39;VundleVim/Vundle.vim&#39;</span>
+Plugin <span class="s1">&#39;morhetz/gruvbox&#39;</span>
+Plugin <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
+Plugin <span class="s1">&#39;itchyny/vim-gitbranch&#39;</span>
+Plugin <span class="s1">&#39;scrooloose/nerdtree.git&#39;</span>
+Plugin <span class="s1">&#39;aperezdc/vim-template&#39;</span>
+Plugin <span class="s1">&#39;davidhalter/jedi-vim&#39;</span>
+Plugin <span class="s1">&#39;editorconfig/editorconfig-vim&#39;</span>
+Plugin <span class="s1">&#39;tpope/vim-abolish&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Install using command</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>:PluginInstall
+</code></pre></div>
+</td></tr></table>
+<h4 id="vim-as-python-ide">VIM as Python IDE<a class="headerlink" href="#vim-as-python-ide" title="Permanent link">#</a></h4>
+<p>Source: http://chrisstrelioff.ws/sandbox/2016/09/21/vim_and_vundle_on_ubuntu_16_04.html</p>
+<ul>
+<li>
+<p>~/.vimrc &amp; ~/.editorconfig config files @ https://gist.github.com/toransahu/66c69903649f3d417d8ba4dc78324f60</p>
+</li>
+<li>
+<p>cheat sheet: https://gist.github.com/toransahu/4a921c6fb73274479dbdfbcfe6dda483</p>
+</li>
+</ul>
+<h3 id="tmux">Tmux<a class="headerlink" href="#tmux" title="Permanent link">#</a></h3>
+<h4 id="tmux-package-manager">Tmux Package Manager<a class="headerlink" href="#tmux-package-manager" title="Permanent link">#</a></h4>
+<p>Source: https://github.com/tmux-plugins/tpm</p>
+<p>~/.tmux.conf : https://gist.github.com/toransahu/53a523d973a212f52ce53474417e01b1</p>
+<h4 id="tmux-plugins">Tmux Plugins:<a class="headerlink" href="#tmux-plugins" title="Permanent link">#</a></h4>
+<ul>
+<li>Sidebar: https://tmuxcheatsheet.com/tmux-plugins-tools/?full_name=tmux-plugins%2Ftmux-sidebar</li>
+</ul>
+<h4 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>abbr.</p>
+<ul>
+<li>prefix: <code>ctrl + b</code></li>
+</ul>
+</li>
+<li>
+<p>help: <code>ctrl + b ?</code></p>
+</li>
+<li>
+<p>select, copy, paste within tmux</p>
+<ul>
+<li>enter scroll mode: <code>ctrl + b [</code></li>
+<li>enter select mode: <code>ctrl + space</code></li>
+<li>move cursor to select text</li>
+<li>copy to tmux buffer: <code>alt + w</code></li>
+<li>copy to system clip: <code>ctrl + b - y</code></li>
+<li>paste to any tmux: <code>ctrl + b ]</code></li>
+</ul>
+</li>
+<li>
+<p>create/split pane    </p>
+<ul>
+<li>vertical split: <code>prefix %</code></li>
+<li>hor split: <code>prefix "</code></li>
+</ul>
+</li>
+<li>
+<p>convert a pane to window: <code>prefix !</code></p>
+</li>
+<li>
+<p>move to pane: <code>prefix arrows</code></p>
+</li>
+<li>
+<p>close current pane: <code>prefix x</code></p>
+</li>
+</ul>
+<h4 id="load-bashrc-with-tmux">Load .bashrc with tmux<a class="headerlink" href="#load-bashrc-with-tmux" title="Permanent link">#</a></h4>
+<p>By default tmux runs a login shell. When bash is invoked as an interactive login shell, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile. So you have to put <code>source ~/.bashrc</code> in one of those files.</p>
+<p>Another way to solve this issue is to put in your file .tmux.conf the line:</p>
+<p><code>set-option -g default-shell "/bin/bash"</code></p>
+<h3 id="keyboard-custom-shortcuts-bindings">KeyBoard Custom Shortcuts Bindings<a class="headerlink" href="#keyboard-custom-shortcuts-bindings" title="Permanent link">#</a></h3>
+<h4 id="emulate-right-click-from-keyboard">Emulate right click from keyboard<a class="headerlink" href="#emulate-right-click-from-keyboard" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>install xdotool
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install xdotool
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>bind keyboard shortcut with command: <code>xdotool click 3</code></p>
+</li>
+</ul>
+<h3 id="backup-restore-cinnamon-settings">Backup &amp; Restore Cinnamon settings<a class="headerlink" href="#backup-restore-cinnamon-settings" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install dconf-cli
+
+<span class="c1">#backup</span>
+dconf dump /org/cinnamon/ &gt; cinnamon_backup
+
+<span class="c1">#restore</span>
+dconf load /org/cinnamon/ &lt; cinnamon_backup
+
+
+<span class="c1">#reset to default</span>
+dconf reset -f /org/cinnamon/
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="raspberry-pi">Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permanent link">#</a></h2>
+<h3 id="os">OS<a class="headerlink" href="#os" title="Permanent link">#</a></h3>
+<h4 id="raspbian-with-rpd-desktop">Raspbian with RPD Desktop<a class="headerlink" href="#raspbian-with-rpd-desktop" title="Permanent link">#</a></h4>
+<ul>
+<li>prepare
+https://www.raspberrypi.org/forums/viewtopic.php?t=135316</li>
+</ul>
+<h4 id="raspbian-lite-without-gui">Raspbian Lite (without GUI)<a class="headerlink" href="#raspbian-lite-without-gui" title="Permanent link">#</a></h4>
+<h5 id="install-desktop-for-lite">Install Desktop for Lite<a class="headerlink" href="#install-desktop-for-lite" title="Permanent link">#</a></h5>
+<p>Source: https://www.raspberrypi.org/forums/viewtopic.php?t=133691</p>
+<h5 id="enable-ssh-enter-ssidwifi-details-without-keyboard">Enable ssh &amp; enter SSID/WiFi details without keyboard<a class="headerlink" href="#enable-ssh-enter-ssidwifi-details-without-keyboard" title="Permanent link">#</a></h5>
+<p>Source: https://medium.com/@danidudas/install-raspbian-jessie-lite-and-setup-wi-fi-without-access-to-command-line-or-using-the-network-97f065af722e</p>
+<h4 id="ubuntu-coresnap">Ubuntu Core/Snap<a class="headerlink" href="#ubuntu-coresnap" title="Permanent link">#</a></h4>
+<h4 id="windows-iot">Windows IoT<a class="headerlink" href="#windows-iot" title="Permanent link">#</a></h4>
+<h3 id="display">Display<a class="headerlink" href="#display" title="Permanent link">#</a></h3>
+<h4 id="touch-screeen-config">Touch Screeen Config<a class="headerlink" href="#touch-screeen-config" title="Permanent link">#</a></h4>
+<ul>
+<li>5 inch capacitive 800*480</li>
+</ul>
+<p><code>/boot/config.txt</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">framebuffer_width</span><span class="o">=</span><span class="m">800</span>
+<span class="nv">framebuffer_height</span><span class="o">=</span><span class="m">480</span>
+<span class="nv">hdmi_force_hotplug</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">hdmi_group</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">hdmi_mode</span><span class="o">=</span><span class="m">87</span>
+hdmi_cvt <span class="m">800</span> <span class="m">480</span> <span class="m">60</span> <span class="m">6</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="backup-image-from-burnt-image">Backup Image from Burnt Image<a class="headerlink" href="#backup-image-from-burnt-image" title="Permanent link">#</a></h3>
+<h4 id="on-a-different-linux-pc-using-usb">On a different linux PC using USB.<a class="headerlink" href="#on-a-different-linux-pc-using-usb" title="Permanent link">#</a></h4>
+<ul>
+<li>It won't work on the raspi!, it will get trapped in infinit loop</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#list disk</span>
+sudo fdisk -l
+
+<span class="c1">#backup SD card</span>
+sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>/dev/sdb <span class="p">|</span> gzip &gt; /home/your_username/image<span class="sb">`</span>date +%d%m%y<span class="sb">`</span>.gz
+
+<span class="c1">#restore the backup on SD card</span>
+sudo gzip -dc /home/your_username/image.gz <span class="p">|</span> dd <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">of</span><span class="o">=</span>/dev/sdb
+</code></pre></div>
+</td></tr></table>
+<h4 id="in-raspberry-itself-using-rsync">In Raspberry Itself using <code>rsync</code><a class="headerlink" href="#in-raspberry-itself-using-rsync" title="Permanent link">#</a></h4>
+<h3 id="network-drive-mount-sshfs">Network Drive Mount (sshfs)<a class="headerlink" href="#network-drive-mount-sshfs" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Install SSHFS</span>
+
+sudo apt-get install sshfs
+
+<span class="c1">#First, create a directory on your host computer:</span>
+
+mkdir pi
+
+<span class="c1">#Then mount the Raspberry Pi&#39;s filesystem to this location:</span>
+
+sudo sshfs -o allow_other pi@192.168.1.124:/ pi
+
+<span class="c1">#Now enter this directory as if it is a regular folder; you should be able to see and access the contents of the Raspberry Pi:</span>
+
+<span class="nb">cd</span> pi/
+ls
+</code></pre></div>
+</td></tr></table>
+<h3 id="remote-audio">Remote Audio<a class="headerlink" href="#remote-audio" title="Permanent link">#</a></h3>
+<h4 id="bluetooth">bluetooth<a class="headerlink" href="#bluetooth" title="Permanent link">#</a></h4>
+<h5 id="way-1">Way 1<a class="headerlink" href="#way-1" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get install bluetooth  blueman bluez python-gobject python-gobject-2 pulseaudio-module-bluetooth
+
+sudo systemctl status bluetooth
+pulseaudio --start
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>https://gist.github.com/mill1000/74c7473ee3b4a5b13f6325e9994ff84c</li>
+<li>https://raspberrypi.stackexchange.com/questions/48140/raspberry-pi-3-connecting-to-bluetooth-audio-device-on-raspbian-jessie</li>
+<li>https://markus.jarvisalo.dy.fi/2017/12/making-the-raspberry-pi-3-a-bluetooth-audio-receiver/</li>
+</ul>
+<h5 id="way-2">Way 2<a class="headerlink" href="#way-2" title="Permanent link">#</a></h5>
+<ul>
+<li>https://www.instructables.com/id/Turn-your-Raspberry-Pi-into-a-Portable-Bluetooth-A/
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo vim /var/lib/bluetooth/00:1A:7D:DA:71:11/config
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h4 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">#</a></h4>
+<ul>
+<li>shareport</li>
+<li>https://thepi.io/how-to-set-up-a-raspberry-pi-airplay-receiver/</li>
+</ul>
+<h3 id="enable-ssh-from-card">enable ssh from card<a class="headerlink" href="#enable-ssh-from-card" title="Permanent link">#</a></h3>
+<ul>
+<li>put empty ssh file inside /boot/</li>
+</ul>
+<h3 id="set-wifissid-from-card">set wifi/ssid  from card<a class="headerlink" href="#set-wifissid-from-card" title="Permanent link">#</a></h3>
+<ul>
+<li>change inside /etc/network/interface</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    auto lo
+
+    iface lo inet loopback
+    iface eth0 inet dhcp
+
+    allow-hotplug wlan0
+    auto wlan0
+
+
+    iface wlan0 inet dhcp
+            wpa-ssid <span class="s2">&quot;Connecting...&quot;</span>
+            wpa-psk <span class="s2">&quot;PrideValencia_A704&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="wifi-to-ethernet">wifi to ethernet<a class="headerlink" href="#wifi-to-ethernet" title="Permanent link">#</a></h3>
+<p>src: https://www.instructables.com/id/Share-WiFi-With-Ethernet-Port-on-a-Raspberry-Pi/</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install dnsmasq -y
+cd
+wget https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh
+chmod +x ~/wifi-to-eth-route.sh
+sudo crontab -e
+@reboot bash /home/pi/wifi-to-eth-route.sh &amp;  # add it to crontab file
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../git/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Git" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Git
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../practice_problems/" class="md-footer__link md-footer__link--next" aria-label="Next: Practice Problems" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Practice Problems
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

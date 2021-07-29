@@ -1,0 +1,3683 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>DBMS - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dbms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DBMS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DBMS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DBMS
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dbms" class="md-nav__link">
+    DBMS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acid" class="md-nav__link">
+    ACID
+  </a>
+  
+    <nav class="md-nav" aria-label="ACID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback" class="md-nav__link">
+    Rollback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cascade" class="md-nav__link">
+    Cascade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-key" class="md-nav__link">
+    Primary Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-key" class="md-nav__link">
+    Composite Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    Foreign Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidate-key" class="md-nav__link">
+    Candidate Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super-key" class="md-nav__link">
+    Super Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-dependency" class="md-nav__link">
+    Functional Dependency:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-dependency" class="md-nav__link">
+    Partial Dependency:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitive-dependency" class="md-nav__link">
+    Transitive Dependency:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anamolies" class="md-nav__link">
+    Anamolies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-nf-un-normalized-form" class="md-nav__link">
+    0 NF: Un Normalized Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-nf-e-f-codd-1971" class="md-nav__link">
+    1 NF (E. F. Codd - 1971)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-plsql" class="md-nav__link">
+    ORACLE PL/SQL
+  </a>
+  
+    <nav class="md-nav" aria-label="ORACLE PL/SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db" class="md-nav__link">
+    DB
+  </a>
+  
+    <nav class="md-nav" aria-label="DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-db-size" class="md-nav__link">
+    Increase DB size?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablespace-datafiles" class="md-nav__link">
+    Tablespace &amp; Datafiles??
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-instance" class="md-nav__link">
+    DB instance?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-temporary-tables-view" class="md-nav__link">
+    Table, Temporary Tables, &amp; View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-procedure-function" class="md-nav__link">
+    Stored Procedure &amp; Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-built-functions" class="md-nav__link">
+    In-Built Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laglead-functions" class="md-nav__link">
+    LAG/LEAD Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-optimize-a-query-a-sp-a-func" class="md-nav__link">
+    How to optimize a query? a SP? a Func?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-why-type-howimplementation" class="md-nav__link">
+    Index? Why? Type? How/Implementation?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-what-why-how-when-type" class="md-nav__link">
+    Cursor?  What? Why? How? When? Type?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger" class="md-nav__link">
+    Trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    Jobs?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-sql" class="md-nav__link">
+    Dynamic SQL?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generally-asked" class="md-nav__link">
+    Generally Asked
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL
+  </a>
+  
+    <nav class="md-nav" aria-label="MySQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+    <nav class="md-nav" aria-label="Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chage-root-password" class="md-nav__link">
+    chage root password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-test_db" class="md-nav__link">
+    Install test_db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-sakila-db-prepared-by-mysql" class="md-nav__link">
+    Install Sakila db prepared by mysql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grants" class="md-nav__link">
+    GRANTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-see-databases" class="md-nav__link">
+    To see databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-create-a-database" class="md-nav__link">
+    To create a database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-use-a-database" class="md-nav__link">
+    To use a database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-see-tables" class="md-nav__link">
+    To see tables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms_1" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions_1" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions_1" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function_1" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-postgresql-roles-and-databases" class="md-nav__link">
+    Using PostgreSQL Roles and Databases
+  </a>
+  
+    <nav class="md-nav" aria-label="Using PostgreSQL Roles and Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-over-to-the-postgres-account" class="md-nav__link">
+    Switching Over to the postgres Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-a-postgres-prompt-without-switching-accounts" class="md-nav__link">
+    Accessing a Postgres Prompt Without Switching Accounts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-role" class="md-nav__link">
+    Create a New Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-database" class="md-nav__link">
+    Create a New Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dbms" class="md-nav__link">
+    DBMS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acid" class="md-nav__link">
+    ACID
+  </a>
+  
+    <nav class="md-nav" aria-label="ACID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback" class="md-nav__link">
+    Rollback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cascade" class="md-nav__link">
+    Cascade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-key" class="md-nav__link">
+    Primary Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-key" class="md-nav__link">
+    Composite Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    Foreign Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidate-key" class="md-nav__link">
+    Candidate Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super-key" class="md-nav__link">
+    Super Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-dependency" class="md-nav__link">
+    Functional Dependency:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-dependency" class="md-nav__link">
+    Partial Dependency:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitive-dependency" class="md-nav__link">
+    Transitive Dependency:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anamolies" class="md-nav__link">
+    Anamolies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-nf-un-normalized-form" class="md-nav__link">
+    0 NF: Un Normalized Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-nf-e-f-codd-1971" class="md-nav__link">
+    1 NF (E. F. Codd - 1971)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-plsql" class="md-nav__link">
+    ORACLE PL/SQL
+  </a>
+  
+    <nav class="md-nav" aria-label="ORACLE PL/SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db" class="md-nav__link">
+    DB
+  </a>
+  
+    <nav class="md-nav" aria-label="DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-db-size" class="md-nav__link">
+    Increase DB size?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablespace-datafiles" class="md-nav__link">
+    Tablespace &amp; Datafiles??
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-instance" class="md-nav__link">
+    DB instance?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-temporary-tables-view" class="md-nav__link">
+    Table, Temporary Tables, &amp; View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-procedure-function" class="md-nav__link">
+    Stored Procedure &amp; Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-built-functions" class="md-nav__link">
+    In-Built Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laglead-functions" class="md-nav__link">
+    LAG/LEAD Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-optimize-a-query-a-sp-a-func" class="md-nav__link">
+    How to optimize a query? a SP? a Func?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-why-type-howimplementation" class="md-nav__link">
+    Index? Why? Type? How/Implementation?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-what-why-how-when-type" class="md-nav__link">
+    Cursor?  What? Why? How? When? Type?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger" class="md-nav__link">
+    Trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    Jobs?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-sql" class="md-nav__link">
+    Dynamic SQL?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generally-asked" class="md-nav__link">
+    Generally Asked
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL
+  </a>
+  
+    <nav class="md-nav" aria-label="MySQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+    <nav class="md-nav" aria-label="Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chage-root-password" class="md-nav__link">
+    chage root password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-test_db" class="md-nav__link">
+    Install test_db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-sakila-db-prepared-by-mysql" class="md-nav__link">
+    Install Sakila db prepared by mysql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grants" class="md-nav__link">
+    GRANTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-see-databases" class="md-nav__link">
+    To see databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-create-a-database" class="md-nav__link">
+    To create a database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-use-a-database" class="md-nav__link">
+    To use a database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-see-tables" class="md-nav__link">
+    To see tables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms_1" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions_1" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions_1" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function_1" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-postgresql-roles-and-databases" class="md-nav__link">
+    Using PostgreSQL Roles and Databases
+  </a>
+  
+    <nav class="md-nav" aria-label="Using PostgreSQL Roles and Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-over-to-the-postgres-account" class="md-nav__link">
+    Switching Over to the postgres Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-a-postgres-prompt-without-switching-accounts" class="md-nav__link">
+    Accessing a Postgres Prompt Without Switching Accounts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-role" class="md-nav__link">
+    Create a New Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-database" class="md-nav__link">
+    Create a New Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Computer-Science/dbms.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>DBMS</h1>
+                
+                <h2 id="dbms">DBMS<a class="headerlink" href="#dbms" title="Permanent link">#</a></h2>
+<h3>Table of Contents</h3>
+
+<div class="toc">
+<ul>
+<li><a href="#dbms">DBMS</a></li>
+<li><a href="#basics">Basics</a><ul>
+<li><a href="#acid">ACID</a><ul>
+<li><a href="#transaction">Transaction</a></li>
+<li><a href="#rollback">Rollback</a></li>
+<li><a href="#cascade">Cascade</a></li>
+</ul>
+</li>
+<li><a href="#keys">Keys</a><ul>
+<li><a href="#primary-key">Primary Key</a></li>
+<li><a href="#composite-key">Composite Key</a></li>
+<li><a href="#foreign-key">Foreign Key</a></li>
+<li><a href="#candidate-key">Candidate Key</a></li>
+<li><a href="#super-key">Super Key</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#functional-dependency">Functional Dependency:</a></li>
+<li><a href="#partial-dependency">Partial Dependency:</a></li>
+<li><a href="#transitive-dependency">Transitive Dependency:</a></li>
+</ul>
+</li>
+<li><a href="#normalization">Normalization</a><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#anamolies">Anamolies</a></li>
+<li><a href="#types">Types</a><ul>
+<li><a href="#0-nf-un-normalized-form">0 NF: Un Normalized Form</a></li>
+<li><a href="#1-nf-e-f-codd-1971">1 NF (E. F. Codd - 1971)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#oracle-plsql">ORACLE PL/SQL</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#db">DB</a><ul>
+<li><a href="#increase-db-size">Increase DB size?</a></li>
+<li><a href="#tablespace-datafiles">Tablespace &amp; Datafiles??</a></li>
+<li><a href="#db-instance">DB instance?</a></li>
+</ul>
+</li>
+<li><a href="#schema">Schema?</a></li>
+<li><a href="#table-temporary-tables-view">Table, Temporary Tables, &amp; View</a></li>
+<li><a href="#clauses">Clauses</a></li>
+<li><a href="#joins">Joins</a></li>
+<li><a href="#subprograms">Subprograms</a><ul>
+<li><a href="#package">Package</a></li>
+<li><a href="#stored-procedure-function">Stored Procedure &amp; Function</a></li>
+<li><a href="#in-built-functions">In-Built Functions</a></li>
+<li><a href="#aggregation-functions">Aggregation Functions</a></li>
+<li><a href="#analytical-functions">Analytical Functions</a></li>
+<li><a href="#window-function">Window Function</a></li>
+<li><a href="#laglead-functions">LAG/LEAD Functions</a></li>
+<li><a href="#how-to-optimize-a-query-a-sp-a-func">How to optimize a query? a SP? a Func?</a></li>
+<li><a href="#index-why-type-howimplementation">Index? Why? Type? How/Implementation?</a></li>
+<li><a href="#cursor-what-why-how-when-type">Cursor?  What? Why? How? When? Type?</a></li>
+<li><a href="#trigger">Trigger</a></li>
+<li><a href="#jobs">Jobs?</a></li>
+<li><a href="#dynamic-sql">Dynamic SQL?</a></li>
+<li><a href="#generally-asked">Generally Asked</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#mysql">MySQL</a><ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#run">Run</a></li>
+<li><a href="#help">Help</a><ul>
+<li><a href="#chage-root-password">chage root password</a></li>
+</ul>
+</li>
+<li><a href="#database">Database</a><ul>
+<li><a href="#install-test_db">Install test_db</a></li>
+<li><a href="#install-sakila-db-prepared-by-mysql">Install Sakila db prepared by mysql</a></li>
+<li><a href="#grants">GRANTS</a></li>
+<li><a href="#to-see-databases">To see databases</a></li>
+<li><a href="#to-create-a-database">To create a database</a></li>
+<li><a href="#to-use-a-database">To use a database</a></li>
+</ul>
+</li>
+<li><a href="#tables">Tables</a><ul>
+<li><a href="#to-see-tables">To see tables</a></li>
+</ul>
+</li>
+<li><a href="#subprograms_1">Subprograms</a><ul>
+<li><a href="#aggregation-functions_1">Aggregation Functions</a></li>
+<li><a href="#analytical-functions_1">Analytical Functions</a></li>
+<li><a href="#window-function_1">Window Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#postgresql">PostgreSQL</a><ul>
+<li><a href="#introduction_1">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#using-postgresql-roles-and-databases">Using PostgreSQL Roles and Databases</a><ul>
+<li><a href="#switching-over-to-the-postgres-account">Switching Over to the postgres Account</a></li>
+<li><a href="#accessing-a-postgres-prompt-without-switching-accounts">Accessing a Postgres Prompt Without Switching Accounts</a></li>
+</ul>
+</li>
+<li><a href="#create-a-new-role">Create a New Role</a></li>
+<li><a href="#create-a-new-database">Create a New Database</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">#</a></h2>
+<h3 id="acid">ACID<a class="headerlink" href="#acid" title="Permanent link">#</a></h3>
+<ul>
+<li>Atomicity: All or nothing</li>
+<li>Consistency: One state to another valid state (according to rulesets, constraints defined)</li>
+<li>Isolation: concurrency control. multiple transaction should sequentially executed</li>
+<li>Durability: Changes should persist</li>
+</ul>
+<h4 id="transaction">Transaction<a class="headerlink" href="#transaction" title="Permanent link">#</a></h4>
+<ul>
+<li>a unit of work performed within a database management system</li>
+<li>independent of other transactions</li>
+<li>generally represents any change in a database</li>
+<li>2 Purposes:<ul>
+<li>
+<ol>
+<li>provide reliability, can be recovered on failure</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>isolation from other programs accessing DB concurrently to avoid errors</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="rollback">Rollback<a class="headerlink" href="#rollback" title="Permanent link">#</a></h4>
+<h4 id="cascade">Cascade<a class="headerlink" href="#cascade" title="Permanent link">#</a></h4>
+<h3 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">#</a></h3>
+<h4 id="primary-key">Primary Key<a class="headerlink" href="#primary-key" title="Permanent link">#</a></h4>
+<ul>
+<li>A primary is a single column value used to identify a database record uniquely.</li>
+<li>It has following attributes:<ul>
+<li>A primary key cannot be NULL</li>
+<li>A primary key value must be unique</li>
+<li>The primary key values cannot be changed</li>
+<li>The primary key must be given a value when a new record is inserted.</li>
+</ul>
+</li>
+</ul>
+<h4 id="composite-key">Composite Key<a class="headerlink" href="#composite-key" title="Permanent link">#</a></h4>
+<ul>
+<li>A composite key is a primary key composed of multiple columns used to identify a record uniquely</li>
+</ul>
+<h4 id="foreign-key">Foreign Key<a class="headerlink" href="#foreign-key" title="Permanent link">#</a></h4>
+<ul>
+<li>A key which is refering to a primary key of another table</li>
+</ul>
+<h4 id="candidate-key">Candidate Key<a class="headerlink" href="#candidate-key" title="Permanent link">#</a></h4>
+<ul>
+<li>Candidate for the primary key. Means Whichever combination of columns can uniquely identify a record are the candidate keys.</li>
+</ul>
+<h4 id="super-key">Super Key<a class="headerlink" href="#super-key" title="Permanent link">#</a></h4>
+<ul>
+<li>Superset of all the candidate key. Means a set which contains all the columns from all the candidate keys.</li>
+</ul>
+<h4 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h4>
+<h4 id="functional-dependency">Functional Dependency:<a class="headerlink" href="#functional-dependency" title="Permanent link">#</a></h4>
+<h4 id="partial-dependency">Partial Dependency:<a class="headerlink" href="#partial-dependency" title="Permanent link">#</a></h4>
+<h4 id="transitive-dependency">Transitive Dependency:<a class="headerlink" href="#transitive-dependency" title="Permanent link">#</a></h4>
+<h3 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">#</a></h3>
+<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h4>
+<ul>
+<li>A technique of organizing data in DB</li>
+<li>A systematic approach to decomposing tables to eliminate data redundancy &amp; undesired characteristics like:<ul>
+<li>Insertion Anamolies</li>
+<li>Update Anamolies</li>
+<li>Deletion Anamolies</li>
+</ul>
+</li>
+<li>Multi step process</li>
+<li>Normalization is used for mainly two purposes:<ul>
+<li>Eliminating redundant(useless) data.</li>
+<li>Ensuring data dependencies make sense i.e data is logically stored.  </li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> In most practical applications, normalization achieves its <strong>best in 3rd Normal Form.</strong></p>
+<h4 id="anamolies">Anamolies<a class="headerlink" href="#anamolies" title="Permanent link">#</a></h4>
+<ul>
+<li>Insertion Anamoly<ul>
+<li>Suppose for a new admission, we have a Student id, name, and address of a student but if the student has not opted for any subjects yet then we have to insert NULL there, leading to Insertion Anamoly.</li>
+</ul>
+</li>
+<li>Update Anamoly<ul>
+<li>To update the address of a student who occurs twice or more than twice in a table, we will have to update S_Address column in all the rows, else data will become inconsistent.</li>
+</ul>
+</li>
+<li>Deletion Anamoly<ul>
+<li>If a student has only one subject and temporarily he drops it. When we delete that row, entire student record will be deleted along with it.</li>
+</ul>
+</li>
+</ul>
+<h4 id="types">Types<a class="headerlink" href="#types" title="Permanent link">#</a></h4>
+<h5 id="0-nf-un-normalized-form">0 NF: Un Normalized Form<a class="headerlink" href="#0-nf-un-normalized-form" title="Permanent link">#</a></h5>
+<ul>
+<li>Multi Valued Cells like Unit Code
+<img src="https://s3.amazonaws.com/classmint.img/763744a3-c339-47bf-bb1c-e991287aaa39.gif"></li>
+</ul>
+<h5 id="1-nf-e-f-codd-1971">1 NF (E. F. Codd - 1971)<a class="headerlink" href="#1-nf-e-f-codd-1971" title="Permanent link">#</a></h5>
+<ul>
+<li>First normal form enforces these criteria:<ul>
+<li>Eliminate repeating groups in individual tables.</li>
+<li>Create a separate table for each set of related data.</li>
+<li>Identify each set of related data with a primary/composite key</li>
+</ul>
+</li>
+<li>Rules<ul>
+<li><strong>Atomic</strong>  (i.e. indivisible) / single values in each cell. Means no set of values in a single cell.</li>
+<li>Values stored in a column should be of the same domain<ul>
+<li>i.e. No repeating group/column/attribute. like Telephone 1, Telephone 2</li>
+</ul>
+</li>
+<li>All the columns in a table should have unique names.</li>
+<li>No repeating rows/records. In other way:<ul>
+<li>For a set of values, create multiple rows/records for each individual values in the set.</li>
+<li>Or, Identify each row/records by a primary key/composite primary key </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disadvantage:<ul>
+<li>Using the First Normal Form, data redundancy increases, as there will be many columns with same data in multiple rows but each row as a whole will be unique.</li>
+</ul>
+</li>
+</ul>
+<p>$$ Table: 1-NF $$
+<img src="https://s3.amazonaws.com/classmint.img/9405e335-04d7-45cf-ac32-5fe9b9a2fb99.gif"></p>
+<p>$$ Table: Still  in 1-NF $$
+<img src="https://s3.amazonaws.com/classmint.img/01e58045-b38c-4237-8b8a-2fc93f962392.gif"></p>
+<ul>
+<li><strong>2 NF</strong><ul>
+<li>Be in 1 NF</li>
+<li>There must not be a <strong>Partial Dependency</strong>
+$$ Table: 2-NF $$
+<img src="https://s3.amazonaws.com/classmint.img/5e8d99a1-83b1-4834-9114-aca90629e0fc.gif"></li>
+</ul>
+</li>
+<li><strong>3 NF</strong></li>
+<li><strong>BCNF</strong></li>
+</ul>
+<hr />
+<h2 id="oracle-plsql">ORACLE PL/SQL<a class="headerlink" href="#oracle-plsql" title="Permanent link">#</a></h2>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h3>
+<h3 id="db">DB<a class="headerlink" href="#db" title="Permanent link">#</a></h3>
+<ul>
+<li>Consist of tablespace and tablespaces consists datafiles </li>
+</ul>
+<h4 id="increase-db-size">Increase DB size?<a class="headerlink" href="#increase-db-size" title="Permanent link">#</a></h4>
+<ul>
+<li>Increase size of data file</li>
+<li>Add new data file to existing table space</li>
+<li>Add new table space with atleast one datafile in it</li>
+<li>Datafile with dynamic extension 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="n">DATAFILE</span> <span class="o">&lt;</span><span class="n">DATAFILE1</span><span class="p">.</span><span class="n">ORA</span><span class="o">&gt;</span> <span class="n">AUTOEXTEND</span> <span class="k">ON</span> <span class="k">NEXT</span> <span class="mi">20</span><span class="n">M</span> <span class="n">MAZSIZE</span> <span class="mi">1000</span><span class="n">M</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h4 id="tablespace-datafiles">Tablespace &amp; Datafiles??<a class="headerlink" href="#tablespace-datafiles" title="Permanent link">#</a></h4>
+<ul>
+<li>Oracle Database stores data logically in tablespaces</li>
+<li>and physically in datafiles associated with the corresponding tablespace.</li>
+<li>Oracle DB consist of at least two logical storage unit</li>
+<li>SYSTEM (Default created, either locally or dictionary managed)</li>
+<li>SYSAUX ( Auxiliary to SYSTEM) </li>
+<li>TEMP (optional, required when SYSTEM is locally managed)
+<img src="https://docs.oracle.com/cd/B28359_01/server.111/b28318/img/cncpt037.gif" ></li>
+<li>src: https://docs.oracle.com/cd/B28359_01/server.111/b28318/physical.htm#CNCPT401</li>
+</ul>
+<h4 id="db-instance">DB instance?<a class="headerlink" href="#db-instance" title="Permanent link">#</a></h4>
+<ul>
+<li>db is collection datafiles on server. </li>
+<li>DB instance is the allocated memory &amp; collection of precesses running on the server when db server starts.</li>
+<li>db instances manages datafiles.</li>
+<li>db instance serves the data in datafiles to db users.</li>
+</ul>
+<h3 id="schema">Schema?<a class="headerlink" href="#schema" title="Permanent link">#</a></h3>
+<ul>
+<li>organization of data as a blueprint of how the database is constructed (divided into database tables, packages, functions, views etc) i.e. schema objects.</li>
+<li>An Oracle database associates a separate schema with each database user</li>
+<li>schema objects includes: tables, views, sequences, synonyms, indexes, clusters, database links, snapshots, procedures, functions, packages</li>
+<li>non-schema objects: users, roles, contexts, directory objects</li>
+</ul>
+<h3 id="table-temporary-tables-view">Table, Temporary Tables, &amp; View<a class="headerlink" href="#table-temporary-tables-view" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>Table:</strong></p>
+<ul>
+<li>a preliminary storage for storing data and information in RDBMS</li>
+<li>a collection of related data entries and it consists of columns and rows</li>
+<li>Syntax: 
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">table_1</span> <span class="k">AS</span> <span class="p">(</span> <span class="n">Col1</span> <span class="nb">NUMBER</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>View:</strong></p>
+<ul>
+<li>It is a saved SELECT query.</li>
+<li>It is a virtual table, which does not exist as stored data values in db (unless its indexed view)</li>
+<li><strong>Advantages:</strong><ul>
+<li>It can join tables to create some complex statical query to use frequently</li>
+<li>Does not takes extra space to store values</li>
+<li>can be used as security mechanism: i.e. only read access, no edit access</li>
+</ul>
+</li>
+<li>Types:<ul>
+<li>View</li>
+<li>Indexed View: <ul>
+<li>Used to create index on view </li>
+<li>Only useful when view is created by joining various tables, otherwise no diff in a indexed view * table</li>
+<li>Takes space same as tables</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Syntax:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">view_1</span> <span class="k">as</span> <span class="k">SELECT</span> <span class="k">statement</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>Temporary Table:</strong></p>
+<ul>
+<li>Oracle can create temp tables to store session specific or transaction specific data</li>
+<li>data does not persists after session/transaction</li>
+<li>definition persits? Yes</li>
+<li>Syntax: <code>SQL CREATE GLOBAL TEMPORARY TABLE table_1 (col1 VARCHAR2);</code></li>
+<li>Clauses:<ul>
+<li>ON COMMIT PRESERVE ROWS: </li>
+</ul>
+</li>
+<li>Used when: <ul>
+<li>need to hold intermediate data</li>
+<li>If the amount of data to be processed or utilized from your PL/SQL procedure is too large to fit comfortably in a PL/SQL table</li>
+</ul>
+</li>
+<li>Note: A TRUNCATE command issued in transaction/session specific temporary table truncates data in its own session/tranxn. Does not affect other session/trnxn.</li>
+<li>What can be created on temporary tables:<ul>
+<li>Index</li>
+<li>View</li>
+<li>Triggers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="clauses">Clauses<a class="headerlink" href="#clauses" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>FROM</strong></p>
+</li>
+<li>
+<p><strong>Where</strong></p>
+<ul>
+<li>Optional part of SELECT, DELETE, ALTER, UPDATE</li>
+<li>Where clause restricts/filters result of a SELECT, DELETE, ALTER, UPDATE queries</li>
+</ul>
+</li>
+<li><strong>Having</strong><ul>
+<li>Having clause restricts/filters result of a "select query with GROUP BY" [1]</li>
+<li>Applied to each groups of grouped table</li>
+<li>If there is no GROUP BY clause then HAVING applies to whole table (table is treated as a single group)</li>
+<li>The SELECT query cannot refer directly to any COLUMN not mentioned in GROUP BY clause, It can however refer to constants, aggregates. [2]</li>
+<li>Aggregate in HAVING do not need to appear in SELECT</li>
+<li>Subquery can be used in HAVING [3]</li>
+<li>e.g. 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">m</span><span class="p">,</span> <span class="k">min</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">min_salary</span> <span class="k">FROM</span> <span class="n">salaries</span> <span class="k">group</span> <span class="k">by</span> <span class="n">emp_no</span> <span class="k">having</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">70000</span><span class="p">;</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="n">salary</span> <span class="n">m</span> <span class="k">FROM</span> <span class="n">salaries</span>  <span class="k">having</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">70000</span><span class="p">;</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">m</span> <span class="k">FROM</span> <span class="n">salaries</span> <span class="k">group</span> <span class="k">by</span> <span class="n">emp_no</span> <span class="k">having</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="k">from</span>  <span class="n">salaries</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>ORDER BY</strong></p>
+<ul>
+<li>To specify the order in which row should appear</li>
+<li>Optional to use with SELECT, INSERT, CREATE VIEW</li>
+<li>Meaningless in sub-queries</li>
+<li>Order: DESC, ASC</li>
+<li>Uses:<ul>
+<li>Using Correlation Name: 
+<code>SQL 
+SELECT first_col AS f from tab_1 ORDER BY f;</code></li>
+<li>Using Column number
+<code>SQL 
+SELECT emp_no, salary, addr  from tab_1 ORDER BY 1,2,3;</code></li>
+<li>Using function
+<code>SQL 
+SELECT i, len from measure ORDER BY sin(i);</code></li>
+<li>Using NULL order
+<code>SQL 
+SELECT i, len from measure ORDER BY NULLS LAST;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GROUP BY</strong></p>
+<ul>
+<li>Optional part of SELECT</li>
+<li>The SELECT query cannot refer directly to any COLUMN not mentioned in GROUP BY clause, It can however refer to constants, aggregates.</li>
+<li>Typically used with AGGREGATE functions</li>
+</ul>
+</li>
+<li><strong>FOR UPDATE</strong> <ul>
+<li>Optional part of SELECT query</li>
+<li>Syntax: SELECT A, B, C FROM T_1 FOR UPDATE</li>
+<li>Use: In cursors to make them updatable.</li>
+</ul>
+</li>
+<li>
+<p><strong>WITH</strong></p>
+<ul>
+<li>Materialization technique same as View &amp; Temporary tables</li>
+<li>known as subquery factoring</li>
+<li>Useful when subqueries are used multiple times</li>
+<li>e.g. 
+<code>PLSQL
+WITH
+    sum_sales AS 
+      ( select sum(quantity) all_sales from stores ),
+    number_stores AS 
+      ( select count(*) nbr_stores from stores ),
+    sales_by_store AS
+      ( select store_name, sum(quantity) store_sales from store natural join sales )
+SELECT
+   store_name
+FROM
+   store,
+   sum_sales,
+   number_stores,
+   sales_by_store
+where
+   store_sales &gt; (all_sales / nbr_stores);</code></li>
+</ul>
+</li>
+<li>
+<p><strong>USING</strong></p>
+<ul>
+<li>Used in JOIN inplace of ON</li>
+<li>e.g. </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">COUNTRIES</span> <span class="k">JOIN</span> <span class="n">CITIES</span> <span class="k">USING</span> <span class="p">(</span><span class="n">COUNTRY</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>where COUNTRY column should exist in both the tables.
+* <strong>CONSTRAINT</strong>
+* Optional part of CREATE/ ALTER table.
+* Level: 
+    * Column level: Column-level constraints (except for check constraints) refer to only one column
+    * Table level: Table constraints allow you to specify more than one column in a PRIMARY KEY, UNIQUE, CHECK, or FOREIGN KEY constraint definition
+* Types: 
+    * NOT NULL: Column level, 
+    * PRIMARY KEY: Both level, nameable
+    * FOREIGN KEY: Both level, nameable 
+    * CHECK: Both level, nameable, [DISABLE] keyword to disable
+    * UNIQUE: Both level, nameable
+* e.g.:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">suppliers</span>
+<span class="p">(</span>
+  <span class="n">supplier_id</span> <span class="nb">numeric</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">CONSTRAINT</span> <span class="n">unq_supplier_id</span> <span class="k">UNIQUE</span><span class="p">,</span>
+  <span class="n">supplier_name</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">CONSTRAINT</span> <span class="n">check_supplier_name</span>
+  <span class="k">CHECK</span> <span class="p">(</span><span class="n">supplier_name</span> <span class="o">=</span> <span class="k">upper</span><span class="p">(</span><span class="n">supplier_name</span><span class="p">)),</span>
+  <span class="k">CONSTRAINT</span> <span class="n">pk_supplier_id</span> <span class="k">PRIMARY</span> <span class="k">KEY</span>
+<span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h3 id="joins">Joins<a class="headerlink" href="#joins" title="Permanent link">#</a></h3>
+<ul>
+<li>Used to combine &amp; then retrieve data from multiple tables or views</li>
+<li>
+<p>Types:</p>
+<ul>
+<li>
+<p>Equijoin: </p>
+<ul>
+<li>Joins 2 tables on the basis of equality of 2 columns</li>
+</ul>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A, B where A.col3 = B.col4;</code>
+    * Self Join
+* Join a table with itself with the help of alias</p>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM Salary AS A JOIN Salary AS B ON A.col3 = B.col4;</code>
+    * Cartesian Product
+* Joins 2 tables without any condition</p>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A, B;</code>
+    * Inner Join (Join)
+* Simple join
+* Returns all rows that satisfy the join condition</p>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A JOIN B on ON A.col3 = B.col4;</code>
+    * Left Outer Join (Left Join)
+* Returns all rows that satisfy the join condition and also returns some or all of those rows from left table for which join condition didn't worked</p>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A LEFT [OUTER] JOIN B ON A.col3 = B.col4;
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A LEFT [OUTER]JOIN B WHERE A.col3(+) = B.col4;</code></p>
+</li>
+<li>
+<p>Right Outer Join (Right Join)</p>
+<ul>
+<li>Returns all rows that satisfy the join condition and also returns some or all of those rows from right table for which join condition didn't worked</li>
+</ul>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A RIGHT [OUTER] JOIN B ON A.col3 = B.col4;
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A, B WHERE A.col3 = B.col4(+);</code></p>
+</li>
+<li>
+<p>Full Outer Join (Full Join)</p>
+<ul>
+<li>Returns all rows that satisfy the join condition and also returns some or all of those rows from both the table for which join condition didn't worked </li>
+</ul>
+<p><code>PLSQL 
+SELECT A.col1, A.col2, B.col1, B.col2 FROM A FULL JOIN B on ON A.col3 = B.col4;</code>
+    * Anti Join
+* Returns rows from the table with does not exists in other table
+* Using NOT IN clause</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>SELECT * FROM employees 
+WHERE department_id NOT IN 
+(SELECT department_id FROM departments 
+   WHERE location_id = 1700)
+ORDER BY last_name;
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Semi Join</p>
+<ul>
+<li>Returns rows from table that satisfies EXISTS subquery condition</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>SELECT * FROM departments 
+WHERE EXISTS 
+(SELECT * FROM employees 
+   WHERE departments.department_id = employees.department_id 
+   AND employees.salary &gt; 2500)
+ORDER BY department_name;
+</code></pre></div>
+</td></tr></table>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="subprograms">Subprograms<a class="headerlink" href="#subprograms" title="Permanent link">#</a></h3>
+<ul>
+<li>Subprograms are the building blocks of modular, maintainable applications.</li>
+<li>e.g. : Package, Procedure, Function</li>
+</ul>
+<h4 id="package">Package<a class="headerlink" href="#package" title="Permanent link">#</a></h4>
+<ul>
+<li>A schema object that groups logically related PL/SQL types, variables, and subprograms</li>
+<li>Packages usually have two parts, <ul>
+<li>a specification (spec): The specification is the interface to the package. It declares the types/collection types, variables, constants, exceptions, cursors, subprograms, and overloaded subprograms that can be referenced from outside the package.</li>
+<li>a body: The body defines the queries for the cursors and the code for the subprograms.</li>
+<li>Advantages:<ul>
+<li>Modularity</li>
+<li>Easy application Design</li>
+<li>Information Hiding: Public, Private</li>
+<li>Better performance: The whole package gets loaded into memory after first call</li>
+</ul>
+</li>
+<li>
+<p>Syntax:
+    ```PLSQL
+    CREATE PACKAGE emp_bonus AS
+        TYPE EmpRecTyp IS RECORD (employees%ROWTYPE);
+        PROCEDURE calc_bonus (date_hired employees.hire_date%TYPE);
+        CURSOR desc_salary RETURN EmpRecTyp;
+        FUNCTION hire_employee (last_name VARCHAR2, first_name VARCHAR2) 
+            RETURN NUMBER;
+    END emp_bonus;
+    /</p>
+<p>CREATE PACKAGE BODY emp_bonus AS
+    PROCEDURE calc_bonus (date_hired employees.hire_date%TYPE, salary NUMBER) IS
+        BEGIN
+            DBMS_OUTPUT.PUT_LINE('Employees hired on ' || date_hired || ' get bonus.');
+            IF salary &lt;= 0 THEN
+                RAISE invalid_salary EXCEPTION;
+            END IF;
+        EXCEPTION 
+            WHEN invalid_salary THEN
+                DBMS_OUTPUT.PUT_LINE('Invalid salary input!');
+            WHEN Others THEN
+                RAISE;
+        END;
+    CURSOR desc_salary RETURN EmpRecTyp IS
+        SELECT employee_id, salary FROM employees ORDER BY salary DESC;</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>FUNCTION hire_employee (last_name VARCHAR2, first_name VARCHAR2) 
+    RETURN NUMBER IS
+    new_emp_id NUMBER;
+    BEGIN
+        NULL;
+        RETURN new_emp_id;
+    END hire_employee;
+</code></pre></div>
+</td></tr></table>
+<p>END emp_bonus;
+/
+```</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="stored-procedure-function">Stored Procedure &amp; Function<a class="headerlink" href="#stored-procedure-function" title="Permanent link">#</a></h4>
+<ul>
+<li>Schema level subprograms/program unit/ commonly used codes stored in database</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Procedure</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Stored Procedures can call functions.</td>
+<td align="left">Functions cannot call stored Procedures.</td>
+</tr>
+<tr>
+<td align="left">Can have select statements as well as DML statements</td>
+<td align="left">Cannot use DML statements</td>
+</tr>
+<tr>
+<td align="left">Can use both table variables as well as temporary table in it.</td>
+<td align="left">Cannot use temp tables</td>
+</tr>
+<tr>
+<td align="left">Procedures cannot be utilized in a select statement</td>
+<td align="left">Function can be embedded in a select statement.</td>
+</tr>
+<tr>
+<td align="left">Procedure can return multiple OUT values(max. 1024)</td>
+<td align="left">Function returns 1 value only however it can be collection datatype</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Syntax</p>
+<ul>
+<li>Procedure </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>CREATE OR REPLACE PROCEDURE ADD_EVALUATION
+( 
+    evaluation_id IN NUMBER,
+    employee_id IN NUMBER,
+    evaluation_date IN DATE,
+    job_id IN VARCHAR2,
+    manager_id OUT NUMBER,
+    department_id OUT NUMBER
+) 
+AS
+BEGIN
+    NULL;
+END ADD_EVALUATION;
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Function</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>CREATE OR REPLACE FUNCTION calculate_score
+    ( cat IN VARCHAR2
+    , score IN NUMBER
+    , weight IN NUMBER
+    ) RETURN NUMBER 
+AS
+BEGIN
+    RETURN NULL;
+END calculate_score;
+</code></pre></div>
+</td></tr></table>
+</li>
+</ul>
+<h4 id="in-built-functions">In-Built Functions<a class="headerlink" href="#in-built-functions" title="Permanent link">#</a></h4>
+<h4 id="aggregation-functions">Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permanent link">#</a></h4>
+<p>Max, Min, Count, Sum</p>
+<h4 id="analytical-functions">Analytical Functions<a class="headerlink" href="#analytical-functions" title="Permanent link">#</a></h4>
+<p>Top? Last? Rank? </p>
+<h4 id="window-function">Window Function<a class="headerlink" href="#window-function" title="Permanent link">#</a></h4>
+<p>over()</p>
+<h4 id="laglead-functions">LAG/LEAD Functions<a class="headerlink" href="#laglead-functions" title="Permanent link">#</a></h4>
+<h4 id="how-to-optimize-a-query-a-sp-a-func">How to optimize a query? a SP? a Func?<a class="headerlink" href="#how-to-optimize-a-query-a-sp-a-func" title="Permanent link">#</a></h4>
+<h4 id="index-why-type-howimplementation">Index? Why? Type? How/Implementation?<a class="headerlink" href="#index-why-type-howimplementation" title="Permanent link">#</a></h4>
+<h4 id="cursor-what-why-how-when-type">Cursor?  What? Why? How? When? Type?<a class="headerlink" href="#cursor-what-why-how-when-type" title="Permanent link">#</a></h4>
+<h4 id="trigger">Trigger<a class="headerlink" href="#trigger" title="Permanent link">#</a></h4>
+<h4 id="jobs">Jobs?<a class="headerlink" href="#jobs" title="Permanent link">#</a></h4>
+<h4 id="dynamic-sql">Dynamic SQL?<a class="headerlink" href="#dynamic-sql" title="Permanent link">#</a></h4>
+<h4 id="generally-asked">Generally Asked<a class="headerlink" href="#generally-asked" title="Permanent link">#</a></h4>
+<ul>
+<li>second highest salary, query emp, dept, city</li>
+<li>import excel to table</li>
+<li>Employees with third highest salary @ address Pune? Tables: Employees, Address, Salary?</li>
+<li>delete vs drop vs truncate</li>
+</ul>
+<h2 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">#</a></h2>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install mysql-server
+</code></pre></div>
+</td></tr></table>
+<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo mysql -u root -p  #default password for root is &quot;password&quot;
+</code></pre></div>
+</td></tr></table>
+<p>if you get :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/var/run/mysqld/mysqld.sock&#39; (2)
+</code></pre></div>
+</td></tr></table>
+<p>then check </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>service mysql start
+</code></pre></div>
+</td></tr></table>
+<p>Default password for root is: <strong>password</strong></p>
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mysql&gt; help;
+
+or
+
+\h
+</code></pre></div>
+</td></tr></table>
+<h4 id="chage-root-password">chage root password<a class="headerlink" href="#chage-root-password" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo mysqladmin password &lt;new password&gt;
+</code></pre></div>
+</td></tr></table>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">#</a></h3>
+<h4 id="install-test_db">Install test_db<a class="headerlink" href="#install-test_db" title="Permanent link">#</a></h4>
+<ul>
+<li>sakila</li>
+<li>employees</li>
+<li>source: https://github.com/toransahu/test_db</li>
+</ul>
+<h4 id="install-sakila-db-prepared-by-mysql">Install <code>Sakila</code> db prepared by mysql<a class="headerlink" href="#install-sakila-db-prepared-by-mysql" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wget http://downloads.mysql.com/docs/sakila-db.tar.gz
+tar -xzf sakila-db.tar.gz
+cd sakila-db
+mysql -u root -p &lt; sakila-schema.sql
+mysql -u root -p &lt; sakila-data.sql
+</code></pre></div>
+</td></tr></table>
+<h4 id="grants">GRANTS<a class="headerlink" href="#grants" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;username&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="to-see-databases">To see databases<a class="headerlink" href="#to-see-databases" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mysql&gt; show databases;
+</code></pre></div>
+</td></tr></table>
+<h4 id="to-create-a-database">To create a database<a class="headerlink" href="#to-create-a-database" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mysql&gt; create database &lt;db_name&gt;;
+
+Query OK, 1 row affected (0.00 sec)
+</code></pre></div>
+</td></tr></table>
+<h4 id="to-use-a-database">To use a database<a class="headerlink" href="#to-use-a-database" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mysql&gt; use &lt;db_name&gt;;
+</code></pre></div>
+</td></tr></table>
+<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">#</a></h3>
+<h4 id="to-see-tables">To see tables<a class="headerlink" href="#to-see-tables" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>show tables;
+</code></pre></div>
+</td></tr></table>
+<h3 id="subprograms_1">Subprograms<a class="headerlink" href="#subprograms_1" title="Permanent link">#</a></h3>
+<h4 id="aggregation-functions_1">Aggregation Functions<a class="headerlink" href="#aggregation-functions_1" title="Permanent link">#</a></h4>
+<h4 id="analytical-functions_1">Analytical Functions<a class="headerlink" href="#analytical-functions_1" title="Permanent link">#</a></h4>
+<ul>
+<li>MySQL doesn't have Analytical Functions<ul>
+<li>while it is in<ul>
+<li>MSSQL</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="window-function_1">Window Function<a class="headerlink" href="#window-function_1" title="Permanent link">#</a></h4>
+<p>over()</p>
+<h2 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">#</a></h2>
+<p>Simple Doc: https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e</p>
+<h3 id="introduction_1">Introduction<a class="headerlink" href="#introduction_1" title="Permanent link">#</a></h3>
+<p>Relational database management systems are a key component of many web sites and applications. They provide a structured way to store, organize, and access information.</p>
+<p>PostgreSQL, or Postgres, is a relational database management system that provides an implementation of the SQL querying language. It is a popular choice for many small and large projects and has the advantage of being standards-compliant and having many advanced features like reliable transactions and concurrency without read locks.</p>
+<p>In this guide, we will demonstrate how to install Postgres on an Ubuntu 16.04 VPS instance and go over some basic ways to use it.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
+<p>Ubuntu's default repositories contain Postgres packages, so we can install these easily using the apt packaging system.</p>
+<p>Since this is our first time using apt in this session, we need to refresh our local package index. We can then install the Postgres package and a -contrib package that adds some additional utilities and functionality:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+</code></pre></div>
+</td></tr></table>
+<p>Now that our software is installed, we can go over how it works and how it may be different from similar database management systems you may have used.</p>
+<h3 id="using-postgresql-roles-and-databases">Using PostgreSQL Roles and Databases<a class="headerlink" href="#using-postgresql-roles-and-databases" title="Permanent link">#</a></h3>
+<p>By default, Postgres uses a concept called "roles" to handle in authentication and authorization. These are, in some ways, similar to regular Unix-style accounts, but Postgres does not distinguish between users and groups and instead prefers the more flexible term "role".</p>
+<p>Upon installation Postgres is set up to use ident authentication, which means that it associates Postgres roles with a matching Unix/Linux system account. If a role exists within Postgres, a Unix/Linux username with the same name will be able to sign in as that role.</p>
+<p>There are a few ways to utilize this account to access Postgres.</p>
+<h4 id="switching-over-to-the-postgres-account">Switching Over to the postgres Account<a class="headerlink" href="#switching-over-to-the-postgres-account" title="Permanent link">#</a></h4>
+<p>The installation procedure created a user account called postgres that is associated with the default Postgres role. In order to use Postgres, we can log into that account.</p>
+<p>Switch over to the postgres account on your server by typing:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo -i -u postgres
+</code></pre></div>
+</td></tr></table>
+<p>You can now access a Postgres prompt immediately by typing:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>psql
+</code></pre></div>
+</td></tr></table>
+<p>You will be logged in and able to interact with the database management system right away.</p>
+<p>Exit out of the PostgreSQL prompt by typing:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>\q
+</code></pre></div>
+</td></tr></table>
+<p>You should now be back in the postgres Linux command prompt.</p>
+<h4 id="accessing-a-postgres-prompt-without-switching-accounts">Accessing a Postgres Prompt Without Switching Accounts<a class="headerlink" href="#accessing-a-postgres-prompt-without-switching-accounts" title="Permanent link">#</a></h4>
+<p>You can also run the command you'd like with the postgres account directly with sudo.</p>
+<p>For instance, in the last example, we just wanted to get to a Postgres prompt. We could do this in one step by running the single command psql as the postgres user with sudo like this:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo -u postgres psql
+</code></pre></div>
+</td></tr></table></p>
+<p>This will log you directly into Postgres without the intermediary bash shell in between.</p>
+<p>Again, you can exit the interactive Postgres session by typing:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>\q
+</code></pre></div>
+</td></tr></table>
+<h3 id="create-a-new-role">Create a New Role<a class="headerlink" href="#create-a-new-role" title="Permanent link">#</a></h3>
+<p>Currently, we just have the postgres role configured within the database. We can create new roles from the command line with the createrole command. The --interactive flag will prompt you for the necessary values.</p>
+<p>If you are logged in as the postgres account, you can create a new user by typing:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>createuser --interactive
+</code></pre></div>
+</td></tr></table>
+<p>If, instead, you prefer to use sudo for each command without switching from your normal account, you can type:</p>
+<p>sudo -u postgres createuser --interactive
+The script will prompt you with some choices and, based on your responses, execute the correct Postgres commands to create a user to your specifications.</p>
+<p>Output</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Enter name of role to add: sammy
+Shall the new role be a superuser? (y/n) y
+</code></pre></div>
+</td></tr></table>
+<p>You can get more control by passing some additional flags. Check out the options by looking at the man page:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>man createuser
+</code></pre></div>
+</td></tr></table>
+<h3 id="create-a-new-database">Create a New Database<a class="headerlink" href="#create-a-new-database" title="Permanent link">#</a></h3>
+<p>By default, another assumption that the Postgres authentication system makes is that there will be an database with the same name as the role being used to login, which the role has access to.</p>
+<p>So if in the last section, we created a user called sammy, that role will attempt to connect to a database which is also called sammy by default. You can create the appropriate database with the createdb command.</p>
+<p>If you are logged in as the postgres account, you would type something like:</p>
+<p>createdb sammy
+If, instead, you prefer to use sudo for each command without switching from your normal account, you would type:</p>
+<p>sudo -u postgres createdb sammy
+Open a Postgres Prompt with the New Role
+To log in with ident based authentication, you'll need a Linux user with the same name as your Postgres role and database.</p>
+<p>If you don't have a matching Linux user available, you can create one with the adduser command. You will have to do this from an account with sudo privileges (not logged in as the postgres user):</p>
+<p>sudo adduser sammy
+Once you have the appropriate account available, you can either switch over and connect to the database by typing:</p>
+<p>sudo -i -u sammy
+psql
+Or, you can do this inline:</p>
+<p>sudo -u sammy psql
+You will be logged in automatically assuming that all of the components have been properly configured.</p>
+<p>If you want your user to connect to a different database, you can do so by specifying the database like this:</p>
+<p>psql -d postgres
+Once logged in, you can get check your current connection information by typing:</p>
+<p>\conninfo
+Output
+You are connected to database "sammy" as user "sammy" via socket in "/var/run/postgresql" at port "5432".
+This can be useful if you are connecting to non-default databases or with non-default users.</p>
+<p>Create and Delete Tables
+Now that you know how to connect to the PostgreSQL database system, we can to go over how to complete some basic tasks.</p>
+<p>First, we can create a table to store some data. Let's create a table that describes playground equipment.</p>
+<p>The basic syntax for this command is something like this:</p>
+<p>CREATE TABLE table_name (
+    column_name1 col_type (field_length) column_constraints,
+    column_name2 col_type (field_length),
+    column_name3 col_type (field_length)
+);
+As you can see, we give the table a name, and then define the columns that we want, as well as the column type and the max length of the field data. We can also optionally add table constraints for each column.</p>
+<p>You can learn more about how to create and manage tables in Postgres here.</p>
+<p>For our purposes, we're going to create a simple table like this:</p>
+<p>CREATE TABLE playground (
+    equip_id serial PRIMARY KEY,
+    type varchar (50) NOT NULL,
+    color varchar (25) NOT NULL,
+    location varchar(25) check (location in ('north', 'south', 'west', 'east', 'northeast', 'southeast', 'southwest', 'northwest')),
+    install_date date
+);
+We have made a playground table that inventories the equipment that we have. This starts with an equipment ID, which is of the serial type. This data type is an auto-incrementing integer. We have given this column the constraint of primary key which means that the values must be unique and not null.</p>
+<p>For two of our columns (equip_id and install_date), we have not given a field length. This is because some column types don't require a set length because the length is implied by the type.</p>
+<p>We then give columns for the equipment type and color, each of which cannot be empty. We create a location column and create a constraint that requires the value to be one of eight possible values. The last column is a date column that records the date that we installed the equipment.</p>
+<p>We can see our new table by typing:</p>
+<p>\d
+Output
+                  List of relations
+ Schema |          Name           |   Type   | Owner 
+--------+-------------------------+----------+-------
+ public | playground              | table    | sammy
+ public | playground_equip_id_seq | sequence | sammy
+(2 rows)
+Our playground table is here, but we also have something called playground_equip_id_seq that is of the type sequence. This is a representation of the serial type we gave our equip_id column. This keeps track of the next number in the sequence and is created automatically for columns of this type.</p>
+<p>If you want to see just the table without the sequence, you can type:</p>
+<p>\dt
+Output
+          List of relations
+ Schema |    Name    | Type  | Owner 
+--------+------------+-------+-------
+ public | playground | table | sammy
+(1 row)
+Add, Query, and Delete Data in a Table
+Now that we have a table, we can insert some data into it.</p>
+<p>Let's add a slide and a swing. We do this by calling the table we're wanting to add to, naming the columns and then providing data for each column. Our slide and swing could be added like this:</p>
+<p>INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
+INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2010-08-16');
+You should take care when entering the data to avoid a few common hangups. First, keep in mind that the column names should not be quoted, but the column values that you're entering do need quotes.</p>
+<p>Another thing to keep in mind is that we do not enter a value for the equip_id column. This is because this is auto-generated whenever a new row in the table is created.</p>
+<p>We can then get back the information we've added by typing:</p>
+<p>SELECT * FROM playground;
+Output
+ equip_id | type  | color  | location  | install_date 
+----------+-------+--------+-----------+--------------
+        1 | slide | blue   | south     | 2014-04-28
+        2 | swing | yellow | northwest | 2010-08-16
+(2 rows)
+Here, you can see that our equip_id has been filled in successfully and that all of our other data has been organized correctly.</p>
+<p>If the slide on the playground breaks and we have to remove it, we can also remove the row from our table by typing:</p>
+<p>DELETE FROM playground WHERE type = 'slide';
+If we query our table again, we will see our slide is no longer a part of the table:</p>
+<p>SELECT * FROM playground;
+Output
+ equip_id | type  | color  | location  | install_date 
+----------+-------+--------+-----------+--------------
+        2 | swing | yellow | northwest | 2010-08-16
+(1 row)
+How To Add and Delete Columns from a Table
+If we want to modify a table after it has been created to add an additional column, we can do that easily.</p>
+<p>We can add a column to show the last maintenance visit for each piece of equipment by typing:</p>
+<p>ALTER TABLE playground ADD last_maint date;
+If you view your table information again, you will see the new column has been added (but no data has been entered):</p>
+<p>SELECT * FROM playground;
+Output
+ equip_id | type  | color  | location  | install_date | last_maint 
+----------+-------+--------+-----------+--------------+------------
+        2 | swing | yellow | northwest | 2010-08-16   | 
+(1 row)
+We can delete a column just as easily. If we find that our work crew uses a separate tool to keep track of maintenance history, we can get rid of the column here by typing:</p>
+<p>ALTER TABLE playground DROP last_maint;
+How To Update Data in a Table
+We know how to add records to a table and how to delete them, but we haven't covered how to modify existing entries yet.</p>
+<p>You can update the values of an existing entry by querying for the record you want and setting the column to the value you wish to use. We can query for the "swing" record (this will match every swing in our table) and change its color to "red". This could be useful if we gave the swing set a paint job:</p>
+<p>UPDATE playground SET color = 'red' WHERE type = 'swing';
+We can verify that the operation was successful by querying our data again:</p>
+<p>SELECT * FROM playground;
+Output
+ equip_id | type  | color | location  | install_date 
+----------+-------+-------+-----------+--------------
+        2 | swing | red   | northwest | 2010-08-16
+(1 row)
+As you can see, our slide is now registered as being red.</p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04">Source</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../algo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Algorithms" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Algorithms
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ds/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Structure" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Data Structure
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

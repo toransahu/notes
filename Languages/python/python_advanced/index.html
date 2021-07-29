@@ -1,0 +1,4013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>Python Advanced - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-advanced" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" checked>
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python Advanced
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-advanced" class="md-nav__link">
+    Python Advanced
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    Regular Expressions
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-patterns" class="md-nav__link">
+    Basic Patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of" class="md-nav__link">
+    use of .
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_1" class="md-nav__link">
+    use of *
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_2" class="md-nav__link">
+    use of +
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_3" class="md-nav__link">
+    use of ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_4" class="md-nav__link">
+    use of \
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-t-r-n" class="md-nav__link">
+    use of \t, \r, \n
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-b-start-and-end-of-word-anchors" class="md-nav__link">
+    use of \b (start and end of word anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-b" class="md-nav__link">
+    use of \B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-s" class="md-nav__link">
+    use of \s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-d" class="md-nav__link">
+    use of \d
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-d_1" class="md-nav__link">
+    use of \D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-w" class="md-nav__link">
+    use of \w
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-w_1" class="md-nav__link">
+    use of \W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_5" class="md-nav__link">
+    use of []
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_6" class="md-nav__link">
+    use of ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-start-of-string-anchors" class="md-nav__link">
+    use of ^ (Start of String Anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-end-of-string-anchors" class="md-nav__link">
+    use of $ $-->  (End of String Anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_7" class="md-nav__link">
+    use of |
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-syntax" class="md-nav__link">
+    use of syntax (? ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builtin-functions" class="md-nav__link">
+    Builtin Functions:
+  </a>
+  
+    <nav class="md-nav" aria-label="Builtin Functions:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    re.search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regroup" class="md-nav__link">
+    re.group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refindall" class="md-nav__link">
+    re.findall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resub" class="md-nav__link">
+    re.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    re.compile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-options-to-above-functions" class="md-nav__link">
+    extra options to above functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multithreading-multiprocessing" class="md-nav__link">
+    Multithreading &amp; Multiprocessing
+  </a>
+  
+    <nav class="md-nav" aria-label="Multithreading &amp; Multiprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gil-global-interpreter-lock" class="md-nav__link">
+    GIL - Global Interpreter Lock
+  </a>
+  
+    <nav class="md-nav" aria-label="GIL - Global Interpreter Lock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-terminologies" class="md-nav__link">
+    Some terminologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Some terminologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concurrency" class="md-nav__link">
+    Concurrency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelism" class="md-nav__link">
+    Parallelism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread" class="md-nav__link">
+    thread
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-threading" class="md-nav__link">
+    Multi-threading
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-threading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-thread" class="md-nav__link">
+    Use of thread
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    Facts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-processing" class="md-nav__link">
+    Multi-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipe" class="md-nav__link">
+    pipe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-join" class="md-nav__link">
+    What is .join()?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daemon" class="md-nav__link">
+    daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-handling" class="md-nav__link">
+    File Handling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-try-except-finally" class="md-nav__link">
+    Using try, except, finally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-with" class="md-nav__link">
+    Using with
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-operations" class="md-nav__link">
+    JSON Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-json" class="md-nav__link">
+    import json
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flask-jsonify" class="md-nav__link">
+    flask: jsonify()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shipping-python-solution" class="md-nav__link">
+    Shipping Python Solution
+  </a>
+  
+    <nav class="md-nav" aria-label="Shipping Python Solution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyc" class="md-nav__link">
+    .pyc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyo" class="md-nav__link">
+    .pyo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exe" class="md-nav__link">
+    .exe
+  </a>
+  
+    <nav class="md-nav" aria-label=".exe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyinstaller" class="md-nav__link">
+    PyInstaller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#py2exe" class="md-nav__link">
+    py2exe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-version-management" class="md-nav__link">
+    Python Version Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Version Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-default-python-version" class="md-nav__link">
+    Setting default Python Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting default Python Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-creating-softlink-to-usrbinpython-file" class="md-nav__link">
+    By creating softlink to /usr/bin/python file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-aliasing-python" class="md-nav__link">
+    By aliasing python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-setting-path-env-variable" class="md-nav__link">
+    By setting PATH env variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    Anaconda
+  </a>
+  
+    <nav class="md-nav" aria-label="Anaconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualenv" class="md-nav__link">
+    virtualenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    pipenv
+  </a>
+  
+    <nav class="md-nav" aria-label="pipenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-venv" class="md-nav__link">
+    create venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-venv-with-specific-python-version" class="md-nav__link">
+    create venv with specific python version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installuninstall-dependencies" class="md-nav__link">
+    install/uninstall dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lock-dependencies-for-production" class="md-nav__link">
+    lock dependencies for production
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies-only-for-development" class="md-nav__link">
+    install dependencies only for development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies-with-other-options" class="md-nav__link">
+    install dependencies with other options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-command-within-venv" class="md-nav__link">
+    run command within venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-venv" class="md-nav__link">
+    remove venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-venv-detailspath" class="md-nav__link">
+    see venv details/path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-venv-shell" class="md-nav__link">
+    enter venv shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-venv" class="md-nav__link">
+    clean venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-venv" class="md-nav__link">
+    update venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-check" class="md-nav__link">
+    security check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-package-distribution-pypi" class="md-nav__link">
+    Python Package Distribution (PyPi)
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Package Distribution (PyPi)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-distribution" class="md-nav__link">
+    Test Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-distribution" class="md-nav__link">
+    Final Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    Rebuild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-package" class="md-nav__link">
+    (Test) Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-package" class="md-nav__link">
+    (Final)  Package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-run-package-in-command-line" class="md-nav__link">
+    Advanced - Run Package in Command Line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-linter-pep-8" class="md-nav__link">
+    Python Linter &amp; PEP-8
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Linter &amp; PEP-8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-templates" class="md-nav__link">
+    Python Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pycharm-live-file-templates" class="md-nav__link">
+    PyCharm Live &amp; File Templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim-template" class="md-nav__link">
+    Vim Template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-advanced" class="md-nav__link">
+    Python Advanced
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    Regular Expressions
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-patterns" class="md-nav__link">
+    Basic Patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of" class="md-nav__link">
+    use of .
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_1" class="md-nav__link">
+    use of *
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_2" class="md-nav__link">
+    use of +
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_3" class="md-nav__link">
+    use of ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_4" class="md-nav__link">
+    use of \
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-t-r-n" class="md-nav__link">
+    use of \t, \r, \n
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-b-start-and-end-of-word-anchors" class="md-nav__link">
+    use of \b (start and end of word anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-b" class="md-nav__link">
+    use of \B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-s" class="md-nav__link">
+    use of \s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-d" class="md-nav__link">
+    use of \d
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-d_1" class="md-nav__link">
+    use of \D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-w" class="md-nav__link">
+    use of \w
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-w_1" class="md-nav__link">
+    use of \W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_5" class="md-nav__link">
+    use of []
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_6" class="md-nav__link">
+    use of ()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-start-of-string-anchors" class="md-nav__link">
+    use of ^ (Start of String Anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-end-of-string-anchors" class="md-nav__link">
+    use of $ $-->  (End of String Anchors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of_7" class="md-nav__link">
+    use of |
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-syntax" class="md-nav__link">
+    use of syntax (? ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builtin-functions" class="md-nav__link">
+    Builtin Functions:
+  </a>
+  
+    <nav class="md-nav" aria-label="Builtin Functions:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    re.search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regroup" class="md-nav__link">
+    re.group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refindall" class="md-nav__link">
+    re.findall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resub" class="md-nav__link">
+    re.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    re.compile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-options-to-above-functions" class="md-nav__link">
+    extra options to above functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multithreading-multiprocessing" class="md-nav__link">
+    Multithreading &amp; Multiprocessing
+  </a>
+  
+    <nav class="md-nav" aria-label="Multithreading &amp; Multiprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gil-global-interpreter-lock" class="md-nav__link">
+    GIL - Global Interpreter Lock
+  </a>
+  
+    <nav class="md-nav" aria-label="GIL - Global Interpreter Lock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-terminologies" class="md-nav__link">
+    Some terminologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Some terminologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concurrency" class="md-nav__link">
+    Concurrency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelism" class="md-nav__link">
+    Parallelism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread" class="md-nav__link">
+    thread
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-threading" class="md-nav__link">
+    Multi-threading
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-threading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-thread" class="md-nav__link">
+    Use of thread
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    Facts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-processing" class="md-nav__link">
+    Multi-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipe" class="md-nav__link">
+    pipe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-join" class="md-nav__link">
+    What is .join()?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daemon" class="md-nav__link">
+    daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-handling" class="md-nav__link">
+    File Handling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-try-except-finally" class="md-nav__link">
+    Using try, except, finally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-with" class="md-nav__link">
+    Using with
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-operations" class="md-nav__link">
+    JSON Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-json" class="md-nav__link">
+    import json
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flask-jsonify" class="md-nav__link">
+    flask: jsonify()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shipping-python-solution" class="md-nav__link">
+    Shipping Python Solution
+  </a>
+  
+    <nav class="md-nav" aria-label="Shipping Python Solution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyc" class="md-nav__link">
+    .pyc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyo" class="md-nav__link">
+    .pyo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exe" class="md-nav__link">
+    .exe
+  </a>
+  
+    <nav class="md-nav" aria-label=".exe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyinstaller" class="md-nav__link">
+    PyInstaller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#py2exe" class="md-nav__link">
+    py2exe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-version-management" class="md-nav__link">
+    Python Version Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Version Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-default-python-version" class="md-nav__link">
+    Setting default Python Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting default Python Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-creating-softlink-to-usrbinpython-file" class="md-nav__link">
+    By creating softlink to /usr/bin/python file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-aliasing-python" class="md-nav__link">
+    By aliasing python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-setting-path-env-variable" class="md-nav__link">
+    By setting PATH env variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    Anaconda
+  </a>
+  
+    <nav class="md-nav" aria-label="Anaconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualenv" class="md-nav__link">
+    virtualenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    pipenv
+  </a>
+  
+    <nav class="md-nav" aria-label="pipenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-venv" class="md-nav__link">
+    create venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-venv-with-specific-python-version" class="md-nav__link">
+    create venv with specific python version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installuninstall-dependencies" class="md-nav__link">
+    install/uninstall dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lock-dependencies-for-production" class="md-nav__link">
+    lock dependencies for production
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies-only-for-development" class="md-nav__link">
+    install dependencies only for development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies-with-other-options" class="md-nav__link">
+    install dependencies with other options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-command-within-venv" class="md-nav__link">
+    run command within venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-venv" class="md-nav__link">
+    remove venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-venv-detailspath" class="md-nav__link">
+    see venv details/path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-venv-shell" class="md-nav__link">
+    enter venv shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-venv" class="md-nav__link">
+    clean venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-venv" class="md-nav__link">
+    update venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-check" class="md-nav__link">
+    security check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-package-distribution-pypi" class="md-nav__link">
+    Python Package Distribution (PyPi)
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Package Distribution (PyPi)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-distribution" class="md-nav__link">
+    Test Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-distribution" class="md-nav__link">
+    Final Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    Rebuild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-package" class="md-nav__link">
+    (Test) Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-package" class="md-nav__link">
+    (Final)  Package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-run-package-in-command-line" class="md-nav__link">
+    Advanced - Run Package in Command Line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-linter-pep-8" class="md-nav__link">
+    Python Linter &amp; PEP-8
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Linter &amp; PEP-8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-templates" class="md-nav__link">
+    Python Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pycharm-live-file-templates" class="md-nav__link">
+    PyCharm Live &amp; File Templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim-template" class="md-nav__link">
+    Vim Template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Languages/python/python_advanced.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Python Advanced</h1>
+                
+                <h2 id="python-advanced">Python Advanced<a class="headerlink" href="#python-advanced" title="Permanent link">#</a></h2>
+<div class="toc">
+<ul>
+<li><a href="#python-advanced">Python Advanced</a></li>
+<li><a href="#regular-expressions">Regular Expressions</a><ul>
+<li><a href="#basic-patterns">Basic Patterns</a><ul>
+<li><a href="#use-of">use of .</a></li>
+<li><a href="#use-of_1">use of *</a></li>
+<li><a href="#use-of_2">use of +</a></li>
+<li><a href="#use-of_3">use of ?</a></li>
+<li><a href="#use-of_4">use of \</a></li>
+<li><a href="#use-of-t-r-n">use of \t, \r, \n</a></li>
+<li><a href="#use-of-b-start-and-end-of-word-anchors">use of \b (start and end of word anchors)</a></li>
+<li><a href="#use-of-b">use of \B</a></li>
+<li><a href="#use-of-s">use of \s</a></li>
+<li><a href="#use-of-d">use of \d</a></li>
+<li><a href="#use-of-d_1">use of \D</a></li>
+<li><a href="#use-of-w">use of \w</a></li>
+<li><a href="#use-of-w_1">use of \W</a></li>
+<li><a href="#use-of_5">use of []</a></li>
+<li><a href="#use-of_6">use of ()</a></li>
+<li><a href="#use-of-start-of-string-anchors">use of ^ (Start of String Anchors)</a></li>
+<li><a href="#use-of-end-of-string-anchors">use of $ $--&gt;  (End of String Anchors)</a></li>
+<li><a href="#use-of_7">use of |</a></li>
+<li><a href="#use-of-syntax">use of syntax (? ...)</a></li>
+</ul>
+</li>
+<li><a href="#builtin-functions">Builtin Functions:</a><ul>
+<li><a href="#research">re.search</a></li>
+<li><a href="#regroup">re.group</a></li>
+<li><a href="#refindall">re.findall</a></li>
+<li><a href="#resub">re.sub</a></li>
+<li><a href="#recompile">re.compile</a></li>
+<li><a href="#extra-options-to-above-functions">extra options to above functions</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li><a href="#multithreading-multiprocessing">Multithreading &amp; Multiprocessing</a><ul>
+<li><a href="#gil-global-interpreter-lock">GIL - Global Interpreter Lock</a><ul>
+<li><a href="#some-terminologies">Some terminologies</a><ul>
+<li><a href="#concurrency">Concurrency</a></li>
+<li><a href="#parallelism">Parallelism</a></li>
+<li><a href="#process">process</a></li>
+<li><a href="#thread">thread</a></li>
+</ul>
+</li>
+<li><a href="#multi-threading">Multi-threading</a><ul>
+<li><a href="#note">Note:</a></li>
+<li><a href="#use-of-thread">Use of thread</a></li>
+<li><a href="#facts">Facts</a></li>
+</ul>
+</li>
+<li><a href="#multi-processing">Multi-processing</a><ul>
+<li><a href="#pipe">pipe</a></li>
+</ul>
+</li>
+<li><a href="#what-is-join">What is .join()?</a></li>
+<li><a href="#daemon">daemon</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#files">Files</a><ul>
+<li><a href="#file-handling">File Handling</a></li>
+<li><a href="#using-try-except-finally">Using try, except, finally</a></li>
+<li><a href="#using-with">Using with</a></li>
+</ul>
+</li>
+<li><a href="#json-operations">JSON Operations</a><ul>
+<li><a href="#import-json">import json</a></li>
+<li><a href="#flask-jsonify">flask: jsonify()</a></li>
+</ul>
+</li>
+<li><a href="#shipping-python-solution">Shipping Python Solution</a><ul>
+<li><a href="#pyc">.pyc</a></li>
+<li><a href="#pyo">.pyo</a></li>
+<li><a href="#exe">.exe</a><ul>
+<li><a href="#pyinstaller">PyInstaller</a></li>
+<li><a href="#py2exe">py2exe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#python-version-management">Python Version Management</a><ul>
+<li><a href="#setting-default-python-version">Setting default Python Version</a><ul>
+<li><a href="#by-creating-softlink-to-usrbinpython-file">By creating softlink to /usr/bin/python file</a></li>
+<li><a href="#by-aliasing-python">By aliasing python</a></li>
+<li><a href="#by-setting-path-env-variable">By setting PATH env variable</a></li>
+</ul>
+</li>
+<li><a href="#anaconda">Anaconda</a><ul>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a href="#virtualenv">virtualenv</a></li>
+<li><a href="#pipenv">pipenv</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#create-venv">create venv</a></li>
+<li><a href="#create-venv-with-specific-python-version">create venv with specific python version</a></li>
+<li><a href="#installuninstall-dependencies">install/uninstall dependencies</a></li>
+<li><a href="#lock-dependencies-for-production">lock dependencies for production</a></li>
+<li><a href="#install-dependencies-only-for-development">install dependencies only for development</a></li>
+<li><a href="#install-dependencies-with-other-options">install dependencies with other options</a></li>
+<li><a href="#run-command-within-venv">run command within venv</a></li>
+<li><a href="#remove-venv">remove venv</a></li>
+<li><a href="#see-venv-detailspath">see venv details/path</a></li>
+<li><a href="#enter-venv-shell">enter venv shell</a></li>
+<li><a href="#clean-venv">clean venv</a></li>
+<li><a href="#update-venv">update venv</a></li>
+<li><a href="#security-check">security check</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#python-package-distribution-pypi">Python Package Distribution (PyPi)</a><ul>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#pre-requisites">Pre-requisites</a></li>
+<li><a href="#build">Build</a></li>
+<li><a href="#test-distribution">Test Distribution</a></li>
+<li><a href="#final-distribution">Final Distribution</a></li>
+<li><a href="#rebuild">Rebuild</a></li>
+<li><a href="#test">Test</a><ul>
+<li><a href="#test-package">(Test) Package</a></li>
+<li><a href="#final-package">(Final)  Package</a></li>
+</ul>
+</li>
+<li><a href="#advanced-run-package-in-command-line">Advanced - Run Package in Command Line</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#python-linter-pep-8">Python Linter &amp; PEP-8</a><ul>
+<li><a href="#python-templates">Python Templates</a><ul>
+<li><a href="#pycharm-live-file-templates">PyCharm Live &amp; File Templates</a></li>
+<li><a href="#vim-template">Vim Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">#</a></h2>
+<h3 id="basic-patterns">Basic Patterns<a class="headerlink" href="#basic-patterns" title="Permanent link">#</a></h3>
+<h4 id="use-of">use of <code>.</code><a class="headerlink" href="#use-of" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches any character
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of_1">use of <code>*</code><a class="headerlink" href="#use-of_1" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 0 or more repetition of a char/set
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of_2">use of <code>+</code><a class="headerlink" href="#use-of_2" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 1 or more repetition of a char/set
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of_3">use of <code>?</code><a class="headerlink" href="#use-of_3" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches 0 or 1 repetition of a char/set
+- also works as a Non-greedy pattern (with repeaters)
+    - means in string &#39;&lt;b&gt;Hello&lt;/b&gt;&#39; pattern r&#39;&lt;.*&gt;&#39; will match the whole string instead of &#39;&lt;b&gt;&#39;
+    - but if pattern is used as r&#39;&lt;.*?&gt;&#39; then will match &#39;&lt;b&gt;&#39; only
+    - AKA pcre (Perl Compatible Regular Expression)
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of_4">use of <code>\</code><a class="headerlink" href="#use-of_4" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- sign of speciality
+- used before any special chars, to match that char
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of-t-r-n">use of <code>\t</code>, <code>\r</code>, <code>\n</code><a class="headerlink" href="#use-of-t-r-n" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- \t matches a tab
+- \r matches a carriage return (line break) in Mac, \n\r in Windows
+- \n matches a line break ( carriage return) in Linux &amp; Windows
+- note: On &quot;old&quot; printers, \r sent the print head back to the start of the line, and \n advanced the paper by one line. Both were therefore necessary to start printing on the next line.
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of-b-start-and-end-of-word-anchors">use of <code>\b</code> (start and end of word anchors)<a class="headerlink" href="#use-of-b-start-and-end-of-word-anchors" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- matches the boundary between word and non-word chars
+- matches the position called word boundaries
+    - match has zero length
+    - usually before (including start of the line) and after a word
+    -e.g. &lt;here&gt;apple&lt;here&gt;
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of-b">use of <code>\B</code><a class="headerlink" href="#use-of-b" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- opposite of \b
+- matches every position where \b does not
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of-s">use of <code>\s</code><a class="headerlink" href="#use-of-s" title="Permanent link">#</a></h4>
+<h4 id="use-of-d">use of <code>\d</code><a class="headerlink" href="#use-of-d" title="Permanent link">#</a></h4>
+<h4 id="use-of-d_1">use of <code>\D</code><a class="headerlink" href="#use-of-d_1" title="Permanent link">#</a></h4>
+<h4 id="use-of-w">use of <code>\w</code><a class="headerlink" href="#use-of-w" title="Permanent link">#</a></h4>
+<h4 id="use-of-w_1">use of <code>\W</code><a class="headerlink" href="#use-of-w_1" title="Permanent link">#</a></h4>
+<h4 id="use-of_5">use of <code>[]</code><a class="headerlink" href="#use-of_5" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- dash - inside []
+- dot . inside []
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of_6">use of <code>()</code><a class="headerlink" href="#use-of_6" title="Permanent link">#</a></h4>
+<h4 id="use-of-start-of-string-anchors">use of <code>^</code> (Start of String Anchors)<a class="headerlink" href="#use-of-start-of-string-anchors" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- with square bracket (set of chars)
+</code></pre></div>
+</td></tr></table>
+<h4 id="use-of-end-of-string-anchors">use of <code>$</code> <!--<code>$</code>-->  (End of String Anchors)<a class="headerlink" href="#use-of-end-of-string-anchors" title="Permanent link">#</a></h4>
+<h4 id="use-of_7">use of <code>|</code><a class="headerlink" href="#use-of_7" title="Permanent link">#</a></h4>
+<h4 id="use-of-syntax">use of syntax (<code>? ...</code>)<a class="headerlink" href="#use-of-syntax" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- Lookarounds
+    - +ve Lookahead
+    - -ve Lookahead
+    - +ve Lookbehind
+    - -ve Lookbehind
+- Non-Capturing Group
+</code></pre></div>
+</td></tr></table>
+<h3 id="builtin-functions">Builtin Functions:<a class="headerlink" href="#builtin-functions" title="Permanent link">#</a></h3>
+<h4 id="research">re.search<a class="headerlink" href="#research" title="Permanent link">#</a></h4>
+<h4 id="regroup">re.group<a class="headerlink" href="#regroup" title="Permanent link">#</a></h4>
+<h4 id="refindall">re.findall<a class="headerlink" href="#refindall" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- with files
+- with groups
+</code></pre></div>
+</td></tr></table>
+<h4 id="resub">re.sub<a class="headerlink" href="#resub" title="Permanent link">#</a></h4>
+<h4 id="recompile">re.compile<a class="headerlink" href="#recompile" title="Permanent link">#</a></h4>
+<h4 id="extra-options-to-above-functions">extra options to above functions<a class="headerlink" href="#extra-options-to-above-functions" title="Permanent link">#</a></h4>
+<h3 id="examples">Examples:<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
+<ul>
+<li>Repetitions</li>
+<li>Leftmost and largest</li>
+<li>Square Brackets (Set of chars)<ul>
+<li>Email example</li>
+</ul>
+</li>
+<li>Group Extraction</li>
+<li>Greedy vs Non-Greedy</li>
+<li>Substitution</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;This#is#$</span><span class="si">% a</span><span class="s2">&amp;%name%$ #&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[\w])([\W]+)(?=[\w])&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[A-Za-z0-9])([^A-Za-z0-9]+)(?=[A-Za-z0-9])&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;q(?=u)&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>remove white spaces from starting of the line but line break</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[^\S\n]+&#39;</span>
+
+<span class="c1">#or if regex supports PCRE</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[\h]+&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Credits:</p>
+<ul>
+<li>https://www.rexegg.com/regex-disambiguation.html#lookarounds</li>
+<li>www.regular-expressions.info</li>
+</ul>
+<h2 id="multithreading-multiprocessing">Multithreading &amp; Multiprocessing<a class="headerlink" href="#multithreading-multiprocessing" title="Permanent link">#</a></h2>
+<h3 id="gil-global-interpreter-lock">GIL - Global Interpreter Lock<a class="headerlink" href="#gil-global-interpreter-lock" title="Permanent link">#</a></h3>
+<ul>
+<li>Is a mutex (mutual exclusion attribute) in python </li>
+<li>protects python objects from multiple threads</li>
+<li>i.e. prevents multiple threads to execute python (byte)codes at once inorder to protect access to python objects</li>
+<li>i.e. provides lock to protect shared mutable state</li>
+<li>The lock is necessary because CPython's Interpreter or memory management is not thread safe<ul>
+<li>for example, when two threads simultaneously increment the reference count of the same object, the reference count could end up being incremented only once instead of twice.</li>
+</ul>
+</li>
+<li>hence, GIL is here to make python thread-safe, wherever needed</li>
+<li>GIL is controversial because due to it python's multithreading lack few features like </li>
+<li>python's multithreaded codes cannot utilize multiprocessor system</li>
+<li>the longer operations like I/O, image processing happens outside the GIL</li>
+<li>it is only bottleneck for codes which enter GIL for longer time</li>
+<li>GIL can causes scheduling IO-bound threads ahead of a CPU-bound threads</li>
+<li>inshort, GIL is only bad for multi-core CPU - bound thread operations</li>
+<li>each forked process have separate GIL</li>
+<li>Jython, IronPython does not have GIL</li>
+<li>writing a C extension needs GIL</li>
+<li>in Cython the GIL exists, but can be released temporarily using a "with" statement - <a href="https://notes-toransahu.notebooks.azure.com/nb//notebooks/python/Python-Basics.ipynb#with">read more</a></li>
+<li>
+<p>extra: https://stackoverflow.com/questions/1294382/what-is-a-global-interpreter-lock-gil</p>
+</li>
+<li>
+<p>Note : cython &amp; CPython are different</p>
+</li>
+</ul>
+<h4 id="some-terminologies">Some terminologies<a class="headerlink" href="#some-terminologies" title="Permanent link">#</a></h4>
+<h5 id="concurrency">Concurrency<a class="headerlink" href="#concurrency" title="Permanent link">#</a></h5>
+<ul>
+<li>When two or more task can start, run &amp; complete in overlapping time periods.</li>
+<li>It doesn't necessarily mean they'll ever be running at the same instant.</li>
+<li>e.g. Multi-tasking on a single core</li>
+</ul>
+<h5 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">#</a></h5>
+<ul>
+<li>When two are more tasks are executed simultaneously.</li>
+</ul>
+<h5 id="process">process<a class="headerlink" href="#process" title="Permanent link">#</a></h5>
+<ul>
+<li>is an instance of a program running in a computer </li>
+<li>can contain one or more threads</li>
+<li>has its independent memory space</li>
+<li>are spawned by creating a Process() object and then calling its start() method</li>
+</ul>
+<h5 id="thread">thread<a class="headerlink" href="#thread" title="Permanent link">#</a></h5>
+<ul>
+<li>is a sequence of instructions within a process</li>
+<li>as a light-weight process</li>
+<li>all threads shares the same memory space of the process </li>
+</ul>
+<p><img src="https://www.javamex.com/tutorials/threads/ThreadDiagram.png" alt="process block"></p>
+<h4 id="multi-threading">Multi-threading<a class="headerlink" href="#multi-threading" title="Permanent link">#</a></h4>
+<ul>
+<li>can be implemented to speedup the program using module : <strong>threading</strong></li>
+<li>thread-based <s>parallelism</s> concurrency</li>
+<li>CPython implementation uses a python construct GIL (global interpreter lock). GIL makes sure that at a time only single thread can execute.</li>
+<li>a thread acquires GIL --&gt; executes just for a while --&gt; passes GIL to next thread</li>
+<li>happens very quickly that human cannot detect, and creates illusion of multiple thread running simultaneously.</li>
+<li>in reality all threads works turn by turn into the same core of CPU</li>
+<li><strong>parallel CPU computation not possible due to GIL</strong></li>
+<li><strong>but parallel IO operations are possible (it releases GIL on IO)</strong></li>
+<li>GIL passing is an overhead here.</li>
+</ul>
+<h5 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">#</a></h5>
+<ul>
+<li>can turn off GIL - dirty practice</li>
+<li>this will result in messed memory management</li>
+<li>need to be very careful while writting semaphores &amp; mutex properly</li>
+</ul>
+<h5 id="use-of-thread">Use of thread<a class="headerlink" href="#use-of-thread" title="Permanent link">#</a></h5>
+<ul>
+<li>in GUI apps to keep UI threads responsive</li>
+<li>IO tasks (network IO or filesystem IO)</li>
+</ul>
+<h5 id="facts">Facts<a class="headerlink" href="#facts" title="Permanent link">#</a></h5>
+<ul>
+<li>using multiple-threads for CPU bound tasks will result in worse performance than a single thread</li>
+</ul>
+<h4 id="multi-processing">Multi-processing<a class="headerlink" href="#multi-processing" title="Permanent link">#</a></h4>
+<ul>
+<li>used to speedup CPU bound tasks using module: <strong>multiprocessing</strong></li>
+<li>process-based parallelism</li>
+<li>module results in full CPU utilization</li>
+<li>Inter-process communication can be achieved using <strong>queues and pipes</strong>
+*</li>
+</ul>
+<h5 id="pipe">pipe<a class="headerlink" href="#pipe" title="Permanent link">#</a></h5>
+<ul>
+<li>is a duplex(two way) communication channel</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">,))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>Out: hello bob</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;module name:&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;parent process:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;process id:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">info</span><span class="p">(</span><span class="s1">&#39;function f&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">info</span><span class="p">(</span><span class="s1">&#39;main line&#39;</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">,))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  
+</code></pre></div>
+</td></tr></table>
+<p>Out: </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>main line
+module name: __main__
+parent process: 65
+process id: 66
+function f
+module name: __main__
+parent process: 66
+process id: 80
+hello bob
+</code></pre></div>
+</td></tr></table>
+<h4 id="what-is-join">What is .join()?<a class="headerlink" href="#what-is-join" title="Permanent link">#</a></h4>
+<ul>
+<li>The join() method, when used with threading or multiprocessing, is not related to str.join()</li>
+<li>it's not actually concatenating anything together</li>
+<li>It just means "wait for this [thread/process] to complete"</li>
+<li>The name join is used because the multiprocessing module's API is meant to look as similar to the threading module's API</li>
+<li>The reason why is called join is that is joining the processes into a single one.</li>
+</ul>
+<p><img src="https://i.stack.imgur.com/IRpP1.jpg"></p>
+<p>Note: 
+* By default, when the main process is ready to exit, it will implicitly call join() on all running multiprocessing Process instances
+* This isn't as clearly stated in the multiprocessing docs as it should be, but it is mentioned in the Programming Guidelines section.
+* non-daemonic processes will be automatically be joined.
+* can override this behavior by setting the daemon flag on the Process to True prior to starting the process:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">say_hello</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Both parent and child will exit here, since the main process has completed.</span>
+<span class="c1"># the child process will be terminated as soon as the main process completes:</span>
+</code></pre></div>
+</td></tr></table>
+<p>Out:
+Hello</p>
+<h4 id="daemon">daemon<a class="headerlink" href="#daemon" title="Permanent link">#</a></h4>
+<p><strong>In Linux: A daemon is a long-running background process that answers requests for services.
+There are also some other processes like orphan &amp; zombie</strong></p>
+<ul>
+<li>The process has daemon flag</li>
+<li>a Boolean value</li>
+<li>This must be set before start() is called</li>
+<li>The initial value is inherited from the creating process</li>
+<li>When a process exits, it attempts to terminate all of its daemonic child processes</li>
+</ul>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">#</a></h2>
+<h3 id="file-handling">File Handling<a class="headerlink" href="#file-handling" title="Permanent link">#</a></h3>
+<ul>
+<li>How<ul>
+<li>Using <code>try</code>, <code>except</code>, <code>finally</code> </li>
+<li>Using <code>with</code> (pythonic way)</li>
+</ul>
+</li>
+<li>Why<ul>
+<li>to manage resources effeciently</li>
+<li>file descriptors (fd) are limited at OS level, so we can save fd by closing after use</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-try-except-finally">Using <code>try</code>, <code>except</code>, <code>finally</code><a class="headerlink" href="#using-try-except-finally" title="Permanent link">#</a></h3>
+<ul>
+<li>the step <code>finally</code> is important here for us<ul>
+<li>to use <code>finally</code> we need to write whole <code>try</code>, <code>except</code>, <code>finally</code> block in each languages</li>
+</ul>
+</li>
+<li><code>finally</code> is important because we need <code>f.close()</code> here to close the file descriptor with 100% guarantee</li>
+<li>file descriptors (fd) are limited at OS level, so we can save fd by closing after use</li>
+<li>code:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h3 id="using-with">Using <code>with</code><a class="headerlink" href="#using-with" title="Permanent link">#</a></h3>
+<ul>
+<li>Read <a href="https://notes-toransahu.notebooks.azure.com/nb//notebooks/python/Python-Basics.ipynb#with">here</a></li>
+<li>code:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h2 id="json-operations">JSON Operations<a class="headerlink" href="#json-operations" title="Permanent link">#</a></h2>
+<h3 id="import-json"><code>import json</code><a class="headerlink" href="#import-json" title="Permanent link">#</a></h3>
+<h3 id="flask-jsonify">flask: <code>jsonify()</code><a class="headerlink" href="#flask-jsonify" title="Permanent link">#</a></h3>
+<h2 id="shipping-python-solution">Shipping Python Solution<a class="headerlink" href="#shipping-python-solution" title="Permanent link">#</a></h2>
+<ul>
+<li>never ship .py files<ul>
+<li><code>find /path/to/your/files -type f -name "*.py" -delete</code></li>
+</ul>
+</li>
+<li>can ship .pyc or .pyo files</li>
+</ul>
+<h3 id="pyc">.pyc<a class="headerlink" href="#pyc" title="Permanent link">#</a></h3>
+<ul>
+<li>compiled</li>
+<li>size(.py) &lt; size(.pyc)</li>
+</ul>
+<h3 id="pyo">.pyo<a class="headerlink" href="#pyo" title="Permanent link">#</a></h3>
+<ul>
+<li>compiled + optimized<ul>
+<li>removed doc strings</li>
+<li>does not contain "set the current line to ..." bytecode instructions</li>
+<li>for faster performance</li>
+<li>renaming .pyo to .pyc works fine<ul>
+<li><code>find "ETHEREAL_DIR"/Ray/src/ -type f -name "*.pyo" -exec bash -c 'mv $0 ${0/.pyo/.pyc}' {} \;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>size(.pyo) &lt; size(.pyc)</li>
+<li><code>python -O -m compileall /path/to/your/files</code></li>
+<li><strong>Note - After this, you may get some import issues</strong></li>
+</ul>
+<h3 id="exe">.exe<a class="headerlink" href="#exe" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Source</p>
+<ul>
+<li>http://docs.python-guide.org/en/latest/shipping/freezing/</li>
+<li>https://pyinstaller.readthedocs.io/en/v3.3.1/</li>
+</ul>
+</li>
+<li>
+<p>Note:</p>
+<ul>
+<li>Freezing Python code on Linux into a Windows executable was only once supported in PyInstaller and later dropped</li>
+<li>All solutions need MS Visual C++ dll to be installed on target machine, except py2app. Only Pyinstaller makes self-executable exe that bundles the dll when passing --onefile to Configure.py.</li>
+</ul>
+</li>
+</ul>
+<h4 id="pyinstaller">PyInstaller<a class="headerlink" href="#pyinstaller" title="Permanent link">#</a></h4>
+<ul>
+<li>Uses the OS support to load the dynamic libraries, thus ensures full compatibility</li>
+<li>available for windows, linux, macOS etc.</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pyinstaller -i &lt;icon.ico&gt; --windowed --onefile &lt;python_file.py&gt;
+</code></pre></div>
+</td></tr></table>
+<h4 id="py2exe">py2exe<a class="headerlink" href="#py2exe" title="Permanent link">#</a></h4>
+<h2 id="python-version-management">Python Version Management<a class="headerlink" href="#python-version-management" title="Permanent link">#</a></h2>
+<h3 id="setting-default-python-version">Setting default Python Version<a class="headerlink" href="#setting-default-python-version" title="Permanent link">#</a></h3>
+<h4 id="by-creating-softlink-to-usrbinpython-file">By creating softlink to /usr/bin/python file<a class="headerlink" href="#by-creating-softlink-to-usrbinpython-file" title="Permanent link">#</a></h4>
+<ul>
+<li>not recommanded</li>
+<li>will affect other applications using another version of python</li>
+<li>can be done like:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ln -l /usr/bin/python /usr/bin/python3.6
+
+ln -l /usr/bin/python /home/toran/anaconda/bin/python3.6
+</code></pre></div>
+</td></tr></table>
+<h4 id="by-aliasing-python">By aliasing python<a class="headerlink" href="#by-aliasing-python" title="Permanent link">#</a></h4>
+<ul>
+<li>not recommanded</li>
+<li>will conflict when python will encounter in other commands like <ul>
+<li>which python</li>
+<li>python manage.py runserver</li>
+</ul>
+</li>
+<li>can be done like:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">python</span><span class="o">=</span><span class="err">&#39;</span>/home/toran/anaconda/bin/python3.6<span class="sb">`</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="by-setting-path-env-variable">By setting PATH env variable<a class="headerlink" href="#by-setting-path-env-variable" title="Permanent link">#</a></h4>
+<ul>
+<li>recommanded with anaconda</li>
+<li>works on particular shell only</li>
+<li>for persistency; include the command in .bashrc or .zshrc file</li>
+<li>can be done like:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="anaconda">Anaconda<a class="headerlink" href="#anaconda" title="Permanent link">#</a></h3>
+<ul>
+<li>install it from official site</li>
+<li>you can also choose miniconda over regular anaconda<ul>
+<li>can be used in production env/ deployments etc.</li>
+</ul>
+</li>
+</ul>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>set anaconda python as default</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/toran/anaconda3/bin:&lt;dollar&gt;PATH&quot;</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+</ul>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h4>
+<ul>
+<li>set anaconda python as default</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+<span class="c1">#if using git bash</span>
+. /c/ProgramData/Miniconda3/Scripts/activate
+</code></pre></div>
+</td></tr></table>
+<h3 id="virtualenv">virtualenv<a class="headerlink" href="#virtualenv" title="Permanent link">#</a></h3>
+<h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">#</a></h3>
+<ul>
+<li>officially recommended dependency management system</li>
+<li>automagically <ul>
+<li>installs dependencies in venv</li>
+<li>keep record in Pipfile<ul>
+<li>packages section</li>
+<li>dev-packages section</li>
+</ul>
+</li>
+<li>keeps record of dependencies with specific version in Pipfile.lock file</li>
+<li>if <code>requirements.txt</code> already exists, installs dep from there</li>
+<li>installs &amp; uninstalls deps</li>
+</ul>
+</li>
+</ul>
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install pipenv
+</code></pre></div>
+</td></tr></table>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h4>
+<h5 id="create-venv">create venv<a class="headerlink" href="#create-venv" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install 
+</code></pre></div>
+</td></tr></table>
+<h5 id="create-venv-with-specific-python-version">create venv with specific python version<a class="headerlink" href="#create-venv-with-specific-python-version" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --two install 
+
+pipenv --three install 
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>will initialize the venv with that python version</li>
+</ul>
+<h5 id="installuninstall-dependencies">install/uninstall dependencies<a class="headerlink" href="#installuninstall-dependencies" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install nose2
+
+pipenv uninstall nose2
+</code></pre></div>
+</td></tr></table>
+<h5 id="lock-dependencies-for-production">lock dependencies for production<a class="headerlink" href="#lock-dependencies-for-production" title="Permanent link">#</a></h5>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv lock
+</code></pre></div>
+</td></tr></table>
+- will keep record of all the deps in Pipfile.lock file with their specific versions</p>
+<h5 id="install-dependencies-only-for-development">install dependencies only for development<a class="headerlink" href="#install-dependencies-only-for-development" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install --dev  nose2
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>will keep this record in [dev-packages] section</li>
+<li>and will do not install it by default</li>
+<li>to install dev packages; need to do:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv install --dev
+</code></pre></div>
+</td></tr></table>
+<h5 id="install-dependencies-with-other-options">install dependencies with other options<a class="headerlink" href="#install-dependencies-with-other-options" title="Permanent link">#</a></h5>
+<ul>
+<li><code>--dev</code>: Install both develop and default packages from Pipfile.lock.</li>
+<li><code>--system</code>: Use the system pip command rather than the one from your virtualenv.</li>
+<li><code>--ignore-pipfile</code>: Ignore the Pipfile and install from the Pipfile.lock.</li>
+<li><code>--skip-lock</code>: Ignore the Pipfile.lock and install from the Pipfile. In addition, do not write out a Pipfile.lock reflecting changes to the Pipfile. </li>
+</ul>
+<h5 id="run-command-within-venv">run command within venv<a class="headerlink" href="#run-command-within-venv" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv run which python
+</code></pre></div>
+</td></tr></table>
+<h5 id="remove-venv">remove venv<a class="headerlink" href="#remove-venv" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --rm
+</code></pre></div>
+</td></tr></table>
+<h5 id="see-venv-detailspath">see venv details/path<a class="headerlink" href="#see-venv-detailspath" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv --venv
+</code></pre></div>
+</td></tr></table>
+<h5 id="enter-venv-shell">enter venv shell<a class="headerlink" href="#enter-venv-shell" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv shell
+</code></pre></div>
+</td></tr></table>
+<h5 id="clean-venv">clean venv<a class="headerlink" href="#clean-venv" title="Permanent link">#</a></h5>
+<ul>
+<li>uninstall all the packages not recorded in Pipfile</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv clean
+</code></pre></div>
+</td></tr></table>
+<h5 id="update-venv">update venv<a class="headerlink" href="#update-venv" title="Permanent link">#</a></h5>
+<ul>
+<li>locks &amp; then update all the packages</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv update
+</code></pre></div>
+</td></tr></table>
+<h5 id="security-check">security check<a class="headerlink" href="#security-check" title="Permanent link">#</a></h5>
+<ul>
+<li>checks for compliance with PEP 508 <a href="https://www.python.org/dev/peps/pep-0508/">Dependency specification for Python Software Packages</a> as well as package safety</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pipenv check
+</code></pre></div>
+</td></tr></table>
+<h2 id="python-package-distribution-pypi">Python Package Distribution (PyPi)<a class="headerlink" href="#python-package-distribution-pypi" title="Permanent link">#</a></h2>
+<h3 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>/example_pkg
+  /pkg1
+    __init__.py
+  /pkg2
+    /pkg2_1
+  setup.py
+  LICENSE
+  README.md
+</code></pre></div>
+</td></tr></table>
+<p>where 
+- <s><code>__init__.py</code> should contain a variable <code>name='example_pkg'</code></s>
+- <code>setup.py</code> should look like <a href="https://gist.github.com/toransahu/669efbb90a5019bb4a766d3c385de90c">this gist</a>
+    - where classifiers can be like <a href="https://pypi.org/classifiers/">this</a> or  <a href="https://gist.github.com/toransahu/bd3bc184bae068c72d6dad7f7c1b0138">gist</a>
+- <code>README.md</code> should be present, which will define the <code>long_description</code> about  the package
+- <code>LICENSE</code> should be accurate with the <a href="https://choosealicense.com/">list</a>
+- packages
+    - if want to includes all the packages/subpackages
+        - use defaultone <code>packages=setuptools.find_packages(),</code>
+    - else define manually like
+        - <code>packages=['pkg1', 'pkg2', 'pkg2.pkg2_1']</code></p>
+<p>Note: After installing the package, you able to import packages with names listed in <code>packages</code> var.</p>
+<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#setuptools &amp; wheel - to create build in .whl as well as .tar.gz. format</span>
+python3 -m pip install --user --upgrade setuptools wheel
+
+
+<span class="c1">#twine - to upload build in pypi server</span>
+python3 -m pip install --user --upgrade twine
+</code></pre></div>
+</td></tr></table>
+<h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h3>
+<ul>
+<li>change directory where <code>setup.py</code> is  &amp; run</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 setup.py sdist bdist_wheel
+</code></pre></div>
+</td></tr></table>
+<p>output will be like</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>dist/
+  example_pkg-0.0.1-py3-none-any.whl
+  example_pkg-0.0.1.tar.gz
+</code></pre></div>
+</td></tr></table>
+<h3 id="test-distribution">Test Distribution<a class="headerlink" href="#test-distribution" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+</code></pre></div>
+</td></tr></table>
+<h3 id="final-distribution">Final Distribution<a class="headerlink" href="#final-distribution" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>twine upload --repository-url https://upload.test.pypi.org/legacy/ dist/*
+
+<span class="c1">#OR</span>
+
+twine upload dist/*
+</code></pre></div>
+</td></tr></table>
+<h3 id="rebuild">Rebuild<a class="headerlink" href="#rebuild" title="Permanent link">#</a></h3>
+<ul>
+<li>delete <code>build</code>, <code>dist</code>, &amp; <code>*.egg-info</code> files then build again</li>
+</ul>
+<h3 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h3>
+<h4 id="test-package">(Test) Package<a class="headerlink" href="#test-package" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 -m pip install --index-url https://test.pypi.org/simple/ example_pkg
+</code></pre></div>
+</td></tr></table>
+<h4 id="final-package">(Final)  Package<a class="headerlink" href="#final-package" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python3 -m pip install example_pkg
+</code></pre></div>
+</td></tr></table>
+<h3 id="advanced-run-package-in-command-line">Advanced - Run Package in Command Line<a class="headerlink" href="#advanced-run-package-in-command-line" title="Permanent link">#</a></h3>
+<p>Source: http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html</p>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>You're not allowed</p>
+</li>
+<li>
+<p>File already exists</p>
+</li>
+<li>
+<p>File already exists, change version</p>
+</li>
+<li>
+<p><code>particular line</code> is not know/right</p>
+</li>
+</ul>
+<h2 id="python-linter-pep-8">Python Linter &amp; PEP-8<a class="headerlink" href="#python-linter-pep-8" title="Permanent link">#</a></h2>
+<ul>
+<li>I found flake8, autopep8 &amp; yapf similar</li>
+<li>but I found black best among them<ul>
+<li>quotes: double</li>
+<li>no extra line change</li>
+<li>only draw back is bad list slice formating<ul>
+<li>create issue: https://github.com/python/black/issues</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="python-templates">Python Templates<a class="headerlink" href="#python-templates" title="Permanent link">#</a></h3>
+<h4 id="pycharm-live-file-templates">PyCharm Live &amp; File Templates<a class="headerlink" href="#pycharm-live-file-templates" title="Permanent link">#</a></h4>
+<p>https://gist.github.com/toransahu/6080cbf2cc1a8808f19bd0eccafc5ef0</p>
+<h4 id="vim-template">Vim Template<a class="headerlink" href="#vim-template" title="Permanent link">#</a></h4>
+<p>https://github.com/toransahu/vim-template/blob/master/templates/%3Dtemplate%3D.py</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../java/java_basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Java Basics" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Java Basics
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../python_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Basics" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Python Basics
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

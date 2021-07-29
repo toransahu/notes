@@ -1,0 +1,2363 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>Blockchain - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blockchain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Blockchain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Blockchain
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Blockchain
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    Blockchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    Trade-offs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminologies" class="md-nav__link">
+    Terminologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    Facts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    Frameworks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multichain" class="md-nav__link">
+    Multichain
+  </a>
+  
+    <nav class="md-nav" aria-label="Multichain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes-on-different-servers" class="md-nav__link">
+    Nodes On Different Servers
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes On Different Servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-1-initial-setup-on-server-1" class="md-nav__link">
+    Node 1 Initial Setup on Server 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-2-connection-with-node-1-on-server-2" class="md-nav__link">
+    Node 2 Connection with Node 1 on Server 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-on-server-1" class="md-nav__link">
+    Back on Server 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-on-server-2" class="md-nav__link">
+    Back on Server 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-chain" class="md-nav__link">
+    Delete  a Chain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-on-same-server" class="md-nav__link">
+    Nodes On Same Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes On Same Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-1-initial-setup" class="md-nav__link">
+    Node 1 Initial Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-2-connection-with-node-1" class="md-nav__link">
+    Node 2 Connection with Node 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/python/python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    Blockchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    Trade-offs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminologies" class="md-nav__link">
+    Terminologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    Facts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    Frameworks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multichain" class="md-nav__link">
+    Multichain
+  </a>
+  
+    <nav class="md-nav" aria-label="Multichain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes-on-different-servers" class="md-nav__link">
+    Nodes On Different Servers
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes On Different Servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-1-initial-setup-on-server-1" class="md-nav__link">
+    Node 1 Initial Setup on Server 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-2-connection-with-node-1-on-server-2" class="md-nav__link">
+    Node 2 Connection with Node 1 on Server 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-on-server-1" class="md-nav__link">
+    Back on Server 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-on-server-2" class="md-nav__link">
+    Back on Server 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-chain" class="md-nav__link">
+    Delete  a Chain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-on-same-server" class="md-nav__link">
+    Nodes On Same Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes On Same Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-1-initial-setup" class="md-nav__link">
+    Node 1 Initial Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-2-connection-with-node-1" class="md-nav__link">
+    Node 2 Connection with Node 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/blockchain.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Blockchain</h1>
+                
+                <h2 id="blockchain">Blockchain<a class="headerlink" href="#blockchain" title="Permanent link">#</a></h2>
+<div class="toc">
+<ul>
+<li><a href="#blockchain">Blockchain</a></li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#trade-offs">Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#terminologies">Terminologies</a></li>
+<li><a href="#components">Components</a><ul>
+<li><a href="#block">Block</a></li>
+</ul>
+</li>
+<li><a href="#features">Features</a></li>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#facts">Facts</a></li>
+<li><a href="#frameworks">Frameworks</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#multichain">Multichain</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#nodes-on-different-servers">Nodes On Different Servers</a><ul>
+<li><a href="#node-1-initial-setup-on-server-1">Node 1 Initial Setup on Server 1</a></li>
+<li><a href="#node-2-connection-with-node-1-on-server-2">Node 2 Connection with Node 1 on Server 2</a></li>
+<li><a href="#back-on-server-1">Back on Server 1</a></li>
+<li><a href="#back-on-server-2">Back on Server 2</a></li>
+<li><a href="#delete-a-chain">Delete  a Chain</a></li>
+</ul>
+</li>
+<li><a href="#nodes-on-same-server">Nodes On Same Server</a><ul>
+<li><a href="#node-1-initial-setup">Node 1 Initial Setup</a></li>
+<li><a href="#node-2-connection-with-node-1">Node 2 Connection with Node 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<h3 id="trade-offs">Trade-offs<a class="headerlink" href="#trade-offs" title="Permanent link">#</a></h3>
+<ul>
+<li>Public vs Private</li>
+<li>Security vs Performance</li>
+</ul>
+<h2 id="terminologies">Terminologies<a class="headerlink" href="#terminologies" title="Permanent link">#</a></h2>
+<ul>
+<li>Genesis</li>
+<li>Consensus<ul>
+<li>Proof-of-Work</li>
+<li>Proof-of-Stake</li>
+<li>Proof of Byzantine Fault Tollerance </li>
+</ul>
+</li>
+<li>Black Node/Block</li>
+<li>Orphan Block (Purple)</li>
+<li>Immutable distributed Ledger</li>
+<li>Double Spending</li>
+<li>Node<ul>
+<li>Any computer that connects to the Bitcoin network is called a node</li>
+<li>every mining computer, every computer that has a bitcoin wallet and by special sites that give blockchain monitor services</li>
+</ul>
+</li>
+<li>Full Node<ul>
+<li>Nodes that fully verify all of the rules of Bitcoin</li>
+<li>Full nodes download every block and transaction and check them against Bitcoin's consensus rules</li>
+</ul>
+</li>
+<li>Merkle Tree<ul>
+<li>Hash of transaction in a block</li>
+</ul>
+</li>
+<li>Keys    <ul>
+<li><a href="https://www.coindesk.com/information/how-do-bitcoin-transactions-work/">Source</a></li>
+<li>Private Key (64): Assiged to node on joining network</li>
+<li>Public Key (34): same as above but can be publiced, same as bitcoin QR code <ul>
+<li>balances in wallet are fetched from bitcoin address, which is public key of the wallet</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">#</a></h2>
+<ul>
+<li>Transactions<ul>
+<li>commits changes to the blockchain</li>
+<li>contains signature of owner of address</li>
+<li>many transactions inside a block</li>
+</ul>
+</li>
+<li>Blocks<ul>
+<li>conatins an ordered bunch of transactions<ul>
+<li>timestamps the transactions, are immutable</li>
+</ul>
+</li>
+<li>each block references the previous block</li>
+</ul>
+</li>
+</ul>
+<h3 id="block">Block<a class="headerlink" href="#block" title="Permanent link">#</a></h3>
+<ul>
+<li>Hash</li>
+<li>Data</li>
+<li>Previous Hash</li>
+</ul>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
+<ul>
+<li>Encryption of data</li>
+<li>Proof-of-work</li>
+<li>History</li>
+<li>Decentralized Data</li>
+<li>Trust in Data</li>
+<li>No Intermediaries</li>
+<li>Network Type<ul>
+<li>Public </li>
+<li>Private</li>
+</ul>
+</li>
+<li>Authentication    <ul>
+<li>peers signs the transaction with their private key</li>
+</ul>
+</li>
+</ul>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">#</a></h2>
+<ul>
+<li>Banking &amp; Money Transfer</li>
+<li>Healthcare</li>
+<li>All types of document management<ul>
+<li>Land / Real State<ul>
+<li>Owner's Doc</li>
+<li>Transfer Deeds</li>
+<li>Land History</li>
+</ul>
+</li>
+<li>Certificates<ul>
+<li>Birth</li>
+<li>Caste</li>
+<li>Marriage</li>
+<li>Death</li>
+</ul>
+</li>
+<li>Contracts</li>
+</ul>
+</li>
+<li>Governance<ul>
+<li>All the govt. data</li>
+</ul>
+</li>
+<li>Voting<ul>
+<li>Voter Registration</li>
+<li>Voter Identification</li>
+<li>Electronic Voting</li>
+</ul>
+</li>
+<li>Cloud Storage</li>
+<li>Digital Twin</li>
+<li>Energy management</li>
+<li>Online Music</li>
+<li>Retail Shops</li>
+<li>Crowdfunding<ul>
+<li>Startups</li>
+<li>Govt. &amp; Contractor</li>
+</ul>
+</li>
+<li>Avoid Intermediaters<ul>
+<li>Advocate</li>
+<li>Bank</li>
+<li>Other 3rd Parties</li>
+</ul>
+</li>
+<li>Blockchain + AI<ul>
+<li>Decentralized AI platform</li>
+</ul>
+</li>
+</ul>
+<h2 id="facts">Facts<a class="headerlink" href="#facts" title="Permanent link">#</a></h2>
+<ul>
+<li>data commited to ledger cann't be changed</li>
+</ul>
+<h2 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">#</a></h2>
+<p>Source1: https://medium.com/hyperlegendary/6-blockchain-frameworks-to-build-enterprise-blockchain-how-to-choose-them-2b7d50ba275c<br />
+Source2: https://www.blockchain-council.org/blockchain/list-of-best-open-source-blockchain-platforms/</p>
+<ul>
+<li>Hyperledger (active Consumer): https://github.com/hyperledger/composer/</li>
+<li>Ethereum: https://github.com/ethereum</li>
+<li>MultiChain: https://github.com/MultiChain , https://www.multichain.com</li>
+<li>OpenBlockChain : https://github.com/openblockchain</li>
+<li>Eris</li>
+</ul>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">#</a></h2>
+<ul>
+<li>genesis</li>
+<li>few transactions by few peoples</li>
+<li>transactions stored temporary in transaction pool</li>
+<li>many miners try to solve for candidate block<ul>
+<li>candidate block is the next block going to be added to the blockchain</li>
+<li>a block can store a limited amount of transactions (1MB, in Bitcoin Hard Cash 8MB, 500 transactions etc.)</li>
+<li>they will take the all transaction data and create hash from that by making chnages in nonce</li>
+</ul>
+</li>
+<li>any one miner won the race</li>
+<li>he will broadcast the hash/new to the network</li>
+<li>rest of the miners will validate the calculated hash<ul>
+<li>there are some math like value of hash should be less than <a href="http://learnmeabitcoin.com/guide/blocks">target</a><ul>
+<li>source: http://learnmeabitcoin.com/guide/blocks)</li>
+<li>or a simple math for example, hash should start with 0000</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>if validations succeed, all the         </li>
+</ul>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
+<ul>
+<li>how data changes reaches to the leader</li>
+<li>how leader'd PoW are verified</li>
+<li>where the new block will get added if one leader solved the problem</li>
+<li>what is the mathematical problem to be solved</li>
+<li>how many transactions in single block</li>
+<li>when is new block created and why?</li>
+<li>how creation/updation in doc will be validated, before audit?</li>
+<li>how to avoid false data entry by doctors?</li>
+<li>how to add real time data like, pulse, heartbit directly from device? include IoT?</li>
+<li>who are PoW validators? Are the other miners?</li>
+<li>who are ledger keepers? are they miners?</li>
+</ul>
+<hr />
+<h2 id="multichain">Multichain<a class="headerlink" href="#multichain" title="Permanent link">#</a></h2>
+<h3 id="installation"><a href="https://www.multichain.com/download-install/">Installation</a><a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>su <span class="o">(</span>enter root password<span class="o">)</span>
+
+<span class="nb">cd</span> /tmp
+wget https://www.multichain.com/download/multichain-1.0.5.tar.gz
+tar -xvzf multichain-1.0.5.tar.gz
+<span class="nb">cd</span> multichain-1.0.5
+mv multichaind multichain-cli multichain-util /usr/local/bin <span class="o">(</span>to make easily accessible on the <span class="nb">command</span> line<span class="o">)</span>
+
+<span class="nb">exit</span> <span class="o">(</span>to <span class="k">return</span> to your regular user<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h3>
+<h4 id="nodes-on-different-servers"><a href="https://www.multichain.com/getting-started/">Nodes On Different Servers</a><a class="headerlink" href="#nodes-on-different-servers" title="Permanent link">#</a></h4>
+<h5 id="node-1-initial-setup-on-server-1">Node 1 Initial Setup on Server 1<a class="headerlink" href="#node-1-initial-setup-on-server-1" title="Permanent link">#</a></h5>
+<ul>
+<li>
+<p>Run 
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Create chain1</span>
+multichain-util create chain1
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Utilities <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Blockchain parameter <span class="nb">set</span> was successfully generated.
+You can edit it <span class="k">in</span> /home/toran/node1/chain1/params.dat before running multichaind <span class="k">for</span> the first time.
+
+To generate blockchain please run <span class="s2">&quot;multichaind chain1 -daemon&quot;</span>.
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Run
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Initialize Blockchain with genesis block</span>
+multichaind chain1 -daemon
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Starting up node...
+
+Looking <span class="k">for</span> genesis block...
+Genesis block found
+
+Other nodes can connect to this node using:
+multichaind chain1@192.168.1.100:6725
+
+Listening <span class="k">for</span> API requests on port <span class="m">6724</span> <span class="o">(</span><span class="nb">local</span> only - see rpcallowip setting<span class="o">)</span>
+
+Node ready.
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h5 id="node-2-connection-with-node-1-on-server-2">Node 2 Connection with Node 1 on Server 2<a class="headerlink" href="#node-2-connection-with-node-1-on-server-2" title="Permanent link">#</a></h5>
+<ul>
+<li>
+<p>Run
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>multichaind chain1@192.168.1.100:6725
+
+<span class="c1"># aws node</span>
+multichaind -datadir<span class="o">=</span>/home/toran/node2 -port<span class="o">=</span><span class="m">10255</span> -rpcport<span class="o">=</span><span class="m">10254</span> mychain@34.254.186.152:6821 -daemon
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Retrieving blockchain parameters from the seed node <span class="m">192</span>.168.1.100:6725 ...
+Blockchain successfully initialized.
+
+Please ask blockchain admin or user having activate permission to <span class="nb">let</span> you connect and/or transact:
+multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect,send,receive
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h5 id="back-on-server-1">Back on Server 1<a class="headerlink" href="#back-on-server-1" title="Permanent link">#</a></h5>
+<ul>
+<li>Run<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h5 id="back-on-server-2">Back on Server 2<a class="headerlink" href="#back-on-server-2" title="Permanent link">#</a></h5>
+<ul>
+<li>Run<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Now try reconnecting again</span>
+multichaind chain1 -daemon
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h5 id="delete-a-chain">Delete  a Chain<a class="headerlink" href="#delete-a-chain" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Stop it running</span>
+multichain-cli chain1 stop
+
+<span class="c1">#Delete its directory</span>
+sudo rm -r ~/.multichain/chain1
+</code></pre></div>
+</td></tr></table>
+<h4 id="nodes-on-same-server"><a href="https://www.multichain.com/qa/563/multiple-nodes-server-connecting-chain-using-different-users">Nodes On Same Server</a><a class="headerlink" href="#nodes-on-same-server" title="Permanent link">#</a></h4>
+<h5 id="node-1-initial-setup">Node 1 Initial Setup<a class="headerlink" href="#node-1-initial-setup" title="Permanent link">#</a></h5>
+<ul>
+<li>
+<p>Run
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir /home/toran/node1
+multichain-util create chain1 -datadir<span class="o">=</span>/home/toran/node1
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Utilities <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Blockchain parameter <span class="nb">set</span> was successfully generated.
+You can edit it <span class="k">in</span> /home/toran/node1/chain1/params.dat before running multichaind <span class="k">for</span> the first time.
+
+To generate blockchain please run <span class="s2">&quot;multichaind chain1 -daemon&quot;</span>.
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Run<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>multichaind chain1 -daemon -datadir<span class="o">=</span>/home/toran/node1
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Starting up node...
+
+Looking <span class="k">for</span> genesis block...
+Genesis block found
+
+Other nodes can connect to this node using:
+multichaind chain1@192.168.1.100:6725
+
+Listening <span class="k">for</span> API requests on port <span class="m">6724</span> <span class="o">(</span><span class="nb">local</span> only - see rpcallowip setting<span class="o">)</span>
+
+Node ready.
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h5 id="node-2-connection-with-node-1">Node 2 Connection with Node 1<a class="headerlink" href="#node-2-connection-with-node-1" title="Permanent link">#</a></h5>
+<p>Syntax: <code>multichaind -datadir=&lt;your_path_to_multichain2nd_directory&gt; -port=10255 -rpcport=10254 chain0 -daemon</code></p>
+<ul>
+<li>
+<p>Run<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir /home/toran/node2
+multichaind chain1@&lt;chain1-ip&gt;:&lt;chain1-port&gt; -datadir<span class="o">=</span>/home/toran/node2
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Output<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MultiChain <span class="m">1</span>.0.5 Daemon <span class="o">(</span>latest protocol <span class="m">10011</span><span class="o">)</span>
+
+Retrieving blockchain parameters from the seed node <span class="m">192</span>.168.1.100:6725 ...
+Blockchain successfully initialized.
+
+Please ask blockchain admin or user having activate permission to <span class="nb">let</span> you connect and/or transact:
+multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+multichain-cli chain1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect,send,receive
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Run<br />
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>multichain-cli chain1 -datadir<span class="o">=</span>/home/toran/node1 grant 1UcDevL9XAeEeHu5qtjBqcdXTsLfELW3nHt5YR connect
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<p>Commands in Interactive Mode</p>
+<p>sudo mkdir ~/.multichain/chain1      </p>
+<p>multichain-cli chain1 -datadir=/home/toran/node1   </p>
+<p>multichaind -datadir=/home/toran/node2 -port=10255 -rpcport=10254 mychain@34.254.186.152:6821 -daemon</p>
+<p>multichain-cli mychain -datadir=/home/toran/node2</p>
+<hr />
+<ul>
+<li>allow port range in aws instance, like 1000-9999 in all multichain nodes aws instace</li>
+<li>while running the node chain@ip:port, this port is used in cli</li>
+<li>while API port is used in python/code</li>
+</ul>
+<hr />
+<p>multichain-cli -datadir=/home/ubuntu/toran-aws block-chain create stream "scheme" true</p>
+<ul>
+<li>connect
+    <code>multichaind -datadir=/home/ubuntu/vin-aws-new block-chain@13.232.100.99:2657</code></li>
+</ul>
+<hr />
+<p>IP:
+vin-new: 34.255.8.211
+tom: 13.232.130.184
+my: 13.232.100.99</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../android/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Android" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Android
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../code/" class="md-footer__link md-footer__link--next" aria-label="Next: Code" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Code
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3542 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>Python Production Servers - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-production-servers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Production Servers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer-Science/toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Engineering/Software-Engineering/Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" checked>
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python Production Servers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python Production Servers
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-production-servers" class="md-nav__link">
+    Python Production Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
+    Web Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ngnix" class="md-nav__link">
+    ngnix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-server" class="md-nav__link">
+    Application Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-developement-server" class="md-nav__link">
+    django developement server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn" class="md-nav__link">
+    gunicorn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages-hosting" class="md-nav__link">
+    Github Pages Hosting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonanywhere" class="md-nav__link">
+    PythonAnywhere
+  </a>
+  
+    <nav class="md-nav" aria-label="PythonAnywhere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsgi" class="md-nav__link">
+    WSGI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-files" class="md-nav__link">
+    Static Files:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+    <nav class="md-nav" aria-label="Heroku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-heroku-cli" class="md-nav__link">
+    Install heroku CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-app" class="md-nav__link">
+    Create app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-procfile" class="md-nav__link">
+    Add Procfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-code" class="md-nav__link">
+    Push code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-env-file" class="md-nav__link">
+    Add .env file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-appjson-file" class="md-nav__link">
+    Add app.json file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-ami-amazon-machine-instance" class="md-nav__link">
+    Create AMI (Amazon Machine Instance)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-to-your-instance" class="md-nav__link">
+    SSH to your instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-password" class="md-nav__link">
+    Set Password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-prerequisites" class="md-nav__link">
+    Install Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-stuff" class="md-nav__link">
+    Python Stuff
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Stuff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommanded-way" class="md-nav__link">
+    Recommanded Way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-way" class="md-nav__link">
+    Original Way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-project-by-starting-up-the-django-development-server-with-this-command" class="md-nav__link">
+    Test your project by starting up the Django development server with this command:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-stuff" class="md-nav__link">
+    Server Stuff
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Stuff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn_1" class="md-nav__link">
+    Gunicorn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery" class="md-nav__link">
+    celery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervisor" class="md-nav__link">
+    supervisor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-database" class="md-nav__link">
+    Setup Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-rds-mysql-free-tier" class="md-nav__link">
+    AWS RDS MySQL (Free Tier)
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS RDS MySQL (Free Tier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rds-config" class="md-nav__link">
+    RDS Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#django-configuration" class="md-nav__link">
+    Django Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-django-with-rds-mysql" class="md-nav__link">
+    Test Django with RDS MySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-before-run" class="md-nav__link">
+    Confirm before run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-https-in-aws-ec2-with-nginx" class="md-nav__link">
+    Enable HTTPS in aws ec2 with nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable HTTPS in aws ec2 with nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-http-https-are-opened-in-security-groups" class="md-nav__link">
+    Make sure HTTP &amp; HTTPS are opened in Security Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-domains-cname-record-to-the-public-dns-of-ec2" class="md-nav__link">
+    Setup domain's CNAME record to the public DNS of ec2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-certbot-in-aws-instance" class="md-nav__link">
+    Install Certbot in aws instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-any-existing-servers-running-on-the-port-80-and-443" class="md-nav__link">
+    Stop any existing servers running on the port 80 and 443
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-certificates" class="md-nav__link">
+    Generate certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-nginx-configurations-in-etcnginxnginxconf-to-enable-ssl" class="md-nav__link">
+    Change nginx configurations in /etc/nginx/nginx.conf to enable SSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-nginx-config" class="md-nav__link">
+    Reload nginx config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finish" class="md-nav__link">
+    Finish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-certificate-expiry-date" class="md-nav__link">
+    Check Certificate Expiry Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renew-certificate" class="md-nav__link">
+    Renew Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-certificate" class="md-nav__link">
+    delete the certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoots" class="md-nav__link">
+    Troubleshoots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-s3-storage" class="md-nav__link">
+    AWS S3 Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    Cloudflare
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloudflare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-dns" class="md-nav__link">
+    Manage DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-cache" class="md-nav__link">
+    Manage Cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purge-cache" class="md-nav__link">
+    Purge Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-production-servers" class="md-nav__link">
+    Python Production Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
+    Web Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ngnix" class="md-nav__link">
+    ngnix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-server" class="md-nav__link">
+    Application Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-developement-server" class="md-nav__link">
+    django developement server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn" class="md-nav__link">
+    gunicorn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    PostgreSQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages-hosting" class="md-nav__link">
+    Github Pages Hosting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonanywhere" class="md-nav__link">
+    PythonAnywhere
+  </a>
+  
+    <nav class="md-nav" aria-label="PythonAnywhere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsgi" class="md-nav__link">
+    WSGI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-files" class="md-nav__link">
+    Static Files:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+    <nav class="md-nav" aria-label="Heroku">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-heroku-cli" class="md-nav__link">
+    Install heroku CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-app" class="md-nav__link">
+    Create app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-procfile" class="md-nav__link">
+    Add Procfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-code" class="md-nav__link">
+    Push code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-env-file" class="md-nav__link">
+    Add .env file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-appjson-file" class="md-nav__link">
+    Add app.json file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-ami-amazon-machine-instance" class="md-nav__link">
+    Create AMI (Amazon Machine Instance)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-to-your-instance" class="md-nav__link">
+    SSH to your instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-password" class="md-nav__link">
+    Set Password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-prerequisites" class="md-nav__link">
+    Install Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-stuff" class="md-nav__link">
+    Python Stuff
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Stuff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommanded-way" class="md-nav__link">
+    Recommanded Way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-way" class="md-nav__link">
+    Original Way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-project-by-starting-up-the-django-development-server-with-this-command" class="md-nav__link">
+    Test your project by starting up the Django development server with this command:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-stuff" class="md-nav__link">
+    Server Stuff
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Stuff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn_1" class="md-nav__link">
+    Gunicorn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery" class="md-nav__link">
+    celery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervisor" class="md-nav__link">
+    supervisor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-database" class="md-nav__link">
+    Setup Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-rds-mysql-free-tier" class="md-nav__link">
+    AWS RDS MySQL (Free Tier)
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS RDS MySQL (Free Tier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rds-config" class="md-nav__link">
+    RDS Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#django-configuration" class="md-nav__link">
+    Django Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-django-with-rds-mysql" class="md-nav__link">
+    Test Django with RDS MySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-before-run" class="md-nav__link">
+    Confirm before run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-https-in-aws-ec2-with-nginx" class="md-nav__link">
+    Enable HTTPS in aws ec2 with nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable HTTPS in aws ec2 with nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-http-https-are-opened-in-security-groups" class="md-nav__link">
+    Make sure HTTP &amp; HTTPS are opened in Security Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-domains-cname-record-to-the-public-dns-of-ec2" class="md-nav__link">
+    Setup domain's CNAME record to the public DNS of ec2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-certbot-in-aws-instance" class="md-nav__link">
+    Install Certbot in aws instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-any-existing-servers-running-on-the-port-80-and-443" class="md-nav__link">
+    Stop any existing servers running on the port 80 and 443
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-certificates" class="md-nav__link">
+    Generate certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-nginx-configurations-in-etcnginxnginxconf-to-enable-ssl" class="md-nav__link">
+    Change nginx configurations in /etc/nginx/nginx.conf to enable SSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-nginx-config" class="md-nav__link">
+    Reload nginx config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finish" class="md-nav__link">
+    Finish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-certificate-expiry-date" class="md-nav__link">
+    Check Certificate Expiry Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renew-certificate" class="md-nav__link">
+    Renew Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-certificate" class="md-nav__link">
+    delete the certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoots" class="md-nav__link">
+    Troubleshoots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-s3-storage" class="md-nav__link">
+    AWS S3 Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    Cloudflare
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloudflare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-dns" class="md-nav__link">
+    Manage DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-cache" class="md-nav__link">
+    Manage Cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purge-cache" class="md-nav__link">
+    Purge Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Languages/python/python_production_servers.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Python Production Servers</h1>
+                
+                <h2 id="python-production-servers">Python Production Servers<a class="headerlink" href="#python-production-servers" title="Permanent link">#</a></h2>
+<div class="toc">
+<ul>
+<li><a href="#python-production-servers">Python Production Servers</a></li>
+<li><a href="#basics">Basics</a><ul>
+<li><a href="#web-server">Web Server</a><ul>
+<li><a href="#ngnix">ngnix</a></li>
+</ul>
+</li>
+<li><a href="#application-server">Application Server</a><ul>
+<li><a href="#django-developement-server">django developement server</a></li>
+<li><a href="#gunicorn">gunicorn</a></li>
+</ul>
+</li>
+<li><a href="#database">Database</a><ul>
+<li><a href="#mysql">MySQL</a></li>
+<li><a href="#postgresql">PostgreSQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#github-pages-hosting">Github Pages Hosting</a></li>
+<li><a href="#pythonanywhere">PythonAnywhere</a><ul>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#wsgi">WSGI</a></li>
+<li><a href="#static-files">Static Files:</a></li>
+</ul>
+</li>
+<li><a href="#heroku">Heroku</a><ul>
+<li><a href="#pre-requisites">Pre-requisites</a></li>
+<li><a href="#install-heroku-cli">Install heroku CLI</a></li>
+<li><a href="#create-app">Create app</a></li>
+<li><a href="#add-procfile">Add Procfile</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#push-code">Push code</a></li>
+<li><a href="#add-env-file">Add .env file</a></li>
+<li><a href="#add-appjson-file">Add app.json file</a></li>
+<li><a href="#troubleshoot">Troubleshoot</a></li>
+</ul>
+</li>
+<li><a href="#aws">AWS</a><ul>
+<li><a href="#create-ami-amazon-machine-instance">Create AMI (Amazon Machine Instance)</a></li>
+<li><a href="#ssh-to-your-instance">SSH to your instance</a></li>
+<li><a href="#update">Update</a></li>
+<li><a href="#set-password">Set Password</a></li>
+<li><a href="#install-prerequisites">Install Prerequisites</a><ul>
+<li><a href="#python-stuff">Python Stuff</a><ul>
+<li><a href="#recommanded-way">Recommanded Way</a></li>
+<li><a href="#original-way">Original Way</a></li>
+<li><a href="#test-your-project-by-starting-up-the-django-development-server-with-this-command">Test your project by starting up the Django development server with this command:</a></li>
+</ul>
+</li>
+<li><a href="#server-stuff">Server Stuff</a><ul>
+<li><a href="#gunicorn_1">Gunicorn</a></li>
+<li><a href="#celery">celery</a></li>
+<li><a href="#supervisor">supervisor</a></li>
+<li><a href="#nginx">nginx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#setup-database">Setup Database</a><ul>
+<li><a href="#aws-rds-mysql-free-tier">AWS RDS MySQL (Free Tier)</a><ul>
+<li><a href="#rds-config">RDS Config</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#django-configuration">Django Configuration</a></li>
+<li><a href="#test-django-with-rds-mysql">Test Django with RDS MySQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#run">Run</a><ul>
+<li><a href="#confirm-before-run">Confirm before run</a></li>
+</ul>
+</li>
+<li><a href="#enable-https-in-aws-ec2-with-nginx">Enable HTTPS in aws ec2 with nginx</a><ul>
+<li><a href="#make-sure-http-https-are-opened-in-security-groups">Make sure HTTP &amp; HTTPS are opened in Security Groups</a></li>
+<li><a href="#setup-domains-cname-record-to-the-public-dns-of-ec2">Setup domain's CNAME record to the public DNS of ec2</a></li>
+<li><a href="#install-certbot-in-aws-instance">Install Certbot in aws instance</a></li>
+<li><a href="#stop-any-existing-servers-running-on-the-port-80-and-443">Stop any existing servers running on the port 80 and 443</a></li>
+<li><a href="#generate-certificates">Generate certificates</a></li>
+<li><a href="#change-nginx-configurations-in-etcnginxnginxconf-to-enable-ssl">Change nginx configurations in /etc/nginx/nginx.conf to enable SSL</a></li>
+<li><a href="#reload-nginx-config">Reload nginx config</a></li>
+<li><a href="#finish">Finish</a></li>
+<li><a href="#check-certificate-expiry-date">Check Certificate Expiry Date</a></li>
+<li><a href="#renew-certificate">Renew Certificate</a></li>
+<li><a href="#delete-the-certificate">delete the certificate</a></li>
+<li><a href="#troubleshoots">Troubleshoots</a></li>
+</ul>
+</li>
+<li><a href="#aws-s3-storage">AWS S3 Storage</a></li>
+</ul>
+</li>
+<li><a href="#cloudflare">Cloudflare</a><ul>
+<li><a href="#manage-dns">Manage DNS</a></li>
+<li><a href="#manage-cache">Manage Cache</a><ul>
+<li><a href="#purge-cache">Purge Cache</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#todo">TODO:</a></li>
+</ul>
+</div>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">#</a></h2>
+<h3 id="web-server">Web Server<a class="headerlink" href="#web-server" title="Permanent link">#</a></h3>
+<h4 id="ngnix">ngnix<a class="headerlink" href="#ngnix" title="Permanent link">#</a></h4>
+<h3 id="application-server">Application Server<a class="headerlink" href="#application-server" title="Permanent link">#</a></h3>
+<h4 id="django-developement-server">django developement server<a class="headerlink" href="#django-developement-server" title="Permanent link">#</a></h4>
+<h4 id="gunicorn">gunicorn<a class="headerlink" href="#gunicorn" title="Permanent link">#</a></h4>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">#</a></h3>
+<h4 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">#</a></h4>
+<h4 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">#</a></h4>
+<h2 id="github-pages-hosting">Github Pages Hosting<a class="headerlink" href="#github-pages-hosting" title="Permanent link">#</a></h2>
+<p>Source1: https://medium.freecodecamp.org/hosting-custom-domain-on-github-pages-8c598248d2bc
+Source2: https://medium.com/employbl/launch-a-website-with-a-custom-url-using-github-pages-and-google-domains-3dd8d90cc33b</p>
+<h2 id="pythonanywhere">PythonAnywhere<a class="headerlink" href="#pythonanywhere" title="Permanent link">#</a></h2>
+<h3 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">#</a></h3>
+<h3 id="wsgi">WSGI<a class="headerlink" href="#wsgi" title="Permanent link">#</a></h3>
+<h3 id="static-files">Static Files:<a class="headerlink" href="#static-files" title="Permanent link">#</a></h3>
+<ul>
+<li>make a folder sitewide say 'allstatic'</li>
+<li>by default in settings.py STATIC_URL = '/static/' (don't change it)</li>
+<li>in pythonanywhere web, set URL = /static/ same as above &amp; Directory = path to the dir 'allstatic'</li>
+</ul>
+<h2 id="heroku">Heroku<a class="headerlink" href="#heroku" title="Permanent link">#</a></h2>
+<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">#</a></h3>
+<ul>
+<li>a working django app</li>
+<li>app in a git repo</li>
+</ul>
+<h3 id="install-heroku-cli">Install heroku CLI<a class="headerlink" href="#install-heroku-cli" title="Permanent link">#</a></h3>
+<h3 id="create-app">Create app<a class="headerlink" href="#create-app" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>create heroku app from existing code (it will only create empty git repo in heroku's private git)
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>heroku create appname
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>add heroku remote to your local git repo
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git remote add heroku https://git.heroku.&lt;app_name&gt;.git
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h3 id="add-procfile">Add Procfile<a class="headerlink" href="#add-procfile" title="Permanent link">#</a></h3>
+<ul>
+<li>its starter script which heroku follows</li>
+<li>add web: gunicorn --pythonpath toransahu-site toransahu.wsgi<br />
+(here --pythonpath is used if <code>toransahu</code> is not root dir, or if wsgi.py is not directly under toransahu-site)</li>
+</ul>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h3>
+<ul>
+<li>add all requirements inside requirements.txt</li>
+<li>including gunicorn</li>
+</ul>
+<h3 id="push-code">Push code<a class="headerlink" href="#push-code" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>push code to heroku's git repo named <app_name>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push heroku dev:master
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>here</p>
+<ul>
+<li>heroku is remote name (same as origin by deafult)</li>
+<li>dev is local repo's brach name from which we want to push code</li>
+<li>master is heroku's master branch (in master branch only build happens)</li>
+</ul>
+</li>
+</ul>
+<h3 id="add-env-file">Add .env file<a class="headerlink" href="#add-env-file" title="Permanent link">#</a></h3>
+<p>Unknown</p>
+<h3 id="add-appjson-file">Add app.json file<a class="headerlink" href="#add-appjson-file" title="Permanent link">#</a></h3>
+<p>Unknown</p>
+<h3 id="troubleshoot">Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permanent link">#</a></h3>
+<ul>
+<li>using <ul>
+<li>heroku local</li>
+<li>heroku local web</li>
+<li>heroku logs</li>
+</ul>
+</li>
+<li>disable static files
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>heroku config:set DISABLE_COLLECTSTATIC=1 
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">#</a></h2>
+<ul>
+<li>https://pipelines.puppet.com/docs/tutorials/how-to-set-up-aws-ec2/</li>
+<li>https://www.agiliq.com/blog/2014/08/deploying-a-django-app-on-amazon-ec2-instance/</li>
+<li>https://medium.com/@bsadkhin/deploying-a-django-app-to-amazon-ec2-3f17a735a561</li>
+</ul>
+<h3 id="create-ami-amazon-machine-instance">Create AMI (Amazon Machine Instance)<a class="headerlink" href="#create-ami-amazon-machine-instance" title="Permanent link">#</a></h3>
+<ul>
+<li>choose os, server</li>
+<li>edit configs (optional)</li>
+<li>launch</li>
+<li>create/choose private key<ul>
+<li>name it </li>
+<li><strong>download it</strong></li>
+<li>put it in your ~/.ssh/ dir</li>
+<li>change permission to read only chmod 400</li>
+</ul>
+</li>
+<li>notedown DNS of your instance
+    ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</li>
+<li>if os was ubuntu, default user will be ubuntu</li>
+<li>create security group &amp; make changes in inbound tab like:</li>
+</ul>
+<p>|Type|Port|Source|
+|----------------|
+|HTTP|80|Anywhere|
+|HTTPS|443|Anywhere|
+|SSH|22|Anywhere|
+|Custom TCP|8000|Anywhere|</p>
+<h3 id="ssh-to-your-instance">SSH to your instance<a class="headerlink" href="#ssh-to-your-instance" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>using instance dns<br />
+<code>ssh -i ~/.ssh/ethereal-site-backend.pem ubuntu@ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</code></p>
+</li>
+<li>
+<p>or use public ip<br />
+<code>ssh -i ~/.ssh/ethereal-site-backend.pem ubuntu@18.136.106.117</code> </p>
+</li>
+<li>
+<p>if <code>.pem</code> file is downloaded from some storage, then give proper permission
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>chmod <span class="m">600</span> ~/.ssh/ethereal-site-backend.pem
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h3 id="update">Update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>   sudo apt-get update
+   sudo apt-get upgrade
+</code></pre></div>
+</td></tr></table>
+<h3 id="set-password">Set Password<a class="headerlink" href="#set-password" title="Permanent link">#</a></h3>
+<p>Source: https://comtechies.com/password-authentication-aws-ec2.html
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#1.open</span>
+sudo vi /etc/ssh/sshd_config
+
+<span class="c1">#2.edit no to yes</span>
+PasswordAuthentication yes
+
+<span class="c1">#3.save and close</span>
+
+<span class="c1">#4.change/set password</span>
+sudo passwd ubuntu
+
+<span class="c1">#5.restart service</span>
+sudo service sshd restart
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="install-prerequisites">Install Prerequisites<a class="headerlink" href="#install-prerequisites" title="Permanent link">#</a></h3>
+<h4 id="python-stuff">Python Stuff<a class="headerlink" href="#python-stuff" title="Permanent link">#</a></h4>
+<h5 id="recommanded-way">Recommanded Way<a class="headerlink" href="#recommanded-way" title="Permanent link">#</a></h5>
+<ul>
+<li>Using miniconda</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#download miniconda - for deployment, testing, build</span>
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+<span class="c1">#install</span>
+sudo sh Miniconda3-latest-Linux-x86_64.sh 
+
+
+<span class="c1">#alias &amp; activate miniconda</span>
+<span class="nb">echo</span> <span class="s2">&quot;alias anaconda=&#39;. ~/miniconda3/bin/activate&#39;&quot;</span> &gt;&gt; ~/.bashrc
+
+anaconda
+
+<span class="o">(</span>base<span class="o">)</span> sudo /home/ubuntu/miniconda3/bin/python3.6 -m pip install -U pipenv
+
+<span class="c1">#clone repo</span>
+<span class="o">(</span>base<span class="o">)</span> git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
+
+<span class="c1">#cd to repo &amp; create venv using pipenv &amp; install dependencies</span>
+<span class="o">(</span>base<span class="o">)</span> pipenv --python <span class="m">3</span> install
+</code></pre></div>
+</td></tr></table>
+<h5 id="original-way">Original Way<a class="headerlink" href="#original-way" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz
+sudo tar xJf Python-3.6.4.tar.xz 
+<span class="nb">cd</span> Python-3.6.4/
+./configure
+
+sudo make
+sudo make install
+
+<span class="nb">cd</span> ..
+sudo rm Python-3.6.4.tar.xz
+sudo rm -rf Python-3.6.4
+
+
+sudo apt install python3-pip
+
+<span class="c1">#link pip, python</span>
+
+<span class="nb">cd</span> /usr/bin
+unlink python
+unlink pip
+unlink virtualenv
+
+ln -s python35 python
+ln -s pip-3.5 pip
+ln -s virtualenv-3.5 virtualenv
+
+<span class="c1">#clone repo</span>
+
+git clone https://toransahu@bitbucket.org/toransahu/ethereal-machines-backend.git 
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>if sudo ./configure gives error<ul>
+<li>Error: <code>no acceptable C compiler found in PATH when installing python</code></li>
+<li>install build-essential 
+<code>sudo apt install build-essential</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="test-your-project-by-starting-up-the-django-development-server-with-this-command">Test your project by starting up the Django development server with this command:<a class="headerlink" href="#test-your-project-by-starting-up-the-django-development-server-with-this-command" title="Permanent link">#</a></h5>
+<ul>
+<li>before this, disable other https/secure settings in prod_settings.py or test with dev_settings.py</li>
+<li>allow server to listen on port 8000<ul>
+<li><code>sudo ufw allow 8000</code></li>
+</ul>
+</li>
+<li><code>python manage.py runserver 0.0.0.0:8000</code><ul>
+<li>if you get error, add host to allowed host.<ul>
+<li><code>ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</code></li>
+</ul>
+</li>
+<li>hit the website<ul>
+<li>ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com:8000 <strong>(without http://)</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="server-stuff">Server Stuff<a class="headerlink" href="#server-stuff" title="Permanent link">#</a></h4>
+<h5 id="gunicorn_1">Gunicorn<a class="headerlink" href="#gunicorn_1" title="Permanent link">#</a></h5>
+<ul>
+<li>
+<p>will server dynamic contents of the site (works as app server)</p>
+</li>
+<li>
+<p>install in venv using <code>pipenv --python 3</code></p>
+<ul>
+<li><code>(app-venv) pipenv --python 3 install gunicorn</code></li>
+</ul>
+</li>
+<li>
+<p>test django app with gunicorn</p>
+<ul>
+<li>allow server to listen on port 8000<ul>
+<li><code>sudo ufw allow 8000</code></li>
+</ul>
+</li>
+<li>cd ethereal-machines-backend/src (where manage.py is)</li>
+<li>disable other https/secure settings in prod_settings.py</li>
+<li>to degug, enable DEBUG</li>
+<li>gunicorn --bind  0.0.0.0:8000 backend.wsgi (try website with http://), </li>
+</ul>
+</li>
+<li>
+<p>create script to start gunicorn</p>
+<ul>
+<li>cd ethereal-machines-backend/src (where manage.py is)</li>
+<li>vim start_gunicorn.sh<ul>
+<li>make sure to write #! /bin/bash in first line</li>
+</ul>
+</li>
+<li>chmod a+x start_gunicorn.sh</li>
+<li>start_gunicorn.sh should look like this: https://gist.github.com/toransahu/31874def1bd661db676d0dfe02e1c651</li>
+</ul>
+</li>
+</ul>
+<h5 id="celery">celery<a class="headerlink" href="#celery" title="Permanent link">#</a></h5>
+<ul>
+<li>
+<p>start rabbitmq</p>
+<ul>
+<li>starts automatically on boot</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> rabbitmq-server
+sudo systemctl start rabbitmq-server
+
+<span class="c1">#- in WSL do this</span>
+sudo service rabbitmq-server start
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>start celery worker</p>
+<ul>
+<li>need to run inside src folder</li>
+<li>need to be in virtual env</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>celery -A project_name worker -l info
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>or create script to start celery</p>
+<ul>
+<li>cd ethereal-machines-backend/src (where manage.py is)</li>
+<li>vim start_celery.sh<ul>
+<li>make sure to write #! /bin/bash in first line</li>
+</ul>
+</li>
+<li>chmod a+x start_celery.sh</li>
+<li>start_celery.sh should look like this: https://gist.github.com/toransahu/31874def1bd661db676d0dfe02e1c651</li>
+</ul>
+</li>
+</ul>
+<h5 id="supervisor">supervisor<a class="headerlink" href="#supervisor" title="Permanent link">#</a></h5>
+<ul>
+<li>chmod a+x all the start.sh scripts</li>
+<li>copy gunicorn.conf &amp; celery.conf to /etc/supervisor/conf.d/</li>
+<li>create logs folder inside repo dir</li>
+<li>sudo supervisorctl reread</li>
+<li>sudo supervisorctl update</li>
+<li>sudo supervisorctl reload</li>
+<li>sudo supervisorctl status</li>
+<li>sudo supervisorctl restart gunicorn</li>
+<li>sudo supervisorctl restart celery
+src: https://gist.github.com/toransahu/31874def1bd661db676d0dfe02e1c651</li>
+</ul>
+<h5 id="nginx">nginx<a class="headerlink" href="#nginx" title="Permanent link">#</a></h5>
+<ul>
+<li>will create proxy and redirect to gunicorn for dynamic contents</li>
+<li>will server static &amp; media contents</li>
+</ul>
+<p>src: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04</p>
+<ul>
+<li>
+<p>install  </p>
+<ul>
+<li><code>sudo apt install nginx</code></li>
+</ul>
+</li>
+<li>
+<p>start nginx</p>
+<ul>
+<li><code>sudo service nginx start</code></li>
+</ul>
+</li>
+<li>
+<p>hit the <a href="ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com">site</a>  </p>
+<ul>
+<li><code>ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</code></li>
+<li>check whether you are getting a msg <code>Welcome to nginx!</code> or not</li>
+</ul>
+</li>
+<li>
+<p>stop nginx</p>
+<ul>
+<li><code>sudo service nginx stop</code></li>
+</ul>
+</li>
+<li>
+<p>Configure nginx to proxy pass to gunicorn</p>
+<ul>
+<li>configuration file : https://gist.github.com/toransahu/f5a38976967715e31543dbcf9b01c7d9</li>
+<li>
+<p><code>sudo vim /etc/nginx/sites-available/ethereal_backend</code></p>
+<ul>
+<li>
+<p>open up new server block</p>
+<ul>
+<li>should listen on normal port 80</li>
+<li>
+<p>should respond to our server domain name or ip i.e. 18.136.106.117 (try both)</p>
+<ul>
+<li>for longer name you may have to increase buffer by editing<ul>
+<li>sudo vim /etc/nginx/nginx.conf<ul>
+<li>change count at server_names_hash_bucket_size 512;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>didn't find it usefull without custom domain</strong> create a location / {} block to</p>
+<ul>
+<li>tell Nginx to ignore any problems with finding a favicon</li>
+<li>tell Nginx to find static files<ul>
+<li>here prefix will be same as STATIC_URL</li>
+<li>and alias will be same as STATIC_ROOT</li>
+</ul>
+</li>
+<li>tell Nginx to find media files<ul>
+<li>here prefix will be same as MEDIA_URL</li>
+<li>and alias will be same as MEDIA_ROOT</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>didn't find it usefull without custom domain</strong> create a location / {} block to match all other requests</p>
+<ul>
+<li>include the standard proxy_params file included with the Nginx installation</li>
+<li>then pass the traffic to the socket that our Gunicorn process created i.e. http://0.0.0.0:8000<ul>
+<li>or may be now you need to provide link with server_name and different port on which application is running</li>
+<li>e.g http://server_name:8000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>enable the file by linking it to the sites-enabled directory</p>
+<ul>
+<li><code>sudo ln -s /etc/nginx/sites-available/ethereal_backend /etc/nginx/sites-enabled</code></li>
+</ul>
+</li>
+<li>test nginx config for syntax errors<ul>
+<li><code>sudo nginx -t</code></li>
+</ul>
+</li>
+<li>
+<p>if no errors reported then go ahead &amp; restart nginx</p>
+<ul>
+<li><code>sudo systemctl restart nginx</code></li>
+</ul>
+</li>
+<li>
+<p>Finally, we need to open up our firewall to normal traffic on port 80. Since we no longer need access to the development server, we can remove the rule to open port 8000 as well</p>
+<ul>
+<li><code>sudo ufw delete allow 8000</code></li>
+<li><code>sudo ufw allow 'Nginx Full'</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>set host (for custom root/domain url for hyperlinks inside django app)</p>
+<ul>
+<li>e.g. https://api.etherealmachines.com/file/media/1/djklfjkdflkfsdaf.png</li>
+<li>need to set in /etc/nginx/sites-available/ethereal_backend<ul>
+<li>proxy_set_header Host "api.etherealmachines.com"</li>
+</ul>
+</li>
+<li>refer: https://gist.github.com/toransahu/f5a38976967715e31543dbcf9b01c7d9</li>
+<li>make sure "api.etherealmachines.com" is included in <code>ALLOWED_HOSTS</code> in <code>prod_settings.py</code></li>
+</ul>
+</li>
+<li>
+<p>for size limit issues</p>
+<ul>
+<li>if total cient body exceeds defined limit in <code>nginx.conf</code> file, it (web server) throws HTTP error 413, request before reaching to the application server</li>
+<li>to handle the size limit, mention <code>client_max_body_size 10M;</code> in <code>nginx.conf</code> inside <code>http {}</code> block</li>
+</ul>
+</li>
+</ul>
+<p>Note: comment out SSL on and redirect HTTPS line in ethereal_backend file if don't using ssl &amp; https</p>
+<h3 id="setup-database">Setup Database<a class="headerlink" href="#setup-database" title="Permanent link">#</a></h3>
+<h4 id="aws-rds-mysql-free-tier">AWS RDS MySQL (Free Tier)<a class="headerlink" href="#aws-rds-mysql-free-tier" title="Permanent link">#</a></h4>
+<h5 id="rds-config">RDS Config<a class="headerlink" href="#rds-config" title="Permanent link">#</a></h5>
+<ul>
+<li>source: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateInstance.html</li>
+<li>
+<p>in selected security group add</p>
+<ul>
+<li>Type:MYSQL/Aurora;Protocol:TCP;Range:3306;Source:Anywhere(0.0.0.0/0)</li>
+</ul>
+</li>
+<li>
+<p>enable public use/access</p>
+<ul>
+<li>to access db over internet</li>
+</ul>
+</li>
+<li>
+<p>http://ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com:8000/api/v1/ (optional)    </p>
+</li>
+</ul>
+<h5 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h5>
+<ul>
+<li>install mysqlclient in venv<ul>
+<li>pipenv install mysqlclient</li>
+<li>if it gives error: <code>mysql_config not found</code><ul>
+<li>install following<ul>
+<li>sudo apt-get install libmysqlclient-dev</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="django-configuration">Django Configuration<a class="headerlink" href="#django-configuration" title="Permanent link">#</a></h5>
+<ul>
+<li>instance<ul>
+<li>etherealbackend</li>
+</ul>
+</li>
+<li>
+<p>db</p>
+<ul>
+<li>ethereal</li>
+</ul>
+</li>
+<li>
+<p>host</p>
+<ul>
+<li>etherealbackend.cg17v7dkjshh.ap-southeast-1.rds.amazonaws.com</li>
+</ul>
+</li>
+<li>
+<p>port</p>
+<ul>
+<li>3306</li>
+</ul>
+</li>
+<li>
+<p>master user</p>
+<ul>
+<li>ethereal </li>
+</ul>
+</li>
+<li>
+<p>master pwd</p>
+<ul>
+<li>machines</li>
+</ul>
+</li>
+</ul>
+<h5 id="test-django-with-rds-mysql">Test Django with RDS MySQL<a class="headerlink" href="#test-django-with-rds-mysql" title="Permanent link">#</a></h5>
+<ul>
+<li>python manage.py makemigrations <app_name></li>
+<li>python manage.py migrate</li>
+<li>python manage.py runserver 0.0.0.0:8000</li>
+</ul>
+<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<h4 id="confirm-before-run">Confirm before run<a class="headerlink" href="#confirm-before-run" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>python manage.py makemigrations &lt;apps&gt;
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py collectstatic
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li><code>cd /home/ubuntu/ethereal-machines/ethereal-machines-backend/</code></li>
+<li><code>./start_gunicorn.sh</code></li>
+<li><code>sudo systemctl restart nginx</code></li>
+</ul>
+<h3 id="enable-https-in-aws-ec2-with-nginx">Enable HTTPS in aws ec2 with nginx<a class="headerlink" href="#enable-https-in-aws-ec2-with-nginx" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="https://medium.freecodecamp.org/going-https-on-amazon-ec2-ubuntu-14-04-with-lets-encrypt-certbot-on-nginx-696770649e76">Blog source</a> </li>
+<li><a href="https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx">Official Source- Ubuntu 16.04 + nginx</a> </li>
+<li>using lets-encrypt  CA (certificate authority)<ul>
+<li>provides free SSL certificates</li>
+<li>for few weeks/ 3 months</li>
+</ul>
+</li>
+<li>using Certbot - the official lets-encrypt client<ul>
+<li>automatically fetches &amp; deploys SSL/TLS certificates in the server</li>
+</ul>
+</li>
+</ul>
+<h4 id="make-sure-http-https-are-opened-in-security-groups">Make sure HTTP &amp; HTTPS are opened in Security Groups<a class="headerlink" href="#make-sure-http-https-are-opened-in-security-groups" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>inside inbound rules</p>
+</li>
+<li>
+<p>note down public IP &amp; DNS of the aws ec2 instance</p>
+</li>
+</ul>
+<h4 id="setup-domains-cname-record-to-the-public-dns-of-ec2">Setup domain's CNAME record to the public DNS of ec2<a class="headerlink" href="#setup-domains-cname-record-to-the-public-dns-of-ec2" title="Permanent link">#</a></h4>
+<ul>
+<li>here domain is: etherealmachines.com</li>
+<li>public dns is: ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</li>
+<li>Go to your DNS config in CloudFlare &amp; create an entry in DNS Records<ul>
+<li>type: CNAME</li>
+<li>Name: api.etherealmachines.com</li>
+<li>value: ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com</li>
+<li>TTL: Automatic</li>
+</ul>
+</li>
+</ul>
+<h4 id="install-certbot-in-aws-instance">Install Certbot in aws instance<a class="headerlink" href="#install-certbot-in-aws-instance" title="Permanent link">#</a></h4>
+<ul>
+<li>cd to your home or project root</li>
+<li><code>wget https://dl.eff.org/certbot-auto</code></li>
+<li><code>chmod a+x certbot-auto</code></li>
+</ul>
+<h4 id="stop-any-existing-servers-running-on-the-port-80-and-443">Stop any existing servers running on the port 80 and 443<a class="headerlink" href="#stop-any-existing-servers-running-on-the-port-80-and-443" title="Permanent link">#</a></h4>
+<ul>
+<li>because those will be used by certbot to verify the domain &amp; generate certificates</li>
+<li>after generating certificates, restart servers</li>
+</ul>
+<h4 id="generate-certificates">Generate certificates<a class="headerlink" href="#generate-certificates" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p><code>./certbot-auto certonly --standalone -d api.etherealmachines.com</code></p>
+</li>
+<li>
+<p>we can generate certificates for multiple domains also, like</p>
+<ul>
+<li><code>./certbot-auto certonly --standalone -d api.etherealmachines.com -d www.etherealmachines.com</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="change-nginx-configurations-in-etcnginxnginxconf-to-enable-ssl">Change nginx configurations in /etc/nginx/nginx.conf to enable SSL<a class="headerlink" href="#change-nginx-configurations-in-etcnginxnginxconf-to-enable-ssl" title="Permanent link">#</a></h4>
+<ul>
+<li>https://gist.github.com/toransahu/7b546d1d1a6afdf51dfa6602ecda22fc</li>
+<li>The Strict-Transport-Security (HSTS) header ensures that any internal links that are not HTTPS will automatically be routed to the HTTPS version during a HTTPS session</li>
+</ul>
+<h4 id="reload-nginx-config">Reload nginx config<a class="headerlink" href="#reload-nginx-config" title="Permanent link">#</a></h4>
+<ul>
+<li>test config for syntaxt errors:<ul>
+<li><code>sudo nginx -t</code></li>
+</ul>
+</li>
+<li><code>sudo service nginx reload</code></li>
+</ul>
+<h4 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">#</a></h4>
+<ul>
+<li>now https://api.etherealmachines.com will redirect requests to http://ec2-18-136-106-117.ap-southeast-1.compute.amazonaws.com/</li>
+</ul>
+<h4 id="check-certificate-expiry-date">Check Certificate Expiry Date<a class="headerlink" href="#check-certificate-expiry-date" title="Permanent link">#</a></h4>
+<ul>
+<li>Install <code>ssl-cert-check</code></li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install ssl-cert-check
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Run</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem
+</code></pre></div>
+</td></tr></table>
+<p>or awk the final result</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo ssl-cert-check -c /etc/letsencrypt/live/api.etherealmachines.com/fullchain.pem <span class="p">|</span> awk <span class="s1">&#39;END { print &lt;dollar_sign&gt;NF }&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="renew-certificate">Renew Certificate<a class="headerlink" href="#renew-certificate" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>if cloudflare DNS + HTTP proxy is configured, then it will interfere while renewal and creation of ssl certificate</p>
+<ul>
+<li>so, disable http proxy (DNS only should be there in status column) from status column</li>
+<li>source: https://www.tautvidas.com/blog/2018/06/certbot-renewal-of-letsencrypt-certificate-fails-with-failed-authorization-procedure/</li>
+</ul>
+</li>
+<li>
+<p>Let's encrypt certificates are only valid for 3 months after issue. So renewal is required. </p>
+<ul>
+<li>before using <code>renew</code> command turn off nginx to open the port 80</li>
+</ul>
+</li>
+<li>
+<p>to check/dry run renewal do:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo certbot renew --dry-run
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>automate autonewal using cron job: 
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>0 6 * * * /path/to/certbot/certbot-auto renew --text &gt;&gt; /path/to/certbot/certbot-cron.log &amp;&amp; sudo service nginx reload
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+<h4 id="delete-the-certificate">delete the certificate<a class="headerlink" href="#delete-the-certificate" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo certbot delete --cert-name  api.etherealmachines.com
+</code></pre></div>
+</td></tr></table>
+<h4 id="troubleshoots">Troubleshoots<a class="headerlink" href="#troubleshoots" title="Permanent link">#</a></h4>
+<ul>
+<li>while certificate renew/new if it fails with TLS handshake/auth issue:<ul>
+<li>remove certificate entry from <code>/etc/nginx/nginx.conf</code></li>
+</ul>
+</li>
+<li>while renew/new if you get <code>too many request</code>/<code>auth failure</code>/ <code>blocked</code> then wait for 1 hr and retry<ul>
+<li>there is 5 limit per account    </li>
+</ul>
+</li>
+</ul>
+<h3 id="aws-s3-storage">AWS S3 Storage<a class="headerlink" href="#aws-s3-storage" title="Permanent link">#</a></h3>
+<p>Source: 
+- https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+- http://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#model
+- http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration</p>
+<p>https://ethereal-erp.s3.amazonaws.com</p>
+<p>Credentials
+- Users with AWS Management Console access can sign-in at:<br />
+    - https://908866068066.signin.aws.amazon.com/console
+- username
+    - ethereal
+- group
+    - erp-programatic
+- access key id
+    - AKIAIBBFQZVDCT7BR6QA 
+- secret access key
+    - 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</p>
+<h2 id="cloudflare">Cloudflare<a class="headerlink" href="#cloudflare" title="Permanent link">#</a></h2>
+<h3 id="manage-dns">Manage DNS<a class="headerlink" href="#manage-dns" title="Permanent link">#</a></h3>
+<h3 id="manage-cache">Manage Cache<a class="headerlink" href="#manage-cache" title="Permanent link">#</a></h3>
+<h4 id="purge-cache">Purge Cache<a class="headerlink" href="#purge-cache" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>By API</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>curl -X DELETE <span class="s2">&quot;https://api.cloudflare.com/client/v4/zones/&lt;site-id&gt;/purge_cache&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;X-Auth-Email: &lt;email&gt;&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;X-Auth-Key: &lt;apikey&gt;&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+     --data <span class="s1">&#39;{&quot;purge_everything&quot;:true}&#39;</span><span class="o">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>source: https://www.supertechcrew.com/clear-cloudflare-cache-when-pushing-from-git-github-pages/</li>
+</ul>
+</li>
+<li>
+<p>By Git while Pushing </p>
+<ul>
+<li>Sources: <ul>
+<li>https://www.supertechcrew.com/clear-cloudflare-cache-when-pushing-from-git-github-pages/</li>
+<li>https://www.binarymoon.co.uk/2017/06/using-git-hooks-clear-cloudflares-cache/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>By Website</p>
+</li>
+</ul>
+<h2 id="todo">TODO:<a class="headerlink" href="#todo" title="Permanent link">#</a></h2>
+<ul>
+<li>before nginx   <ul>
+<li>~~correct  start_gunicorn.sh  with log &amp; workers~~</li>
+<li>~~if possible see pipenv shell~~</li>
+<li>~~MySQL setup~~</li>
+</ul>
+</li>
+<li>
+<p>nginx</p>
+<ul>
+<li>~~proxy~~</li>
+<li>~~static issue~~<ul>
+<li>~~try by removing STATIC_FINDER in PROD_.py~~</li>
+</ul>
+</li>
+<li>~~media issue~~</li>
+</ul>
+</li>
+<li>
+<p>~~bind with https://api.etherealmachines.com~~</p>
+</li>
+<li>
+<p>in code:</p>
+<ul>
+<li>utils/<strong>init</strong>.py<ul>
+<li>~~mysql case: db name dynamic~~</li>
+</ul>
+</li>
+<li>~~dev &amp; prod settings~~</li>
+<li>~~media url append in urls.py ~~<ul>
+<li>~~remove DEBUG is True condition~~</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>implement task queue using Celery<ul>
+<li>to make post_save faster</li>
+<li>http://www.dougalmatthews.com/2011/Oct/10/making-djangos-signals-async-with-celery/</li>
+</ul>
+</li>
+<li>configure https in django+aws level        </li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../python_oops/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python OOPs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Python OOPs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../python_testing/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Testing" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Python Testing
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2742 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>Network - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Network
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-usages" class="md-nav__link">
+    Network Usages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todos" class="md-nav__link">
+    todos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-story" class="md-nav__link">
+    Basic Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    Protocols
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-transmission-control-protocol" class="md-nav__link">
+    TCP (Transmission Control Protocol)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-internet-protocol" class="md-nav__link">
+    IP (Internet Protocol)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icmp" class="md-nav__link">
+    ICMP
+  </a>
+  
+    <nav class="md-nav" aria-label="ICMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why_1" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    How?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-https" class="md-nav__link">
+    HTTP, HTTPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-ssl" class="md-nav__link">
+    TLS, SSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket" class="md-nav__link">
+    WebSocket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" class="md-nav__link">
+    SMTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp-address-resolution-protocol" class="md-nav__link">
+    ARP (Address Resolution Protocol)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osi-model" class="md-nav__link">
+    OSI Model
+  </a>
+  
+    <nav class="md-nav" aria-label="OSI Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    Application Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_1" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentation-layer" class="md-nav__link">
+    Presentation Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Presentation Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_2" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-layer" class="md-nav__link">
+    Session Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_3" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer" class="md-nav__link">
+    Transport Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transport Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_4" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    Network Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_5" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-link-layer" class="md-nav__link">
+    Data Link Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Link Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_6" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    Physical Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_7" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip-model" class="md-nav__link">
+    TCP/IP Model
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP/IP Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer_1" class="md-nav__link">
+    Application Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_8" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer_1" class="md-nav__link">
+    Transport Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transport Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_9" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internet-layer" class="md-nav__link">
+    Internet Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Internet Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_10" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-interfaceaccess-layer-link-layer" class="md-nav__link">
+    Network Interface/Access Layer (Link Layer)
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Interface/Access Layer (Link Layer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_11" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todos_1" class="md-nav__link">
+    TODOs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_3" type="checkbox" id="__nav_4_2_11_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/python/python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-usages" class="md-nav__link">
+    Network Usages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todos" class="md-nav__link">
+    todos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-story" class="md-nav__link">
+    Basic Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    Protocols
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-transmission-control-protocol" class="md-nav__link">
+    TCP (Transmission Control Protocol)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-internet-protocol" class="md-nav__link">
+    IP (Internet Protocol)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icmp" class="md-nav__link">
+    ICMP
+  </a>
+  
+    <nav class="md-nav" aria-label="ICMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why_1" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    How?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-https" class="md-nav__link">
+    HTTP, HTTPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-ssl" class="md-nav__link">
+    TLS, SSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket" class="md-nav__link">
+    WebSocket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" class="md-nav__link">
+    SMTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp-address-resolution-protocol" class="md-nav__link">
+    ARP (Address Resolution Protocol)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osi-model" class="md-nav__link">
+    OSI Model
+  </a>
+  
+    <nav class="md-nav" aria-label="OSI Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    Application Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_1" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentation-layer" class="md-nav__link">
+    Presentation Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Presentation Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_2" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-layer" class="md-nav__link">
+    Session Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_3" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer" class="md-nav__link">
+    Transport Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transport Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_4" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    Network Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_5" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-link-layer" class="md-nav__link">
+    Data Link Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Link Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_6" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    Physical Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_7" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip-model" class="md-nav__link">
+    TCP/IP Model
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP/IP Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer_1" class="md-nav__link">
+    Application Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_8" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer_1" class="md-nav__link">
+    Transport Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transport Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_9" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internet-layer" class="md-nav__link">
+    Internet Layer
+  </a>
+  
+    <nav class="md-nav" aria-label="Internet Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_10" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-interfaceaccess-layer-link-layer" class="md-nav__link">
+    Network Interface/Access Layer (Link Layer)
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Interface/Access Layer (Link Layer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols_11" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todos_1" class="md-nav__link">
+    TODOs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Computer-Science/network.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Network</h1>
+                
+                <h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">#</a></h2>
+<h3>Table of Contents</h3>
+
+<div class="toc">
+<ul>
+<li><a href="#network">Network</a><ul>
+<li><a href="#history">History</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#network-usages">Network Usages</a></li>
+<li><a href="#todos">todos</a></li>
+</ul>
+</li>
+<li><a href="#basic-story">Basic Story</a></li>
+<li><a href="#protocols">Protocols</a><ul>
+<li><a href="#why">Why</a></li>
+<li><a href="#tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</a></li>
+<li><a href="#ip-internet-protocol">IP (Internet Protocol)</a></li>
+<li><a href="#udp">UDP</a></li>
+<li><a href="#icmp">ICMP</a><ul>
+<li><a href="#why_1">Why?</a></li>
+<li><a href="#what">What?</a></li>
+<li><a href="#how">How?</a></li>
+</ul>
+</li>
+<li><a href="#http-https">HTTP, HTTPS</a></li>
+<li><a href="#tls-ssl">TLS, SSL</a></li>
+<li><a href="#websocket">WebSocket</a></li>
+<li><a href="#smtp">SMTP</a></li>
+<li><a href="#arp-address-resolution-protocol">ARP (Address Resolution Protocol)</a></li>
+</ul>
+</li>
+<li><a href="#osi-model">OSI Model</a><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#application-layer">Application Layer</a><ul>
+<li><a href="#protocols_1">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#presentation-layer">Presentation Layer</a><ul>
+<li><a href="#protocols_2">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#session-layer">Session Layer</a><ul>
+<li><a href="#protocols_3">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#transport-layer">Transport Layer</a><ul>
+<li><a href="#protocols_4">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#network-layer">Network Layer</a><ul>
+<li><a href="#protocols_5">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#data-link-layer">Data Link Layer</a><ul>
+<li><a href="#protocols_6">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#physical-layer">Physical Layer</a><ul>
+<li><a href="#protocols_7">Protocols</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tcpip-model">TCP/IP Model</a><ul>
+<li><a href="#application-layer_1">Application Layer</a><ul>
+<li><a href="#protocols_8">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#transport-layer_1">Transport Layer</a><ul>
+<li><a href="#protocols_9">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#internet-layer">Internet Layer</a><ul>
+<li><a href="#protocols_10">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#network-interfaceaccess-layer-link-layer">Network Interface/Access Layer (Link Layer)</a><ul>
+<li><a href="#protocols_11">Protocols</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ethernet">Ethernet</a></li>
+<li><a href="#todos_1">TODOs</a></li>
+</ul>
+</div>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link">#</a></h3>
+<p>18th century: age of mechanical systems - indutries
+19th century: age of steam engine
+20th century: age of information + telephone networks + radios, tv, computer, satellite</p>
+<p>earlier - a centralized computer - a big computer ina room for an org
+nowadays - many distributed computers, in large quantity</p>
+<p>with rise - need more robust, sophisticated system to monitor each part/layer/unit of the network end to end.</p>
+<p>large number of separate computers able to exchange info i.e. interconnected == <strong>Computer Network</strong></p>
+<p><strong>focus</strong>: design &amp; organization of this network</p>
+<p>internet/www != computer network</p>
+<p><strong>internet</strong> == collection of computer networks</p>
+<p><strong>www</strong> == <strong>distributed system</strong> running on top of internet</p>
+<p>distributed system == computer network <strong>?</strong></p>
+<p>Differences
+- distributed system
+    - a collection of independent computers appears to its users as a <strong>single coherent system</strong>
+    - has a single model, paradigm
+        - responsible for implementing these models -&gt; <strong>middleware</strong>
+    - built on top of a network
+    - softwares gives it a high degree of cohesiveness and transparency</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- e.g. 
+    - www: everything looks like a document, a **Web Page**
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>computer network<ul>
+<li>coherence, model, software are absent</li>
+<li>user are exposed to the actual machines</li>
+</ul>
+</li>
+</ul>
+<p>The main differentiator is software or operating system. But no hardware.</p>
+<p>Middleware: software that acts as a bridge between an operating system or database and applications, especially on a network.</p>
+<h3 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">#</a></h3>
+<ul>
+<li>Topologies<ul>
+<li>Bus</li>
+<li>Star</li>
+<li>Ring</li>
+<li>Mesh</li>
+</ul>
+</li>
+<li>Network Area Types<ul>
+<li>PAN</li>
+<li>LAN</li>
+<li>CAN</li>
+<li>WAN</li>
+<li>MAN</li>
+<li>GAN</li>
+</ul>
+</li>
+<li>XXX<ul>
+<li>MoDem</li>
+<li>Repeater<ul>
+<li>Amplifier?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Network Equipments/Devices<ul>
+<li>Hub<ul>
+<li>1<ul>
+<li>all data to all ports</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bridge<ul>
+<li>2<ul>
+<li>Remember which MAC &lt;-&gt; Port</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Switch<ul>
+<li>similar as Bride, but newer</li>
+<li>2<ul>
+<li>MAC addr. table in memory</li>
+</ul>
+</li>
+<li>3 (optional support)<ul>
+<li>Routing table</li>
+</ul>
+</li>
+<li>VLANs</li>
+</ul>
+</li>
+<li>Router<ul>
+<li>3<ul>
+<li>Routing table</li>
+<li>IP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Wireless Access Point (WAP)<ul>
+<li>Similar to Router, but wireless</li>
+<li>Modes<ul>
+<li>Ad-hoc</li>
+<li>Enterprise</li>
+</ul>
+</li>
+<li>Common Settings<ul>
+<li>SSID</li>
+<li>SSID Broadcast</li>
+<li>Authentication methods<ul>
+<li>WEP (Deprecated)</li>
+<li>WPA2 PSK (WiFi Protected Access)</li>
+<li>WPA2 Enterprise (RADIUS)<ul>
+<li>RADIUS: Central Auth Server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MAC Filtering</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Network Interface Card (NIC)</li>
+<li>NIC Types</li>
+</ul>
+<h3 id="network-usages">Network Usages<a class="headerlink" href="#network-usages" title="Permanent link">#</a></h3>
+<ul>
+<li>resource sharing (more general)</li>
+<li>business applications<ul>
+<li>client-server model</li>
+<li>communication / e-mail</li>
+<li>e-commerce</li>
+</ul>
+</li>
+<li>home aaplications<ul>
+<li>internet</li>
+<li>remote information</li>
+<li>p2p - phone, instant msg-ing</li>
+<li>entertainment</li>
+<li>e-com</li>
+<li>fin</li>
+</ul>
+</li>
+<li>mobile / wireless</li>
+</ul>
+<h3 id="todos">todos<a class="headerlink" href="#todos" title="Permanent link">#</a></h3>
+<ul>
+<li>wap1.0</li>
+<li>wap2.0</li>
+</ul>
+<h2 id="basic-story">Basic Story<a class="headerlink" href="#basic-story" title="Permanent link">#</a></h2>
+<ul>
+<li>Connect WiFi in laptop to your modem</li>
+<li>2 ARP will happen<ul>
+<li>Will follow DORA process<ul>
+<li>Discovery: client mac will </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="protocols">Protocols<a class="headerlink" href="#protocols" title="Permanent link">#</a></h2>
+<h4 id="why">Why<a class="headerlink" href="#why" title="Permanent link">#</a></h4>
+<p>Given the importance of protocols to the Internet, it’s important that everyone
+agree on what each and every protocol does, so that people can create systems and
+products that interoperate. This is where standards come into play. Internet stan-
+dards are developed by the Internet Engineering Task Force (IETF)[IETF 2012].
+The IETF standards documents are called requests for comments (RFCs). RFCs
+started out as general requests for comments (hence the name) to resolve network
+and protocol design problems that faced the precursor to the Internet
+RFCs tend to be quite technical and detailed</p>
+<h3 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)<a class="headerlink" href="#tcp-transmission-control-protocol" title="Permanent link">#</a></h3>
+<h3 id="ip-internet-protocol">IP (Internet Protocol)<a class="headerlink" href="#ip-internet-protocol" title="Permanent link">#</a></h3>
+<h3 id="udp">UDP<a class="headerlink" href="#udp" title="Permanent link">#</a></h3>
+<p>https://www.smashingmagazine.com/2017/06/guide-switching-http-https/</p>
+<h3 id="icmp">ICMP<a class="headerlink" href="#icmp" title="Permanent link">#</a></h3>
+<p>(Internet Control Message Protocol)
+- https://erg.abdn.ac.uk/users/gorry/eg3567/inet-pages/icmp.html
+- https://cse.sc.edu/~wyxu/515Fall08/slides/IPRoutingtrace.pdf</p>
+<h4 id="why_1">Why?<a class="headerlink" href="#why_1" title="Permanent link">#</a></h4>
+<p>Because IP wasn't designed to be absolutely reliable &amp; it doesn't have an inbuilt mechanism for sending control(errors &amp; query) messages. ICMP comes in picture: 
+- to provide feedback to the source IP address by network devices like routers (and may be switch, hub..)
+    - that a router/service/host can't be reached for packet (datagram) delivery
+- to answer queries raised by <code>ping</code> &amp; <code>traceroute</code> tools </p>
+<p><img src="https://erg.abdn.ac.uk/users/gorry/eg3567/images/icmp-gen.gif"/></p>
+<h4 id="what">What?<a class="headerlink" href="#what" title="Permanent link">#</a></h4>
+<ul>
+<li>ICMP is a supporting protocol</li>
+<li>ICMP is not a transport protocol</li>
+<li>ICMP is typlically not used to exchange data between systems (except in case of diagnostic tools ^)</li>
+<li>ICMP sits in N/W layer of OSI along with IP<ul>
+<li>and <strong>hence port doesn't come in picture here</strong></li>
+<li>ports are only used for protocols which work at the transport layer and above</li>
+</ul>
+</li>
+<li>ICMP send multiple types of messages:<ul>
+<li>ping (echo)</li>
+<li>ping reply (echo reply)</li>
+<li>destination unreachable etc..</li>
+</ul>
+</li>
+<li>ICMP structure<ul>
+<li>ICMP Header (8 bytes)<ul>
+<li>ICMP type</li>
+<li>ICMP code (sub-type)</li>
+<li>Chechsum</li>
+<li>Extra content (of 4 bytes)  based on type &amp; code</li>
+</ul>
+</li>
+<li>ICMP message (variable, min 28 bytes)<ul>
+<li>entire IP Header from IP datagram that resulted in error (min 20 bytes, variable)</li>
+<li>atleast (first) 8 bytes of data from IP datagram that resulted in error</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots/EN-ICMP.png"   style="align: middle;"> <center>ICMP Header Structure</center></img></p>
+<h4 id="how">How?<a class="headerlink" href="#how" title="Permanent link">#</a></h4>
+<ul>
+<li>ICMP messages are encapsulated in an IP datagrams and transmitted along with them to the transport layer<ul>
+<li>protocol in IP datagrams are set to ICMP<ul>
+<li>so that receiving end can interprete it using ICMP client</li>
+</ul>
+</li>
+<li>source address is set to the IP address of the device that generated the datagram (&amp; ICMP message)</li>
+<li>destination address is set to the source address mentioned in the packet (datagram) that resulted in error (i.e. of which delivery failed)</li>
+</ul>
+</li>
+<li>Structure of IP datagram having ICMP encapsulated within it<ul>
+<li>IP header (20 bytes)<ul>
+<li>IP Protocol=ICMP</li>
+</ul>
+</li>
+<li>IP data<ul>
+<li>ICMP message <ul>
+<li>ICMP header (1+1+2+4 bytes)</li>
+<li>ICMP data (min 28 bytes, variable)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://www.tcpipguide.com/free/diagrams/ipformat.png"> <center>IP Datagram Structure</center></img></p>
+<h3 id="http-https">HTTP, HTTPS<a class="headerlink" href="#http-https" title="Permanent link">#</a></h3>
+<h3 id="tls-ssl">TLS, SSL<a class="headerlink" href="#tls-ssl" title="Permanent link">#</a></h3>
+<h3 id="websocket">WebSocket<a class="headerlink" href="#websocket" title="Permanent link">#</a></h3>
+<h3 id="smtp">SMTP<a class="headerlink" href="#smtp" title="Permanent link">#</a></h3>
+<h3 id="arp-address-resolution-protocol">ARP (Address Resolution Protocol)<a class="headerlink" href="#arp-address-resolution-protocol" title="Permanent link">#</a></h3>
+<h2 id="osi-model">OSI Model<a class="headerlink" href="#osi-model" title="Permanent link">#</a></h2>
+<p>(Open Systems Interconnection)</p>
+<ul>
+<li>https://www.webopedia.com/quick_ref/OSI_Layers.asp</li>
+</ul>
+<h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
+<ul>
+<li>Open Systems Interconnection Model</li>
+<li>a conceptual model<ul>
+<li>characterize &amp; standarize the communication function of telecommunication/ compututing systems</li>
+<li>without any knowledge of its internal structure &amp; technology</li>
+</ul>
+</li>
+<li>partitioned in abstraction layers</li>
+<li>a layer serves the layer above it</li>
+</ul>
+<h3 id="application-layer">Application Layer<a class="headerlink" href="#application-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>User apps, Network services</li>
+</ul>
+<h4 id="protocols_1">Protocols<a class="headerlink" href="#protocols_1" title="Permanent link">#</a></h4>
+<ul>
+<li>HTTP, HTTPS, SMTP, FTP</li>
+</ul>
+<h3 id="presentation-layer">Presentation Layer<a class="headerlink" href="#presentation-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Encryption, charsets</li>
+</ul>
+<h4 id="protocols_2">Protocols<a class="headerlink" href="#protocols_2" title="Permanent link">#</a></h4>
+<ul>
+<li>SSL, TLS, JPEG, MPEG</li>
+</ul>
+<h3 id="session-layer">Session Layer<a class="headerlink" href="#session-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Setup, maintain, tear-down sessions</li>
+</ul>
+<h4 id="protocols_3">Protocols<a class="headerlink" href="#protocols_3" title="Permanent link">#</a></h4>
+<ul>
+<li>NFS, SQL, RPC, Netbios</li>
+</ul>
+<h3 id="transport-layer">Transport Layer<a class="headerlink" href="#transport-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Datagram delivery (TCP/UDP), port number</li>
+</ul>
+<h4 id="protocols_4">Protocols<a class="headerlink" href="#protocols_4" title="Permanent link">#</a></h4>
+<ul>
+<li>TCP, UDP</li>
+</ul>
+<h3 id="network-layer">Network Layer<a class="headerlink" href="#network-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Routing, Software adrresses (IP)</li>
+</ul>
+<h4 id="protocols_5">Protocols<a class="headerlink" href="#protocols_5" title="Permanent link">#</a></h4>
+<ul>
+<li>IP, ICMP, ARP, RARP, IGMP</li>
+</ul>
+<h3 id="data-link-layer">Data Link Layer<a class="headerlink" href="#data-link-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Media access, Hardware addresses (MAC)</li>
+</ul>
+<h4 id="protocols_6">Protocols<a class="headerlink" href="#protocols_6" title="Permanent link">#</a></h4>
+<ul>
+<li>ARP, HDLC, PPP</li>
+</ul>
+<h3 id="physical-layer">Physical Layer<a class="headerlink" href="#physical-layer" title="Permanent link">#</a></h3>
+<ul>
+<li>Cable, connectors, electrical specs</li>
+</ul>
+<h4 id="protocols_7">Protocols<a class="headerlink" href="#protocols_7" title="Permanent link">#</a></h4>
+<ul>
+<li>no protocols at this layer</li>
+</ul>
+<p><img src="https://s3.amazonaws.com/hs-wordpress/wp-content/uploads/2017/12/12223329/433_061.gif"/></p>
+<h2 id="tcpip-model">TCP/IP Model<a class="headerlink" href="#tcpip-model" title="Permanent link">#</a></h2>
+<ul>
+<li>http://what-when-how.com/data-communications-and-networking/network-and-transport-layers-data-communications-and-networking/</li>
+<li>https://www.hardwaresecrets.com/how-tcp-ip-protocol-works-part-1/6/</li>
+</ul>
+<h3 id="application-layer_1">Application Layer<a class="headerlink" href="#application-layer_1" title="Permanent link">#</a></h3>
+<h4 id="protocols_8">Protocols<a class="headerlink" href="#protocols_8" title="Permanent link">#</a></h4>
+<ul>
+<li>HTTP, HTTPS, SMTP, FTP, JPEG, MPEG, NFS, SQL, RPC</li>
+</ul>
+<h3 id="transport-layer_1">Transport Layer<a class="headerlink" href="#transport-layer_1" title="Permanent link">#</a></h3>
+<h4 id="protocols_9">Protocols<a class="headerlink" href="#protocols_9" title="Permanent link">#</a></h4>
+<ul>
+<li>TCP, UDP</li>
+</ul>
+<h3 id="internet-layer">Internet Layer<a class="headerlink" href="#internet-layer" title="Permanent link">#</a></h3>
+<h4 id="protocols_10">Protocols<a class="headerlink" href="#protocols_10" title="Permanent link">#</a></h4>
+<ul>
+<li>TCP, UDP</li>
+</ul>
+<h3 id="network-interfaceaccess-layer-link-layer">Network Interface/Access Layer (Link Layer)<a class="headerlink" href="#network-interfaceaccess-layer-link-layer" title="Permanent link">#</a></h3>
+<h4 id="protocols_11">Protocols<a class="headerlink" href="#protocols_11" title="Permanent link">#</a></h4>
+<ul>
+<li>IP, ICMP, ARP, RARP, IGMP</li>
+</ul>
+<h2 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">#</a></h2>
+<p>Note: TCP/IP is a set of protocols that deals with layers 3 to 7 from the OSI reference model, while Ethernet is a set of protocols that deals with layers 1 and 2 from the OSI reference model</p>
+<h2 id="todos_1">TODOs<a class="headerlink" href="#todos_1" title="Permanent link">#</a></h2>
+<p>Packets
+Packet Switch
+Internet API
+Internet Service
+Distributed App</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../maths/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mathematics" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Mathematics
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../os/" class="md-footer__link md-footer__link--next" aria-label="Next: Operating Systems" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Operating Systems
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
