@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
@@ -921,11 +921,540 @@
     JWT
   </a>
   
+    <nav class="md-nav" aria-label="JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-64-encoding" class="md-nav__link">
+    Base 64 Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-64-url-encoding" class="md-nav__link">
+    Base 64 URL Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parts-of-jwt" class="md-nav__link">
+    Parts of JWT
+  </a>
+  
+    <nav class="md-nav" aria-label="Parts of JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jose-header" class="md-nav__link">
+    JOSE Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret" class="md-nav__link">
+    Secret
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payloadbodyclaim" class="md-nav__link">
+    Payload/Body/Claim
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claim" class="md-nav__link">
+    Claim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jws" class="md-nav__link">
+    JWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwa" class="md-nav__link">
+    JWA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwe" class="md-nav__link">
+    JWE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsecured-jwt" class="md-nav__link">
+    Unsecured JWT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#oauth2" class="md-nav__link">
-    OAuth2
+  <a href="#openid-10" class="md-nav__link">
+    OpenID 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-20" class="md-nav__link">
+    OpenID 2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-attribute-exchange-10" class="md-nav__link">
+    OpenID Attribute Exchange 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-10" class="md-nav__link">
+    OAuth 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-20" class="md-nav__link">
+    OAuth 2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth 2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-grant-types-flow" class="md-nav__link">
+    Authorization Grant Types (Flow)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-code-flow" class="md-nav__link">
+    Authorization Code Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Code Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    Participants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-of-an-authorization-server" class="md-nav__link">
+    Setup of an Authorization Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-an-resource-provider-server-as-client-in-authorization-server" class="md-nav__link">
+    Register an Resource Provider Server as Client in Authorization Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-end-user-opens-way2sms-app" class="md-nav__link">
+    1. End-user opens Way2SMS App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-writes-a-sms-and-clicks-on-send-to-my-google-contacts" class="md-nav__link">
+    2. Writes a SMS and clicks on Send to My Google Contacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-as-end-user-has-not-authorized-the-way2sms-server-as-well-as-app-to-access-end-users-resource-stored-at-google-server" class="md-nav__link">
+    3. As End-user has not authorized the Way2SMS server (as well as app) to access End-user's resource stored at Google server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-way2sms-server-provides-the-way2sms-app-a-link-to-redirect-the-end-user-there-to-complete-the-authorization-with-google-oauth2-server" class="md-nav__link">
+    4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-way2sms-app-opens-this-url-in-appbrowser-if-not-already-logged-in-then-it-shows-a-login-form" class="md-nav__link">
+    5. Way2SMS app opens this URL in app/browser, if not already logged-in, then it shows a Login Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-end-user-had-to-enter-their-google-credentials" class="md-nav__link">
+    6. End-user had to enter their Google credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-once-the-credentials-are-validated-it-shows-that-the-service-provide-way2sms-server-wants-to-access-this-this-and-this-do-you-consent" class="md-nav__link">
+    7. Once the credentials are validated, it shows that the service provide (Way2SMS server) wants to access this. this and this, do you consent?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-if-end-user-accepts-and-agrees-on-the-consent-then-in-return-google-authorization-server-redirects-the-end-user-to-the-registered-redirect_url-by-appending-an-authorization-code-to-it" class="md-nav__link">
+    8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it
+  </a>
+  
+    <nav class="md-nav" aria-label="8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-now-the-service-provider-server-way2sms-server-has-the-authorization-code-also-if-required-then-way2sms-app-can-provide-the-same-through-some-helper-api-of-way2sms-server" class="md-nav__link">
+    9. Now the service provider server (Way2SMS server) has the authorization code (also, if required, then Way2SMS App can provide the same through some helper API of Way2SMS server)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-service-provider-server-can-now-call-authorization-server-to-get-an-access-code-in-exchange-of-authorization-code-by-supplying-a-few-important-details-about-the-registered-service-provider-server" class="md-nav__link">
+    10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter_1" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-now-the-service-provider-way2sms-server-can-access-the-google-contacts-of-the-end-user-by-supplying-the-access-token" class="md-nav__link">
+    11. Now, the service provider (Way2SMS server) can access the Google contacts of the End-user by supplying the access token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_2" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-possible-flows" class="md-nav__link">
+    Extra Possible Flows
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Possible Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-service-provider-can-introspect-an-access-token" class="md-nav__link">
+    1. Service Provider can Introspect an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Service Provider can Introspect an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_3" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-service-provider-can-revoke-an-access-token" class="md-nav__link">
+    2. Service Provider can Revoke an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Service Provider can Revoke an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_4" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-service-provider-can-refresh-an-access-token" class="md-nav__link">
+    3. Service Provider can Refresh an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Service Provider can Refresh an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_5" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref_1" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pkce" class="md-nav__link">
+    PKCE
+  </a>
+  
+    <nav class="md-nav" aria-label="PKCE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    How
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref_2" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-flow" class="md-nav__link">
+    Implicit Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Implicit Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ref_3" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-connect" class="md-nav__link">
+    OpenID Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-openid-openid-connect" class="md-nav__link">
+    OAuth, OpenID, OpenID Connect
   </a>
   
 </li>
@@ -1388,11 +1917,540 @@
     JWT
   </a>
   
+    <nav class="md-nav" aria-label="JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-64-encoding" class="md-nav__link">
+    Base 64 Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-64-url-encoding" class="md-nav__link">
+    Base 64 URL Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parts-of-jwt" class="md-nav__link">
+    Parts of JWT
+  </a>
+  
+    <nav class="md-nav" aria-label="Parts of JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jose-header" class="md-nav__link">
+    JOSE Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret" class="md-nav__link">
+    Secret
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payloadbodyclaim" class="md-nav__link">
+    Payload/Body/Claim
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claim" class="md-nav__link">
+    Claim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jws" class="md-nav__link">
+    JWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwa" class="md-nav__link">
+    JWA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwe" class="md-nav__link">
+    JWE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsecured-jwt" class="md-nav__link">
+    Unsecured JWT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#oauth2" class="md-nav__link">
-    OAuth2
+  <a href="#openid-10" class="md-nav__link">
+    OpenID 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-20" class="md-nav__link">
+    OpenID 2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-attribute-exchange-10" class="md-nav__link">
+    OpenID Attribute Exchange 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-10" class="md-nav__link">
+    OAuth 1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-20" class="md-nav__link">
+    OAuth 2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth 2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-grant-types-flow" class="md-nav__link">
+    Authorization Grant Types (Flow)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-code-flow" class="md-nav__link">
+    Authorization Code Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Code Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    Participants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-of-an-authorization-server" class="md-nav__link">
+    Setup of an Authorization Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-an-resource-provider-server-as-client-in-authorization-server" class="md-nav__link">
+    Register an Resource Provider Server as Client in Authorization Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-end-user-opens-way2sms-app" class="md-nav__link">
+    1. End-user opens Way2SMS App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-writes-a-sms-and-clicks-on-send-to-my-google-contacts" class="md-nav__link">
+    2. Writes a SMS and clicks on Send to My Google Contacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-as-end-user-has-not-authorized-the-way2sms-server-as-well-as-app-to-access-end-users-resource-stored-at-google-server" class="md-nav__link">
+    3. As End-user has not authorized the Way2SMS server (as well as app) to access End-user's resource stored at Google server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-way2sms-server-provides-the-way2sms-app-a-link-to-redirect-the-end-user-there-to-complete-the-authorization-with-google-oauth2-server" class="md-nav__link">
+    4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-way2sms-app-opens-this-url-in-appbrowser-if-not-already-logged-in-then-it-shows-a-login-form" class="md-nav__link">
+    5. Way2SMS app opens this URL in app/browser, if not already logged-in, then it shows a Login Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-end-user-had-to-enter-their-google-credentials" class="md-nav__link">
+    6. End-user had to enter their Google credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-once-the-credentials-are-validated-it-shows-that-the-service-provide-way2sms-server-wants-to-access-this-this-and-this-do-you-consent" class="md-nav__link">
+    7. Once the credentials are validated, it shows that the service provide (Way2SMS server) wants to access this. this and this, do you consent?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-if-end-user-accepts-and-agrees-on-the-consent-then-in-return-google-authorization-server-redirects-the-end-user-to-the-registered-redirect_url-by-appending-an-authorization-code-to-it" class="md-nav__link">
+    8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it
+  </a>
+  
+    <nav class="md-nav" aria-label="8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-now-the-service-provider-server-way2sms-server-has-the-authorization-code-also-if-required-then-way2sms-app-can-provide-the-same-through-some-helper-api-of-way2sms-server" class="md-nav__link">
+    9. Now the service provider server (Way2SMS server) has the authorization code (also, if required, then Way2SMS App can provide the same through some helper API of Way2SMS server)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-service-provider-server-can-now-call-authorization-server-to-get-an-access-code-in-exchange-of-authorization-code-by-supplying-a-few-important-details-about-the-registered-service-provider-server" class="md-nav__link">
+    10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter_1" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-now-the-service-provider-way2sms-server-can-access-the-google-contacts-of-the-end-user-by-supplying-the-access-token" class="md-nav__link">
+    11. Now, the service provider (Way2SMS server) can access the Google contacts of the End-user by supplying the access token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_2" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-possible-flows" class="md-nav__link">
+    Extra Possible Flows
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Possible Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-service-provider-can-introspect-an-access-token" class="md-nav__link">
+    1. Service Provider can Introspect an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Service Provider can Introspect an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_3" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-service-provider-can-revoke-an-access-token" class="md-nav__link">
+    2. Service Provider can Revoke an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Service Provider can Revoke an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_4" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-service-provider-can-refresh-an-access-token" class="md-nav__link">
+    3. Service Provider can Refresh an Access Token
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Service Provider can Refresh an Access Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_5" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref_1" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pkce" class="md-nav__link">
+    PKCE
+  </a>
+  
+    <nav class="md-nav" aria-label="PKCE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    What
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    How
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref_2" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-flow" class="md-nav__link">
+    Implicit Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Implicit Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ref_3" class="md-nav__link">
+    Ref
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openid-connect" class="md-nav__link">
+    OpenID Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-openid-openid-connect" class="md-nav__link">
+    OAuth, OpenID, OpenID Connect
   </a>
   
 </li>
@@ -1427,13 +2485,1176 @@
 <div class="toc">
 <ul>
 <li><a href="#security">Security</a></li>
-<li><a href="#jwt">JWT</a></li>
-<li><a href="#oauth2">OAuth2</a></li>
+<li><a href="#jwt">JWT</a><ul>
+<li><a href="#base-64-encoding">Base 64 Encoding</a></li>
+<li><a href="#base-64-url-encoding">Base 64 URL Encoding</a></li>
+<li><a href="#parts-of-jwt">Parts of JWT</a><ul>
+<li><a href="#jose-header">JOSE Header</a></li>
+<li><a href="#secret">Secret</a></li>
+<li><a href="#payloadbodyclaim">Payload/Body/Claim</a></li>
+</ul>
+</li>
+<li><a href="#claim">Claim</a></li>
+<li><a href="#jws">JWS</a></li>
+<li><a href="#jwa">JWA</a></li>
+<li><a href="#jwe">JWE</a></li>
+<li><a href="#unsecured-jwt">Unsecured JWT</a></li>
+<li><a href="#ref">Ref</a></li>
+</ul>
+</li>
+<li><a href="#openid-10">OpenID 1.0</a></li>
+<li><a href="#openid-20">OpenID 2.0</a></li>
+<li><a href="#openid-attribute-exchange-10">OpenID Attribute Exchange 1.0</a></li>
+<li><a href="#oauth-10">OAuth 1.0</a></li>
+<li><a href="#oauth-20">OAuth 2.0</a><ul>
+<li><a href="#authorization-grant-types-flow">Authorization Grant Types (Flow)</a></li>
+<li><a href="#authorization-code-flow">Authorization Code Flow</a><ul>
+<li><a href="#participants">Participants</a></li>
+<li><a href="#prerequisites">Prerequisites</a><ul>
+<li><a href="#setup-of-an-authorization-server">Setup of an Authorization Server</a></li>
+<li><a href="#register-an-resource-provider-server-as-client-in-authorization-server">Register an Resource Provider Server as Client in Authorization Server</a></li>
+</ul>
+</li>
+<li><a href="#flow">Flow</a><ul>
+<li><a href="#1-end-user-opens-way2sms-app">1. End-user opens Way2SMS App</a></li>
+<li><a href="#2-writes-a-sms-and-clicks-on-send-to-my-google-contacts">2. Writes a SMS and clicks on Send to My Google Contacts</a></li>
+<li><a href="#3-as-end-user-has-not-authorized-the-way2sms-server-as-well-as-app-to-access-end-users-resource-stored-at-google-server">3. As End-user has not authorized the Way2SMS server (as well as app) to access End-user's resource stored at Google server</a></li>
+<li><a href="#4-way2sms-server-provides-the-way2sms-app-a-link-to-redirect-the-end-user-there-to-complete-the-authorization-with-google-oauth2-server">4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server</a><ul>
+<li><a href="#parameters">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#5-way2sms-app-opens-this-url-in-appbrowser-if-not-already-logged-in-then-it-shows-a-login-form">5. Way2SMS app opens this URL in app/browser, if not already logged-in, then it shows a Login Form</a></li>
+<li><a href="#6-end-user-had-to-enter-their-google-credentials">6. End-user had to enter their Google credentials</a></li>
+<li><a href="#7-once-the-credentials-are-validated-it-shows-that-the-service-provide-way2sms-server-wants-to-access-this-this-and-this-do-you-consent">7. Once the credentials are validated, it shows that the service provide (Way2SMS server) wants to access this. this and this, do you consent?</a></li>
+<li><a href="#8-if-end-user-accepts-and-agrees-on-the-consent-then-in-return-google-authorization-server-redirects-the-end-user-to-the-registered-redirect_url-by-appending-an-authorization-code-to-it">8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it</a><ul>
+<li><a href="#parameters_1">Parameters</a></li>
+<li><a href="#response">Response</a></li>
+</ul>
+</li>
+<li><a href="#9-now-the-service-provider-server-way2sms-server-has-the-authorization-code-also-if-required-then-way2sms-app-can-provide-the-same-through-some-helper-api-of-way2sms-server">9. Now the service provider server (Way2SMS server) has the authorization code (also, if required, then Way2SMS App can provide the same through some helper API of Way2SMS server)</a></li>
+<li><a href="#10-service-provider-server-can-now-call-authorization-server-to-get-an-access-code-in-exchange-of-authorization-code-by-supplying-a-few-important-details-about-the-registered-service-provider-server">10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server</a><ul>
+<li><a href="#parameter">Parameter</a></li>
+</ul>
+</li>
+<li><a href="#response_1">Response</a><ul>
+<li><a href="#parameter_1">Parameter</a></li>
+</ul>
+</li>
+<li><a href="#11-now-the-service-provider-way2sms-server-can-access-the-google-contacts-of-the-end-user-by-supplying-the-access-token">11. Now, the service provider (Way2SMS server) can access the Google contacts of the End-user by supplying the access token</a></li>
+</ul>
+</li>
+<li><a href="#response_2">Response</a></li>
+<li><a href="#extra-possible-flows">Extra Possible Flows</a><ul>
+<li><a href="#1-service-provider-can-introspect-an-access-token">1. Service Provider can Introspect an Access Token</a><ul>
+<li><a href="#parameters_2">Parameters</a></li>
+<li><a href="#response_3">Response</a></li>
+</ul>
+</li>
+<li><a href="#2-service-provider-can-revoke-an-access-token">2. Service Provider can Revoke an Access Token</a><ul>
+<li><a href="#parameters_3">Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#response_4">Response</a><ul>
+<li><a href="#3-service-provider-can-refresh-an-access-token">3. Service Provider can Refresh an Access Token</a><ul>
+<li><a href="#parameters_4">Parameters</a></li>
+<li><a href="#response_5">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ref_1">Ref</a></li>
+<li><a href="#pkce">PKCE</a><ul>
+<li><a href="#why">Why</a></li>
+<li><a href="#what">What</a></li>
+<li><a href="#how">How</a></li>
+</ul>
+</li>
+<li><a href="#ref_2">Ref</a></li>
+<li><a href="#implicit-flow">Implicit Flow</a><ul>
+<li><a href="#ref_3">Ref</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#openid-connect">OpenID Connect</a></li>
+<li><a href="#oauth-openid-openid-connect">OAuth, OpenID, OpenID Connect</a></li>
 <li><a href="#saml">SAML</a></li>
 </ul>
 </div>
 <h2 id="jwt">JWT<a class="headerlink" href="#jwt" title="Permanent link">#</a></h2>
-<h2 id="oauth2">OAuth2<a class="headerlink" href="#oauth2" title="Permanent link">#</a></h2>
+<p>JSON Web Token</p>
+<ul>
+<li>a compact, URL-safe way/means of representing claims securely between two parties<ul>
+<li>URL-safe<ul>
+<li>3 parts separated by dots</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>open &amp; industry standard</li>
+<li><a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a><ul>
+<li>status: concensus of IETF</li>
+</ul>
+</li>
+<li>format intended for space constrained environments such as:<ul>
+<li>HTTP Authorization headers </li>
+<li>HTTP URI query parameters</li>
+</ul>
+</li>
+<li>a string representing a set of claims as a JSON object that is encoded in a JWS or JWE, enabling the claims to be digitally signed or MACed and/or encrypted<ul>
+<li>can have zero or more claims</li>
+</ul>
+</li>
+<li>a <strong>signed</strong> JWT is an abstraction over either JWS or JWE</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>// Header: Algorithm and Token type
+{
+    &quot;alg&quot;: &quot;HS256&quot;,
+    &quot;typ&quot;: &quot;JWT&quot;
+}
+
+// Payload: Data
+{
+    &quot;name&quot;: &quot;John&quot;
+    &quot;iat&quot;: 1615455676
+}
+
+// Signature 
+some secret string // optionally base64/base64url encoded
+</code></pre></div>
+</td></tr></table>
+<h3 id="base-64-encoding">Base 64 Encoding<a class="headerlink" href="#base-64-encoding" title="Permanent link">#</a></h3>
+<ul>
+<li>binary to text encoding</li>
+<li>represents binary data (8-bit bytes) to ASCII string format<ul>
+<li>using radix-64 representation</li>
+</ul>
+</li>
+<li>designed to carry data (binary data) across channels that only reliably supports text content</li>
+</ul>
+<h3 id="base-64-url-encoding">Base 64 URL Encoding<a class="headerlink" href="#base-64-url-encoding" title="Permanent link">#</a></h3>
+<p>First encode the string to base64, this may result in encoded string having some signs like <code>+</code>, <code>/</code>, <code>=</code> which have different meaning in filesystem/urls. Thus need to encoded them further to make them URL-safe.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Base64</th>
+<th>Base64Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>A</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>D</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>G</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>H</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>I</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>J</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>K</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>M</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>P</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Q</td>
+<td>Q</td>
+</tr>
+<tr>
+<td>17</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>18</td>
+<td>S</td>
+<td>S</td>
+</tr>
+<tr>
+<td>19</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>20</td>
+<td>U</td>
+<td>U</td>
+</tr>
+<tr>
+<td>21</td>
+<td>V</td>
+<td>V</td>
+</tr>
+<tr>
+<td>22</td>
+<td>W</td>
+<td>W</td>
+</tr>
+<tr>
+<td>23</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Z</td>
+<td>Z</td>
+</tr>
+<tr>
+<td>26</td>
+<td>a</td>
+<td>a</td>
+</tr>
+<tr>
+<td>27</td>
+<td>b</td>
+<td>b</td>
+</tr>
+<tr>
+<td>28</td>
+<td>c</td>
+<td>c</td>
+</tr>
+<tr>
+<td>29</td>
+<td>d</td>
+<td>d</td>
+</tr>
+<tr>
+<td>30</td>
+<td>e</td>
+<td>e</td>
+</tr>
+<tr>
+<td>31</td>
+<td>f</td>
+<td>f</td>
+</tr>
+<tr>
+<td>32</td>
+<td>g</td>
+<td>g</td>
+</tr>
+<tr>
+<td>33</td>
+<td>h</td>
+<td>h</td>
+</tr>
+<tr>
+<td>34</td>
+<td>i</td>
+<td>i</td>
+</tr>
+<tr>
+<td>35</td>
+<td>j</td>
+<td>j</td>
+</tr>
+<tr>
+<td>36</td>
+<td>k</td>
+<td>k</td>
+</tr>
+<tr>
+<td>37</td>
+<td>l</td>
+<td>l</td>
+</tr>
+<tr>
+<td>38</td>
+<td>m</td>
+<td>m</td>
+</tr>
+<tr>
+<td>39</td>
+<td>n</td>
+<td>n</td>
+</tr>
+<tr>
+<td>40</td>
+<td>o</td>
+<td>o</td>
+</tr>
+<tr>
+<td>41</td>
+<td>p</td>
+<td>p</td>
+</tr>
+<tr>
+<td>42</td>
+<td>q</td>
+<td>q</td>
+</tr>
+<tr>
+<td>43</td>
+<td>r</td>
+<td>r</td>
+</tr>
+<tr>
+<td>44</td>
+<td>s</td>
+<td>s</td>
+</tr>
+<tr>
+<td>45</td>
+<td>t</td>
+<td>t</td>
+</tr>
+<tr>
+<td>46</td>
+<td>u</td>
+<td>u</td>
+</tr>
+<tr>
+<td>47</td>
+<td>v</td>
+<td>v</td>
+</tr>
+<tr>
+<td>48</td>
+<td>w</td>
+<td>w</td>
+</tr>
+<tr>
+<td>49</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>50</td>
+<td>y</td>
+<td>y</td>
+</tr>
+<tr>
+<td>51</td>
+<td>z</td>
+<td>z</td>
+</tr>
+<tr>
+<td>52</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>53</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>54</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>55</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>56</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>57</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>58</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>59</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>60</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>61</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>62</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>63</td>
+<td>/</td>
+<td>_</td>
+</tr>
+<tr>
+<td></td>
+<td>=</td>
+<td>(optional)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parts-of-jwt">Parts of JWT<a class="headerlink" href="#parts-of-jwt" title="Permanent link">#</a></h3>
+<p>JWT is combination of 3 base64 url encoded strings, parted by 2 dots</p>
+<h4 id="jose-header">JOSE Header<a class="headerlink" href="#jose-header" title="Permanent link">#</a></h4>
+<ul>
+<li>typ<ul>
+<li>defines the media type of the complete JWT</li>
+<li>optional; recommended value: JWT</li>
+<li>defined by JWT specifications</li>
+</ul>
+</li>
+<li>cty<ul>
+<li>defines the content type; defines structural information</li>
+<li>recommended to use in case of nested JWTs only</li>
+<li>defined by JWT specifications</li>
+</ul>
+</li>
+<li>alg<ul>
+<li>defined by JWS specifications</li>
+</ul>
+</li>
+<li>kid<ul>
+<li>defined by JWS specifications</li>
+</ul>
+</li>
+</ul>
+<h4 id="secret">Secret<a class="headerlink" href="#secret" title="Permanent link">#</a></h4>
+<h4 id="payloadbodyclaim">Payload/Body/Claim<a class="headerlink" href="#payloadbodyclaim" title="Permanent link">#</a></h4>
+<h3 id="claim">Claim<a class="headerlink" href="#claim" title="Permanent link">#</a></h3>
+<ul>
+<li>a piece of information asserted about a subject<ul>
+<li>asserted: <ul>
+<li>say something clearly and firmly</li>
+<li>in determined and confident way</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>key val pair</li>
+<li>key == always string</li>
+<li>val could be any JSON data type</li>
+</ul>
+<h3 id="jws">JWS<a class="headerlink" href="#jws" title="Permanent link">#</a></h3>
+<p>JSON Web Signature</p>
+<h3 id="jwa">JWA<a class="headerlink" href="#jwa" title="Permanent link">#</a></h3>
+<p>JSON Web Algorithm</p>
+<ul>
+<li>RFC 7518</li>
+<li>all applicable algorithms for signing are defined under this</li>
+</ul>
+<h3 id="jwe">JWE<a class="headerlink" href="#jwe" title="Permanent link">#</a></h3>
+<p>JSON Web Encryption</p>
+<h3 id="unsecured-jwt">Unsecured JWT<a class="headerlink" href="#unsecured-jwt" title="Permanent link">#</a></h3>
+<ul>
+<li>is a JWS object without any algorithm (<code>alg: none</code>) in its JOSE header</li>
+<li>is a JWS w/o signature</li>
+</ul>
+<h3 id="ref">Ref<a class="headerlink" href="#ref" title="Permanent link">#</a></h3>
+<ol>
+<li>https://medium.facilelogin.com/jwt-jws-and-jwe-for-not-so-dummies-b63310d201a3</li>
+</ol>
+<h2 id="openid-10">OpenID 1.0<a class="headerlink" href="#openid-10" title="Permanent link">#</a></h2>
+<p>(2006) </p>
+<ul>
+<li>lets an app ask an authority for proof that an end user owns an identity (a URL).</li>
+<li>an <strong>Authentication</strong> protocol</li>
+<li>deprecated</li>
+<li>example<ul>
+<li>End user to app: I am Steve A. Smith.</li>
+<li>App to authority: Is this Steve A. Smith?</li>
+<li>The end user and authority speak for a moment.</li>
+<li>Authority to app: Yes, that is Steve A. Smith.</li>
+</ul>
+</li>
+</ul>
+<h2 id="openid-20">OpenID 2.0<a class="headerlink" href="#openid-20" title="Permanent link">#</a></h2>
+<p>(2007)</p>
+<ul>
+<li>does the same as OpenID 1.0, but adds a second identity format (XRI) and adds flexibility to how the end user specifies the identity and authority.</li>
+<li>an <strong>Authentication</strong> protocol</li>
+<li>deprecated</li>
+</ul>
+<h2 id="openid-attribute-exchange-10">OpenID Attribute Exchange 1.0<a class="headerlink" href="#openid-attribute-exchange-10" title="Permanent link">#</a></h2>
+<p>(2007)</p>
+<ul>
+<li>extends OpenID 2.0 by letting an app fetch &amp; store end user profile information with the authority - in addition to verifying the end user's identity.</li>
+<li>an <strong>Authentication</strong> protocol</li>
+<li>deprecated</li>
+<li>example:<ul>
+<li>End user to app: I am Steve A. Smith.</li>
+<li>App to authority: Is this Steve A. Smith? Oh, and if it is, also fetch me his email address and phone number.</li>
+<li>The end user and authority speak for a moment.</li>
+<li>Authority to app: Yes, that is Steve A. Smith. His email is steve@domain.com and phone number is 123-456-7890.</li>
+</ul>
+</li>
+</ul>
+<h2 id="oauth-10">OAuth 1.0<a class="headerlink" href="#oauth-10" title="Permanent link">#</a></h2>
+<p>(2010)</p>
+<ul>
+<li>lets an end user grant an app limited access to resources on a third-party server that an authority owns.</li>
+<li>example:<ul>
+<li>App to end user: We'd like to access your pictures on some other server.</li>
+<li>The end user and authority speak for a moment.</li>
+<li>Authority to app: Here is an access token.</li>
+<li>App to third-party server: Here is the access token that proves I am allowed to access pictures for an end user.</li>
+</ul>
+</li>
+<li>an <strong>Authorization</strong> protocol</li>
+<li>deprecated</li>
+</ul>
+<h2 id="oauth-20">OAuth 2.0<a class="headerlink" href="#oauth-20" title="Permanent link">#</a></h2>
+<p>(2012)</p>
+<ul>
+<li>does the same thing as OAuth 1.0 but with a completely new protocol</li>
+<li>an <strong>Authorization</strong> framework</li>
+</ul>
+<h3 id="authorization-grant-types-flow">Authorization Grant Types (Flow)<a class="headerlink" href="#authorization-grant-types-flow" title="Permanent link">#</a></h3>
+<p>There are multiple ways in OAuth2.0 itself to achieve authorization, which are already specified in the RFC based on different client type/scenarios.</p>
+<ul>
+<li>Authorization Code Flow</li>
+<li>PKCE</li>
+<li>Client Credential</li>
+<li>Device Code</li>
+<li>Refresh Token</li>
+<li>Legacy: Implicit Flow</li>
+<li>Legacy: Password Grant</li>
+</ul>
+<h3 id="authorization-code-flow">Authorization Code Flow<a class="headerlink" href="#authorization-code-flow" title="Permanent link">#</a></h3>
+<p>This is a suitable flow for following kind of case.</p>
+<h4 id="participants">Participants<a class="headerlink" href="#participants" title="Permanent link">#</a></h4>
+<ol>
+<li>End User (2nd party)</li>
+<li>Client (Mobile/SPA App - 3rd party)</li>
+<li>Service Provider (Resource server - 3rd party, Authorization server knows this as Registered Client as well)</li>
+<li>Authorization server (1st party)</li>
+</ol>
+<p>Example: Toran wants to use Way2SMS App (and internally their server) to send SMS to all the contacts stored in his Google account. Here,</p>
+<ul>
+<li>End user = Toran</li>
+<li>Client = Way2SMS App</li>
+<li>Service Provider = Way2SMS server</li>
+<li>Authorization Server = Google</li>
+</ul>
+<p>Where, the service provider is a 3rd party server. If there is no 3rd party server, and only Mobile/SPA clients, then PKCE is a better/secure flow. Even, now its recommended to use PKCE for 3rd party resource provider server case as well.</p>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
+<h5 id="setup-of-an-authorization-server">Setup of an Authorization Server<a class="headerlink" href="#setup-of-an-authorization-server" title="Permanent link">#</a></h5>
+<p>Authorization Base</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>https://authorization-server/oauth2/authorize
+</code></pre></div>
+</td></tr></table>
+<p>Token URL</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>https://authorization-server/oauth2/token/
+</code></pre></div>
+</td></tr></table>
+<p>Redirect URL</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>https://authorization-server/oauth2/callback
+</code></pre></div>
+</td></tr></table>
+<p>Authorization URL</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>https://authorization-server/oauth2/authorize/?response_type=code&amp;state=random_state_string&amp;client_id=:client_id
+</code></pre></div>
+</td></tr></table>
+<h5 id="register-an-resource-provider-server-as-client-in-authorization-server">Register an Resource Provider Server as Client in Authorization Server<a class="headerlink" href="#register-an-resource-provider-server-as-client-in-authorization-server" title="Permanent link">#</a></h5>
+<p>Input:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>client_type: confidential/public  (public for Mobile App, Web App; confidential for backends/servers)
+Authorization Grant Type: authorization-code
+Redirect URL: https://resource-provider/oauth2/callback
+</code></pre></div>
+</td></tr></table>
+<p>Output:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>client_id: BOqLOb2uaTn4ppi5nlj2ErTWpr9fKt5YQrwpDvfs
+client_secret: bamZTX1gknB99XZvKWYucUPVdY5Aum5k8LDoZzUWz0VhwaSZpFhCyUrrxshaAJKtaZ5bTJXimBCLgjs0yPZxvow9NBrqEXG6qeK0VFy2incKLzZdw97Q4jNxAafBq3c8
+</code></pre></div>
+</td></tr></table>
+<p>Keep note of this.</p>
+<h4 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">#</a></h4>
+<h5 id="1-end-user-opens-way2sms-app">1. End-user opens Way2SMS App<a class="headerlink" href="#1-end-user-opens-way2sms-app" title="Permanent link">#</a></h5>
+<h5 id="2-writes-a-sms-and-clicks-on-send-to-my-google-contacts">2. Writes a SMS and clicks on <code>Send to My Google Contacts</code><a class="headerlink" href="#2-writes-a-sms-and-clicks-on-send-to-my-google-contacts" title="Permanent link">#</a></h5>
+<h5 id="3-as-end-user-has-not-authorized-the-way2sms-server-as-well-as-app-to-access-end-users-resource-stored-at-google-server">3. As End-user has not authorized the Way2SMS server (as well as app) to access End-user's resource stored at Google server<a class="headerlink" href="#3-as-end-user-has-not-authorized-the-way2sms-server-as-well-as-app-to-access-end-users-resource-stored-at-google-server" title="Permanent link">#</a></h5>
+<h5 id="4-way2sms-server-provides-the-way2sms-app-a-link-to-redirect-the-end-user-there-to-complete-the-authorization-with-google-oauth2-server">4. Way2SMS server provides the Way2SMS app a link to redirect the End-user there to complete the authorization with Google OAuth2 server<a class="headerlink" href="#4-way2sms-server-provides-the-way2sms-app-a-link-to-redirect-the-end-user-there-to-complete-the-authorization-with-google-oauth2-server" title="Permanent link">#</a></h5>
+<ol>
+<li>The shared URL (called Authorization API) by Way2SMS server has a few query params appended by the Way2SMS server</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>GET https://authorization-server/oauth2/authorize?response_type=code&amp;state=random_state_string&amp;client_id=:client_id&amp;redirect_url=&lt;https://service-provider/oauth2/callback&gt;&amp;scope=profile%20email
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>client_id</td>
+<td>string</td>
+<td>query</td>
+<td>ID of the service provider server (Way2SMS server), that is registered with Google OAuth Serverredirect_url</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td>string</td>
+<td>query</td>
+<td>indicates the expectation in return i.e. an authorization code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>query</td>
+<td>any state encoded as JWT if maintained by service provider which should be send back to it by authorization server after authorization</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>string</td>
+<td>query</td>
+<td>(optional)space separated scope to request additional level of access - depends on particular service</td>
+</tr>
+</tbody>
+</table>
+<p>Note: </p>
+<ol>
+<li>Here <code>state</code> may serve multiple purposes:<ol>
+<li>Serves as a CSRF protection mechanism if it contains a random value per request. When the user is redirected back to your app, double check that the state value matches what you set it to originally.</li>
+<li>This may be used to indicate what action in the app to perform after authorization is complete, for example, indicating which of your app’s pages to redirect to after authorization.</li>
+<li>This gives your app a chance to persist data between the user being directed to the authorization server and back again, such as using the state parameter as a session key.</li>
+</ol>
+</li>
+<li>Some services support registering multiple redirect URLs, and some require the redirect URL to be specified on each request. Check the service’s documentation for the specifics.</li>
+</ol>
+<h5 id="5-way2sms-app-opens-this-url-in-appbrowser-if-not-already-logged-in-then-it-shows-a-login-form">5. Way2SMS app opens this URL in app/browser, if not already logged-in, then it shows a Login Form<a class="headerlink" href="#5-way2sms-app-opens-this-url-in-appbrowser-if-not-already-logged-in-then-it-shows-a-login-form" title="Permanent link">#</a></h5>
+<h5 id="6-end-user-had-to-enter-their-google-credentials">6. End-user had to enter their Google credentials<a class="headerlink" href="#6-end-user-had-to-enter-their-google-credentials" title="Permanent link">#</a></h5>
+<h5 id="7-once-the-credentials-are-validated-it-shows-that-the-service-provide-way2sms-server-wants-to-access-this-this-and-this-do-you-consent">7. Once the credentials are validated, it shows that the service provide (Way2SMS server) wants to access this. this and this, do you consent?<a class="headerlink" href="#7-once-the-credentials-are-validated-it-shows-that-the-service-provide-way2sms-server-wants-to-access-this-this-and-this-do-you-consent" title="Permanent link">#</a></h5>
+<h5 id="8-if-end-user-accepts-and-agrees-on-the-consent-then-in-return-google-authorization-server-redirects-the-end-user-to-the-registered-redirect_url-by-appending-an-authorization-code-to-it">8. If end-user accepts and agrees on the consent then in return Google authorization server redirects the end-user to the registered redirect_url by appending an "authorization code" to it<a class="headerlink" href="#8-if-end-user-accepts-and-agrees-on-the-consent-then-in-return-google-authorization-server-redirects-the-end-user-to-the-registered-redirect_url-by-appending-an-authorization-code-to-it" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>GET https://service-provider/oauth2/callback?code=:code&amp;state=random_state_string&quot;
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>query</td>
+<td>Authorization code, an intermediary step of getting access token from OAuth Server</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>query</td>
+<td>any state encoded as JWT if maintained by service provider which is sent back to it by authorization server after authorization</td>
+</tr>
+</tbody>
+</table>
+<p>Note: </p>
+<ol>
+<li>Authorization Code is single-use (temporary) code</li>
+<li>As the Authorization Code is being sent by the OAuth server through GET query param - its visible to everyone (End-user, Way2SMS client, Way2SMS server)</li>
+</ol>
+<h6 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h6>
+<p>This depends how resource server has coded its <code>GET /oauth2/callback</code> API</p>
+<p>I would say, just show an JSON response with Authorization Code.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;authorization code&gt;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Note: The service provider (Way2SMS server) has already received the authorization <code>code</code> &amp; <code>state</code>. Its just doing an adhoc work of showing the <code>code</code> as response - if it does not, then also its fine.</p>
+<h5 id="9-now-the-service-provider-server-way2sms-server-has-the-authorization-code-also-if-required-then-way2sms-app-can-provide-the-same-through-some-helper-api-of-way2sms-server">9. Now the service provider server (Way2SMS server) has the authorization code (also, if required, then Way2SMS App can provide the same through some helper API of Way2SMS server)<a class="headerlink" href="#9-now-the-service-provider-server-way2sms-server-has-the-authorization-code-also-if-required-then-way2sms-app-can-provide-the-same-through-some-helper-api-of-way2sms-server" title="Permanent link">#</a></h5>
+<h5 id="10-service-provider-server-can-now-call-authorization-server-to-get-an-access-code-in-exchange-of-authorization-code-by-supplying-a-few-important-details-about-the-registered-service-provider-server">10. Service provider server can now call authorization server to get an access code in exchange of authorization code, by supplying a few important details about the registered service provider server<a class="headerlink" href="#10-service-provider-server-can-now-call-authorization-server-to-get-an-access-code-in-exchange-of-authorization-code-by-supplying-a-few-important-details-about-the-registered-service-provider-server" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>POST https://authorization-server/oauth2/token/
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>string</td>
+<td>header</td>
+<td>Content-Type is responsible for telling the HTTP client or server what type of data is being sent</td>
+</tr>
+<tr>
+<td>grant_type</td>
+<td>string</td>
+<td>body</td>
+<td>The type of grant flow we are using in this case <code>authorization_code</code></td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>string</td>
+<td>body</td>
+<td>ID of the application that is registered with OAuth Server</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>string</td>
+<td>body</td>
+<td>This is generated along with client id when registering the user with OAuth Server</td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>body</td>
+<td>The code which we got back from when we hit authorize url of our OAuth Server</td>
+</tr>
+</tbody>
+</table>
+<p>Note: </p>
+<ol>
+<li>The request along with <code>code</code> will be authorized by <code>client_secret</code>. It may check a) if the <code>client_id</code> is correct &amp; registered or not; b) if so, then the <code>code</code> is generated by that <code>client_id</code> or not etc.</li>
+<li><code>client_secret</code> adds an extra security layer. so that even if the <code>code</code> gets intercepted by someone - it could not be utilized without a valid <code>client_secret</code></li>
+<li>The <code>client_id</code> &amp; <code>client_secret</code> could be passed as HTTP Basic Authentication, in a few authorization servers, check respective docs.</li>
+</ol>
+<h5 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;rzKuDDYGSiNIJWuz6hJJc0n5NatPM5&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;expires_in&quot;</span><span class="p">:</span> <span class="mi">10800</span><span class="p">,</span> 
+    <span class="nt">&quot;token_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;read write groups introspection&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;refresh_token&quot;</span><span class="p">:</span> <span class="s2">&quot;1PnkGf9PQfG7urgXx1JCXYAtBpB3mf&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameter_1">Parameter<a class="headerlink" href="#parameter_1" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>body</td>
+<td>the access token itself, which we will use to query resource in resource server</td>
+</tr>
+<tr>
+<td>expires_in</td>
+<td>int</td>
+<td>body</td>
+<td>It is an integer representing the TTL of the access token (i.e. when the token will expire)</td>
+</tr>
+<tr>
+<td>token_type</td>
+<td>string</td>
+<td>body</td>
+<td>This will usually be the word “Bearer” (to indicate a bearer token). Possession of the bearer token is considered authentication.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>string</td>
+<td>body</td>
+<td>the scope is a way to restrict access to specified areas e.g. profile, email, group etc</td>
+</tr>
+<tr>
+<td>refresh_token</td>
+<td>string</td>
+<td>body</td>
+<td>a refresh token that can be used to acquire a new access token when the original expires</td>
+</tr>
+</tbody>
+</table>
+<p>Note: As the service provider (Way2SMS server/resource provider) is calling this API in backend, and receiving access token as response - its totally hidden from anyone else (i.e. Way2SMS App, End-user, any Middle-man)</p>
+<h5 id="11-now-the-service-provider-way2sms-server-can-access-the-google-contacts-of-the-end-user-by-supplying-the-access-token">11. Now, the service provider (Way2SMS server) can access the Google contacts of the End-user by supplying the access token<a class="headerlink" href="#11-now-the-service-provider-way2sms-server-can-access-the-google-contacts-of-the-end-user-by-supplying-the-access-token" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ curl \
+--header &quot;Authorization: Bearer &lt;access_token&gt;&quot; \
+--header &quot;Content-Type: application/json&quot; \
+--request GET \
+--url http://authorization-server/v1/contacts \
+</code></pre></div>
+</td></tr></table>
+<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{
+    &quot;contacts&quot;: [...]
+}
+</code></pre></div>
+</td></tr></table>
+<h4 id="extra-possible-flows">Extra Possible Flows<a class="headerlink" href="#extra-possible-flows" title="Permanent link">#</a></h4>
+<h5 id="1-service-provider-can-introspect-an-access-token">1. Service Provider can Introspect an Access Token<a class="headerlink" href="#1-service-provider-can-introspect-an-access-token" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ curl \
+--header &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+--request POST \
+--url https://authorization-server/oauth2/introspect/ \
+--data &#39;{
+&quot;token&quot;: &quot;&lt;access_token&gt;&quot;,
+&quot;client_id&quot;: &quot;&lt;client_id&gt;&quot;,
+&quot;client_secret&quot;: &quot;&lt;client_secret&gt;&quot;
+}&#39;
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>body</td>
+<td>the access token itself, which we will use to query resource in resource server</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>string</td>
+<td>body</td>
+<td>ID of the application that is registered with OAuth Server</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>string</td>
+<td>body</td>
+<td>This is generated along with client id when registering the user with OAuth Server</td>
+</tr>
+</tbody>
+</table>
+<h6 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">#</a></h6>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{
+    &quot;active&quot;: false
+}
+</code></pre></div>
+</td></tr></table>
+<h5 id="2-service-provider-can-revoke-an-access-token">2. Service Provider can Revoke an Access Token<a class="headerlink" href="#2-service-provider-can-revoke-an-access-token" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ curl \
+--header &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+--request POST \
+--url http://authorization-server/oauth2/revoke_token/ \
+--data &#39;{
+&quot;token&quot;: &quot;&lt;access_token&gt;&quot;,
+&quot;token_type_hint&quot;: &quot;access_token&quot;,
+&quot;client_id&quot;: &quot;&lt;client_id&gt;&quot;,
+&quot;client_secret&quot;: &quot;&lt;client_secret&gt;&quot;
+}&#39;
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>body</td>
+<td>the access token itself, which we will use to query resource in resource server</td>
+</tr>
+<tr>
+<td>token_type_hint</td>
+<td>string</td>
+<td>body</td>
+<td>(optional) designating either ‘access_token’ or ‘refresh_token’</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>string</td>
+<td>body</td>
+<td>ID of the application that is registered with OAuth Server</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>string</td>
+<td>body</td>
+<td>This is generated along with client id when registering the user with OAuth Server</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>HTTP 200
+
+{}
+</code></pre></div>
+</td></tr></table>
+<h5 id="3-service-provider-can-refresh-an-access-token">3. Service Provider can Refresh an Access Token<a class="headerlink" href="#3-service-provider-can-refresh-an-access-token" title="Permanent link">#</a></h5>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ curl \
+--header &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+--request POST \
+--url https://authorization-server/oauth2/token/ \
+--data &#39;{
+&quot;grant_type&quot;: &quot;refresh_token&quot;,
+&quot;refresh_token&quot;: &quot;&lt;refresh_token&gt;&quot;,
+&quot;client_id&quot;: &quot;&lt;client_id&gt;&quot;,
+&quot;client_secret&quot;: &quot;&lt;client_secret&gt;&quot;
+}&#39;
+</code></pre></div>
+</td></tr></table>
+<h6 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">#</a></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>In</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>refresh_token</td>
+<td>string</td>
+<td>body</td>
+<td>the access token itself, which we will use to query resource in resource server</td>
+</tr>
+<tr>
+<td>grant_type</td>
+<td>string</td>
+<td>body</td>
+<td>this mentions that get me new access_token in exchange of refresh_token - by calling the same token API</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>string</td>
+<td>body</td>
+<td>ID of the application that is registered with OAuth Server</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>string</td>
+<td>body</td>
+<td>This is generated along with client id when registering the user with OAuth Server</td>
+</tr>
+</tbody>
+</table>
+<h6 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">#</a></h6>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_new_access_token&gt;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;token_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;expires_in&quot;</span><span class="p">:</span> <span class="mi">36000</span><span class="p">,</span>
+    <span class="nt">&quot;refresh_token&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_new_refresh_token&gt;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;read write&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="ref_1">Ref<a class="headerlink" href="#ref_1" title="Permanent link">#</a></h3>
+<ol>
+<li>https://www.oauth.com/oauth2-servers/server-side-apps/authorization-code/</li>
+<li>https://oauth.net/2/</li>
+</ol>
+<h3 id="pkce">PKCE<a class="headerlink" href="#pkce" title="Permanent link">#</a></h3>
+<p>(Proof Key for Code Exchange, pronounced pixie)</p>
+<h4 id="why">Why<a class="headerlink" href="#why" title="Permanent link">#</a></h4>
+<p>Single-page apps (or browser-based apps) run entirely in the browser after loading the Javascript and HTML source code from a web page. Since the entire source is available to the browser, they cannot maintain the confidentiality of a client secret, so the secret is not used for these apps. The flow is exactly the same as the authorization code flow, but at the last step, the authorization code is exchanged for an access token without using the client secret.</p>
+<p>Because of this, Single-page apps (or browser based apps) must use an OAuth flow that does not require a client secret. Or, say does not require a predefined client secret.</p>
+<h4 id="what">What<a class="headerlink" href="#what" title="Permanent link">#</a></h4>
+<p>PKCE (RFC 7636) is an extension to the Authorization Code flow to prevent several attacks and to be able to securely perform the OAuth exchange from public clients.</p>
+<h4 id="how">How<a class="headerlink" href="#how" title="Permanent link">#</a></h4>
+<p>This extension describes a technique for public clients to mitigate the threat of having the authorization code intercepted. The technique involves the client first creating a secret, and then using that secret again when exchanging the authorization code for an access token. This way if the code is intercepted, it will not be useful since the token request relies on the initial secret.</p>
+<p>Note: Post 2019, its recommended for confidentical clients (backend/servers) using Authorization Code Flow to follow PKCE.</p>
+<h3 id="ref_2">Ref<a class="headerlink" href="#ref_2" title="Permanent link">#</a></h3>
+<ol>
+<li>https://www.oauth.com/oauth2-servers/pkce/</li>
+<li>https://www.oauth.com/oauth2-servers/single-page-apps/</li>
+<li>https://www.oauth.com/oauth2-servers/mobile-and-native-apps/</li>
+<li>https://www.oauth.com/oauth2-servers/server-side-apps/authorization-code/</li>
+<li>https://oauth.net/2/</li>
+</ol>
+<h3 id="implicit-flow">Implicit Flow<a class="headerlink" href="#implicit-flow" title="Permanent link">#</a></h3>
+<p>Some services use the alternative Implicit Flow for single-page apps, rather than allow the app to use the Authorization Code flow with no secret.</p>
+<p>The Implicit Flow bypasses the code exchange step, and instead the access token is returned in the query string fragment to the client immediately.</p>
+<p>In order for a single-page app to use the Authorization Code flow, it must be able to make a POST request to the authorization server. This means if the authorization server is on a different domain, the server will need to support the appropriate CORS headers. If supporting CORS headers is not an option, then the service may use the Implicit Flow instead.</p>
+<h4 id="ref_3">Ref<a class="headerlink" href="#ref_3" title="Permanent link">#</a></h4>
+<ol>
+<li>https://www.oauth.com/oauth2-servers/single-page-apps/</li>
+</ol>
+<h2 id="openid-connect">OpenID Connect<a class="headerlink" href="#openid-connect" title="Permanent link">#</a></h2>
+<p>(2014)</p>
+<ul>
+<li>combines the features of OpenID 2.0, OpenID Attribute Exchange 1.0, and OAuth 2.0 in a single protocol. It allows an application to use an authority...<ul>
+<li>to verify the end user's identity,</li>
+<li>to fetch the end user's profile info, and</li>
+<li>to gain limited access to the end user's stuff.</li>
+</ul>
+</li>
+<li>an <strong>Authorization</strong> as well as <strong>Authentication</strong> protocol</li>
+</ul>
+<h2 id="oauth-openid-openid-connect">OAuth, OpenID, OpenID Connect<a class="headerlink" href="#oauth-openid-openid-connect" title="Permanent link">#</a></h2>
+<ol>
+<li>OpenID is about verifying a person's identity (authentication).</li>
+<li>OAuth is about accessing a person's stuff (authorization).</li>
+<li>OpenID Connect does both.</li>
+</ol>
+<p>All three let a person give their username/password (or other credential) to a trusted authority instead of to a less trusted app.</p>
 <h2 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">#</a></h2>
 <ul>
 <li>https://gravitational.com/blog/how-saml-authentication-works/</li>
@@ -1556,10 +3777,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.2b46852b.min.js"></script>
       
         <script src="../../../../javascripts/config.js"></script>
       
