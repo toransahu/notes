@@ -2,7 +2,10 @@
 
 [TOC]
 
-Source: https://ia.net/writer/support/general/markdown-guide
+Sources: 
+1. https://ia.net/writer/support/general/markdown-guide
+2. https://www.markdownguide.org/basic-syntax/
+3. https://support.typora.io/Markdown-Reference/
 
 - Escape Dollar sign issue in Jupyter notebook
 ```
