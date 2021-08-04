@@ -1,5 +1,6 @@
 # System Design
 
+### Table of Contents
 [TOC]
 
 - system design
@@ -118,3 +119,9 @@
 
 		You can follow Udit's YouTube Channel for System Design videos:
 		https://www.youtube.com/c/UditAgarwal21  
+
+
+# Must Read
+- [How to design a system to scale to first 100 million users](https://levelup.gitconnected.com/how-to-design-a-system-to-scale-to-your-first-100-million-users-4450a2f9703d)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README.md)
+- https://www.freecodecamp.org/news/systems-design-for-interviews/

@@ -6,6 +6,10 @@
 
 ## AWS
 
+### AWS Cost Optimization
+- https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf
+- https://www.cloudhealthtech.com/blog/10-aws-cost-optimization-best-practices
+
 ### IAM - Identity and Access Management
 
 ### Computing

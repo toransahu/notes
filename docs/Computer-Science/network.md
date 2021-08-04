@@ -227,7 +227,7 @@ Because IP wasn't designed to be absolutely reliable & it doesn't have an inbuil
 - User apps, Network services
 
 ### Protocols
-- HTTP, HTTPS, SMTP, FTP
+- HTTP, HTTPS, SMTP, FTP, SSH
 
 ## Presentation Layer
 
@@ -255,7 +255,7 @@ Because IP wasn't designed to be absolutely reliable & it doesn't have an inbuil
 - Routing, Software adrresses (IP)
 
 ### Protocols
-- IP, ICMP, ARP, RARP, IGMP
+- IP, IPX, ICMP, ARP, RARP, IGMP
 
 ## Data Link Layer
 
