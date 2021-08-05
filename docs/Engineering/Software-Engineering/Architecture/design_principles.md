@@ -1,5 +1,8 @@
 # Design Principles
 
+<h3>Table of Contents</h3>
+[TOC]
+
 # SOLID
 
 - Single Responsibilty

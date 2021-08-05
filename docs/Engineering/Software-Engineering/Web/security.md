@@ -1,5 +1,6 @@
 # Security
 
+<h3>Table of Contents</h3>
 [TOC]
 
 
@@ -168,6 +169,9 @@ JSON Web Encryption
 
 ## Ref
 1. https://medium.facilelogin.com/jwt-jws-and-jwe-for-not-so-dummies-b63310d201a3
+
+
+# Token-Based Authentication
 
 # OpenID 1.0 
 

@@ -1,7 +1,27 @@
 # System Design
 
-### Table of Contents
+<h3>Table of Contents</h3>
 [TOC]
+
+# Pratice Problems
+- [Designing a URL Shortening service like TinyURL](https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR?affiliate_id=5073518643380224)
+- [How do you design an Elevator of the Lift system?](https://dzone.com/articles/21-object-oriented-and-system-design-problems-to-p)
+- [How do you design the Vending Machine in Java?](http://javarevisited.blogspot.sg/2016/06/design-vending-machine-in-java.html#axzz4sZVwtCgs)
+- How to design an ATM machine?
+- [Design a LRU Cache System](http://blog.gainlo.co/index.php/2016/05/17/design-a-cache-system/)
+    - https://www.geeksforgeeks.org/lru-cache-implementation/
+- [How would you design a Parking Lot system?](https://www.youtube.com/watch?v=eV5Xh6jNfmU&feature=emb_imp_woyt)
+- How do you design a traffic control system?
+- How do you design a website like Pastebin?
+- How do you design an API Rate Limiter?
+- How do you design a Search Engine?
+- What is required to design a garbage collection system?
+- [Design of Review Systems](https://medium.com/@pranavVersed/15-minute-product-design-challenge-1-rating-review-system-for-ecommerce-342293362efe)
+- How do you design a recommendation system?
+- How do you design a web crawler, and when should it be used?
+- [How do you design a chat application like WhatsApp or Facebook Messenger?](https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpreparing-for-system-design-interviews%2F)
+- [How to design a global video streaming service like YouTube or NetFlix?](https://www.java67.com/2019/09/top-5-courses-to-learn-system-design.html)
+- [How do you design global file sharing and storage apps like Google Drive or Dropbox?](https://www.youtube.com/watch?v=U0xTu6E2CT8&feature=emb_imp_woyt)
 
 - system design
 	- type

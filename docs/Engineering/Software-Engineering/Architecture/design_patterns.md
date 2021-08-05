@@ -1,6 +1,6 @@
 # Design Patterns
 
-### Table of Contents
+<h3>Table of Contents</h3>
 [TOC]
 
 
