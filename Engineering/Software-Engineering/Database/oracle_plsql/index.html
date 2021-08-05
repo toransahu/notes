@@ -1,0 +1,2393 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>Oracle DB (PL/SQL) - Toran's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oracle-db-plsql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toran's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Oracle DB (PL/SQL)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Toran's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Computer Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/algo/" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/dbms/" class="md-nav__link">
+        DBMS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/ds/" class="md-nav__link">
+        Data Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/maths/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/os/" class="md-nav__link">
+        Operating Systems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/se/" class="md-nav__link">
+        Software Engineering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Computer-Science/toc/" class="md-nav__link">
+        Theory of Computation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Data Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Data-Science/ml_azure/" class="md-nav__link">
+        Azure Machine Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Network Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Network Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/FAQ/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/MAC/" class="md-nav__link">
+        MAC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/Tools/" class="md-nav__link">
+        Networking Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_5" type="checkbox" id="__nav_4_1_5" >
+      
+      <label class="md-nav__link" for="__nav_4_1_5">
+        OpenConfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenConfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
+        OpenConfig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_6" type="checkbox" id="__nav_4_1_6" >
+      
+      <label class="md-nav__link" for="__nav_4_1_6">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
+        Wireless Basics - 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
+        Wireless Basics - 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
+        Wireless Basics - 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockchain/" class="md-nav__link">
+        Blockchain
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/" class="md-nav__link">
+        DevOps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice_problems/" class="md-nav__link">
+        Practice Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      <label class="md-nav__link" for="__nav_4_2_8">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/design_principles/" class="md-nav__link">
+        Design Principles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/system_design/" class="md-nav__link">
+        System Design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      <label class="md-nav__link" for="__nav_4_2_9">
+        Data Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Engineering/big_data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_10">
+        Database
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Database" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Oracle DB (PL/SQL)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Oracle DB (PL/SQL)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-db-plsql" class="md-nav__link">
+    Oracle DB (PL/SQL)
+  </a>
+  
+    <nav class="md-nav" aria-label="Oracle DB (PL/SQL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db" class="md-nav__link">
+    DB
+  </a>
+  
+    <nav class="md-nav" aria-label="DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-db-size" class="md-nav__link">
+    Increase DB size?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablespace-datafiles" class="md-nav__link">
+    Tablespace &amp; Datafiles??
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-instance" class="md-nav__link">
+    DB instance?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-temporary-tables-view" class="md-nav__link">
+    Table, Temporary Tables, &amp; View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-procedure-function" class="md-nav__link">
+    Stored Procedure &amp; Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-built-functions" class="md-nav__link">
+    In-Built Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laglead-functions" class="md-nav__link">
+    LAG/LEAD Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgresql/" class="md-nav__link">
+        PostgreSQL
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11">
+        Product Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Product Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product-Development/product_mindset/" class="md-nav__link">
+        Product Mindset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" >
+      
+      <label class="md-nav__link" for="__nav_4_2_12">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/caching/" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12_3" type="checkbox" id="__nav_4_2_12_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_12_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_12_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/API/graphql/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/API/rest/" class="md-nav__link">
+        REST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/API/websocket/" class="md-nav__link">
+        Websocket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Human Science
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Human Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Human-Science/faq/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Human-Science/human_science/" class="md-nav__link">
+        Behavioral, Moral, and Social
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/c_cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Golang
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Golang" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Golang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/golang/go/" class="md-nav__link">
+        Golang Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/java/java_basics/" class="md-nav__link">
+        Java Basics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_advanced/" class="md-nav__link">
+        Python Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_basics/" class="md-nav__link">
+        Python Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_django/" class="md-nav__link">
+        Python Django
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_oops/" class="md-nav__link">
+        Python OOPs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_production_servers/" class="md-nav__link">
+        Python Production Servers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/python/python_testing/" class="md-nav__link">
+        Python Testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Music
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Music" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Music/piano/" class="md-nav__link">
+        Piano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-db-plsql" class="md-nav__link">
+    Oracle DB (PL/SQL)
+  </a>
+  
+    <nav class="md-nav" aria-label="Oracle DB (PL/SQL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db" class="md-nav__link">
+    DB
+  </a>
+  
+    <nav class="md-nav" aria-label="DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increase-db-size" class="md-nav__link">
+    Increase DB size?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablespace-datafiles" class="md-nav__link">
+    Tablespace &amp; Datafiles??
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-instance" class="md-nav__link">
+    DB instance?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-temporary-tables-view" class="md-nav__link">
+    Table, Temporary Tables, &amp; View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subprograms" class="md-nav__link">
+    Subprograms
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprograms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-procedure-function" class="md-nav__link">
+    Stored Procedure &amp; Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-built-functions" class="md-nav__link">
+    In-Built Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-functions" class="md-nav__link">
+    Aggregation Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-functions" class="md-nav__link">
+    Analytical Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-function" class="md-nav__link">
+    Window Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laglead-functions" class="md-nav__link">
+    LAG/LEAD Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/Database/oracle_plsql.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Oracle DB (PL/SQL)</h1>
+                
+                <h2 id="oracle-db-plsql">Oracle DB (PL/SQL)<a class="headerlink" href="#oracle-db-plsql" title="Permanent link">#</a></h2>
+<h3>Table of Contents</h3>
+<div class="toc">
+<ul>
+<li><a href="#oracle-db-plsql">Oracle DB (PL/SQL)</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#db">DB</a><ul>
+<li><a href="#increase-db-size">Increase DB size?</a></li>
+<li><a href="#tablespace-datafiles">Tablespace &amp; Datafiles??</a></li>
+<li><a href="#db-instance">DB instance?</a></li>
+</ul>
+</li>
+<li><a href="#schema">Schema?</a></li>
+<li><a href="#table-temporary-tables-view">Table, Temporary Tables, &amp; View</a></li>
+<li><a href="#clauses">Clauses</a></li>
+<li><a href="#joins">Joins</a></li>
+<li><a href="#subprograms">Subprograms</a><ul>
+<li><a href="#package">Package</a></li>
+<li><a href="#stored-procedure-function">Stored Procedure &amp; Function</a></li>
+<li><a href="#in-built-functions">In-Built Functions</a></li>
+<li><a href="#aggregation-functions">Aggregation Functions</a></li>
+<li><a href="#analytical-functions">Analytical Functions</a></li>
+<li><a href="#window-function">Window Function</a></li>
+<li><a href="#laglead-functions">LAG/LEAD Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h3>
+<h3 id="db">DB<a class="headerlink" href="#db" title="Permanent link">#</a></h3>
+<ul>
+<li>Consist of tablespace and tablespaces consists datafiles</li>
+</ul>
+<h4 id="increase-db-size">Increase DB size?<a class="headerlink" href="#increase-db-size" title="Permanent link">#</a></h4>
+<ul>
+<li>Increase size of data file</li>
+<li>Add new data file to existing table space</li>
+<li>Add new table space with atleast one datafile in it</li>
+<li>Datafile with dynamic extension
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="n">DATAFILE</span> <span class="o">&lt;</span><span class="n">DATAFILE1</span><span class="p">.</span><span class="n">ORA</span><span class="o">&gt;</span> <span class="n">AUTOEXTEND</span> <span class="k">ON</span> <span class="k">NEXT</span> <span class="mi">20</span><span class="n">M</span> <span class="n">MAZSIZE</span> <span class="mi">1000</span><span class="n">M</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+<h4 id="tablespace-datafiles">Tablespace &amp; Datafiles??<a class="headerlink" href="#tablespace-datafiles" title="Permanent link">#</a></h4>
+<ul>
+<li>Oracle Database stores data logically in tablespaces</li>
+<li>and physically in datafiles associated with the corresponding tablespace.</li>
+<li>Oracle DB consist of at least two logical storage unit</li>
+<li>SYSTEM (Default created, either locally or dictionary managed)</li>
+<li>SYSAUX ( Auxiliary to SYSTEM)</li>
+<li>TEMP (optional, required when SYSTEM is locally managed)
+<img src="https://docs.oracle.com/cd/B28359_01/server.111/b28318/img/cncpt037.gif" ></li>
+<li>src: https://docs.oracle.com/cd/B28359_01/server.111/b28318/physical.htm#CNCPT401</li>
+</ul>
+<h4 id="db-instance">DB instance?<a class="headerlink" href="#db-instance" title="Permanent link">#</a></h4>
+<ul>
+<li>db is collection datafiles on server.</li>
+<li>DB instance is the allocated memory &amp; collection of precesses running on the server when db server starts.</li>
+<li>db instances manages datafiles.</li>
+<li>db instance serves the data in datafiles to db users.</li>
+</ul>
+<h3 id="schema">Schema?<a class="headerlink" href="#schema" title="Permanent link">#</a></h3>
+<ul>
+<li>organization of data as a blueprint of how the database is constructed (divided into database tables, packages, functions, views etc) i.e. schema objects.</li>
+<li>An Oracle database associates a separate schema with each database user</li>
+<li>schema objects includes: tables, views, sequences, synonyms, indexes, clusters, database links, snapshots, procedures, functions, packages</li>
+<li>non-schema objects: users, roles, contexts, directory objects</li>
+</ul>
+<h3 id="table-temporary-tables-view">Table, Temporary Tables, &amp; View<a class="headerlink" href="#table-temporary-tables-view" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>Table:</strong></p>
+<ul>
+<li>a preliminary storage for storing data and information in RDBMS</li>
+<li>a collection of related data entries and it consists of columns and rows</li>
+<li>Syntax:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">table_1</span> <span class="k">AS</span> <span class="p">(</span> <span class="n">Col1</span> <span class="nb">NUMBER</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>View:</strong></p>
+<ul>
+<li>It is a saved SELECT query.</li>
+<li>It is a virtual table, which does not exist as stored data values in db (unless its indexed view)</li>
+<li><strong>Advantages:</strong><ul>
+<li>It can join tables to create some complex statical query to use frequently</li>
+<li>Does not takes extra space to store values</li>
+<li>can be used as security mechanism: i.e. only read access, no edit access</li>
+</ul>
+</li>
+<li>Types:<ul>
+<li>View</li>
+<li>Indexed View:<ul>
+<li>Used to create index on view</li>
+<li>Only useful when view is created by joining various tables, otherwise no diff in a indexed view * table</li>
+<li>Takes space same as tables</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Syntax:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">view_1</span> <span class="k">as</span> <span class="k">SELECT</span> <span class="k">statement</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>Temporary Table:</strong></p>
+<ul>
+<li>Oracle can create temp tables to store session specific or transaction specific data</li>
+<li>data does not persists after session/transaction</li>
+<li>definition persits? Yes</li>
+<li>Syntax:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">GLOBAL</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">table_1</span> <span class="p">(</span><span class="n">col1</span> <span class="n">VARCHAR2</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>Clauses:<ul>
+<li>ON COMMIT PRESERVE ROWS:</li>
+</ul>
+</li>
+<li>Used when:<ul>
+<li>need to hold intermediate data</li>
+<li>If the amount of data to be processed or utilized from your PL/SQL procedure is too large to fit comfortably in a PL/SQL table</li>
+</ul>
+</li>
+<li>Note: A TRUNCATE command issued in transaction/session specific temporary table truncates data in its own session/tranxn. Does not affect other session/trnxn.</li>
+<li>What can be created on temporary tables:<ul>
+<li>Index</li>
+<li>View</li>
+<li>Triggers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="clauses">Clauses<a class="headerlink" href="#clauses" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>FROM</strong></li>
+<li><strong>Where</strong><ul>
+<li>Optional part of SELECT, DELETE, ALTER, UPDATE</li>
+<li>Where clause restricts/filters result of a SELECT, DELETE, ALTER, UPDATE queries</li>
+</ul>
+</li>
+<li><strong>Having</strong><ul>
+<li>Having clause restricts/filters result of a "select query with GROUP BY" [1]</li>
+<li>Applied to each groups of grouped table</li>
+<li>If there is no GROUP BY clause then HAVING applies to whole table (table is treated as a single group)</li>
+<li>The SELECT query cannot refer directly to any COLUMN not mentioned in GROUP BY clause, It can however refer to constants, aggregates. [2]</li>
+<li>Aggregate in HAVING do not need to appear in SELECT</li>
+<li>Subquery can be used in HAVING [3]</li>
+<li>e.g.
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">m</span><span class="p">,</span> <span class="k">min</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">min_salary</span> <span class="k">FROM</span> <span class="n">salaries</span> <span class="k">group</span> <span class="k">by</span> <span class="n">emp_no</span> <span class="k">having</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">70000</span><span class="p">;</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="n">salary</span> <span class="n">m</span> <span class="k">FROM</span> <span class="n">salaries</span>  <span class="k">having</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">70000</span><span class="p">;</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="n">m</span> <span class="k">FROM</span> <span class="n">salaries</span> <span class="k">group</span> <span class="k">by</span> <span class="n">emp_no</span> <span class="k">having</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span> <span class="k">from</span>  <span class="n">salaries</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li><strong>ORDER BY</strong><ul>
+<li>To specify the order in which row should appear</li>
+<li>Optional to use with SELECT, INSERT, CREATE VIEW</li>
+<li>Meaningless in sub-queries</li>
+<li>Order: DESC, ASC</li>
+<li>Uses:<ul>
+<li>Using Correlation Name:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">first_col</span> <span class="k">AS</span> <span class="n">f</span> <span class="k">from</span> <span class="n">tab_1</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>Using Column number
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">emp_no</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">addr</span>  <span class="k">from</span> <span class="n">tab_1</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>Using function
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">i</span><span class="p">,</span> <span class="n">len</span> <span class="k">from</span> <span class="n">measure</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>Using NULL order
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">i</span><span class="p">,</span> <span class="n">len</span> <span class="k">from</span> <span class="n">measure</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">NULLS</span> <span class="k">LAST</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>GROUP BY</strong><ul>
+<li>Optional part of SELECT</li>
+<li>The SELECT query cannot refer directly to any COLUMN not mentioned in GROUP BY clause, It can however refer to constants, aggregates.</li>
+<li>Typically used with AGGREGATE functions</li>
+</ul>
+</li>
+<li><strong>FOR UPDATE</strong><ul>
+<li>Optional part of SELECT query</li>
+<li>Syntax: SELECT A, B, C FROM T_1 FOR UPDATE</li>
+<li>Use: In cursors to make them updatable.</li>
+</ul>
+</li>
+<li>
+<p><strong>WITH</strong></p>
+<ul>
+<li>Materialization technique same as View &amp; Temporary tables</li>
+<li>known as subquery factoring</li>
+<li>Useful when subqueries are used multiple times</li>
+<li>e.g.
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">WITH</span>
+    <span class="n">sum_sales</span> <span class="k">AS</span>
+      <span class="p">(</span> <span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span> <span class="n">all_sales</span> <span class="k">from</span> <span class="n">stores</span> <span class="p">),</span>
+    <span class="n">number_stores</span> <span class="k">AS</span>
+      <span class="p">(</span> <span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">nbr_stores</span> <span class="k">from</span> <span class="n">stores</span> <span class="p">),</span>
+    <span class="n">sales_by_store</span> <span class="k">AS</span>
+      <span class="p">(</span> <span class="k">select</span> <span class="n">store_name</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span> <span class="n">store_sales</span> <span class="k">from</span> <span class="n">store</span> <span class="k">natural</span> <span class="k">join</span> <span class="n">sales</span> <span class="p">)</span>
+<span class="k">SELECT</span>
+   <span class="n">store_name</span>
+<span class="k">FROM</span>
+   <span class="n">store</span><span class="p">,</span>
+   <span class="n">sum_sales</span><span class="p">,</span>
+   <span class="n">number_stores</span><span class="p">,</span>
+   <span class="n">sales_by_store</span>
+<span class="k">where</span>
+   <span class="n">store_sales</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">all_sales</span> <span class="o">/</span> <span class="n">nbr_stores</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>
+<p><strong>USING</strong></p>
+<ul>
+<li>Used in JOIN inplace of ON</li>
+<li>e.g.
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">COUNTRIES</span> <span class="k">JOIN</span> <span class="n">CITIES</span> <span class="k">USING</span> <span class="p">(</span><span class="n">COUNTRY</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+where COUNTRY column should exist in both the tables.</li>
+</ul>
+</li>
+<li><strong>CONSTRAINT</strong><ul>
+<li>Optional part of CREATE/ ALTER table.</li>
+<li>Level:<ul>
+<li>Column level: Column-level constraints (except for check constraints) refer to only one column</li>
+<li>Table level: Table constraints allow you to specify more than one column in a PRIMARY KEY, UNIQUE, CHECK, or FOREIGN KEY constraint definition</li>
+</ul>
+</li>
+<li>Types:<ul>
+<li>NOT NULL: Column level,</li>
+<li>PRIMARY KEY: Both level, nameable</li>
+<li>FOREIGN KEY: Both level, nameable</li>
+<li>CHECK: Both level, nameable, [DISABLE] keyword to disable</li>
+<li>UNIQUE: Both level, nameable</li>
+</ul>
+</li>
+<li>e.g.:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">suppliers</span>
+<span class="p">(</span>
+  <span class="n">supplier_id</span> <span class="nb">numeric</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">CONSTRAINT</span> <span class="n">unq_supplier_id</span> <span class="k">UNIQUE</span><span class="p">,</span>
+  <span class="n">supplier_name</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">CONSTRAINT</span> <span class="n">check_supplier_name</span>
+  <span class="k">CHECK</span> <span class="p">(</span><span class="n">supplier_name</span> <span class="o">=</span> <span class="k">upper</span><span class="p">(</span><span class="n">supplier_name</span><span class="p">)),</span>
+  <span class="k">CONSTRAINT</span> <span class="n">pk_supplier_id</span> <span class="k">PRIMARY</span> <span class="k">KEY</span>
+<span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+</ul>
+<h3 id="joins">Joins<a class="headerlink" href="#joins" title="Permanent link">#</a></h3>
+<ul>
+<li>Used to combine &amp; then retrieve data from multiple tables or views</li>
+<li>Types:<ul>
+<li>Equijoin:<ul>
+<li>Joins 2 tables on the basis of equality of 2 columns
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Self Join<ul>
+<li>Join a table with itself with the help of alias
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">Salary</span> <span class="k">AS</span> <span class="n">A</span> <span class="k">JOIN</span> <span class="n">Salary</span> <span class="k">AS</span> <span class="n">B</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Cartesian Product<ul>
+<li>Joins 2 tables without any condition
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Inner Join (Join)<ul>
+<li>Simple join</li>
+<li>Returns all rows that satisfy the join condition
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span> <span class="k">JOIN</span> <span class="n">B</span> <span class="k">on</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Left Outer Join (Left Join)<ul>
+<li>Returns all rows that satisfy the join condition and also returns some or all of those rows from left table for which join condition didn't worked
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span> <span class="k">LEFT</span> <span class="p">[</span><span class="k">OUTER</span><span class="p">]</span> <span class="k">JOIN</span> <span class="n">B</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span> <span class="k">LEFT</span> <span class="p">[</span><span class="k">OUTER</span><span class="p">]</span><span class="k">JOIN</span> <span class="n">B</span> <span class="k">WHERE</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Right Outer Join (Right Join)<ul>
+<li>Returns all rows that satisfy the join condition and also returns some or all of those rows from right table for which join condition didn't worked
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span> <span class="k">RIGHT</span> <span class="p">[</span><span class="k">OUTER</span><span class="p">]</span> <span class="k">JOIN</span> <span class="n">B</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">WHERE</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">(</span><span class="o">+</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Full Outer Join (Full Join)<ul>
+<li>Returns all rows that satisfy the join condition and also returns some or all of those rows from both the table for which join condition didn't worked
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">col2</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col1</span><span class="p">,</span> <span class="n">B</span><span class="p">.</span><span class="n">col2</span> <span class="k">FROM</span> <span class="n">A</span> <span class="k">FULL</span> <span class="k">JOIN</span> <span class="n">B</span> <span class="k">on</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">col3</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">col4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Anti Join<ul>
+<li>Returns rows from the table with does not exists in other table</li>
+<li>Using NOT IN clause
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">employees</span>
+<span class="k">WHERE</span> <span class="n">department_id</span> <span class="k">NOT</span> <span class="k">IN</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">department_id</span> <span class="k">FROM</span> <span class="n">departments</span>
+   <span class="k">WHERE</span> <span class="n">location_id</span> <span class="o">=</span> <span class="mi">1700</span><span class="p">)</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">last_name</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+<li>Semi Join<ul>
+<li>Returns rows from table that satisfies EXISTS subquery condition
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">departments</span>
+<span class="k">WHERE</span> <span class="k">EXISTS</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">employees</span>
+   <span class="k">WHERE</span> <span class="n">departments</span><span class="p">.</span><span class="n">department_id</span> <span class="o">=</span> <span class="n">employees</span><span class="p">.</span><span class="n">department_id</span>
+   <span class="k">AND</span> <span class="n">employees</span><span class="p">.</span><span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">2500</span><span class="p">)</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">department_name</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="subprograms">Subprograms<a class="headerlink" href="#subprograms" title="Permanent link">#</a></h3>
+<ul>
+<li>Subprograms are the building blocks of modular, maintainable applications.</li>
+<li>e.g. : Package, Procedure, Function</li>
+</ul>
+<h4 id="package">Package<a class="headerlink" href="#package" title="Permanent link">#</a></h4>
+<ul>
+<li>A schema object that groups logically related PL/SQL types, variables, and subprograms</li>
+<li>Packages usually have two parts,<ul>
+<li>a specification (spec): The specification is the interface to the package. It declares the types/collection types, variables, constants, exceptions, cursors, subprograms, and overloaded subprograms that can be referenced from outside the package.</li>
+<li>a body: The body defines the queries for the cursors and the code for the subprograms.</li>
+<li>Advantages:<ul>
+<li>Modularity</li>
+<li>Easy application Design</li>
+<li>Information Hiding: Public, Private</li>
+<li>Better performance: The whole package gets loaded into memory after first call</li>
+</ul>
+</li>
+<li>Syntax:
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">PACKAGE</span> <span class="n">emp_bonus</span> <span class="k">AS</span>
+    <span class="k">TYPE</span> <span class="n">EmpRecTyp</span> <span class="k">IS</span> <span class="n">RECORD</span> <span class="p">(</span><span class="n">employees</span><span class="o">%</span><span class="n">ROWTYPE</span><span class="p">);</span>
+    <span class="k">PROCEDURE</span> <span class="n">calc_bonus</span> <span class="p">(</span><span class="n">date_hired</span> <span class="n">employees</span><span class="p">.</span><span class="n">hire_date</span><span class="o">%</span><span class="k">TYPE</span><span class="p">);</span>
+    <span class="k">CURSOR</span> <span class="n">desc_salary</span> <span class="k">RETURN</span> <span class="n">EmpRecTyp</span><span class="p">;</span>
+    <span class="k">FUNCTION</span> <span class="n">hire_employee</span> <span class="p">(</span><span class="n">last_name</span> <span class="n">VARCHAR2</span><span class="p">,</span> <span class="n">first_name</span> <span class="n">VARCHAR2</span><span class="p">)</span>
+        <span class="k">RETURN</span> <span class="nb">NUMBER</span><span class="p">;</span>
+<span class="k">END</span> <span class="n">emp_bonus</span><span class="p">;</span>
+<span class="o">/</span>
+
+<span class="k">CREATE</span> <span class="n">PACKAGE</span> <span class="n">BODY</span> <span class="n">emp_bonus</span> <span class="k">AS</span>
+    <span class="k">PROCEDURE</span> <span class="n">calc_bonus</span> <span class="p">(</span><span class="n">date_hired</span> <span class="n">employees</span><span class="p">.</span><span class="n">hire_date</span><span class="o">%</span><span class="k">TYPE</span><span class="p">,</span> <span class="n">salary</span> <span class="nb">NUMBER</span><span class="p">)</span> <span class="k">IS</span>
+        <span class="k">BEGIN</span>
+            <span class="n">DBMS_OUTPUT</span><span class="p">.</span><span class="n">PUT_LINE</span><span class="p">(</span><span class="s1">&#39;Employees hired on &#39;</span> <span class="o">||</span> <span class="n">date_hired</span> <span class="o">||</span> <span class="s1">&#39; get bonus.&#39;</span><span class="p">);</span>
+            <span class="k">IF</span> <span class="n">salary</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="k">THEN</span>
+                <span class="n">RAISE</span> <span class="n">invalid_salary</span> <span class="k">EXCEPTION</span><span class="p">;</span>
+            <span class="k">END</span> <span class="k">IF</span><span class="p">;</span>
+        <span class="k">EXCEPTION</span>
+            <span class="k">WHEN</span> <span class="n">invalid_salary</span> <span class="k">THEN</span>
+                <span class="n">DBMS_OUTPUT</span><span class="p">.</span><span class="n">PUT_LINE</span><span class="p">(</span><span class="s1">&#39;Invalid salary input!&#39;</span><span class="p">);</span>
+            <span class="k">WHEN</span> <span class="n">Others</span> <span class="k">THEN</span>
+                <span class="n">RAISE</span><span class="p">;</span>
+        <span class="k">END</span><span class="p">;</span>
+    <span class="k">CURSOR</span> <span class="n">desc_salary</span> <span class="k">RETURN</span> <span class="n">EmpRecTyp</span> <span class="k">IS</span>
+        <span class="k">SELECT</span> <span class="n">employee_id</span><span class="p">,</span> <span class="n">salary</span> <span class="k">FROM</span> <span class="n">employees</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">salary</span> <span class="k">DESC</span><span class="p">;</span>
+
+    <span class="k">FUNCTION</span> <span class="n">hire_employee</span> <span class="p">(</span><span class="n">last_name</span> <span class="n">VARCHAR2</span><span class="p">,</span> <span class="n">first_name</span> <span class="n">VARCHAR2</span><span class="p">)</span>
+        <span class="k">RETURN</span> <span class="nb">NUMBER</span> <span class="k">IS</span>
+        <span class="n">new_emp_id</span> <span class="nb">NUMBER</span><span class="p">;</span>
+        <span class="k">BEGIN</span>
+            <span class="k">NULL</span><span class="p">;</span>
+            <span class="k">RETURN</span> <span class="n">new_emp_id</span><span class="p">;</span>
+        <span class="k">END</span> <span class="n">hire_employee</span><span class="p">;</span>
+<span class="k">END</span> <span class="n">emp_bonus</span><span class="p">;</span>
+<span class="o">/</span>
+</code></pre></div>
+</td></tr></table></li>
+</ul>
+</li>
+</ul>
+<h4 id="stored-procedure-function">Stored Procedure &amp; Function<a class="headerlink" href="#stored-procedure-function" title="Permanent link">#</a></h4>
+<ul>
+<li>Schema level subprograms/program unit/ commonly used codes stored in database</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Procedure</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Stored Procedures can call functions.</td>
+<td align="left">Functions cannot call stored Procedures.</td>
+</tr>
+<tr>
+<td align="left">Can have select statements as well as DML statements</td>
+<td align="left">Cannot use DML statements</td>
+</tr>
+<tr>
+<td align="left">Can use both table variables as well as temporary table in it.</td>
+<td align="left">Cannot use temp tables</td>
+</tr>
+<tr>
+<td align="left">Procedures cannot be utilized in a select statement</td>
+<td align="left">Function can be embedded in a select statement.</td>
+</tr>
+<tr>
+<td align="left">Procedure can return multiple OUT values(max. 1024)</td>
+<td align="left">Function returns 1 value only however it can be collection datatype</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Syntax</p>
+<ul>
+<li>
+<p>Procedure
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">PROCEDURE</span> <span class="n">ADD_EVALUATION</span>
+<span class="p">(</span>
+    <span class="n">evaluation_id</span> <span class="k">IN</span> <span class="nb">NUMBER</span><span class="p">,</span>
+    <span class="n">employee_id</span> <span class="k">IN</span> <span class="nb">NUMBER</span><span class="p">,</span>
+    <span class="n">evaluation_date</span> <span class="k">IN</span> <span class="nb">DATE</span><span class="p">,</span>
+    <span class="n">job_id</span> <span class="k">IN</span> <span class="n">VARCHAR2</span><span class="p">,</span>
+    <span class="n">manager_id</span> <span class="k">OUT</span> <span class="nb">NUMBER</span><span class="p">,</span>
+    <span class="n">department_id</span> <span class="k">OUT</span> <span class="nb">NUMBER</span>
+<span class="p">)</span>
+<span class="k">AS</span>
+<span class="k">BEGIN</span>
+    <span class="k">NULL</span><span class="p">;</span>
+<span class="k">END</span> <span class="n">ADD_EVALUATION</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Function
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">FUNCTION</span> <span class="n">calculate_score</span>
+    <span class="p">(</span> <span class="n">cat</span> <span class="k">IN</span> <span class="n">VARCHAR2</span>
+    <span class="p">,</span> <span class="n">score</span> <span class="k">IN</span> <span class="nb">NUMBER</span>
+    <span class="p">,</span> <span class="n">weight</span> <span class="k">IN</span> <span class="nb">NUMBER</span>
+    <span class="p">)</span> <span class="k">RETURN</span> <span class="nb">NUMBER</span>
+<span class="k">AS</span>
+<span class="k">BEGIN</span>
+    <span class="k">RETURN</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="k">END</span> <span class="n">calculate_score</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="in-built-functions">In-Built Functions<a class="headerlink" href="#in-built-functions" title="Permanent link">#</a></h4>
+<h4 id="aggregation-functions">Aggregation Functions<a class="headerlink" href="#aggregation-functions" title="Permanent link">#</a></h4>
+<p>Max, Min, Count, Sum</p>
+<h4 id="analytical-functions">Analytical Functions<a class="headerlink" href="#analytical-functions" title="Permanent link">#</a></h4>
+<p>Top? Last? Rank?</p>
+<h4 id="window-function">Window Function<a class="headerlink" href="#window-function" title="Permanent link">#</a></h4>
+<p>over()</p>
+<h4 id="laglead-functions">LAG/LEAD Functions<a class="headerlink" href="#laglead-functions" title="Permanent link">#</a></h4>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../mysql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MySQL" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              MySQL
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../postgresql/" class="md-footer__link md-footer__link--next" aria-label="Next: PostgreSQL" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              PostgreSQL
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="../../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
