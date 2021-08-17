@@ -343,6 +343,26 @@
     Primary Key
   </a>
   
+    <nav class="md-nav" aria-label="Primary Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uuid4" class="md-nav__link">
+    UUID4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-generate-a-custom-uuid" class="md-nav__link">
+    How to generate a custom UUID?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1115,6 +1135,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Data-Engineering/apache_storm/" class="md-nav__link">
+        Apache Storm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Engineering/Software-Engineering/Data-Engineering/big_data/" class="md-nav__link">
         Big Data
       </a>
@@ -1148,6 +1180,18 @@
           Database
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Database/elasticsearch/" class="md-nav__link">
+        ElasticSearch
+      </a>
+    </li>
+  
+
           
             
   
@@ -1220,6 +1264,45 @@
       <a href="../../Engineering/Software-Engineering/Product-Development/product_mindset/" class="md-nav__link">
         Product Mindset
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_2" type="checkbox" id="__nav_4_2_11_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_2">
+        Practices
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Practices" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_2">
+          <span class="md-nav__icon md-icon"></span>
+          Practices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Engineering/Software-Engineering/Product-Development/Practices/code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1484,7 +1567,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Languages/golang/go/" class="md-nav__link">
+      <a href="../../Languages/golang/go_advanced/" class="md-nav__link">
+        Golang Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Languages/golang/go_basics/" class="md-nav__link">
         Golang Basics
       </a>
     </li>
@@ -1768,6 +1863,26 @@
     Primary Key
   </a>
   
+    <nav class="md-nav" aria-label="Primary Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uuid4" class="md-nav__link">
+    UUID4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-generate-a-custom-uuid" class="md-nav__link">
+    How to generate a custom UUID?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2026,7 +2141,11 @@
 </ul>
 </li>
 <li><a href="#keys">Keys</a><ul>
-<li><a href="#primary-key">Primary Key</a></li>
+<li><a href="#primary-key">Primary Key</a><ul>
+<li><a href="#uuid4">UUID4</a></li>
+<li><a href="#how-to-generate-a-custom-uuid">How to generate a custom UUID?</a></li>
+</ul>
+</li>
 <li><a href="#composite-key">Composite Key</a></li>
 <li><a href="#foreign-key">Foreign Key</a></li>
 <li><a href="#candidate-key">Candidate Key</a></li>
@@ -2101,6 +2220,66 @@
 <li>The primary key must be given a value when a new record is inserted.</li>
 </ul>
 </li>
+</ul>
+<p>Q. Which is better? Auto-incremental number vs UUID as primary key?</p>
+<p>Auto-incremental number</p>
+<ul>
+<li>pros<ul>
+<li>good for internal use</li>
+<li>small in size (say 8 bytes)</li>
+<li>fast</li>
+<li>easy to sort by</li>
+</ul>
+</li>
+<li>cons<ul>
+<li>could reveal info/confidentiality<ul>
+<li>a user can guess ID of other</li>
+</ul>
+</li>
+<li>in long run, (i.e. very huge data, 10s of billions) integer takes more space than string</li>
+</ul>
+</li>
+</ul>
+<p>UUID</p>
+<ul>
+<li>pros<ul>
+<li>good for external use</li>
+<li>unique not only across table, but accross company, or even world</li>
+<li>does not reveal any info implicitly<ul>
+<li>hence more secure system</li>
+</ul>
+</li>
+<li>easier to merge data in sub-database/sub-table</li>
+</ul>
+</li>
+<li>cons<ul>
+<li>relatively more space (say 16 bytes)</li>
+<li>performace disaster for <strong>very large tables</strong> (say more than 200K)</li>
+<li>aer very random, so using them as unique/primary key (basically indexing) is inefficient on <strong>very large tables</strong></li>
+<li>cannot sort</li>
+<li>could be adhoc (if we still need a number based unique key as well, say rollno, empid etc)<ul>
+<li>so space for index for uuid as well as for sequence</li>
+<li>having both is waste</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Ref:
+- https://stackoverflow.com/questions/33274291/uuid-or-sequence-for-primary-key/33274393#33274393
+- https://dba.stackexchange.com/questions/115766/should-i-use-uuid-as-well-as-id/119129
+- http://compwron.github.io/2016/06/15/uuids-ids-and-primary-keys.html</p>
+<h5 id="uuid4">UUID4<a class="headerlink" href="#uuid4" title="Permanent link">#</a></h5>
+<ul>
+<li>UUID version 4</li>
+<li>128 bits</li>
+<li>122 for data/randomization (i.e. could have 122 random bits)</li>
+<li>6 bits for identification of UUID version</li>
+</ul>
+<h5 id="how-to-generate-a-custom-uuid">How to generate a custom UUID?<a class="headerlink" href="#how-to-generate-a-custom-uuid" title="Permanent link">#</a></h5>
+<ul>
+<li>machine id (MAC?) + timestamp (nano) + process id + thread id + counter</li>
+<li>may keep a lookup cache of 1 second</li>
 </ul>
 <h4 id="composite-key">Composite Key<a class="headerlink" href="#composite-key" title="Permanent link">#</a></h4>
 <ul>
@@ -2225,7 +2404,18 @@ Table: 2-NF
 <li>what is paging?</li>
 </ul>
 </li>
-<li>primary key uses indexing by default?</li>
+<li>primary key uses indexing by default?<ul>
+<li>Yes</li>
+</ul>
+</li>
+<li>when not to use DB index?<ul>
+<li>when table is small</li>
+<li>on columns on which majority of the values are null</li>
+<li>on columns which are frequently manipulated</li>
+<li>on columns which returns a high percentage of rows if use filter condition (like WHERE clause) on those</li>
+<li>indexing could perform slow on tables which get frequent bulk updates</li>
+</ul>
+</li>
 </ul>
 <h2 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">#</a></h2>
 <h4 id="stored-procedure-function">Stored Procedure &amp; Function<a class="headerlink" href="#stored-procedure-function" title="Permanent link">#</a></h4>

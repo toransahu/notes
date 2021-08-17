@@ -801,6 +801,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Data-Engineering/apache_storm/" class="md-nav__link">
+        Apache Storm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Data-Engineering/big_data/" class="md-nav__link">
         Big Data
       </a>
@@ -834,6 +846,18 @@
           Database
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Database/elasticsearch/" class="md-nav__link">
+        ElasticSearch
+      </a>
+    </li>
+  
+
           
             
   
@@ -910,6 +934,45 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11_2" type="checkbox" id="__nav_4_2_11_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_11_2">
+        Practices
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Practices" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_11_2">
+          <span class="md-nav__icon md-icon"></span>
+          Practices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product-Development/Practices/code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -975,6 +1038,33 @@
         <li class="md-nav__item">
   <a href="#caching" class="md-nav__link">
     Caching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redis-cluster" class="md-nav__link">
+    Redis Cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    Ref:
   </a>
   
 </li>
@@ -1208,7 +1298,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/golang/go/" class="md-nav__link">
+      <a href="../../../../Languages/golang/go_advanced/" class="md-nav__link">
+        Golang Advanced
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Languages/golang/go_basics/" class="md-nav__link">
         Golang Basics
       </a>
     </li>
@@ -1437,6 +1539,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redis-cluster" class="md-nav__link">
+    Redis Cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    Ref:
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1460,6 +1589,11 @@
 <div class="toc">
 <ul>
 <li><a href="#caching">Caching</a></li>
+<li><a href="#redis">Redis</a><ul>
+<li><a href="#redis-cluster">Redis Cluster</a></li>
+</ul>
+</li>
+<li><a href="#ref">Ref:</a></li>
 </ul>
 </div>
 <p>external in-memory based
@@ -1468,10 +1602,24 @@ browser-based
 cdn-based
 - https://aws.amazon.com/cloudfront/
 proxy-server based</p>
-<p>Ref:
-- https://www.bookofspeed.com/
-- https://www.mnot.net/cache_docs/
-- https://stackoverflow.com/questions/7651458/how-to-get-started-with-web-caching-cdns-and-proxy-servers</p>
+<h2 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">#</a></h2>
+<ul>
+<li>https://www.datadoghq.com/pdf/Understanding-the-Top-5-Redis-Performance-Metrics.pdf</li>
+<li>https://tech.trivago.com/2017/01/25/learn-redis-the-hard-way-in-production/</li>
+<li>https://yunpengn.github.io/blog/2019/05/04/consistent-redis-sql/</li>
+</ul>
+<h3 id="redis-cluster">Redis Cluster<a class="headerlink" href="#redis-cluster" title="Permanent link">#</a></h3>
+<ul>
+<li>https://redis.io/topics/cluster-tutorial</li>
+<li>https://redis.io/topics/cluster-spec</li>
+<li>https://scalegrid.io/blog/intro-to-redis-cluster-sharding-advantages-limitations-deploying-and-client-connections/</li>
+</ul>
+<h2 id="ref">Ref:<a class="headerlink" href="#ref" title="Permanent link">#</a></h2>
+<ul>
+<li>https://www.bookofspeed.com/</li>
+<li>https://www.mnot.net/cache_docs/</li>
+<li>https://stackoverflow.com/questions/7651458/how-to-get-started-with-web-caching-cdns-and-proxy-servers</li>
+</ul>
                 
               
               
@@ -1491,7 +1639,7 @@ proxy-server based</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../Product-Development/product_mindset/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Product Mindset" rel="prev">
+        <a href="../../Product-Development/Practices/code_review/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Code Review" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1500,7 +1648,7 @@ proxy-server based</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Product Mindset
+              Code Review
             </div>
           </div>
         </a>
