@@ -1465,7 +1465,7 @@ python manage.py test appname
 Django REST framework "djangorestframework" is powerful & flexibal toolkit for creating web APIs.
 - https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
 
-#### Some reasons you might want to use REST framework:
+#### Some reasons you might want to use Django REST framework:
 * The Web browsable API is a huge usability win for your developers.
 * Authentication policies including packages for OAuth1a and OAuth2.
 * Serialization that supports both ORM and non-ORM data sources.
@@ -1473,128 +1473,8 @@ Django REST framework "djangorestframework" is powerful & flexibal toolkit for c
 * Extensive documentation, and great community support.
 
 ## REST API
-* Representation State Transfer
-* An architectural pattern for creating an API that uses HTTP as its communication method
-* for designing network based application
-* Resource: 
-    * If we have endpoint/URI(URL or URN), lets say https://127.0.0.1/coders then we have resource. Here coders is a resource.
-    * Its nothing new, we already used to make URLs that way
-* Representation:
-    * When a client makes a GET request to coders/toran/ client gets following JSON response
-    ```JSON
-    {
-    "nickname": "toran",
-    "powerLevel": 5
-    }
-    ```
-    * so, this is representation in the form of JSON having metadata
-    * representation also could be XML, HTML
-    * the same applies when a client sends a request which contains a 'coder' data, its sends representation
-* Representational State:
-    * like browsing the web
-    * a HTML page is a representation of a resource at current state (or current data) of that resource.
-    * When we submit a form, we just send a representation back to the server
-* Representational State Transfer
-    * a client and server exchange representations of a resource, which reflects its current state or desired state.
-    * So, REST is a way for two machines to transfer the state of a resource via representations.
 
-
-## HTTP Request Methods (HTTP verbs)
-HTTP defines a set of request methods to indicate the desired action to be performed for a given resource
-
-- **GET**
-    - The GET method requests a representation of a specified resource.
-    - GET request should only used for data retrieval. (But can also be used for submit/posting/sending data)
-    - a resource is mentioned in URL.
-- **POST**
-    - Used to modify/update an existing entity of a specified resource.
-        - Do mention the object/entity of the resource in the URL to update
-        - we should use PUT and PATCH for update
-            - PUT would create a new unwanted resource when the resouce doesn't exists while updating that particular resource
-            - PATCH is perfect for partial updation
-        - But there is no restrictions using POST for updates
-
-    ```HTTP
-    POST /questions/<existing_question> HTTP/1.1
-    Host: www.example.com/
-    ```    
-    - Used to submit a new entity/data to a specified resource.
-        - Do not mention the object/entity of the resource in the URL while creating it. Otherwise it will give "Resource Not Found" error.
-    ```HTTP
-    POST /questions/ HTTP/1.1
-    Host: www.example.com/
-    ```    
-    - Causes change in state of the resource
-    - Use this if you want server to let the name, the URL object while creating a new one
-    - Two simultaneous POST requests works fine (lets say, 1st request is updating some part & 2nd request is updating other part of an object)  
-    - The `UPDATE` performed by the POST method might not result in a resource that can be identified by a URI.
-    
-- **PUT**
-    - Used to create a new resource entity or **overrite** (Completely replaces) the existing one.
-    - For a new resource entity:
-        ```HTTP
-        PUT /questions/<new_question> HTTP/1.1
-        Host: www.example.com/
-        ```
-    - To overrite an existing one
-        ```HTTP
-        PUT /questions/<existing_question> HTTP/1.1
-        Host: www.example.com/
-        ```    
-    - Usefull when you know the name of the entity/object
-    - Use this if you want to name the URL object while creating a new one
-    - PUT is idempotent, so if you PUT the same object twice, it has no effect (will overrite)
-    - Can create or update an object with the same URL  
-    
-    
-- **DELETE**
-    - Deletes/destroyes a specified resource object/entity/record.  
-    
-    
-- **PATCH**
-    - Used to make partial modification to an existing resource object/entity.
-    - Works differently than POST & PUT for update
-    - Need to have URL object known
-    ```HTTP
-    PATCH /users/1 HTTP/1.1
-    Host: www.example.com
-    Content-Type: application/example
-    If-Match: "c0b42b66e"
-    Content-Length: 120
-    [changes]
-    ```
-    where [changes] could be JSON/XML like {email:'toran.sahu@yahoo.com'}  
-    
-    
-- **HEAD**
-    - Ask for the response same as GET but without response/message body.  
-    
-    
-- **OPTIONS**
-    - Used to describe the communication option for the target resource  
-    
-    
-- **CONNECT**
-    - Establishes a tunnel to the server identified by the target resource  
-    
-    
-- **TRACE**
-    - Performs message loop-back test along the path to the target resource  
-
-
-**Note:** There is a very common confusion in terminology. **"Resource"**
-- In URI "app/questions/1" here "1" is also know as resource and at the same time "questions" is also know as resource.
-- Some people around the globe also use "1" as record/entity & "questions" as resource.
-- We could generalize "1" as "resource object" and "questions" as "resource class"
-
-## HTTP Response Codes
-- 200 (Ok)
-- 201 (Created)
-- 204 (No Content)
-- 304
-- 404
-- 501 (Not Implemented)
-
+Please refer to [this](/Engineering/Software-Engineering/Web/API/rest/#rest-api).
 
 ## Serializers
 * Module: from rest_framework import serializers

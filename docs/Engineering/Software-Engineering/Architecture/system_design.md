@@ -22,6 +22,17 @@
 - [How do you design a chat application like WhatsApp or Facebook Messenger?](https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpreparing-for-system-design-interviews%2F)
 - [How to design a global video streaming service like YouTube or NetFlix?](https://www.java67.com/2019/09/top-5-courses-to-learn-system-design.html)
 - [How do you design global file sharing and storage apps like Google Drive or Dropbox?](https://www.youtube.com/watch?v=U0xTu6E2CT8&feature=emb_imp_woyt)
+- how would you evaluate a software?
+    - must fulfill basic requirements
+    - cost
+    - vendor / license / open-source
+    - adoptability in team
+        - brainstorm within team
+    - maintainability
+        - ease of use / document / customer-community support
+        - modifiability as per special need
+    - scalability
+    - installation / setup
 
 - system design
 	- type

@@ -36,6 +36,53 @@ A set of properties of _relational_ database __transaction__.
     * The primary key values cannot be changed
     * The primary key must be given a value when a new record is inserted.
 
+Q. Which is better? Auto-incremental number vs UUID as primary key?
+
+Auto-incremental number
+
+- pros
+    - good for internal use
+    - small in size (say 8 bytes)
+    - fast
+    - easy to sort by
+- cons
+    - could reveal info/confidentiality
+        - a user can guess ID of other
+    - in long run, (i.e. very huge data, 10s of billions) integer takes more space than string
+
+UUID
+
+- pros
+    - good for external use
+    - unique not only across table, but accross company, or even world
+    - does not reveal any info implicitly
+        - hence more secure system
+    - easier to merge data in sub-database/sub-table
+- cons
+    - relatively more space (say 16 bytes)
+    - performace disaster for __very large tables__ (say more than 200K)
+    - aer very random, so using them as unique/primary key (basically indexing) is inefficient on __very large tables__
+    - cannot sort
+    - could be adhoc (if we still need a number based unique key as well, say rollno, empid etc)
+        - so space for index for uuid as well as for sequence
+        - having both is waste
+
+Ref:
+- https://stackoverflow.com/questions/33274291/uuid-or-sequence-for-primary-key/33274393#33274393
+- https://dba.stackexchange.com/questions/115766/should-i-use-uuid-as-well-as-id/119129
+- http://compwron.github.io/2016/06/15/uuids-ids-and-primary-keys.html
+
+#### UUID4
+- UUID version 4
+- 128 bits
+- 122 for data/randomization (i.e. could have 122 random bits)
+- 6 bits for identification of UUID version
+
+#### How to generate a custom UUID?
+- machine id (MAC?) + timestamp (nano) + process id + thread id + counter
+- may keep a lookup cache of 1 second
+
+
 ### Composite Key
 * A composite key is a primary key composed of multiple columns used to identify a record uniquely
 
@@ -136,6 +183,13 @@ Table: 2-NF
     - https://stackoverflow.com/questions/764221/larger-than-memory-data-structures-and-how-they-are-typically-handled
     - what is paging?
 - primary key uses indexing by default?
+    - Yes
+- when not to use DB index?
+    - when table is small
+    - on columns on which majority of the values are null
+    - on columns which are frequently manipulated
+    - on columns which returns a high percentage of rows if use filter condition (like WHERE clause) on those
+    - indexing could perform slow on tables which get frequent bulk updates
 
 # SQL
 

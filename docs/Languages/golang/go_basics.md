@@ -38,6 +38,20 @@
 
 # Run
 
+# Memory Management
+
+- https://deepu.tech/memory-management-in-golang/
+- https://medium.com/eureka-engineering/understanding-allocations-in-go-stack-heap-memory-9a2631b5035d
+
+## Stack vs Heap
+
+- https://stackoverflow.com/questions/10866195/stack-vs-heap-allocation-of-structs-in-go-and-how-they-relate-to-garbage-collec
+
+## Garbage Collection
+
+- https://blog.golang.org/ismmkeynote
+- https://golang.org/doc/faq#garbage_collection
+
 # Keywords
 
 ## `package`
@@ -1050,10 +1064,19 @@ Ref:
 - https://blog.golang.org/ismmkeynote
 - https://www.ardanlabs.com/blog/2018/12/garbage-collection-in-go-part1-semantics.html
 
+# Debugging
+
+## `gdb`
+- https://golang.org/doc/gdb
+- https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/11.2.html
+
+## Delve
+
 # References
 
 - https://golang.org/doc/code.html
 - https://github.com/golang/go/wiki/Learn
+- https://go.dev/about/#best-practices-h2
 
 # Surprises
 

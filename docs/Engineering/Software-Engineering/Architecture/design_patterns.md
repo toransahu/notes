@@ -32,6 +32,7 @@
 	- Object Pool
 - Structural (helps design relationship between the objects)
 	- Adaptor
+    - Repository
 	- Facade
 	- Composite
 - Behavioral (helps design object interaction and responsibilites; control the operation of some objects)
