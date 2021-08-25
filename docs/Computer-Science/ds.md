@@ -545,13 +545,12 @@ Invented|By
 --------|--
 1962|Georgy Adelson-Velsky & Evgenii Landis
 
-Idea: While creating/updating a BST, if the __heights of the two child subtree of a node__ differs by more than 1, then rebalance that node.
+### Specification
+- While creating/updating a BST, if the __heights of the two child subtree of a node__ differs by more than 1, then rebalance that node
+- Rebalancing is done by performing single or double-step rotation
+- Note: Try to rebalance the BST as soon as possible.
 
-Rebalancing is done by performing single or double-step rotation.
-
-Note: Try to rebalance the BST as soon as possible.
-
-### Rotations
+### Rotation
 
 #### LL (left-left) Rotation
 
@@ -689,7 +688,7 @@ The shorthand for this 2-step rotation could be:
 Replace Parent (node 5) with node L (node 6) and make the Parent (node 5) L child of node 6.
 
 
-#### Exercises
+#### Exercise
 
 Q1. 
 
@@ -750,7 +749,7 @@ Now, just focus on node 3, 6, and 7 (as we do in LL rotation).
             /  /
            4  St3
 
-### Complexities
+### Complexity
 
 Of|Avg|Worst
 --|---|-----
@@ -773,12 +772,34 @@ Idea: While creating/updating a BST, if the __heights of the two child subtree o
 
 
 I see it as: 
+
 - generalization of the AVL tree
 - self balanced version of m-way search tree
 
 ### Application
 - Indexing in Databases
 - Filesystem
+
+### Specification
+- defined by __order__ of the tree
+- __order__ = number of children
+- size of key = order - 1
+- nodes should be half full
+- root can have less than half _order_
+- keys are in sorted order for sequential traversal
+- a B-tree of height h with all its nodes completely filled has $n = m^{h+1}–1$ entries
+- minimum height of a b-tree: TODO
+- maximum height of a b-tree: TODO
+
+### Complexity
+
+Of|Avg|Worst
+--|---|-----
+Space|$\Theta(n)$|$O(n)$
+Search|$\Theta(log_2{n})$|$O(log_2{n})$
+Insert|$\Theta(log_2{n})$|$O(log_2{n})$
+Delete|$\Theta(log_2{n})$|$O(log_2{n})$
+
 
 ## Red-Black Tree
 
@@ -1004,3 +1025,13 @@ A graph with relatively less edges are missing.
 
 # References
 - https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a
+
+---
+
+# TODO
+- avl
+- m-way tree
+- b tree
+- b+ tree
+- red-black tree
+- trie

@@ -907,7 +907,7 @@ Imagine a person trying to figure out escape a maze. Trying to explore a path at
 - Finding the path
 - To check if the graph is bipartite
 - To detect cycles in the graph
-- [Topologican sort](#topological-sort)
+- [Topological sort](#topological-sort)
 - Solving puzzles as maze
 - Finding connected components
 - Finding strongly connected components
@@ -1028,9 +1028,9 @@ TODO
     1. repeat [2-6] for them
 
 
-## Topologican Sort
+## Topological Sort
 
-Topologican sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.
+Topological sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.
 
 Saying that, [1] will come before [2], if there is an edge from [1] to [2]
 
@@ -1038,7 +1038,7 @@ Note: There is no solution if the graph is a) Undirected, or b) Directed with cy
 
 ### Idea
 
-Topologican sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
+Topological sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
 Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the list, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to be at the end of the sorted list.
 
 ### Applications
@@ -1050,9 +1050,9 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
     - To check symbolic link loop (deadlock)
 
 ### Properties
-- A DAG may have one or more Topologican Order
-- If all the consecutive vertices in a topologican order, are connected by edges, then these edges forms Hamiltonian path
-    - If the Hamiltonian path exists, then the topologican order is unique; else the DAG can have two or more topologican order
+- A DAG may have one or more Topological Order
+- If all the consecutive vertices in a topological order, are connected by edges, then these edges forms Hamiltonian path
+    - If the Hamiltonian path exists, then the topological order is unique; else the DAG can have two or more topological order
 
 ### Implementation Using Stack / DFS
 - Desc: TODO
@@ -1074,7 +1074,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 1. start [perform a tweaked version of DFS of the graph]
 1. mark all the vertices unvisited
 1. create two stacks (backtrack-stack & topo-stack) to hold |V| number of vertices in each  
-   (one to help backtrack, another for topologican order)
+   (one to help backtrack, another for topological order)
 1. arbitrarily choose a vertex as root to start DFS
 1. push that vertex into the backtrack-stack
 1. mark that vertex as visited
@@ -1197,9 +1197,9 @@ At the end, all the vertices will have shortest distance calculated from the ver
 
 ### Properties
 
-### Implementation Using Stack / DFS (Topologican Sort)
+### Implementation Using Stack / DFS (Topological Sort)
 - Desc:
-- Approach: Topologican Sort
+- Approach: Topological Sort
 - DS Used:
 - Time Complexity:
     - Best:
