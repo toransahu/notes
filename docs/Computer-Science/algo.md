@@ -963,7 +963,7 @@ TODO
 1. put that into a stack; mark that as visited; print the vertex
 1. find any _one_ of its (the vertex we printed recently) unvisited adjacent vertices
 1. put that into the stack; mark that as visited; print the vertex
-1. repeat [4-5] untin we reach a vertex from where we can't move forward  
+1. repeat [4-5] until we reach a vertex from where we can't move forward  
    (i.e. it has no adjacent vertices or has no unvisited adjacent vertices)
 1. now start back tracking (using the stack) from current vertex
     1. pop the top element from the stack
@@ -983,7 +983,7 @@ BFS works in similar manner as level-order travesal of a tree.
 
 ### Idea
 
-The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step untin we visited all the vertices.
+The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step until we visited all the vertices.
 
 ### Applications
 - Finding the path
@@ -1022,7 +1022,7 @@ TODO
 1. find/explore its unvisited adjacent vertices
     1. mark all of them as visited
     1. put them into the queue
-1. repeat [3-5] untin the queue is empty
+1. repeat [3-5] until the queue is empty
 1. we may have some unvisited / disconncted graph (vertices) at this moment
     1. so, iterate through all the unvisited vertices (if any)
     1. repeat [2-6] for them
@@ -1258,7 +1258,7 @@ Then perform this sub task:
 
 3. Now, mark that vertex $u$ as `done`. 
 
-Then repeat the sub task untin all the vertices are marked `done`.
+Then repeat the sub task until all the vertices are marked `done`.
 
 ### Applications
 - finding _cheapest_ way to go from one place to another
