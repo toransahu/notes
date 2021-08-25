@@ -6458,7 +6458,7 @@ i.e. <span><span class="MathJax_Preview">k = log_2{n}</span><script type="math/t
 <li>put that into a stack; mark that as visited; print the vertex</li>
 <li>find any <em>one</em> of its (the vertex we printed recently) unvisited adjacent vertices</li>
 <li>put that into the stack; mark that as visited; print the vertex</li>
-<li>repeat [4-5] untin we reach a vertex from where we can't move forward<br />
+<li>repeat [4-5] until we reach a vertex from where we can't move forward<br />
    (i.e. it has no adjacent vertices or has no unvisited adjacent vertices)</li>
 <li>now start back tracking (using the stack) from current vertex<ol>
 <li>pop the top element from the stack</li>
@@ -6477,7 +6477,7 @@ i.e. <span><span class="MathJax_Preview">k = log_2{n}</span><script type="math/t
 <h3 id="breadth-first-search-bfs-level-order-traversal_1">Breadth First Search (BFS) / Level order traversal<a class="headerlink" href="#breadth-first-search-bfs-level-order-traversal_1" title="Permanent link">#</a></h3>
 <p>BFS works in similar manner as level-order travesal of a tree.</p>
 <h4 id="idea_1">Idea<a class="headerlink" href="#idea_1" title="Permanent link">#</a></h4>
-<p>The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step untin we visited all the vertices.</p>
+<p>The idea is to randomly select a starting vertex and from there start traversing other vertices such that we visit the adjacent vertices first. Once we visited one level (adjacent vertices at a level), then find adjacent vertices of the previously visited ones, and repeat the step until we visited all the vertices.</p>
 <h4 id="applications_2">Applications<a class="headerlink" href="#applications_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Finding the path</li>
@@ -6524,7 +6524,7 @@ i.e. <span><span class="MathJax_Preview">k = log_2{n}</span><script type="math/t
 <li>put them into the queue</li>
 </ol>
 </li>
-<li>repeat [3-5] untin the queue is empty</li>
+<li>repeat [3-5] until the queue is empty</li>
 <li>we may have some unvisited / disconncted graph (vertices) at this moment<ol>
 <li>so, iterate through all the unvisited vertices (if any)</li>
 <li>repeat [2-6] for them</li>
@@ -6768,7 +6768,7 @@ Dijkstra chose the Greedy one.</p>
 <p>Now, mark that vertex <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> as <code>done</code>. </p>
 </li>
 </ol>
-<p>Then repeat the sub task untin all the vertices are marked <code>done</code>.</p>
+<p>Then repeat the sub task until all the vertices are marked <code>done</code>.</p>
 <h4 id="applications_6">Applications<a class="headerlink" href="#applications_6" title="Permanent link">#</a></h4>
 <ul>
 <li>finding <em>cheapest</em> way to go from one place to another</li>
