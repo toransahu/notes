@@ -1064,11 +1064,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#topologican-sort" class="md-nav__link">
-    Topologican Sort
+  <a href="#topological-sort" class="md-nav__link">
+    Topological Sort
   </a>
   
-    <nav class="md-nav" aria-label="Topologican Sort">
+    <nav class="md-nav" aria-label="Topological Sort">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1228,11 +1228,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#implementation-using-stack-dfs-topologican-sort" class="md-nav__link">
-    Implementation Using Stack / DFS (Topologican Sort)
+  <a href="#implementation-using-stack-dfs-topological-sort" class="md-nav__link">
+    Implementation Using Stack / DFS (Topological Sort)
   </a>
   
-    <nav class="md-nav" aria-label="Implementation Using Stack / DFS (Topologican Sort)">
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS (Topological Sort)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4069,11 +4069,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#topologican-sort" class="md-nav__link">
-    Topologican Sort
+  <a href="#topological-sort" class="md-nav__link">
+    Topological Sort
   </a>
   
-    <nav class="md-nav" aria-label="Topologican Sort">
+    <nav class="md-nav" aria-label="Topological Sort">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4233,11 +4233,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#implementation-using-stack-dfs-topologican-sort" class="md-nav__link">
-    Implementation Using Stack / DFS (Topologican Sort)
+  <a href="#implementation-using-stack-dfs-topological-sort" class="md-nav__link">
+    Implementation Using Stack / DFS (Topological Sort)
   </a>
   
-    <nav class="md-nav" aria-label="Implementation Using Stack / DFS (Topologican Sort)">
+    <nav class="md-nav" aria-label="Implementation Using Stack / DFS (Topological Sort)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5221,7 +5221,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#topologican-sort">Topologican Sort</a><ul>
+<li><a href="#topological-sort">Topological Sort</a><ul>
 <li><a href="#idea_2">Idea</a></li>
 <li><a href="#applications_3">Applications</a></li>
 <li><a href="#properties_2">Properties</a></li>
@@ -5250,7 +5250,7 @@
 <li><a href="#idea_4">Idea</a></li>
 <li><a href="#applications_5">Applications</a></li>
 <li><a href="#properties_4">Properties</a></li>
-<li><a href="#implementation-using-stack-dfs-topologican-sort">Implementation Using Stack / DFS (Topologican Sort)</a><ul>
+<li><a href="#implementation-using-stack-dfs-topological-sort">Implementation Using Stack / DFS (Topological Sort)</a><ul>
 <li><a href="#pseudo-code_9">Pseudo Code</a></li>
 </ul>
 </li>
@@ -6390,7 +6390,7 @@ i.e. <span><span class="MathJax_Preview">k = log_2{n}</span><script type="math/t
 <li>Finding the path</li>
 <li>To check if the graph is bipartite</li>
 <li>To detect cycles in the graph</li>
-<li><a href="#topological-sort">Topologican sort</a></li>
+<li><a href="#topological-sort">Topological sort</a></li>
 <li>Solving puzzles as maze</li>
 <li>Finding connected components</li>
 <li>Finding strongly connected components</li>
@@ -6531,12 +6531,12 @@ i.e. <span><span class="MathJax_Preview">k = log_2{n}</span><script type="math/t
 </ol>
 </li>
 </ol>
-<h3 id="topologican-sort">Topologican Sort<a class="headerlink" href="#topologican-sort" title="Permanent link">#</a></h3>
-<p>Topologican sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.</p>
+<h3 id="topological-sort">Topological Sort<a class="headerlink" href="#topological-sort" title="Permanent link">#</a></h3>
+<p>Topological sort, is an ordering of vertices of a DAG in which each vertices[1] comes before, all vertices [2], to which[2] it[1] has outgoing edges.</p>
 <p>Saying that, [1] will come before [2], if there is an edge from [1] to [2]</p>
 <p>Note: There is no solution if the graph is a) Undirected, or b) Directed with cycle(s) - it will cause a deadlock.</p>
 <h4 id="idea_2">Idea<a class="headerlink" href="#idea_2" title="Permanent link">#</a></h4>
-<p>Topologican sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
+<p>Topological sort, arranges the vertices of a DAG in an order of their dependecies in other vertices.
 Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) will be first in the list, and A vertex which is dependent on most of the vertices (or a series of dependecies has to be fullfilled before it) has to be at the end of the sorted list.</p>
 <h4 id="applications_3">Applications<a class="headerlink" href="#applications_3" title="Permanent link">#</a></h4>
 <ul>
@@ -6553,9 +6553,9 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 </ul>
 <h4 id="properties_2">Properties<a class="headerlink" href="#properties_2" title="Permanent link">#</a></h4>
 <ul>
-<li>A DAG may have one or more Topologican Order</li>
-<li>If all the consecutive vertices in a topologican order, are connected by edges, then these edges forms Hamiltonian path<ul>
-<li>If the Hamiltonian path exists, then the topologican order is unique; else the DAG can have two or more topologican order</li>
+<li>A DAG may have one or more Topological Order</li>
+<li>If all the consecutive vertices in a topological order, are connected by edges, then these edges forms Hamiltonian path<ul>
+<li>If the Hamiltonian path exists, then the topological order is unique; else the DAG can have two or more topological order</li>
 </ul>
 </li>
 </ul>
@@ -6586,7 +6586,7 @@ Meaning that, A vertex which is not dependent on (i.e. no edge incidents to it) 
 <li>start [perform a tweaked version of DFS of the graph]</li>
 <li>mark all the vertices unvisited</li>
 <li>create two stacks (backtrack-stack &amp; topo-stack) to hold |V| number of vertices in each<br />
-   (one to help backtrack, another for topologican order)</li>
+   (one to help backtrack, another for topological order)</li>
 <li>arbitrarily choose a vertex as root to start DFS</li>
 <li>push that vertex into the backtrack-stack</li>
 <li>mark that vertex as visited</li>
@@ -6713,10 +6713,10 @@ This is possible because of the fact that - the distance got calculated by trave
 <h4 id="idea_4">Idea<a class="headerlink" href="#idea_4" title="Permanent link">#</a></h4>
 <h4 id="applications_5">Applications<a class="headerlink" href="#applications_5" title="Permanent link">#</a></h4>
 <h4 id="properties_4">Properties<a class="headerlink" href="#properties_4" title="Permanent link">#</a></h4>
-<h4 id="implementation-using-stack-dfs-topologican-sort">Implementation Using Stack / DFS (Topologican Sort)<a class="headerlink" href="#implementation-using-stack-dfs-topologican-sort" title="Permanent link">#</a></h4>
+<h4 id="implementation-using-stack-dfs-topological-sort">Implementation Using Stack / DFS (Topological Sort)<a class="headerlink" href="#implementation-using-stack-dfs-topological-sort" title="Permanent link">#</a></h4>
 <ul>
 <li>Desc:</li>
-<li>Approach: Topologican Sort</li>
+<li>Approach: Topological Sort</li>
 <li>DS Used:</li>
 <li>Time Complexity:<ul>
 <li>Best:</li>

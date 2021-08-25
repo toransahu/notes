@@ -829,11 +829,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rotations" class="md-nav__link">
-    Rotations
+  <a href="#specification" class="md-nav__link">
+    Specification
   </a>
   
-    <nav class="md-nav" aria-label="Rotations">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -865,8 +872,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    Exercises
+  <a href="#exercise" class="md-nav__link">
+    Exercise
   </a>
   
 </li>
@@ -877,8 +884,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#complexities" class="md-nav__link">
-    Complexities
+  <a href="#complexity" class="md-nav__link">
+    Complexity
   </a>
   
 </li>
@@ -899,6 +906,20 @@
           <li class="md-nav__item">
   <a href="#application_2" class="md-nav__link">
     Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification_1" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    Complexity
   </a>
   
 </li>
@@ -1184,6 +1205,13 @@
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
   </a>
   
 </li>
@@ -2925,11 +2953,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rotations" class="md-nav__link">
-    Rotations
+  <a href="#specification" class="md-nav__link">
+    Specification
   </a>
   
-    <nav class="md-nav" aria-label="Rotations">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2961,8 +2996,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    Exercises
+  <a href="#exercise" class="md-nav__link">
+    Exercise
   </a>
   
 </li>
@@ -2973,8 +3008,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#complexities" class="md-nav__link">
-    Complexities
+  <a href="#complexity" class="md-nav__link">
+    Complexity
   </a>
   
 </li>
@@ -2995,6 +3030,20 @@
           <li class="md-nav__item">
   <a href="#application_2" class="md-nav__link">
     Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification_1" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    Complexity
   </a>
   
 </li>
@@ -3284,6 +3333,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3399,19 +3455,22 @@
 </li>
 <li><a href="#self-balancing-binary-tree">Self Balancing Binary Tree</a></li>
 <li><a href="#avl-tree">AVL Tree</a><ul>
-<li><a href="#rotations">Rotations</a><ul>
+<li><a href="#specification">Specification</a></li>
+<li><a href="#rotation">Rotation</a><ul>
 <li><a href="#ll-left-left-rotation">LL (left-left) Rotation</a></li>
 <li><a href="#rr-right-right-rotation">RR (right-right) Rotation</a></li>
 <li><a href="#lr-left-right-rotation">LR (left-right) Rotation</a></li>
 <li><a href="#rl-right-left-rotation">RL (right-left) Rotation</a></li>
-<li><a href="#exercises">Exercises</a></li>
+<li><a href="#exercise">Exercise</a></li>
 </ul>
 </li>
-<li><a href="#complexities">Complexities</a></li>
+<li><a href="#complexity">Complexity</a></li>
 </ul>
 </li>
 <li><a href="#b-tree">B-Tree</a><ul>
 <li><a href="#application_2">Application</a></li>
+<li><a href="#specification_1">Specification</a></li>
+<li><a href="#complexity_1">Complexity</a></li>
 </ul>
 </li>
 <li><a href="#red-black-tree">Red-Black Tree</a></li>
@@ -3461,6 +3520,7 @@
 </ul>
 </li>
 <li><a href="#references">References</a></li>
+<li><a href="#todo">TODO</a></li>
 </ul>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
@@ -4148,10 +4208,13 @@ Practical e.g.: Binary Heap</p>
 </tr>
 </tbody>
 </table>
-<p>Idea: While creating/updating a BST, if the <strong>heights of the two child subtree of a node</strong> differs by more than 1, then rebalance that node.</p>
-<p>Rebalancing is done by performing single or double-step rotation.</p>
-<p>Note: Try to rebalance the BST as soon as possible.</p>
-<h4 id="rotations">Rotations<a class="headerlink" href="#rotations" title="Permanent link">#</a></h4>
+<h4 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">#</a></h4>
+<ul>
+<li>While creating/updating a BST, if the <strong>heights of the two child subtree of a node</strong> differs by more than 1, then rebalance that node</li>
+<li>Rebalancing is done by performing single or double-step rotation</li>
+<li>Note: Try to rebalance the BST as soon as possible.</li>
+</ul>
+<h4 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">#</a></h4>
 <h5 id="ll-left-left-rotation">LL (left-left) Rotation<a class="headerlink" href="#ll-left-left-rotation" title="Permanent link">#</a></h5>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4327,7 +4390,7 @@ Thus node 7 is imbalanced due to recent addition of node 6, to which we can reac
 <p>Then, this is called RL rotation.</p>
 <p>The shorthand for this 2-step rotation could be:</p>
 <p>Replace Parent (node 5) with node L (node 6) and make the Parent (node 5) L child of node 6.</p>
-<h5 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">#</a></h5>
+<h5 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">#</a></h5>
 <p>Q1. </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4414,7 +4477,7 @@ St1    St2
        4  St3
 </code></pre></div>
 </td></tr></table>
-<h4 id="complexities">Complexities<a class="headerlink" href="#complexities" title="Permanent link">#</a></h4>
+<h4 id="complexity">Complexity<a class="headerlink" href="#complexity" title="Permanent link">#</a></h4>
 <table>
 <thead>
 <tr>
@@ -4464,14 +4527,60 @@ St1    St2
 </tbody>
 </table>
 <p>Idea: While creating/updating a BST, if the <strong>heights of the two child subtree of a node</strong> differs by more than 1, then rebalance that node.</p>
-<p>I see it as: 
-- generalization of the AVL tree
-- self balanced version of m-way search tree</p>
+<p>I see it as: </p>
+<ul>
+<li>generalization of the AVL tree</li>
+<li>self balanced version of m-way search tree</li>
+</ul>
 <h4 id="application_2">Application<a class="headerlink" href="#application_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Indexing in Databases</li>
 <li>Filesystem</li>
 </ul>
+<h4 id="specification_1">Specification<a class="headerlink" href="#specification_1" title="Permanent link">#</a></h4>
+<ul>
+<li>defined by <strong>order</strong> of the tree</li>
+<li><strong>order</strong> = number of children</li>
+<li>size of key = order - 1</li>
+<li>nodes should be half full</li>
+<li>root can have less than half <em>order</em></li>
+<li>keys are in sorted order for sequential traversal</li>
+<li>a B-tree of height h with all its nodes completely filled has <span><span class="MathJax_Preview">n = m^{h+1}–1</span><script type="math/tex">n = m^{h+1}–1</script></span> entries</li>
+<li>minimum height of a b-tree: TODO</li>
+<li>maximum height of a b-tree: TODO</li>
+</ul>
+<h4 id="complexity_1">Complexity<a class="headerlink" href="#complexity_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Of</th>
+<th>Avg</th>
+<th>Worst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Space</td>
+<td><span><span class="MathJax_Preview">\Theta(n)</span><script type="math/tex">\Theta(n)</script></span></td>
+<td><span><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>Search</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><span><span class="MathJax_Preview">\Theta(log_2{n})</span><script type="math/tex">\Theta(log_2{n})</script></span></td>
+<td><span><span class="MathJax_Preview">O(log_2{n})</span><script type="math/tex">O(log_2{n})</script></span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="red-black-tree">Red-Black Tree<a class="headerlink" href="#red-black-tree" title="Permanent link">#</a></h3>
 <h3 id="b-tree_1">B+ Tree<a class="headerlink" href="#b-tree_1" title="Permanent link">#</a></h3>
 <h2 id="k-ary-tree">K-ary Tree<a class="headerlink" href="#k-ary-tree" title="Permanent link">#</a></h2>
@@ -4762,6 +4871,16 @@ St1    St2
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
 <ul>
 <li>https://gist.github.com/toransahu/bb1c9f1cd6490ff29c42fa229e827a2a</li>
+</ul>
+<hr />
+<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">#</a></h2>
+<ul>
+<li>avl</li>
+<li>m-way tree</li>
+<li>b tree</li>
+<li>b+ tree</li>
+<li>red-black tree</li>
+<li>trie</li>
 </ul>
                 
               
