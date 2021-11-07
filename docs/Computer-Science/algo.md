@@ -23,7 +23,7 @@ _Execution time_ taken by a program in a particular machine? __NO__.
 
 This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.
 
-So, we express the Running Time as a mathematican function of the input size i.e. $f(n)$.
+So, we express the Running Time as a mathematical function of the input size i.e. $f(n)$.
 
 ## How to compare Algorithms?
 Using Running Time.
@@ -304,7 +304,7 @@ TODO
     - Merge Sort: $O(n) + O(1)$
 - Algorithmic Paradigm: Divide and Conquer
 - Implementations: Recursive only
-- Sorting In Place: Yes (No in a typican implementation)
+- Sorting In Place: Yes (No in a typical implementation)
 - Applications:
     - Sorting linkedlist in $O(nlogn)$
     - Inversion Count Problem (i.e. in an array $E_i>E_j>E_k$ where $i<j<k$) <!--just to fix syntax hl-->
@@ -1348,7 +1348,7 @@ Cycles may exist in the graph. (__But not negative weight cycles__)
 As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex $v$ from source $s$. And pick the shortest path (minimum distance) amongst them.
 
 This is again the same minimization/optimization problem, but approach is not Greedy this time.
-Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the locan optimal solution.
+Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the local optimal solution.
 
 Bellman-Ford says:
 
@@ -1622,7 +1622,7 @@ TODO
 # Greedy Algorithms
 
 The problem should be solved in stages, by consider one step a time and one input at a time.
-The each step should find a locan optimal solution, and those locan optimal should lead to global optimal solution.
+The each step should find a local optimal solution, and those local optimal should lead to global optimal solution.
 
 These algorithms provides a predefined procedure to be followed in each step.
 
@@ -1696,7 +1696,7 @@ Bottom - Up approach in a subproblem tree
 
 ### Longest Common Subsequence
 
-### Longest Increasing Monotonican Subsequence
+### Longest Increasing Monotonical Subsequence
 
 ### Rod Cutting
 

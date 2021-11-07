@@ -72,6 +72,8 @@
 
 # Data Type
 
+## `bool`
+
 ## `int`
 
 ## `string`
@@ -90,6 +92,7 @@ fmt.Println(sample) // out: ��=� ⌘
 ```
 
 - _NOTE_: indexing/iterating over string gives bytes and not characters in Go
+- that also means, when we store a character in a string, we store its byte representation
 
 ### UTF-8 and string literals
 
@@ -112,7 +115,6 @@ for i := 0; i < len(placeOfInterest); i++ {
 - _NOTE_:
     - Source code in Go is defined to be UTF-8 text; no other representation is allowed
 
-## `bool`
 
 ## `byte`
 
@@ -630,6 +632,16 @@ tbd
 ## `panic`
 
 ## `recover`
+
+## goroutine vs threads
+- can run more number of goroutines on a typical system than can threads
+- goroutine are managed by go runtime, and have been designed to be lightweight
+    - thus the startup time is low
+    - its lightweight because it gets assigned very minimal memory, and that could be increased on demand
+        - that called growable segmented stack
+-  goroutine comes with in-built primitives called `channels` to communicate safely between themselves
+-  goroutines are multiplexed onto a small number of OS threads, rather than 1:1 mapping
+
 
 # Channels
 

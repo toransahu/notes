@@ -30,14 +30,34 @@
 - (TBD) PPPoE
     - Point-to-Point Protocol over Ethernet
     - 
+- SSL
+    - Secure socket layer protocol
+    - L6 (layer 6 - presentation layer thing)
+    - 1995, at Netscape
+    - establish encrypted communications between web servers/clients
+        - encrypts the data received from L7 and passes encrypted data to L5
+        - decrypts the data received from L5 and passes decrypted data to L7
+    - leveraged by HTTPS protocol
+    - provides privacy and data integrity 
+    - uses public-key exchange 
+    - version 1, 2, 3, all deprecated
 - TLS
-    - TLS: TLS is a security protocol that provides privacy and data integrity for Internet communications. Implementing TLS is a standard practice for building secure web apps.
-        - Privacy
-        - Data integrity
-    - SSL vs TLS
-        - In short, a better version of SSL
-        - https://www.ssl2buy.com/wiki/ssl-vs-tls
-    - TLS SNI: Server Name Indication, is an addition to the TLS encryption protocol that enables a client device to specify the domain name it is trying to reach in the first step of the TLS handshake, preventing common name mismatch errors.
+    - transport layer security protocol
+    - successor of SSL
+    - 1999, by IETF
+    - L6 (layer 6 - presentation layer thing)
+    - establish encrypted communications between web servers/clients
+        - encrypts the data received from L7 and passes encrypted data to L5
+        - decrypts the data received from L5 and passes decrypted data to L7
+    - leveraged by HTTPS protocol, can be used
+    - provides privacy and data integrity 
+    - version 1.0, 1.1 are deprecated and 1.2 & 1.3 are available
+- SSL vs TLS
+    - In short, a better version of SSL
+    - https://www.ssl2buy.com/wiki/ssl-vs-tls
+    - There is no SSL certificate and TLS certificates, they're just certificates which works for both the protocols
+        - both are X.509 digital certificates that helps authenticate the server and facilitate the handshake process
+- TLS SNI: Server Name Indication, is an addition to the TLS encryption protocol that enables a client device to specify the domain name it is trying to reach in the first step of the TLS handshake, preventing common name mismatch errors.
 - DSCP
     - Differentiated Services Code Point
     - Is a packet header value
@@ -47,6 +67,7 @@
         - Layer: TBD
 - DHCP
     - Dynamic Hosting Configuration Protocol
+    - L2-L3 (Network Layer to Transport Layer)
     - Is a NMP (N/W management protocol), helps automate the process of configuring devices on IP networks
     - Thus assigning devices IP address
         - so that IPs don't need to be manually assigned by an admin each time a device connects
@@ -54,7 +75,7 @@
     - DHCP is also responsible for the configuration of domain name server (DNS) and subnet masks, as well as default gateways
     - Related
         - Devices: Router/Gateway
-        - OSI Layer: 2
+        - OSI Layer: 2-3
 - NAT
     - Network Address Translation
     - Is a method of remapping an IP address space into another by modifying the network address information in IP header  of packets while they are in transit across a traffic routing device
@@ -100,7 +121,14 @@
 - BSSID
 - Roaming 
 - Hash(), HMAC
-- OSI, TCP-IP Layers/Model
+- OSI
+    - application layer (7)
+    - presentation layer (6)
+    - session layer (5)
+    - data layer (4)
+    - transport layer (3)
+    - network layer (2)
+    - physical layer (1)
 - RFC
 - CNA - Captive N/W Assistance / Captive Portal
 - WiFi Auth Mechanism
@@ -126,11 +154,29 @@
 - Connection-oriented, Connectionless protocol
 - TCP
     - Transmission Control Protocol
+    - defines how to establish connection to exchange info
+        - how computers send packets of data to each other
+        - works on top of IP
+    - ensures reliable transmission of packets
+        - have a feedback/ack/validation mechanism which ensures if the packet has reached the destination or not
+        - thus is lossless transmission
+        - called as connection-oriented
     - Related
-        - Device:
-        - OSI Layer
+        - Device: 
+        - OSI Layer: L3 (Transport Layer)
 - UDP
+    - User Datagram Protocol
+    - defines how to establish connection to exchange info
+        - how computers send packets of data to each other
+        - works on top of IP
+    - ensures low-latency transmission of datagrams
+    - re-transmission of lost datagrams are not possible
+    - connection-less protocol
 - ICMP
+    - Internet Control Message Protocol
+    - one of the protocol of TCP/IP suite
+    - generally used for network diagnostic or control purpose
+    - e.g. PING, Traceroute etc
 - Packet Data, Datagram, Error-Message, Segment, IP datagram, IP fragmentation
 - Ethernet
 - Websocket
@@ -169,7 +215,10 @@
         - https://documentation.meraki.com/MS/Layer_3_Switching/Layer_3_vs_Layer_2_Switching
         - http://techgenix.com/layer-3-switch/
 - LLDP: Link Layer Discovery Protocol
-- WPA, WEP or WPA2
+- wifi authentication types
+    - WPA, WEP or WPA2, WPA3 (personal/Enterprise)
+- 802.1x, EAP
+- PPSK
 - PSK
     - Pre-shared key
 - multi PSK
@@ -185,11 +234,28 @@
 - MDNS (multicast DNS)
 - DNS
     - Domain Name System
+    - translates Name to IP address
     - Is a hierarchical and decentralized naming system
     - For computers, services or other resources connected to internet or private network 
     - Related
         - Devices: TBD
-        - Layer: TBD
+        - Layer: L3 (Transport Layer thing)
+    - process
+        - hit a URL (say api.example.com)
+        - DNS lookup starts
+        - queries __recursive resolver__ which can be ISP, wireless carrier, etc.
+        - __recursive resolver__ redirects the query to __root server__
+        - __root server__ keeps map of all the __top level domain__ (e.g. .com, .net) with __top level domain (TLD) server's address__
+        - __root server__ redirects the query for `.com` part to a __TLD server__
+        - __TLD server__ keeps map of all the top level domains with __domain's name server__
+        - __TLD server__ finds the __domain's name server__ for `example.com` and redirects the query there
+        - __domain's name server__ keeps map of all the subdomains with IP address
+        - request reaches to domain's DNS server with unsolved puzzle part (i.e. `api.example.com`)
+        - domain's DNS server returns the IP address to __recursive resolver__ server
+        - __recursive resolver__ server shares the IP address with client/browser
+        - webpage appears
+        - query resolution happen in 10th of the seconds
+        - https://d1.awsstatic.com/Route53/how-route-53-routes-traffic.8d313c7da075c3c7303aaef32e89b5d0b7885e7c.png
 - DOT1X
 - dBm - decibels with milliwatt (mW) reference
     - A decibel is a logarithmic unit that is a ratio of the power of the system to some reference
@@ -200,6 +266,7 @@
 - 5G vs WiFi6
     - WiFi naming convention for past and current generation tech has been simplified
         - Wi-Fi 6 means 802.11ax technology – the new generation of Wi-Fi, present in many new routers you'll buy from now on - but not many devices as yet.
+            - enhancement: at PHY layer, better traffic management, better multi-client mgnt
         - Wi-Fi 5 means 802.11ac technology – effectively the current generation
         - Wi-Fi 4 means 802.11n technology – many people will have networking gear based on 802.11n, but it was replaced by 802.11ac in many new routers from 2013 on.
     - WiFi6 > 5G

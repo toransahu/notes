@@ -66,6 +66,39 @@
 - workaholic
 - worrier
 
+# Accusing and Blaming
+
+# Acceptance & Arguement
+- Related Topics
+    - [Trust](#trust)
+    - [Over confidence](#over-confidence%2C-confidence%2C-and-under-confidence)
+
+# Trust
+
+# Verbal Abuse
+
+> Verbally abusing or attacking another is a maladaptive behavior that can be occasionally displayed by anyone, especially during stressful times or times when one is experiencing significant physical discomfort. It can also be used as a defensive mechanism when an individual feels like he or she is being attacked by another individual, or as a method of achieving vengeance on an individual. However, verbal abusive behaviors can also be used to intentionally manipulate others.
+
+> When an individual starts verbally abusing another, the intensity and the frequency of abuse tend to increase over time.
+
+>  It can be as harmful as physical abuse, and can negatively impact the victim’s health.[14] The victims of verbal abuse may suffer from emotional pain and mental distress, which over time could lead to succumbing due to stress-related illness
+
+> Victims of verbal abuse are three times more likely to develop personality disorders.
+
+> Parents who verbally abuse their children may cause their children to develop personality disorders during adolescence and young adulthood.
+
+- Related Topics
+    - [Parenting](#parenting) 
+    - [Anger Management](#anger-management)
+
+- Ref
+    - https://en.wikipedia.org/wiki/Verbal_abuse
+    - https://www.joinonelove.org/learn/11-common-patterns-verbal-abuse/
+    - https://www.bustle.com/wellness/how-to-send-good-morning-text
+    - https://dayoneservices.org/healthy-relationships/
+
+# Anger Management
+
 # Tactful Honesty
 
 # Niceness/Empathic over Truth/Honesty
@@ -81,9 +114,16 @@
 - Confidence
     - knowing & accepting the lack/gap
 
+# Lack of confidence
+
+# Self Validation
+- accepting your limitation, flaws, and mistakes
+
+# Confidence Measurement
+- Self evaluation
+- Judgement of _accuracy_ (w.r.t self evaluation report)
+
 # Forgiveness
 - [A good read](https://getpocket.com/explore/item/how-to-forgive-someone-who-hurt-you-even-when-it-feels-impossible?utm_source=pocket-newtab-intl-en)
 
 # Parenting
-
-# Trust
