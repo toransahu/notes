@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -358,15 +358,126 @@
     Operating Systems
   </a>
   
-    <nav class="md-nav" aria-label="Operating Systems">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-scheduling" class="md-nav__link">
+    Process Scheduling
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Scheduling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#semaphore-vs-mutex" class="md-nav__link">
-    Semaphore Vs Mutex
+  <a href="#preemptive-scheduling" class="md-nav__link">
+    Preemptive Scheduling
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#non-preemptive-scheduling" class="md-nav__link">
+    Non-Preemptive Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-synchronization" class="md-nav__link">
+    Process Synchronization
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-used-for-process-synchronization" class="md-nav__link">
+    Methods used for Process Synchronization
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods used for Process Synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semaphore-and-mutex" class="md-nav__link">
+    Semaphore AND Mutex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semaphore" class="md-nav__link">
+    Semaphore
+  </a>
+  
+    <nav class="md-nav" aria-label="Semaphore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutex" class="md-nav__link">
+    Mutex
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_1" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    Pros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    Cons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutex-vs-semaphore" class="md-nav__link">
+    Mutex VS Semaphore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-2-different-synchronization-premitives" class="md-nav__link">
+    Why 2 different synchronization premitives?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why 2 different synchronization premitives?">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#producer-consumer-problem" class="md-nav__link">
@@ -383,8 +494,94 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#preemption" class="md-nav__link">
+    Preemption
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inter-process-communication" class="md-nav__link">
     Inter Process Communication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-vs-parallelism" class="md-nav__link">
+    Concurrency vs Parallelism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-bound-memory-bound-cache-bound-cpu-bound-operations" class="md-nav__link">
+    IO bound, Memory bound, Cache bound, CPU bound operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    Memory Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demand-paging" class="md-nav__link">
+    Demand Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-fault" class="md-nav__link">
+    Page Fault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapping" class="md-nav__link">
+    Swapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thrasing" class="md-nav__link">
+    Thrasing
   </a>
   
 </li>
@@ -1540,15 +1737,126 @@
     Operating Systems
   </a>
   
-    <nav class="md-nav" aria-label="Operating Systems">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-scheduling" class="md-nav__link">
+    Process Scheduling
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Scheduling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#semaphore-vs-mutex" class="md-nav__link">
-    Semaphore Vs Mutex
+  <a href="#preemptive-scheduling" class="md-nav__link">
+    Preemptive Scheduling
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#non-preemptive-scheduling" class="md-nav__link">
+    Non-Preemptive Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-synchronization" class="md-nav__link">
+    Process Synchronization
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-used-for-process-synchronization" class="md-nav__link">
+    Methods used for Process Synchronization
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods used for Process Synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semaphore-and-mutex" class="md-nav__link">
+    Semaphore AND Mutex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semaphore" class="md-nav__link">
+    Semaphore
+  </a>
+  
+    <nav class="md-nav" aria-label="Semaphore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutex" class="md-nav__link">
+    Mutex
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_1" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    Pros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    Cons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutex-vs-semaphore" class="md-nav__link">
+    Mutex VS Semaphore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-2-different-synchronization-premitives" class="md-nav__link">
+    Why 2 different synchronization premitives?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why 2 different synchronization premitives?">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#producer-consumer-problem" class="md-nav__link">
@@ -1565,8 +1873,94 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#preemption" class="md-nav__link">
+    Preemption
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inter-process-communication" class="md-nav__link">
     Inter Process Communication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-vs-parallelism" class="md-nav__link">
+    Concurrency vs Parallelism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-bound-memory-bound-cache-bound-cpu-bound-operations" class="md-nav__link">
+    IO bound, Memory bound, Cache bound, CPU bound operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    Memory Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demand-paging" class="md-nav__link">
+    Demand Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-fault" class="md-nav__link">
+    Page Fault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapping" class="md-nav__link">
+    Swapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thrasing" class="md-nav__link">
+    Thrasing
   </a>
   
 </li>
@@ -1600,43 +1994,104 @@
 
 <div class="toc">
 <ul>
-<li><a href="#operating-systems">Operating Systems</a><ul>
-<li><a href="#semaphore-vs-mutex">Semaphore Vs Mutex</a></li>
+<li><a href="#operating-systems">Operating Systems</a></li>
+<li><a href="#process-scheduling">Process Scheduling</a><ul>
+<li><a href="#preemptive-scheduling">Preemptive Scheduling</a></li>
+<li><a href="#non-preemptive-scheduling">Non-Preemptive Scheduling</a></li>
+</ul>
+</li>
+<li><a href="#process-synchronization">Process Synchronization</a><ul>
+<li><a href="#methods-used-for-process-synchronization">Methods used for Process Synchronization</a><ul>
+<li><a href="#semaphore-and-mutex">Semaphore AND Mutex</a></li>
+<li><a href="#semaphore">Semaphore</a><ul>
+<li><a href="#types">Types</a></li>
+</ul>
+</li>
+<li><a href="#mutex">Mutex</a><ul>
+<li><a href="#types_1">Types</a></li>
+<li><a href="#pros">Pros</a></li>
+<li><a href="#cons">Cons</a></li>
+</ul>
+</li>
+<li><a href="#mutex-vs-semaphore">Mutex VS Semaphore</a></li>
+<li><a href="#why-2-different-synchronization-premitives">Why 2 different synchronization premitives?</a><ul>
 <li><a href="#producer-consumer-problem">Producer-Consumer Problem</a></li>
 <li><a href="#critical-section">Critical Section</a></li>
+<li><a href="#preemption">Preemption</a></li>
+</ul>
+</li>
 <li><a href="#inter-process-communication">Inter Process Communication</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><a href="#concurrency-vs-parallelism">Concurrency vs Parallelism</a></li>
+<li><a href="#io-bound-memory-bound-cache-bound-cpu-bound-operations">IO bound, Memory bound, Cache bound, CPU bound operations</a></li>
+<li><a href="#memory-management">Memory Management</a><ul>
+<li><a href="#virtual-memory">Virtual Memory</a></li>
+<li><a href="#paging">Paging</a></li>
+<li><a href="#demand-paging">Demand Paging</a></li>
+<li><a href="#page-fault">Page Fault</a></li>
+<li><a href="#swapping">Swapping</a></li>
+<li><a href="#thrasing">Thrasing</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<h5 id="semaphore-vs-mutex">Semaphore Vs Mutex<a class="headerlink" href="#semaphore-vs-mutex" title="Permanent link">#</a></h5>
+<h2 id="process-scheduling">Process Scheduling<a class="headerlink" href="#process-scheduling" title="Permanent link">#</a></h2>
+<h3 id="preemptive-scheduling">Preemptive Scheduling<a class="headerlink" href="#preemptive-scheduling" title="Permanent link">#</a></h3>
+<ul>
+<li>is a kind of process scheduling</li>
+<li>which have facility to interrupt an on going process to proceed with other high priority process (and the resource, mainly CPU, is allocated to the new process)</li>
+<li>in such case, the running process moves to the ready state &amp; the process in ready state moves to the running state</li>
+</ul>
+<h3 id="non-preemptive-scheduling">Non-Preemptive Scheduling<a class="headerlink" href="#non-preemptive-scheduling" title="Permanent link">#</a></h3>
+<h2 id="process-synchronization">Process Synchronization<a class="headerlink" href="#process-synchronization" title="Permanent link">#</a></h2>
+<p>The shared resources can be used by all the processes but the processes should make sure that at a particular time, only one (or, a finite number of) process should be using that shared resource. This is called process synchronization.</p>
+<h3 id="methods-used-for-process-synchronization">Methods used for Process Synchronization<a class="headerlink" href="#methods-used-for-process-synchronization" title="Permanent link">#</a></h3>
+<ul>
+<li>Semaphore</li>
+<li>Mutex (Mutual Exclusive object)</li>
+</ul>
+<h4 id="semaphore-and-mutex">Semaphore AND Mutex<a class="headerlink" href="#semaphore-and-mutex" title="Permanent link">#</a></h4>
 <ul>
 <li>Are kernel resources and provides synchronization service</li>
 <li>Also known as synchronization primitives</li>
-<li>both are semaphores<ul>
-<li>Semaphore/Binary Semaphore (are generalized mutext)</li>
-<li>Mutual Exclusive (Mutex) Semaphore</li>
-<li>Recursive mutex</li>
+<li>both serves the same purpose but the mechanism, implementation, and use-cases are different</li>
 </ul>
-</li>
-<li>But are different and work differently:<ul>
-<li>Mutex: <ul>
-<li>Locking Mechanism</li>
+<h4 id="semaphore">Semaphore<a class="headerlink" href="#semaphore" title="Permanent link">#</a></h4>
+<ul>
+<li>is a Signalling Mechanism</li>
+</ul>
+<h5 id="types">Types<a class="headerlink" href="#types" title="Permanent link">#</a></h5>
+<ul>
+<li>Binary Semaphore</li>
+<li>Counting Semaphore</li>
+</ul>
+<h4 id="mutex">Mutex<a class="headerlink" href="#mutex" title="Permanent link">#</a></h4>
+<ul>
+<li>an object</li>
+<li>is a Locking Mechanism</li>
 <li>Ownership involved: The thread/process which have mutex and accessing data can only release mutex </li>
 </ul>
-</li>
-<li>Semaphore: <ul>
-<li>Signalling Mechanism: An</li>
-<li></li>
+<h5 id="types_1">Types<a class="headerlink" href="#types_1" title="Permanent link">#</a></h5>
+<ul>
+<li>Recursive mutex</li>
 </ul>
-</li>
+<h5 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">#</a></h5>
+<h5 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">#</a></h5>
+<h4 id="mutex-vs-semaphore">Mutex VS Semaphore<a class="headerlink" href="#mutex-vs-semaphore" title="Permanent link">#</a></h4>
+<ul>
+<li>Mutex uses a locking mechanism i.e. if a process wants to use a resource then it locks the resource, uses it and then release it. But on the other hand, semaphore uses a signalling mechanism where wait() and signal() methods are used to show if a process is releasing a resource or taking a resource.</li>
+<li>A mutex is an object but semaphore is an integer variable.</li>
+<li>In semaphore, we have wait() and signal() functions. But in mutex, there is no such function.</li>
+<li>A mutex object allows multiple process threads to access a single shared resource but only one at a time. On the other hand, semaphore allows multiple process threads to access the finite instance of the resource until available.</li>
+<li>In mutex, the lock can be acquired and released by the same process at a time. But the value of the semaphore variable can be modified by any process that needs some resource but only one process can change the value at a time.</li>
 </ul>
-</li>
-<li>Why 2 different synchronization premitives?</li>
-</ul>
+<h4 id="why-2-different-synchronization-premitives">Why 2 different synchronization premitives?<a class="headerlink" href="#why-2-different-synchronization-premitives" title="Permanent link">#</a></h4>
 <h5 id="producer-consumer-problem">Producer-Consumer Problem<a class="headerlink" href="#producer-consumer-problem" title="Permanent link">#</a></h5>
 <h5 id="critical-section">Critical Section<a class="headerlink" href="#critical-section" title="Permanent link">#</a></h5>
-<p>In con-current programming
+<p>In conncurrent programming
 * A group of instructions/statements or region of code
 * that region to be executed atomically (i.e. all or nothing)</p>
 <p>A simple solution to critical section
@@ -1647,7 +2102,39 @@
 <span class="n">releaseLock</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table></p>
+<h5 id="preemption">Preemption<a class="headerlink" href="#preemption" title="Permanent link">#</a></h5>
 <h4 id="inter-process-communication">Inter Process Communication<a class="headerlink" href="#inter-process-communication" title="Permanent link">#</a></h4>
+<h2 id="concurrency-vs-parallelism">Concurrency vs Parallelism<a class="headerlink" href="#concurrency-vs-parallelism" title="Permanent link">#</a></h2>
+<h2 id="io-bound-memory-bound-cache-bound-cpu-bound-operations">IO bound, Memory bound, Cache bound, CPU bound operations<a class="headerlink" href="#io-bound-memory-bound-cache-bound-cpu-bound-operations" title="Permanent link">#</a></h2>
+<p>speed of IO bound <span><span class="MathJax_Preview">\lt</span><script type="math/tex">\lt</script></span> Memory bound <span><span class="MathJax_Preview">\lt</span><script type="math/tex">\lt</script></span> Cache bound <span><span class="MathJax_Preview">\lt</span><script type="math/tex">\lt</script></span> CPU bound operations</p>
+<h2 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">#</a></h2>
+<h3 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">#</a></h3>
+<ul>
+<li>Virtual memory is a memory manage scheme<ul>
+<li>as per which the secondary memory could act as a part of the primary memory</li>
+</ul>
+</li>
+<li>implemented using <strong>demand paging</strong> or <strong>demand segmentation</strong></li>
+<li>other insights<ul>
+<li>a program does not refers to actual physical (primary) or machine (secondary) memory address</li>
+<li>rather it refers to the logical addresses</li>
+<li>logical addresses are translated into physical addresses during execution of the programs</li>
+<li>thus a process could be stored &amp; executed in non-contiguos chunks</li>
+</ul>
+</li>
+</ul>
+<h3 id="paging">Paging<a class="headerlink" href="#paging" title="Permanent link">#</a></h3>
+<h3 id="demand-paging">Demand Paging<a class="headerlink" href="#demand-paging" title="Permanent link">#</a></h3>
+<h3 id="page-fault">Page Fault<a class="headerlink" href="#page-fault" title="Permanent link">#</a></h3>
+<h3 id="swapping">Swapping<a class="headerlink" href="#swapping" title="Permanent link">#</a></h3>
+<ul>
+<li>Swapping a process out: marking its all pages as free/unloaded from memory</li>
+<li>Swapping a process in: bringing in all the pages of a process from secondary memory to primary memory</li>
+</ul>
+<h3 id="thrasing">Thrasing<a class="headerlink" href="#thrasing" title="Permanent link">#</a></h3>
+<ul>
+<li>When a process is busy swapping pages in and out then it is called thrasing</li>
+</ul>
                 
               
               
@@ -1718,10 +2205,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="../../javascripts/config.js"></script>
       

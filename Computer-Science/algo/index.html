@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -1873,8 +1873,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#longest-increasing-monotonican-subsequence" class="md-nav__link">
-    Longest Increasing Monotonican Subsequence
+  <a href="#longest-increasing-monotonical-subsequence" class="md-nav__link">
+    Longest Increasing Monotonical Subsequence
   </a>
   
 </li>
@@ -4878,8 +4878,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#longest-increasing-monotonican-subsequence" class="md-nav__link">
-    Longest Increasing Monotonican Subsequence
+  <a href="#longest-increasing-monotonical-subsequence" class="md-nav__link">
+    Longest Increasing Monotonical Subsequence
   </a>
   
 </li>
@@ -5357,7 +5357,7 @@
 <li><a href="#matrix-chain-multiplication">Matrix Chain Multiplication</a></li>
 <li><a href="#longest-common-substring">Longest Common Substring</a></li>
 <li><a href="#longest-common-subsequence">Longest Common Subsequence</a></li>
-<li><a href="#longest-increasing-monotonican-subsequence">Longest Increasing Monotonican Subsequence</a></li>
+<li><a href="#longest-increasing-monotonical-subsequence">Longest Increasing Monotonical Subsequence</a></li>
 <li><a href="#rod-cutting">Rod Cutting</a></li>
 </ul>
 </li>
@@ -5400,7 +5400,7 @@
 <h3 id="what-is-running-time">What is Running Time?<a class="headerlink" href="#what-is-running-time" title="Permanent link">#</a></h3>
 <p><em>Execution time</em> taken by a program in a particular machine? <strong>NO</strong>.</p>
 <p>This metric should be independent of other factors like: programing language, execution enviroment i.e. computer, CPU, RAM etc.</p>
-<p>So, we express the Running Time as a mathematican function of the input size i.e. <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>.</p>
+<p>So, we express the Running Time as a mathematical function of the input size i.e. <span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>.</p>
 <h3 id="how-to-compare-algorithms">How to compare Algorithms?<a class="headerlink" href="#how-to-compare-algorithms" title="Permanent link">#</a></h3>
 <p>Using Running Time.</p>
 <h3 id="what-is-rate-of-growth">What is Rate of Growth?<a class="headerlink" href="#what-is-rate-of-growth" title="Permanent link">#</a></h3>
@@ -5702,7 +5702,7 @@ T(n-1) + T(n-2) & if & n>1 \\
 </li>
 <li>Algorithmic Paradigm: Divide and Conquer</li>
 <li>Implementations: Recursive only</li>
-<li>Sorting In Place: Yes (No in a typican implementation)</li>
+<li>Sorting In Place: Yes (No in a typical implementation)</li>
 <li>Applications:<ul>
 <li>Sorting linkedlist in <span><span class="MathJax_Preview">O(nlogn)</span><script type="math/tex">O(nlogn)</script></span></li>
 <li>Inversion Count Problem (i.e. in an array <span><span class="MathJax_Preview">E_i&gt;E_j&gt;E_k</span><script type="math/tex">E_i>E_j>E_k</script></span> where <span><span class="MathJax_Preview">i&lt;j&lt;k</span><script type="math/tex">i<j<k</script></span>) <!--just to fix syntax hl--></li>
@@ -6887,7 +6887,7 @@ Dijkstra chose the Greedy one.</p>
 <p>Cycles may exist in the graph. (<strong>But not negative weight cycles</strong>)</p>
 <p>As we've seen in previous simple/greedy algorithms that presence of negative weights may trip the approach and lead to incorrect answers. We need to be more careful and try all the possible paths to a vertex <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> from source <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>. And pick the shortest path (minimum distance) amongst them.</p>
 <p>This is again the same minimization/optimization problem, but approach is not Greedy this time.
-Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the locan optimal solution.</p>
+Bellman-Ford prefers to explore all the possibilies using Dynamic Programing approach - where the target would be to optimize the global solution rather just focusing on the local optimal solution.</p>
 <p>Bellman-Ford says:</p>
 <ol>
 <li>List down all the edges</li>
@@ -7207,7 +7207,7 @@ min( d_{ij}^{k-1}, \space d_{ik}^{k-1} + d_{kj}^{k-1}) & if & k \gt 0 \\
 <hr />
 <h2 id="greedy-algorithms">Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permanent link">#</a></h2>
 <p>The problem should be solved in stages, by consider one step a time and one input at a time.
-The each step should find a locan optimal solution, and those locan optimal should lead to global optimal solution.</p>
+The each step should find a local optimal solution, and those local optimal should lead to global optimal solution.</p>
 <p>These algorithms provides a predefined procedure to be followed in each step.</p>
 <p>An optimization problem <em>can</em> be solved using greedy approach.</p>
 <h3 id="elementary-cases-fractional-knapsack-problem-task-scheduling">Elementary cases : Fractional Knapsack Problem, Task Scheduling<a class="headerlink" href="#elementary-cases-fractional-knapsack-problem-task-scheduling" title="Permanent link">#</a></h3>
@@ -7283,7 +7283,7 @@ The each step should find a locan optimal solution, and those locan optimal shou
 <h4 id="matrix-chain-multiplication">Matrix Chain Multiplication<a class="headerlink" href="#matrix-chain-multiplication" title="Permanent link">#</a></h4>
 <h4 id="longest-common-substring">Longest Common Substring<a class="headerlink" href="#longest-common-substring" title="Permanent link">#</a></h4>
 <h4 id="longest-common-subsequence">Longest Common Subsequence<a class="headerlink" href="#longest-common-subsequence" title="Permanent link">#</a></h4>
-<h4 id="longest-increasing-monotonican-subsequence">Longest Increasing Monotonican Subsequence<a class="headerlink" href="#longest-increasing-monotonican-subsequence" title="Permanent link">#</a></h4>
+<h4 id="longest-increasing-monotonical-subsequence">Longest Increasing Monotonical Subsequence<a class="headerlink" href="#longest-increasing-monotonical-subsequence" title="Permanent link">#</a></h4>
 <h4 id="rod-cutting">Rod Cutting<a class="headerlink" href="#rod-cutting" title="Permanent link">#</a></h4>
 <hr />
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
@@ -7395,10 +7395,10 @@ The each step should find a locan optimal solution, and those locan optimal shou
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="../../javascripts/config.js"></script>
       

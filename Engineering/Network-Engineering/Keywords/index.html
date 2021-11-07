@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -1623,20 +1623,46 @@
 <li>(TBD) MPLS, Broadband, LTE, Satellite</li>
 <li>(TBD) PPPoE<h3 id="-point-to-point-protocol-over-ethernet">- Point-to-Point Protocol over Ethernet<a class="headerlink" href="#-point-to-point-protocol-over-ethernet" title="Permanent link">#</a></h3>
 </li>
+<li>SSL<ul>
+<li>Secure socket layer protocol</li>
+<li>L6 (layer 6 - presentation layer thing)</li>
+<li>1995, at Netscape</li>
+<li>establish encrypted communications between web servers/clients<ul>
+<li>encrypts the data received from L7 and passes encrypted data to L5</li>
+<li>decrypts the data received from L5 and passes decrypted data to L7</li>
+</ul>
+</li>
+<li>leveraged by HTTPS protocol</li>
+<li>provides privacy and data integrity </li>
+<li>uses public-key exchange </li>
+<li>version 1, 2, 3, all deprecated</li>
+</ul>
+</li>
 <li>TLS<ul>
-<li>TLS: TLS is a security protocol that provides privacy and data integrity for Internet communications. Implementing TLS is a standard practice for building secure web apps.<ul>
-<li>Privacy</li>
-<li>Data integrity</li>
+<li>transport layer security protocol</li>
+<li>successor of SSL</li>
+<li>1999, by IETF</li>
+<li>L6 (layer 6 - presentation layer thing)</li>
+<li>establish encrypted communications between web servers/clients<ul>
+<li>encrypts the data received from L7 and passes encrypted data to L5</li>
+<li>decrypts the data received from L5 and passes decrypted data to L7</li>
+</ul>
+</li>
+<li>leveraged by HTTPS protocol, can be used</li>
+<li>provides privacy and data integrity </li>
+<li>version 1.0, 1.1 are deprecated and 1.2 &amp; 1.3 are available</li>
 </ul>
 </li>
 <li>SSL vs TLS<ul>
 <li>In short, a better version of SSL</li>
 <li>https://www.ssl2buy.com/wiki/ssl-vs-tls</li>
+<li>There is no SSL certificate and TLS certificates, they're just certificates which works for both the protocols<ul>
+<li>both are X.509 digital certificates that helps authenticate the server and facilitate the handshake process</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>TLS SNI: Server Name Indication, is an addition to the TLS encryption protocol that enables a client device to specify the domain name it is trying to reach in the first step of the TLS handshake, preventing common name mismatch errors.</li>
-</ul>
-</li>
 <li>DSCP<ul>
 <li>Differentiated Services Code Point</li>
 <li>Is a packet header value</li>
@@ -1650,6 +1676,7 @@
 </li>
 <li>DHCP<ul>
 <li>Dynamic Hosting Configuration Protocol</li>
+<li>L2-L3 (Network Layer to Transport Layer)</li>
 <li>Is a NMP (N/W management protocol), helps automate the process of configuring devices on IP networks</li>
 <li>Thus assigning devices IP address<ul>
 <li>so that IPs don't need to be manually assigned by an admin each time a device connects</li>
@@ -1659,7 +1686,7 @@
 <li>DHCP is also responsible for the configuration of domain name server (DNS) and subnet masks, as well as default gateways</li>
 <li>Related<ul>
 <li>Devices: Router/Gateway</li>
-<li>OSI Layer: 2</li>
+<li>OSI Layer: 2-3</li>
 </ul>
 </li>
 </ul>
@@ -1737,7 +1764,16 @@
 <li>BSSID</li>
 <li>Roaming </li>
 <li>Hash(), HMAC</li>
-<li>OSI, TCP-IP Layers/Model</li>
+<li>OSI<ul>
+<li>application layer (7)</li>
+<li>presentation layer (6)</li>
+<li>session layer (5)</li>
+<li>data layer (4)</li>
+<li>transport layer (3)</li>
+<li>network layer (2)</li>
+<li>physical layer (1)</li>
+</ul>
+</li>
 <li>RFC</li>
 <li>CNA - Captive N/W Assistance / Captive Portal</li>
 <li>WiFi Auth Mechanism</li>
@@ -1777,15 +1813,43 @@
 <li>Connection-oriented, Connectionless protocol</li>
 <li>TCP<ul>
 <li>Transmission Control Protocol</li>
+<li>defines how to establish connection to exchange info<ul>
+<li>how computers send packets of data to each other</li>
+<li>works on top of IP</li>
+</ul>
+</li>
+<li>ensures reliable transmission of packets<ul>
+<li>have a feedback/ack/validation mechanism which ensures if the packet has reached the destination or not</li>
+<li>thus is lossless transmission</li>
+<li>called as connection-oriented</li>
+</ul>
+</li>
 <li>Related<ul>
-<li>Device:</li>
-<li>OSI Layer</li>
+<li>Device: </li>
+<li>OSI Layer: L3 (Transport Layer)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>UDP</li>
-<li>ICMP</li>
+<li>UDP<ul>
+<li>User Datagram Protocol</li>
+<li>defines how to establish connection to exchange info<ul>
+<li>how computers send packets of data to each other</li>
+<li>works on top of IP</li>
+</ul>
+</li>
+<li>ensures low-latency transmission of datagrams</li>
+<li>re-transmission of lost datagrams are not possible</li>
+<li>connection-less protocol</li>
+</ul>
+</li>
+<li>ICMP<ul>
+<li>Internet Control Message Protocol</li>
+<li>one of the protocol of TCP/IP suite</li>
+<li>generally used for network diagnostic or control purpose</li>
+<li>e.g. PING, Traceroute etc</li>
+</ul>
+</li>
 <li>Packet Data, Datagram, Error-Message, Segment, IP datagram, IP fragmentation</li>
 <li>Ethernet</li>
 <li>Websocket</li>
@@ -1842,7 +1906,12 @@
 </ul>
 </li>
 <li>LLDP: Link Layer Discovery Protocol</li>
-<li>WPA, WEP or WPA2</li>
+<li>wifi authentication types<ul>
+<li>WPA, WEP or WPA2, WPA3 (personal/Enterprise)</li>
+</ul>
+</li>
+<li>802.1x, EAP</li>
+<li>PPSK</li>
 <li>PSK<ul>
 <li>Pre-shared key</li>
 </ul>
@@ -1866,11 +1935,30 @@
 <li>MDNS (multicast DNS)</li>
 <li>DNS<ul>
 <li>Domain Name System</li>
+<li>translates Name to IP address</li>
 <li>Is a hierarchical and decentralized naming system</li>
 <li>For computers, services or other resources connected to internet or private network </li>
 <li>Related<ul>
 <li>Devices: TBD</li>
-<li>Layer: TBD</li>
+<li>Layer: L3 (Transport Layer thing)</li>
+</ul>
+</li>
+<li>process<ul>
+<li>hit a URL (say api.example.com)</li>
+<li>DNS lookup starts</li>
+<li>queries <strong>recursive resolver</strong> which can be ISP, wireless carrier, etc.</li>
+<li><strong>recursive resolver</strong> redirects the query to <strong>root server</strong></li>
+<li><strong>root server</strong> keeps map of all the <strong>top level domain</strong> (e.g. .com, .net) with <strong>top level domain (TLD) server's address</strong></li>
+<li><strong>root server</strong> redirects the query for <code>.com</code> part to a <strong>TLD server</strong></li>
+<li><strong>TLD server</strong> keeps map of all the top level domains with <strong>domain's name server</strong></li>
+<li><strong>TLD server</strong> finds the <strong>domain's name server</strong> for <code>example.com</code> and redirects the query there</li>
+<li><strong>domain's name server</strong> keeps map of all the subdomains with IP address</li>
+<li>request reaches to domain's DNS server with unsolved puzzle part (i.e. <code>api.example.com</code>)</li>
+<li>domain's DNS server returns the IP address to <strong>recursive resolver</strong> server</li>
+<li><strong>recursive resolver</strong> server shares the IP address with client/browser</li>
+<li>webpage appears</li>
+<li>query resolution happen in 10th of the seconds</li>
+<li>https://d1.awsstatic.com/Route53/how-route-53-routes-traffic.8d313c7da075c3c7303aaef32e89b5d0b7885e7c.png</li>
 </ul>
 </li>
 </ul>
@@ -1886,7 +1974,10 @@
 <li>Ionizing vs non-ionizing radiation</li>
 <li>5G vs WiFi6<ul>
 <li>WiFi naming convention for past and current generation tech has been simplified<ul>
-<li>Wi-Fi 6 means 802.11ax technology – the new generation of Wi-Fi, present in many new routers you'll buy from now on - but not many devices as yet.</li>
+<li>Wi-Fi 6 means 802.11ax technology – the new generation of Wi-Fi, present in many new routers you'll buy from now on - but not many devices as yet.<ul>
+<li>enhancement: at PHY layer, better traffic management, better multi-client mgnt</li>
+</ul>
+</li>
 <li>Wi-Fi 5 means 802.11ac technology – effectively the current generation</li>
 <li>Wi-Fi 4 means 802.11n technology – many people will have networking gear based on 802.11n, but it was replaced by 802.11ac in many new routers from 2013 on.</li>
 </ul>
@@ -1985,10 +2076,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
       
