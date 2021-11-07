@@ -10,6 +10,10 @@
 - How to design an ATM machine?
 - [Design a LRU Cache System](http://blog.gainlo.co/index.php/2016/05/17/design-a-cache-system/)
     - https://www.geeksforgeeks.org/lru-cache-implementation/
+- Design & implement LFU cache
+- Design phone book: search by name, phone number and print 10 most dialled numbers.
+- Design a TODO list cloud application, multiple client support, millions of users, synchronize updates across multiple clients.
+- Design an Authorization Service.
 - [How would you design a Parking Lot system?](https://www.youtube.com/watch?v=eV5Xh6jNfmU&feature=emb_imp_woyt)
 - How do you design a traffic control system?
 - How do you design a website like Pastebin?
