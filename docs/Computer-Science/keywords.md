@@ -92,6 +92,15 @@
 - Infrastructure as a service
 - AWS, MS Azure, 
 
+#### FaaS
+Function as a service
+
+#### BaaS
+Backend as a service
+
+#### CaaS
+Container as a service
+
 #### CSS
 * cascading style sheet
 * a style sheet language

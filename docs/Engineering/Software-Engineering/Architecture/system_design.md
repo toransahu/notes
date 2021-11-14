@@ -3,6 +3,205 @@
 <h3>Table of Contents</h3>
 [TOC]
 
+# Application Architecture Types
+
+## Monolithic / N-Tier / Layered
+- monolithic aka n-Tier app
+- separates/segregates concerns and decompose code base into functional components/layers
+    - e.g. Data Access Layer, Presentation Layer, Business Logic Layer
+    - or, MVC (Model, View, Controller) Framework
+    - IDEA: to work with any component of the architecture independent of the other
+
+### Cons
+- long term maintainability (cumbersome codebase)
+- decoupling issue
+- code change --> whole code base change
+- deployment --> whole application deplyment
+- difficulty adopting new technologies
+- less agile (tight coupled features/code/team) -> takes more time
+- scalling --> scale whole application --> more cost
+- ...
+
+### Pros
+- simple/fast development (in initial days)
+- performant/fast (as no network calls)
+- fewer intercommunication pains
+
+PS: Not outdated yet.
+
+## SOA (hybrid?)
+
+Service-based architectur
+
+- was the evolution to the limitation of the Monolithic architecture
+- decouples the application in smaller modules
+- all the smaller modeules/services then work with an aggregation layer/bus/message queue etc.
+- involves 2 main roles
+    - service provider
+    - service consumer
+- idea/concept
+    - reusable modules
+    - easily integrateable modules
+
+### Cons
+- complex management
+    - communication between each services
+- scalling/mgnt of the communication bus/message queue
+    - e.g. Kafka?
+- cost
+    - more human resource
+    - tech
+    - development
+- decreased response time
+    - network calls
+    - more running codes
+        - more request/response validation
+
+### Pros
+- better resuablity
+- better maintainability
+- better testability/debugability
+    - better reliability
+- agile
+    - parallel development
+- separates internal & external elements
+
+
+PS: better for complex systems, where decomposition is not quite feasible/suitable.
+
+## Microservice
+
+- a kind of SOA
+- are the evolution to some limitation of the SOA architecture
+- idea/concept
+    - encouraging autonomus services/components
+    - to gain agility to priorities business
+    - to gain more capabilities in many terms
+    - reduce duplication
+    - increase cohesion
+    - reduce tight-coupling
+        - thus easier to understand, maintain, scale system
+- need experience to get it right
+    - too granular or too broad can destroy the architecture
+- could be defined by
+    - business case
+    - hierchy
+    - domain separation
+- inter-service communication is through some light weight protocol
+    - REST over HTTP? really?
+    - an organized way of doing that is through API Proxy (by configuring service communication)
+    - or, by service mesh (like Istio)
+
+### Frameworks
+- Sidecar
+- Ambassador
+- Adapter
+
+### Cons
+- complex overall system
+    - overhead of inter-service communication
+    - automation to manage multiple small services
+- careful planning, 
+- skilled & experience human resource
+- harder to achieve data consistency & transaction management
+    - network calls
+        - latency
+            - can affect other service
+    - individual DBs
+- more security concerns
+    - coz of more small public service/APIs
+- multiple programing lang
+    - double-edged sword
+
+### Pros
+- easy to develop, test, deploy
+    - autonomous/independent
+- increased agility
+- ability to scale hosrizontally
+- a way towards cloud-native model/approach
+
+PS: Good but not required always.
+
+## Serverless
+- application running on a server managed by a 3rd party/cloud vendor etc
+- are event-driven
+- idea
+    - deligate the server maintainance to 3rd party
+        - reduce devops cost
+        - server, db management/maintainance
+        - application scalability
+    - focus on feature dev/business logic only
+- methods
+    - FaaS
+        - function as a service
+        - a piece of code / fuctions runs on the vendor-managed server
+    - BaaS
+        - backend as a service
+        - backend (db, storage, user authn service) managed by the vendor
+        - only need to consume those in some app/code
+    - MBaaS
+        - Mobile-Backend as a service
+        - functions for mobile applications
+- vendors
+    - AWS Lambda
+    - Google Cloud Functions
+    - Azure Functions
+    - IBM OpenWhisk
+    - Oracle Fn Project
+    - Kubeless
+    - ...
+
+### Cons
+- vendor lock-in
+    - all things are stored there only
+    - migration from one vendor to another could be challenging
+- not for long-term tasks
+
+### Pros
+- easy to deploy
+- lower cost
+    - optimized infra cost by 3rd party
+- enhanced scalability
+    - automatic & seamless scaling managed by 3rd party
+- better for client-heavy apps
+- better for apps which need exponential/limitless scaling
+    - really growing fast
+
+
+## Cloud Native
+- for applications planning to deploy in cloud
+- applies to SOA & Microservices (and to monolithic & serverless as well)
+- an approach to
+    - make services ready to be containerized
+    - thus ready for CI/CD
+- services are usually stateless
+- services communicates through HTTP or messaging queue
+- envolves 
+    - multiple node of the service
+        - thus a centralized DB/session state/config server
+    - CI/CD
+    - API gateway
+    - container registry
+    - message-oriented middleware (MOM: publish/subscribe)
+    - service mesh (like Istio)
+    - orchestration (kubernetes/mesos)
+- containerization
+    - brings container orchestration
+        - brings mesos, kubernetes
+
+## Cloud Based
+
+
+# Observability
+## Log aggregation
+## Application metrics
+## Audit logging
+## Distributed tracing
+## Exception tracking
+## Health check API
+## Log deployments and changes
+
+
 # Pratice Problems
 - [Designing a URL Shortening service like TinyURL](https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR?affiliate_id=5073518643380224)
 - [How do you design an Elevator of the Lift system?](https://dzone.com/articles/21-object-oriented-and-system-design-problems-to-p)
