@@ -90,14 +90,14 @@ AWS CodeDeploy is a deployment service that automates application deployments to
 
 
 ### Docker Swarm
-
+### Docker Compose
 ### Apache Mesos
 
 ---
 # Queues
 
-## Celery
 ## RabbitMQ
+## Celery
 ## Redis
 - Source: https://logz.io/blog/kafka-vs-redis/
 

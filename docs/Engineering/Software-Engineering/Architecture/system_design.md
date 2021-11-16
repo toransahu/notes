@@ -172,7 +172,9 @@ PS: Good but not required always.
 - for applications planning to deploy in cloud
 - applies to SOA & Microservices (and to monolithic & serverless as well)
 - an approach to
+    - deploy on public clouds (aws, gcp, azure, some one else's data center etc)
     - make services ready to be containerized
+        - i.e. orchestration
     - thus ready for CI/CD
 - services are usually stateless
 - services communicates through HTTP or messaging queue
@@ -189,8 +191,73 @@ PS: Good but not required always.
     - brings container orchestration
         - brings mesos, kubernetes
 
-## Cloud Based
+### Cons
+- complexity
+- experience
 
+### Pros
+- agility
+- flexible
+- resilient
+
+## Cloud Based
+- somewhere in between Cloud Enabled & Cloud Native
+- running on cloud, vendor is auto scaling server/db, managing backups/log etc
+
+## Cloud Enabled
+- legacy monolithic apps, migrated to cloud
+- depends on local services
+- can't take advantage of shared services blah blah
+
+# Microservices
+
+A detailed view on this hot/major topic.
+
+## Principles (https://dzone.com/articles/design-patterns-for-microservices)
+### Scalability
+### Reliability
+#### Availability
+#### Resiliency/Fault-tolerant
+#### Consistency
+### Independent, autonomous
+### Decentralized governance
+### Failure isolation
+### Auto-Provisioning
+### Continuous delivery through DevOps
+
+## Patterns/Architecture (https://microservices.io/patterns/microservices.html)
+- Domain-driven-design
+- CQRS (command-query responsibity segragation)
+- Event-driven
+- Database per service
+- Decomposition patterns
+    - Decompose by business capability
+    - Decompose by subdomain
+- The Database per Service pattern describes how each service has its own database in order to ensure loose coupling.
+- The API Gateway pattern defines how clients access the services in a microservice architecture.
+- The Client-side Discovery and Server-side Discovery patterns are used to route requests for a client to an available service instance in a microservice architecture.
+- The Messaging and Remote Procedure Invocation patterns are two different ways that services can communicate.
+- The Single Service per Host and Multiple Services per Host patterns are two different deployment strategies.
+- Cross-cutting concerns patterns: Microservice chassis pattern and Externalized configuration
+- Testing patterns: Service Component Test and Service Integration Contract Test
+- Circuit Breaker
+- Access Token
+
+
+# Scalability vs Performance
+
+A detailed view on this hot/major topic.
+
+## Load Balancing
+## Stateless application
+## Loose coupling
+## Asynchrony
+## Lazy loading
+## Caching
+## Parallelism
+## Partitioning / Sharding
+## Routing
+## Master Slave??
 
 # Observability
 ## Log aggregation
