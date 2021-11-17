@@ -213,8 +213,8 @@ PS: Good but not required always.
 
 A detailed view on this hot/major topic.
 
-## Principles (https://dzone.com/articles/design-patterns-for-microservices)
-A few principle microservice architecture follows are:
+## Principles
+A few principle microservice architecture follows are [^8]:
 
 - Scalability
     - Availability
@@ -248,16 +248,41 @@ A few principle microservice architecture follows are:
 - Circuit Breaker
 - Access Token
 
+as per [^8]
+
+- Decomposition Patterns
+    - Decompose by Business Capability
+    - Decompose by Subdomain
+    - Strangler Pattern
+- Integration Patterns
+    - API Gateway Pattern
+    - Aggregator Pattern
+    - Client-Side UI Composition Pattern
+- Database Patterns
+    - Database per Service
+    - Shared Database per Service
+    - Command Query Responsibility Segregation (CQRS)
+    - Saga Pattern
+- Observability Patterns
+    - Log Aggregation
+    - Performance Metrics
+    - Distributed Tracing
+    - Health Check
+- Cross-Cutting Concern Patterns
+    - External Configuration
+    - Service Discovery Pattern
+    - Circuit Breaker Pattern
+    - Blue-Green Deployment Pattern
 
 ## A few common properties of a service/software
-### High Performance
-### Low Latency
-### High Throughput
+- High Performance
+- Low Latency
+- High Throughput
 
 # Trades-Off
 ## Scalability vs Performance
 
-A detailed view on this hot/major topic.
+A detailed view on this hot/major topic[^6][^7].
 
 
 Performance: 
@@ -291,31 +316,104 @@ strive for high throughput with acceptable latency
 
 ## Availability vs Consistency
 ### CAP Theorem
-In a distributed system (where there is a network partition) either of the only 2 choice is available.
-- consistency
-- or, availability
+asserts that in a distributed system (networked data-shared) can have only 2 of the 3 desireable properties at a time.[^5]
+
+- consistency & partition tolerance
+- or, availability & partition tolerance
 
 e.g. what NoSQL's BASE principle says: "basically available, soft state, eventually consistent"
 
+Note: The definition of consistency used in CAP theorem is different to the definition of consistency used in ACID.
+
+#### Partition Tolerance
+ability to tolerate network partitions
+
 # Scalability
 ## Availability
+Service is operational/available/running whenever needed.
+
+% of time service is operational. uptime.
+
+Or, each request to the service receives a response.
+
+Techniques to improve availability:
+
+[^10]
+
+- failovers
+- asynchronous calls
+- dependency isolations
+    - set timeout
+    - use circuit breaker
+- set current limit
+- load balancing?
+
+
 ### Fail Over
 A fall back mechanism
 
-### Redundancy/Replication
-kind
+## Resiliency/Fault-tolerant/Reliability
+
+Resiliency: Service is functional with expected results for given input/environment (even in case of a fault/error) for the required time duration.[^1]
+
+Reliability: service is functional for a specific time interval without a failure; % of time the service works correctly.
+
+### Redundancy
+
+- duplication of critical components (nodes, processes) with the aim to achieve reliability [^9]
+- The (additional/copies/redundant) resources which are NOT strictly necessary for the distributed system to work correctly but good to have to avoid
+    - failovers
+    - single point of failure 
+- Improves reliability
+
+#### Techniques
+
+## Consistency
+All nodes see the same data at the same time.
+
+patterns to achieve consistency:
+
+### Replication
+- includes __redundancy__
+- but also involves
+    - synchronization of state between different/redundant nodes in a distributed system. yes. yes.
+    - sharing information to ensure __consistency__ between redundant resources. [^9]
+
+- improves availability
+- improves reliability
+    - by implicit redundancy
+- improves performance
+    - if geographycally distributed
+
+#### Techniques
 - active (push)
 - passive (pull)
-
 - Master Slave
 - Master Master
 - Tree Replication
 - Buddy Replication
 
-## Resiliency/Fault-tolerant/Reliability
-## Consistency
-
 ## Other Patterns
+- Stateless application
+- Loose coupling
+- Asynchrony/Concurrency
+- Lazy loading
+- Caching
+- Distributed Caching
+- HTTP Caching
+    - reverse proxy
+    - CDN
+- Parallelism
+- Partitioning
+- RDBMS Sharding
+- Routing
+- Master Slave??
+
+
+- how to scale RDBMS
+    - paritioning
+    - sharding
+    - replication
 
 # Maintainability
 ## Independent, autonomous
@@ -506,7 +604,16 @@ There are various techniques/methods/patterns to achieve so:
 		https://www.youtube.com/c/UditAgarwal21  
 
 
-# Must Read
-- [How to design a system to scale to first 100 million users](https://levelup.gitconnected.com/how-to-design-a-system-to-scale-to-your-first-100-million-users-4450a2f9703d)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README.md)
-- https://www.freecodecamp.org/news/systems-design-for-interviews/
+# References
+FIXME: footnote link
+
+[^1]: https://www.microsoft.com/security/blog/2014/03/24/reliability-series-1-reliability-vs-resilience/
+[^2]: [How to design a system to scale to first 100 million users](https://levelup.gitconnected.com/how-to-design-a-system-to-scale-to-your-first-100-million-users-4450a2f9703d)
+[^3]: [System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README.md)
+[^4]: https://www.freecodecamp.org/news/systems-design-for-interviews/
+[^5]: https://notes.eddyerburgh.me/distributed-systems/replication-and-consistency
+[^6]: https://blog.professorbeekums.com/performance-vs-scalability/
+[^7]: https://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html
+[^8]: https://dzone.com/articles/design-patterns-for-microservices
+[^9]: https://stackoverflow.com/questions/60534656/replication-vs-redundancy
+[^10]: https://www.alibabacloud.com/forum/read-448
