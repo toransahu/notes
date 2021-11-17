@@ -214,16 +214,21 @@ PS: Good but not required always.
 A detailed view on this hot/major topic.
 
 ## Principles (https://dzone.com/articles/design-patterns-for-microservices)
-### Scalability
-### Reliability
-#### Availability
-#### Resiliency/Fault-tolerant
-#### Consistency
-### Independent, autonomous
-### Decentralized governance
-### Failure isolation
-### Auto-Provisioning
-### Continuous delivery through DevOps
+A few principle microservice architecture follows are:
+
+- Scalability
+    - Availability
+    - Resiliency/Fault-tolerant/Reliability
+    - Consistency
+- Maintainability
+    - Independent, autonomous
+    - Decentralized governance
+    - Auto-Provisioning
+    - Continuous delivery through DevOps
+- Serviceability
+    - Failure isolation
+        - Failure detection
+        - Recovery
 
 ## Patterns/Architecture (https://microservices.io/patterns/microservices.html)
 - Domain-driven-design
@@ -244,12 +249,94 @@ A detailed view on this hot/major topic.
 - Access Token
 
 
-# Scalability vs Performance
+## A few common properties of a service/software
+### High Performance
+### Low Latency
+### High Throughput
+
+# Trades-Off
+## Scalability vs Performance
 
 A detailed view on this hot/major topic.
 
+
+Performance: 
+
+1. about speed
+1. capability of a service w.r.t its response time (how fast)
+1. serving # of unit work over a period of time
+1. how fast the service is if there is only 1 user (1 traffic only)
+
+Scalability: 
+
+1. about handling large load/traffic or doing large unit of work
+1. capability of a service to perform directly proportional to the hardwares/resources added
+1. increament in performance of the service when added more resources
+1. service is fast for 1 user, but how fast the service is under heavy load (high traffic)
+
+- scale up aka vertical scaling
+    - increase server's power (cpu. ram, disk, network speed)
+- scale out aka horizontal scaling
+    - increase # of servers/instances
+
+scalability gives
+- availability
+- resiliency/fault-tolerance/reliability
+- performance/responsiveness
+    - low latency
+    - high throughput
+
+## Latency vs Throughput
+strive for high throughput with acceptable latency
+
+## Availability vs Consistency
+### CAP Theorem
+In a distributed system (where there is a network partition) either of the only 2 choice is available.
+- consistency
+- or, availability
+
+e.g. what NoSQL's BASE principle says: "basically available, soft state, eventually consistent"
+
+# Scalability
+## Availability
+### Fail Over
+A fall back mechanism
+
+### Redundancy/Replication
+kind
+- active (push)
+- passive (pull)
+
+- Master Slave
+- Master Master
+- Tree Replication
+- Buddy Replication
+
+## Resiliency/Fault-tolerant/Reliability
+## Consistency
+
+## Other Patterns
+
+# Maintainability
+## Independent, autonomous
+## Decentralized governance
+## Auto-Provisioning
+## Continuous delivery through DevOps
+
+# Serviceability
+## Failure isolation
+
+
+There are various techniques/methods/patterns to achieve so:
+
 ## Load Balancing
+- scalability
+- availability
+
 ## Stateless application
+- scalability
+- consistency
+
 ## Loose coupling
 ## Asynchrony
 ## Lazy loading
@@ -258,6 +345,8 @@ A detailed view on this hot/major topic.
 ## Partitioning / Sharding
 ## Routing
 ## Master Slave??
+
+
 
 # Observability
 ## Log aggregation
