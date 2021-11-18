@@ -210,6 +210,11 @@ PS: Good but not required always.
 - can't take advantage of shared services blah blah
 
 # Microservices
+aka Distributed System
+
+A distributed system is a model in which components located on networked computers communicate and coordinate their actions by passing messages
+
+A distributed system is one where different parts run on different physical or logical machines, communicating using non-local mechanisms.
 
 A detailed view on this hot/major topic.
 
@@ -229,6 +234,7 @@ A few principle microservice architecture follows are [^8]:
     - Failure isolation
         - Failure detection
         - Recovery
+- Observability
 
 ## Patterns/Architecture (https://microservices.io/patterns/microservices.html)
 - Domain-driven-design
@@ -314,6 +320,18 @@ scalability gives
 ## Latency vs Throughput
 strive for high throughput with acceptable latency
 
+In networks..
+
+Latency: Time taken by a packet to travel from its source to destination.
+
+Throughput: The number of packets processed in a specific time duration.
+
+In softwares..
+
+Latency: The time taken by a software to process a request and respond.
+
+Throughput: The number of requests processed in a specific time duration.
+
 ## Availability vs Consistency
 ### CAP Theorem
 asserts that in a distributed system (networked data-shared) can have only 2 of the 3 desireable properties at a time.[^5]
@@ -330,38 +348,54 @@ ability to tolerate network partitions
 
 # Scalability
 ## Availability
-Service is operational/available/running whenever needed.
 
-% of time service is operational. uptime.
+[^12]
 
-Or, each request to the service receives a response.
+- Service is operational/available/running whenever needed
+- % of time service is operational
+- uptime divided by total time (uptime plus downtime)
+- Or, each request to the service receives a response
 
 Techniques to improve availability:
 
-[^10]
-
-- failovers
-- asynchronous calls
-- dependency isolations
-    - set timeout
-    - use circuit breaker
-- set current limit
-- load balancing?
-
-
 ### Fail Over
 A fall back mechanism
+
+[^10]
+
+### asynchronous calls
+### dependency isolations
+#### set timeout
+#### use circuit breaker
+### set current limit
+### load balancing?
 
 ## Resiliency/Fault-tolerant/Reliability
 
 Resiliency: Service is functional with expected results for given input/environment (even in case of a fault/error) for the required time duration.[^1]
 
-Reliability: service is functional for a specific time interval without a failure; % of time the service works correctly.
+Reliability: 
+- involves availabilityi
+- if a system is reliable, you can say it is available. However, if it is available, it may not necessarily be reliable.
+- service is functional for a specific time interval without a failure
+- % of time the service works correctly
+- the ability of a distributed system to deliver its services even when one or several of its software or hardware components fail
+
+Say there are multiple available servers, but not responding.. then redirect the request to other server.
+
+It’s impossible to eliminate failure in microservice applications — the cost of that would be infinite! Instead, your focus needs to be on designing microservices that are tolerant of dependency failures and able to gracefully recover from them or mitigate the impact of those failures on their own responsibilities [^13].
+
+#### Techniques
+- step - 1 ensuring Availability
+- Applying retries, rate limits, circuit breakers, health checks, and caching to mitigate interservice communication issues
+- Applying safe communication standards across many services
+- circuit breaker
+- service mesh
 
 ### Redundancy
 
 - duplication of critical components (nodes, processes) with the aim to achieve reliability [^9]
-- The (additional/copies/redundant) resources which are NOT strictly necessary for the distributed system to work correctly but good to have to avoid
+- The (additional/copies/redundant) resources which are NOT strictly necessary for the distributed system to work correctly but good to have to avoid followings:
     - failovers
     - single point of failure 
 - Improves reliability
@@ -369,7 +403,7 @@ Reliability: service is functional for a specific time interval without a failur
 #### Techniques
 
 ## Consistency
-All nodes see the same data at the same time.
+All nodes see the same data (and behaviour? as well) at the same time.
 
 patterns to achieve consistency:
 
@@ -393,28 +427,6 @@ patterns to achieve consistency:
 - Tree Replication
 - Buddy Replication
 
-## Other Patterns
-- Stateless application
-- Loose coupling
-- Asynchrony/Concurrency
-- Lazy loading
-- Caching
-- Distributed Caching
-- HTTP Caching
-    - reverse proxy
-    - CDN
-- Parallelism
-- Partitioning
-- RDBMS Sharding
-- Routing
-- Master Slave??
-
-
-- how to scale RDBMS
-    - paritioning
-    - sharding
-    - replication
-
 # Maintainability
 ## Independent, autonomous
 ## Decentralized governance
@@ -423,28 +435,8 @@ patterns to achieve consistency:
 
 # Serviceability
 ## Failure isolation
-
-
-There are various techniques/methods/patterns to achieve so:
-
-## Load Balancing
-- scalability
-- availability
-
-## Stateless application
-- scalability
-- consistency
-
-## Loose coupling
-## Asynchrony
-## Lazy loading
-## Caching
-## Parallelism
-## Partitioning / Sharding
-## Routing
-## Master Slave??
-
-
+### Failure detection
+### Recovery
 
 # Observability
 ## Log aggregation
@@ -454,6 +446,73 @@ There are various techniques/methods/patterns to achieve so:
 ## Exception tracking
 ## Health check API
 ## Log deployments and changes
+
+# Unclassified Scalability Patterns/Techniques
+There are various techniques/methods/patterns to achieve so:
+
+## Load Balancing / Horizonal Scaling
+- scalability
+    - availability
+
+## Routing
+- performance (or may be just a business use case)
+
+## Clustering
+
+database cluster?
+- scalability
+    - availability
+    - reliability
+
+## Stateless application
+- scalability
+    - consistency
+
+## Loose coupling
+- maintainability
+- serviceability
+
+## Asynchrony/Concurrency
+- performance
+- scalability
+    - availability
+
+## Parallelism
+- performance
+
+## Lazy loading
+- performance
+
+## Caching
+- performance
+### Distributed Caching
+### HTTP Caching
+#### Reverse proxy
+#### CDN
+
+## Master/Slave
+- scalability
+    - reliability
+
+whether its database or some service node.. slave could take over in case of master failure
+
+## Partitioning / Sharding
+- performance
+- scalability
+    - availability
+
+## Database Scalability Pattern/Techniques
+### NoSQL
+### RDBMS
+#### paritioning
+#### sharding
+#### replication
+
+# Confusing terms
+- availability vs reliability
+- redundancy vs replication
+- partitioning vs sharding
+- scale up vs scale out
 
 
 # Pratice Problems
@@ -617,3 +676,6 @@ FIXME: footnote link
 [^8]: https://dzone.com/articles/design-patterns-for-microservices
 [^9]: https://stackoverflow.com/questions/60534656/replication-vs-redundancy
 [^10]: https://www.alibabacloud.com/forum/read-448
+[^11]: https://medium.com/whiteblock/high-availability-in-distributed-systems-2d3325e4ee33
+[^12]: https://towardsdatascience.com/availability-in-distributed-systems-adb43df78b9a
+[^13]: https://livebook.manning.com/book/microservices-in-action/chapter-6/9
