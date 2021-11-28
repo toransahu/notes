@@ -370,6 +370,11 @@ A fall back mechanism
 ### set current limit
 ### load balancing?
 
+### Nines in availability
+90%, 99%, 99.9%, 99.99%, 99.999%
+
+Try calculate how much 99% is of 1 year (365 days).[^12]
+
 ## Resiliency/Fault-tolerant/Reliability
 
 Resiliency: Service is functional with expected results for given input/environment (even in case of a fault/error) for the required time duration.[^1]
@@ -390,6 +395,7 @@ It’s impossible to eliminate failure in microservice applications — the cost
 - Applying retries, rate limits, circuit breakers, health checks, and caching to mitigate interservice communication issues
 - Applying safe communication standards across many services
 - circuit breaker
+- correlation ID (for better debugability)
 - service mesh
 
 ### Redundancy
@@ -459,7 +465,7 @@ There are various techniques/methods/patterns to achieve so:
 
 ## Clustering
 
-database cluster?
+database cluster? nodes/servers cluster?
 - scalability
     - availability
     - reliability
@@ -512,6 +518,14 @@ whether its database or some service node.. slave could take over in case of mas
 - availability vs reliability
 - redundancy vs replication
 - partitioning vs sharding
+    - partitioning
+        - a generic term; divide data 
+        - types
+            - horizontal partitioning
+                - aka __sharding__
+                - is replicating [copying] the schema and then __dividing the data__ based on some key (called as shard key) [^14]
+            - vertical partitioning
+                - is __dividing up the schema__ it self
 - scale up vs scale out
 
 
@@ -679,3 +693,4 @@ FIXME: footnote link
 [^11]: https://medium.com/whiteblock/high-availability-in-distributed-systems-2d3325e4ee33
 [^12]: https://towardsdatascience.com/availability-in-distributed-systems-adb43df78b9a
 [^13]: https://livebook.manning.com/book/microservices-in-action/chapter-6/9
+[^14]: https://www.quora.com/Whats-the-difference-between-sharding-DB-tables-and-partitioning-them
