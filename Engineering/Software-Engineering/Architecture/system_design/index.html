@@ -1237,6 +1237,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nines-in-availability" class="md-nav__link">
+    Nines in availability
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2840,6 +2847,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nines-in-availability" class="md-nav__link">
+    Nines in availability
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3355,6 +3369,7 @@
 </li>
 <li><a href="#set-current-limit">set current limit</a></li>
 <li><a href="#load-balancing">load balancing?</a></li>
+<li><a href="#nines-in-availability">Nines in availability</a></li>
 </ul>
 </li>
 <li><a href="#resiliencyfault-tolerantreliability">Resiliency/Fault-tolerant/Reliability</a><ul>
@@ -3896,6 +3911,9 @@
 <h5 id="use-circuit-breaker">use circuit breaker<a class="headerlink" href="#use-circuit-breaker" title="Permanent link">#</a></h5>
 <h4 id="set-current-limit">set current limit<a class="headerlink" href="#set-current-limit" title="Permanent link">#</a></h4>
 <h4 id="load-balancing">load balancing?<a class="headerlink" href="#load-balancing" title="Permanent link">#</a></h4>
+<h4 id="nines-in-availability">Nines in availability<a class="headerlink" href="#nines-in-availability" title="Permanent link">#</a></h4>
+<p>90%, 99%, 99.9%, 99.99%, 99.999%</p>
+<p>Try calculate how much 99% is of 1 year (365 days).<a href="https://towardsdatascience.com/availability-in-distributed-systems-adb43df78b9a">^12</a></p>
 <h3 id="resiliencyfault-tolerantreliability">Resiliency/Fault-tolerant/Reliability<a class="headerlink" href="#resiliencyfault-tolerantreliability" title="Permanent link">#</a></h3>
 <p>Resiliency: Service is functional with expected results for given input/environment (even in case of a fault/error) for the required time duration.<a href="https://www.microsoft.com/security/blog/2014/03/24/reliability-series-1-reliability-vs-resilience/">^1</a></p>
 <p>Reliability: 
@@ -3912,6 +3930,7 @@
 <li>Applying retries, rate limits, circuit breakers, health checks, and caching to mitigate interservice communication issues</li>
 <li>Applying safe communication standards across many services</li>
 <li>circuit breaker</li>
+<li>correlation ID (for better debugability)</li>
 <li>service mesh</li>
 </ul>
 <h4 id="redundancy">Redundancy<a class="headerlink" href="#redundancy" title="Permanent link">#</a></h4>
@@ -3990,7 +4009,7 @@
 <li>performance (or may be just a business use case)</li>
 </ul>
 <h3 id="clustering">Clustering<a class="headerlink" href="#clustering" title="Permanent link">#</a></h3>
-<p>database cluster?
+<p>database cluster? nodes/servers cluster?
 - scalability
     - availability
     - reliability</p>
@@ -4056,7 +4075,25 @@
 <ul>
 <li>availability vs reliability</li>
 <li>redundancy vs replication</li>
-<li>partitioning vs sharding</li>
+<li>partitioning vs sharding<ul>
+<li>partitioning<ul>
+<li>a generic term; divide data </li>
+<li>types<ul>
+<li>horizontal partitioning<ul>
+<li>aka <strong>sharding</strong></li>
+<li>is replicating [copying] the schema and then <strong>dividing the data</strong> based on some key (called as shard key) <a href="https://www.quora.com/Whats-the-difference-between-sharding-DB-tables-and-partitioning-them">^14</a></li>
+</ul>
+</li>
+<li>vertical partitioning<ul>
+<li>is <strong>dividing up the schema</strong> it self</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>scale up vs scale out</li>
 </ul>
 <h2 id="pratice-problems">Pratice Problems<a class="headerlink" href="#pratice-problems" title="Permanent link">#</a></h2>
