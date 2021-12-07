@@ -552,6 +552,8 @@ whether its database or some service node.. slave could take over in case of mas
 - [How do you design a chat application like WhatsApp or Facebook Messenger?](https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpreparing-for-system-design-interviews%2F)
 - [How to design a global video streaming service like YouTube or NetFlix?](https://www.java67.com/2019/09/top-5-courses-to-learn-system-design.html)
 - [How do you design global file sharing and storage apps like Google Drive or Dropbox?](https://www.youtube.com/watch?v=U0xTu6E2CT8&feature=emb_imp_woyt)
+- Design a translation service.
+- Design Airport kiosk for these features check in , seat selection, boarding pass print
 - how would you evaluate a software?
     - must fulfill basic requirements
     - cost
