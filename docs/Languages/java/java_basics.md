@@ -21,3 +21,9 @@
 - What is the difference between String Builder and String Buffer?
 - What is the difference between `==` and `.equals()`?
 - The internal working of Hash-map in java?
+
+# POJO
+
+# Bean
+Ref: https://stackoverflow.com/questions/3295496/what-is-a-javabean-exactly
+Spec: https://www.oracle.com/java/technologies/javase/javabeans-spec.html
