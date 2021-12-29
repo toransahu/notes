@@ -66,6 +66,13 @@
 - workaholic
 - worrier
 
+# Emotional Intelligence
+- https://getpocket.com/explore/item/7-powerful-habits-of-people-with-high-emotional-intelligence?utm_source=pocket-newtab-intl-en
+    - talk/communicate to make them feel good
+    - know strength & weakness, and seek help
+    - don't assume
+    -
+
 # Accusing and Blaming
 
 # Acceptance & Arguement

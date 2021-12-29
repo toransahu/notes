@@ -45,6 +45,36 @@ AWS CodeDeploy is a deployment service that automates application deployments to
 # Containers & VM
 
 ## Docker
+
+Image, Repo, Tag naming convention
+
+```bash
+# BUILD an image & tag it - from Dockerfile in "." (current dir)
+# semantics:
+# docker build -t <tag>
+# docker build -t <namespace>/<image|repo name>:<tag> .
+$ docker build -t <target name>:[<tag>] .
+# where target name is called image or repo name
+
+# TAG an image
+# semantics:
+# docker tag <source>[:<tag>] <target>[:<tag>]
+# docker tag <img ID|existing tag> <reposotiry>:<tag>
+# docker tag <image> <namespace>/<repo name>:<tag>
+$ docker tag <source>[:<tag>] <target>[:<tag>]
+```
+
+- tag: is a pointer to an image
+	- are alias (e.g. my_image:latest, my_image:v1) to the image IDs (f1477ec11d12)
+	- think of how diff. git tags can refer to a commit SHA
+- image: is identified by an ID (hash/msg digest) of configs/layers (check if for same 2 config/Dockerfile if the ID is same)
+	- each image can have 0 or more tags 
+- repo: is an remote location under a namespace (i.e. account/username) where image(s?) are stored
+- `:latest` is not always LATEST tag
+	- https://blog.container-solutions.com/docker-latest-confusion
+
+- https://stackoverflow.com/questions/44500367/when-would-a-docker-image-and-its-repository-have-different-names
+
 ## Vagrant
 
 ---
