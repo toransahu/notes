@@ -112,7 +112,13 @@
 - AP, Router, Modem, Switch, Bridge, Hub
 - Node, Hop
 - Gateway, Catenet
-- LAN, WLAN, WxLAN, WAN, VLAN, VxLAN
+- LAN
+- WLAN
+- WxLAN
+- WAN
+- VLAN
+    - 
+- VxLAN
 - MAC
     - Media access control
 - IP
