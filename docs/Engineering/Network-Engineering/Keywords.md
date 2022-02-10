@@ -117,11 +117,11 @@
 - WxLAN
 - WAN
 - VLAN
-    - 
 - VxLAN
 - MAC
     - Media access control
 - IP
+- IPSec protocol suite
 - Port
 - SSID
 - BSSID
@@ -205,10 +205,15 @@
 - RRM: Radio resource management
 - SLE: Service level experience
 - BGP: Border Gateway Protocol 
+- SSH
+- VPN
+- Tunnel
+- Split Tunnel
 - PPTP:  Point-to-Point Tunneling Protocol 
     - used by an Internet service provider (ISP) to enable the operation of a virtual private network (VPN) over the Internet
 - L2TP: Layer Two Tunneling Protocol 
     - an extension of the PPTP
+- SSTP: Secure Socket Tunneling Protocol 
 - Layer Two:
     - Devices e.g. Network interface cards, hubs, bridges, and switches
     - OSI layers: layer 2
