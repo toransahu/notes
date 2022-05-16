@@ -2,44 +2,16 @@
 
 [TOC]
 
-# Cloud Platforms
-
-## AWS
-
-### AWS Cost Optimization
-- https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf
-- https://www.cloudhealthtech.com/blog/10-aws-cost-optimization-best-practices
-
-### IAM - Identity and Access Management
-
-### Computing
-#### AMI - Amazon Machine Image
-#### Instance
-
-### Storage
-#### Bucket
-
-### Database
-
-### CI/CD
-
-#### AWS Elastic Beanstalk
-- Source: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html
-
-#### AWS CodeDeploy
-AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, or serverless Lambda functions.
-
-- Source: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-
 ---
-# CI/CD Tools
+# CI/CD
 
-## Kubernet
+## CircleCI
+## Travis CI
+## Github Actions
 ## Ansible
 ## Jenkins
 ## Chef
 ## Puppet
-
 
 ---
 # Containers & VM
@@ -80,11 +52,17 @@ $ docker tag <source>[:<tag>] <target>[:<tag>]
 ---
 # Servers
 
-## `nginx`
-## `gunicorn`
-## Apache
-## `ngrok`
+## nginx
+## gunicorn
+## ngrok
+## Apache Tomcat
 ## CloudFlare
+
+---
+# Proxy Server
+
+---
+# Reverse Proxy Server
 
 ---
 # Load Balancer
@@ -96,20 +74,53 @@ $ docker tag <source>[:<tag>] <target>[:<tag>]
 - https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/daperture-load-balancer.html
 
 ---
-# Data Center/Computer Clusters Manager  /  container-orchestration system
+# Cluster Management & Orchestration
 
-## Tools
+(Data center, cluster manager, container-orchestration system)
 
-### Kubernetes
-
-#### Minikube (Run Local)
+## Minikube (Run Local)
 - https://github.com/kubernetes/minikube
+- https://minikube.sigs.k8s.io/docs/start/
 
-#### Load Balancer
+### Prerequisites
+
+### Installation
+
+```bash
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
+
+### Start Cluster
+
+```bash
+$ minikube start
+```
+
+### Explore Cluster
+
+Get all the pods
+
+```bash
+$ minikube kubectl -- get pods -A
+
+# or
+
+$ alias kubectl='minikube kubectl --'
+$ kubectl get pods -A
+```
+
+## Kubernetes (k8s)
+
+### Start Cluster
+
+tbd
+
+#### k8s Load Balancer
 - https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
 - https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
 
-#### Long Lived Conn
+#### k8s Long Lived Conn
 - Issue
 	- https://learnk8s.io/kubernetes-long-lived-connections
 	- https://tech.xing.com/a-reason-for-unexplained-connection-timeouts-on-kubernetes-docker-abd041cf7e02
@@ -171,4 +182,3 @@ $ docker tag <source>[:<tag>] <target>[:<tag>]
 ---
 # Ref
 1. https://www.znetlive.com/blog/compare-top-devops-tools-docker-kubernetes-puppet-chef-ansible/
-```
