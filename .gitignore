@@ -144,3 +144,6 @@ cython_debug/
 
 # PyCharm
 .idea/
+
+# MacOs
+.DS_Store
