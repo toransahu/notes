@@ -110,7 +110,107 @@ $ alias kubectl='minikube kubectl --'
 $ kubectl get pods -A
 ```
 
+### Deploy Applications
+
+```bash
+# create deployment
+$ minikube kubectl -- create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
+# expose the port 8080 of the container
+$ minikube kubectl -- expose deployment hello-minikube --type=NodePort --port=8080
+# show hello-minikube service
+$ minikube kubectl -- get services hello-minikube
+# open the service in browser
+# via option a)
+$ minikube service hello-minikube
+# or, via option b)
+$ minikube kubectl -- port-forward service/hello-minikube 7080:8080  # open localhost:7080
+```
+
+#### `LoadBalancer` deployment
+
+- the standard way to expose application to internet
+- each service gets its own IP
+
+```bash
+# create a load-balanced deployment
+$ minikube kubectl -- create deployment balanced --image=k8s.gcr.io/echoserver:1.4
+# expose the server over port 8080
+$ minikube kubectl -- expose deployment balanced --type=LoadBalancer --port=8080
+# now create a tunnel in diff. window
+$ minikube tunnel
+# now show info of the service & open the <EXTERNAL-IP>:8080 to access
+$ minikube kubectl -- get services balanced
+```
+
+### Manager cluster
+
+```bash
+# Upgrade your cluster:
+$ minikube start --kubernetes-version=latest
+
+# Pause Kubernetes without impacting deployed applications:
+$ minikube pause
+
+# Unpause a paused instance:
+$ minikube unpause
+
+# Halt the cluster:
+$ minikube stop
+
+# Increase the default memory limit (requires a restart):
+$ minikube config set memory 16384
+
+# Restart
+$ minikube stop && minikube start
+
+# Browse the catalog of easily installed Kubernetes services:
+$ minikube addons list
+
+# Enable an addon
+$ minikube addons enable <name>
+
+# Enable addon at startup
+$ minikube start --addons <name1> --addons <name2>
+
+# Open addon server in browser (iff)
+$ minikube addons open <name>
+
+# Disable an addon
+$ minikube addons disable <name>
+
+# Start a second local cluster
+$ minikube start -p cluster2
+
+# Create a second cluster running an older Kubernetes release:
+$ minikube start -p aged --kubernetes-version=v1.16.1
+
+# Delete the local cluster
+$ minikube delete
+
+# Delete all of the minikube clusters:
+$ minikube delete --all
+```
+
+### Access application
+
+More ways: https://minikube.sigs.k8s.io/docs/handbook/accessing/
+
+
+### More
+
+https://minikube.sigs.k8s.io/docs/handbook/
+
 ## Kubernetes (k8s)
+
+### Pod
+- A Kubernetes Pod is a group of one or more Containers, tied together for the purposes of administration and networking.
+
+### Deployment
+- A Kubernetes Deployment checks on the health of your Pod and restarts the Pod's Container if it terminates
+- Deployments are the recommended way to manage the creation and scaling of Pods
+
+### Service
+By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster. To make the hello-node Container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service.
 
 ### Start Cluster
 
