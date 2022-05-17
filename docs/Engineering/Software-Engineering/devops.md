@@ -212,9 +212,41 @@ https://minikube.sigs.k8s.io/docs/handbook/
 ### Service
 By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster. To make the hello-node Container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service.
 
+An abstract way to expose an application running on a set of Pods as a network service.
+
+With Kubernetes you don't need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.
+
+### ReplicaSet
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+### Secrets
+
+A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a Pod specification or in a container image. Using a Secret means that you don't need to include confidential data in your application code.
+
+### ConfigMaps
+
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+A ConfigMap allows you to decouple environment-specific configuration from your container images, so that your applications are easily portable.
+
+### Ingress
+
+
+### Namespace
+
+
+### Job
+
 ### Start Cluster
 
 tbd
+
+### Addons
+
+#### SealedSecret
+
+https://github.com/bitnami-labs/sealed-secrets
 
 #### k8s Load Balancer
 - https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
