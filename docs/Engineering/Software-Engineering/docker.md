@@ -1,6 +1,13 @@
 # Docker
 
 # Dockerfile
+## `RUN`
+
+## `CMD`
+
+## `ENTRYPOINT`
+
+## `COPY`
 
 # Pull
 

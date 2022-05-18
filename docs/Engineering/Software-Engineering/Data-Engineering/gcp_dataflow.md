@@ -125,3 +125,36 @@ bucket
 ## How
 
 ## Tech Concept
+
+# FAQ
+
+## Deep
+- https://medium.com/@raigonjolly/dataflow-for-google-cloud-professional-data-exam-9efd59377068
+
+## Parallelism
+- --num_workers=1-1000|3
+- --autoscaling_algorithm=NONE|THROUGHPUT_BASED
+- max_num_workers
+
+## Autoscaling
+- https://thegcpgurus.com/cloud-dataflow-how-to-implement-auto-scaling-data-pipelines/
+- https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#batch-autoscaling
+
+## Autoscaling not working
+- https://stackoverflow.com/questions/53885306/why-do-i-need-to-shuffle-my-pcollection-for-it-to-autoscale-on-cloud-dataflow
+
+### Reshuffling
+- https://beam.apache.org/documentation/transforms/python/other/reshuffle/
+- https://stackoverflow.com/questions/54121642/apache-beam-dataflow-reshuffle
+- https://www.programcreek.com/python/example/122924/apache_beam.Reshuffle
+- https://beam.apache.org/releases/pydoc/current/apache_beam.transforms.util.html?highlight=reshuffle#apache_beam.transforms.util.Reshuffle
+- https://stackoverflow.com/questions/53885306/why-do-i-need-to-shuffle-my-pcollection-for-it-to-autoscale-on-cloud-dataflow
+- https://stackoverflow.com/questions/41212272/google-cloud-dataflow-consume-external-source
+- https://stackoverflow.com/questions/46116443/dataflow-streaming-job-not-scaleing-past-1-worker
+- https://stackoverflow.com/questions/46807450/scaling-of-pardo-transforms-having-blocking-network-calls
+- https://stackoverflow.com/questions/41268877/dataflow-is-it-possible-to-run-parts-of-the-pipeline-synchronously-and-other-pa
+
+
+## Optimization
+- https://www.carted.com/blog/improving-dataflow-pipelines-for-text-data-processing/
+- https://cloud.google.com/dataflow/docs/concepts/execution-details
