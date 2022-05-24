@@ -143,3 +143,18 @@
 			- is a distributed messaging platform based on the publish/subscribe model that was developed by LinkedIn (while monolithic--> microservice to communicate stream data between services)
 		- Redis PubSub
 		- Google Cloud Pub/Sub
+
+# File Formats
+
+## CSV
+
+## parquet 
+
+- https://parquet.apache.org/docs/
+- https://github.com/apache/parquet-mr
+- https://databricks.com/glossary/what-is-parquet
+- https://db-blog.web.cern.ch/blog/zbigniew-baranowski/2017-01-performance-comparison-different-file-formats-and-storage-engines
+
+## OCR
+
+## avro

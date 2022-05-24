@@ -124,14 +124,26 @@ bucket
 
 ## How
 
-## Tech Concept
+# Tech Concept
+
+https://cloud.google.com/dataflow/docs/concepts
+
+# Observability
+## Execution Detail
+
+https://cloud.google.com/dataflow/docs/concepts/execution-details
 
 # FAQ
+https://cloud.google.com/dataflow/docs/resources/faq
 
-## Deep
+
+# Deep
+- https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41378.pdf
 - https://medium.com/@raigonjolly/dataflow-for-google-cloud-professional-data-exam-9efd59377068
 
 ## Parallelism
+
+- https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#parallelization-and-distribution
 - --num_workers=1-1000|3
 - --autoscaling_algorithm=NONE|THROUGHPUT_BASED
 - max_num_workers
@@ -139,6 +151,7 @@ bucket
 ## Autoscaling
 - https://thegcpgurus.com/cloud-dataflow-how-to-implement-auto-scaling-data-pipelines/
 - https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#batch-autoscaling
+- https://www.youtube.com/watch?v=a7CymWiX3oM&t=399s
 
 ## Autoscaling not working
 - https://stackoverflow.com/questions/53885306/why-do-i-need-to-shuffle-my-pcollection-for-it-to-autoscale-on-cloud-dataflow
