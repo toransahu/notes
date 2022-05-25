@@ -267,6 +267,13 @@ https://github.com/bitnami-labs/sealed-secrets
 ### Apache Mesos
 
 ---
+# Infrastructure as Code
+
+## Terraform
+
+https://www.terraform.io/
+
+---
 # Queues
 
 ## RabbitMQ

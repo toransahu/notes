@@ -1,6 +1,7 @@
 # System Design
 
 <h3>Table of Contents</h3>
+
 [TOC]
 
 # Application Architecture Types
@@ -528,6 +529,8 @@ whether its database or some service node.. slave could take over in case of mas
                 - is __dividing up the schema__ it self
 - scale up vs scale out
 
+# Scale / Capacity Estimate
+tbd
 
 # Pratice Problems
 - [Designing a URL Shortening service like TinyURL](https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR?affiliate_id=5073518643380224)
