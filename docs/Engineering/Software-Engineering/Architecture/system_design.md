@@ -541,6 +541,7 @@ whether its database or some service node.. slave could take over in case of mas
 - Design a TODO list cloud application, multiple client support, millions of users, synchronize updates across multiple clients.
 - Design an Authorization Service.
 - [How would you design a Parking Lot system?](https://www.youtube.com/watch?v=eV5Xh6jNfmU&feature=emb_imp_woyt)
+    - [https://www.youtube.com/watch?v=NtMvNh0WFVM](https://www.youtube.com/watch?v=NtMvNh0WFVM)
 - How do you design a traffic control system?
 - How do you design a website like Pastebin?
 - How do you design an API Rate Limiter?

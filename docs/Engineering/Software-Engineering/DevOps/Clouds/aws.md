@@ -2,7 +2,12 @@
 
 [TOC]
 
-# AWS Cost Optimization
+# AWS Cost 
+
+## Estimate
+- https://calculator.aws/#/createCalculator
+
+## Optimization
 - https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf
 - https://www.cloudhealthtech.com/blog/10-aws-cost-optimization-best-practices
 
