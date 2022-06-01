@@ -135,7 +135,12 @@ https://cloud.google.com/dataflow/docs/concepts
 
 # CI/CD / Production Grade / Best Practice
 
-https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying
+- https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying
+- https://medium.com/@zhongchen/dataflow-ci-cd-with-cloudbuild-1ad503c1c81
+- https://medium.com/everything-full-stack/dataflow-ci-cd-with-github-actions-65765f09713f
+- https://medium.com/@emailchhavisharma/quick-steps-to-build-deploy-dataflow-flex-templates-python-java-728fc366f0d1
+- https://github.com/kwadie/dataflow-templates-cicd
+
 
 # Observability
 ## Execution Detail
