@@ -1,4 +1,4 @@
-<h1>Apache Beam</h1>
+# Apache Beam
 
 <h3>Table of Contents</h3>
 
