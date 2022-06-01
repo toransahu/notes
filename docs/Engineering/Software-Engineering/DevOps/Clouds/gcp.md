@@ -7,9 +7,9 @@
 ## Structured Logging
 https://cloud.google.com/logging/docs/structured-logging
 
-# [BigQuery](../../Data-Engineering/gcp_bigquery.md)
+# [BigQuery](/Engineering/Software-Engineering/Database/gcp_bigquery/)
 
-# [Dataflow](../../Data-Engineering/gcp_dataflow.md)
+# [Dataflow](/Engineering/Software-Engineering/Data-Engineering/gcp_dataflow/)
 
 # Storage
 
