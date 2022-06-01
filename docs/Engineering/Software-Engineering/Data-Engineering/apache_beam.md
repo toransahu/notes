@@ -86,6 +86,40 @@ Figure 1. Flow diagram of a typical data processing pipeline/topology
 
 # Setup
 
+# Prerequisites
+
+# Create
+
+# Run
+
+## Run Locally
+
+## Run on Dataflow Runner
+
+Using service account:
+
+```bash
+$ python -m exploratory.wordcount \
+    --region us-central1 \
+    --input gs://dataflow-samples/shakespeare/kinglear.txt \
+    --output gs://apache-beam-eg/results/outputs \
+    --runner DataflowRunner \
+    --project apache-beam-eg \
+    --temp_location gs://apache-beam-eg/tmp/ \
+    --service_account_email apache-beam-svc-ac@apache-beam-eg.iam.gserviceaccount.com
+
+# mention subnetwork other that `default`
+$ python -m exploratory.wordcount \
+    --region us-central1 \
+    --input gs://dataflow-samples/shakespeare/kinglear.txt \
+    --output ./results/outputs \
+    --runner DataflowRunner \
+    --project $ARISTA_GCP_PROJECT_LAB_WIFI_DT1 \
+    --temp_location gs://$ARISTA_GCP_PROJECT_LAB_WIFI_DT1-dataflow-test/tmp/ \
+    --subnetwork regions/us-central1/subnetworks/lab-wifi-dt1-usc1-temp
+```
+
+
 ## Python SKD
 
 References:
