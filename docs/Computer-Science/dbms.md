@@ -193,6 +193,9 @@ Table: 2-NF
 
 # SQL
 
+Structured Query Language
+
+(Please stop saying SEQUEL, i.e. Structured English QUEry Language, that was a trademark conflict)
 
 ### Stored Procedure & Function
 

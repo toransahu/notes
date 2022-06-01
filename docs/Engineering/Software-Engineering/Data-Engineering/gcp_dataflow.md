@@ -124,9 +124,18 @@ bucket
 
 ## How
 
+- Note: For readability, we recommend that you set the entry point in your Dockerfile. When ENTRYPOINT is not set, Dataflow sets the entry point to the template launcher binary based on SDK language.
+    - https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates
+- allowed parameters/flags
+    - https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment
+
 # Tech Concept
 
 https://cloud.google.com/dataflow/docs/concepts
+
+# CI/CD / Production Grade / Best Practice
+
+https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying
 
 # Observability
 ## Execution Detail
