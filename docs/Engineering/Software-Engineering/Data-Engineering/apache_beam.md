@@ -106,17 +106,8 @@ $ python -m exploratory.wordcount \
     --runner DataflowRunner \
     --project apache-beam-eg \
     --temp_location gs://apache-beam-eg/tmp/ \
-    --service_account_email apache-beam-svc-ac@apache-beam-eg.iam.gserviceaccount.com
-
-# mention subnetwork other that `default`
-$ python -m exploratory.wordcount \
-    --region us-central1 \
-    --input gs://dataflow-samples/shakespeare/kinglear.txt \
-    --output ./results/outputs \
-    --runner DataflowRunner \
-    --project $ARISTA_GCP_PROJECT_LAB_WIFI_DT1 \
-    --temp_location gs://$ARISTA_GCP_PROJECT_LAB_WIFI_DT1-dataflow-test/tmp/ \
-    --subnetwork regions/us-central1/subnetworks/lab-wifi-dt1-usc1-temp
+    --service_account_email apache-beam-svc-ac@apache-beam-eg.iam.gserviceaccount.com \
+    --subnetwork regions/us-central1/subnetworks/apache-beam-eg-usc1-temp # mention subnetwork other that `default`
 ```
 
 

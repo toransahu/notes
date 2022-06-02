@@ -18,10 +18,44 @@ Provider managed, serverless, multi-cloud data warehouse.
     - The Cloud console can display up to 50,000 tables for each dataset
 - Number of authorized resources in a dataset's access control list: 2500 resources
 
+## Errors
+
+```log
+    raise exceptions.from_http_response(exc.response)
+google.api_core.exceptions.NotFound: 404 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/poc/jobs?uploadType=multipart: Not found: Dataset poc:ds_v2 
+```
+
+- Need to create Dataset before creating tables
 
 
 # Table
 - https://cloud.google.com/bigquery/quotas#table_limits
+
+## Table Schema
+
+### Modify
+- https://cloud.google.com/bigquery/docs/managing-table-schemas
+- smooth modification:
+    - Adding columns to a schema definition
+        - https://cloud.google.com/bigquery/docs/managing-table-schemas#adding_columns_to_a_tables_schema_definition
+    - Deleting, or dropping, a column from a schema definition
+    - Relaxing a column's mode from REQUIRED to NULLABLE
+- manual modification:
+    - https://cloud.google.com/bigquery/docs/manually-changing-schemas
+    - Changing a column's name
+    - Changing a column's data type
+    - Changing a column's mode (aside from relaxing REQUIRED columns to NULLABLE)
+
+### Errors
+
+```log
+    raise exceptions.from_http_response(exc.response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/poc/jobs?uploadType=multipart: Provided Schema does not match Table poc:ds.table1. Cannot add fields (field: ColA)
+```
+
+- If you add new columns to an existing table schema, the columns must be NULLABLE or REPEATED. You cannot add a REQUIRED column to an existing table schema. 
+- REQUIRED columns can be added only when you create a table while loading data, or when you create an empty table with a schema definition.
+
 
 ## Row-level Security
 

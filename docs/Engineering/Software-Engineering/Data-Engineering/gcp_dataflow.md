@@ -109,7 +109,7 @@ bucket
     - while running flex template, don't set runner explicitely to Dataflow otherwise another additional job gets triggered
     - by default is uses Dataflow runner only
 - observations
-    - arista user a/c started experiencing some issue, started using my personal account
+    -  work user a/c started experiencing some issue, started using my personal account
     - wheel containing cloudvision-python as git dep `pkg @ url` works fine - except the kedro logging.yml part - on my personal account (see below cmd)
     - multiple `--extra_package` is allowed - incase need to pass cloudvision.whl
 
