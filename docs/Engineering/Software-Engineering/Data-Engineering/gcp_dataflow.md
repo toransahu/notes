@@ -129,6 +129,25 @@ bucket
 - allowed parameters/flags
     - https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment
 
+## Run
+
+### Allowed ENV variables
+- https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment
+
+## Build
+### Allowed options/args/params
+- https://cloud.google.com/sdk/gcloud/reference/beta/dataflow/flex-template/build
+
+- `--env`
+    - https://cloud.google.com/sdk/gcloud/reference/beta/dataflow/flex-template/build#--env
+    - Allowed ENV vars
+        - https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#setting_required_dockerfile_environment_variables
+
+### Custom Worker Image
+
+- Use mutistage Docker build
+    - https://cloud.google.com/dataflow/docs/guides/using-custom-containers?hl=en#use_a_custom_base_image_or_multi-stage_builds
+
 # Tech Concept
 
 https://cloud.google.com/dataflow/docs/concepts
@@ -140,6 +159,8 @@ https://cloud.google.com/dataflow/docs/concepts
 - https://medium.com/everything-full-stack/dataflow-ci-cd-with-github-actions-65765f09713f
 - https://medium.com/@emailchhavisharma/quick-steps-to-build-deploy-dataflow-flex-templates-python-java-728fc366f0d1
 - https://github.com/kwadie/dataflow-templates-cicd
+- https://dataintegration.info/why-you-should-be-using-flex-templates-for-your-dataflow-deployments
+    - https://github.com/slilichenko/dataflow-jdbc-replication
 
 
 # Observability

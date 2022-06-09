@@ -83,6 +83,33 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 ### Quota & Limit
 ### Cost
 
+## Partitioning vs Clustering
+- https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_clustering
+- data is first partitioned and then clustered
+- partitioning
+    - pros
+        - to set partition expiration time
+        - advance query cost estimation/pruning 
+        - to define ranges (time, id etc) over partition
+    - cons
+        - 
+- clustering
+    - pros
+        - more granualarity than partitioning alone
+            - same column for both - partitioning as well as clustering
+        - to speed up queries having filters & aggregation clause
+        - when cardinality of values of a column/set of column is large
+        - suitable when partitioning results in small amount of data per partition
+        - suitable when partitioning results in large number of paritions (beyond limit & quota)
+        - suitable when mutation operations modifies most of the partitions in the table frequestly (e.g. every minutes/hours)
+    - cons
+        - query cost estimation/pruning is actually NOT possible
+            - only after query finishes, the cost comes up
+        - NO significant difference in query performance between a clustered and unclustered table if the table or partition is under 1 GB
+
+## Partitioning vs Sharding
+- https://cloud.google.com/bigquery/docs/partitioned-tables#dt_partition_shard
+
 # BigQuery Data Storage
 
 - https://cloud.google.com/bigquery/pricing#storage

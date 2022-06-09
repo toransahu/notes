@@ -82,6 +82,16 @@ Figure 1. Flow diagram of a typical data processing pipeline/topology
 
 </center>
 
+## Pipeline
+
+## PTransform
+
+### WebSocket based PTransform
+- https://rmannibucau.metawerx.net/apache-beam-websocket-output.html
+
+## ParDo
+
+## DoFn
 
 
 # Setup
@@ -142,6 +152,12 @@ References:
 
 - visualization
     - https://stackoverflow.com/questions/54094081/how-to-render-a-pipeline-graph-in-beam
+
+# FAQ
+
+## Why does custom Python object cannot be used with ParDo Fn?
+
+- https://stackoverflow.com/questions/55822881/why-does-custom-python-object-cannot-be-used-with-pardo-fn
 
 # TODO
 
