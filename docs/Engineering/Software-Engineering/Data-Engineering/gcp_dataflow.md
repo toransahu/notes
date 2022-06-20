@@ -43,6 +43,159 @@ Templates provide you with additional benefits compared to non-templated Dataflo
 
 ## How
 
+## Create
+
+Covert the Apache Beam pipeline into a Dataflow classic template.
+
+Ref: https://cloud.google.com/dataflow/docs/guides/templates/creating-templates
+
+## Stage
+
+Stage the classic template in cloud storage using the following command:
+
+```bash
+$ python -m exploratory.wordcount_with_option_and_value_provider_v2 \
+    --region us-central1 \                                                                      # cloud region
+    --runner DataflowRunner \                                                                   # beam runner engine
+    --job_name wordcount-custom-job-$(date +%Y%m%d-%H%M%S) \                                    # dataflow job name
+    --project $GCP_PROJECT \                                                # cloud project
+    --temp_location gs://$GCP_PROJECT-dataflow-poc/tmp/ \                   # gcs path
+    --staging_location gs://$GCP_PROJECT-dataflow-poc/staging \             # gcs path for staging files
+    --template_location gs://$GCP_PROJECT-dataflow-poc/templates/wordcount  # gcs path to store template file
+```
+
+## Run
+
+#### Permission to run on Production env
+tbd
+
+### Run in Web Console
+
+### Run as REST API
+Run GCP Dataflow template job using REST API sample:
+
+Ref: 
+
+- https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#running-the-bigquery-to-elasticsearch-template
+- https://cloud.google.com/dataflow/docs/guides/templates/running-templates#example-1:-creating-a-custom-template-batch-job
+
+
+```bash
+$ curl \
+--url "https://dataflow.googleapis.com/v1b3/projects/dataflow-eg/locations/us-central1/templates:launch?gcsPath=gs://dataflow-eg-dataflow-poc/templates/wordcount" \
+--request POST \
+--header "Authorization: Bearer "$(gcloud auth print-access-token) \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jobName": "wordcount-curl-job-'$(date +%Y%m%d-%H%M%S)'",
+    "environment": {
+        "bypassTempDirValidation": false,
+        "tempLocation": "gs://dataflow-eg-dataflow-poc/tmp/",
+        "ipConfiguration": "WORKER_IP_UNSPECIFIED",
+        "additionalExperiments": []
+    },
+    "parameters": {
+        "input": "gs://dataflow-samples/shakespeare/kinglear.txt",
+        "output": "gs://dataflow-eg-dataflow-poc/results/outputs-templated-curl"
+    }
+}'
+
+# sample output:
+{
+  "job": {
+    "id": "2022-02-16_01_15_13-5260506404532792394",
+    "projectId": "dataflow-eg",
+    "name": "wordcount-curl-job-20220216-144511",
+    "type": "JOB_TYPE_BATCH",
+    "currentStateTime": "1970-01-01T00:00:00Z",
+    "createTime": "2022-02-16T09:15:13.997352Z",
+    "location": "us-central1",
+    "startTime": "2022-02-16T09:15:13.997352Z"
+  }
+}
+```
+
+### Run as Python GCP Client
+
+```python
+# dataflow/run_template/main.py 
+
+from googleapiclient.discovery import build
+
+project = 'your-gcp-project'
+job = 'unique-job-name'
+template = 'gs://dataflow-templates/latest/Word_Count'
+parameters = {
+    'inputFile': 'gs://dataflow-samples/shakespeare/kinglear.txt',
+    'output': 'gs://<your-gcs-bucket>/wordcount/outputs',
+}
+
+dataflow = build('dataflow', 'v1b3')
+request = dataflow.projects().templates().launch(
+    projectId=project,
+    gcsPath=template,
+    body={
+        'jobName': job,
+        'parameters': parameters,
+    }
+)
+
+response = request.execute()
+```
+
+Ref: https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/dataflow/run_template
+
+### Run using gcloud CLI
+
+```bash
+$ gcloud dataflow jobs run dataflow-templated-wordcount-custom-gcloud-job \
+    --region us-central1 \
+    --gcs-location gs://apache-beam-eg/templates/wordcount \
+    --parameters input=gs://dataflow-samples/shakespeare/kinglear.txt,output=gs://apache-beam-eg/results/output_wordcount_gcloud
+
+# sample output:
+createTime: '2022-02-11T09:37:25.311851Z'
+currentStateTime: '1970-01-01T00:00:00Z'
+id: 2022-02-11_01_37_24-16510436790575398178
+location: us-central1
+name: dataflow-templated-wordcount-custom-gcloud-job
+projectId: apache-beam-eg
+startTime: '2022-02-11T09:37:25.311851Z'
+type: JOB_TYPE_BATCH
+```
+
+## Schedule
+
+Refer to [DevOps/GCP/Setup/gcloud CLI](/Engineering/Software-Engineering/DevOps/Clouds/gcp/).
+
+## Clean
+
+### Clean up the Classic Template resources
+
+Stop the Dataflow pipeline.
+
+```
+gcloud dataflow jobs list \
+  --filter 'NAME=<job name> AND STATE=Running' \
+  --format 'value(JOB_ID)' \
+  --region "$REGION" \
+  | xargs gcloud dataflow jobs cancel --region "$REGION"
+```
+
+Delete the template spec file from Cloud Storage.
+
+```
+gsutil rm <TEMPLATE_PATH>
+```
+
+### Clean up Google Cloud project resources
+Delete the Cloud Scheduler jobs.
+
+```
+gcloud scheduler jobs delete <scheduler job name>
+```
+
 
 ### how gcp dataflow stores things
 
@@ -118,7 +271,12 @@ bucket
 
 # Flex Template
 
+- https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#python_3
+
 ## Why
+
+### Flex Template over Classic Template
+Ref: https://cloud.google.com/dataflow/docs/concepts/dataflow-templates
 
 ## What
 
@@ -129,7 +287,15 @@ bucket
 - allowed parameters/flags
     - https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment
 
+## Create
+
+## Stage
+
 ## Run
+
+### Permission required
+- for Flex templates: https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#understanding_flex_template_permissions
+
 
 ### Allowed ENV variables
 - https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment
@@ -152,8 +318,52 @@ bucket
 
 https://cloud.google.com/dataflow/docs/concepts
 
+# Setup
+
+## GCP Account
+- https://console.cloud.google.com/freetrial
+
+## gcloud CLI
+
+Refer to [DevOps/GCP/Setup/gcloud CLI](/Engineering/Software-Engineering/DevOps/Clouds/gcp/).
+
+## `python 3.8`
+
+Use `pyenve`/`conda` to install appropriate python version.
+
+# Apache Beam Job
+
+- https://cloud.google.com/dataflow/docs/quickstarts/quickstart-python
+Follow [Apache Beam](/Engineering/Software-Engineering/Data-Engineering/apache_beam/) to write a sample Apache Beam pipeline, run them locally using Dataflow runner.
+
+# Authentication & Authorization
+
+To run the GCP dataflow template in cloud using REST.
+
+Authorization:
+
+- OAuth2/OIDC scope: https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.templates/launch
+
+Authentication:
+
+- https://cloud.google.com/docs/authentication/
+- https://cloud.google.com/docs/authentication/getting-started#auth-cloud-implicit-python
+- https://stackoverflow.com/questions/57433397/how-to-authorize-an-http-post-request-to-execute-dataflow-template-with-rest-api
+
+# Access Control with IAM
+
+For service accounts:
+
+- https://cloud.google.com/dataflow/docs/concepts/access-control#roles
+
+
+# Network Config
+- https://console.cloud.google.com/networking/networks/list?project=dataflow-eg
+
+
 # CI/CD / Production Grade / Best Practice
 
+- https://cloud.google.com/architecture/cicd-pipeline-for-data-processing
 - https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying
 - https://medium.com/@zhongchen/dataflow-ci-cd-with-cloudbuild-1ad503c1c81
 - https://medium.com/everything-full-stack/dataflow-ci-cd-with-github-actions-65765f09713f
@@ -164,6 +374,12 @@ https://cloud.google.com/dataflow/docs/concepts
 
 
 # Observability
+
+## Monitoring & Troubleshooting
+
+- https://cloud.google.com/dataflow/pipelines/dataflow-monitoring-intf
+- https://cloud.google.com/dataflow/pipelines/troubleshooting-your-pipeline
+
 ## Execution Detail
 
 https://cloud.google.com/dataflow/docs/concepts/execution-details
@@ -206,3 +422,11 @@ https://cloud.google.com/dataflow/docs/resources/faq
 ## Optimization
 - https://www.carted.com/blog/improving-dataflow-pipelines-for-text-data-processing/
 - https://cloud.google.com/dataflow/docs/concepts/execution-details
+
+# References
+- external
+    - https://medium.com/@zhongchen/schedule-your-dataflow-batch-jobs-with-cloud-scheduler-8390e0e958eb
+    	- https://github.com/zhongchen/GCP-Demo/tree/master/demos/scheduler-dataflow-demo/terraform
+    - https://medium.com/@jamesmoore255/creating-a-template-for-the-python-cloud-dataflow-sdk-2fe36cc4167f
+- google
+    - [pricing calc](https://cloud.google.com/products/calculator)

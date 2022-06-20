@@ -96,6 +96,30 @@ Create a Cloud Storage bucket:
 
 Copy the Google Cloud project ID and the Cloud Storage bucket name. You need these values later in this document.
 
+# Setup
+
+## gcloud CLI
+
+```bash
+$ gcloud auth login
+
+$ gcloud config configurations create <dataflow-config>
+Created [demo-config].
+Activated [demo-config].
+
+$ gcloud config set project <dataflow-eg>
+Updated property [core/project].
+
+$ gcloud config set account <toran@email.com>
+Updated property [core/account].
+
+$ gcloud config set compute/region <us-central1>
+Updated property [compute/region].
+
+$ gcloud config set compute/zone <us-central1-f>
+Updated property [compute/zone].
+```
+
 # Logging
 
 ## Structured Logging
@@ -115,3 +139,65 @@ https://cloud.google.com/storage/pricing#storage-pricing
 
 ## Estimate
 - https://cloud.google.com/products/calculator
+
+# Scheduler
+
+To schedule the dataflow batch job.
+
+- Requires OAuth authetication from service account
+- Requires `https://www.googleapis.com/auth/cloud-platform` authorization scope
+
+Ref: https://www.thecodebuzz.com/schedule-dataflow-job-google-cloud-scheduler/
+
+## Ways
+
+### Using HTTP
+
+Use this option along with Dataflow REST api t<F3>o launch the dataflow template. Select the service account for OAuth credentials.
+
+### Using PubSub
+tbd
+
+### Using AppEngine HTTP
+tbd
+
+## Terraform script for the same:
+
+```terraform
+resource "google_cloud_scheduler_job" "scheduler" {
+  name = "scheduler-demo"
+  schedule = "0 0 * * *"
+  # This needs to be us-central1 even if App Engine is in us-central.
+  # You will get a resource not found error if just using us-central.
+  region = "us-central1"
+
+  http_target {
+    http_method = "POST"
+    uri = "https://dataflow.googleapis.com/v1b3/projects/${var.project_id}/locations/${var.region}/templates:launch?gcsPath=gs://${var.bucket}/templates/dataflow-demo-template"
+    oauth_token {
+      service_account_email = google_service_account.cloud-scheduler-demo.email
+    }
+
+    # need to encode the string
+    body = base64encode(<<-EOT
+    {
+      "jobName": "test-cloud-scheduler",
+      "parameters": {
+        "region": "${var.region}",
+        "autoscalingAlgorithm": "THROUGHPUT_BASED",
+      },
+      "environment": {
+        "maxWorkers": "10",
+        "tempLocation": "gs://${var.bucket}/temp",
+        "zone": "${var.region}-a"
+      }
+    }
+EOT
+    )
+  }
+}
+```
+
+Ref: https://cloud.google.com/community/tutorials/schedule-dataflow-jobs-with-cloud-scheduler
+
+

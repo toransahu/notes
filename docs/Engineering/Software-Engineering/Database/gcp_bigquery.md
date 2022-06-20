@@ -18,6 +18,13 @@ Provider managed, serverless, multi-cloud data warehouse.
     - The Cloud console can display up to 50,000 tables for each dataset
 - Number of authorized resources in a dataset's access control list: 2500 resources
 
+
+## Copying a Dataset
+
+- https://cloud.google.com/bigquery/docs/copying-datasets#console
+- Moving/Renaming of Dataset is currently not possible, thus there is "Copying"
+
+
 ## Errors
 
 ```log
@@ -79,6 +86,12 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 
 ### Cost
 
+### Create 
+
+### Manage/Modify
+
+### Query
+
 ## Clustered Table
 ### Quota & Limit
 ### Cost
@@ -125,6 +138,7 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 - if a table[-partition] is modified for `<= 90` consecutive days
 
 ### Cost
+- first 10 GB per month is free
 - $0.02 per GB
 
 ### Quota & Limit
@@ -133,6 +147,7 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 - if a table[-partition] is NOT modified for `> 90` consecutive days
 
 ### Cost
+- first 10 GB per month is free
 - pricing is ~50% half of Active Storage pricing
 - $0.01 per GB
 
@@ -218,7 +233,45 @@ NOTE: If regularly exceed the load job limits due to frequent updates, consider 
 
 # Data Fetch/Query/Extraction/Read/Export APIs
 
+- https://cloud.google.com/bigquery/pricing?hl=en#data_extraction_pricing
+
+## Batch Export
+
+### Cost
+- Free using the shared slot pool
+
+### Quota & Limit
+- export up to 50 terabytes per day for free using the shared slot pool
+
 ## BigQuery Storage Read API
+
+### Cost
+- $1.1 per TB read
+- first 300 TB free per month
+
+### Quota & Limit
+
+
+## SQL Query
+
+### BigQuery SQL (Legacy SQL)
+
+- https://cloud.google.com/bigquery/docs/reference/legacy-sql
+
+### Standard SQL (New)
+
+- https://cloud.google.com/bigquery/docs/reference/standard-sql/introduction
+
+### BigQuery SQL vs Standard SQL
+
+- https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql
+
+## BigQuery Storage Read API
+
+
+## Query Size Calculation
+
+- https://cloud.google.com/bigquery/docs/estimate-costs#query_size_calculation
 
 # Misc Quota & Limit
 
@@ -288,3 +341,6 @@ https://github.com/googleapis/python-bigquery-pandas
 - https://cloud.google.com/architecture/confidential-data-warehouse-blueprint
 - https://cloud.google.com/architecture/dw2bq/dw-bq-migration-overview
 
+# References
+
+- [Open Feature Requests](https://issuetracker.google.com/savedsearches/559654)
