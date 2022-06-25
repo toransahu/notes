@@ -153,7 +153,16 @@ Ref: https://www.thecodebuzz.com/schedule-dataflow-job-google-cloud-scheduler/
 
 ### Using HTTP
 
+https://cloud.google.com/sdk/gcloud/reference/scheduler/jobs/update/http
+
 Use this option along with Dataflow REST api t<F3>o launch the dataflow template. Select the service account for OAuth credentials.
+
+```bash
+
+$ curl
+
+```
+
 
 ### Using PubSub
 tbd

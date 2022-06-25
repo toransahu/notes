@@ -87,10 +87,13 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 ### Cost
 
 ### Create 
+- https://cloud.google.com/bigquery/docs/creating-partitioned-tables#python
 
 ### Manage/Modify
+- https://cloud.google.com/bigquery/docs/managing-partitioned-tables#api_2
 
 ### Query
+- https://cloud.google.com/bigquery/docs/querying-partitioned-tables
 
 ## Clustered Table
 ### Quota & Limit

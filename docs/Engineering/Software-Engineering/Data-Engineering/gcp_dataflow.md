@@ -167,7 +167,7 @@ type: JOB_TYPE_BATCH
 
 ## Schedule
 
-Refer to [DevOps/GCP/Setup/gcloud CLI](/Engineering/Software-Engineering/DevOps/Clouds/gcp/).
+Refer to [DevOps/GCP/Scheduler](/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler).
 
 ## Clean
 
@@ -325,7 +325,7 @@ https://cloud.google.com/dataflow/docs/concepts
 
 ## gcloud CLI
 
-Refer to [DevOps/GCP/Setup/gcloud CLI](/Engineering/Software-Engineering/DevOps/Clouds/gcp/).
+Refer to [DevOps/GCP/Setup/gcloud CLI](/Engineering/Software-Engineering/DevOps/Clouds/gcp/#gcloud-cli).
 
 ## `python 3.8`
 
