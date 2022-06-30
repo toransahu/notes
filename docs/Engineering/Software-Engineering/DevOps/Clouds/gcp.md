@@ -149,6 +149,16 @@ To schedule the dataflow batch job.
 
 Ref: https://www.thecodebuzz.com/schedule-dataflow-job-google-cloud-scheduler/
 
+## Cost
+- pricing is based exclusively on the job
+- execution of job is not billed; in fact existence of a job is billed
+- $0.10 for per job per 31 days (i.e. $0.003/job/day)
+- least time unit is a day
+
+Note: A paused job is counted as a job.
+
+## Quota & Limit
+
 ## Ways
 
 ### Using HTTP
@@ -209,4 +219,6 @@ EOT
 
 Ref: https://cloud.google.com/community/tutorials/schedule-dataflow-jobs-with-cloud-scheduler
 
+# Vertex AI
 
+- https://cloud.google.com/vertex-ai/pricing
