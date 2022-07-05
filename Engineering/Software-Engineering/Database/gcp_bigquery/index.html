@@ -16,7 +16,7 @@
     
     
       
-        <title>GCP Dataflow - Toran's Notes</title>
+        <title>GCP BigQuery - Toran's Notes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gcp-dataflow" class="md-skip">
+        <a href="#gcp-bigquery" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Dataflow
+              GCP BigQuery
             
           </span>
         </div>
@@ -911,14 +911,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
       
       
       
@@ -941,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apache_beam/" class="md-nav__link">
+      <a href="../../Data-Engineering/apache_beam/" class="md-nav__link">
         Apache Beam
       </a>
     </li>
@@ -955,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apache_storm/" class="md-nav__link">
+      <a href="../../Data-Engineering/apache_storm/" class="md-nav__link">
         Apache Storm
       </a>
     </li>
@@ -969,8 +967,71 @@
   
   
     <li class="md-nav__item">
-      <a href="../big_data/" class="md-nav__link">
+      <a href="../../Data-Engineering/big_data/" class="md-nav__link">
         Big Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Engineering/gcp_dataflow/" class="md-nav__link">
+        GCP Dataflow
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_12">
+          Database
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Database" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elasticsearch/" class="md-nav__link">
+        ElasticSearch
       </a>
     </li>
   
@@ -991,12 +1052,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          GCP Dataflow
+          GCP BigQuery
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        GCP Dataflow
+        GCP BigQuery
       </a>
       
         
@@ -1014,8 +1075,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gcp-dataflow" class="md-nav__link">
-    GCP Dataflow
+  <a href="#gcp-bigquery" class="md-nav__link">
+    GCP BigQuery
   </a>
   
 </li>
@@ -1025,26 +1086,40 @@
     Introduction
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    Dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="Dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What
+  <a href="#multi-region-dataset" class="md-nav__link">
+    Multi-Region Dataset
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why
+  <a href="#quota-limit" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How
+  <a href="#copying-a-dataset" class="md-nav__link">
+    Copying a Dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
   </a>
   
 </li>
@@ -1055,30 +1130,92 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#classic-template" class="md-nav__link">
-    Classic Template
+  <a href="#table" class="md-nav__link">
+    Table
   </a>
   
-    <nav class="md-nav" aria-label="Classic Template">
+    <nav class="md-nav" aria-label="Table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-template" class="md-nav__link">
-    Why Template
+  <a href="#table-schema" class="md-nav__link">
+    Table Schema
+  </a>
+  
+    <nav class="md-nav" aria-label="Table Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modify" class="md-nav__link">
+    Modify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#what_1" class="md-nav__link">
-    What
+  <a href="#errors_1" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-level-security" class="md-nav__link">
+    Row-level Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how_1" class="md-nav__link">
-    How
+  <a href="#standard-table" class="md-nav__link">
+    Standard Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_1" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitioned-table" class="md-nav__link">
+    Partitioned Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitioned Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_2" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_1" class="md-nav__link">
+    Cost
   </a>
   
 </li>
@@ -1091,51 +1228,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stage" class="md-nav__link">
-    Stage
+  <a href="#managemodify" class="md-nav__link">
+    Manage/Modify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-    <nav class="md-nav" aria-label="Run">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#permission-to-run-on-production-env" class="md-nav__link">
-    Permission to run on Production env
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-in-web-console" class="md-nav__link">
-    Run in Web Console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-rest-api" class="md-nav__link">
-    Run as REST API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-python-gcp-client" class="md-nav__link">
-    Run as Python GCP Client
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-using-gcloud-cli" class="md-nav__link">
-    Run using gcloud CLI
+  <a href="#query" class="md-nav__link">
+    Query
   </a>
   
 </li>
@@ -1146,51 +1247,219 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#schedule" class="md-nav__link">
-    Schedule
+  <a href="#clustered-table" class="md-nav__link">
+    Clustered Table
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clean" class="md-nav__link">
-    Clean
-  </a>
-  
-    <nav class="md-nav" aria-label="Clean">
+    <nav class="md-nav" aria-label="Clustered Table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clean-up-the-classic-template-resources" class="md-nav__link">
-    Clean up the Classic Template resources
+  <a href="#quota-limit_3" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#clean-up-google-cloud-project-resources" class="md-nav__link">
-    Clean up Google Cloud project resources
+  <a href="#cost_2" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitioning-vs-clustering" class="md-nav__link">
+    Partitioning vs Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-gcp-dataflow-stores-things" class="md-nav__link">
-    how gcp dataflow stores things
+  <a href="#partitioning-vs-sharding" class="md-nav__link">
+    Partitioning vs Sharding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-data-storage" class="md-nav__link">
+    BigQuery Data Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery Data Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_3" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-packaging" class="md-nav__link">
-    Python packaging
+  <a href="#active-storage" class="md-nav__link">
+    Active Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Active Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_4" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#to" class="md-nav__link">
-    to
+  <a href="#quota-limit_4" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-storage" class="md-nav__link">
+    Long-term Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-term Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_5" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_5" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-size-calculation" class="md-nav__link">
+    Data Size Calculation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-api" class="md-nav__link">
+    BigQuery API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion-load-jobs-api" class="md-nav__link">
+    Data Ingestion (load jobs) API
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Ingestion (load jobs) API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-loading" class="md-nav__link">
+    Batch Loading
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Loading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_6" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_6" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-loading-legacy" class="md-nav__link">
+    Stream Loading (Legacy)
+  </a>
+  
+    <nav class="md-nav" aria-label="Stream Loading (Legacy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_7" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_7" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigquery-storage-write-api" class="md-nav__link">
+    BigQuery Storage Write API
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery Storage Write API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_8" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_8" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -1206,24 +1475,31 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flex-template" class="md-nav__link">
-    Flex Template
+  <a href="#data-fetchqueryextractionreadexport-apis" class="md-nav__link">
+    Data Fetch/Query/Extraction/Read/Export APIs
   </a>
   
-    <nav class="md-nav" aria-label="Flex Template">
+    <nav class="md-nav" aria-label="Data Fetch/Query/Extraction/Read/Export APIs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why_1" class="md-nav__link">
-    Why
+  <a href="#batch-export" class="md-nav__link">
+    Batch Export
   </a>
   
-    <nav class="md-nav" aria-label="Why">
+    <nav class="md-nav" aria-label="Batch Export">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#flex-template-over-classic-template" class="md-nav__link">
-    Flex Template over Classic Template
+  <a href="#cost_9" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_9" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -1234,51 +1510,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what_2" class="md-nav__link">
-    What
+  <a href="#bigquery-storage-read-api" class="md-nav__link">
+    BigQuery Storage Read API
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how_2" class="md-nav__link">
-    How
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create_1" class="md-nav__link">
-    Create
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stage_1" class="md-nav__link">
-    Stage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-    <nav class="md-nav" aria-label="Run">
+    <nav class="md-nav" aria-label="BigQuery Storage Read API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#permission-required" class="md-nav__link">
-    Permission required
+  <a href="#cost_10" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#allowed-env-variables" class="md-nav__link">
-    Allowed ENV variables
+  <a href="#quota-limit_10" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -1289,180 +1537,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
+  <a href="#sql-query" class="md-nav__link">
+    SQL Query
   </a>
   
-    <nav class="md-nav" aria-label="Build">
+    <nav class="md-nav" aria-label="SQL Query">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allowed-optionsargsparams" class="md-nav__link">
-    Allowed options/args/params
+  <a href="#bigquery-sql-legacy-sql" class="md-nav__link">
+    BigQuery SQL (Legacy SQL)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-worker-image" class="md-nav__link">
-    Custom Worker Image
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tech-concept" class="md-nav__link">
-    Tech Concept
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gcp-account" class="md-nav__link">
-    GCP Account
+  <a href="#standard-sql-new" class="md-nav__link">
+    Standard SQL (New)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gcloud-cli" class="md-nav__link">
-    gcloud CLI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-38" class="md-nav__link">
-    python 3.8
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-beam-job" class="md-nav__link">
-    Apache Beam Job
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-authorization" class="md-nav__link">
-    Authentication &amp; Authorization
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-control-with-iam" class="md-nav__link">
-    Access Control with IAM
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-config" class="md-nav__link">
-    Network Config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cicd-production-grade-best-practice" class="md-nav__link">
-    CI/CD / Production Grade / Best Practice
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
-  </a>
-  
-    <nav class="md-nav" aria-label="Observability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-troubleshooting" class="md-nav__link">
-    Monitoring &amp; Troubleshooting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution-detail" class="md-nav__link">
-    Execution Detail
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    FAQ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deep" class="md-nav__link">
-    Deep
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parallelism" class="md-nav__link">
-    Parallelism
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoscaling" class="md-nav__link">
-    Autoscaling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoscaling-not-working" class="md-nav__link">
-    Autoscaling not working
-  </a>
-  
-    <nav class="md-nav" aria-label="Autoscaling not working">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reshuffling" class="md-nav__link">
-    Reshuffling
+  <a href="#bigquery-sql-vs-standard-sql" class="md-nav__link">
+    BigQuery SQL vs Standard SQL
   </a>
   
 </li>
@@ -1473,8 +1571,109 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
-    Optimization
+  <a href="#bigquery-storage-read-api_1" class="md-nav__link">
+    BigQuery Storage Read API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-size-calculation" class="md-nav__link">
+    Query Size Calculation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-quota-limit" class="md-nav__link">
+    Misc Quota &amp; Limit
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc Quota &amp; Limit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-error" class="md-nav__link">
+    Quota Error
+  </a>
+  
+    <nav class="md-nav" aria-label="Quota Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis" class="md-nav__link">
+    Diagnosis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raise-self_exception-googleapi_coreexceptionsforbidden-403-exceeded-rate-limits-too-many-table-update-operations-for-this-table-for-more-information-see-httpscloudgooglecombigquerydocstroubleshoot-quotas" class="md-nav__link">
+    raise self._exception google.api_core.exceptions.Forbidden: 403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-quota-metrics" class="md-nav__link">
+    Monitoring Quota Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-api-clients" class="md-nav__link">
+    BigQuery API Clients
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery API Clients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-bigquery" class="md-nav__link">
+    python-bigquery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-gbq" class="md-nav__link">
+    pandas-gbq
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usecases" class="md-nav__link">
+    Usecases
+  </a>
+  
+    <nav class="md-nav" aria-label="Usecases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehousing" class="md-nav__link">
+    Data Warehousing
   </a>
   
 </li>
@@ -1500,74 +1699,13 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2_12">
-          Database
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Database" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_12">
-          <span class="md-nav__icon md-icon"></span>
-          Database
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../Database/elasticsearch/" class="md-nav__link">
-        ElasticSearch
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Database/gcp_bigquery/" class="md-nav__link">
-        GCP BigQuery
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Database/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -1581,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Database/oracle_plsql/" class="md-nav__link">
+      <a href="../oracle_plsql/" class="md-nav__link">
         Oracle DB (PL/SQL)
       </a>
     </li>
@@ -1595,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Database/postgresql/" class="md-nav__link">
+      <a href="../postgresql/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -2412,8 +2550,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gcp-dataflow" class="md-nav__link">
-    GCP Dataflow
+  <a href="#gcp-bigquery" class="md-nav__link">
+    GCP BigQuery
   </a>
   
 </li>
@@ -2423,26 +2561,40 @@
     Introduction
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    Dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="Dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What
+  <a href="#multi-region-dataset" class="md-nav__link">
+    Multi-Region Dataset
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why
+  <a href="#quota-limit" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How
+  <a href="#copying-a-dataset" class="md-nav__link">
+    Copying a Dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
   </a>
   
 </li>
@@ -2453,30 +2605,92 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#classic-template" class="md-nav__link">
-    Classic Template
+  <a href="#table" class="md-nav__link">
+    Table
   </a>
   
-    <nav class="md-nav" aria-label="Classic Template">
+    <nav class="md-nav" aria-label="Table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-template" class="md-nav__link">
-    Why Template
+  <a href="#table-schema" class="md-nav__link">
+    Table Schema
+  </a>
+  
+    <nav class="md-nav" aria-label="Table Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modify" class="md-nav__link">
+    Modify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#what_1" class="md-nav__link">
-    What
+  <a href="#errors_1" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-level-security" class="md-nav__link">
+    Row-level Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how_1" class="md-nav__link">
-    How
+  <a href="#standard-table" class="md-nav__link">
+    Standard Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_1" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitioned-table" class="md-nav__link">
+    Partitioned Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitioned Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_2" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_1" class="md-nav__link">
+    Cost
   </a>
   
 </li>
@@ -2489,51 +2703,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stage" class="md-nav__link">
-    Stage
+  <a href="#managemodify" class="md-nav__link">
+    Manage/Modify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-    <nav class="md-nav" aria-label="Run">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#permission-to-run-on-production-env" class="md-nav__link">
-    Permission to run on Production env
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-in-web-console" class="md-nav__link">
-    Run in Web Console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-rest-api" class="md-nav__link">
-    Run as REST API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-python-gcp-client" class="md-nav__link">
-    Run as Python GCP Client
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-using-gcloud-cli" class="md-nav__link">
-    Run using gcloud CLI
+  <a href="#query" class="md-nav__link">
+    Query
   </a>
   
 </li>
@@ -2544,51 +2722,219 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#schedule" class="md-nav__link">
-    Schedule
+  <a href="#clustered-table" class="md-nav__link">
+    Clustered Table
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clean" class="md-nav__link">
-    Clean
-  </a>
-  
-    <nav class="md-nav" aria-label="Clean">
+    <nav class="md-nav" aria-label="Clustered Table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clean-up-the-classic-template-resources" class="md-nav__link">
-    Clean up the Classic Template resources
+  <a href="#quota-limit_3" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#clean-up-google-cloud-project-resources" class="md-nav__link">
-    Clean up Google Cloud project resources
+  <a href="#cost_2" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitioning-vs-clustering" class="md-nav__link">
+    Partitioning vs Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-gcp-dataflow-stores-things" class="md-nav__link">
-    how gcp dataflow stores things
+  <a href="#partitioning-vs-sharding" class="md-nav__link">
+    Partitioning vs Sharding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-data-storage" class="md-nav__link">
+    BigQuery Data Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery Data Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_3" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-packaging" class="md-nav__link">
-    Python packaging
+  <a href="#active-storage" class="md-nav__link">
+    Active Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Active Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_4" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#to" class="md-nav__link">
-    to
+  <a href="#quota-limit_4" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-storage" class="md-nav__link">
+    Long-term Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-term Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_5" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_5" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-size-calculation" class="md-nav__link">
+    Data Size Calculation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-api" class="md-nav__link">
+    BigQuery API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion-load-jobs-api" class="md-nav__link">
+    Data Ingestion (load jobs) API
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Ingestion (load jobs) API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-loading" class="md-nav__link">
+    Batch Loading
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Loading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_6" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_6" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-loading-legacy" class="md-nav__link">
+    Stream Loading (Legacy)
+  </a>
+  
+    <nav class="md-nav" aria-label="Stream Loading (Legacy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_7" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_7" class="md-nav__link">
+    Quota &amp; Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigquery-storage-write-api" class="md-nav__link">
+    BigQuery Storage Write API
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery Storage Write API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost_8" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_8" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -2604,24 +2950,31 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flex-template" class="md-nav__link">
-    Flex Template
+  <a href="#data-fetchqueryextractionreadexport-apis" class="md-nav__link">
+    Data Fetch/Query/Extraction/Read/Export APIs
   </a>
   
-    <nav class="md-nav" aria-label="Flex Template">
+    <nav class="md-nav" aria-label="Data Fetch/Query/Extraction/Read/Export APIs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why_1" class="md-nav__link">
-    Why
+  <a href="#batch-export" class="md-nav__link">
+    Batch Export
   </a>
   
-    <nav class="md-nav" aria-label="Why">
+    <nav class="md-nav" aria-label="Batch Export">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#flex-template-over-classic-template" class="md-nav__link">
-    Flex Template over Classic Template
+  <a href="#cost_9" class="md-nav__link">
+    Cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-limit_9" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -2632,51 +2985,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what_2" class="md-nav__link">
-    What
+  <a href="#bigquery-storage-read-api" class="md-nav__link">
+    BigQuery Storage Read API
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how_2" class="md-nav__link">
-    How
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create_1" class="md-nav__link">
-    Create
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stage_1" class="md-nav__link">
-    Stage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-    <nav class="md-nav" aria-label="Run">
+    <nav class="md-nav" aria-label="BigQuery Storage Read API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#permission-required" class="md-nav__link">
-    Permission required
+  <a href="#cost_10" class="md-nav__link">
+    Cost
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#allowed-env-variables" class="md-nav__link">
-    Allowed ENV variables
+  <a href="#quota-limit_10" class="md-nav__link">
+    Quota &amp; Limit
   </a>
   
 </li>
@@ -2687,180 +3012,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
+  <a href="#sql-query" class="md-nav__link">
+    SQL Query
   </a>
   
-    <nav class="md-nav" aria-label="Build">
+    <nav class="md-nav" aria-label="SQL Query">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allowed-optionsargsparams" class="md-nav__link">
-    Allowed options/args/params
+  <a href="#bigquery-sql-legacy-sql" class="md-nav__link">
+    BigQuery SQL (Legacy SQL)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-worker-image" class="md-nav__link">
-    Custom Worker Image
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tech-concept" class="md-nav__link">
-    Tech Concept
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gcp-account" class="md-nav__link">
-    GCP Account
+  <a href="#standard-sql-new" class="md-nav__link">
+    Standard SQL (New)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gcloud-cli" class="md-nav__link">
-    gcloud CLI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-38" class="md-nav__link">
-    python 3.8
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache-beam-job" class="md-nav__link">
-    Apache Beam Job
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-authorization" class="md-nav__link">
-    Authentication &amp; Authorization
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-control-with-iam" class="md-nav__link">
-    Access Control with IAM
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-config" class="md-nav__link">
-    Network Config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cicd-production-grade-best-practice" class="md-nav__link">
-    CI/CD / Production Grade / Best Practice
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
-  </a>
-  
-    <nav class="md-nav" aria-label="Observability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-troubleshooting" class="md-nav__link">
-    Monitoring &amp; Troubleshooting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution-detail" class="md-nav__link">
-    Execution Detail
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    FAQ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deep" class="md-nav__link">
-    Deep
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parallelism" class="md-nav__link">
-    Parallelism
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoscaling" class="md-nav__link">
-    Autoscaling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoscaling-not-working" class="md-nav__link">
-    Autoscaling not working
-  </a>
-  
-    <nav class="md-nav" aria-label="Autoscaling not working">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reshuffling" class="md-nav__link">
-    Reshuffling
+  <a href="#bigquery-sql-vs-standard-sql" class="md-nav__link">
+    BigQuery SQL vs Standard SQL
   </a>
   
 </li>
@@ -2871,8 +3046,109 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
-    Optimization
+  <a href="#bigquery-storage-read-api_1" class="md-nav__link">
+    BigQuery Storage Read API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-size-calculation" class="md-nav__link">
+    Query Size Calculation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-quota-limit" class="md-nav__link">
+    Misc Quota &amp; Limit
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc Quota &amp; Limit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota-error" class="md-nav__link">
+    Quota Error
+  </a>
+  
+    <nav class="md-nav" aria-label="Quota Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis" class="md-nav__link">
+    Diagnosis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raise-self_exception-googleapi_coreexceptionsforbidden-403-exceeded-rate-limits-too-many-table-update-operations-for-this-table-for-more-information-see-httpscloudgooglecombigquerydocstroubleshoot-quotas" class="md-nav__link">
+    raise self._exception google.api_core.exceptions.Forbidden: 403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-quota-metrics" class="md-nav__link">
+    Monitoring Quota Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-api-clients" class="md-nav__link">
+    BigQuery API Clients
+  </a>
+  
+    <nav class="md-nav" aria-label="BigQuery API Clients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-bigquery" class="md-nav__link">
+    python-bigquery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-gbq" class="md-nav__link">
+    pandas-gbq
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usecases" class="md-nav__link">
+    Usecases
+  </a>
+  
+    <nav class="md-nav" aria-label="Usecases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehousing" class="md-nav__link">
+    Data Warehousing
   </a>
   
 </li>
@@ -2901,631 +3177,514 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/Data-Engineering/gcp_dataflow.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/Database/gcp_bigquery.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>GCP Dataflow</h1>
+                  <h1>GCP BigQuery</h1>
                 
-                <h2 id="gcp-dataflow">GCP Dataflow<a class="headerlink" href="#gcp-dataflow" title="Permanent link">#</a></h2>
-<h3>Table of Contents</h3>
-
+                <h2 id="gcp-bigquery">GCP BigQuery<a class="headerlink" href="#gcp-bigquery" title="Permanent link">#</a></h2>
 <div class="toc">
 <ul>
-<li><a href="#gcp-dataflow">GCP Dataflow</a></li>
-<li><a href="#introduction">Introduction</a><ul>
-<li><a href="#what">What</a></li>
-<li><a href="#why">Why</a></li>
-<li><a href="#how">How</a></li>
+<li><a href="#gcp-bigquery">GCP BigQuery</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#dataset">Dataset</a><ul>
+<li><a href="#multi-region-dataset">Multi-Region Dataset</a></li>
+<li><a href="#quota-limit">Quota &amp; Limit</a></li>
+<li><a href="#copying-a-dataset">Copying a Dataset</a></li>
+<li><a href="#errors">Errors</a></li>
 </ul>
 </li>
-<li><a href="#classic-template">Classic Template</a><ul>
-<li><a href="#why-template">Why Template</a></li>
-<li><a href="#what_1">What</a></li>
-<li><a href="#how_1">How</a></li>
+<li><a href="#table">Table</a><ul>
+<li><a href="#table-schema">Table Schema</a><ul>
+<li><a href="#modify">Modify</a></li>
+<li><a href="#errors_1">Errors</a></li>
+</ul>
+</li>
+<li><a href="#row-level-security">Row-level Security</a></li>
+<li><a href="#standard-table">Standard Table</a><ul>
+<li><a href="#quota-limit_1">Quota &amp; Limit</a></li>
+<li><a href="#cost">Cost</a></li>
+</ul>
+</li>
+<li><a href="#partitioned-table">Partitioned Table</a><ul>
+<li><a href="#quota-limit_2">Quota &amp; Limit</a></li>
+<li><a href="#cost_1">Cost</a></li>
 <li><a href="#create">Create</a></li>
-<li><a href="#stage">Stage</a></li>
-<li><a href="#run">Run</a><ul>
-<li><a href="#permission-to-run-on-production-env">Permission to run on Production env</a></li>
-<li><a href="#run-in-web-console">Run in Web Console</a></li>
-<li><a href="#run-as-rest-api">Run as REST API</a></li>
-<li><a href="#run-as-python-gcp-client">Run as Python GCP Client</a></li>
-<li><a href="#run-using-gcloud-cli">Run using gcloud CLI</a></li>
+<li><a href="#managemodify">Manage/Modify</a></li>
+<li><a href="#query">Query</a></li>
 </ul>
 </li>
-<li><a href="#schedule">Schedule</a></li>
-<li><a href="#clean">Clean</a><ul>
-<li><a href="#clean-up-the-classic-template-resources">Clean up the Classic Template resources</a></li>
-<li><a href="#clean-up-google-cloud-project-resources">Clean up Google Cloud project resources</a></li>
-<li><a href="#how-gcp-dataflow-stores-things">how gcp dataflow stores things</a></li>
-<li><a href="#python-packaging">Python packaging</a></li>
-<li><a href="#to">to</a></li>
+<li><a href="#clustered-table">Clustered Table</a><ul>
+<li><a href="#quota-limit_3">Quota &amp; Limit</a></li>
+<li><a href="#cost_2">Cost</a></li>
+</ul>
+</li>
+<li><a href="#partitioning-vs-clustering">Partitioning vs Clustering</a></li>
+<li><a href="#partitioning-vs-sharding">Partitioning vs Sharding</a></li>
+</ul>
+</li>
+<li><a href="#bigquery-data-storage">BigQuery Data Storage</a><ul>
+<li><a href="#cost_3">Cost</a></li>
+<li><a href="#active-storage">Active Storage</a><ul>
+<li><a href="#cost_4">Cost</a></li>
+<li><a href="#quota-limit_4">Quota &amp; Limit</a></li>
+</ul>
+</li>
+<li><a href="#long-term-storage">Long-term Storage</a><ul>
+<li><a href="#cost_5">Cost</a></li>
+<li><a href="#quota-limit_5">Quota &amp; Limit</a></li>
+</ul>
+</li>
+<li><a href="#data-size-calculation">Data Size Calculation</a></li>
+</ul>
+</li>
+<li><a href="#bigquery-api">BigQuery API</a></li>
+<li><a href="#data-ingestion-load-jobs-api">Data Ingestion (load jobs) API</a><ul>
+<li><a href="#batch-loading">Batch Loading</a><ul>
+<li><a href="#cost_6">Cost</a></li>
+<li><a href="#quota-limit_6">Quota &amp; Limit</a></li>
+</ul>
+</li>
+<li><a href="#stream-loading-legacy">Stream Loading (Legacy)</a><ul>
+<li><a href="#cost_7">Cost</a></li>
+<li><a href="#quota-limit_7">Quota &amp; Limit</a></li>
+</ul>
+</li>
+<li><a href="#bigquery-storage-write-api">BigQuery Storage Write API</a><ul>
+<li><a href="#cost_8">Cost</a></li>
+<li><a href="#quota-limit_8">Quota &amp; Limit</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#flex-template">Flex Template</a><ul>
-<li><a href="#why_1">Why</a><ul>
-<li><a href="#flex-template-over-classic-template">Flex Template over Classic Template</a></li>
+<li><a href="#data-fetchqueryextractionreadexport-apis">Data Fetch/Query/Extraction/Read/Export APIs</a><ul>
+<li><a href="#batch-export">Batch Export</a><ul>
+<li><a href="#cost_9">Cost</a></li>
+<li><a href="#quota-limit_9">Quota &amp; Limit</a></li>
 </ul>
 </li>
-<li><a href="#what_2">What</a></li>
-<li><a href="#how_2">How</a></li>
-<li><a href="#create_1">Create</a></li>
-<li><a href="#stage_1">Stage</a></li>
-<li><a href="#run_1">Run</a><ul>
-<li><a href="#permission-required">Permission required</a></li>
-<li><a href="#allowed-env-variables">Allowed ENV variables</a></li>
+<li><a href="#bigquery-storage-read-api">BigQuery Storage Read API</a><ul>
+<li><a href="#cost_10">Cost</a></li>
+<li><a href="#quota-limit_10">Quota &amp; Limit</a></li>
 </ul>
 </li>
-<li><a href="#build">Build</a><ul>
-<li><a href="#allowed-optionsargsparams">Allowed options/args/params</a></li>
-<li><a href="#custom-worker-image">Custom Worker Image</a></li>
+<li><a href="#sql-query">SQL Query</a><ul>
+<li><a href="#bigquery-sql-legacy-sql">BigQuery SQL (Legacy SQL)</a></li>
+<li><a href="#standard-sql-new">Standard SQL (New)</a></li>
+<li><a href="#bigquery-sql-vs-standard-sql">BigQuery SQL vs Standard SQL</a></li>
 </ul>
 </li>
+<li><a href="#bigquery-storage-read-api_1">BigQuery Storage Read API</a></li>
+<li><a href="#query-size-calculation">Query Size Calculation</a></li>
 </ul>
 </li>
-<li><a href="#tech-concept">Tech Concept</a></li>
-<li><a href="#setup">Setup</a><ul>
-<li><a href="#gcp-account">GCP Account</a></li>
-<li><a href="#gcloud-cli">gcloud CLI</a></li>
-<li><a href="#python-38">python 3.8</a></li>
+<li><a href="#misc-quota-limit">Misc Quota &amp; Limit</a><ul>
+<li><a href="#quota-error">Quota Error</a><ul>
+<li><a href="#diagnosis">Diagnosis</a></li>
+<li><a href="#raise-self_exception-googleapi_coreexceptionsforbidden-403-exceeded-rate-limits-too-many-table-update-operations-for-this-table-for-more-information-see-httpscloudgooglecombigquerydocstroubleshoot-quotas">raise self._exception google.api_core.exceptions.Forbidden: 403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas</a></li>
 </ul>
 </li>
-<li><a href="#apache-beam-job">Apache Beam Job</a></li>
-<li><a href="#authentication-authorization">Authentication &amp; Authorization</a></li>
-<li><a href="#access-control-with-iam">Access Control with IAM</a></li>
-<li><a href="#network-config">Network Config</a></li>
-<li><a href="#cicd-production-grade-best-practice">CI/CD / Production Grade / Best Practice</a></li>
-<li><a href="#observability">Observability</a><ul>
-<li><a href="#monitoring-troubleshooting">Monitoring &amp; Troubleshooting</a></li>
-<li><a href="#execution-detail">Execution Detail</a></li>
+<li><a href="#monitoring-quota-metrics">Monitoring Quota Metrics</a></li>
 </ul>
 </li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#deep">Deep</a><ul>
-<li><a href="#parallelism">Parallelism</a></li>
-<li><a href="#autoscaling">Autoscaling</a></li>
-<li><a href="#autoscaling-not-working">Autoscaling not working</a><ul>
-<li><a href="#reshuffling">Reshuffling</a></li>
+<li><a href="#bigquery-api-clients">BigQuery API Clients</a><ul>
+<li><a href="#python-bigquery">python-bigquery</a></li>
+<li><a href="#pandas-gbq">pandas-gbq</a></li>
 </ul>
 </li>
-<li><a href="#optimization">Optimization</a></li>
+<li><a href="#usecases">Usecases</a><ul>
+<li><a href="#data-warehousing">Data Warehousing</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<p>Provider managed, serverless, multi-cloud data warehouse.</p>
+<h2 id="dataset">Dataset<a class="headerlink" href="#dataset" title="Permanent link">#</a></h2>
+<h3 id="multi-region-dataset">Multi-Region Dataset<a class="headerlink" href="#multi-region-dataset" title="Permanent link">#</a></h3>
+<h3 id="quota-limit">Quota &amp; Limit<a class="headerlink" href="#quota-limit" title="Permanent link">#</a></h3>
 <ul>
-<li>https://cloud.google.com/dataflow</li>
-</ul>
-<h3 id="what">What<a class="headerlink" href="#what" title="Permanent link">#</a></h3>
-<h3 id="why">Why<a class="headerlink" href="#why" title="Permanent link">#</a></h3>
-<h3 id="how">How<a class="headerlink" href="#how" title="Permanent link">#</a></h3>
-<ul>
-<li>https://www.ververica.com/blog/announcing-google-cloud-dataflow-on-flink-and-easy-flink-deployment-on-google-cloud</li>
-<li>https://research.google/pubs/pub41378/<ul>
-<li>https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41378.pdf</li>
+<li>https://cloud.google.com/bigquery/quotas#dataset_limits</li>
+<li>Maximum number of datasets: unlimited (per project)</li>
+<li>Number of tables per dataset: unlimited<ul>
+<li>When you use an API call, enumeration performance slows as you approach 50,000 tables in a dataset</li>
+<li>The Cloud console can display up to 50,000 tables for each dataset</li>
 </ul>
 </li>
-<li>(paper:how apache beam works) https://pages.cs.wisc.edu/~akella/CS838/F12/838-CloudPapers/FlumeJava.pdf</li>
-<li>https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43864.pdf</li>
-<li>https://www.youtube.com/watch?v=3BrcmUqWNm0</li>
-<li>https://www.youtube.com/watch?v=a7CymWiX3oM&amp;t=399s</li>
-<li>https://cloud.google.com/dataflow/docs/concepts</li>
-<li>https://cloud.google.com/dataflow/docs/concepts/dataflow-templates</li>
-<li>https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#parallelization-and-distribution</li>
-<li>https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline</li>
-<li>https://cloud.google.com/dataflow/docs/concepts/execution-details</li>
-<li>https://cloud.google.com/dataflow/docs/resources/faq<ul>
-<li>https://cloud.google.com/dataflow/docs/resources/faq#how_many_instances_of_dofn_should_i_expect_dataflow_to_spin_up_</li>
+<li>Number of authorized resources in a dataset's access control list: 2500 resources</li>
+</ul>
+<h3 id="copying-a-dataset">Copying a Dataset<a class="headerlink" href="#copying-a-dataset" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/copying-datasets#console</li>
+<li>Moving/Renaming of Dataset is currently not possible, thus there is "Copying"</li>
+</ul>
+<h3 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    raise exceptions.from_http_response(exc.response)
+google.api_core.exceptions.NotFound: 404 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/poc/jobs?uploadType=multipart: Not found: Dataset poc:ds_v2 
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Need to create Dataset before creating tables</li>
+</ul>
+<h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#table_limits</li>
+</ul>
+<h3 id="table-schema">Table Schema<a class="headerlink" href="#table-schema" title="Permanent link">#</a></h3>
+<h4 id="modify">Modify<a class="headerlink" href="#modify" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/managing-table-schemas</li>
+<li>smooth modification:<ul>
+<li>Adding columns to a schema definition<ul>
+<li>https://cloud.google.com/bigquery/docs/managing-table-schemas#adding_columns_to_a_tables_schema_definition</li>
+</ul>
+</li>
+<li>Deleting, or dropping, a column from a schema definition</li>
+<li>Relaxing a column's mode from REQUIRED to NULLABLE</li>
+</ul>
+</li>
+<li>manual modification:<ul>
+<li>https://cloud.google.com/bigquery/docs/manually-changing-schemas</li>
+<li>Changing a column's name</li>
+<li>Changing a column's data type</li>
+<li>Changing a column's mode (aside from relaxing REQUIRED columns to NULLABLE)</li>
 </ul>
 </li>
 </ul>
-<h2 id="classic-template">Classic Template<a class="headerlink" href="#classic-template" title="Permanent link">#</a></h2>
-<h3 id="why-template">Why Template<a class="headerlink" href="#why-template" title="Permanent link">#</a></h3>
-<p>Templates provide you with additional benefits compared to non-templated Dataflow deployment, such as:</p>
+<h4 id="errors_1">Errors<a class="headerlink" href="#errors_1" title="Permanent link">#</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    raise exceptions.from_http_response(exc.response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/poc/jobs?uploadType=multipart: Provided Schema does not match Table poc:ds.table1. Cannot add fields (field: ColA)
+</code></pre></div>
+</td></tr></table>
 <ul>
-<li>You can run your pipelines without the development environment and associated dependencies that are common with non-templated deployment. This is useful for scheduling recurring batch jobs.</li>
-<li>Templates separate the pipeline construction (performed by developers) from the running of the pipeline. Hence, there's no need to recompile the code every time the pipeline is run.</li>
-<li>Runtime parameters allow you to customize the running of the pipeline.</li>
-<li>Non-technical users can run templates with the Google Cloud Console, Google Cloud CLI, or the REST API.</li>
-<li>You can extend templates with user-defined functions.</li>
+<li>If you add new columns to an existing table schema, the columns must be NULLABLE or REPEATED. You cannot add a REQUIRED column to an existing table schema. </li>
+<li>REQUIRED columns can be added only when you create a table while loading data, or when you create an empty table with a schema definition.</li>
 </ul>
-<h3 id="what_1">What<a class="headerlink" href="#what_1" title="Permanent link">#</a></h3>
-<h3 id="how_1">How<a class="headerlink" href="#how_1" title="Permanent link">#</a></h3>
-<h3 id="create">Create<a class="headerlink" href="#create" title="Permanent link">#</a></h3>
-<p>Covert the Apache Beam pipeline into a Dataflow classic template.</p>
-<p>Ref: https://cloud.google.com/dataflow/docs/guides/templates/creating-templates</p>
-<h3 id="stage">Stage<a class="headerlink" href="#stage" title="Permanent link">#</a></h3>
-<p>Stage the classic template in cloud storage using the following command:</p>
+<h3 id="row-level-security">Row-level Security<a class="headerlink" href="#row-level-security" title="Permanent link">#</a></h3>
+<p>https://cloud.google.com/bigquery/quotas#row_level_security</p>
+<h3 id="standard-table">Standard Table<a class="headerlink" href="#standard-table" title="Permanent link">#</a></h3>
+<h4 id="quota-limit_1">Quota &amp; Limit<a class="headerlink" href="#quota-limit_1" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#standard_tables</li>
+<li>Table operations per day: 1500</li>
+<li>Maximum number of columns per table: 10000</li>
+</ul>
+<h4 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">#</a></h4>
+<h3 id="partitioned-table">Partitioned Table<a class="headerlink" href="#partitioned-table" title="Permanent link">#</a></h3>
+<h4 id="quota-limit_2">Quota &amp; Limit<a class="headerlink" href="#quota-limit_2" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#partitioned_tables</li>
+<li>Number of partitions per partitioned table: 4000</li>
+</ul>
+<h4 id="cost_1">Cost<a class="headerlink" href="#cost_1" title="Permanent link">#</a></h4>
+<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/creating-partitioned-tables#python</li>
+</ul>
+<h4 id="managemodify">Manage/Modify<a class="headerlink" href="#managemodify" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/managing-partitioned-tables#api_2</li>
+</ul>
+<h4 id="query">Query<a class="headerlink" href="#query" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/querying-partitioned-tables</li>
+</ul>
+<h3 id="clustered-table">Clustered Table<a class="headerlink" href="#clustered-table" title="Permanent link">#</a></h3>
+<h4 id="quota-limit_3">Quota &amp; Limit<a class="headerlink" href="#quota-limit_3" title="Permanent link">#</a></h4>
+<h4 id="cost_2">Cost<a class="headerlink" href="#cost_2" title="Permanent link">#</a></h4>
+<h3 id="partitioning-vs-clustering">Partitioning vs Clustering<a class="headerlink" href="#partitioning-vs-clustering" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_clustering</li>
+<li>data is first partitioned and then clustered</li>
+<li>partitioning<ul>
+<li>pros<ul>
+<li>to set partition expiration time</li>
+<li>advance query cost estimation/pruning </li>
+<li>to define ranges (time, id etc) over partition</li>
+</ul>
+</li>
+<li>cons<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>clustering<ul>
+<li>pros<ul>
+<li>more granualarity than partitioning alone<ul>
+<li>same column for both - partitioning as well as clustering</li>
+</ul>
+</li>
+<li>to speed up queries having filters &amp; aggregation clause</li>
+<li>when cardinality of values of a column/set of column is large</li>
+<li>suitable when partitioning results in small amount of data per partition</li>
+<li>suitable when partitioning results in large number of paritions (beyond limit &amp; quota)</li>
+<li>suitable when mutation operations modifies most of the partitions in the table frequestly (e.g. every minutes/hours)</li>
+</ul>
+</li>
+<li>cons<ul>
+<li>query cost estimation/pruning is actually NOT possible<ul>
+<li>only after query finishes, the cost comes up</li>
+</ul>
+</li>
+<li>NO significant difference in query performance between a clustered and unclustered table if the table or partition is under 1 GB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="partitioning-vs-sharding">Partitioning vs Sharding<a class="headerlink" href="#partitioning-vs-sharding" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/partitioned-tables#dt_partition_shard</li>
+</ul>
+<h2 id="bigquery-data-storage">BigQuery Data Storage<a class="headerlink" href="#bigquery-data-storage" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/pricing#storage</li>
+</ul>
+<h3 id="cost_3">Cost<a class="headerlink" href="#cost_3" title="Permanent link">#</a></h3>
+<ul>
+<li>first 10 GB per month is free</li>
+<li>for more than 1PB, contact sales team for pricing</li>
+<li>pricing is prorated per MB, per second<ul>
+<li>i.e. 1 GB of Long-term storage for half month is $0.005</li>
+</ul>
+</li>
+<li>If the table is edited, the price reverts back to the regular storage pricing, and the 90-day timer starts counting from zero</li>
+</ul>
+<h3 id="active-storage">Active Storage<a class="headerlink" href="#active-storage" title="Permanent link">#</a></h3>
+<ul>
+<li>if a table[-partition] is modified for <code>&lt;= 90</code> consecutive days</li>
+</ul>
+<h4 id="cost_4">Cost<a class="headerlink" href="#cost_4" title="Permanent link">#</a></h4>
+<ul>
+<li>first 10 GB per month is free</li>
+<li>$0.02 per GB</li>
+</ul>
+<h4 id="quota-limit_4">Quota &amp; Limit<a class="headerlink" href="#quota-limit_4" title="Permanent link">#</a></h4>
+<h3 id="long-term-storage">Long-term Storage<a class="headerlink" href="#long-term-storage" title="Permanent link">#</a></h3>
+<ul>
+<li>if a table[-partition] is NOT modified for <code>&gt; 90</code> consecutive days</li>
+</ul>
+<h4 id="cost_5">Cost<a class="headerlink" href="#cost_5" title="Permanent link">#</a></h4>
+<ul>
+<li>first 10 GB per month is free</li>
+<li>pricing is ~50% half of Active Storage pricing</li>
+<li>$0.01 per GB</li>
+</ul>
+<h4 id="quota-limit_5">Quota &amp; Limit<a class="headerlink" href="#quota-limit_5" title="Permanent link">#</a></h4>
+<h3 id="data-size-calculation">Data Size Calculation<a class="headerlink" href="#data-size-calculation" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>https://cloud.google.com/bigquery/pricing#data</p>
+</li>
+<li>
+<p>table size is calculated based on column data-type size</p>
+</li>
+<li>when its in uncompressed form</li>
+</ul>
+<h2 id="bigquery-api">BigQuery API<a class="headerlink" href="#bigquery-api" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#api_request_quotas</li>
+</ul>
+<h2 id="data-ingestion-load-jobs-api">Data Ingestion (load jobs) API<a class="headerlink" href="#data-ingestion-load-jobs-api" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/loading-data</li>
+<li>https://cloud.google.com/bigquery/pricing#data_ingestion_pricing</li>
+</ul>
+<h3 id="batch-loading">Batch Loading<a class="headerlink" href="#batch-loading" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/loading-data#batch_loading</li>
+<li>load bulk data into one or more table</li>
+<li>uses shared pool of slots</li>
+<li>no guarantee of availability/capacity</li>
+</ul>
+<h4 id="cost_6">Cost<a class="headerlink" href="#cost_6" title="Permanent link">#</a></h4>
+<ul>
+<li>free</li>
+<li>option to purchase dedicated slots to run load jobs<ul>
+<li>flat-rate pricing</li>
+</ul>
+</li>
+</ul>
+<h4 id="quota-limit_6">Quota &amp; Limit<a class="headerlink" href="#quota-limit_6" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#load_jobs</li>
+<li>Load jobs per day: 100000 jobs<ul>
+<li>i.e. 1.15 job per second</li>
+<li>failed load jobs count toward this limit</li>
+</ul>
+</li>
+<li>Maximum size per load job: 15 TB </li>
+<li>Load job execution-time limit: 6 hours<ul>
+<li>A load job fails if it executes for longer than six hours</li>
+</ul>
+</li>
+<li>CSV: Maximum file size <ul>
+<li>compressed: 4 GB </li>
+<li>uncompressed: 5 TB </li>
+</ul>
+</li>
+</ul>
+<p>NOTE: If regularly exceed the load job limits due to frequent updates, consider streaming data into BigQuery instead.</p>
+<h3 id="stream-loading-legacy">Stream Loading (Legacy)<a class="headerlink" href="#stream-loading-legacy" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/streaming-data-into-bigquery</li>
+<li>load 1 row at a time (cost per successfull inserts)</li>
+<li>each row is considered atleast 1KB</li>
+</ul>
+<h4 id="cost_7">Cost<a class="headerlink" href="#cost_7" title="Permanent link">#</a></h4>
+<ul>
+<li>$0.01 per 200 MB</li>
+</ul>
+<h4 id="quota-limit_7">Quota &amp; Limit<a class="headerlink" href="#quota-limit_7" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#streaming_inserts</li>
+<li>Maximum bytes per second per project <ul>
+<li>in the us and eu multi-regions: 1 GB per second</li>
+<li>in other region: 300 MB per second</li>
+</ul>
+</li>
+<li>Maximum row size  10 MB </li>
+<li>HTTP request size limit   10 MB</li>
+<li>Maximum rows per request  50,000 rows</li>
+</ul>
+<h3 id="bigquery-storage-write-api">BigQuery Storage Write API<a class="headerlink" href="#bigquery-storage-write-api" title="Permanent link">#</a></h3>
+<ul>
+<li>Batch/Stream Loading using BigQuery Storage Write API</li>
+<li>https://cloud.google.com/bigquery/docs/write-api</li>
+<li>new, fast, cheaper, gRPC based API </li>
+<li>suitable for both batch &amp; stream loading</li>
+</ul>
+<h4 id="cost_8">Cost<a class="headerlink" href="#cost_8" title="Permanent link">#</a></h4>
+<ul>
+<li>$0.025 per 1 GB</li>
+<li>first 2 TB per month are free</li>
+</ul>
+<h4 id="quota-limit_8">Quota &amp; Limit<a class="headerlink" href="#quota-limit_8" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/quotas#write-api-limits</li>
+<li>Concurrent connections    10,000 in multi-regions; 100 in regions </li>
+<li>Pending stream bytes  10 TB in multi-regions; 100 GB in regions</li>
+<li>Throughput    3 GB per second throughput in multi-regions; 300 MB per second in regions</li>
+<li>CreateWriteStream requests    30,000 streams every 4 hours, per project</li>
+<li>Batch commits     10,000 streams per table</li>
+<li>Request size  10 MB</li>
+</ul>
+<h2 id="data-fetchqueryextractionreadexport-apis">Data Fetch/Query/Extraction/Read/Export APIs<a class="headerlink" href="#data-fetchqueryextractionreadexport-apis" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/pricing?hl=en#data_extraction_pricing</li>
+</ul>
+<h3 id="batch-export">Batch Export<a class="headerlink" href="#batch-export" title="Permanent link">#</a></h3>
+<h4 id="cost_9">Cost<a class="headerlink" href="#cost_9" title="Permanent link">#</a></h4>
+<ul>
+<li>Free using the shared slot pool</li>
+</ul>
+<h4 id="quota-limit_9">Quota &amp; Limit<a class="headerlink" href="#quota-limit_9" title="Permanent link">#</a></h4>
+<ul>
+<li>export up to 50 terabytes per day for free using the shared slot pool</li>
+</ul>
+<h3 id="bigquery-storage-read-api">BigQuery Storage Read API<a class="headerlink" href="#bigquery-storage-read-api" title="Permanent link">#</a></h3>
+<h4 id="cost_10">Cost<a class="headerlink" href="#cost_10" title="Permanent link">#</a></h4>
+<ul>
+<li>$1.1 per TB read</li>
+<li>first 300 TB free per month</li>
+</ul>
+<h4 id="quota-limit_10">Quota &amp; Limit<a class="headerlink" href="#quota-limit_10" title="Permanent link">#</a></h4>
+<h3 id="sql-query">SQL Query<a class="headerlink" href="#sql-query" title="Permanent link">#</a></h3>
+<h4 id="bigquery-sql-legacy-sql">BigQuery SQL (Legacy SQL)<a class="headerlink" href="#bigquery-sql-legacy-sql" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/reference/legacy-sql</li>
+</ul>
+<h4 id="standard-sql-new">Standard SQL (New)<a class="headerlink" href="#standard-sql-new" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/reference/standard-sql/introduction</li>
+</ul>
+<h4 id="bigquery-sql-vs-standard-sql">BigQuery SQL vs Standard SQL<a class="headerlink" href="#bigquery-sql-vs-standard-sql" title="Permanent link">#</a></h4>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql</li>
+</ul>
+<h3 id="bigquery-storage-read-api_1">BigQuery Storage Read API<a class="headerlink" href="#bigquery-storage-read-api_1" title="Permanent link">#</a></h3>
+<h3 id="query-size-calculation">Query Size Calculation<a class="headerlink" href="#query-size-calculation" title="Permanent link">#</a></h3>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/estimate-costs#query_size_calculation</li>
+</ul>
+<h2 id="misc-quota-limit">Misc Quota &amp; Limit<a class="headerlink" href="#misc-quota-limit" title="Permanent link">#</a></h2>
+<h3 id="quota-error">Quota Error<a class="headerlink" href="#quota-error" title="Permanent link">#</a></h3>
+<p>https://cloud.google.com/docs/quota#quota_errors</p>
+<ul>
+<li>rateLimitExceeded<ul>
+<li>This value indicates a short-term limit</li>
+<li>To resolve these limit issues, retry the operation after few seconds</li>
+<li>Use exponential backoff between retry attempts<ul>
+<li>That is, exponentially increase the delay between each retry</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>quotaExceeded<ul>
+<li>This value indicates a longer-term limit</li>
+<li>If you reach a longer-term quota limit, you should wait 10 minutes or longer before trying the operation again</li>
+<li>If you consistently reach one of these longer-term quota limits, you should analyze your workload for ways to mitigate the issue<ul>
+<li>Mitigations can include optimizing your workload or requesting a quota increase</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="diagnosis">Diagnosis<a class="headerlink" href="#diagnosis" title="Permanent link">#</a></h4>
+<p>https://cloud.google.com/bigquery/docs/troubleshoot-quotas#diagnosis</p>
+<p>e.g.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python -m exploratory.wordcount_with_option_and_value_provider_v2 <span class="se">\</span>
-    --region us-central1 <span class="se">\ </span>                                                                     <span class="c1"># cloud region</span>
-    --runner DataflowRunner <span class="se">\ </span>                                                                  <span class="c1"># beam runner engine</span>
-    --job_name wordcount-custom-job-<span class="k">$(</span>date +%Y%m%d-%H%M%S<span class="k">)</span> <span class="se">\ </span>                                   <span class="c1"># dataflow job name</span>
-    --project <span class="nv">$GCP_PROJECT</span> <span class="se">\ </span>                                               <span class="c1"># cloud project</span>
-    --temp_location gs://<span class="nv">$GCP_PROJECT</span>-dataflow-poc/tmp/ <span class="se">\ </span>                  <span class="c1"># gcs path</span>
-    --staging_location gs://<span class="nv">$GCP_PROJECT</span>-dataflow-poc/staging <span class="se">\ </span>            <span class="c1"># gcs path for staging files</span>
-    --template_location gs://<span class="nv">$GCP_PROJECT</span>-dataflow-poc/templates/wordcount  <span class="c1"># gcs path to store template file</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+ <span class="n">job_id</span><span class="p">,</span>
+ <span class="n">creation_time</span><span class="p">,</span>
+ <span class="n">error_result</span>
+<span class="k">FROM</span> <span class="o">`</span><span class="n">region</span><span class="o">-</span><span class="n">us</span><span class="o">`</span><span class="p">.</span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">JOBS_BY_PROJECT</span>
+<span class="k">WHERE</span> <span class="n">creation_time</span> <span class="o">&gt;</span> <span class="n">TIMESTAMP_SUB</span><span class="p">(</span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span> <span class="nb">INTERVAL</span> <span class="mi">1</span> <span class="k">DAY</span><span class="p">)</span> <span class="k">AND</span>
+      <span class="n">error_result</span><span class="p">.</span><span class="n">reason</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;rateLimitExceeded&#39;</span><span class="p">,</span> <span class="s1">&#39;quotaExceeded&#39;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
-<h5 id="permission-to-run-on-production-env">Permission to run on Production env<a class="headerlink" href="#permission-to-run-on-production-env" title="Permanent link">#</a></h5>
-<p>tbd</p>
-<h4 id="run-in-web-console">Run in Web Console<a class="headerlink" href="#run-in-web-console" title="Permanent link">#</a></h4>
-<h4 id="run-as-rest-api">Run as REST API<a class="headerlink" href="#run-as-rest-api" title="Permanent link">#</a></h4>
-<p>Run GCP Dataflow template job using REST API sample:</p>
-<p>Ref: </p>
+<h4 id="raise-self_exception-googleapi_coreexceptionsforbidden-403-exceeded-rate-limits-too-many-table-update-operations-for-this-table-for-more-information-see-httpscloudgooglecombigquerydocstroubleshoot-quotas">raise self._exception google.api_core.exceptions.Forbidden: 403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas<a class="headerlink" href="#raise-self_exception-googleapi_coreexceptionsforbidden-403-exceeded-rate-limits-too-many-table-update-operations-for-this-table-for-more-information-see-httpscloudgooglecombigquerydocstroubleshoot-quotas" title="Permanent link">#</a></h4>
+<p>https://cloud.google.com/bigquery/docs/troubleshoot-quotas</p>
+<h3 id="monitoring-quota-metrics">Monitoring Quota Metrics<a class="headerlink" href="#monitoring-quota-metrics" title="Permanent link">#</a></h3>
+<p>https://cloud.google.com/docs/quota#monitoring_quota_metrics</p>
+<h2 id="bigquery-api-clients">BigQuery API Clients<a class="headerlink" href="#bigquery-api-clients" title="Permanent link">#</a></h2>
+<h3 id="python-bigquery"><code>python-bigquery</code><a class="headerlink" href="#python-bigquery" title="Permanent link">#</a></h3>
+<p>https://github.com/googleapis/python-bigquery</p>
 <ul>
-<li>https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#running-the-bigquery-to-elasticsearch-template</li>
-<li>https://cloud.google.com/dataflow/docs/guides/templates/running-templates#example-1:-creating-a-custom-template-batch-job</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ curl <span class="se">\</span>
---url <span class="s2">&quot;https://dataflow.googleapis.com/v1b3/projects/dataflow-eg/locations/us-central1/templates:launch?gcsPath=gs://dataflow-eg-dataflow-poc/templates/wordcount&quot;</span> <span class="se">\</span>
---request POST <span class="se">\</span>
---header <span class="s2">&quot;Authorization: Bearer &quot;</span><span class="k">$(</span>gcloud auth print-access-token<span class="k">)</span> <span class="se">\</span>
---header <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
---header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
---data <span class="s1">&#39;{</span>
-<span class="s1">    &quot;jobName&quot;: &quot;wordcount-curl-job-&#39;</span><span class="k">$(</span>date +%Y%m%d-%H%M%S<span class="k">)</span><span class="s1">&#39;&quot;,</span>
-<span class="s1">    &quot;environment&quot;: {</span>
-<span class="s1">        &quot;bypassTempDirValidation&quot;: false,</span>
-<span class="s1">        &quot;tempLocation&quot;: &quot;gs://dataflow-eg-dataflow-poc/tmp/&quot;,</span>
-<span class="s1">        &quot;ipConfiguration&quot;: &quot;WORKER_IP_UNSPECIFIED&quot;,</span>
-<span class="s1">        &quot;additionalExperiments&quot;: []</span>
-<span class="s1">    },</span>
-<span class="s1">    &quot;parameters&quot;: {</span>
-<span class="s1">        &quot;input&quot;: &quot;gs://dataflow-samples/shakespeare/kinglear.txt&quot;,</span>
-<span class="s1">        &quot;output&quot;: &quot;gs://dataflow-eg-dataflow-poc/results/outputs-templated-curl&quot;</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span>
-
-<span class="c1"># sample output:</span>
-<span class="o">{</span>
-  <span class="s2">&quot;job&quot;</span>: <span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;2022-02-16_01_15_13-5260506404532792394&quot;</span>,
-    <span class="s2">&quot;projectId&quot;</span>: <span class="s2">&quot;dataflow-eg&quot;</span>,
-    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;wordcount-curl-job-20220216-144511&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;JOB_TYPE_BATCH&quot;</span>,
-    <span class="s2">&quot;currentStateTime&quot;</span>: <span class="s2">&quot;1970-01-01T00:00:00Z&quot;</span>,
-    <span class="s2">&quot;createTime&quot;</span>: <span class="s2">&quot;2022-02-16T09:15:13.997352Z&quot;</span>,
-    <span class="s2">&quot;location&quot;</span>: <span class="s2">&quot;us-central1&quot;</span>,
-    <span class="s2">&quot;startTime&quot;</span>: <span class="s2">&quot;2022-02-16T09:15:13.997352Z&quot;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
-<h4 id="run-as-python-gcp-client">Run as Python GCP Client<a class="headerlink" href="#run-as-python-gcp-client" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># dataflow/run_template/main.py </span>
-
-<span class="kn">from</span> <span class="nn">googleapiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
-
-<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;your-gcp-project&#39;</span>
-<span class="n">job</span> <span class="o">=</span> <span class="s1">&#39;unique-job-name&#39;</span>
-<span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;gs://dataflow-templates/latest/Word_Count&#39;</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;inputFile&#39;</span><span class="p">:</span> <span class="s1">&#39;gs://dataflow-samples/shakespeare/kinglear.txt&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;gs://&lt;your-gcs-bucket&gt;/wordcount/outputs&#39;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">dataflow</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="s1">&#39;dataflow&#39;</span><span class="p">,</span> <span class="s1">&#39;v1b3&#39;</span><span class="p">)</span>
-<span class="n">request</span> <span class="o">=</span> <span class="n">dataflow</span><span class="o">.</span><span class="n">projects</span><span class="p">()</span><span class="o">.</span><span class="n">templates</span><span class="p">()</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span>
-    <span class="n">projectId</span><span class="o">=</span><span class="n">project</span><span class="p">,</span>
-    <span class="n">gcsPath</span><span class="o">=</span><span class="n">template</span><span class="p">,</span>
-    <span class="n">body</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;jobName&#39;</span><span class="p">:</span> <span class="n">job</span><span class="p">,</span>
-        <span class="s1">&#39;parameters&#39;</span><span class="p">:</span> <span class="n">parameters</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table>
-<p>Ref: https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/dataflow/run_template</p>
-<h4 id="run-using-gcloud-cli">Run using gcloud CLI<a class="headerlink" href="#run-using-gcloud-cli" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ gcloud dataflow <span class="nb">jobs</span> run dataflow-templated-wordcount-custom-gcloud-job <span class="se">\</span>
-    --region us-central1 <span class="se">\</span>
-    --gcs-location gs://apache-beam-eg/templates/wordcount <span class="se">\</span>
-    --parameters <span class="nv">input</span><span class="o">=</span>gs://dataflow-samples/shakespeare/kinglear.txt,output<span class="o">=</span>gs://apache-beam-eg/results/output_wordcount_gcloud
-
-<span class="c1"># sample output:</span>
-createTime: <span class="s1">&#39;2022-02-11T09:37:25.311851Z&#39;</span>
-currentStateTime: <span class="s1">&#39;1970-01-01T00:00:00Z&#39;</span>
-id: <span class="m">2022</span>-02-11_01_37_24-16510436790575398178
-location: us-central1
-name: dataflow-templated-wordcount-custom-gcloud-job
-projectId: apache-beam-eg
-startTime: <span class="s1">&#39;2022-02-11T09:37:25.311851Z&#39;</span>
-type: JOB_TYPE_BATCH
-</code></pre></div>
-</td></tr></table>
-<h3 id="schedule">Schedule<a class="headerlink" href="#schedule" title="Permanent link">#</a></h3>
-<p>Refer to <a href="/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler">DevOps/GCP/Scheduler</a>.</p>
-<h3 id="clean">Clean<a class="headerlink" href="#clean" title="Permanent link">#</a></h3>
-<h4 id="clean-up-the-classic-template-resources">Clean up the Classic Template resources<a class="headerlink" href="#clean-up-the-classic-template-resources" title="Permanent link">#</a></h4>
-<p>Stop the Dataflow pipeline.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcloud dataflow jobs list \
-  --filter &#39;NAME=&lt;job name&gt; AND STATE=Running&#39; \
-  --format &#39;value(JOB_ID)&#39; \
-  --region &quot;$REGION&quot; \
-  | xargs gcloud dataflow jobs cancel --region &quot;$REGION&quot;
-</code></pre></div>
-</td></tr></table>
-<p>Delete the template spec file from Cloud Storage.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gsutil rm &lt;TEMPLATE_PATH&gt;
-</code></pre></div>
-</td></tr></table>
-<h4 id="clean-up-google-cloud-project-resources">Clean up Google Cloud project resources<a class="headerlink" href="#clean-up-google-cloud-project-resources" title="Permanent link">#</a></h4>
-<p>Delete the Cloud Scheduler jobs.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcloud scheduler jobs delete &lt;scheduler job name&gt;
-</code></pre></div>
-</td></tr></table>
-<h4 id="how-gcp-dataflow-stores-things">how gcp dataflow stores things<a class="headerlink" href="#how-gcp-dataflow-stores-things" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>bucket
-    staging/
-        job_name_uniq/
-            requirements.txt
-            apache_beam-2.36.0-cp38-cp38-manylinux1_x86_64.whl
-            dataflow_python_sdk.tar
-            excel2json_3-0.1.6-py3-none-any.whl
-            extra_packages.txt
-            pickled_main_session                                # python pickled data of __main__ context
-            pipeline.pb                                         # python pickled data of whole python code
-            workflow.tar.gz
-    templates/
-        bigquery-poc-template                                   # a json file
-    tmp/
-        job_name_uniq/                                          # same as staged one, but here temporary
-            requirements.txt
-            apache_beam-2.36.0-cp38-cp38-manylinux1_x86_64.whl
-            dataflow_python_sdk.tar
-            excel2json_3-0.1.6-py3-none-any.whl
-            extra_packages.txt
-            pickled_main_session                                # python pickled data of __main__ context
-            pipeline.pb                                         # python pickled data of whole python code
-            workflow.tar.gz
-</code></pre></div>
-</td></tr></table>
-<h4 id="python-packaging">Python packaging<a class="headerlink" href="#python-packaging" title="Permanent link">#</a></h4>
-<ul>
-<li>use of MANIFEST.in with <code>include_package_data=True</code> vs <code>package_data={}</code><ul>
-<li>Ref: https://stackoverflow.com/questions/1612733/including-non-python-files-with-setup-py</li>
-<li>https://docs.python.org/3/distutils/sourcedist.html#the-manifest-in-template</li>
+<li>load_table_from_dataframe<ul>
+<li>uses CSV format by default</li>
+<li>good performance for small batch</li>
 </ul>
 </li>
 </ul>
-<h4 id="to">to<a class="headerlink" href="#to" title="Permanent link">#</a></h4>
+<h3 id="pandas-gbq"><code>pandas-gbq</code><a class="headerlink" href="#pandas-gbq" title="Permanent link">#</a></h3>
+<p>https://github.com/googleapis/python-bigquery-pandas</p>
 <ul>
-<li>mention python dependencies<ul>
-<li>https://beam.apache.org/documentation/sdks/python-pipeline-dependencies/ </li>
-<li>https://github.com/apache/beam/blob/master/sdks/python/apache_beam/examples/complete/juliaset/setup.py</li>
-</ul>
-</li>
-<li>nameerror in main.py dataflow template<ul>
-<li>https://cloud.google.com/dataflow/docs/resources/faq#how_do_i_handle_nameerrors<ul>
-<li>use <code>save_main_session=True</code></li>
+<li>load_table_from_dataframe<ul>
+<li>uses parquet format by default</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>pardo examples<ul>
-<li>https://beam.apache.org/documentation/transforms/python/elementwise/pardo/</li>
-</ul>
-</li>
-<li>job failing due to dependenciesGIT_PAGER<ul>
-<li>not working with requirements mentioned inside setup.py while combination of 3 works i.e.<ul>
-<li>setup.py (required if local imports)</li>
-<li>extra_packages (required if local deps/.whl/tar.gz)</li>
-<li>requirements_text (required if pypi/git/remote deps)</li>
-<li>which contradicts https://issues.apache.org/jira/browse/BEAM-10115</li>
-</ul>
-</li>
-<li>setup.py thing not working in flex template<ul>
-<li>symptom: module not found</li>
-<li>solution: use explicit <code>--setup_file</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>develop io connector<ul>
-<li>https://beam.apache.org/documentation/io/developing-io-java/</li>
-<li>https://www.youtube.com/watch?v=e5EdPNAw6N4</li>
-<li>https://www.youtube.com/watch?v=eAN6rNc6EjE</li>
-</ul>
-</li>
-<li>production ready arch<ul>
-<li>https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-developing-and-testing</li>
-</ul>
-</li>
-<li>empty PCollection<ul>
-<li>https://stackoverflow.com/questions/47624146/apache-beam-initialize-an-pcollection-to-empty</li>
-</ul>
-</li>
-<li>DoFn vs PTransforms<ul>
-<li>https://stackoverflow.com/questions/47706600/apache-beam-dofn-vs-ptransform</li>
-</ul>
-</li>
-<li>catch:<ul>
-<li>while running flex template, don't set runner explicitely to Dataflow otherwise another additional job gets triggered</li>
-<li>by default is uses Dataflow runner only</li>
-</ul>
-</li>
-<li>observations<ul>
-<li>work user a/c started experiencing some issue, started using my personal account</li>
-<li>wheel containing cloudvision-python as git dep <code>pkg @ url</code> works fine - except the kedro logging.yml part - on my personal account (see below cmd)</li>
-<li>multiple <code>--extra_package</code> is allowed - incase need to pass cloudvision.whl</li>
-</ul>
-</li>
-</ul>
-<h2 id="flex-template">Flex Template<a class="headerlink" href="#flex-template" title="Permanent link">#</a></h2>
+<h2 id="usecases">Usecases<a class="headerlink" href="#usecases" title="Permanent link">#</a></h2>
+<h3 id="data-warehousing">Data Warehousing<a class="headerlink" href="#data-warehousing" title="Permanent link">#</a></h3>
 <ul>
-<li>https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#python_3</li>
-</ul>
-<h3 id="why_1">Why<a class="headerlink" href="#why_1" title="Permanent link">#</a></h3>
-<h4 id="flex-template-over-classic-template">Flex Template over Classic Template<a class="headerlink" href="#flex-template-over-classic-template" title="Permanent link">#</a></h4>
-<p>Ref: https://cloud.google.com/dataflow/docs/concepts/dataflow-templates</p>
-<h3 id="what_2">What<a class="headerlink" href="#what_2" title="Permanent link">#</a></h3>
-<h3 id="how_2">How<a class="headerlink" href="#how_2" title="Permanent link">#</a></h3>
-<ul>
-<li>Note: For readability, we recommend that you set the entry point in your Dockerfile. When ENTRYPOINT is not set, Dataflow sets the entry point to the template launcher binary based on SDK language.<ul>
-<li>https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates</li>
-</ul>
-</li>
-<li>allowed parameters/flags<ul>
-<li>https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment</li>
-</ul>
-</li>
-</ul>
-<h3 id="create_1">Create<a class="headerlink" href="#create_1" title="Permanent link">#</a></h3>
-<h3 id="stage_1">Stage<a class="headerlink" href="#stage_1" title="Permanent link">#</a></h3>
-<h3 id="run_1">Run<a class="headerlink" href="#run_1" title="Permanent link">#</a></h3>
-<h4 id="permission-required">Permission required<a class="headerlink" href="#permission-required" title="Permanent link">#</a></h4>
-<ul>
-<li>for Flex templates: https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#understanding_flex_template_permissions</li>
-</ul>
-<h4 id="allowed-env-variables">Allowed ENV variables<a class="headerlink" href="#allowed-env-variables" title="Permanent link">#</a></h4>
-<ul>
-<li>https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.locations.flexTemplates/launch#flextemplateruntimeenvironment</li>
-</ul>
-<h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h3>
-<h4 id="allowed-optionsargsparams">Allowed options/args/params<a class="headerlink" href="#allowed-optionsargsparams" title="Permanent link">#</a></h4>
-<ul>
-<li>
-<p>https://cloud.google.com/sdk/gcloud/reference/beta/dataflow/flex-template/build</p>
-</li>
-<li>
-<p><code>--env</code></p>
-<ul>
-<li>https://cloud.google.com/sdk/gcloud/reference/beta/dataflow/flex-template/build#--env</li>
-<li>Allowed ENV vars<ul>
-<li>https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#setting_required_dockerfile_environment_variables</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="custom-worker-image">Custom Worker Image<a class="headerlink" href="#custom-worker-image" title="Permanent link">#</a></h4>
-<ul>
-<li>Use mutistage Docker build<ul>
-<li>https://cloud.google.com/dataflow/docs/guides/using-custom-containers?hl=en#use_a_custom_base_image_or_multi-stage_builds</li>
-</ul>
-</li>
-</ul>
-<h2 id="tech-concept">Tech Concept<a class="headerlink" href="#tech-concept" title="Permanent link">#</a></h2>
-<p>https://cloud.google.com/dataflow/docs/concepts</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h2>
-<h3 id="gcp-account">GCP Account<a class="headerlink" href="#gcp-account" title="Permanent link">#</a></h3>
-<ul>
-<li>https://console.cloud.google.com/freetrial</li>
-</ul>
-<h3 id="gcloud-cli">gcloud CLI<a class="headerlink" href="#gcloud-cli" title="Permanent link">#</a></h3>
-<p>Refer to <a href="/Engineering/Software-Engineering/DevOps/Clouds/gcp/#gcloud-cli">DevOps/GCP/Setup/gcloud CLI</a>.</p>
-<h3 id="python-38"><code>python 3.8</code><a class="headerlink" href="#python-38" title="Permanent link">#</a></h3>
-<p>Use <code>pyenve</code>/<code>conda</code> to install appropriate python version.</p>
-<h2 id="apache-beam-job">Apache Beam Job<a class="headerlink" href="#apache-beam-job" title="Permanent link">#</a></h2>
-<ul>
-<li>https://cloud.google.com/dataflow/docs/quickstarts/quickstart-python
-Follow <a href="/Engineering/Software-Engineering/Data-Engineering/apache_beam/">Apache Beam</a> to write a sample Apache Beam pipeline, run them locally using Dataflow runner.</li>
-</ul>
-<h2 id="authentication-authorization">Authentication &amp; Authorization<a class="headerlink" href="#authentication-authorization" title="Permanent link">#</a></h2>
-<p>To run the GCP dataflow template in cloud using REST.</p>
-<p>Authorization:</p>
-<ul>
-<li>OAuth2/OIDC scope: https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.templates/launch</li>
-</ul>
-<p>Authentication:</p>
-<ul>
-<li>https://cloud.google.com/docs/authentication/</li>
-<li>https://cloud.google.com/docs/authentication/getting-started#auth-cloud-implicit-python</li>
-<li>https://stackoverflow.com/questions/57433397/how-to-authorize-an-http-post-request-to-execute-dataflow-template-with-rest-api</li>
-</ul>
-<h2 id="access-control-with-iam">Access Control with IAM<a class="headerlink" href="#access-control-with-iam" title="Permanent link">#</a></h2>
-<p>For service accounts:</p>
-<ul>
-<li>https://cloud.google.com/dataflow/docs/concepts/access-control#roles</li>
-</ul>
-<h2 id="network-config">Network Config<a class="headerlink" href="#network-config" title="Permanent link">#</a></h2>
-<ul>
-<li>https://console.cloud.google.com/networking/networks/list?project=dataflow-eg</li>
-</ul>
-<h2 id="cicd-production-grade-best-practice">CI/CD / Production Grade / Best Practice<a class="headerlink" href="#cicd-production-grade-best-practice" title="Permanent link">#</a></h2>
-<ul>
-<li>https://cloud.google.com/architecture/cicd-pipeline-for-data-processing</li>
-<li>https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying</li>
-<li>https://medium.com/@zhongchen/dataflow-ci-cd-with-cloudbuild-1ad503c1c81</li>
-<li>https://medium.com/everything-full-stack/dataflow-ci-cd-with-github-actions-65765f09713f</li>
-<li>https://medium.com/@emailchhavisharma/quick-steps-to-build-deploy-dataflow-flex-templates-python-java-728fc366f0d1</li>
-<li>https://github.com/kwadie/dataflow-templates-cicd</li>
-<li>https://dataintegration.info/why-you-should-be-using-flex-templates-for-your-dataflow-deployments<ul>
-<li>https://github.com/slilichenko/dataflow-jdbc-replication</li>
-</ul>
-</li>
-</ul>
-<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">#</a></h2>
-<h3 id="monitoring-troubleshooting">Monitoring &amp; Troubleshooting<a class="headerlink" href="#monitoring-troubleshooting" title="Permanent link">#</a></h3>
-<ul>
-<li>https://cloud.google.com/dataflow/pipelines/dataflow-monitoring-intf</li>
-<li>https://cloud.google.com/dataflow/pipelines/troubleshooting-your-pipeline</li>
-</ul>
-<h3 id="execution-detail">Execution Detail<a class="headerlink" href="#execution-detail" title="Permanent link">#</a></h3>
-<p>https://cloud.google.com/dataflow/docs/concepts/execution-details</p>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<p>https://cloud.google.com/dataflow/docs/resources/faq</p>
-<h2 id="deep">Deep<a class="headerlink" href="#deep" title="Permanent link">#</a></h2>
-<ul>
-<li>https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41378.pdf</li>
-<li>https://medium.com/@raigonjolly/dataflow-for-google-cloud-professional-data-exam-9efd59377068</li>
-</ul>
-<h3 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">#</a></h3>
-<ul>
-<li>https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#parallelization-and-distribution</li>
-<li>--num_workers=1-1000|3</li>
-<li>--autoscaling_algorithm=NONE|THROUGHPUT_BASED</li>
-<li>max_num_workers</li>
-</ul>
-<h3 id="autoscaling">Autoscaling<a class="headerlink" href="#autoscaling" title="Permanent link">#</a></h3>
-<ul>
-<li>https://thegcpgurus.com/cloud-dataflow-how-to-implement-auto-scaling-data-pipelines/</li>
-<li>https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#batch-autoscaling</li>
-<li>https://www.youtube.com/watch?v=a7CymWiX3oM&amp;t=399s</li>
-</ul>
-<h3 id="autoscaling-not-working">Autoscaling not working<a class="headerlink" href="#autoscaling-not-working" title="Permanent link">#</a></h3>
-<ul>
-<li>https://stackoverflow.com/questions/53885306/why-do-i-need-to-shuffle-my-pcollection-for-it-to-autoscale-on-cloud-dataflow</li>
-</ul>
-<h4 id="reshuffling">Reshuffling<a class="headerlink" href="#reshuffling" title="Permanent link">#</a></h4>
-<ul>
-<li>https://beam.apache.org/documentation/transforms/python/other/reshuffle/</li>
-<li>https://stackoverflow.com/questions/54121642/apache-beam-dataflow-reshuffle</li>
-<li>https://www.programcreek.com/python/example/122924/apache_beam.Reshuffle</li>
-<li>https://beam.apache.org/releases/pydoc/current/apache_beam.transforms.util.html?highlight=reshuffle#apache_beam.transforms.util.Reshuffle</li>
-<li>https://stackoverflow.com/questions/53885306/why-do-i-need-to-shuffle-my-pcollection-for-it-to-autoscale-on-cloud-dataflow</li>
-<li>https://stackoverflow.com/questions/41212272/google-cloud-dataflow-consume-external-source</li>
-<li>https://stackoverflow.com/questions/46116443/dataflow-streaming-job-not-scaleing-past-1-worker</li>
-<li>https://stackoverflow.com/questions/46807450/scaling-of-pardo-transforms-having-blocking-network-calls</li>
-<li>https://stackoverflow.com/questions/41268877/dataflow-is-it-possible-to-run-parts-of-the-pipeline-synchronously-and-other-pa</li>
-</ul>
-<h3 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">#</a></h3>
-<ul>
-<li>https://www.carted.com/blog/improving-dataflow-pipelines-for-text-data-processing/</li>
-<li>https://cloud.google.com/dataflow/docs/concepts/execution-details</li>
+<li>https://cloud.google.com/architecture/confidential-data-warehouse-blueprint</li>
+<li>https://cloud.google.com/architecture/dw2bq/dw-bq-migration-overview</li>
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
 <ul>
-<li>external<ul>
-<li>https://medium.com/@zhongchen/schedule-your-dataflow-batch-jobs-with-cloud-scheduler-8390e0e958eb<ul>
-<li>https://github.com/zhongchen/GCP-Demo/tree/master/demos/scheduler-dataflow-demo/terraform</li>
-</ul>
-</li>
-<li>https://medium.com/@jamesmoore255/creating-a-template-for-the-python-cloud-dataflow-sdk-2fe36cc4167f</li>
-</ul>
-</li>
-<li>google<ul>
-<li><a href="https://cloud.google.com/products/calculator">pricing calc</a></li>
-</ul>
-</li>
+<li><a href="https://issuetracker.google.com/savedsearches/559654">Open Feature Requests</a></li>
 </ul>
                 
               
@@ -3546,7 +3705,7 @@ Follow <a href="/Engineering/Software-Engineering/Data-Engineering/apache_beam/"
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../big_data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Big Data" rel="prev">
+        <a href="../elasticsearch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ElasticSearch" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3555,20 +3714,20 @@ Follow <a href="/Engineering/Software-Engineering/Data-Engineering/apache_beam/"
               <span class="md-footer__direction">
                 Previous
               </span>
-              Big Data
+              ElasticSearch
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../Database/elasticsearch/" class="md-footer__link md-footer__link--next" aria-label="Next: ElasticSearch" rel="next">
+        <a href="../mysql/" class="md-footer__link md-footer__link--next" aria-label="Next: MySQL" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ElasticSearch
+              MySQL
             </div>
           </div>
           <div class="md-footer__button md-icon">

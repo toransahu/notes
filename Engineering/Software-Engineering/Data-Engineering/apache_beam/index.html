@@ -16,7 +16,7 @@
     
     
       
-        <title>Apache beam - Toran's Notes</title>
+        <title>Apache Beam - Toran's Notes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#apache-beam" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Apache beam
+              Apache Beam
             
           </span>
         </div>
@@ -754,20 +754,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/" class="md-nav__link">
-        DevOps
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../docker/" class="md-nav__link">
         Docker
       </a>
@@ -855,18 +841,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_11">
+        <label class="md-nav__link" for="__nav_4_2_10">
           Architecture
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Architecture" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_11">
+        <label class="md-nav__title" for="__nav_4_2_10">
           <span class="md-nav__icon md-icon"></span>
           Architecture
         </label>
@@ -932,18 +918,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_12">
+        <label class="md-nav__link" for="__nav_4_2_11">
           Data Engineering
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_12">
+        <label class="md-nav__title" for="__nav_4_2_11">
           <span class="md-nav__icon md-icon"></span>
           Data Engineering
         </label>
@@ -963,12 +949,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Apache beam
+          Apache Beam
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Apache beam
+        Apache Beam
       </a>
       
         
@@ -984,6 +970,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apache-beam" class="md-nav__link">
+    Apache Beam
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
@@ -1038,6 +1031,53 @@
     Concept
   </a>
   
+    <nav class="md-nav" aria-label="Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ptransform" class="md-nav__link">
+    PTransform
+  </a>
+  
+    <nav class="md-nav" aria-label="PTransform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#websocket-based-ptransform" class="md-nav__link">
+    WebSocket based PTransform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pardo" class="md-nav__link">
+    ParDo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofn" class="md-nav__link">
+    DoFn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1045,8 +1085,43 @@
     Setup
   </a>
   
-    <nav class="md-nav" aria-label="Setup">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" class="md-nav__link">
+    Run Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-on-dataflow-runner" class="md-nav__link">
+    Run on Dataflow Runner
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#python-skd" class="md-nav__link">
@@ -1065,6 +1140,26 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-does-custom-python-object-cannot-be-used-with-pardo-fn" class="md-nav__link">
+    Why does custom Python object cannot be used with ParDo Fn?
+  </a>
   
 </li>
         
@@ -1137,7 +1232,7 @@
   
     <li class="md-nav__item">
       <a href="../gcp_dataflow/" class="md-nav__link">
-        Gcp dataflow
+        GCP Dataflow
       </a>
     </li>
   
@@ -1160,18 +1255,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_13" type="checkbox" id="__nav_4_2_13" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_13">
+        <label class="md-nav__link" for="__nav_4_2_12">
           Database
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Database" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_13">
+        <label class="md-nav__title" for="__nav_4_2_12">
           <span class="md-nav__icon md-icon"></span>
           Database
         </label>
@@ -1185,6 +1280,20 @@
     <li class="md-nav__item">
       <a href="../../Database/elasticsearch/" class="md-nav__link">
         ElasticSearch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Database/gcp_bigquery/" class="md-nav__link">
+        GCP BigQuery
       </a>
     </li>
   
@@ -1249,18 +1358,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14" type="checkbox" id="__nav_4_2_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_13" type="checkbox" id="__nav_4_2_13" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_14">
+        <label class="md-nav__link" for="__nav_4_2_13">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="DevOps" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_14">
+        <label class="md-nav__title" for="__nav_4_2_13">
           <span class="md-nav__icon md-icon"></span>
           DevOps
         </label>
@@ -1271,22 +1380,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../DevOps/basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14_1" type="checkbox" id="__nav_4_2_14_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_13_2" type="checkbox" id="__nav_4_2_13_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_14_1">
+        <label class="md-nav__link" for="__nav_4_2_13_2">
           Clouds
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Clouds" data-md-level="4">
-        <label class="md-nav__title" for="__nav_4_2_14_1">
+        <label class="md-nav__title" for="__nav_4_2_13_2">
           <span class="md-nav__icon md-icon"></span>
           Clouds
         </label>
@@ -1300,6 +1423,20 @@
     <li class="md-nav__item">
       <a href="../../DevOps/Clouds/aws/" class="md-nav__link">
         AWS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/Clouds/gcp/" class="md-nav__link">
+        GCP
       </a>
     </li>
   
@@ -1329,18 +1466,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15" type="checkbox" id="__nav_4_2_15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14" type="checkbox" id="__nav_4_2_14" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_15">
+        <label class="md-nav__link" for="__nav_4_2_14">
           Product Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Product Development" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_15">
+        <label class="md-nav__title" for="__nav_4_2_14">
           <span class="md-nav__icon md-icon"></span>
           Product Development
         </label>
@@ -1365,22 +1502,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../Product-Development/regulations_and_compliances/" class="md-nav__link">
+        Regulations & Compliances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15_2" type="checkbox" id="__nav_4_2_15_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14_3" type="checkbox" id="__nav_4_2_14_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_15_2">
+        <label class="md-nav__link" for="__nav_4_2_14_3">
           Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Practices" data-md-level="4">
-        <label class="md-nav__title" for="__nav_4_2_15_2">
+        <label class="md-nav__title" for="__nav_4_2_14_3">
           <span class="md-nav__icon md-icon"></span>
           Practices
         </label>
@@ -1423,18 +1574,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_16" type="checkbox" id="__nav_4_2_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15" type="checkbox" id="__nav_4_2_15" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_16">
+        <label class="md-nav__link" for="__nav_4_2_15">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_16">
+        <label class="md-nav__title" for="__nav_4_2_15">
           <span class="md-nav__icon md-icon"></span>
           Web
         </label>
@@ -1477,18 +1628,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_16_3" type="checkbox" id="__nav_4_2_16_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15_3" type="checkbox" id="__nav_4_2_15_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2_16_3">
+        <label class="md-nav__link" for="__nav_4_2_15_3">
           API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="API" data-md-level="4">
-        <label class="md-nav__title" for="__nav_4_2_16_3">
+        <label class="md-nav__title" for="__nav_4_2_15_3">
           <span class="md-nav__icon md-icon"></span>
           API
         </label>
@@ -2000,6 +2151,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#apache-beam" class="md-nav__link">
+    Apache Beam
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
@@ -2052,6 +2210,53 @@
     Concept
   </a>
   
+    <nav class="md-nav" aria-label="Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ptransform" class="md-nav__link">
+    PTransform
+  </a>
+  
+    <nav class="md-nav" aria-label="PTransform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#websocket-based-ptransform" class="md-nav__link">
+    WebSocket based PTransform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pardo" class="md-nav__link">
+    ParDo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofn" class="md-nav__link">
+    DoFn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2059,8 +2264,43 @@
     Setup
   </a>
   
-    <nav class="md-nav" aria-label="Setup">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" class="md-nav__link">
+    Run Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-on-dataflow-runner" class="md-nav__link">
+    Run on Dataflow Runner
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#python-skd" class="md-nav__link">
@@ -2079,6 +2319,26 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-does-custom-python-object-cannot-be-used-with-pardo-fn" class="md-nav__link">
+    Why does custom Python object cannot be used with ParDo Fn?
+  </a>
   
 </li>
         
@@ -2124,12 +2384,14 @@
                   </a>
                 
                 
-                <h1>Apache Beam</h1>
-
+                  <h1>Apache Beam</h1>
+                
+                <h2 id="apache-beam">Apache Beam<a class="headerlink" href="#apache-beam" title="Permanent link">#</a></h2>
 <h3>Table of Contents</h3>
 
 <div class="toc">
 <ul>
+<li><a href="#apache-beam">Apache Beam</a></li>
 <li><a href="#introduction">Introduction</a><ul>
 <li><a href="#what">What</a></li>
 <li><a href="#why">Why</a></li>
@@ -2138,12 +2400,30 @@
 <li><a href="#read-more">Read More</a></li>
 </ul>
 </li>
-<li><a href="#concept">Concept</a></li>
-<li><a href="#setup">Setup</a><ul>
+<li><a href="#concept">Concept</a><ul>
+<li><a href="#pipeline">Pipeline</a></li>
+<li><a href="#ptransform">PTransform</a><ul>
+<li><a href="#websocket-based-ptransform">WebSocket based PTransform</a></li>
+</ul>
+</li>
+<li><a href="#pardo">ParDo</a></li>
+<li><a href="#dofn">DoFn</a></li>
+</ul>
+</li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#create">Create</a></li>
+<li><a href="#run">Run</a><ul>
+<li><a href="#run-locally">Run Locally</a></li>
+<li><a href="#run-on-dataflow-runner">Run on Dataflow Runner</a></li>
 <li><a href="#python-skd">Python SKD</a><ul>
 <li><a href="#syntax">Syntax</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#why-does-custom-python-object-cannot-be-used-with-pardo-fn">Why does custom Python object cannot be used with ParDo Fn?</a></li>
 </ul>
 </li>
 <li><a href="#todo">TODO</a><ul>
@@ -2250,7 +2530,40 @@ flowchart TB
     processor3 --&gt; output</code></pre>
 <p>Figure 1. Flow diagram of a typical data processing pipeline/topology</p>
 <p></center></p>
+<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">#</a></h3>
+<h3 id="ptransform">PTransform<a class="headerlink" href="#ptransform" title="Permanent link">#</a></h3>
+<h4 id="websocket-based-ptransform">WebSocket based PTransform<a class="headerlink" href="#websocket-based-ptransform" title="Permanent link">#</a></h4>
+<ul>
+<li>https://rmannibucau.metawerx.net/apache-beam-websocket-output.html</li>
+</ul>
+<h3 id="pardo">ParDo<a class="headerlink" href="#pardo" title="Permanent link">#</a></h3>
+<h3 id="dofn">DoFn<a class="headerlink" href="#dofn" title="Permanent link">#</a></h3>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">#</a></h2>
+<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h2>
+<h3 id="run-locally">Run Locally<a class="headerlink" href="#run-locally" title="Permanent link">#</a></h3>
+<h3 id="run-on-dataflow-runner">Run on Dataflow Runner<a class="headerlink" href="#run-on-dataflow-runner" title="Permanent link">#</a></h3>
+<p>Using service account:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python -m exploratory.wordcount <span class="se">\</span>
+    --region us-central1 <span class="se">\</span>
+    --input gs://dataflow-samples/shakespeare/kinglear.txt <span class="se">\</span>
+    --output gs://apache-beam-eg/results/outputs <span class="se">\</span>
+    --runner DataflowRunner <span class="se">\</span>
+    --project apache-beam-eg <span class="se">\</span>
+    --temp_location gs://apache-beam-eg/tmp/ <span class="se">\</span>
+    --service_account_email apache-beam-svc-ac@apache-beam-eg.iam.gserviceaccount.com <span class="se">\</span>
+    --subnetwork regions/us-central1/subnetworks/apache-beam-eg-usc1-temp <span class="c1"># mention subnetwork other that `default`</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="python-skd">Python SKD<a class="headerlink" href="#python-skd" title="Permanent link">#</a></h3>
 <p>References:</p>
 <ul>
@@ -2293,6 +2606,11 @@ e.g.</p>
 <li>https://stackoverflow.com/questions/54094081/how-to-render-a-pipeline-graph-in-beam</li>
 </ul>
 </li>
+</ul>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
+<h3 id="why-does-custom-python-object-cannot-be-used-with-pardo-fn">Why does custom Python object cannot be used with ParDo Fn?<a class="headerlink" href="#why-does-custom-python-object-cannot-be-used-with-pardo-fn" title="Permanent link">#</a></h3>
+<ul>
+<li>https://stackoverflow.com/questions/55822881/why-does-custom-python-object-cannot-be-used-with-pardo-fn</li>
 </ul>
 <h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">#</a></h2>
 <h3 id="explore">Explore<a class="headerlink" href="#explore" title="Permanent link">#</a></h3>
