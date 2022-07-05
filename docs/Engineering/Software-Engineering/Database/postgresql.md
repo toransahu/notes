@@ -18,9 +18,9 @@ Ubuntu's default repositories contain Postgres packages, so we can install these
 
 Since this is our first time using apt in this session, we need to refresh our local package index. We can then install the Postgres package and a -contrib package that adds some additional utilities and functionality:
 
-```
-sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib
+```bash
+$ sudo apt-get update
+$ sudo apt-get install postgresql postgresql-contrib
 ```
 
 Now that our software is installed, we can go over how it works and how it may be different from similar database management systems you may have used.
@@ -35,16 +35,16 @@ There are a few ways to utilize this account to access Postgres.
 ### Switching Over to the postgres Account
 The installation procedure created a user account called postgres that is associated with the default Postgres role. In order to use Postgres, we can log into that account.
 
-Switch over to the postgres account on your server by typing:
+Switch over to the postgres linux account on your server by typing:
 
-```
-sudo -i -u postgres
+```bash
+$ sudo -i -u postgres
 ```
 
 You can now access a Postgres prompt immediately by typing:
 
-```
-psql
+```bash
+$ psql
 ```
 
 You will be logged in and able to interact with the database management system right away.
@@ -61,8 +61,9 @@ You should now be back in the postgres Linux command prompt.
 You can also run the command you'd like with the postgres account directly with sudo.
 
 For instance, in the last example, we just wanted to get to a Postgres prompt. We could do this in one step by running the single command psql as the postgres user with sudo like this:
-```
-sudo -u postgres psql
+
+```bash
+$ sudo -u postgres psql
 ```
 
 This will log you directly into Postgres without the intermediary bash shell in between.
@@ -70,86 +71,93 @@ This will log you directly into Postgres without the intermediary bash shell in 
 Again, you can exit the interactive Postgres session by typing:
 
 ```
-\q
+postgres-# \q
 ```
 
 ## Create a New Role
 Currently, we just have the postgres role configured within the database. We can create new roles from the command line with the createrole command. The --interactive flag will prompt you for the necessary values.
 
-If you are logged in as the postgres account, you can create a new user by typing:
+If you are logged in as the postgres linux account, you can create a new user by typing:
 
-```
-createuser --interactive
+```bash
+$ createuser --interactive
+# createuser is a linux command added by postgres while installation
+# see `man createuser`
 ```
 
 If, instead, you prefer to use sudo for each command without switching from your normal account, you can type:
 
-sudo -u postgres createuser --interactive
+```bash
+$ sudo -u postgres createuser --interactive
+```
+
 The script will prompt you with some choices and, based on your responses, execute the correct Postgres commands to create a user to your specifications.
 
 Output
 
-```
+```bash
 Enter name of role to add: sammy
 Shall the new role be a superuser? (y/n) y
 ```
 
 You can get more control by passing some additional flags. Check out the options by looking at the man page:
 
-```
-man createuser
+```bash
+$ man createuser
 ```
 
 ## Create a New Database
-By default, another assumption that the Postgres authentication system makes is that there will be an database with the same name as the role being used to login, which the role has access to.
+By default, __another assumption that the Postgres authentication system makes is that there will be an database with the same name as the role being used to login, which the role has access to__.
 
 So if in the last section, we created a user called sammy, that role will attempt to connect to a database which is also called sammy by default. You can create the appropriate database with the createdb command.
 
-If you are logged in as the postgres account, you would type something like:
+If you are logged in as the postgres linux account, you would type something like:
 
-```
-createdb sammy
+```bash
+$ createdb sammy
+# createdb is also a linux command added by postgres
 ```
 
 If, instead, you prefer to use sudo for each command without switching from your normal account, you would type:
 
-```
-sudo -u postgres createdb sammy
+```bash
+$ sudo -u postgres createdb sammy
 ```
 
 Open a Postgres Prompt with the New Role
+
 To log in with ident based authentication, you'll need a Linux user with the same name as your Postgres role and database.
 
 If you don't have a matching Linux user available, you can create one with the adduser command. You will have to do this from an account with sudo privileges (not logged in as the postgres user):
 
-```
-sudo adduser sammy
+```bash
+$ sudo adduser sammy
 ```
 
 Once you have the appropriate account available, you can either switch over and connect to the database by typing:
 
-```
-sudo -i -u sammy
-psql
+```bash
+$ sudo -i -u sammy
+$ psql
 ```
 
 Or, you can do this inline:
 
-```
-sudo -u sammy psql
+```bash
+$ sudo -u sammy psql
 ```
 
 You will be logged in automatically assuming that all of the components have been properly configured.
 
 If you want your user to connect to a different database, you can do so by specifying the database like this:
 
-```
+```bash
 $ psql -d postgres
 ```
 
 Once logged in, you can get check your current connection information by typing:
 
-```
+```sql
 user=# \conninfo
 
 You are connected to database "sammy" as user "sammy" via socket in "/var/run/postgresql" at port "5432".
@@ -157,7 +165,7 @@ You are connected to database "sammy" as user "sammy" via socket in "/var/run/po
 
 This can be useful if you are connecting to non-default databases or with non-default users.
 
-Create and Delete Tables
+# Create and Delete Tables
 Now that you know how to connect to the PostgreSQL database system, we can to go over how to complete some basic tasks.
 
 First, we can create a table to store some data. Let's create a table that describes playground equipment.
