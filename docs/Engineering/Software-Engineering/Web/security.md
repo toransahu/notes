@@ -3,6 +3,53 @@
 <h3>Table of Contents</h3>
 [TOC]
 
+# Encryption
+
+## AES
+
+# Hashing
+
+aka Obfuscation
+
+- puctuation matters while hashing Strings
+
+|Algo|Date|Size<br>(bits)|Size<br>(bytes)|Length<br>(hex digits)|
+|-|-|-|-|-|
+|MD5|TODO|128|16|32|
+|SHA-1|TODO|160|20|40|
+|SHA-256|TODO|256|32|64|
+
+
+## MD5
+
+
+
+## SHA1
+
+## SHA256
+
+## PBKDF2
+
+## SCrypt
+
+## BCrypt
+
+## Argon2
+
+### Argon2i
+
+### Argon2d
+
+### Argon2id
+
+## Ref
+
+- https://medium.com/analytics-vidhya/password-hashing-pbkdf2-scrypt-bcrypt-and-argon2-e25aaf41598e
+
+
+# Deidentifying PII
+
+- [PII Anonymization/Deidentification Techniques](/Engineering/Software-Engineering/Product-Development/regulations_and_compliances#pii-anonymizationdeidentification-techniques)
 
 # JWT
 

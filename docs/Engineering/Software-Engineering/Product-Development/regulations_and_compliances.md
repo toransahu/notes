@@ -48,7 +48,31 @@ https://en.wikipedia.org/wiki/System_and_Organization_Controls
 - https://linfordco.com/blog/gdpr-soc-2/
 
 
+# Type of Data
+
+## Personal Data (PII)
+
+## Pseudonymous Data
+
+## Anonymous Data
+
 # PII Anonymization/Deidentification Techniques
+
+- https://help.branch.io/using-branch/docs/best-practices-to-avoid-sending-pii-to-branch
+- Hashing of personally identifiable information is not sufficient
+    - https://www.johndcook.com/blog/2019/07/20/hashing-pii-does-not-protect-privacy/
+    - https://dl.gi.de/handle/20.500.12116/16294
+        - https://dl.gi.de/bitstream/handle/20.500.12116/16294/sicherheit2018-04.pdf?sequence=1&isAllowed=y
+    - quantum computing
+        - https://medium.com/meeco/why-hashed-personally-identifiable-information-pii-on-the-blockchain-can-be-safe-b842357b9663
+- https://blog.littledata.io/2016/08/03/personally-identifiable-information-pii-hashing-and-google-analytics/
+- https://www.imperva.com/learn/data-security/data-obfuscation/
+- https://arstechnica.com/information-technology/2013/05/how-crackers-make-minced-meat-out-of-your-passwords/
+
+- sha256 hashing is ideal
+- ways to increase the effort of an attacker
+    - choose slow algo
+    - use salt/padding
 
 ## Data Masking
 - replace the PII with general values, which are still unique
