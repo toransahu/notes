@@ -254,6 +254,8 @@ bucket
     - https://www.youtube.com/watch?v=eAN6rNc6EjE
 - production ready arch
     - https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-developing-and-testing
+    - Use dead letter queues for error handling
+        - https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-developing-and-testing#use_dead_letter_queues
 - empty PCollection
     - https://stackoverflow.com/questions/47624146/apache-beam-initialize-an-pcollection-to-empty
 - DoFn vs PTransforms
@@ -365,6 +367,8 @@ For service accounts:
 
 - https://cloud.google.com/architecture/cicd-pipeline-for-data-processing
 - https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying
+    - CI/CD example
+        - https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-deploying#example_cicd_pipeline
 - https://medium.com/@zhongchen/dataflow-ci-cd-with-cloudbuild-1ad503c1c81
 - https://medium.com/everything-full-stack/dataflow-ci-cd-with-github-actions-65765f09713f
 - https://medium.com/@emailchhavisharma/quick-steps-to-build-deploy-dataflow-flex-templates-python-java-728fc366f0d1

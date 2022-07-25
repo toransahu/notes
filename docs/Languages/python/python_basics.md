@@ -560,6 +560,19 @@ d = OrderedDict({ 2:'second', 1:'first'})
 d.items()
 ```
 
+### `{}` vs `dict()`
+
+tl;dr
+
+- use `{}` over `dict()` whenever possible
+- `{}` uses transient memory allocation, and frees the memory after value being consumed
+    - if `{}` value is assigned to a variable, then memory is persist
+- `dict()` is slower (takes atleast double the time)
+
+Ref: 
+- https://stackoverflow.com/questions/664118/whats-the-difference-between-dict-and
+- https://doughellmann.com/posts/the-performance-impact-of-using-dict-instead-of-in-cpython-2-7-2/
+
 # Variables
 
 

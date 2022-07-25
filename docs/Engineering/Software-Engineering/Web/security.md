@@ -1,11 +1,12 @@
 # Security
 
 <h3>Table of Contents</h3>
+
 [TOC]
 
 # Encryption
 
-## AES
+Refer to [/Computer-Science/se#encryption](/Computer-Science/se#encryption)
 
 # Hashing
 

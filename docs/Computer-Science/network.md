@@ -197,12 +197,20 @@ Because IP wasn't designed to be absolutely reliable & it doesn't have an inbuil
             - ICMP data (min 28 bytes, variable)
 
 <img src="http://www.tcpipguide.com/free/diagrams/ipformat.png"> <center>IP Datagram Structure</center></img>
-    
-    
 
-## HTTP, HTTPS
+## HTTP
 
-## TLS, SSL
+## HTTPS
+
+## SSL
+
+Secure Socket Layer
+
+![](https://patrick6649.files.wordpress.com/2017/10/unbenannt68.png)
+
+## TLS
+
+Transport Layer Security
 
 
 ## WebSocket
