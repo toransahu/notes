@@ -2233,6 +2233,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vs-dict" class="md-nav__link">
+    {} vs dict()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3511,6 +3518,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vs-dict" class="md-nav__link">
+    {} vs dict()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4293,6 +4307,7 @@
 <li><a href="#dict-vs-list-lookup-performance">dict vs list lookup performance?</a></li>
 <li><a href="#dict-comprehension">dict comprehension</a></li>
 <li><a href="#dict-with-order">dict with order</a></li>
+<li><a href="#vs-dict">{} vs dict()</a></li>
 </ul>
 </li>
 </ul>
@@ -5106,6 +5121,19 @@ Out:
 <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
+<h4 id="vs-dict"><code>{}</code> vs <code>dict()</code><a class="headerlink" href="#vs-dict" title="Permanent link">#</a></h4>
+<p>tl;dr</p>
+<ul>
+<li>use <code>{}</code> over <code>dict()</code> whenever possible</li>
+<li><code>{}</code> uses transient memory allocation, and frees the memory after value being consumed<ul>
+<li>if <code>{}</code> value is assigned to a variable, then memory is persist</li>
+</ul>
+</li>
+<li><code>dict()</code> is slower (takes atleast double the time)</li>
+</ul>
+<p>Ref: 
+- https://stackoverflow.com/questions/664118/whats-the-difference-between-dict-and
+- https://doughellmann.com/posts/the-performance-impact-of-using-dict-instead-of-in-cpython-2-7-2/</p>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
 <h3 id="global-vs-local-vs-non-local-variable">Global vs Local vs Non-Local Variable<a class="headerlink" href="#global-vs-local-vs-non-local-variable" title="Permanent link">#</a></h3>
 <ul>
