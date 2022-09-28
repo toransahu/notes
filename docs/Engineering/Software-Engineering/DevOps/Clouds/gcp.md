@@ -125,9 +125,9 @@ Updated property [compute/zone].
 ## Structured Logging
 https://cloud.google.com/logging/docs/structured-logging
 
-# [BigQuery](/Engineering/Software-Engineering/Database/gcp_bigquery/)
+# [BigQuery](./Engineering/Software-Engineering/Database/gcp_bigquery/)
 
-# [Dataflow](/Engineering/Software-Engineering/Data-Engineering/gcp_dataflow/)
+# [Dataflow](./Engineering/Software-Engineering/Data-Engineering/gcp_dataflow/)
 
 # Storage
 
