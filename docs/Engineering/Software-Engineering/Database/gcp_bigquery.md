@@ -64,6 +64,15 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 - REQUIRED columns can be added only when you create a table while loading data, or when you create an empty table with a schema definition.
 
 
+### Manually specifying table schema Vs Schema auto-detection
+- [Understand BigQuery Schema Auto-detection](https://towardsdatascience.com/understand-bigquery-schema-auto-detection-9b4cebfe6d03)
+- [Using schema auto-detection](https://cloud.google.com/bigquery/docs/schema-detect)
+- [Getting BigQuery to auto detect schema](https://stackoverflow.com/questions/36671602/getting-bigquery-to-auto-detect-schema)
+- [Possible “Bug” in BigQuery Table Loading with Auto Detect Schema](https://www.youtube.com/watch?v=u19kFDowVeE)
+- [Load data from DataFrame](https://cloud.google.com/bigquery/docs/samples/bigquery-load-table-dataframe)
+    - Specify the type of columns whose type cannot be auto-detected. For example the "title" column uses pandas dtype "object", so its data type is ambiguous.
+
+
 ## Row-level Security
 
 https://cloud.google.com/bigquery/quotas#row_level_security

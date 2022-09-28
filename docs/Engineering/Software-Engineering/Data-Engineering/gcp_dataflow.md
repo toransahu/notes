@@ -167,7 +167,7 @@ type: JOB_TYPE_BATCH
 
 ## Schedule
 
-Refer to [DevOps/GCP/Scheduler](/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler).
+For more refer to [DevOps/GCP/Scheduler](/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler).
 
 ## Clean
 
@@ -310,6 +310,39 @@ Ref: https://cloud.google.com/dataflow/docs/concepts/dataflow-templates
     - https://cloud.google.com/sdk/gcloud/reference/beta/dataflow/flex-template/build#--env
     - Allowed ENV vars
         - https://cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates#setting_required_dockerfile_environment_variables
+
+## Schedule
+
+```bash
+$ gcloud scheduler jobs create http apache-beam-eg-wordcount \
+--location="us-central1" \
+--description="Run at every 00:00 UTC" \
+--uri="https://dataflow.googleapis.com/v1b3/projects/apache-beam-eg/locations/us-central1/flexTemplates:launch" \
+--http-method="post" \
+--headers="Content-Type=application/octet-stream,User-Agent=Google-Cloud-Scheduler" \
+--schedule="0 0 * * *" \
+--time-zone="Etc/UTC" \
+--message-body='{
+    "launch_parameter": {
+        "jobName": "wordcount-v0-0-1",
+        "parameters": {
+            "setup_file": "/dataflow/wordcount/src/setup.py"
+        },
+        "containerSpecGcsPath": "gs://apache-beam-eg/dataflow/wordcount/flex_template_launcher_v0.0.1.json",
+        "environment": {
+            "sdkContainerImage": "gcr.io/apache-beam-eg/dataflow/wordcount/flex_template_worker:v0.0.1",
+            "additionalExperiments": [
+                "use_runner_v2"
+            ]
+        }
+    }
+}' \
+--oauth-service-account-email="apache-beam-eg@appspot.gserviceaccount.com" \
+--oauth-token-scope="https://www.googleapis.com/auth/cloud-platform"
+```
+
+For more refer to [DevOps/GCP/Scheduler](/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler).
+
 
 ### Custom Worker Image
 
