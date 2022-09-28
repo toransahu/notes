@@ -1297,6 +1297,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_1" class="md-nav__link">
+    Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#custom-worker-image" class="md-nav__link">
     Custom Worker Image
@@ -2708,6 +2721,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_1" class="md-nav__link">
+    Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#custom-worker-image" class="md-nav__link">
     Custom Worker Image
@@ -2968,6 +2994,9 @@
 </li>
 <li><a href="#build">Build</a><ul>
 <li><a href="#allowed-optionsargsparams">Allowed options/args/params</a></li>
+</ul>
+</li>
+<li><a href="#schedule_1">Schedule</a><ul>
 <li><a href="#custom-worker-image">Custom Worker Image</a></li>
 </ul>
 </li>
@@ -3223,7 +3252,7 @@ type: JOB_TYPE_BATCH
 </code></pre></div>
 </td></tr></table>
 <h3 id="schedule">Schedule<a class="headerlink" href="#schedule" title="Permanent link">#</a></h3>
-<p>Refer to <a href="/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler">DevOps/GCP/Scheduler</a>.</p>
+<p>For more refer to <a href="/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler">DevOps/GCP/Scheduler</a>.</p>
 <h3 id="clean">Clean<a class="headerlink" href="#clean" title="Permanent link">#</a></h3>
 <h4 id="clean-up-the-classic-template-resources">Clean up the Classic Template resources<a class="headerlink" href="#clean-up-the-classic-template-resources" title="Permanent link">#</a></h4>
 <p>Stop the Dataflow pipeline.</p>
@@ -3417,6 +3446,59 @@ type: JOB_TYPE_BATCH
 </ul>
 </li>
 </ul>
+<h3 id="schedule_1">Schedule<a class="headerlink" href="#schedule_1" title="Permanent link">#</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ gcloud scheduler <span class="nb">jobs</span> create http apache-beam-eg-wordcount <span class="se">\</span>
+--location<span class="o">=</span><span class="s2">&quot;us-central1&quot;</span> <span class="se">\</span>
+--description<span class="o">=</span><span class="s2">&quot;Run at every 00:00 UTC&quot;</span> <span class="se">\</span>
+--uri<span class="o">=</span><span class="s2">&quot;https://dataflow.googleapis.com/v1b3/projects/apache-beam-eg/locations/us-central1/flexTemplates:launch&quot;</span> <span class="se">\</span>
+--http-method<span class="o">=</span><span class="s2">&quot;post&quot;</span> <span class="se">\</span>
+--headers<span class="o">=</span><span class="s2">&quot;Content-Type=application/octet-stream,User-Agent=Google-Cloud-Scheduler&quot;</span> <span class="se">\</span>
+--schedule<span class="o">=</span><span class="s2">&quot;0 0 * * *&quot;</span> <span class="se">\</span>
+--time-zone<span class="o">=</span><span class="s2">&quot;Etc/UTC&quot;</span> <span class="se">\</span>
+--message-body<span class="o">=</span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;launch_parameter&quot;: {</span>
+<span class="s1">        &quot;jobName&quot;: &quot;wordcount-v0-0-1&quot;,</span>
+<span class="s1">        &quot;parameters&quot;: {</span>
+<span class="s1">            &quot;setup_file&quot;: &quot;/dataflow/wordcount/src/setup.py&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;containerSpecGcsPath&quot;: &quot;gs://apache-beam-eg/dataflow/wordcount/flex_template_launcher_v0.0.1.json&quot;,</span>
+<span class="s1">        &quot;environment&quot;: {</span>
+<span class="s1">            &quot;sdkContainerImage&quot;: &quot;gcr.io/apache-beam-eg/dataflow/wordcount/flex_template_worker:v0.0.1&quot;,</span>
+<span class="s1">            &quot;additionalExperiments&quot;: [</span>
+<span class="s1">                &quot;use_runner_v2&quot;</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="se">\</span>
+--oauth-service-account-email<span class="o">=</span><span class="s2">&quot;apache-beam-eg@appspot.gserviceaccount.com&quot;</span> <span class="se">\</span>
+--oauth-token-scope<span class="o">=</span><span class="s2">&quot;https://www.googleapis.com/auth/cloud-platform&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>For more refer to <a href="/Engineering/Software-Engineering/DevOps/Clouds/gcp/#scheduler">DevOps/GCP/Scheduler</a>.</p>
 <h4 id="custom-worker-image">Custom Worker Image<a class="headerlink" href="#custom-worker-image" title="Permanent link">#</a></h4>
 <ul>
 <li>Use mutistage Docker build<ul>

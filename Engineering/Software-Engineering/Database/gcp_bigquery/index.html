@@ -1153,6 +1153,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manually-specifying-table-schema-vs-schema-auto-detection" class="md-nav__link">
+    Manually specifying table schema Vs Schema auto-detection
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2641,6 +2648,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manually-specifying-table-schema-vs-schema-auto-detection" class="md-nav__link">
+    Manually specifying table schema Vs Schema auto-detection
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3207,6 +3221,7 @@
 <li><a href="#table-schema">Table Schema</a><ul>
 <li><a href="#modify">Modify</a></li>
 <li><a href="#errors_1">Errors</a></li>
+<li><a href="#manually-specifying-table-schema-vs-schema-auto-detection">Manually specifying table schema Vs Schema auto-detection</a></li>
 </ul>
 </li>
 <li><a href="#row-level-security">Row-level Security</a></li>
@@ -3371,6 +3386,17 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 <ul>
 <li>If you add new columns to an existing table schema, the columns must be NULLABLE or REPEATED. You cannot add a REQUIRED column to an existing table schema. </li>
 <li>REQUIRED columns can be added only when you create a table while loading data, or when you create an empty table with a schema definition.</li>
+</ul>
+<h4 id="manually-specifying-table-schema-vs-schema-auto-detection">Manually specifying table schema Vs Schema auto-detection<a class="headerlink" href="#manually-specifying-table-schema-vs-schema-auto-detection" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://towardsdatascience.com/understand-bigquery-schema-auto-detection-9b4cebfe6d03">Understand BigQuery Schema Auto-detection</a></li>
+<li><a href="https://cloud.google.com/bigquery/docs/schema-detect">Using schema auto-detection</a></li>
+<li><a href="https://stackoverflow.com/questions/36671602/getting-bigquery-to-auto-detect-schema">Getting BigQuery to auto detect schema</a></li>
+<li><a href="https://www.youtube.com/watch?v=u19kFDowVeE">Possible “Bug” in BigQuery Table Loading with Auto Detect Schema</a></li>
+<li><a href="https://cloud.google.com/bigquery/docs/samples/bigquery-load-table-dataframe">Load data from DataFrame</a><ul>
+<li>Specify the type of columns whose type cannot be auto-detected. For example the "title" column uses pandas dtype "object", so its data type is ambiguous.</li>
+</ul>
+</li>
 </ul>
 <h3 id="row-level-security">Row-level Security<a class="headerlink" href="#row-level-security" title="Permanent link">#</a></h3>
 <p>https://cloud.google.com/bigquery/quotas#row_level_security</p>
