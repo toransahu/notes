@@ -912,6 +912,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#programming-zens-rules-principles" class="md-nav__link">
+    Programming Zens / Rules / Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Programming Zens / Rules / Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythons-zen" class="md-nav__link">
+    Python's Zen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rob-pikes-5-rules-of-programming" class="md-nav__link">
+    Rob Pike's 5 Rules of Programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solid" class="md-nav__link">
     SOLID
   </a>
@@ -1070,6 +1097,13 @@
         <li class="md-nav__item">
   <a href="#dry" class="md-nav__link">
     DRY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wet" class="md-nav__link">
+    WET
   </a>
   
 </li>
@@ -2132,6 +2166,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#programming-zens-rules-principles" class="md-nav__link">
+    Programming Zens / Rules / Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Programming Zens / Rules / Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythons-zen" class="md-nav__link">
+    Python's Zen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rob-pikes-5-rules-of-programming" class="md-nav__link">
+    Rob Pike's 5 Rules of Programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solid" class="md-nav__link">
     SOLID
   </a>
@@ -2295,6 +2356,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wet" class="md-nav__link">
+    WET
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kiss" class="md-nav__link">
     KISS
   </a>
@@ -2332,6 +2400,11 @@
 <div class="toc">
 <ul>
 <li><a href="#design-principles">Design Principles</a></li>
+<li><a href="#programming-zens-rules-principles">Programming Zens / Rules / Principles</a><ul>
+<li><a href="#pythons-zen">Python's Zen</a></li>
+<li><a href="#rob-pikes-5-rules-of-programming">Rob Pike's 5 Rules of Programming</a></li>
+</ul>
+</li>
 <li><a href="#solid">SOLID</a><ul>
 <li><a href="#single-responsibilty-principle">Single Responsibilty Principle</a><ul>
 <li><a href="#what">What</a></li>
@@ -2361,10 +2434,26 @@
 </ul>
 </li>
 <li><a href="#dry">DRY</a></li>
+<li><a href="#wet">WET</a></li>
 <li><a href="#kiss">KISS</a></li>
 <li><a href="#yagni">YAGNI</a></li>
 </ul>
 </div>
+<h2 id="programming-zens-rules-principles">Programming Zens / Rules / Principles<a class="headerlink" href="#programming-zens-rules-principles" title="Permanent link">#</a></h2>
+<h3 id="pythons-zen">Python's Zen<a class="headerlink" href="#pythons-zen" title="Permanent link">#</a></h3>
+<p>Refer <a href="/Languages/python/python_basics/#the-zen-of-python-pep-20">this</a>.</p>
+<h3 id="rob-pikes-5-rules-of-programming">Rob Pike's 5 Rules of Programming<a class="headerlink" href="#rob-pikes-5-rules-of-programming" title="Permanent link">#</a></h3>
+<ul>
+<li>Rule 1. You can't tell where a program is going to spend its time. Bottlenecks occur in surprising places, so don't try to second guess and put in a speed hack until you've proven that's where the bottleneck is.</li>
+<li>Rule 2. Measure. Don't tune for speed until you've measured, and even then don't unless one part of the code overwhelms the rest.</li>
+<li>Rule 3. Fancy algorithms are slow when n is small, and n is usually small. Fancy algorithms have big constants. Until you know that n is frequently going to be big, don't get fancy. (Even if n does get big, use Rule 2 first.)</li>
+<li>Rule 4. Fancy algorithms are buggier than simple ones, and they're much harder to implement. Use simple algorithms as well as simple data structures.</li>
+<li>Rule 5. Data dominates. If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident. Data structures, not algorithms, are central to programming.</li>
+</ul>
+<p>Pike's rules 1 and 2 restate Tony Hoare's famous maxim "Premature optimization is the root of all evil." Ken Thompson rephrased Pike's rules 3 and 4 as "When in doubt, use brute force.". Rules 3 and 4 are instances of the design philosophy KISS. Rule 5 was previously stated by Fred Brooks in The Mythical Man-Month. Rule 5 is often shortened to "write stupid code that uses smart objects".</p>
+<p>Ref:
+- https://users.ece.utexas.edu/~adnan/pike.html
+- https://github.com/robpike</p>
 <h2 id="solid">SOLID<a class="headerlink" href="#solid" title="Permanent link">#</a></h2>
 <ul>
 <li>Single Responsibilty</li>
@@ -2526,8 +2615,13 @@
 <li>pluralsight - https://app.pluralsight.com/course-player?clipId=a880a2a0-4d79-4b5f-a9da-c40411ebb11f</li>
 </ul>
 <h2 id="dry">DRY<a class="headerlink" href="#dry" title="Permanent link">#</a></h2>
+<p>Don't Repeat Yourself</p>
+<h2 id="wet">WET<a class="headerlink" href="#wet" title="Permanent link">#</a></h2>
+<p>Write Everything Twice</p>
 <h2 id="kiss">KISS<a class="headerlink" href="#kiss" title="Permanent link">#</a></h2>
+<p>Keep It Simple, Stupid</p>
 <h2 id="yagni">YAGNI<a class="headerlink" href="#yagni" title="Permanent link">#</a></h2>
+<p>You Aren't Gonna Need It</p>
 
               
             </article>
