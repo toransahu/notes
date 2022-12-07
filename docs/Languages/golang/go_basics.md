@@ -1084,6 +1084,16 @@ Ref:
 
 ## Delve
 
+# Profiling
+
+- https://blog.golang.org/pprof
+
+# Design Patterns
+
+- [Functional options for friendly APIs](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis)
+    - [Self referential functions and design](https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html)
+
+
 # References
 
 - https://golang.org/doc/code.html

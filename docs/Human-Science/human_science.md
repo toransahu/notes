@@ -134,3 +134,32 @@
 - [A good read](https://getpocket.com/explore/item/how-to-forgive-someone-who-hurt-you-even-when-it-feels-impossible?utm_source=pocket-newtab-intl-en)
 
 # Parenting
+
+# Habits
+
+- Make it Obvious
+    - Intention & command should be clear
+    - Stacking
+        - After [CURRENT HABIT], I will [NEW HABIT]
+    - Environment
+- Make it Attractive
+    - Reward/temptation
+        - After [HABIT INEED], I will [HABIT I WANT]
+    - Culture where the habit is a norm
+- Make it Easy
+    - Make unwanted things unliking
+    - Start small
+- Make it Satisfying
+
+# Team
+## Inter-personal qualities
+- Trust
+- Conflict
+- Commitment
+- Accountability
+- Team Result
+
+### Way to boost
+- be Humble
+- be Hungry
+- be Smart (inter-personally)
