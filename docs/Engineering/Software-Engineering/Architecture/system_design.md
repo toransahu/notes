@@ -532,6 +532,27 @@ whether its database or some service node.. slave could take over in case of mas
 # Scale / Capacity Estimate
 tbd
 
+# Documentation
+
+## Mind Map
+## System Landscape diagram
+## High-level architecture diagram (C4)
+## Database schema diagram (ERD)
+## Flowchart diagram
+## Sequence diagram
+
+## Tools
+1. MermaidJS
+1. PlantUML
+1. Lucidchart
+1. Draw.io
+1. excalidraw.com (For handwritten style)
+
+Ref:
+1. https://tsh.io/blog/how-to-document-your-architecture/
+1. https://c4model.com/
+1. https://medium.com/swlh/what-should-a-product-manager-know-about-software-design-and-architecture-a5ec92dddfe7
+
 # Pratice Problems
 - [Designing a URL Shortening service like TinyURL](https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR?affiliate_id=5073518643380224)
 - [How do you design an Elevator of the Lift system?](https://dzone.com/articles/21-object-oriented-and-system-design-problems-to-p)
