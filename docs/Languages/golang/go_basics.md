@@ -761,7 +761,7 @@ Ref:
     - v1 to v2, v3,...
     - API/interface changes
 - how
-    - /github.com/mistsys/log (contains all v1.x.x) & /github.com/mistsys/log/v2 (contains all v2.x.x)
+    - /github.com/toransahu/log (contains all v1.x.x) & /github.com/toransahu/log/v2 (contains all v2.x.x)
 
 Ref:
 

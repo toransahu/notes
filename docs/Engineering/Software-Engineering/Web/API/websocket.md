@@ -102,12 +102,12 @@ Ref: https://stackoverflow.com/questions/25834333/what-exactly-is-a-pre-fork-web
 - papi-ws questions and
 - why config with single worker?
 ```
-exec gunicorn demoapi.wsgi:ws \
+exec gunicorn repo.wsgi:ws \
 --worker-class geventwebsocket.gunicorn.workers.GeventWebSocketWorker \
 --worker-connections 4000 \
 --bind 0.0.0.0:8000 \
 --threads 8 \
---pythonpath . --logger-class demoapi.glogger.gunicorn_logger
+--pythonpath . --logger-class repo.glogger.gunicorn_logger
 ```
 
 - why not `--workers=(2*CPU)+1` and why `--threads=8`?
@@ -128,6 +128,9 @@ exec gunicorn demoapi.wsgi:ws \
 	- Workers silent for more than this many seconds are killed and restarted.
 	- Generally set to thirty seconds. Only set this noticeably higher if you’re sure of the repercussions for sync workers. For the non sync workers it just means that the worker process is still communicating and is not tied to the length of time required to handle a single request.
 - Long-lived TCP connections: Network Load Balancer supports long-running TCP connections that can be open for months or years, making it ideal for WebSocket-type applications, IoT, gaming, and messaging applications.
+
+### TCP KEEPALIVE vs WebSocket Ping/Pong
+- https://stackoverflow.com/questions/23238319/websockets-ping-pong-why-not-tcp-keepalive
 
 ## Ref
 - https://tools.ietf.org/html/rfc6455
