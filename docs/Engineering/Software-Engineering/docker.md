@@ -1,11 +1,29 @@
 # Docker
 
 # Dockerfile
+
 ## `RUN`
+
+- https://docs.docker.com/engine/reference/builder/#run
 
 ## `CMD`
 
+- https://docs.docker.com/engine/reference/builder/#cmd
+
 ## `ENTRYPOINT`
+
+- https://docs.docker.com/engine/reference/builder/#entrypoint
+
+## RUN vs CMD vs ENTRYPOINT
+
+
+- RUN executes command(s) in a new layer and creates a new image. E.g., it is often used for installing software packages.
+- CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.
+- ENTRYPOINT configures a container that will run as an executable.
+
+Ref:
+
+- https://codewithyury.com/docker-run-vs-cmd-vs-entrypoint/
 
 ## `COPY`
 
