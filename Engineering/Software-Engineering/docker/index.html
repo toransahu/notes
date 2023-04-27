@@ -219,7 +219,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Unclassified/" class="md-nav__link">
-        Public Key
+        Unclassified
       </a>
     </li>
   
@@ -825,6 +825,13 @@
           <li class="md-nav__item">
   <a href="#entrypoint" class="md-nav__link">
     ENTRYPOINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-vs-cmd-vs-entrypoint" class="md-nav__link">
+    RUN vs CMD vs ENTRYPOINT
   </a>
   
 </li>
@@ -2108,6 +2115,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#run-vs-cmd-vs-entrypoint" class="md-nav__link">
+    RUN vs CMD vs ENTRYPOINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#copy" class="md-nav__link">
     COPY
   </a>
@@ -2211,8 +2225,27 @@
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">#</a></h2>
 <h2 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">#</a></h2>
 <h3 id="run"><code>RUN</code><a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<ul>
+<li>https://docs.docker.com/engine/reference/builder/#run</li>
+</ul>
 <h3 id="cmd"><code>CMD</code><a class="headerlink" href="#cmd" title="Permanent link">#</a></h3>
+<ul>
+<li>https://docs.docker.com/engine/reference/builder/#cmd</li>
+</ul>
 <h3 id="entrypoint"><code>ENTRYPOINT</code><a class="headerlink" href="#entrypoint" title="Permanent link">#</a></h3>
+<ul>
+<li>https://docs.docker.com/engine/reference/builder/#entrypoint</li>
+</ul>
+<h3 id="run-vs-cmd-vs-entrypoint">RUN vs CMD vs ENTRYPOINT<a class="headerlink" href="#run-vs-cmd-vs-entrypoint" title="Permanent link">#</a></h3>
+<ul>
+<li>RUN executes command(s) in a new layer and creates a new image. E.g., it is often used for installing software packages.</li>
+<li>CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.</li>
+<li>ENTRYPOINT configures a container that will run as an executable.</li>
+</ul>
+<p>Ref:</p>
+<ul>
+<li>https://codewithyury.com/docker-run-vs-cmd-vs-entrypoint/</li>
+</ul>
 <h3 id="copy"><code>COPY</code><a class="headerlink" href="#copy" title="Permanent link">#</a></h3>
 <h2 id="pull">Pull<a class="headerlink" href="#pull" title="Permanent link">#</a></h2>
 <h2 id="push">Push<a class="headerlink" href="#push" title="Permanent link">#</a></h2>
