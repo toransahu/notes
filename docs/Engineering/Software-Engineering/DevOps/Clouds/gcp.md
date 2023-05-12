@@ -120,6 +120,13 @@ $ gcloud config set compute/zone <us-central1-f>
 Updated property [compute/zone].
 ```
 
+# IAM
+
+## Roles & Permissions
+
+- [Predefined roles](https://cloud.google.com/iam/docs/roles-overview#predefined)
+
+
 # Logging
 
 ## Structured Logging

@@ -703,6 +703,12 @@ Ref:
 		You can follow Udit's YouTube Channel for System Design videos:
 		https://www.youtube.com/c/UditAgarwal21  
 
+# Interesting Reads
+
+- [Documenting Architecture Decisions](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+- https://blog.khanacademy.org/beating-the-odds-khan-academys-successful-monolith%E2%86%92services-rewrite/
+- https://thestack.technology/amazon-prime-video-microservices-monolith/
+    - https://www.youtube.com/watch?v=dV3wAe8HV7Q
 
 # References
 FIXME: footnote link
