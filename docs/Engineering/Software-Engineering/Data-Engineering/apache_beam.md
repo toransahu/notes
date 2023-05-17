@@ -159,6 +159,11 @@ References:
 
 - https://stackoverflow.com/questions/55822881/why-does-custom-python-object-cannot-be-used-with-pardo-fn
 
+## Is there any monitoring dashboard for DirectRunner?
+
+So far no. Probably you can output the node structures.
+And you can profile the pipeline using `ProfilingOptions`.
+
 # TODO
 
 ## Explore
@@ -175,3 +180,4 @@ References:
 - visualization
 - debug on cloud
 - tickers - to auto schedule
+- Visually creating pipeline using Apache Hop https://beam.apache.org/case-studies/hop/

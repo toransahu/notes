@@ -416,6 +416,7 @@ For service accounts:
 
 - https://cloud.google.com/dataflow/pipelines/dataflow-monitoring-intf
 - https://cloud.google.com/dataflow/pipelines/troubleshooting-your-pipeline
+- https://cloud.google.com/dataflow/docs/guides/profiling-a-pipeline#python
 
 ## Execution Detail
 

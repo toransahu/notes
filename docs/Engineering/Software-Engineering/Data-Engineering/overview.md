@@ -7,7 +7,7 @@
 # Data Processing Frameworks
 
 
-# Batch vs Stream Processing
+## Batch vs Stream Processing
 - diff
 	- batch
 		- processing happens of blocks of data that have already been stored over a period of time
@@ -148,6 +148,20 @@
 		- is a distributed messaging platform based on the publish/subscribe model that was developed by LinkedIn (while monolithic--> microservice to communicate stream data between services)
 	- Redis PubSub
 	- Google Cloud Pub/Sub
+
+# Databases
+
+- Cassandra
+- ElasticSearch
+- Proprietary
+    - Google BigQuery
+- [RisingWave](https://www.risingwave.dev)
+- [DuckDB](https://github.com/duckdb/duckdb)
+- PipelineDB
+- Time-Series
+    - ElasticSearch
+    - InfluxDB
+
 
 # File Formats
 
