@@ -353,6 +353,10 @@ https://github.com/googleapis/python-bigquery-pandas
 - https://cloud.google.com/architecture/confidential-data-warehouse-blueprint
 - https://cloud.google.com/architecture/dw2bq/dw-bq-migration-overview
 
+# Advance
+
+- [Capacitor: The data structure under the hood](https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format)
+
 # References
 
 - [Open Feature Requests](https://issuetracker.google.com/savedsearches/559654)
