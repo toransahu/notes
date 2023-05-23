@@ -173,6 +173,7 @@
 - https://github.com/apache/parquet-mr
 - https://databricks.com/glossary/what-is-parquet
 - https://db-blog.web.cern.ch/blog/zbigniew-baranowski/2017-01-performance-comparison-different-file-formats-and-storage-engines
+- [Parquet file structure](https://www.linkedin.com/pulse/all-you-need-know-parquet-file-structure-depth-rohan-karanjawala/)
 
 ## OCR
 

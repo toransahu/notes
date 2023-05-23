@@ -153,6 +153,15 @@ References:
 - visualization
     - https://stackoverflow.com/questions/54094081/how-to-render-a-pipeline-graph-in-beam
 
+# Observability
+
+- [OpenTelemetry](https://opentelemetry.io/)
+- [Jaeger Tracing Dashboard](https://www.jaegertracing.io)
+- [Integrate Sentry using OpenTelemetry](https://docs.sentry.io/platforms/python/guides/beam/)
+- From Community
+    - https://rion.io/2020/07/04/a-distributed-tracing-adventure-in-apache-beam/
+    - [Collibra's implementation](https://2022.beamsummit.org/sessions/open-telemetry-collibra/)
+
 # FAQ
 
 ## Why does custom Python object cannot be used with ParDo Fn?

@@ -535,6 +535,14 @@ pipenv check
 # Python Package Distribution (PyPi)
 
 ## Project Structure
+
+There are various guidelines:
+
+- https://packaging.python.org/en/latest/tutorials/packaging-projects/
+- https://py-pkgs.org/03-how-to-package-a-python#how-to-package-a-python (A very good read)
+- https://docs.python.org/3/reference/import.html#namespace-packages
+- https://peps.python.org/pep-0420/
+
 ```
 /example_pkg
   /pkg1

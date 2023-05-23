@@ -680,3 +680,76 @@ All three let a person give their username/password (or other credential) to a t
 - Tools
 	- deflate + b64emcode: https://www.samltool.com/encode.php
 	- urlencode: https://www.urlencoder.org/
+
+# Secret Management
+
+## A few other factors to keep in mind:
+
+1. The secret should update/reflect (always latest) in a job/batch pipeline if rotated?
+1. The secret should update/reflect (always latest) in a service/streaming pipeline if rotated?
+1. The secret could be fixed be locked/fixed in two ways: a) By mentioning a particular secret version, b) by not updating the secret on rotations
+1. The secret version info should be available/accessible for audit logging/record keeping? 
+1. If secret rotated, the secret version should also get updated - should not be stale one?
+1. The past/historical version of the secrets should be available at any time?
+
+## Secret Managers Options
+
+- AWS Secret Manager
+- GCP Secret Manager
+- Hashicorp Vault
+- Kubernetes Secrets
+
+## Secret Delivery mechanisms
+
+- As file system
+    - Mount as volume
+        - Secrets should be accesible as files
+        - Freshness?
+            - With update the file when secret rotated
+            - With check for update and update the file when secret is accessed
+- Set as Environment Variable
+    - Once set can't be rotated, need custom logic to update
+- Use the API client to always fetch the secret from manager
+     - May cache it locally to save frequent call, but cache invalidation has to be handled at own
+     - May concern the team when a set of apps are deployed together and all of them started calling the API server concurrently
+
+## Hashicorp Vault
+
+- Comes with
+    - template rendering option using consul-template CLI
+    - API client
+- consul-template is capable to detect a secret rotation through SIGNALs
+- consul-template & vault both are highly configurable
+
+## GCP Secret Manager
+
+- Uses may differ per GCP service, e.g. Google Compute Engine, Cloud Function, Cloud Run, GKE, Dataflow etc.
+- Comes with
+    - API client
+- Google recommend using the Secret Manager API directly (using one of the provided client libraries, or by following the REST or GRPC documentation), because:
+    - When a secret is accessible on the filesystem, application vulnerabilities like directory traversal attacks can become higher severity as the attacker may gain the ability to read the secret material.
+    - When a secret is consumed through environment variables, misconfigurations such as enabling debug endpoints or including dependencies that log process environment details may leak secrets.
+- Ref:
+    - https://cloud.google.com/run/docs/configuring/secrets
+    - https://cloud.google.com/secret-manager/docs/best-practices
+    - https://cloud.google.com/secret-manager/docs/using-other-products
+    - https://cloud.google.com/secret-manager/docs/accessing-the-api
+    - Access using:
+        - [Native libraries](https://cloud.google.com/secret-manager/docs/reference/libraries)
+        - [gcloud CLI](https://cloud.google.com/sdk/gcloud/reference/secrets)
+        - [REST API](https://cloud.google.com/secret-manager/docs/reference/rest)
+        - [RPC API](https://cloud.google.com/secret-manager/docs/reference/rpc)
+
+### Use in GKE
+- Access GCP Secrets feature is implemented using https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp
+- Supports Mount as filesystem & Set as environment var
+- Not officially supported by Google 
+- Secret rotation & sync feature is in Alpha
+- Read [Security considerations](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp#security-considerations)
+
+### Use in Cloud Run
+- https://stackoverflow.com/questions/68533094/how-do-i-access-mounted-secrets-when-using-google-cloud-run
+
+## AWS Secret Manager
+
+- https://pkg.go.dev/github.com/chrissav/consul-template-plugin-secretsmanager

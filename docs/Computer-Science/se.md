@@ -127,6 +127,8 @@ Does a language have a formal standard? This can be very important to ensure tha
 
 - [Django - Code of Conduct](https://www.djangoproject.com/conduct/)
 - [Other - Code of Conduct](https://www.contributor-covenant.org/)
+- Better to framework specific else [cookiecutter](https://github.com/cookiecutter/cookiecutter)
+    - https://github.com/topics/cookiecutter-template
 
 # History
 
