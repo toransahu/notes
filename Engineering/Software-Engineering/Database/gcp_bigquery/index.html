@@ -1237,6 +1237,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#managemodify" class="md-nav__link">
+    Manage/Modify
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage/Modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undelete-a-table" class="md-nav__link">
+    Undelete a table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1272,9 +1292,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#managemodify" class="md-nav__link">
+  <a href="#managemodify_1" class="md-nav__link">
     Manage/Modify
   </a>
+  
+    <nav class="md-nav" aria-label="Manage/Modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-partition" class="md-nav__link">
+    Delete a partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1420,6 +1453,13 @@
         <li class="md-nav__item">
   <a href="#bigquery-api" class="md-nav__link">
     BigQuery API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bq-cli" class="md-nav__link">
+    bq CLI
   </a>
   
 </li>
@@ -2753,6 +2793,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#managemodify" class="md-nav__link">
+    Manage/Modify
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage/Modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undelete-a-table" class="md-nav__link">
+    Undelete a table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2788,9 +2848,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#managemodify" class="md-nav__link">
+  <a href="#managemodify_1" class="md-nav__link">
     Manage/Modify
   </a>
+  
+    <nav class="md-nav" aria-label="Manage/Modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-partition" class="md-nav__link">
+    Delete a partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2936,6 +3009,13 @@
         <li class="md-nav__item">
   <a href="#bigquery-api" class="md-nav__link">
     BigQuery API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bq-cli" class="md-nav__link">
+    bq CLI
   </a>
   
 </li>
@@ -3299,13 +3379,20 @@
 <li><a href="#standard-table">Standard Table</a><ul>
 <li><a href="#quota-limit_1">Quota &amp; Limit</a></li>
 <li><a href="#cost">Cost</a></li>
+<li><a href="#managemodify">Manage/Modify</a><ul>
+<li><a href="#undelete-a-table">Undelete a table</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#partitioned-table">Partitioned Table</a><ul>
 <li><a href="#quota-limit_2">Quota &amp; Limit</a></li>
 <li><a href="#cost_1">Cost</a></li>
 <li><a href="#create">Create</a></li>
-<li><a href="#managemodify">Manage/Modify</a></li>
+<li><a href="#managemodify_1">Manage/Modify</a><ul>
+<li><a href="#delete-a-partition">Delete a partition</a></li>
+</ul>
+</li>
 <li><a href="#query">Query</a></li>
 </ul>
 </li>
@@ -3334,6 +3421,7 @@
 </ul>
 </li>
 <li><a href="#bigquery-api">BigQuery API</a></li>
+<li><a href="#bq-cli">bq CLI</a></li>
 <li><a href="#data-ingestion-load-jobs-api">Data Ingestion (load jobs) API</a><ul>
 <li><a href="#batch-loading">Batch Loading</a><ul>
 <li><a href="#cost_6">Cost</a></li>
@@ -3480,6 +3568,15 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 <li>Maximum number of columns per table: 10000</li>
 </ul>
 <h4 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">#</a></h4>
+<h4 id="managemodify">Manage/Modify<a class="headerlink" href="#managemodify" title="Permanent link">#</a></h4>
+<h5 id="undelete-a-table">Undelete a table<a class="headerlink" href="#undelete-a-table" title="Permanent link">#</a></h5>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/samples/bigquery-undelete-table#bigquery_undelete_table-python</li>
+<li>https://stackoverflow.com/questions/27537720/how-can-i-undelete-a-bigquery-table</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ bq cp &quot;project:dataset.table@epoch_in_millisec&quot; &quot;project:dataset.table&quot;
+</code></pre></div>
+</td></tr></table>
 <h3 id="partitioned-table">Partitioned Table<a class="headerlink" href="#partitioned-table" title="Permanent link">#</a></h3>
 <h4 id="quota-limit_2">Quota &amp; Limit<a class="headerlink" href="#quota-limit_2" title="Permanent link">#</a></h4>
 <ul>
@@ -3491,10 +3588,18 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 <ul>
 <li>https://cloud.google.com/bigquery/docs/creating-partitioned-tables#python</li>
 </ul>
-<h4 id="managemodify">Manage/Modify<a class="headerlink" href="#managemodify" title="Permanent link">#</a></h4>
+<h4 id="managemodify_1">Manage/Modify<a class="headerlink" href="#managemodify_1" title="Permanent link">#</a></h4>
 <ul>
 <li>https://cloud.google.com/bigquery/docs/managing-partitioned-tables#api_2</li>
 </ul>
+<h5 id="delete-a-partition">Delete a partition<a class="headerlink" href="#delete-a-partition" title="Permanent link">#</a></h5>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/managing-partitioned-tables#delete_a_partition</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ bq rm --table &quot;project:dataset.table$partition&quot;
+</code></pre></div>
+</td></tr></table>
+<p>NOTE: Make sure <code>$</code> is escaped else may delete the whole table.</p>
 <h4 id="query">Query<a class="headerlink" href="#query" title="Permanent link">#</a></h4>
 <ul>
 <li>https://cloud.google.com/bigquery/docs/querying-partitioned-tables</li>
@@ -3596,6 +3701,14 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 <ul>
 <li>https://cloud.google.com/bigquery/quotas#api_request_quotas</li>
 </ul>
+<h2 id="bq-cli">bq CLI<a class="headerlink" href="#bq-cli" title="Permanent link">#</a></h2>
+<ul>
+<li>https://cloud.google.com/bigquery/docs/bq-command-line-tool</li>
+</ul>
+<p>example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ bq --location us-central1 --project_id=project query --nouse_legacy_sql &quot;select * from dataset.table$20230606 limit 10&quot;
+</code></pre></div>
+</td></tr></table>
 <h2 id="data-ingestion-load-jobs-api">Data Ingestion (load jobs) API<a class="headerlink" href="#data-ingestion-load-jobs-api" title="Permanent link">#</a></h2>
 <ul>
 <li>https://cloud.google.com/bigquery/docs/loading-data</li>
