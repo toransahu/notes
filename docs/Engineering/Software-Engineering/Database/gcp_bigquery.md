@@ -72,7 +72,6 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 - [Load data from DataFrame](https://cloud.google.com/bigquery/docs/samples/bigquery-load-table-dataframe)
     - Specify the type of columns whose type cannot be auto-detected. For example the "title" column uses pandas dtype "object", so its data type is ambiguous.
 
-
 ## Row-level Security
 
 https://cloud.google.com/bigquery/quotas#row_level_security
@@ -85,6 +84,17 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 
 
 ### Cost
+
+### Manage/Modify
+
+#### Undelete a table
+
+- https://cloud.google.com/bigquery/docs/samples/bigquery-undelete-table#bigquery_undelete_table-python
+- https://stackoverflow.com/questions/27537720/how-can-i-undelete-a-bigquery-table
+
+```
+$ bq cp "project:dataset.table@epoch_in_millisec" "project:dataset.table"
+```
 
 ## Partitioned Table
 ### Quota & Limit
@@ -100,6 +110,16 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 
 ### Manage/Modify
 - https://cloud.google.com/bigquery/docs/managing-partitioned-tables#api_2
+
+#### Delete a partition
+
+- https://cloud.google.com/bigquery/docs/managing-partitioned-tables#delete_a_partition
+
+```
+$ bq rm --table "project:dataset.table$partition"
+```
+
+NOTE: Make sure `$` is escaped else may delete the whole table.
 
 ### Query
 - https://cloud.google.com/bigquery/docs/querying-partitioned-tables
@@ -174,6 +194,16 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 
 # BigQuery API
 - https://cloud.google.com/bigquery/quotas#api_request_quotas
+
+# bq CLI
+
+- https://cloud.google.com/bigquery/docs/bq-command-line-tool
+
+example:
+
+```
+$ bq --location us-central1 --project_id=project query --nouse_legacy_sql "select * from dataset.table$20230606 limit 10"
+```
 
 # Data Ingestion (load jobs) API
 
