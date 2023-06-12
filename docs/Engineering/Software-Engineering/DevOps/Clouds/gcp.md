@@ -132,6 +132,10 @@ Updated property [compute/zone].
 ## Structured Logging
 https://cloud.google.com/logging/docs/structured-logging
 
+## Log Analytics
+
+https://www.cloudskillsboost.google/focuses/49749?parent=catalog
+
 # [BigQuery](Engineering/Software-Engineering/Database/gcp_bigquery/)
 
 # [Dataflow](Engineering/Software-Engineering/Data-Engineering/gcp_dataflow/)

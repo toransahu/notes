@@ -887,6 +887,8 @@ json.Unmarshal(bytes, &i)
 ### Misc
 
 - https://vsupalov.com/go-json-omitempty/
+- https://www.reddit.com/r/golang/comments/k0hitv/compiler_written_in_go/
+- [Lexical Scanning in Go - Rob Pike](https://www.youtube.com/watch?v=HxaD_trXwRE)
 
 # `regexp`
 

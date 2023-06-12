@@ -547,6 +547,13 @@ tbd
 1. Lucidchart
 1. Draw.io
 1. excalidraw.com (For handwritten style)
+1. [graphviz](https://www.graphviz.org/)
+    1. Online renderer
+        1. http://www.plantuml.com/plantuml/uml/
+        1. http://magjac.com/graphviz-visual-editor/
+        1. [viz-js](https://viz-js.com/)
+    1. [DOT: The Graph Language underneath](https://graphviz.org/doc/info/lang.html)
+
 
 Ref:
 1. https://tsh.io/blog/how-to-document-your-architecture/
