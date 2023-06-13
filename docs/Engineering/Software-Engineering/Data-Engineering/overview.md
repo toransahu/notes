@@ -185,13 +185,24 @@
 
 ## avro
 
-# Misc
+# Big Data
+
+## Data Lake
+
+- https://lytix.be/things-to-consider-when-creating-a-data-lake/
+
+## Data Warehouse
 
 ## DBT
 
 Data Build Tool
 
 https://www.getdbt.com/
+
+## Medallion Architecture
+
+- https://www.databricks.com/glossary/medallion-architecture
+- https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055
 
 
 # Interesting Reads
