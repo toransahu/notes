@@ -1,68 +1,95 @@
 # Python Advanced
 
+<h3>Table of Contents</h3>
+
 [TOC]
 
 # Regular Expressions
 
 ## Basic Patterns
+
 ### use of `.`
-    - matches any character
+- matches any character
+
 ### use of `*`
-    - matches 0 or more repetition of a char/set
+- matches 0 or more repetition of a char/set
+
 ### use of `+`
-    - matches 1 or more repetition of a char/set
+- matches 1 or more repetition of a char/set
+
 ### use of `?`
-    - matches 0 or 1 repetition of a char/set
-    - also works as a Non-greedy pattern (with repeaters)
-        - means in string '<b>Hello</b>' pattern r'<.*>' will match the whole string instead of '<b>'
-        - but if pattern is used as r'<.*?>' then will match '<b>' only
-        - AKA pcre (Perl Compatible Regular Expression)
+- matches 0 or 1 repetition of a char/set
+- also works as a Non-greedy pattern (with repeaters)
+    - means in string `<b>Hello</b>` pattern `r'<.*>'` will match the whole string instead of `<b>`
+    - but if pattern is used as `r'<.*?>'` then will match `<b>` only
+    - AKA pcre (Perl Compatible Regular Expression)
+
 ### use of `\`
-    - sign of speciality
-    - used before any special chars, to match that char
+- sign of speciality
+- used before any special chars, to match that char
+
 ### use of `\t`, `\r`, `\n`
-    - \t matches a tab
-    - \r matches a carriage return (line break) in Mac, \n\r in Windows
-    - \n matches a line break ( carriage return) in Linux & Windows
-    - note: On "old" printers, \r sent the print head back to the start of the line, and \n advanced the paper by one line. Both were therefore necessary to start printing on the next line.
+- \t matches a tab
+- \r matches a carriage return (line break) in Mac, \n\r in Windows
+- \n matches a line break ( carriage return) in Linux & Windows
+- note: On "old" printers, \r sent the print head back to the start of the line, and \n advanced the paper by one line. Both were therefore necessary to start printing on the next line.
+
 ### use of `\b` (start and end of word anchors)
-    - matches the boundary between word and non-word chars
-    - matches the position called word boundaries
-        - match has zero length
-        - usually before (including start of the line) and after a word
-        -e.g. <here>apple<here>
+- matches the boundary between word and non-word chars
+- matches the position called word boundaries
+    - match has zero length
+    - usually before (including start of the line) and after a word
+    -e.g. `<here>apple<here>`
+
 ### use of `\B`
-    - opposite of \b
-    - matches every position where \b does not
+- opposite of `\b`
+- matches every position where `\b` does not
+
 ### use of `\s`
+
 ### use of `\d`
+
 ### use of `\D`
+
 ### use of `\w`
+
 ### use of `\W`
+
 ### use of `[]`
-    - dash - inside []
-    - dot . inside []
+- dash - inside []
+- dot . inside []
+
 ### use of `()`
+
 ### use of `^` (Start of String Anchors)
-    - with square bracket (set of chars)
+- with square bracket (set of chars)
+
 ### use of `$` <!--`$`-->  (End of String Anchors)
+
 ### use of `|`
+
 ### use of syntax (`? ...`)
-    - Lookarounds
-        - +ve Lookahead
-        - -ve Lookahead
-        - +ve Lookbehind
-        - -ve Lookbehind
-    - Non-Capturing Group
+- Lookarounds
+    - +ve Lookahead
+    - -ve Lookahead
+    - +ve Lookbehind
+    - -ve Lookbehind
+- Non-Capturing Group
 
 ## Builtin Functions:
+
 ### re.search
+
 ### re.group
+
 ### re.findall
-    - with files
-    - with groups
+- with files
+- with groups
+
 ### re.sub
+
 ### re.compile
+
 ### extra options to above functions
 
 
@@ -101,10 +128,38 @@ Credits:
 - https://www.rexegg.com/regex-disambiguation.html#lookarounds
 - www.regular-expressions.info
 
+# Concurrency & Parallelism
 
+## Terminologies
 
+### Concurrency
 
-# Multithreading & Multiprocessing
+* When two or more task can start, run & complete in overlapping time periods.
+* It doesn't necessarily mean they'll ever be running at the same instant.
+* e.g. Multi-tasking on a single core
+
+### Parallelism
+
+* When two are more tasks are executed simultaneously.
+
+### Process
+
+* is an instance of a program running in a computer 
+* can contain one or more threads
+* has its independent memory space
+* are spawned by creating a Process() object and then calling its start() method
+
+### Thread
+
+* is a sequence of instructions within a process
+* as a light-weight process
+* all threads shares the same memory space of the process 
+
+<img src="https://www.javamex.com/tutorials/threads/ThreadDiagram.png" alt="process block">
+
+### Coroutine
+
+### Subroutine
 
 ## GIL - Global Interpreter Lock
 - Is a mutex (mutual exclusion attribute) in python 
@@ -126,34 +181,10 @@ Credits:
 - in Cython the GIL exists, but can be released temporarily using a "with" statement - [read more](https://notes-toransahu.notebooks.azure.com/nb//notebooks/python/Python-Basics.ipynb#with)
 - extra: https://stackoverflow.com/questions/1294382/what-is-a-global-interpreter-lock-gil
 
-                                                                                                   
-- Note : cython & CPython are different
-                                                                                                   
-### Some terminologies
-
-#### Concurrency
-* When two or more task can start, run & complete in overlapping time periods.
-* It doesn't necessarily mean they'll ever be running at the same instant.
-* e.g. Multi-tasking on a single core
-
-#### Parallelism
-* When two are more tasks are executed simultaneously.
-
-#### process
-* is an instance of a program running in a computer 
-* can contain one or more threads
-* has its independent memory space
-* are spawned by creating a Process() object and then calling its start() method
-
-#### thread
-* is a sequence of instructions within a process
-* as a light-weight process
-* all threads shares the same memory space of the process 
-
-<img src="https://www.javamex.com/tutorials/threads/ThreadDiagram.png" alt="process block">
+Note : cython & CPython are different
 
 
-### Multi-threading
+## Multi-threading
 
 * can be implemented to speedup the program using module : **threading**
 * thread-based <s>parallelism</s> concurrency
@@ -165,29 +196,28 @@ Credits:
 * **but parallel IO operations are possible (it releases GIL on IO)**
 * GIL passing is an overhead here.
 
-#### Note:
+### Note:
 * can turn off GIL - dirty practice
 * this will result in messed memory management
 * need to be very careful while writting semaphores & mutex properly
 
-#### Use of thread
+### Use of thread
 * in GUI apps to keep UI threads responsive
 * IO tasks (network IO or filesystem IO)
 
-#### Facts
+### Facts
 * using multiple-threads for CPU bound tasks will result in worse performance than a single thread
 
 
-### Multi-processing
+## Multi-processing
 
 * used to speedup CPU bound tasks using module: **multiprocessing**
 * process-based parallelism
 * module results in full CPU utilization
 * Inter-process communication can be achieved using **queues and pipes**
-*
 
 
-#### pipe
+### pipe
 * is a duplex(two way) communication channel
 
 ```python
@@ -241,11 +271,12 @@ hello bob
 ```
 
 ### What is .join()?
+
 * The join() method, when used with threading or multiprocessing, is not related to str.join()
 * it's not actually concatenating anything together
 * It just means "wait for this [thread/process] to complete"
 * The name join is used because the multiprocessing module's API is meant to look as similar to the threading module's API
-* The reason why is called join is that is joining the processes into a single one.
+* The reason why it is called join is because of joining the processes into a single one (the main one).
 
 <img src="https://i.stack.imgur.com/IRpP1.jpg">
 
@@ -283,6 +314,12 @@ There are also some other processes like orphan & zombie**
 * This must be set before start() is called
 * The initial value is inherited from the creating process
 * When a process exits, it attempts to terminate all of its daemonic child processes
+
+## AsyncIO
+
+- https://docs.python.org/3/library/asyncio.html
+- https://realpython.com/async-io-python/#setting-up-your-environment
+
 
 # Files
 

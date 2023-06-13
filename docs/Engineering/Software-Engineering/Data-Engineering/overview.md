@@ -6,6 +6,12 @@
 
 # Data Processing Frameworks
 
+- Apache Storm
+- Apache Flink
+- Apache Spark
+- Apache Beam
+- Google Dataflow
+- etc.
 
 ## Batch vs Stream Processing
 - diff
@@ -178,6 +184,15 @@
 ## OCR
 
 ## avro
+
+# Misc
+
+## DBT
+
+Data Build Tool
+
+https://www.getdbt.com/
+
 
 # Interesting Reads
 
