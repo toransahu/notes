@@ -76,6 +76,7 @@ google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/
 
 https://cloud.google.com/bigquery/quotas#row_level_security
 
+
 ## Standard Table
 ### Quota & Limit
 - https://cloud.google.com/bigquery/quotas#standard_tables
@@ -86,15 +87,6 @@ https://cloud.google.com/bigquery/quotas#row_level_security
 ### Cost
 
 ### Manage/Modify
-
-#### Undelete a table
-
-- https://cloud.google.com/bigquery/docs/samples/bigquery-undelete-table#bigquery_undelete_table-python
-- https://stackoverflow.com/questions/27537720/how-can-i-undelete-a-bigquery-table
-
-```
-$ bq cp "project:dataset.table@epoch_in_millisec" "project:dataset.table"
-```
 
 ## Partitioned Table
 ### Quota & Limit
@@ -154,6 +146,50 @@ NOTE: Make sure `$` is escaped else may delete the whole table.
 
 ## Partitioning vs Sharding
 - https://cloud.google.com/bigquery/docs/partitioned-tables#dt_partition_shard
+
+## Time Travel
+
+- Undelete/recover a table
+- https://cloud.google.com/bigquery/docs/table-decorators
+- https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql#table_decorators
+- https://cloud.google.com/bigquery/docs/samples/bigquery-undelete-table#bigquery_undelete_table-python
+- https://stackoverflow.com/questions/27537720/how-can-i-undelete-a-bigquery-table
+
+```
+$ bq cp "project:dataset.table@epoch_in_millisec" "project:dataset.table"
+
+select * from `lab-wifi-dt1.wifi_telemetry_cv_staging.ap_list` FOR SYSTEM TIME AS OF '2023-07-23T10:00:00+00:00' limit 10;
+```
+
+## Table Snapshot
+
+- https://cloud.google.com/bigquery/docs/table-snapshots-intro
+
+### Cost
+
+- https://cloud.google.com/bigquery/docs/table-snapshots-intro#storage_costs
+
+### Qouta & Limits
+
+- https://cloud.google.com/bigquery/docs/table-snapshots-intro#quotas_and_limits
+
+## Table Clone
+
+- https://cloud.google.com/bigquery/docs/table-clones-intro
+
+### Cost
+
+- https://cloud.google.com/bigquery/docs/table-clones-intro#storage_costs
+
+### Qouta & Limits
+
+- https://cloud.google.com/bigquery/docs/table-clones-intro#quotas_and_limits
+
+## Time Travel vs Fail-Safe vs Snapshot
+
+- https://cloud.google.com/bigquery/docs/time-travel
+- https://cloud.google.com/bigquery/docs/table-snapshots-intro
+
 
 # BigQuery Data Storage
 
@@ -386,6 +422,17 @@ https://github.com/googleapis/python-bigquery-pandas
 # Advance
 
 - [Capacitor: The data structure under the hood](https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format)
+
+# FAQs
+
+## Error in query string: Error processing job 'some_project_id:bqjob_r42458afc9ace1e14_0000018987075575_1': Encountered " <ID> "SYSTEM "" at line 1, column 68. Was expecting: <EOF>
+
+Try enabling StandardSQL (aka GoogleSQL)
+
+## Error in query string: Error processing job 'some_project_id:bqjob_r5a3f856c18a03550_00000189870a2af9_1': Illegal value for number of shards: 1690181351000
+
+Try enabling StandardSQL (aka GoogleSQL)
+
 
 # References
 
