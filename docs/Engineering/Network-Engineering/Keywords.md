@@ -109,6 +109,7 @@
     - Quality of service
     - QoE
         - Quality of experience
+- STA (Station)
 - AP, Router, Modem, Switch, Bridge, Hub
 - Node, Hop
 - Gateway, Catenet
@@ -125,6 +126,7 @@
 - Port
 - SSID
 - BSSID
+- SSID vs BSSID
 - Roaming 
 - Hash(), HMAC
 - OSI

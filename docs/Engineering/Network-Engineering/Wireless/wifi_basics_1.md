@@ -200,6 +200,9 @@ watch -n1 iwconfig
 
 <img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-31-40.png" />
 
+- 128 clients per SSID per radio is a kind of hard limit amongs different vendors
+- ~30 clients per SSID per radio is a kind of best practice to avoid poor bandwidth
+
 # Other Wireless Technologies
 
 <img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-02 14-36-51.png" />

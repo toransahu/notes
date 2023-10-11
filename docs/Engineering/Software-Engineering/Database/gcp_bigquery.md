@@ -158,7 +158,7 @@ NOTE: Make sure `$` is escaped else may delete the whole table.
 ```
 $ bq cp "project:dataset.table@epoch_in_millisec" "project:dataset.table"
 
-select * from `lab-wifi-dt1.wifi_telemetry_cv_staging.ap_list` FOR SYSTEM TIME AS OF '2023-07-23T10:00:00+00:00' limit 10;
+select * from `project.dataset.table` FOR SYSTEM TIME AS OF '2023-07-23T10:00:00+00:00' limit 10;
 ```
 
 ## Table Snapshot
