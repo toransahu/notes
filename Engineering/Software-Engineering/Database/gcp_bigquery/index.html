@@ -1841,6 +1841,40 @@
     Advance
   </a>
   
+    <nav class="md-nav" aria-label="Advance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dremel-model" class="md-nav__link">
+    Dremel Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacitor-the-data-structure-under-the-hood" class="md-nav__link">
+    Capacitor: The data structure under the hood
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-vs-array-struct-vs-standard-column" class="md-nav__link">
+    JSON vs Array &amp; Struct vs Standard Column
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-validation" class="md-nav__link">
+    Data Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1861,6 +1895,13 @@
           <li class="md-nav__item">
   <a href="#error-in-query-string-error-processing-job-some_project_idbqjob_r5a3f856c18a03550_00000189870a2af9_1-illegal-value-for-number-of-shards-1690181351000" class="md-nav__link">
     Error in query string: Error processing job 'some_project_id:bqjob_r5a3f856c18a03550_00000189870a2af9_1': Illegal value for number of shards: 1690181351000
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-gcp-project-bigquery-access" class="md-nav__link">
+    Cross GCP project BigQuery access
   </a>
   
 </li>
@@ -3526,6 +3567,40 @@
     Advance
   </a>
   
+    <nav class="md-nav" aria-label="Advance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dremel-model" class="md-nav__link">
+    Dremel Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacitor-the-data-structure-under-the-hood" class="md-nav__link">
+    Capacitor: The data structure under the hood
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-vs-array-struct-vs-standard-column" class="md-nav__link">
+    JSON vs Array &amp; Struct vs Standard Column
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-validation" class="md-nav__link">
+    Data Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3546,6 +3621,13 @@
           <li class="md-nav__item">
   <a href="#error-in-query-string-error-processing-job-some_project_idbqjob_r5a3f856c18a03550_00000189870a2af9_1-illegal-value-for-number-of-shards-1690181351000" class="md-nav__link">
     Error in query string: Error processing job 'some_project_id:bqjob_r5a3f856c18a03550_00000189870a2af9_1': Illegal value for number of shards: 1690181351000
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-gcp-project-bigquery-access" class="md-nav__link">
+    Cross GCP project BigQuery access
   </a>
   
 </li>
@@ -3713,10 +3795,17 @@
 <li><a href="#data-warehousing">Data Warehousing</a></li>
 </ul>
 </li>
-<li><a href="#advance">Advance</a></li>
+<li><a href="#advance">Advance</a><ul>
+<li><a href="#dremel-model">Dremel Model</a></li>
+<li><a href="#capacitor-the-data-structure-under-the-hood">Capacitor: The data structure under the hood</a></li>
+<li><a href="#json-vs-array-struct-vs-standard-column">JSON vs Array &amp; Struct vs Standard Column</a></li>
+<li><a href="#data-validation">Data Validation</a></li>
+</ul>
+</li>
 <li><a href="#faqs">FAQs</a><ul>
 <li><a href="#error-in-query-string-error-processing-job-some_project_idbqjob_r42458afc9ace1e14_0000018987075575_1-encountered-system-at-line-1-column-68-was-expecting">Error in query string: Error processing job 'some_project_id:bqjob_r42458afc9ace1e14_0000018987075575_1': Encountered "  "SYSTEM "" at line 1, column 68. Was expecting: </a></li>
 <li><a href="#error-in-query-string-error-processing-job-some_project_idbqjob_r5a3f856c18a03550_00000189870a2af9_1-illegal-value-for-number-of-shards-1690181351000">Error in query string: Error processing job 'some_project_id:bqjob_r5a3f856c18a03550_00000189870a2af9_1': Illegal value for number of shards: 1690181351000</a></li>
+<li><a href="#cross-gcp-project-bigquery-access">Cross GCP project BigQuery access</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -4176,14 +4265,27 @@ select * from `project.dataset.table` FOR SYSTEM TIME AS OF &#39;2023-07-23T10:0
 <li>https://cloud.google.com/architecture/dw2bq/dw-bq-migration-overview</li>
 </ul>
 <h2 id="advance">Advance<a class="headerlink" href="#advance" title="Permanent link">#</a></h2>
+<h3 id="dremel-model"><a href="https://research.google/pubs/pub36632/">Dremel Model</a><a class="headerlink" href="#dremel-model" title="Permanent link">#</a></h3>
+<p>The model BigQuery uses to organize data internally.</p>
+<h3 id="capacitor-the-data-structure-under-the-hood"><a href="https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format">Capacitor: The data structure under the hood</a><a class="headerlink" href="#capacitor-the-data-structure-under-the-hood" title="Permanent link">#</a></h3>
+<p>The columanar format in which BigQuery stores the data.</p>
+<h3 id="json-vs-array-struct-vs-standard-column">JSON vs Array &amp; Struct vs Standard Column<a class="headerlink" href="#json-vs-array-struct-vs-standard-column" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format">Capacitor: The data structure under the hood</a></li>
+<li>https://www.letmesqlthatforyou.com/2020/05/json-vs-structs-vs-columns-in-bigquery.html</li>
+<li>https://medium.com/data-engineers-notes/converting-json-to-bigquery-array-and-struct-6e39c220ac06</li>
+<li>https://www.cloudskillsboost.google/focuses/3696?parent=catalog</li>
+</ul>
+<h3 id="data-validation">Data Validation<a class="headerlink" href="#data-validation" title="Permanent link">#</a></h3>
+<ul>
+<li>https://github.com/GoogleCloudPlatform/professional-services-data-validator#data-validation-tool</li>
 </ul>
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">#</a></h2>
 <h3 id="error-in-query-string-error-processing-job-some_project_idbqjob_r42458afc9ace1e14_0000018987075575_1-encountered-system-at-line-1-column-68-was-expecting">Error in query string: Error processing job 'some_project_id:bqjob_r42458afc9ace1e14_0000018987075575_1': Encountered " <ID> "SYSTEM "" at line 1, column 68. Was expecting: <EOF><a class="headerlink" href="#error-in-query-string-error-processing-job-some_project_idbqjob_r42458afc9ace1e14_0000018987075575_1-encountered-system-at-line-1-column-68-was-expecting" title="Permanent link">#</a></h3>
 <p>Try enabling StandardSQL (aka GoogleSQL)</p>
 <h3 id="error-in-query-string-error-processing-job-some_project_idbqjob_r5a3f856c18a03550_00000189870a2af9_1-illegal-value-for-number-of-shards-1690181351000">Error in query string: Error processing job 'some_project_id:bqjob_r5a3f856c18a03550_00000189870a2af9_1': Illegal value for number of shards: 1690181351000<a class="headerlink" href="#error-in-query-string-error-processing-job-some_project_idbqjob_r5a3f856c18a03550_00000189870a2af9_1-illegal-value-for-number-of-shards-1690181351000" title="Permanent link">#</a></h3>
 <p>Try enabling StandardSQL (aka GoogleSQL)</p>
+<h3 id="cross-gcp-project-bigquery-access">Cross GCP project BigQuery access<a class="headerlink" href="#cross-gcp-project-bigquery-access" title="Permanent link">#</a></h3>
+<p>https://stackoverflow.com/questions/61685069/cloud-dataflow-job-reading-from-one-bigquery-project-and-writing-to-another-bigq</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://issuetracker.google.com/savedsearches/559654">Open Feature Requests</a></li>
