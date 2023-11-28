@@ -210,4 +210,6 @@ pytest -q test_class.py
     ```bash
     coverage html
     ```
+# Best Practices
 
+- https://www.jayfreestone.com/writing/opinionated-guide-to-unit-tests/

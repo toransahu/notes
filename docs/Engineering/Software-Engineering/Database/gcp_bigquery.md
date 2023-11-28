@@ -421,7 +421,23 @@ https://github.com/googleapis/python-bigquery-pandas
 
 # Advance
 
-- [Capacitor: The data structure under the hood](https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format)
+## [Dremel Model](https://research.google/pubs/pub36632/)
+
+The model BigQuery uses to organize data internally.
+
+## [Capacitor: The data structure under the hood](https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format)
+
+The columanar format in which BigQuery stores the data.
+
+## JSON vs Array & Struct vs Standard Column
+
+- https://www.letmesqlthatforyou.com/2020/05/json-vs-structs-vs-columns-in-bigquery.html
+- https://medium.com/data-engineers-notes/converting-json-to-bigquery-array-and-struct-6e39c220ac06
+- https://www.cloudskillsboost.google/focuses/3696?parent=catalog
+
+## Data Validation
+
+- https://github.com/GoogleCloudPlatform/professional-services-data-validator#data-validation-tool
 
 # FAQs
 
@@ -433,6 +449,9 @@ Try enabling StandardSQL (aka GoogleSQL)
 
 Try enabling StandardSQL (aka GoogleSQL)
 
+## Cross GCP project BigQuery access
+
+https://stackoverflow.com/questions/61685069/cloud-dataflow-job-reading-from-one-bigquery-project-and-writing-to-another-bigq
 
 # References
 
