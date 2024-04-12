@@ -57,3 +57,25 @@ TBD
 Technical Challenge: Figuring out problem is tough, solution is straight-forward/simple
 
 Hard Problem: Figureing out problem is tough/easy, but solcing that is not simple as well
+
+# Project Management Methodologies
+
+## Agile
+
+### Kanban
+
+### Scrum
+
+- https://business.adobe.com/blog/basics/sprint-planning
+- https://business.adobe.com/blog/basics/learn-about-sprint-planning-to-create-more-agile-teams
+- https://www.wrike.com/scrum-guide/faq/what-are-scrum-metrics/
+- https://business.adobe.com/blog/basics/daily-stand-up
+- https://business.adobe.com/blog/basics/agile-daily-stand-up
+- https://business.adobe.com/blog/basics/sprint-reviews
+- https://www.wrike.com/scrum-guide/faq/which-topics-should-be-on-the-sprint-review-agenda/
+- https://business.adobe.com/blog/basics/sprint-retrospective
+- https://business.adobe.com/blog/basics/scrum-meeting-types
+- https://www.atlassian.com/blog/productivity/what-is-parkinsons-law
+
+## Waterfall
+

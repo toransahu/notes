@@ -6,7 +6,9 @@
 
 # GDPR
 
-Global Data Protection Regulation
+EU's General Data Protection Regulation.
+
+A European law that established protections for privacy and security of personal data about individuals in European Economic Area (“EEA”).
 
 - https://www.gdpreu.org/the-regulation/
 - PII anonymization
@@ -76,6 +78,3 @@ https://en.wikipedia.org/wiki/System_and_Organization_Controls
 
 ## Data Masking
 - replace the PII with general values, which are still unique
-
-## 
-

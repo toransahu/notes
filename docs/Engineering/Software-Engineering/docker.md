@@ -49,6 +49,49 @@ Ref:
 # Docker at GCP
 - https://cloud.google.com/build/docs/build-push-docker-image#build_using_dockerfile
 
+# Best Practices
+
+## Multiple RUN Vs Single Chained RUN
+
+
+Dockerfile.1 executes multiple RUN:
+
+```docker
+FROM busybox
+RUN echo This is the A > a
+RUN echo This is the B > b
+RUN echo This is the C > c
+```
+
+Dockerfile.2 joins them:
+
+```docker
+FROM busybox
+RUN echo This is the A > a &&\
+    echo This is the B > b &&\
+    echo This is the C > c
+```
+
+Each RUN creates a layer, so I always assumed that fewer layers is better and thus Dockerfile.2 is better.
+
+This is obviously true when a RUN removes something added by a previous RUN (i.e. yum install nano && yum clean all), but in cases where every RUN adds something, there are a few points we need to consider:
+
+- Layers are supposed to just add a diff above the previous one, so if the later layer does not remove something added in a previous one, there should not be much disk space saving advantage between both methods.
+- Layers are pulled in parallel from Docker Hub, so Dockerfile.1, although probably slightly bigger, would theoretically get downloaded faster.
+- If adding a 4th sentence (i.e. echo This is the D > d) and locally rebuilding, Dockerfile.1 would build faster thanks to cache, but Dockerfile.2 would have to run all 4 commands again.
+
+So, the question: Which is a better way to do a Dockerfile?
+Ref: https://stackoverflow.com/questions/39223249/multiple-run-vs-single-chained-run-in-dockerfile-which-is-better
+
+A. Can't be answered in general as it depends on the situation and on the use of the image (optimize for size, download speed, or building speed) 
+B. When possible, I always merge together commands that create files with commands that delete those same files into a single RUN line.
+C. Split up layers based on their potential for reuse in other images and expected caching usage.
+D. Order in the Dockerfile is important when looking at image cache reuse. Look at any components that will update very rarely, possibly only when the base image updates and put those high up in the Dockerfile. Towards the end of the Dockerfile, include any commands that will run quick and may change frequently, e.g. adding a user with a host specific UID or creating folders and changing permissions.
+E. In each of these groups of changes, consolidate as best you can to minimize layers.
+F. Use multi-stage builds whenever possible.
+
+Ref: https://medium.com/@esotericmeans/optimizing-your-dockerfile-dc4b7b527756
+
 # FAQ
 
 Q.

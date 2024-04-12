@@ -18,6 +18,14 @@ Some data.
 # PEM
 Header + Base64 of Some Data + Footer
 
+# Reporting / Monitoring UI
+
+- e.g. Grafana, SignalFx, Superset
+- Deployment options
+    - one in each env
+    - one for all env
+
+
 # To Read
 - Data
     - https://www.confluent.io/blog/intro-to-ksqldb-sql-database-streaming/

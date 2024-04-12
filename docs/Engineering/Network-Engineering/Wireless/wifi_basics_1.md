@@ -319,3 +319,41 @@ Ref: https://clients.mikealbano.com/ (Mike - Our OpenConfig guy, from Wireless N
 Software to design a Wireless network.
 
 <img src="../../../../statics/notes/docs/industrial/networking/wireless/img/Screenshot from 2021-02-03 17-41-55.png" />
+
+# WiFi Skill Certification
+
+## Cisco
+
+### CWTS
+
+- Certified Wireless Technology Specialist
+- Entry level
+- Terminology & basics
+
+### CWNA
+- Certified Wireless N/W Administrator
+- install, configure, manage
+
+### CCNA Wireless
+
+- Certified Wireless Network Associate
+
+### CCNP Wireless
+
+- Certified Wireless Network Professional
+
+### CCIE Wireless
+
+- Certified Wireless Internetwork Expert
+
+## GIAC
+
+### GAWN
+
+- GIAC Associate
+
+## iNARTE
+
+### iNARTE WCDP
+
+
