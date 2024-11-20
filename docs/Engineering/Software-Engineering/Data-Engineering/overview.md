@@ -210,4 +210,4 @@ https://www.getdbt.com/
 - https://www.risingwave.dev/docs/current/intro/
     - https://www.risingwave.dev/docs/current/risingwave-flink-comparison/
 
-
+- Slowly Changing Dimension https://www.linkedin.com/posts/tharani23_dataengineering-datawarehousing-etl-activity-7211224097014308864-5cXz?trk=public_profile
