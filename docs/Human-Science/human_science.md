@@ -4,6 +4,25 @@
 
 [TOC]
 
+# Moral Values
+
+- Honesty / Transparency
+- Respect
+- Responsibility / Accountability
+- Ethics / Integrity
+- Gratitude
+- Trustwortiness
+- Authenticity
+- Courage
+- Faireness / Equality
+- Caring / Kindness
+- Charity / Sharing
+- Acceptance
+- Empathy / Compassion
+- Self Control
+- Perserverance
+
+
 # Nature
 
 - ambitious
