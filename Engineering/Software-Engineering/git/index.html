@@ -10,8 +10,15 @@
         <meta name="author" content="Toran Sahu <toran.sahu@yahoo.com>">
       
       
+      
+        <link rel="prev" href="../docker/">
+      
+      
+        <link rel="next" href="../k8s/">
+      
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -19,40 +26,37 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+    
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,16 +76,19 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Toran&#39;s Notes" class="md-header__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -101,9 +108,13 @@
     </div>
     
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -111,24 +122,27 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -140,7 +154,7 @@
         <a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -170,12 +184,13 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Toran&#39;s Notes" class="md-nav__button md-logo" aria-label="Toran's Notes" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     Toran's Notes
@@ -185,7 +200,7 @@
       <a href="https://github.com/toransahu/notes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -197,14 +212,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -212,14 +232,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Unclassified/" class="md-nav__link">
-        Unclassified
+        
+  
+  <span class="md-ellipsis">
+    Unclassified
+  </span>
+  
+
       </a>
     </li>
   
@@ -227,599 +252,891 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Computer Science
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Computer Science
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/algo/" class="md-nav__link">
-        Algorithms
+        
+  
+  <span class="md-ellipsis">
+    Algo
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/dbms/" class="md-nav__link">
-        DBMS
+        
+  
+  <span class="md-ellipsis">
+    Dbms
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/ds/" class="md-nav__link">
-        Data Structure
+        
+  
+  <span class="md-ellipsis">
+    Ds
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/faq/" class="md-nav__link">
-        FAQs
+        
+  
+  <span class="md-ellipsis">
+    Faq
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/keywords/" class="md-nav__link">
-        Keywords
+        
+  
+  <span class="md-ellipsis">
+    Keywords
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/maths/" class="md-nav__link">
-        Mathematics
+        
+  
+  <span class="md-ellipsis">
+    Maths
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/network/" class="md-nav__link">
-        Network
+        
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/os/" class="md-nav__link">
-        Operating Systems
+        
+  
+  <span class="md-ellipsis">
+    Os
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/se/" class="md-nav__link">
-        Software Engineering
+        
+  
+  <span class="md-ellipsis">
+    Se
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Computer-Science/toc/" class="md-nav__link">
-        Theory of Computation
+        
+  
+  <span class="md-ellipsis">
+    Toc
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Data Science
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Data Science" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Data Science
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
           
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Data-Science/ml_azure/" class="md-nav__link">
-        Azure Machine Learning
+        
+  
+  <span class="md-ellipsis">
+    Ml azure
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Data-Science/overview/" class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          Engineering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Engineering" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Engineering
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
           
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_1">
-          Network Engineering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Network Engineering" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_1">
-          <span class="md-nav__icon md-icon"></span>
-          Network Engineering
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
           
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Network Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Designs/" class="md-nav__link">
-        Network Designs
+        
+  
+  <span class="md-ellipsis">
+    Designs
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/FAQ/" class="md-nav__link">
-        FAQs
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Keywords/" class="md-nav__link">
-        Keywords
+        
+  
+  <span class="md-ellipsis">
+    Keywords
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/MAC/" class="md-nav__link">
-        MAC
+        
+  
+  <span class="md-ellipsis">
+    MAC
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Tools/" class="md-nav__link">
-        Networking Tools
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1_6" type="checkbox" id="__nav_5_1_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_1_6">
-          OpenConfig
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="OpenConfig" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_1_6">
-          <span class="md-nav__icon md-icon"></span>
-          OpenConfig
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6" >
+        
           
+          <label class="md-nav__link" for="__nav_5_1_6" id="__nav_5_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OpenConfig
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            OpenConfig
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/OpenConfig/openconfig/" class="md-nav__link">
-        OpenConfig
+        
+  
+  <span class="md-ellipsis">
+    Openconfig
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1_7" type="checkbox" id="__nav_5_1_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_1_7">
-          Wireless
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Wireless" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_1_7">
-          <span class="md-nav__icon md-icon"></span>
-          Wireless
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_7" >
+        
           
+          <label class="md-nav__link" for="__nav_5_1_7" id="__nav_5_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wireless
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Wireless
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wifi basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Wireless/wifi_basics_1/" class="md-nav__link">
-        Wireless Basics - 1
+        
+  
+  <span class="md-ellipsis">
+    Wifi basics 1
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Wireless/wifi_basics_2/" class="md-nav__link">
-        Wireless Basics - 2
+        
+  
+  <span class="md-ellipsis">
+    Wifi basics 2
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Network-Engineering/Wireless/wifi_basics_3/" class="md-nav__link">
-        Wireless Basics - 3
+        
+  
+  <span class="md-ellipsis">
+    Wifi basics 3
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
+              
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network-Engineering/Wireless/wifi_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wifi overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
   
   
+  
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2">
-          Software Engineering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Software Engineering" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
-          <span class="md-nav__icon md-icon"></span>
-          Software Engineering
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
           
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Software Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../android/" class="md-nav__link">
-        Android
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../blockchain/" class="md-nav__link">
-        Blockchain
+        
+  
+  <span class="md-ellipsis">
+    Blockchain
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../code/" class="md-nav__link">
-        Code
+        
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../docker/" class="md-nav__link">
-        Docker
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Git
+          
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Git
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
       </a>
       
         
@@ -837,14 +1154,18 @@
       
         <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
-    Git
+    <span class="md-ellipsis">
+      Git
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#intro" class="md-nav__link">
-    Intro
+    <span class="md-ellipsis">
+      Intro
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Intro">
@@ -852,14 +1173,18 @@
         
           <li class="md-nav__item">
   <a href="#what" class="md-nav__link">
-    What?
+    <span class="md-ellipsis">
+      What?
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#why" class="md-nav__link">
-    Why?
+    <span class="md-ellipsis">
+      Why?
+    </span>
   </a>
   
 </li>
@@ -871,7 +1196,9 @@
       
         <li class="md-nav__item">
   <a href="#terminologies" class="md-nav__link">
-    Terminologies
+    <span class="md-ellipsis">
+      Terminologies
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Terminologies">
@@ -879,28 +1206,36 @@
         
           <li class="md-nav__item">
   <a href="#master" class="md-nav__link">
-    master
+    <span class="md-ellipsis">
+      master
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#origin" class="md-nav__link">
-    origin
+    <span class="md-ellipsis">
+      origin
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
-    remote
+    <span class="md-ellipsis">
+      remote
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#url" class="md-nav__link">
-    url
+    <span class="md-ellipsis">
+      url
+    </span>
   </a>
   
 </li>
@@ -912,15 +1247,19 @@
       
         <li class="md-nav__item">
   <a href="#setup-config" class="md-nav__link">
-    Setup &amp; Config
+    <span class="md-ellipsis">
+      Setup &amp; Config
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="Setup &amp; Config">
+    <nav class="md-nav" aria-label="Setup & Config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#config" class="md-nav__link">
-    config
+    <span class="md-ellipsis">
+      config
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="config">
@@ -928,7 +1267,9 @@
         
           <li class="md-nav__item">
   <a href="#crlf-lf-cr" class="md-nav__link">
-    CRLF, LF, CR
+    <span class="md-ellipsis">
+      CRLF, LF, CR
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="CRLF, LF, CR">
@@ -936,21 +1277,27 @@
         
           <li class="md-nav__item">
   <a href="#windows-only" class="md-nav__link">
-    Windows Only
+    <span class="md-ellipsis">
+      Windows Only
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#linuxmac-only" class="md-nav__link">
-    Linux/Mac Only
+    <span class="md-ellipsis">
+      Linux/Mac Only
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#if-both" class="md-nav__link">
-    If Both
+    <span class="md-ellipsis">
+      If Both
+    </span>
   </a>
   
 </li>
@@ -972,15 +1319,19 @@
       
         <li class="md-nav__item">
   <a href="#inspection-comparision" class="md-nav__link">
-    Inspection &amp; Comparision
+    <span class="md-ellipsis">
+      Inspection &amp; Comparision
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="Inspection &amp; Comparision">
+    <nav class="md-nav" aria-label="Inspection & Comparision">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#diff" class="md-nav__link">
-    diff
+    <span class="md-ellipsis">
+      diff
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="diff">
@@ -988,7 +1339,9 @@
         
           <li class="md-nav__item">
   <a href="#compare-local-with-remote-branch" class="md-nav__link">
-    Compare local with remote branch
+    <span class="md-ellipsis">
+      Compare local with remote branch
+    </span>
   </a>
   
 </li>
@@ -1000,7 +1353,9 @@
         
           <li class="md-nav__item">
   <a href="#diff-tree" class="md-nav__link">
-    diff-tree
+    <span class="md-ellipsis">
+      diff-tree
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="diff-tree">
@@ -1008,7 +1363,9 @@
         
           <li class="md-nav__item">
   <a href="#list-all-the-files-in-a-commit" class="md-nav__link">
-    List all the files in a commit
+    <span class="md-ellipsis">
+      List all the files in a commit
+    </span>
   </a>
   
 </li>
@@ -1020,7 +1377,9 @@
         
           <li class="md-nav__item">
   <a href="#show" class="md-nav__link">
-    show
+    <span class="md-ellipsis">
+      show
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="show">
@@ -1028,7 +1387,9 @@
         
           <li class="md-nav__item">
   <a href="#list-all-the-files-in-a-commit_1" class="md-nav__link">
-    List all the files in a commit
+    <span class="md-ellipsis">
+      List all the files in a commit
+    </span>
   </a>
   
 </li>
@@ -1045,7 +1406,9 @@
       
         <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
-    Commands
+    <span class="md-ellipsis">
+      Commands
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Commands">
@@ -1053,7 +1416,9 @@
         
           <li class="md-nav__item">
   <a href="#init" class="md-nav__link">
-    init
+    <span class="md-ellipsis">
+      init
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="init">
@@ -1061,7 +1426,9 @@
         
           <li class="md-nav__item">
   <a href="#-bare" class="md-nav__link">
-    --bare
+    <span class="md-ellipsis">
+      --bare
+    </span>
   </a>
   
 </li>
@@ -1073,77 +1440,99 @@
         
           <li class="md-nav__item">
   <a href="#clone" class="md-nav__link">
-    clone
+    <span class="md-ellipsis">
+      clone
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#pull" class="md-nav__link">
-    pull
+    <span class="md-ellipsis">
+      pull
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#add" class="md-nav__link">
-    add
+    <span class="md-ellipsis">
+      add
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rm" class="md-nav__link">
-    rm
+    <span class="md-ellipsis">
+      rm
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#commit" class="md-nav__link">
-    commit
+    <span class="md-ellipsis">
+      commit
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#push" class="md-nav__link">
-    push
+    <span class="md-ellipsis">
+      push
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#checkout" class="md-nav__link">
-    checkout
+    <span class="md-ellipsis">
+      checkout
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
-    status
+    <span class="md-ellipsis">
+      status
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#log" class="md-nav__link">
-    log
+    <span class="md-ellipsis">
+      log
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reflog" class="md-nav__link">
-    reflog
+    <span class="md-ellipsis">
+      reflog
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reset" class="md-nav__link">
-    reset
+    <span class="md-ellipsis">
+      reset
+    </span>
   </a>
   
 </li>
@@ -1155,7 +1544,9 @@
       
         <li class="md-nav__item">
   <a href="#uses" class="md-nav__link">
-    Uses
+    <span class="md-ellipsis">
+      Uses
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Uses">
@@ -1163,14 +1554,18 @@
         
           <li class="md-nav__item">
   <a href="#branching" class="md-nav__link">
-    Branching
+    <span class="md-ellipsis">
+      Branching
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#merging" class="md-nav__link">
-    Merging
+    <span class="md-ellipsis">
+      Merging
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Merging">
@@ -1178,28 +1573,36 @@
         
           <li class="md-nav__item">
   <a href="#merge-vs-rebase" class="md-nav__link">
-    merge Vs rebase
+    <span class="md-ellipsis">
+      merge Vs rebase
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#merge" class="md-nav__link">
-    merge
+    <span class="md-ellipsis">
+      merge
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rebase" class="md-nav__link">
-    rebase:
+    <span class="md-ellipsis">
+      rebase:
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rebase-one-branch-on-the-top-of-another" class="md-nav__link">
-    rebase one branch on the top of another
+    <span class="md-ellipsis">
+      rebase one branch on the top of another
+    </span>
   </a>
   
 </li>
@@ -1211,35 +1614,45 @@
         
           <li class="md-nav__item">
   <a href="#reverting-back-to-old-commits" class="md-nav__link">
-    Reverting back to old commits
+    <span class="md-ellipsis">
+      Reverting back to old commits
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reseting" class="md-nav__link">
-    Reseting
+    <span class="md-ellipsis">
+      Reseting
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#modify-last-commit-message" class="md-nav__link">
-    Modify last commit Message
+    <span class="md-ellipsis">
+      Modify last commit Message
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#modify-a-particular-commit" class="md-nav__link">
-    Modify a particular commit
+    <span class="md-ellipsis">
+      Modify a particular commit
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#squashing-last-x-commits-into-one" class="md-nav__link">
-    Squashing last x commits into one
+    <span class="md-ellipsis">
+      Squashing last x commits into one
+    </span>
   </a>
   
 </li>
@@ -1251,7 +1664,9 @@
       
         <li class="md-nav__item">
   <a href="#misc" class="md-nav__link">
-    Misc
+    <span class="md-ellipsis">
+      Misc
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Misc">
@@ -1259,7 +1674,9 @@
         
           <li class="md-nav__item">
   <a href="#travis-ci-continue-integration" class="md-nav__link">
-    Travis CI (Continue Integration)
+    <span class="md-ellipsis">
+      Travis CI (Continue Integration)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Travis CI (Continue Integration)">
@@ -1267,14 +1684,18 @@
         
           <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#steps-to-integrate-ci" class="md-nav__link">
-    Steps to Integrate CI
+    <span class="md-ellipsis">
+      Steps to Integrate CI
+    </span>
   </a>
   
 </li>
@@ -1291,14 +1712,18 @@
       
         <li class="md-nav__item">
   <a href="#command-to-install-dependencies" class="md-nav__link">
-    command to install dependencies
+    <span class="md-ellipsis">
+      command to install dependencies
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#command-to-run-tests" class="md-nav__link">
-    command to run tests
+    <span class="md-ellipsis">
+      command to run tests
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="command to run tests">
@@ -1306,7 +1731,9 @@
         
           <li class="md-nav__item">
   <a href="#setup-ssh-key" class="md-nav__link">
-    Setup SSH key
+    <span class="md-ellipsis">
+      Setup SSH key
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Setup SSH key">
@@ -1314,7 +1741,9 @@
         
           <li class="md-nav__item">
   <a href="#generate-or-get-ssh-key" class="md-nav__link">
-    Generate or Get ssh key
+    <span class="md-ellipsis">
+      Generate or Get ssh key
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Generate or Get ssh key">
@@ -1322,21 +1751,27 @@
         
           <li class="md-nav__item">
   <a href="#generate" class="md-nav__link">
-    Generate
+    <span class="md-ellipsis">
+      Generate
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#set-paraphrase" class="md-nav__link">
-    Set paraphrase
+    <span class="md-ellipsis">
+      Set paraphrase
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#get" class="md-nav__link">
-    Get
+    <span class="md-ellipsis">
+      Get
+    </span>
   </a>
   
 </li>
@@ -1348,7 +1783,9 @@
         
           <li class="md-nav__item">
   <a href="#add-the-key-to-the-ssh-agent" class="md-nav__link">
-    Add the key to the ssh-agent
+    <span class="md-ellipsis">
+      Add the key to the ssh-agent
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Add the key to the ssh-agent">
@@ -1356,21 +1793,27 @@
         
           <li class="md-nav__item">
   <a href="#start" class="md-nav__link">
-    Start
+    <span class="md-ellipsis">
+      Start
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#add_1" class="md-nav__link">
-    Add
+    <span class="md-ellipsis">
+      Add
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#provide-paraphrase" class="md-nav__link">
-    Provide paraphrase
+    <span class="md-ellipsis">
+      Provide paraphrase
+    </span>
   </a>
   
 </li>
@@ -1382,7 +1825,9 @@
         
           <li class="md-nav__item">
   <a href="#add-the-public-key-to-your-vcs-portal-settings" class="md-nav__link">
-    Add the public key to your VCS portal settings
+    <span class="md-ellipsis">
+      Add the public key to your VCS portal settings
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Add the public key to your VCS portal settings">
@@ -1390,21 +1835,27 @@
         
           <li class="md-nav__item">
   <a href="#copy-hash-of-public-key" class="md-nav__link">
-    Copy hash of public key
+    <span class="md-ellipsis">
+      Copy hash of public key
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#paste-in-settings" class="md-nav__link">
-    Paste in settings
+    <span class="md-ellipsis">
+      Paste in settings
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#update-remotes-with-ssh-url" class="md-nav__link">
-    Update remotes with ssh url
+    <span class="md-ellipsis">
+      Update remotes with ssh url
+    </span>
   </a>
   
 </li>
@@ -1431,1192 +1882,1712 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../k8s/" class="md-nav__link">
-        Kubernetes
+        
+  
+  <span class="md-ellipsis">
+    K8s
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../linux/" class="md-nav__link">
-        Linux
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../markup/" class="md-nav__link">
-        Markup Languages
+        
+  
+  <span class="md-ellipsis">
+    Markup
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../practice_problems/" class="md-nav__link">
-        Practice Problems
+        
+  
+  <span class="md-ellipsis">
+    Practice problems
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_10" type="checkbox" id="__nav_5_2_10" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_10">
-          Architecture
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Architecture" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_10">
-          <span class="md-nav__icon md-icon"></span>
-          Architecture
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_10" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_10" id="__nav_5_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Architecture/design_patterns/" class="md-nav__link">
-        Design Patterns
+        
+  
+  <span class="md-ellipsis">
+    Design patterns
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Architecture/design_principles/" class="md-nav__link">
-        Design Principles
+        
+  
+  <span class="md-ellipsis">
+    Design principles
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Architecture/documentation/" class="md-nav__link">
-        Design Documentation
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/project_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Architecture/system_design/" class="md-nav__link">
-        System Design
+        
+  
+  <span class="md-ellipsis">
+    System design
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_11" type="checkbox" id="__nav_5_2_11" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_11">
-          Data Engineering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Data Engineering" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_11">
-          <span class="md-nav__icon md-icon"></span>
-          Data Engineering
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_11" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_11" id="__nav_5_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Data Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Data-Engineering/apache_beam/" class="md-nav__link">
-        Apache Beam
+        
+  
+  <span class="md-ellipsis">
+    Apache beam
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Data-Engineering/apache_storm/" class="md-nav__link">
-        Apache Storm
+        
+  
+  <span class="md-ellipsis">
+    Apache storm
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Data-Engineering/gcp_dataflow/" class="md-nav__link">
-        GCP Dataflow
+        
+  
+  <span class="md-ellipsis">
+    Gcp dataflow
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Data-Engineering/overview/" class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_12" type="checkbox" id="__nav_5_2_12" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_12">
-          Database
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Database" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_12">
-          <span class="md-nav__icon md-icon"></span>
-          Database
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_12" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_12" id="__nav_5_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Database/elasticsearch/" class="md-nav__link">
-        ElasticSearch
+        
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Database/gcp_bigquery/" class="md-nav__link">
-        GCP BigQuery
+        
+  
+  <span class="md-ellipsis">
+    Gcp bigquery
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Database/mysql/" class="md-nav__link">
-        MySQL
+        
+  
+  <span class="md-ellipsis">
+    Mysql
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Database/oracle_plsql/" class="md-nav__link">
-        Oracle DB (PL/SQL)
+        
+  
+  <span class="md-ellipsis">
+    Oracle plsql
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Database/postgresql/" class="md-nav__link">
-        PostgreSQL
+        
+  
+  <span class="md-ellipsis">
+    Postgresql
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_13" type="checkbox" id="__nav_5_2_13" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_13">
-          DevOps
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="DevOps" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_13">
-          <span class="md-nav__icon md-icon"></span>
-          DevOps
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_13" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_13" id="__nav_5_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../DevOps/basics/" class="md-nav__link">
-        Basics
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_13_2" type="checkbox" id="__nav_5_2_13_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_13_2">
-          Clouds
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Clouds" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_2_13_2">
-          <span class="md-nav__icon md-icon"></span>
-          Clouds
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_13_2" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_13_2" id="__nav_5_2_13_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clouds
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            Clouds
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../DevOps/Clouds/aws/" class="md-nav__link">
-        AWS
+        
+  
+  <span class="md-ellipsis">
+    Aws
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../DevOps/Clouds/gcp/" class="md-nav__link">
-        GCP
+        
+  
+  <span class="md-ellipsis">
+    Gcp
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_14" type="checkbox" id="__nav_5_2_14" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_14">
-          Product Development
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Product Development" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_14">
-          <span class="md-nav__icon md-icon"></span>
-          Product Development
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_14" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_14" id="__nav_5_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Product Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Product Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Product-Development/product_mindset/" class="md-nav__link">
-        Product Mindset
+        
+  
+  <span class="md-ellipsis">
+    Product mindset
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Product-Development/regulations_and_compliances/" class="md-nav__link">
-        Regulations & Compliances
+        
+  
+  <span class="md-ellipsis">
+    Regulations and compliances
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_14_3" type="checkbox" id="__nav_5_2_14_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_14_3">
-          Practices
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Practices" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_2_14_3">
-          <span class="md-nav__icon md-icon"></span>
-          Practices
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_14_3" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_14_3" id="__nav_5_2_14_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Practices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            Practices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Product-Development/Practices/code_review/" class="md-nav__link">
-        Code Review
+        
+  
+  <span class="md-ellipsis">
+    Code review
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_15" type="checkbox" id="__nav_5_2_15" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_15">
-          Web
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Web" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_15">
-          <span class="md-nav__icon md-icon"></span>
-          Web
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_15" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_15" id="__nav_5_2_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/caching/" class="md-nav__link">
-        Caching
+        
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/security/" class="md-nav__link">
-        Security
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_15_3" type="checkbox" id="__nav_5_2_15_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2_15_3">
-          API
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="API" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_2_15_3">
-          <span class="md-nav__icon md-icon"></span>
-          API
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_15_4" >
+        
           
+          <label class="md-nav__link" for="__nav_5_2_15_4" id="__nav_5_2_15_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_15_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_15_4">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/API/graphql/" class="md-nav__link">
-        GraphQL
+        
+  
+  <span class="md-ellipsis">
+    Graphql
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/API/grpc/" class="md-nav__link">
-        gRPC
+        
+  
+  <span class="md-ellipsis">
+    Grpc
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/API/overview/" class="md-nav__link">
-        API Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/API/rest/" class="md-nav__link">
-        REST
+        
+  
+  <span class="md-ellipsis">
+    Rest
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Web/API/websocket/" class="md-nav__link">
-        Websocket
+        
+  
+  <span class="md-ellipsis">
+    Websocket
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
+  
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          Human Science
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Human Science" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Human Science
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
           
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Human Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Human Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Human-Science/faq/" class="md-nav__link">
-        FAQs
+        
+  
+  <span class="md-ellipsis">
+    Faq
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Human-Science/human_science/" class="md-nav__link">
-        Behavioral, Moral, and Social
+        
+  
+  <span class="md-ellipsis">
+    Human science
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Human-Science/misc/" class="md-nav__link">
-        Finance
+        
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          Languages
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Languages" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          Languages
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
           
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/c_cpp/" class="md-nav__link">
-        C/C++
+        
+  
+  <span class="md-ellipsis">
+    C cpp
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/markdown/" class="md-nav__link">
-        Markdown
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3">
-          Golang
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Golang" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
-          <span class="md-nav__icon md-icon"></span>
-          Golang
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
           
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Golang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Golang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/golang/go_basics/" class="md-nav__link">
-        Golang Basics
+        
+  
+  <span class="md-ellipsis">
+    Go basics
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_4">
-          Java
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Java" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_4">
-          <span class="md-nav__icon md-icon"></span>
-          Java
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
           
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/java/java_basics/" class="md-nav__link">
-        Java Basics
+        
+  
+  <span class="md-ellipsis">
+    Java basics
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/java/spring_framework/" class="md-nav__link">
-        Spring Framework
+        
+  
+  <span class="md-ellipsis">
+    Spring framework
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_5">
-          Python
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_5">
-          <span class="md-nav__icon md-icon"></span>
-          Python
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
           
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_advanced/" class="md-nav__link">
-        Python Advanced
+        
+  
+  <span class="md-ellipsis">
+    Python advanced
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_basics/" class="md-nav__link">
-        Python Basics
+        
+  
+  <span class="md-ellipsis">
+    Python basics
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_django/" class="md-nav__link">
-        Python Django
+        
+  
+  <span class="md-ellipsis">
+    Python django
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_oops/" class="md-nav__link">
-        Python OOPs
+        
+  
+  <span class="md-ellipsis">
+    Python oops
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_production_servers/" class="md-nav__link">
-        Python Production Servers
+        
+  
+  <span class="md-ellipsis">
+    Python production servers
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/python/python_testing/" class="md-nav__link">
-        Python Testing
+        
+  
+  <span class="md-ellipsis">
+    Python testing
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" type="checkbox" id="__nav_7_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_6">
-          Rust
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Rust" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_6">
-          <span class="md-nav__icon md-icon"></span>
-          Rust
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
           
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Languages/rust/rust_basics/" class="md-nav__link">
-        Rust Basics
+        
+  
+  <span class="md-ellipsis">
+    Rust basics
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
+  
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_8">
-          Music
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Music" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
-          Music
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
           
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Music
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Music
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../Music/piano/" class="md-nav__link">
-        Piano
+        
+  
+  <span class="md-ellipsis">
+    Piano
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2647,14 +3618,18 @@
       
         <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
-    Git
+    <span class="md-ellipsis">
+      Git
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#intro" class="md-nav__link">
-    Intro
+    <span class="md-ellipsis">
+      Intro
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Intro">
@@ -2662,14 +3637,18 @@
         
           <li class="md-nav__item">
   <a href="#what" class="md-nav__link">
-    What?
+    <span class="md-ellipsis">
+      What?
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#why" class="md-nav__link">
-    Why?
+    <span class="md-ellipsis">
+      Why?
+    </span>
   </a>
   
 </li>
@@ -2681,7 +3660,9 @@
       
         <li class="md-nav__item">
   <a href="#terminologies" class="md-nav__link">
-    Terminologies
+    <span class="md-ellipsis">
+      Terminologies
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Terminologies">
@@ -2689,28 +3670,36 @@
         
           <li class="md-nav__item">
   <a href="#master" class="md-nav__link">
-    master
+    <span class="md-ellipsis">
+      master
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#origin" class="md-nav__link">
-    origin
+    <span class="md-ellipsis">
+      origin
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
-    remote
+    <span class="md-ellipsis">
+      remote
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#url" class="md-nav__link">
-    url
+    <span class="md-ellipsis">
+      url
+    </span>
   </a>
   
 </li>
@@ -2722,15 +3711,19 @@
       
         <li class="md-nav__item">
   <a href="#setup-config" class="md-nav__link">
-    Setup &amp; Config
+    <span class="md-ellipsis">
+      Setup &amp; Config
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="Setup &amp; Config">
+    <nav class="md-nav" aria-label="Setup & Config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#config" class="md-nav__link">
-    config
+    <span class="md-ellipsis">
+      config
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="config">
@@ -2738,7 +3731,9 @@
         
           <li class="md-nav__item">
   <a href="#crlf-lf-cr" class="md-nav__link">
-    CRLF, LF, CR
+    <span class="md-ellipsis">
+      CRLF, LF, CR
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="CRLF, LF, CR">
@@ -2746,21 +3741,27 @@
         
           <li class="md-nav__item">
   <a href="#windows-only" class="md-nav__link">
-    Windows Only
+    <span class="md-ellipsis">
+      Windows Only
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#linuxmac-only" class="md-nav__link">
-    Linux/Mac Only
+    <span class="md-ellipsis">
+      Linux/Mac Only
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#if-both" class="md-nav__link">
-    If Both
+    <span class="md-ellipsis">
+      If Both
+    </span>
   </a>
   
 </li>
@@ -2782,15 +3783,19 @@
       
         <li class="md-nav__item">
   <a href="#inspection-comparision" class="md-nav__link">
-    Inspection &amp; Comparision
+    <span class="md-ellipsis">
+      Inspection &amp; Comparision
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="Inspection &amp; Comparision">
+    <nav class="md-nav" aria-label="Inspection & Comparision">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#diff" class="md-nav__link">
-    diff
+    <span class="md-ellipsis">
+      diff
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="diff">
@@ -2798,7 +3803,9 @@
         
           <li class="md-nav__item">
   <a href="#compare-local-with-remote-branch" class="md-nav__link">
-    Compare local with remote branch
+    <span class="md-ellipsis">
+      Compare local with remote branch
+    </span>
   </a>
   
 </li>
@@ -2810,7 +3817,9 @@
         
           <li class="md-nav__item">
   <a href="#diff-tree" class="md-nav__link">
-    diff-tree
+    <span class="md-ellipsis">
+      diff-tree
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="diff-tree">
@@ -2818,7 +3827,9 @@
         
           <li class="md-nav__item">
   <a href="#list-all-the-files-in-a-commit" class="md-nav__link">
-    List all the files in a commit
+    <span class="md-ellipsis">
+      List all the files in a commit
+    </span>
   </a>
   
 </li>
@@ -2830,7 +3841,9 @@
         
           <li class="md-nav__item">
   <a href="#show" class="md-nav__link">
-    show
+    <span class="md-ellipsis">
+      show
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="show">
@@ -2838,7 +3851,9 @@
         
           <li class="md-nav__item">
   <a href="#list-all-the-files-in-a-commit_1" class="md-nav__link">
-    List all the files in a commit
+    <span class="md-ellipsis">
+      List all the files in a commit
+    </span>
   </a>
   
 </li>
@@ -2855,7 +3870,9 @@
       
         <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
-    Commands
+    <span class="md-ellipsis">
+      Commands
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Commands">
@@ -2863,7 +3880,9 @@
         
           <li class="md-nav__item">
   <a href="#init" class="md-nav__link">
-    init
+    <span class="md-ellipsis">
+      init
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="init">
@@ -2871,7 +3890,9 @@
         
           <li class="md-nav__item">
   <a href="#-bare" class="md-nav__link">
-    --bare
+    <span class="md-ellipsis">
+      --bare
+    </span>
   </a>
   
 </li>
@@ -2883,77 +3904,99 @@
         
           <li class="md-nav__item">
   <a href="#clone" class="md-nav__link">
-    clone
+    <span class="md-ellipsis">
+      clone
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#pull" class="md-nav__link">
-    pull
+    <span class="md-ellipsis">
+      pull
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#add" class="md-nav__link">
-    add
+    <span class="md-ellipsis">
+      add
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rm" class="md-nav__link">
-    rm
+    <span class="md-ellipsis">
+      rm
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#commit" class="md-nav__link">
-    commit
+    <span class="md-ellipsis">
+      commit
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#push" class="md-nav__link">
-    push
+    <span class="md-ellipsis">
+      push
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#checkout" class="md-nav__link">
-    checkout
+    <span class="md-ellipsis">
+      checkout
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
-    status
+    <span class="md-ellipsis">
+      status
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#log" class="md-nav__link">
-    log
+    <span class="md-ellipsis">
+      log
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reflog" class="md-nav__link">
-    reflog
+    <span class="md-ellipsis">
+      reflog
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reset" class="md-nav__link">
-    reset
+    <span class="md-ellipsis">
+      reset
+    </span>
   </a>
   
 </li>
@@ -2965,7 +4008,9 @@
       
         <li class="md-nav__item">
   <a href="#uses" class="md-nav__link">
-    Uses
+    <span class="md-ellipsis">
+      Uses
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Uses">
@@ -2973,14 +4018,18 @@
         
           <li class="md-nav__item">
   <a href="#branching" class="md-nav__link">
-    Branching
+    <span class="md-ellipsis">
+      Branching
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#merging" class="md-nav__link">
-    Merging
+    <span class="md-ellipsis">
+      Merging
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Merging">
@@ -2988,28 +4037,36 @@
         
           <li class="md-nav__item">
   <a href="#merge-vs-rebase" class="md-nav__link">
-    merge Vs rebase
+    <span class="md-ellipsis">
+      merge Vs rebase
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#merge" class="md-nav__link">
-    merge
+    <span class="md-ellipsis">
+      merge
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rebase" class="md-nav__link">
-    rebase:
+    <span class="md-ellipsis">
+      rebase:
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#rebase-one-branch-on-the-top-of-another" class="md-nav__link">
-    rebase one branch on the top of another
+    <span class="md-ellipsis">
+      rebase one branch on the top of another
+    </span>
   </a>
   
 </li>
@@ -3021,35 +4078,45 @@
         
           <li class="md-nav__item">
   <a href="#reverting-back-to-old-commits" class="md-nav__link">
-    Reverting back to old commits
+    <span class="md-ellipsis">
+      Reverting back to old commits
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#reseting" class="md-nav__link">
-    Reseting
+    <span class="md-ellipsis">
+      Reseting
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#modify-last-commit-message" class="md-nav__link">
-    Modify last commit Message
+    <span class="md-ellipsis">
+      Modify last commit Message
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#modify-a-particular-commit" class="md-nav__link">
-    Modify a particular commit
+    <span class="md-ellipsis">
+      Modify a particular commit
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#squashing-last-x-commits-into-one" class="md-nav__link">
-    Squashing last x commits into one
+    <span class="md-ellipsis">
+      Squashing last x commits into one
+    </span>
   </a>
   
 </li>
@@ -3061,7 +4128,9 @@
       
         <li class="md-nav__item">
   <a href="#misc" class="md-nav__link">
-    Misc
+    <span class="md-ellipsis">
+      Misc
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Misc">
@@ -3069,7 +4138,9 @@
         
           <li class="md-nav__item">
   <a href="#travis-ci-continue-integration" class="md-nav__link">
-    Travis CI (Continue Integration)
+    <span class="md-ellipsis">
+      Travis CI (Continue Integration)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Travis CI (Continue Integration)">
@@ -3077,14 +4148,18 @@
         
           <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#steps-to-integrate-ci" class="md-nav__link">
-    Steps to Integrate CI
+    <span class="md-ellipsis">
+      Steps to Integrate CI
+    </span>
   </a>
   
 </li>
@@ -3101,14 +4176,18 @@
       
         <li class="md-nav__item">
   <a href="#command-to-install-dependencies" class="md-nav__link">
-    command to install dependencies
+    <span class="md-ellipsis">
+      command to install dependencies
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#command-to-run-tests" class="md-nav__link">
-    command to run tests
+    <span class="md-ellipsis">
+      command to run tests
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="command to run tests">
@@ -3116,7 +4195,9 @@
         
           <li class="md-nav__item">
   <a href="#setup-ssh-key" class="md-nav__link">
-    Setup SSH key
+    <span class="md-ellipsis">
+      Setup SSH key
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Setup SSH key">
@@ -3124,7 +4205,9 @@
         
           <li class="md-nav__item">
   <a href="#generate-or-get-ssh-key" class="md-nav__link">
-    Generate or Get ssh key
+    <span class="md-ellipsis">
+      Generate or Get ssh key
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Generate or Get ssh key">
@@ -3132,21 +4215,27 @@
         
           <li class="md-nav__item">
   <a href="#generate" class="md-nav__link">
-    Generate
+    <span class="md-ellipsis">
+      Generate
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#set-paraphrase" class="md-nav__link">
-    Set paraphrase
+    <span class="md-ellipsis">
+      Set paraphrase
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#get" class="md-nav__link">
-    Get
+    <span class="md-ellipsis">
+      Get
+    </span>
   </a>
   
 </li>
@@ -3158,7 +4247,9 @@
         
           <li class="md-nav__item">
   <a href="#add-the-key-to-the-ssh-agent" class="md-nav__link">
-    Add the key to the ssh-agent
+    <span class="md-ellipsis">
+      Add the key to the ssh-agent
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Add the key to the ssh-agent">
@@ -3166,21 +4257,27 @@
         
           <li class="md-nav__item">
   <a href="#start" class="md-nav__link">
-    Start
+    <span class="md-ellipsis">
+      Start
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#add_1" class="md-nav__link">
-    Add
+    <span class="md-ellipsis">
+      Add
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#provide-paraphrase" class="md-nav__link">
-    Provide paraphrase
+    <span class="md-ellipsis">
+      Provide paraphrase
+    </span>
   </a>
   
 </li>
@@ -3192,7 +4289,9 @@
         
           <li class="md-nav__item">
   <a href="#add-the-public-key-to-your-vcs-portal-settings" class="md-nav__link">
-    Add the public key to your VCS portal settings
+    <span class="md-ellipsis">
+      Add the public key to your VCS portal settings
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Add the public key to your VCS portal settings">
@@ -3200,21 +4299,27 @@
         
           <li class="md-nav__item">
   <a href="#copy-hash-of-public-key" class="md-nav__link">
-    Copy hash of public key
+    <span class="md-ellipsis">
+      Copy hash of public key
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#paste-in-settings" class="md-nav__link">
-    Paste in settings
+    <span class="md-ellipsis">
+      Paste in settings
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#update-remotes-with-ssh-url" class="md-nav__link">
-    Update remotes with ssh url
+    <span class="md-ellipsis">
+      Update remotes with ssh url
+    </span>
   </a>
   
 </li>
@@ -3242,13 +4347,14 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-<a href="https://github.com/toransahu/notes/edit/master/docs/Engineering/Software-Engineering/git.md" title="Edit this page" class="md-content__button md-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-</a>
+                  
+
+  
+  
 
 
   <h1>Git</h1>
@@ -3389,17 +4495,15 @@
 <ul>
 <li>Then turn off automatical convertions, and stick to CRLF only</li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf false
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global core.autocrlf false
+</code></pre></div></td></tr></table></div>
 <h5 id="linuxmac-only">Linux/Mac Only<a class="headerlink" href="#linuxmac-only" title="Permanent link">#</a></h5>
 <ul>
 <li>If on <code>LF</code> system, then do this to convert any CRLF to LF</li>
 <li>but not LF to CRLF</li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global core.autocrlf input
+</code></pre></div></td></tr></table></div>
 <h5 id="if-both">If Both<a class="headerlink" href="#if-both" title="Permanent link">#</a></h5>
 <ul>
 <li>Then set this in Windows system only<ul>
@@ -3409,33 +4513,29 @@
 </ul>
 </li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config --global core.autocrlf true
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global core.autocrlf true
+</code></pre></div></td></tr></table></div>
 <h2 id="inspection-comparision">Inspection &amp; Comparision<a class="headerlink" href="#inspection-comparision" title="Permanent link">#</a></h2>
 <h3 id="diff"><code>diff</code><a class="headerlink" href="#diff" title="Permanent link">#</a></h3>
 <h4 id="compare-local-with-remote-branch">Compare local with remote branch<a class="headerlink" href="#compare-local-with-remote-branch" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git diff &lt;masterbranch_path&gt; &lt;remotebranch_path&gt;
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>git diff &lt;masterbranch_path&gt; &lt;remotebranch_path&gt;
 
 #or 
 
 git diff master origin/master
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h3 id="diff-tree"><code>diff-tree</code><a class="headerlink" href="#diff-tree" title="Permanent link">#</a></h3>
 <h4 id="list-all-the-files-in-a-commit">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git diff-tree --no-commit-id --name-only -r bd61ad98
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git diff-tree --no-commit-id --name-only -r bd61ad98
+</code></pre></div></td></tr></table></div>
 <h3 id="show"><code>show</code><a class="headerlink" href="#show" title="Permanent link">#</a></h3>
 <h4 id="list-all-the-files-in-a-commit_1">List all the files in a commit<a class="headerlink" href="#list-all-the-files-in-a-commit_1" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git show --pretty=&quot;&quot; --name-only bd61ad98  
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git show --pretty=&quot;&quot; --name-only bd61ad98  
+</code></pre></div></td></tr></table></div>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h2>
 <h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">#</a></h3>
 <h4 id="-bare"><code>--bare</code><a class="headerlink" href="#-bare" title="Permanent link">#</a></h4>
@@ -3472,9 +4572,8 @@ git diff master origin/master
 <h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">#</a></h3>
 <p>To see in descriptive format</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git log --graph --decorate --oneline
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--decorate<span class="w"> </span>--oneline
+</code></pre></div></td></tr></table></div>
 <p>where:<br />
     --graph: shows flow<br />
     --decorate: shows branch names<br />
@@ -3494,75 +4593,63 @@ git diff master origin/master
 <p>Options:</p>
 <ul>
 <li>create a new branch dev
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout -b dev
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div></li>
 <li>dev is active
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout dev
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div></li>
 <li>master is active
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout master
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master
+</code></pre></div></td></tr></table></div></li>
 <li>dev is active &amp; incorporate master in it
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout dev
-git merge master
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>dev
+git<span class="w"> </span>merge<span class="w"> </span>master
+</code></pre></div></td></tr></table></div></li>
 <li>
 <p>master is active &amp; incorporate dev in it
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout master
-git merge dev
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>merge<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>delete a local branch if completely merged 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -d dev
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>delete a local branch if not merged 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -D dev
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>delete a remote branch
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin :dev
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:dev
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Rename your local branch.</p>
 <ul>
 <li>If you are on the branch you want to rename:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -m new-name
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>new-name
+</code></pre></div></td></tr></table></div></li>
 <li>If you are on a different branch:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git branch -m old-name new-name
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>old-name<span class="w"> </span>new-name
+</code></pre></div></td></tr></table></div></li>
 </ul>
 </li>
 <li>
 <p>Delete the old-name remote branch and push the new-name local branch.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin :old-name new-name
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:old-name<span class="w"> </span>new-name
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Reset the upstream branch for the new-name local branch.</p>
 <ul>
 <li>Switch to the branch and then:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push origin -u new-name
-</code></pre></div>
-</td></tr></table></li>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-u<span class="w"> </span>new-name
+</code></pre></div></td></tr></table></div></li>
 </ul>
 </li>
 </ul>
@@ -3586,40 +4673,36 @@ git merge dev
 <ul>
 <li>Lets say, if you're woring on a feature in a dedicated branch. And someone makes a commit in master branch and you want to pull those changes to your feature branch, i.e.</li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      A---B---C feature
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>      A---B---C feature
      /
 D---E---F---G master
 
 here A,B,C are commits in feature. F,G are new commits in master
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>then:</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout feature
-git merge master
-</code></pre></div>
-</td></tr></table>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>feature
+git<span class="w"> </span>merge<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
 Or in one line 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git merge master feature
-</code></pre></div>
-</td></tr></table>
-<strong> This will create a new commit in feature branch called as "merge commit" and feature branch will have same history as master (but not vice-versa)</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>master<span class="w"> </span>feature
+</code></pre></div></td></tr></table></div>
+** This will create a new commit in feature branch called as "merge commit" and feature branch will have same history as master (but not vice-versa)**
 i.e.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      A---B---C---(*) feature
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>      A---B---C---(*) feature
      /           /
 D---E---F---G---H master
 
 here (*) is merge commit
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <ul>
 <li>Very active master branch can pollute the feature branch.  </li>
 </ul>
@@ -3628,24 +4711,22 @@ here (*) is merge commit
 <li>Alternative to merging</li>
 <li>rebases feature branch onto master branch</li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout feature
-git rebase master
-</code></pre></div>
-</td></tr></table>
-<p><strong> shifts the entire feature branch to tip/(latest node) of the master branch.</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>feature
+git<span class="w"> </span>rebase<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<p>** shifts the entire feature branch to tip/(latest node) of the master branch.**
 i.e.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>               A&#39;--B&#39;--C&#39; feature
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>               A&#39;--B&#39;--C&#39; feature
              /
 D---E---F---G master
 
 here A&#39;,B&#39;,C&#39; are brand new commits
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>instead of creating "merge commit", it creates <strong>brand new commits</strong> in feature branch for all the commits created earlier on the feature branch (the changes will same, but with new commit infos)</li>
 <li>i.e. re-writes branch history</li>
@@ -3658,7 +4739,7 @@ here A&#39;,B&#39;,C&#39; are brand new commits
 <p><strong>Golden rules to use rebase</strong>:
 * never use rebase on any public branch: Means, don't rebase the master branch onto feature branch (it is opposite of rebasing feature branch onto master branch). It will create a brand new commit/history in master branch which will affect other developers.</p>
 <h4 id="rebase-one-branch-on-the-top-of-another">rebase one branch on the top of another<a class="headerlink" href="#rebase-one-branch-on-the-top-of-another" title="Permanent link">#</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -3670,7 +4751,7 @@ here A&#39;,B&#39;,C&#39; are brand new commits
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>         Branch-1   Branch-2
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>         Branch-1   Branch-2
          X--Y     A--B--C 
         /        /
 D---E---F---G---H   master
@@ -3683,17 +4764,15 @@ After rebaseing Branch-1 on the top of Branch-2
          A--B--C         Branch-2
         /       
 D---E---F---G---H        master
-</code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout branch1
-git rebase branch2
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>branch1
+git<span class="w"> </span>rebase<span class="w"> </span>branch2
+</code></pre></div></td></tr></table></div>
 <h3 id="reverting-back-to-old-commits">Reverting back to old commits<a class="headerlink" href="#reverting-back-to-old-commits" title="Permanent link">#</a></h3>
 <p>https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit</p>
 <h3 id="reseting">Reseting<a class="headerlink" href="#reseting" title="Permanent link">#</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -3714,64 +4793,57 @@ git rebase branch2
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout &lt;branch&gt;
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch&gt;
 
-git reflog
+git<span class="w"> </span>reflog
 
-pick the commit_sha one prior to the the incident
+pick<span class="w"> </span>the<span class="w"> </span>commit_sha<span class="w"> </span>one<span class="w"> </span>prior<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>the<span class="w"> </span>incident
 
-git reset --hard &lt;commit_sha&gt;
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;commit_sha&gt;
 
---hard    Matches the working tree and index to that of the tree being
-               switched  to. Any changes to tracked files <span class="k">in</span> the working tree since
-               &lt;commit&gt; are lost.
-
-
+--hard<span class="w">    </span>Matches<span class="w"> </span>the<span class="w"> </span>working<span class="w"> </span>tree<span class="w"> </span>and<span class="w"> </span>index<span class="w"> </span>to<span class="w"> </span>that<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>tree<span class="w"> </span>being
+<span class="w">               </span>switched<span class="w">  </span>to.<span class="w"> </span>Any<span class="w"> </span>changes<span class="w"> </span>to<span class="w"> </span>tracked<span class="w"> </span>files<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>working<span class="w"> </span>tree<span class="w"> </span>since
+<span class="w">               </span>&lt;commit&gt;<span class="w"> </span>are<span class="w"> </span>lost.
 
 
-git reset --merge &lt;commit_sha&gt;
-or 
-git reset --merge &lt;head_count&gt;
 
---merge       Resets the index to match the tree recorded by the named commit, and
-              updates the files that are different between the named commit and
-              the current commit <span class="k">in</span> the working tree.
-</code></pre></div>
-</td></tr></table>
+
+git<span class="w"> </span>reset<span class="w"> </span>--merge<span class="w"> </span>&lt;commit_sha&gt;
+or<span class="w"> </span>
+git<span class="w"> </span>reset<span class="w"> </span>--merge<span class="w"> </span>&lt;head_count&gt;
+
+--merge<span class="w">       </span>Resets<span class="w"> </span>the<span class="w"> </span>index<span class="w"> </span>to<span class="w"> </span>match<span class="w"> </span>the<span class="w"> </span>tree<span class="w"> </span>recorded<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>named<span class="w"> </span>commit,<span class="w"> </span>and
+<span class="w">              </span>updates<span class="w"> </span>the<span class="w"> </span>files<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>different<span class="w"> </span>between<span class="w"> </span>the<span class="w"> </span>named<span class="w"> </span>commit<span class="w"> </span>and
+<span class="w">              </span>the<span class="w"> </span>current<span class="w"> </span>commit<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>working<span class="w"> </span>tree.
+</code></pre></div></td></tr></table></div>
 <h3 id="modify-last-commit-message">Modify last commit Message<a class="headerlink" href="#modify-last-commit-message" title="Permanent link">#</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git commit -a -m
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m
+</code></pre></div></td></tr></table></div>
 <h3 id="modify-a-particular-commit">Modify a particular commit<a class="headerlink" href="#modify-a-particular-commit" title="Permanent link">#</a></h3>
 <p>If you want to modify files at commit <SHA></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase -i &lt;SHA&gt;
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>&lt;SHA&gt;
+</code></pre></div></td></tr></table></div>
 <p>You will get a editor opened up with list of all the commits prior to that.</p>
 <p>Change the <code>pick</code> to <code>edit</code> for that particular commit <SHA>. Save &amp; close the editor.</p>
 <p>Make changes to your files.</p>
 <p>After that add or rm files.</p>
 <p>If you want to change the commit msg also then</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git commit -a
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-a
+</code></pre></div></td></tr></table></div>
 <p>Then continue rebasing</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase --continue
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>--continue
+</code></pre></div></td></tr></table></div>
 <h3 id="squashing-last-x-commits-into-one">Squashing last x commits into one<a class="headerlink" href="#squashing-last-x-commits-into-one" title="Permanent link">#</a></h3>
 <p>If you want to squash last X commits into single commit then</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase -i HEAD~X
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~X
+</code></pre></div></td></tr></table></div>
 <p>You will get a editor opened up with list of all the X commits.</p>
 <p>Change the <code>pick</code> to <code>s</code> for all the commits except the oldest one into which you want to merge all the lastest. </p>
 <p>Save &amp; close the editor.</p>
 <p>Again you'll get an editor with list &amp; order of all the squashed commits. (if you want you can change the commit msgs at this moment)</p>
 <p>Then continue rebasing</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git rebase --continue
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>--continue
+</code></pre></div></td></tr></table></div>
 <p>Done.</p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
 <h3 id="travis-ci-continue-integration">Travis CI (Continue Integration)<a class="headerlink" href="#travis-ci-continue-integration" title="Permanent link">#</a></h3>
@@ -3835,91 +4907,64 @@ python:
 <h3 id="setup-ssh-key">Setup SSH key<a class="headerlink" href="#setup-ssh-key" title="Permanent link">#</a></h3>
 <h4 id="generate-or-get-ssh-key">Generate or Get ssh key<a class="headerlink" href="#generate-or-get-ssh-key" title="Permanent link">#</a></h4>
 <h5 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">#</a></h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh-keygen
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh-keygen
+</code></pre></div></td></tr></table></div>
 <h5 id="set-paraphrase">Set paraphrase<a class="headerlink" href="#set-paraphrase" title="Permanent link">#</a></h5>
 <h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">#</a></h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls ~/.ssh
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ls<span class="w"> </span>~/.ssh
+</code></pre></div></td></tr></table></div>
 <h4 id="add-the-key-to-the-ssh-agent">Add the key to the ssh-agent<a class="headerlink" href="#add-the-key-to-the-ssh-agent" title="Permanent link">#</a></h4>
 <h5 id="start">Start<a class="headerlink" href="#start" title="Permanent link">#</a></h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span> 
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>ssh-agent<span class="sb">`</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
 <h5 id="add_1">Add<a class="headerlink" href="#add_1" title="Permanent link">#</a></h5>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh-add ~/.ssh/&lt;private_key_file&gt;
-</code></pre></div>
-</td></tr></table>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh-add<span class="w"> </span>~/.ssh/&lt;private_key_file&gt;
+</code></pre></div></td></tr></table></div>
 where <private_key_file> is generally id_rsa</p>
 <h5 id="provide-paraphrase">Provide paraphrase<a class="headerlink" href="#provide-paraphrase" title="Permanent link">#</a></h5>
 <h4 id="add-the-public-key-to-your-vcs-portal-settings">Add the public key to your VCS portal settings<a class="headerlink" href="#add-the-public-key-to-your-vcs-portal-settings" title="Permanent link">#</a></h4>
 <h5 id="copy-hash-of-public-key">Copy hash of public key<a class="headerlink" href="#copy-hash-of-public-key" title="Permanent link">#</a></h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>cat<span class="w"> </span>~/.ssh/id_rsa.pub
 
 or
 
-xclip -sel clip ~/.ssh/id_rsa.pub
-</code></pre></div>
-</td></tr></table>
+xclip<span class="w"> </span>-sel<span class="w"> </span>clip<span class="w"> </span>~/.ssh/id_rsa.pub
+</code></pre></div></td></tr></table></div>
 <h5 id="paste-in-settings">Paste in settings<a class="headerlink" href="#paste-in-settings" title="Permanent link">#</a></h5>
 <h5 id="update-remotes-with-ssh-url">Update remotes with ssh url<a class="headerlink" href="#update-remotes-with-ssh-url" title="Permanent link">#</a></h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git remote rm origin
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin
 
-git remote add origin git@bitbucket.org:toransahu/ethereal-machines-backend.git
-</code></pre></div>
-</td></tr></table>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@bitbucket.org:toransahu/ethereal-machines-backend.git
+</code></pre></div></td></tr></table></div>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Docker
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../k8s/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Kubernetes
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3941,10 +4986,12 @@ git remote add origin git@bitbucket.org:toransahu/ethereal-machines-backend.git
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.01de222e.min.js"></script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
       
