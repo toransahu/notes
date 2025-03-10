@@ -1,0 +1,36 @@
+name: Publish Notes
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: init
+        run: |
+          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event." \
+          && echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!" \
+          && echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: |
+          echo "💡 The ${{ github.repository }} repository has been cloned to the runner." \
+          && "🖥️ The workflow is now ready to test the code on the runner."
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: build
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+        run: 
+      - name: release
+        run: |
+            pip install -r requirements.txt \
+            && mkdocs gh-deploy
+      - name: done
+        run: echo "🍏 This job's status is ${{ job.status }}."
