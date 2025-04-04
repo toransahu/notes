@@ -27,6 +27,13 @@
 
 # CI/CD
 
+CI/CD offers:
+
+1. Agility – CI/CD enables rapid iteration, quick feedback loops, and faster time to market.
+1. Maintainability – Automates testing and deployment, making code easier to manage.
+1. Reliability – Ensures consistent, tested, and error-free releases.
+1. Scalability – Helps handle increasing workloads by automating deployments across environments.
+
 ## CircleCI
 ## Travis CI
 ## Github Actions
