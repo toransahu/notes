@@ -3,13 +3,46 @@
 [TOC]
 
 ---
+# Concepts/Principles
+
+1. Automation – Reducing manual effort in deployments and monitoring.
+1. Security – Ensuring systems are protected against threats (DevSecOps).
+1. Performance – Optimizing speed and resource usage.
+1. Resilience – Recovering quickly from failures.
+1. Efficiency – Optimizing processes to minimize waste.
+1. Compliance – Meeting regulatory and security requirements.
+1. Collaboration – Enhancing teamwork between Dev and Ops.
+---
+1. Reliability – Ensuring systems are robust and fault-tolerant.
+1. Scalability – Ability to handle increased workloads efficiently.
+1. Observability – Gaining insights into system performance and issues.
+1. Availability – Keeping services up and running with minimal downtime.
+1. Maintainability – Ease of managing and updating infrastructure/code.
+1. Flexibility – Adapting to changing requirements and environments.
+1. Agility – Speed and adaptability in software development and deployment.
+1. Portability – Moving applications easily across environments.
+1. Usability – Ensuring tools and processes are developer-friendly.
+
+---
+
 # CI/CD
 
 ## CircleCI
 ## Travis CI
 ## Github Actions
 ## Ansible
+
+NOTE:
+
+1. In a task
+    1. during the loop: Keys like `rc`, `stdout`, etc., are available in the registered variable for the current iteration. For each loop iteration, Ansible executes the task and temporarily populates the registered variable (e.g., command_result) with the details of that specific run. changed_when is evaluated per iteration. The registered variable (command_result) contains the current iteration's details.
+
+    1. After the loop: These keys are no longer present at the root level. All per-iteration details are stored in the results list. To work with individual results (like rc), you must access them from the results field. The changed status for the entire task is true if changed_when was true for any iteration.
+
 ## Jenkins
+
+Pipeline as Code: JJB
+
 ## Chef
 ## Puppet
 
