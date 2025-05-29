@@ -166,8 +166,20 @@ Don't Repeat Yourself
 # WET
 Write Everything Twice
 
+# YAGNI
+You Aren't Gonna Need It
+
 # KISS
 Keep It Simple, Stupid
 
-# YAGNI
-You Aren't Gonna Need It
+## KISS vs SOLID
+Both complement each other.
+
+## KISS vs DRY
+DRY encourages code reuse to avoid repetition. However, overly zealous application of DRY can sometimes lead to complex and less readable code that is harder to maintain, contradicting the KISS principle. Finding the right balance between DRY and KISS is crucial.
+
+## KISS vs WET
+WET's suggestion that it's acceptable, or even desirable, to have repetitive code contradicts the KISS principle's goal of maintaining clarity and simplicity. 
+
+## KISS vs YAGNI
+KISS advocates for simplicity and avoiding unnecessary complexity. YAGNI, on the other hand, suggests not adding features or code until they are actually needed. While both aim to reduce complexity, YAGNI can lead to code that is initially simpler but might become more difficult to modify later if it lacks the flexibility needed to handle future requirements.
