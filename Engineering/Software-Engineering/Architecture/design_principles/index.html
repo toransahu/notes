@@ -1669,20 +1669,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kiss" class="md-nav__link">
+  <a href="#yagni" class="md-nav__link">
     <span class="md-ellipsis">
-      KISS
+      YAGNI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#yagni" class="md-nav__link">
+  <a href="#kiss" class="md-nav__link">
     <span class="md-ellipsis">
-      YAGNI
+      KISS
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="KISS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs SOLID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-dry" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs DRY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-wet" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs WET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-yagni" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs YAGNI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3648,20 +3690,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kiss" class="md-nav__link">
+  <a href="#yagni" class="md-nav__link">
     <span class="md-ellipsis">
-      KISS
+      YAGNI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#yagni" class="md-nav__link">
+  <a href="#kiss" class="md-nav__link">
     <span class="md-ellipsis">
-      YAGNI
+      KISS
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="KISS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs SOLID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-dry" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs DRY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-wet" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs WET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiss-vs-yagni" class="md-nav__link">
+    <span class="md-ellipsis">
+      KISS vs YAGNI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3726,8 +3810,14 @@
 </li>
 <li><a href="#dry">DRY</a></li>
 <li><a href="#wet">WET</a></li>
-<li><a href="#kiss">KISS</a></li>
 <li><a href="#yagni">YAGNI</a></li>
+<li><a href="#kiss">KISS</a><ul>
+<li><a href="#kiss-vs-solid">KISS vs SOLID</a></li>
+<li><a href="#kiss-vs-dry">KISS vs DRY</a></li>
+<li><a href="#kiss-vs-wet">KISS vs WET</a></li>
+<li><a href="#kiss-vs-yagni">KISS vs YAGNI</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h2 id="programming-zens-rules-principles">Programming Zens / Rules / Principles<a class="headerlink" href="#programming-zens-rules-principles" title="Permanent link">#</a></h2>
@@ -3909,10 +3999,18 @@
 <p>Don't Repeat Yourself</p>
 <h2 id="wet">WET<a class="headerlink" href="#wet" title="Permanent link">#</a></h2>
 <p>Write Everything Twice</p>
-<h2 id="kiss">KISS<a class="headerlink" href="#kiss" title="Permanent link">#</a></h2>
-<p>Keep It Simple, Stupid</p>
 <h2 id="yagni">YAGNI<a class="headerlink" href="#yagni" title="Permanent link">#</a></h2>
 <p>You Aren't Gonna Need It</p>
+<h2 id="kiss">KISS<a class="headerlink" href="#kiss" title="Permanent link">#</a></h2>
+<p>Keep It Simple, Stupid</p>
+<h3 id="kiss-vs-solid">KISS vs SOLID<a class="headerlink" href="#kiss-vs-solid" title="Permanent link">#</a></h3>
+<p>Both complement each other.</p>
+<h3 id="kiss-vs-dry">KISS vs DRY<a class="headerlink" href="#kiss-vs-dry" title="Permanent link">#</a></h3>
+<p>DRY encourages code reuse to avoid repetition. However, overly zealous application of DRY can sometimes lead to complex and less readable code that is harder to maintain, contradicting the KISS principle. Finding the right balance between DRY and KISS is crucial.</p>
+<h3 id="kiss-vs-wet">KISS vs WET<a class="headerlink" href="#kiss-vs-wet" title="Permanent link">#</a></h3>
+<p>WET's suggestion that it's acceptable, or even desirable, to have repetitive code contradicts the KISS principle's goal of maintaining clarity and simplicity. </p>
+<h3 id="kiss-vs-yagni">KISS vs YAGNI<a class="headerlink" href="#kiss-vs-yagni" title="Permanent link">#</a></h3>
+<p>KISS advocates for simplicity and avoiding unnecessary complexity. YAGNI, on the other hand, suggests not adding features or code until they are actually needed. While both aim to reduce complexity, YAGNI can lead to code that is initially simpler but might become more difficult to modify later if it lacks the flexibility needed to handle future requirements.</p>
 
 
 
